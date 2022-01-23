@@ -50,7 +50,7 @@ export async function scanFor<T extends object>(
 			const { default: result } = await import(importFilePath);
 			if (!result) {
 				throw new Error(
-					`Trying to import ${fileOrDirectory.name} without a efault exported member. Have a look at ${importFilePath} and check that there is a default export member.`
+					`Trying to import ${fileOrDirectory.name} without a default exported member. Have a look at ${importFilePath} and check that there is a default export member.`
 				);
 			}
 			results[matchedConstraint.retrievalKey].push(result);
