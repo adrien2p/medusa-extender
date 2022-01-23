@@ -6,7 +6,13 @@ This packages exports the necessary bits and pieces to extend [medusajs](https:/
 
 # Dependency graph
 
-![[Dependency graph](./assets/medusa-extender.jpeg)](./media/medusa-extender.jpeg)
+<img src="/assets/medusa-extender.jpeg"
+     onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
+     alt="Dependency graph" />
+
+# Api doc
+
+[Read more about it](./docs)
 
 # Usage
 

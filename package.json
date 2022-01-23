@@ -2,6 +2,15 @@
   "name": "medusa-extender",
   "version": "0.0.1-alpha1",
   "description": "Extends functionalities from medusajs\n\n",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "e-commerce",
+    "ecommerce",
+    "headless",
+    "extension",
+    "nodejs"
+  ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",
   "license": "MIT",

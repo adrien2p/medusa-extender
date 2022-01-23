@@ -35,7 +35,7 @@ Step type of type function that take in express instance and return Promise<Expr
 
 #### Defined in
 
-[medusa.ts:9](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L9)
+[medusa.ts:9](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa.ts#L9)
 
 ___
 
@@ -54,4 +54,4 @@ Step options with `rank` and `isBefore`
 
 #### Defined in
 
-[medusa.ts:14](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L14)
+[medusa.ts:14](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa.ts#L14)

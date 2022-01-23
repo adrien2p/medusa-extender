@@ -222,4 +222,4 @@ Re-exports [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 
 #### Defined in
 
-[index.ts:6](https://github.com/adrien2p/medusa-extender/blob/b528092/src/index.ts#L6)
+[index.ts:6](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/index.ts#L6)
