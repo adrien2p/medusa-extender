@@ -8,7 +8,7 @@
   <a href="https://github.com/adrien2p/awesome-medusajs">
       <img src="https://awesome.re/badge.svg" alt="Awesome">
   </a>
-  <img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version">
+  <a href="https://badge.fury.io/js/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
 </div>
 
 # Getting started
