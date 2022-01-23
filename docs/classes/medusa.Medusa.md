@@ -43,7 +43,7 @@ Register steps that must be executed before/after medusa is load.
 
 #### Defined in
 
-[medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L30)
+[medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L30)
 
 ## Properties
 
@@ -53,7 +53,7 @@ Register steps that must be executed before/after medusa is load.
 
 #### Defined in
 
-[medusa.ts:24](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L24)
+[medusa.ts:24](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L24)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[medusa.ts:23](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L23)
+[medusa.ts:23](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L23)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[medusa.ts:20](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L20)
+[medusa.ts:20](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L20)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[medusa.ts:21](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L21)
+[medusa.ts:21](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L21)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[medusa.ts:22](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L22)
+[medusa.ts:22](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L22)
 
 ## Methods
 
@@ -115,7 +115,7 @@ Register middlewares to be apply before/after auth middleware.
 
 #### Defined in
 
-[medusa.ts:39](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L39)
+[medusa.ts:39](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L39)
 
 ___
 
@@ -131,7 +131,7 @@ Launch all the steps before/after medusa according to the `stepOptions`.
 
 #### Defined in
 
-[medusa.ts:76](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L76)
+[medusa.ts:76](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L76)
 
 ___
 
@@ -153,7 +153,7 @@ Register a step that must be executed after medusa is loaded.
 
 #### Defined in
 
-[medusa.ts:67](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L67)
+[medusa.ts:67](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L67)
 
 ___
 
@@ -175,7 +175,7 @@ Register a step that must be executed before medusa is loaded.
 
 #### Defined in
 
-[medusa.ts:57](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L57)
+[medusa.ts:57](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L57)
 
 ___
 
@@ -197,4 +197,4 @@ Promise<void>
 
 #### Defined in
 
-[medusa.ts:99](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa.ts#L99)
+[medusa.ts:99](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa.ts#L99)

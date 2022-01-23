@@ -32,7 +32,7 @@ Describe a custom entity repository constructor.
 
 #### Defined in
 
-[types.ts:174](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/types.ts#L174)
+[types.ts:174](https://github.com/adrien2p/medusa-extender/blob/b528092/src/types.ts#L174)
 
 ## Properties
 
@@ -42,7 +42,7 @@ Describe a custom entity repository constructor.
 
 #### Defined in
 
-[types.ts:172](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/types.ts#L172)
+[types.ts:172](https://github.com/adrien2p/medusa-extender/blob/b528092/src/types.ts#L172)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[types.ts:171](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/types.ts#L171)
+[types.ts:171](https://github.com/adrien2p/medusa-extender/blob/b528092/src/types.ts#L171)

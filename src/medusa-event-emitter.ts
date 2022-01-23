@@ -12,7 +12,6 @@ type ListenerDescriptor<T = unknown> = {
 };
 
 /**
- * @internal
  * Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
  */
 class MedusaEventEmitter extends EventEmitter {

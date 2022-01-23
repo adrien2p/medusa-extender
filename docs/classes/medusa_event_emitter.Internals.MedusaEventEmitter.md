@@ -4,7 +4,6 @@
 
 [medusa-event-emitter](../modules/medusa_event_emitter.md).[Internals](../modules/medusa_event_emitter.Internals.md).MedusaEventEmitter
 
-**`internal`**
 Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
 
 ## Hierarchy
@@ -42,7 +41,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:21](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L21)
+[medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L20)
 
 ## Properties
 
@@ -52,7 +51,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:19](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L19)
+[medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L18)
 
 ## Methods
 
@@ -75,7 +74,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[medusa-event-emitter.ts:72](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L72)
+[medusa-event-emitter.ts:71](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L71)
 
 ___
 
@@ -105,7 +104,7 @@ Register a new event handler.
 
 #### Defined in
 
-[medusa-event-emitter.ts:31](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L31)
+[medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L30)
 
 ___
 
@@ -127,7 +126,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[medusa-event-emitter.ts:43](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L43)
+[medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L42)
 
 ___
 
@@ -141,4 +140,4 @@ ___
 
 #### Defined in
 
-[medusa-event-emitter.ts:60](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/medusa-event-emitter.ts#L60)
+[medusa-event-emitter.ts:59](https://github.com/adrien2p/medusa-extender/blob/b528092/src/medusa-event-emitter.ts#L59)

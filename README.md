@@ -4,7 +4,7 @@ This packages exports the necessary bits and pieces to extend [medusajs](https:/
 
 # Dependency graph
 
-![[Dependency graph](./assets/medusa-extender.jpeg)](./assets/medusa-extender.jpeg)
+![[Dependency graph](./assets/medusa-extender.jpeg)](./media/medusa-extender.jpeg)
 
 # Usage
 
@@ -84,8 +84,88 @@ export default class MyCustomMiddleware
 
 ### load
 
+This basically start the `medusa` engine which comes from `@medusa/medusa` itself.
 
 
+## MedusaEventEmitter
+
+this module allow you to emit event that will be then handled by your registered services in the medusa container.
+The main purpuse of it is to be able to intercept entity event and add custom login to them.
+
+### Usage
+
+For that purpose an utility is provided that allow multiple to attach a new subscriver on the active connection
+handled by the medusa container.
+
+Here is an example
+
+```typescript
+@EventSubscriber()
+export default class StoreSubscriber
+	implements EntitySubscriberInterface<Store>, MedusaEntitySubscriber<typeof StoreSubscriber>
+{
+	static attachTo(connection: Connection): void {
+        MedusaUtils.attachOrReplaceEntitySubscriber(connection, StoreSubscriber);
+    }
+
+	public listenTo(): typeof Store {
+		return Store;
+	}
+
+	/**
+	 * Relay the event to the handlers.
+	 * @param event Event to pass to the event handler
+	 */
+	public async beforeUpdate(event: UpdateEvent<Store>): Promise<any> {
+		return await medusaEventEmitter.emitAsync(OnMedusaEvent.Before.UpdateEvent(Store), {
+			event,
+			transactionalEntityManager: event.manager,
+		});
+	}
+
+	/**
+	 * Relay the event to the handlers.
+	 * @param event Event to pass to the event handler
+	 */
+	public async beforeRemove(event: RemoveEvent<Store>): Promise<any> {
+		return await medusaEventEmitter.emitAsync(OnMedusaEvent.Before.RemoveEvent(Store), {
+			event,
+			transactionalEntityManager: event.manager,
+		});
+	}
+}
+```
+Those events will be attached attached/removed for each request to be sure that if any
+services are request scoped that you can access the actual cradle.
+
+## Types
+
+[Read more about it](./docs/modules/types.md)
+
+## Repository
+
+When you create a new entity that extends an existing entity, you must create the
+appropriate repository that will reflect the new entity type but without breaking the 
+original one used by medusa.
+
+### Usage
 
 
+For that purpose an utility is provided that allow multiple class extension.
 
+Here is an example
+
+```typescript
+import { EntityRepository, Repository } from 'typeorm';
+import { UserRepository as MedusaUserRepository } from '@medusajs/medusa/dist/repositories/user';
+import { MedusaRepository, MedusaUtils } from 'medusa-extender';
+import User from '../entities/user.entity';
+
+@EntityRepository(User)
+class UserRepository extends Repository<User> implements MedusaRepository<MedusaUserRepository, typeof UserRepository> {
+	static overriddenType = MedusaUserRepository;
+	static isHandledByMedusa = true;
+}
+
+export default MedusaUtils.repositoryMixin<User>(UserRepository, MedusaUserRepository);
+```

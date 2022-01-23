@@ -30,7 +30,7 @@ Load custom repositories that must override the existing repositories from the r
 
 #### Defined in
 
-[loaders/repository.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/loaders/repository.loader.ts#L10)
+[loaders/repository.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/b528092/src/loaders/repository.loader.ts#L10)
 
 ___
 
@@ -54,4 +54,4 @@ Load custom repositories that must be added to the existing container from the r
 
 #### Defined in
 
-[loaders/repository.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/7acbd92/src/loaders/repository.loader.ts#L20)
+[loaders/repository.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/b528092/src/loaders/repository.loader.ts#L20)
