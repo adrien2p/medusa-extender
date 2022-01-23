@@ -12,7 +12,6 @@
 - [MedusaEntitySubscriberStatic](../interfaces/types.MedusaEntitySubscriberStatic.md)
 - [MedusaMiddlewareInstance](../interfaces/types.MedusaMiddlewareInstance.md)
 - [MedusaMiddlewareStatic](../interfaces/types.MedusaMiddlewareStatic.md)
-- [MedusaRepositoryInstance](../interfaces/types.MedusaRepositoryInstance.md)
 - [MedusaRepositoryStatic](../interfaces/types.MedusaRepositoryStatic.md)
 - [MedusaServiceInstance](../interfaces/types.MedusaServiceInstance.md)
 - [MedusaServiceStatic](../interfaces/types.MedusaServiceStatic.md)
@@ -26,6 +25,7 @@
 - [MedusaEntitySubscriber](types.md#medusaentitysubscriber)
 - [MedusaMiddleware](types.md#medusamiddleware)
 - [MedusaRepository](types.md#medusarepository)
+- [MedusaRepositoryInstance](types.md#medusarepositoryinstance)
 - [MedusaRequest](types.md#medusarequest)
 - [MedusaRoute](types.md#medusaroute)
 - [MedusaRouteMethods](types.md#medusaroutemethods)
@@ -63,7 +63,7 @@
 
 #### Defined in
 
-[types.ts:8](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L8)
+[types.ts:9](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L9)
 
 ___
 
@@ -75,7 +75,7 @@ Describe the expected request from a middleware [MedusaMiddleware](types.md#medu
 
 #### Defined in
 
-[types.ts:60](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L60)
+[types.ts:61](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L61)
 
 ___
 
@@ -94,7 +94,7 @@ Any custom medusa entity must implement MedusaService.
 
 #### Defined in
 
-[types.ts:154](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L154)
+[types.ts:160](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L160)
 
 ___
 
@@ -112,7 +112,7 @@ Any custom medusa subscriber must implement MedusaEntitySubscriber.
 
 #### Defined in
 
-[types.ts:201](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L201)
+[types.ts:214](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L214)
 
 ___
 
@@ -130,7 +130,7 @@ Any custom medusa middleware must implement MedusaMiddleware.
 
 #### Defined in
 
-[types.ts:101](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L101)
+[types.ts:102](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L102)
 
 ___
 
@@ -149,7 +149,26 @@ Any custom medusa entity repository must implement MedusaService.
 
 #### Defined in
 
-[types.ts:179](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L179)
+[types.ts:192](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L192)
+
+___
+
+### MedusaRepositoryInstance
+
+Ƭ **MedusaRepositoryInstance**<`TRepository`\>: { [P in keyof TRepository]: TRepository[P] }
+
+**`interface`**
+Describe a custom entity repository instance.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `TRepository` |
+
+#### Defined in
+
+[types.ts:169](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L169)
 
 ___
 
@@ -168,7 +187,7 @@ Medusa request extended.
 
 #### Defined in
 
-[types.ts:53](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L53)
+[types.ts:54](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L54)
 
 ___
 
@@ -189,7 +208,7 @@ Describe a custom router handler.
 
 #### Defined in
 
-[types.ts:215](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L215)
+[types.ts:228](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L228)
 
 ___
 
@@ -199,7 +218,7 @@ ___
 
 #### Defined in
 
-[types.ts:67](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L67)
+[types.ts:68](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L68)
 
 ___
 
@@ -218,7 +237,7 @@ Describe all the available options for the Route [MedusaMiddleware](types.md#med
 
 #### Defined in
 
-[types.ts:71](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L71)
+[types.ts:72](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L72)
 
 ___
 
@@ -237,7 +256,7 @@ Any custom medusa service must implement MedusaService.
 
 #### Defined in
 
-[types.ts:129](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L129)
+[types.ts:130](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L130)
 
 ___
 
@@ -253,7 +272,7 @@ ___
 
 #### Defined in
 
-[types.ts:11](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L11)
+[types.ts:12](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L12)
 
 ___
 
@@ -269,7 +288,7 @@ ___
 
 #### Defined in
 
-[types.ts:13](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L13)
+[types.ts:14](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L14)
 
 ## Variables
 
@@ -288,7 +307,7 @@ Event types that can be emitted from an entity subscriber.
 
 #### Defined in
 
-[types.ts:207](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L207)
+[types.ts:220](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L220)
 
 ___
 
@@ -334,4 +353,4 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-[types.ts:18](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L18)
+[types.ts:19](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/types.ts#L19)

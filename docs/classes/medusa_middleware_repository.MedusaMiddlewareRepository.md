@@ -51,7 +51,7 @@ Map&lt;
 
 #### Defined in
 
-[medusa-middleware.repository.ts:14](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-middleware.repository.ts#L14)
+[medusa-middleware.repository.ts:14](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-middleware.repository.ts#L14)
 
 ## Methods
 
@@ -73,7 +73,7 @@ Register a new middleware that must applied after auth.
 
 #### Defined in
 
-[medusa-middleware.repository.ts:36](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-middleware.repository.ts#L36)
+[medusa-middleware.repository.ts:36](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-middleware.repository.ts#L36)
 
 ___
 
@@ -95,4 +95,4 @@ Register a new middleware that must applied before auth.
 
 #### Defined in
 
-[medusa-middleware.repository.ts:24](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-middleware.repository.ts#L24)
+[medusa-middleware.repository.ts:24](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-middleware.repository.ts#L24)

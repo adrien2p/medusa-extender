@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[medusa-scanner.ts:4](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-scanner.ts#L4)
+[medusa-scanner.ts:4](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-scanner.ts#L4)

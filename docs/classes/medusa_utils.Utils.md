@@ -56,7 +56,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[medusa-utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L38)
+[medusa-utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L38)
 
 ___
 
@@ -78,7 +78,7 @@ Log all the routes from the express instance.
 
 #### Defined in
 
-[medusa-utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L59)
+[medusa-utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L59)
 
 ___
 
@@ -101,7 +101,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[medusa-utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L68)
+[medusa-utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L68)
 
 ___
 
@@ -122,38 +122,38 @@ ___
 
 #### Defined in
 
-[medusa-utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L81)
+[medusa-utils.ts:79](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L79)
 
 ___
 
 ### repositoryMixin
 
-▸ `Static` **repositoryMixin**<`TEntity`, `TRepository`\>(`derivedCtor`, ...`baseCtors`): `TRepository`
+▸ `Static` **repositoryMixin**<`TEntity`, `TRepository`, `OverriddenType`\>(`derivedCtor`): [`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`TRepository`, `OverriddenType`\>
 
 For repository context, you should extends repository and the medusa target repository.
 Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `TEntity` | `TEntity` |
-| `TRepository` | `ObjectType`<`Repository`<`TEntity`\>\> |
+| Name |
+| :------ |
+| `TEntity` |
+| `TRepository` |
+| `OverriddenType` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `derivedCtor` | `TRepository` |
-| `...baseCtors` | `any`[] |
+| `derivedCtor` | [`Constructor`](../modules/types.md#constructor)<`TRepository`\> |
 
 #### Returns
 
-`TRepository`
+[`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`TRepository`, `OverriddenType`\>
 
 #### Defined in
 
-[medusa-utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L17)
+[medusa-utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L16)
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 #### Defined in
 
-[medusa-utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-utils.ts#L101)
+[medusa-utils.ts:99](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-utils.ts#L99)

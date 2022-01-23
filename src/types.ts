@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
+import { Repository } from 'typeorm';
 
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
@@ -165,13 +166,15 @@ export type MedusaEntity<
  * @interface
  * Describe a custom entity repository instance.
  */
-export interface MedusaRepositoryInstance {}
+export type MedusaRepositoryInstance<TRepository> = {
+	[P in keyof TRepository]: TRepository[P];
+};
 
 /**
  * @interface
  * Describe a custom entity repository constructor.
  */
-export interface MedusaRepositoryStatic<OverriddenType = unknown> {
+export interface MedusaRepositoryStatic<TRepository = unknown, OverriddenType = unknown> {
 	overriddenType?: Type<OverriddenType>;
 	isHandledByMedusa?: boolean;
 
@@ -180,7 +183,7 @@ export interface MedusaRepositoryStatic<OverriddenType = unknown> {
 	 */
 	resolutionKey?: string;
 
-	new (): MedusaRepositoryInstance;
+	new (): MedusaRepositoryInstance<TRepository>;
 }
 
 /**

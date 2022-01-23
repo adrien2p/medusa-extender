@@ -224,16 +224,16 @@ For that purpose an utility is provided that allow multiple class extension.
 Here is an example
 
 ```typescript
-import { EntityRepository, Repository } from 'typeorm';
+import { EntityRepository } from 'typeorm';
 import { UserRepository as MedusaUserRepository } from '@medusajs/medusa/dist/repositories/user';
 import { MedusaRepository, MedusaUtils } from 'medusa-extender';
 import User from '../entities/user.entity';
 
 @EntityRepository(User)
-class UserRepository extends Repository<User> implements MedusaRepository<MedusaUserRepository, typeof UserRepository> {
+class UserRepository extends MedusaUserRepository implements MedusaRepository<MedusaUserRepository, typeof UserRepository>
 	static overriddenType = MedusaUserRepository;
 	static isHandledByMedusa = true;
 }
 
-export default MedusaUtils.repositoryMixin<User>(UserRepository, MedusaUserRepository);
+const userRepositoryExtended = MedusaUtils.repositoryMixin<User, UserRepository, MedusaUserRepository>(UserRepository);
 ```

@@ -127,7 +127,7 @@ ___
 
 ### MedusaRepositoryInstance
 
-Re-exports [MedusaRepositoryInstance](../interfaces/types.MedusaRepositoryInstance.md)
+Re-exports [MedusaRepositoryInstance](types.md#medusarepositoryinstance)
 
 ___
 
@@ -218,8 +218,8 @@ Re-exports [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 | Name | Type |
 | :------ | :------ |
 | `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TEntity, TRepository\>(`derivedCtor`: `TRepository`, ...`baseCtors`: `any`[]) => `TRepository` |
+| `repositoryMixin` | <TEntity, TRepository, OverriddenType\>(`derivedCtor`: [`Constructor`](types.md#constructor)<`TRepository`\>) => [`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`TRepository`, `OverriddenType`\> |
 
 #### Defined in
 
-[index.ts:6](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/index.ts#L6)
+[index.ts:6](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/index.ts#L6)

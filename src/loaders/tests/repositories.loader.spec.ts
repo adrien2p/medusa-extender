@@ -8,21 +8,24 @@ import { MedusaEntity, MedusaRepository } from '../../types';
 import { overriddenRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
 import { Repository } from 'typeorm';
-import { MedusaUtils } from "../../index";
+import { MedusaUtils } from '../../index';
 
 class Order extends MedusaOrder implements MedusaEntity<Order, typeof MedusaOrder> {
 	static overriddenType = MedusaOrder;
 	static isHandledByMedusa = true;
 }
 
-class OrderRepository extends Repository<Order> implements MedusaRepository<MedusaOrderRepository, typeof OrderRepository> {
+class OrderRepository
+	extends MedusaOrderRepository
+	implements MedusaRepository<MedusaOrderRepository, typeof OrderRepository>
+{
 	static overriddenType = MedusaOrderRepository;
 	static isHandledByMedusa = true;
 
 	testProperty = 'I am the property from UserRepository that extend MedusaUserRepository';
 }
 
-const orderRepositoryExtended = MedusaUtils.repositoryMixin<Order, MedusaOrder>(OrderRepository, MedusaOrderRepository);
+const orderRepositoryExtended = MedusaUtils.repositoryMixin<Order, OrderRepository, MedusaOrderRepository>(OrderRepository);
 
 class Another implements MedusaEntity {
 	static isHandledByMedusa = true;
@@ -46,8 +49,9 @@ describe('Repositories loader', () => {
 				'@medusajs/medusa/dist/repositories/order'
 			);
 
-			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBeDefined();
-			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBe(
+			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
+			expect((new MedusaOrderRepositoryReImport() as OrderRepository).testProperty).toBeDefined();
+			expect((new MedusaOrderRepositoryReImport() as OrderRepository).testProperty).toBe(
 				'I am the property from UserRepository that extend MedusaUserRepository'
 			);
 		});

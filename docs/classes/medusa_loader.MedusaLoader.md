@@ -46,7 +46,7 @@ internal container and database connection.
 
 #### Defined in
 
-[medusa-loader.ts:68](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-loader.ts#L68)
+[medusa-loader.ts:68](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-loader.ts#L68)
 
 ___
 
@@ -68,7 +68,7 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 
 #### Defined in
 
-[medusa-loader.ts:104](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-loader.ts#L104)
+[medusa-loader.ts:104](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-loader.ts#L104)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[medusa-loader.ts:149](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-loader.ts#L149)
+[medusa-loader.ts:149](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-loader.ts#L149)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-[medusa-loader.ts:134](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-loader.ts#L134)
+[medusa-loader.ts:134](https://github.com/adrien2p/medusa-extender/blob/55d8212/src/medusa-loader.ts#L134)

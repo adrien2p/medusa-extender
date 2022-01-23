@@ -42,7 +42,8 @@
     "chalk": "^4.1.2",
     "core-js": "^3.20.3",
     "mongoose": "^6.1.6",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "ts-mixer": "^6.0.0"
   },
   "peerDependencies": {
     "@medusajs/medusa": "^1.1.62",
@@ -90,7 +91,12 @@
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
-      "^.+\\.(t|j)s$": ["@swc/jest", { "configFile": ".swcrc.spec" }]
+      "^.+\\.(t|j)s$": [
+        "@swc/jest",
+        {
+          "configFile": ".swcrc.spec"
+        }
+      ]
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
