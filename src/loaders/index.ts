@@ -1,4 +1,3 @@
-export * from './middlewares.loader';
 export * from './services.loader';
 export * from './routes.loader';
 export * from './api.loader';

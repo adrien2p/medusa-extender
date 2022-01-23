@@ -47,6 +47,9 @@ async function overrideEntity(entity: MedusaEntityStatic): Promise<void> {
 	const originalEntity = await import('@medusajs/medusa/dist/models/' + fileName);
 	originalEntity[entity.overriddenType.name] = entity;
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity overridden - ${entity.overriddenType.name}`);
+	const preparedLog = Utils.prepareLog(
+		'MedusaLoader#entitiesLoader',
+		`Entity overridden - ${entity.overriddenType.name}`
+	);
 	console.log(preparedLog);
 }

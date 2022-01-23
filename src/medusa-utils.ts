@@ -67,9 +67,7 @@ export class Utils {
 	 */
 	static prepareLog(context: string, description: string): string {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
-		return `${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(
-			description
-		)}`;
+		return `${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(description)}`;
 	}
 
 	/**
