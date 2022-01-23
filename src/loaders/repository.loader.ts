@@ -52,14 +52,14 @@ async function load(repositories: MedusaRepositoryStatic[], container?: AwilixCo
  * @param repository
  */
 function registerRepository(container: AwilixContainer, name: string, repository: MedusaRepositoryStatic) {
-	const registerRepositoryName = `craftshop/${name}Repositorys`;
+	const registerRepositoryName = `custom-medusa-extender/${name}Repositorys`;
 	container.register({
 		[registerRepositoryName]: asClass(repository),
 	});
 
 	const preparedLog = Utils.prepareLog(
 		'MedusaLoader#repositoriesLoader',
-		`Repository registered - craftshop/${repository.name}`
+		`Repository registered - custom-medusa-extender/${name}Repositorys}`
 	);
 	console.log(preparedLog);
 }

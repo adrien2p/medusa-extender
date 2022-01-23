@@ -31,14 +31,14 @@ async function load(entities: MedusaEntityStatic[], container?: AwilixContainer)
 }
 
 function registerEntity(container: AwilixContainer, name: string, entity: MedusaEntityStatic) {
-	const registerEntityName = `craftshop/${name}Entity`;
+	const registerEntityName = `custom-medusa-extender/${name}Entity`;
 	container.register({
 		[registerEntityName]: asClass(entity),
 	});
 
 	(container as any).registerAdd('db_entities', asValue(entity));
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity registered - craftshop/${entity.name}`);
+	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity registered - custom-medusa-extender/${entity.name}`);
 	console.log(preparedLog);
 }
 
