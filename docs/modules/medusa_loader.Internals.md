@@ -29,4 +29,4 @@ Return type used for [startMedusaEngine](../classes/medusa_loader.MedusaLoader.m
 
 #### Defined in
 
-[medusa-loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-loader.ts#L36)
+[medusa-loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-loader.ts#L36)

@@ -39,7 +39,8 @@ This packages exports the necessary bits and pieces to extend [medusajs](https:/
 
 > `Medusa` is the entry point from `medusa-extender` and does not correspond to `medusa` itself
 
-This is the main entry point that will allow to start your medusa server, including your custom extensions.
+This is the main entry point that will allow to start your medusa server, 
+including your custom extensions.
 
 Here is an example of how it works
 
@@ -121,7 +122,7 @@ The main purpuse of it is to be able to intercept entity event and add custom lo
 
 ### Usage
 
-For that purpose an utility is provided that allow multiple to attach a new subscriver on the active connection
+For that purpose an utility is provided that allow multiple to attach a new subscriber on the active connection
 handled by the medusa container.
 
 Here is an example
@@ -162,8 +163,49 @@ export default class StoreSubscriber
 	}
 }
 ```
-Those events will be attached attached/removed for each request to be sure that if any
+
+Those events will be subscribed/unsubscribed for each request to be sure that if any
 services are request scoped that you can access the actual cradle.
+
+Here is an example of extended services that listen to an event
+
+```typescript
+interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
+	loggedInUser: User;
+	manager: EntityManager;
+	productRepository: ObjectType<typeof ProductRepository>;
+	productVariantRepository: ObjectType<typeof ProductVariantRepository>;
+	productOptionRepository: ObjectType<typeof ProductOptionRepository>;
+	eventBusService: EventBusService;
+	productVariantService: ProductVariantService;
+	productCollectionService: ProductCollectionService;
+	productTypeRepository: ObjectType<typeof ProductTypeRepository>;
+	productTagRepository: ObjectType<typeof ProductTagRepository>;
+	imageRepository: ObjectType<typeof ImageRepository>;
+	searchService: TSearchService;
+}
+
+export default class ProductService extends MedusaProductService implements MedusaService<typeof ProductService> {
+	public static overriddenType = MedusaProductService;
+	public static isHandledByMedusa = true;
+	public static scope = Lifetime.SCOPED;
+
+	readonly #manager: EntityManager;
+
+	constructor(private readonly container: ConstructorParams) {
+		super(container);
+		this.#manager = container.manager;
+	}
+
+	@OnMedusaEvent.Before.Insert(Product, { async: true })
+	public async attachStoreToProduct(
+		params: MedusaEventHandlerParams<Product, 'Insert'>
+	): Promise<EntityEventType<Product, 'Insert'>> {
+		// Your custom implementation
+		return event;
+	}
+}
+```
 
 ## Types
 
