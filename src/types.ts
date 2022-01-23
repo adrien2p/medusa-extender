@@ -145,6 +145,11 @@ export interface MedusaEntityStatic<OverriddenType = unknown> {
 	overriddenType?: Type<OverriddenType>;
 	isHandledByMedusa?: boolean;
 
+	/**
+	 * Only required if there is no overriddenType
+	 */
+	resolutionKey?: string;
+
 	new (): MedusaEntityInstance;
 }
 
@@ -167,8 +172,13 @@ export interface MedusaRepositoryInstance {}
  * Describe a custom entity repository constructor.
  */
 export interface MedusaRepositoryStatic<OverriddenType = unknown> {
-	overriddenType: Type<OverriddenType>;
+	overriddenType?: Type<OverriddenType>;
 	isHandledByMedusa?: boolean;
+
+	/**
+	 * Only required if there is no overriddenType
+	 */
+	resolutionKey?: string;
 
 	new (): MedusaRepositoryInstance;
 }

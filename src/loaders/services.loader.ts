@@ -6,26 +6,26 @@ import { Utils } from '../medusa-utils';
  * @internal
  * Load custom services from the rootDir.
  * @param services Any custom service that implements MedusaService
- * @param container The container to register the custom service under custom-medusa-extender or override existing one
+ * @param container The container to register the custom service or override existing one
  */
 export function servicesLoader(services: MedusaServiceStatic[], container: AwilixContainer): void {
 	for (const service of services) {
 		if (service.isHandledByMedusa) {
-			const formattedName = `${
-				service.name.charAt(0).toLowerCase() + service.name.slice(1, service.name.length)
-			}`;
 			if (!service.overriddenType) {
-				registerService(container, formattedName, service);
+				registerService(container, service);
 			} else {
+				const formattedName = `${
+					service.name.charAt(0).toLowerCase() + service.name.slice(1, service.name.length)
+				}`;
 				overrideService(container, formattedName, service);
 			}
 		}
 	}
 }
 
-function registerService(container: AwilixContainer, name: string, service: MedusaServiceStatic) {
+function registerService(container: AwilixContainer, service: MedusaServiceStatic) {
 	if (!service.resolutionKey) {
-		throw new Error('Unable to register the ' + name + '. The static property resolutionKey is missing.');
+		throw new Error('Missing static property resolutionKey from service ' + service.name);
 	}
 
 	const registerServiceName = service.resolutionKey;

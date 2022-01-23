@@ -35,11 +35,14 @@
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:declarations",
     "build:doc": "./node_modules/.bin/typedoc",
-    "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg"
+    "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
+    "test": "NODE_ENV=test ./node_modules/.bin/jest"
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "mongoose": "^6.1.6"
+    "core-js": "^3.20.3",
+    "mongoose": "^6.1.6",
+    "regenerator-runtime": "^0.13.9"
   },
   "peerDependencies": {
     "@medusajs/medusa": "^1.1.62",
@@ -54,6 +57,7 @@
     "@swc-node/jest": "^1.4.1",
     "@swc/cli": "^0.1.52",
     "@swc/core": "^1.2.118",
+    "@swc/jest": "^0.2.17",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.12",
@@ -86,12 +90,12 @@
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
-      "^.+\\.(t|j)s$": "@swc-node/jest"
+      "^.+\\.(t|j)s$": ["@swc/jest", { "configFile": ".swcrc.spec" }]
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
+    "coverageDirectory": "./coverage",
     "testEnvironment": "node"
   }
 }

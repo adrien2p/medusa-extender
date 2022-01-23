@@ -34,9 +34,7 @@ async function load(repositories: MedusaRepositoryStatic[], container?: AwilixCo
 	for (const repository of repositories) {
 		if (repository.isHandledByMedusa) {
 			if (!repository.overriddenType) {
-				const namePart = repository.name.toLowerCase().split('repository')[0];
-				const formattedName = `${namePart.charAt(0).toLowerCase() + namePart.slice(1, namePart.length)}`;
-				await registerRepository(container, formattedName, repository);
+				await registerRepository(container, repository);
 			} else {
 				await overrideRepository(repository);
 			}
@@ -51,15 +49,19 @@ async function load(repositories: MedusaRepositoryStatic[], container?: AwilixCo
  * @param name
  * @param repository
  */
-function registerRepository(container: AwilixContainer, name: string, repository: MedusaRepositoryStatic) {
-	const registerRepositoryName = `custom-medusa-extender/${name}Repositorys`;
+function registerRepository(container: AwilixContainer, repository: MedusaRepositoryStatic) {
+	if (!repository.resolutionKey) {
+		throw new Error('Missing static property resolutionKey from repository ' + repository.name);
+	}
+
+	const registerRepositoryName = repository.resolutionKey;
 	container.register({
 		[registerRepositoryName]: asClass(repository),
 	});
 
 	const preparedLog = Utils.prepareLog(
 		'MedusaLoader#repositoriesLoader',
-		`Repository registered - custom-medusa-extender/${name}Repositorys}`
+		`Repository registered - ${registerRepositoryName}`
 	);
 	console.log(preparedLog);
 }
