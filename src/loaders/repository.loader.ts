@@ -77,7 +77,7 @@ async function overrideRepository(repository: MedusaRepositoryStatic): Promise<v
 	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
 	const fileName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
 	const originalEntity = await import('@medusajs/medusa/dist/repositories/' + fileName);
-	originalEntity[repository.name] = repository;
+	originalEntity[repository.name] = repository as typeof repository;
 
 	const preparedLog = Utils.prepareLog(
 		'MedusaLoader#repositoriesLoader',

@@ -2,24 +2,27 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import { User as MedusaUser } from '@medusajs/medusa/dist';
-import { UserRepository as MedusaUserRepository } from '@medusajs/medusa/dist/repositories/user';
+import { Order as MedusaOrder } from '@medusajs/medusa/dist';
+import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
 import { MedusaEntity, MedusaRepository } from '../../types';
 import { overriddenRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
 import { Repository } from 'typeorm';
+import { MedusaUtils } from "../../index";
 
-class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
-	static overriddenType = MedusaUser;
+class Order extends MedusaOrder implements MedusaEntity<Order, typeof MedusaOrder> {
+	static overriddenType = MedusaOrder;
 	static isHandledByMedusa = true;
 }
 
-class UserRepository extends Repository<User> implements MedusaRepository<MedusaUserRepository, typeof UserRepository> {
-	static overriddenType = MedusaUserRepository;
+class OrderRepository extends Repository<Order> implements MedusaRepository<MedusaOrderRepository, typeof OrderRepository> {
+	static overriddenType = MedusaOrderRepository;
 	static isHandledByMedusa = true;
 
 	testProperty = 'I am the property from UserRepository that extend MedusaUserRepository';
 }
+
+const orderRepositoryExtended = MedusaUtils.repositoryMixin<Order, MedusaOrder>(OrderRepository, MedusaOrderRepository);
 
 class Another implements MedusaEntity {
 	static isHandledByMedusa = true;
@@ -35,16 +38,16 @@ describe('Repositories loader', () => {
 	const container = createContainer();
 
 	describe('overriddenRepositoriesLoader', () => {
-		it(' should override MedusaUserRepository with UserRepository', async () => {
-			expect((MedusaUserRepository.prototype as any).testProperty).not.toBeDefined();
+		it(' should override MedusaOrderRepository with OrderRepository', async () => {
+			expect((MedusaOrderRepository.prototype as any).testProperty).not.toBeDefined();
 
-			await overriddenRepositoriesLoader([UserRepository]);
-			const { UserRepository: MedusaUserRepositoryReImport } = await import(
-				'@medusajs/medusa/dist/repositories/user'
+			await overriddenRepositoriesLoader([orderRepositoryExtended]);
+			const { OrderRepository: MedusaOrderRepositoryReImport } = await import(
+				'@medusajs/medusa/dist/repositories/order'
 			);
 
-			expect((new MedusaUserRepositoryReImport() as UserRepository).testProperty).toBeDefined();
-			expect((new MedusaUserRepositoryReImport() as UserRepository).testProperty).toBe(
+			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBeDefined();
+			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBe(
 				'I am the property from UserRepository that extend MedusaUserRepository'
 			);
 		});
