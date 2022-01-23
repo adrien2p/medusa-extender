@@ -4,7 +4,6 @@
   "excludeExternals": true,
   "excludeInternal": false,
   "externalPattern": [
-    "../craftshop-*",
     "**/node_modules/**",
     "**/tests/**",
     "**/dist/**",
@@ -14,6 +13,6 @@
   "internalNamespace": "Internals",
   "media": "./assets",
   "darkHighlightTheme": "dark-plus",
-  "out": "../../docs/packages/craftshop-medusa",
+  "out": "./docs",
   "logLevel": "Verbose"
 }

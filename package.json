@@ -26,7 +26,7 @@
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:declarations",
     "build:doc": "./node_modules/.bin/typedoc",
-    "build:graph": "./node_modules/.bin/ts_dependency_graph --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg"
+    "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg"
   },
   "dependencies": {
     "chalk": "^4.1.2",

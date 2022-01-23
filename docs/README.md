@@ -1,3 +1,5 @@
+medusa-extender / [Exports](modules.md)
+
 # Introduction
 
 This packages exports the necessary bits and pieces to extend [medusajs](https://github.com/medusajs/medusa)
@@ -41,7 +43,6 @@ bootstrap();
 
 This method take an array of `MedusaMiddlewareStatic` and return an instance of `Medusa`.
 
-
 ````typescript
 public consume(...middlewares: MedusaMiddlewareStatic[]): Medusa;
 ````
@@ -84,8 +85,4 @@ export default class MyCustomMiddleware
 
 ### load
 
-
-
-
-
-
+This method will
