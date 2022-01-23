@@ -3,28 +3,30 @@ import { Express, NextFunction, Response } from 'express';
 import { Connection, Migration, MigrationInterface } from 'typeorm';
 import { AwilixContainer } from 'awilix';
 import {
-    MedusaAuthenticatedRequest,
-    MedusaEntityStatic,
-    MedusaRepositoryStatic,
-    MedusaRequest,
-    MedusaRoute,
-    MedusaServiceStatic
+	MedusaAuthenticatedRequest,
+	MedusaEntityStatic,
+	MedusaRepositoryStatic,
+	MedusaRequest,
+	MedusaRoute,
+	MedusaServiceStatic,
 } from './types';
 import { Utils } from './medusa-utils';
 import { scanFor } from './medusa-scanner';
 import {
-    apiLoader,
-    authenticatedRoutesLoader,
-    databaseLoader, overriddenEntitiesLoader, overriddenRepositoriesLoader,
-    servicesLoader,
-    unauthenticatedRoutesLoader,
+	apiLoader,
+	authenticatedRoutesLoader,
+	databaseLoader,
+	overriddenEntitiesLoader,
+	overriddenRepositoriesLoader,
+	servicesLoader,
+	unauthenticatedRoutesLoader,
 } from './loaders';
 import { Constructor } from '@adrien2p/craftshop-shared';
-import { medusaEventEmitter } from "./medusa-event-emitter";
+import { medusaEventEmitter } from './medusa-event-emitter';
 
 // Use to fix MiddlewareService typings
 declare global {
-    type ExpressApp = Express;
+	type ExpressApp = Express;
 }
 
 /**
@@ -32,25 +34,25 @@ declare global {
  * Return type used for {@link startMedusaEngine}
  */
 type MedusaStartApp = {
-    app: Express;
-    container: AwilixContainer;
-    dbConnection: Connection;
+	app: Express;
+	container: AwilixContainer;
+	dbConnection: Connection;
 };
 
 const CustomComponentsRetrievalKeys = {
-    services: 'services',
-    migrations: 'migrations',
-    entities: 'entities',
-    repositories: 'repositories',
-    routes: 'routes',
+	services: 'services',
+	migrations: 'migrations',
+	entities: 'entities',
+	repositories: 'repositories',
+	routes: 'routes',
 };
 
 type CustomComponentsRetrievalMapKeyType = {
-    services: MedusaServiceStatic;
-    migrations: Constructor<MigrationInterface>;
-    entities: MedusaEntityStatic;
-    repositories: MedusaRepositoryStatic;
-    routes: MedusaRoute[];
+	services: MedusaServiceStatic;
+	migrations: Constructor<MigrationInterface>;
+	entities: MedusaEntityStatic;
+	repositories: MedusaRepositoryStatic;
+	routes: MedusaRoute[];
 };
 
 /**
@@ -59,94 +61,105 @@ type CustomComponentsRetrievalMapKeyType = {
  * internal container and database connection.
  */
 export class MedusaLoader {
-    /**
-     * @param rootDir Directory where `medusa-config` is located
-     * @param express Express instance
-     */
-    public async load(rootDir: string, express: Express): Promise<AwilixContainer> {
-        const customComponents = await scanFor<CustomComponentsRetrievalMapKeyType>(rootDir, {
-            extname: '.js',
-            searchFor: Object.values(CustomComponentsRetrievalKeys).map((retrievalKey) => ({
-                lastSegmentPathDir: retrievalKey,
-                retrievalKey: retrievalKey,
-            })),
-        });
+	/**
+	 * @param rootDir Directory where `medusa-config` is located
+	 * @param express Express instance
+	 */
+	public async load(rootDir: string, express: Express): Promise<AwilixContainer> {
+		const customComponents = await scanFor<CustomComponentsRetrievalMapKeyType>(rootDir, {
+			extname: '.js',
+			searchFor: Object.values(CustomComponentsRetrievalKeys).map((retrievalKey) => ({
+				lastSegmentPathDir: retrievalKey,
+				retrievalKey: retrievalKey,
+			})),
+		});
 
-        await this.registerEventEmitterMiddleware(express);
-        await overriddenEntitiesLoader(
+		await this.registerEventEmitterMiddleware(express);
+		await overriddenEntitiesLoader(
 			customComponents.entities.filter((e) => e.isHandledByMedusa && e.overriddenType)
 		);
-        await overriddenRepositoriesLoader(
+		await overriddenRepositoriesLoader(
 			customComponents.repositories.filter((r) => r.isHandledByMedusa && r.overriddenType)
 		);
 
-        await apiLoader(express);
-        await databaseLoader(customComponents.entities, customComponents.repositories);
-        unauthenticatedRoutesLoader(customComponents.routes, express);
+		await apiLoader(express);
+		await databaseLoader(customComponents.entities, customComponents.repositories);
+		unauthenticatedRoutesLoader(customComponents.routes, express);
 
-        const { app, container, dbConnection } = await this.startMedusaEngine(rootDir, express);
+		const { app, container, dbConnection } = await this.startMedusaEngine(rootDir, express);
 
-        authenticatedRoutesLoader(customComponents.routes, app);
-        servicesLoader(customComponents.services, container);
+		authenticatedRoutesLoader(customComponents.routes, app);
+		servicesLoader(customComponents.services, container);
 
-        await this.runCustomMigrations(customComponents.migrations, dbConnection);
+		await this.runCustomMigrations(customComponents.migrations, dbConnection);
 
-        Utils.logRoutes(app);
-        return container;
-    }
+		Utils.logRoutes(app);
+		return container;
+	}
 
-    /**
-     * Register all listeners before the plugins are loaded to be sure that the scope middleware has already been created.
-     * @param app Express app
-     */
-    private async registerEventEmitterMiddleware(app: Express): Promise<void> {
-        const pluginLoader = await import('@medusajs/medusa/dist/loaders/plugins');
-        const originalPluginLoader = pluginLoader.default;
-        pluginLoader.default = async (cradle: { app: Express; rootDirectory: string; container: AwilixContainer; activityId: string; }) => {
-            app.use(async (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {
-                await medusaEventEmitter.registerListeners(req.scope);
-                return next();
-            });
+	/**
+	 * Register all listeners before the plugins are loaded to be sure that the scope middleware has already been created.
+	 * @param app Express app
+	 */
+	private async registerEventEmitterMiddleware(app: Express): Promise<void> {
+		const pluginLoader = await import('@medusajs/medusa/dist/loaders/plugins');
+		const originalPluginLoader = pluginLoader.default;
+		pluginLoader.default = async (cradle: {
+			app: Express;
+			rootDirectory: string;
+			container: AwilixContainer;
+			activityId: string;
+		}) => {
+			app.use(
+				async (
+					req: MedusaRequest | MedusaAuthenticatedRequest,
+					res: Response,
+					next: NextFunction
+				): Promise<void> => {
+					await medusaEventEmitter.registerListeners(req.scope);
+					return next();
+				}
+			);
 
-            return originalPluginLoader(cradle);
-        };
-    }
+			return originalPluginLoader(cradle);
+		};
+	}
 
-    /**
-     * @private
-     * Start the internal medusa engine using core loaders
-     * @param rootDir Directory where `medusa-config` is located
-     * @param express Express instance
-     */
-    private async startMedusaEngine(rootDir: string, express: Express): Promise<MedusaStartApp> {
-        const { app, container, dbConnection } = await loaders({
-            directory: rootDir,
-            expressApp: express,
-        });
+	/**
+	 * @private
+	 * Start the internal medusa engine using core loaders
+	 * @param rootDir Directory where `medusa-config` is located
+	 * @param express Express instance
+	 */
+	private async startMedusaEngine(rootDir: string, express: Express): Promise<MedusaStartApp> {
+		const { app, container, dbConnection } = await loaders({
+			directory: rootDir,
+			expressApp: express,
+		});
 
-        return { app, container, dbConnection } as unknown as MedusaStartApp;
-    }
+		return { app, container, dbConnection } as unknown as MedusaStartApp;
+	}
 
-    /**
-     * @private
-     * Run custom migrations that are find from the provided directory and stored in a `migrations` subdirectory.
-     * @param migrations Any custom migration that implements MigrationInterface
-     * @param dbConnection Database connection from medusa internal
-     */
-    private async runCustomMigrations(
-        migrations: Constructor<MigrationInterface>[],
-        dbConnection: Connection
-    ): Promise<void> {
-        dbConnection.migrations.push(...migrations.map((Migration) => new Migration()));
+	/**
+	 * @private
+	 * Run custom migrations that are find from the provided directory and stored in a `migrations` subdirectory.
+	 * @param migrations Any custom migration that implements MigrationInterface
+	 * @param dbConnection Database connection from medusa internal
+	 */
+	private async runCustomMigrations(
+		migrations: Constructor<MigrationInterface>[],
+		dbConnection: Connection
+	): Promise<void> {
+		dbConnection.migrations.push(...migrations.map((Migration) => new Migration()));
 
-        await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
-            for (const migration of ranMigrations) {
-                const preparedLog = Utils.prepareLog(
-                    'MedusaLoader#runCustomMigrations',
-                    `Migration applied - ${migration.name}`
-                );
-                console.log(preparedLog);
-            }
-        });
-    }
+		await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
+			for (const migration of ranMigrations) {
+				const preparedLog = Utils.prepareLog(
+					'MedusaLoader#runCustomMigrations',
+					`Migration applied - ${migration.name}`
+				);
+				console.log(preparedLog);
+			}
+		});
+	}
 }
