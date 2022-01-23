@@ -25,7 +25,6 @@
     "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:declarations",
-    "build:prod": "npm run build:ts && npm run build:declarations && cp package.json dist",
     "build:doc": "./node_modules/.bin/typedoc",
     "build:graph": "./node_modules/.bin/ts_dependency_graph --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg"
   },

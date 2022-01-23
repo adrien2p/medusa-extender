@@ -1,4 +1,5 @@
 .idea
+.swc/
 dist
 node_modules
 tsconfig.tsbuildinfo
