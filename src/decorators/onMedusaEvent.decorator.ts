@@ -1,6 +1,7 @@
 import { Constructor, MedusaServiceStatic } from '../types';
 import { EntityActions, EntityEventActionOptions, MedusaEventEmittedParams } from './types';
 import { medusaEventEmitter } from '../medusa-event-emitter';
+import { Entity } from "typeorm";
 
 export class OnMedusaEvent {
 	readonly #when: string;
@@ -34,31 +35,31 @@ export class OnMedusaEvent {
 		return `${this.#when}Remove${entity.name}`;
 	}
 
-	public Insert<Entity>(
-		entity: Constructor<Entity>,
-		options: EntityEventActionOptions<Entity> = { async: false }
+	public Insert<TEntity extends typeof Entity>(
+		entity: TEntity,
+		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Insert', entity, options);
 	}
 
-	public Update<Entity>(
-		entity: Constructor<Entity>,
-		options: EntityEventActionOptions<Entity> = { async: false }
+	public Update<TEntity extends typeof Entity>(
+		entity: TEntity,
+		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Update', entity, options);
 	}
 
-	public Remove<Entity>(
-		entity: Constructor<Entity>,
-		options: EntityEventActionOptions<Entity> = { async: false }
+	public Remove<TEntity extends typeof Entity>(
+		entity: TEntity,
+		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Remove', entity, options);
 	}
 
-	private buildDecorator<Entity>(
+	private buildDecorator<TEntity extends typeof Entity>(
 		action: EntityActions,
-		entity: Constructor<Entity>,
-		options: EntityEventActionOptions<Entity> = { async: false }
+		entity: TEntity,
+		options: EntityEventActionOptions<TEntity> = { async: false }
 	) {
 		this.#targetEntity = entity;
 		return OnMedusaEntityEventDecorator(`${this.#when}${action}${entity.name}`, entity, options);
@@ -72,10 +73,10 @@ export class OnMedusaEvent {
  * @param async Should the event be awaiting the result
  * @param customMetatype The key that represent the class in the container it belongs to (Used to resolve the real instance)
  */
-function OnMedusaEntityEventDecorator<TMetatype, Entity>(
+function OnMedusaEntityEventDecorator<TEntity extends typeof Entity>(
 	eventName: string,
-	targetEntity: Constructor<Entity>,
-	{ async, customMetatype }: { async: boolean; customMetatype?: MedusaServiceStatic<TMetatype> } = {
+	targetEntity: TEntity,
+	{ async, customMetatype }: { async: boolean; customMetatype?: MedusaServiceStatic } = {
 		async: false,
 	}
 ): MethodDecorator {
