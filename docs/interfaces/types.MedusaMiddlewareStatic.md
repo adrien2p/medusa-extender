@@ -27,7 +27,7 @@ Describe a custom middleware constructor.
 
 #### Defined in
 
-[types.ts:95](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/types.ts#L95)
+[types.ts:95](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/types.ts#L95)
 
 ## Properties
 
@@ -37,7 +37,7 @@ Describe a custom middleware constructor.
 
 #### Defined in
 
-[types.ts:92](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/types.ts#L92)
+[types.ts:92](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/types.ts#L92)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[types.ts:91](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/types.ts#L91)
+[types.ts:91](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/types.ts#L91)
 
 ___
 
@@ -57,4 +57,4 @@ ___
 
 #### Defined in
 
-[types.ts:93](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/types.ts#L93)
+[types.ts:93](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/types.ts#L93)

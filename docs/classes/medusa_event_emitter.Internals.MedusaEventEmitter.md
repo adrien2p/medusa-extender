@@ -41,7 +41,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L20)
+[medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L20)
 
 ## Properties
 
@@ -51,7 +51,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L18)
+[medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L18)
 
 ## Methods
 
@@ -74,7 +74,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[medusa-event-emitter.ts:71](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L71)
+[medusa-event-emitter.ts:69](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L69)
 
 ___
 
@@ -96,7 +96,7 @@ Register a new event handler.
 | :------ | :------ | :------ |
 | `eventName` | `string` \| `symbol` | The name of the event that has to be triggered |
 | `propertyName` | `string` | The name of the class property that will handle the event |
-| `metatype` | [`Metatype`](../modules/types.md#metatype)<`T`\> | The object that contains the property above |
+| `metatype` | [`MedusaServiceStatic`](../interfaces/types.MedusaServiceStatic.md)<`T`\> | The object that contains the property above |
 
 #### Returns
 
@@ -104,7 +104,7 @@ Register a new event handler.
 
 #### Defined in
 
-[medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L30)
+[medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L30)
 
 ___
 
@@ -126,7 +126,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L42)
+[medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L42)
 
 ___
 
@@ -140,4 +140,4 @@ ___
 
 #### Defined in
 
-[medusa-event-emitter.ts:59](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L59)
+[medusa-event-emitter.ts:57](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L57)

@@ -30,4 +30,4 @@ decorate the original database loader to register our custom entities and reposi
 
 #### Defined in
 
-[loaders/database.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/loaders/database.loader.ts#L11)
+[loaders/database.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/loaders/database.loader.ts#L11)

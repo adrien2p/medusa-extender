@@ -23,4 +23,4 @@ Export the instance of [MedusaMiddlewareRepository](../classes/medusa_middleware
 
 #### Defined in
 
-[medusa-middleware.repository.ts:49](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-middleware.repository.ts#L49)
+[medusa-middleware.repository.ts:49](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-middleware.repository.ts#L49)

@@ -6,7 +6,7 @@ import { Utils } from '../medusa-utils';
  * @internal
  * Load custom services from the rootDir.
  * @param services Any custom service that implements MedusaService
- * @param container The container to register the custom service under craftshop or override existing one
+ * @param container The container to register the custom service under custom-medusa-extender or override existing one
  */
 export function servicesLoader(services: MedusaServiceStatic[], container: AwilixContainer): void {
 	for (const service of services) {

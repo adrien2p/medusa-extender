@@ -33,9 +33,9 @@ A listener descriptor.
 | Name | Type |
 | :------ | :------ |
 | `eventName` | `string` \| `symbol` |
-| `metatype` | [`Metatype`](types.md#metatype)<`T`\> |
+| `metatype` | [`MedusaServiceStatic`](../interfaces/types.MedusaServiceStatic.md)<`T`\> |
 | `propertyName` | `string` |
 
 #### Defined in
 
-[medusa-event-emitter.ts:8](https://github.com/adrien2p/medusa-extender/blob/2b98a6d/src/medusa-event-emitter.ts#L8)
+[medusa-event-emitter.ts:8](https://github.com/adrien2p/medusa-extender/blob/7afa3be/src/medusa-event-emitter.ts#L8)
