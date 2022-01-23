@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
-import { Metatype } from '@adrien2p/craftshop-shared';
 import { AwilixContainer } from 'awilix';
+import { Metatype } from "./types";
 
 /**
  * A listener descriptor.

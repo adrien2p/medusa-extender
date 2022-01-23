@@ -1,7 +1,7 @@
 import * as chalk from 'chalk';
 import { Express } from 'express';
-import { Constructor } from '@adrien2p/craftshop-shared';
 import { Connection, EntityManager, EntitySubscriberInterface, ObjectType, Repository } from 'typeorm';
+import { Constructor } from "./types";
 
 /**
  * @internal

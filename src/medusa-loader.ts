@@ -3,6 +3,7 @@ import { Express, NextFunction, Response } from 'express';
 import { Connection, Migration, MigrationInterface } from 'typeorm';
 import { AwilixContainer } from 'awilix';
 import {
+	Constructor,
 	MedusaAuthenticatedRequest,
 	MedusaEntityStatic,
 	MedusaRepositoryStatic,
@@ -21,7 +22,6 @@ import {
 	servicesLoader,
 	unauthenticatedRoutesLoader,
 } from './loaders';
-import { Constructor } from '@adrien2p/craftshop-shared';
 import { medusaEventEmitter } from './medusa-event-emitter';
 
 // Use to fix MiddlewareService typings

@@ -1,6 +1,17 @@
 import { NextFunction, Request, Response } from 'express';
-import { StaticImplements, Type } from '@adrien2p/craftshop-shared';
 import { AwilixContainer, LifetimeType } from 'awilix';
+
+export interface Type<T = unknown> extends Function {
+	new (...args: unknown[]): T;
+}
+
+export type Constructor<T> = new (...args: unknown[]) => T;
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type Metatype<T = unknown> = Type<T> | string | symbol | Function;
+
+export type StaticImplements<I extends new (...args: any[]) => any> = InstanceType<I>;
+
 
 /**
  * Hold the name of the medusa services registered into the container for later on resolve.
