@@ -1,0 +1,19 @@
+{
+  "entryPointStrategy": "Expand",
+  "entryPoints": "./src",
+  "excludeExternals": true,
+  "excludeInternal": false,
+  "externalPattern": [
+    "../craftshop-*",
+    "**/node_modules/**",
+    "**/tests/**",
+    "**/dist/**",
+    "**/.*.spec.ts",
+    "**/.*.e2e.ts"
+  ],
+  "internalNamespace": "Internals",
+  "media": "./assets",
+  "darkHighlightTheme": "dark-plus",
+  "out": "../../docs/packages/craftshop-medusa",
+  "logLevel": "Verbose"
+}

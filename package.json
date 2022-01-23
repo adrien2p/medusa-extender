@@ -1,0 +1,80 @@
+{
+  "name": "medusa-extender",
+  "version": "0.0.1-alpha1",
+  "description": "Extends functionalities from medusajs\n\n",
+  "author": "adrien2p <adrien.deperetti@gmail.com>",
+  "homepage": "https://github.com/adrien2p/medusa-extender",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrien2p/medusa-extender"
+  },
+  "bugs": {
+    "url": "https://github.com/adrien2p/medusa-extender/issues"
+  },
+  "scripts": {
+    "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
+    "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
+    "build": "npm run build:ts && npm run build:declarations",
+    "build:prod": "npm run build:ts && npm run build:declarations && cp package.json dist",
+    "build:doc": "./node_modules/.bin/typedoc",
+    "build:graph": "./node_modules/.bin/ts_dependency_graph --base_path ./src --max_depth 3 --start ./src/medusa.ts | dot -T jpeg > ./assets/medusa-extender.jpeg"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "mongoose": "^6.1.6"
+  },
+  "peerDependencies": {
+    "@medusajs/medusa": "^1.1.62",
+    "awilix": "^6.0.0",
+    "express": "^4.17.1",
+    "medusa-interfaces": "^1.1.31",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@medusajs/medusa": "^1.1.62",
+    "@nestjs/common": "^8.2.3",
+    "@swc-node/jest": "^1.4.1",
+    "@swc/cli": "^0.1.52",
+    "@swc/core": "^1.2.118",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "awilix": "^6.0.0",
+    "express": "^4.17.1",
+    "jest": "^27.3.1",
+    "medusa-interfaces": "^1.1.31",
+    "ts-jest": "^27.0.7",
+    "ts-loader": "^9.2.6",
+    "ts_dependency_graph": "^1.2.0",
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-markdown": "^3.11.7",
+    "typedoc-plugin-missing-exports": "^0.22.6",
+    "typeorm": "^0.2.41",
+    "typescript": "^4.5.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "@swc-node/jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
