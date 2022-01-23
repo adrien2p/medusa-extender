@@ -12,7 +12,6 @@ export type Metatype<T = unknown> = Type<T> | string | symbol | Function;
 
 export type StaticImplements<I extends new (...args: any[]) => any> = InstanceType<I>;
 
-
 /**
  * Hold the name of the medusa services registered into the container for later on resolve.
  */

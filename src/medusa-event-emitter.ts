@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { AwilixContainer } from 'awilix';
-import { Metatype } from "./types";
+import { Metatype } from './types';
 
 /**
  * A listener descriptor.
