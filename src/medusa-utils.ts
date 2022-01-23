@@ -1,4 +1,4 @@
-import * as chalk from 'chalk';
+import chalk = require('chalk');
 import { Express } from 'express';
 import { Connection, EntityManager, EntitySubscriberInterface, ObjectType, Repository } from 'typeorm';
 import { Constructor } from './types';

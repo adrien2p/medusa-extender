@@ -19,10 +19,7 @@ async function load(entities: MedusaEntityStatic[], container?: AwilixContainer)
 	for (const entity of entities) {
 		if (entity.isHandledByMedusa) {
 			if (!entity.overriddenType) {
-				const formattedName = `${
-					entity.name.charAt(0).toLowerCase() + entity.name.slice(1, entity.name.length)
-				}`;
-				await registerEntity(container, formattedName, entity);
+				await registerEntity(container, entity);
 			} else {
 				await overrideEntity(entity);
 			}
@@ -30,23 +27,26 @@ async function load(entities: MedusaEntityStatic[], container?: AwilixContainer)
 	}
 }
 
-function registerEntity(container: AwilixContainer, name: string, entity: MedusaEntityStatic) {
-	const registerEntityName = `custom-medusa-extender/${name}Entity`;
+function registerEntity(container: AwilixContainer, entity: MedusaEntityStatic) {
+	if (!entity.resolutionKey) {
+		throw new Error('Missing static property resolutionKey from entity ' + entity.name);
+	}
+	const registerEntityName = entity.resolutionKey;
 	container.register({
 		[registerEntityName]: asClass(entity),
 	});
 
 	(container as any).registerAdd('db_entities', asValue(entity));
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity registered - custom-medusa-extender/${entity.name}`);
+	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity registered - ${entity.resolutionKey}`);
 	console.log(preparedLog);
 }
 
 async function overrideEntity(entity: MedusaEntityStatic): Promise<void> {
 	const fileName = `${entity.name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
 	const originalEntity = await import('@medusajs/medusa/dist/models/' + fileName);
-	originalEntity[entity.name] = entity;
+	originalEntity[entity.overriddenType.name] = entity;
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity overridden - ${entity.name}`);
+	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity overridden - ${entity.overriddenType.name}`);
 	console.log(preparedLog);
 }
