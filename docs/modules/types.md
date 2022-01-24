@@ -63,7 +63,7 @@
 
 #### Defined in
 
-[src/types.ts:8](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L8)
+[src/types.ts:8](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L8)
 
 ___
 
@@ -75,7 +75,7 @@ Describe the expected request from a middleware [MedusaMiddleware](types.md#medu
 
 #### Defined in
 
-[src/types.ts:60](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L60)
+[src/types.ts:60](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L60)
 
 ___
 
@@ -94,7 +94,7 @@ Any custom medusa entity must implement MedusaService.
 
 #### Defined in
 
-[src/types.ts:159](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L159)
+[src/types.ts:157](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L157)
 
 ___
 
@@ -112,7 +112,7 @@ Any custom medusa subscriber must implement MedusaEntitySubscriber.
 
 #### Defined in
 
-[src/types.ts:213](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L213)
+[src/types.ts:209](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L209)
 
 ___
 
@@ -130,7 +130,7 @@ Any custom medusa middleware must implement MedusaMiddleware.
 
 #### Defined in
 
-[src/types.ts:101](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L101)
+[src/types.ts:99](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L99)
 
 ___
 
@@ -149,7 +149,7 @@ Any custom medusa entity repository must implement MedusaService.
 
 #### Defined in
 
-[src/types.ts:191](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L191)
+[src/types.ts:188](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L188)
 
 ___
 
@@ -168,7 +168,7 @@ Medusa request extended.
 
 #### Defined in
 
-[src/types.ts:53](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L53)
+[src/types.ts:53](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L53)
 
 ___
 
@@ -189,7 +189,7 @@ Describe a custom router handler.
 
 #### Defined in
 
-[src/types.ts:227](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L227)
+[src/types.ts:223](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L223)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:67](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L67)
+[src/types.ts:67](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L67)
 
 ___
 
@@ -218,7 +218,7 @@ Describe all the available options for the Route [MedusaMiddleware](types.md#med
 
 #### Defined in
 
-[src/types.ts:71](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L71)
+[src/types.ts:71](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L71)
 
 ___
 
@@ -237,7 +237,7 @@ Any custom medusa service must implement MedusaService.
 
 #### Defined in
 
-[src/types.ts:129](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L129)
+[src/types.ts:128](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L128)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L11)
+[src/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L11)
 
 ___
 
@@ -269,7 +269,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L13)
+[src/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L13)
 
 ## Variables
 
@@ -288,7 +288,7 @@ Event types that can be emitted from an entity subscriber.
 
 #### Defined in
 
-[src/types.ts:219](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L219)
+[src/types.ts:215](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L215)
 
 ___
 
@@ -334,4 +334,4 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-[src/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L18)
+[src/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L18)

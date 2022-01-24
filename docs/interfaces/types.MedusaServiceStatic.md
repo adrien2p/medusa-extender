@@ -40,7 +40,7 @@ Describe a custom service constructor.
 
 #### Defined in
 
-[src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L123)
+[src/types.ts:122](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L122)
 
 ## Properties
 
@@ -50,7 +50,7 @@ Describe a custom service constructor.
 
 #### Defined in
 
-[src/types.ts:115](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L115)
+[src/types.ts:114](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L114)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:114](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L114)
+[src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L113)
 
 ___
 
@@ -72,7 +72,7 @@ Only required if there is no overriddenType
 
 #### Defined in
 
-[src/types.ts:121](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L121)
+[src/types.ts:120](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L120)
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-[src/types.ts:116](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L116)
+[src/types.ts:115](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L115)

@@ -264,4 +264,4 @@ Re-exports [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 
 #### Defined in
 
-[src/index.ts:9](https://github.com/adrien2p/medusa-extender/blob/c135947/src/index.ts#L9)
+[src/index.ts:9](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/index.ts#L9)

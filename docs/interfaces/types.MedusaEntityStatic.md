@@ -33,7 +33,7 @@ Describe a custom entity constructor.
 
 #### Defined in
 
-[src/types.ts:153](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L153)
+[src/types.ts:151](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L151)
 
 ## Properties
 
@@ -43,7 +43,7 @@ Describe a custom entity constructor.
 
 #### Defined in
 
-[src/types.ts:146](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L146)
+[src/types.ts:144](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L144)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L145)
+[src/types.ts:143](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L143)
 
 ___
 
@@ -65,4 +65,4 @@ Only required if there is no overriddenType
 
 #### Defined in
 
-[src/types.ts:151](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L151)
+[src/types.ts:149](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L149)

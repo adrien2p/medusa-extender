@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L10)
+[src/decorators/onMedusaEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L10)
 
 ## Properties
 
@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:8](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L8)
+[src/decorators/onMedusaEvent.decorator.ts:8](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L8)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:7](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L7)
+[src/decorators/onMedusaEvent.decorator.ts:7](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L7)
 
 ## Accessors
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:18](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L18)
+[src/decorators/onMedusaEvent.decorator.ts:18](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L18)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:14](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L14)
+[src/decorators/onMedusaEvent.decorator.ts:14](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L14)
 
 ## Methods
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:38](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L38)
+[src/decorators/onMedusaEvent.decorator.ts:38](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L38)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:26](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L26)
+[src/decorators/onMedusaEvent.decorator.ts:26](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L26)
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:52](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L52)
+[src/decorators/onMedusaEvent.decorator.ts:52](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L52)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L34)
+[src/decorators/onMedusaEvent.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L34)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:45](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L45)
+[src/decorators/onMedusaEvent.decorator.ts:45](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L45)
 
 ___
 
@@ -252,7 +252,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:30](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L30)
+[src/decorators/onMedusaEvent.decorator.ts:30](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L30)
 
 ___
 
@@ -280,7 +280,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L59)
+[src/decorators/onMedusaEvent.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L59)
 
 ___
 
@@ -300,4 +300,4 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEvent.decorator.ts:22](https://github.com/adrien2p/medusa-extender/blob/c135947/src/decorators/onMedusaEvent.decorator.ts#L22)
+[src/decorators/onMedusaEvent.decorator.ts:22](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/decorators/onMedusaEvent.decorator.ts#L22)

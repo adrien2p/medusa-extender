@@ -43,4 +43,4 @@ member from this file.
 
 #### Defined in
 
-[src/medusa-scanner.ts:15](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-scanner.ts#L15)
+[src/medusa-scanner.ts:15](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-scanner.ts#L15)

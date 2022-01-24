@@ -56,6 +56,8 @@ this is not a problem. Here is how you do that.
 In your project, create a file such as `main.ts`, then copy paste de code bellow.
 
 ````typescript
+// main.ts
+
 import express = require('express');
 import { Medusa } from 'medusa-extender';
 import { resolve } from 'path';
@@ -97,6 +99,93 @@ The code above allows you to manually launch the medusa engine and will load all
 with that in mind, you can organise your code as you want, the scanner will take care of recursively looking for those
 directories.
 
+## Medusa module
+
+This module is the main module that wee have seen above and that allow us to load
+medusa under the hood. But, it also allows you to add custom middleware that you
+would want to be used either before or after the authentication occured.
+
+<details>
+<summary>Click to see the middleware example</summary>
+
+<section>
+
+In this example, the middleware will be applied after the authentication flow.
+When the endpoint `POST /admin/users/` will be hit, a new `UserSubscriber` will be attach
+to the entity and the previous one will be removed, in order to refresh the injected cradle and get all scoped elements available in the services
+that will listen for the event that occured on the user entity.
+
+```typescript
+import { Express, NextFunction, Response } from 'express';
+import {
+    MedusaAuthenticatedRequest,
+    MedusaMiddleware,
+    MedusaResolverKeys,
+    MedusaRouteOptions,
+    MedusaUtils,
+} from 'medusa-extender';
+import { Connection } from 'typeorm';
+import Utils from '@core/utils';
+import UserSubscriber from '@modules/user/subscribers/user.subscriber';
+
+export default class AttachUserSubscribersMiddleware
+	implements MedusaMiddleware<typeof AttachUserSubscribersMiddleware>
+{
+    public static isPostAuth = true;
+    public static isHandledByMedusa = true;
+    
+    public static get routesOptions(): MedusaRouteOptions {
+        return {
+            path: '/admin/users/',
+            method: 'post',
+        };
+    }
+    
+    public consume(options: { app: Express }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
+        const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
+        options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+            if (Utils.isExpectedRoute([routeOptions], req)) {
+                const { connection } = req.scope.resolve(MedusaResolverKeys.manager) as { connection: Connection };
+                MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
+            }
+            return next();
+        });
+    
+        return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
+    }
+}
+```
+
+</section>
+</details>
+
+Then, to load the middlewares you have to update a bit you `main.ts` file like this
+
+```typescript
+// main.ts
+
+import express = require('express');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+import AttachUserSubscribersMiddleware from '@modules/user/middlewares/attachUserSubscribers.middleware';
+import config = require('./medusa-config');
+
+async function bootstrap() {
+    const expressInstance = express();
+
+    const rootDir = resolve(__dirname);
+    await new Medusa(rootDir, expressInstance)
+        .consume(AttachUserSubscribersMiddleware)
+        .load();
+
+    expressInstance.listen(config.serverConfig.port, () => {
+        console.log('The server is started');
+    });
+}
+
+bootstrap();
+```
+
 ## Entities
 
 there is two possibilities, you want either to create a new entity or to override an 
@@ -137,8 +226,8 @@ import { Entity } from 'typeorm';
 
 @Entity()
 class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
-	static overriddenType = MedusaUser;
-	static isHandledByMedusa = true;
+    static overriddenType = MedusaUser;
+    static isHandledByMedusa = true;
 }
 ```
 
