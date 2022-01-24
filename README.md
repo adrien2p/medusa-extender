@@ -135,8 +135,8 @@ import { Entity } from 'typeorm';
 
 @Entity()
 class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
-	static overriddenType = MedusaUser;
-	static isHandledByMedusa = true;
+    static overriddenType = MedusaUser;
+    static isHandledByMedusa = true;
 }
 ```
 
