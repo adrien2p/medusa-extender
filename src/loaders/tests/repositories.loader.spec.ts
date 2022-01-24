@@ -22,7 +22,7 @@ class OrderRepository
 	static overriddenType = MedusaOrderRepository;
 	static isHandledByMedusa = true;
 
-	testProperty = 'I am the property from UserRepository that extend MedusaUserRepository';
+	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 }
 
 const orderRepositoryExtended = MedusaUtils.repositoryMixin<Order>(OrderRepository, MedusaOrderRepository);
@@ -47,12 +47,12 @@ describe('Repositories loader', () => {
 			await overriddenRepositoriesLoader([orderRepositoryExtended as MedusaRepositoryStatic]);
 			const { OrderRepository: MedusaOrderRepositoryReImport } = await import(
 				'@medusajs/medusa/dist/repositories/order'
-			);
+			) as unknown as { OrderRepository };
 
 			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
-			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBeDefined();
-			expect((new MedusaOrderRepositoryReImport() as unknown as OrderRepository).testProperty).toBe(
-				'I am the property from UserRepository that extend MedusaUserRepository'
+			expect(new MedusaOrderRepositoryReImport().testProperty).toBeDefined();
+			expect(new MedusaOrderRepositoryReImport().testProperty).toBe(
+				'I am the property from UserRepository that extend MedusaOrderRepository'
 			);
 		});
 	});

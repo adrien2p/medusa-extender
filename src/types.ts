@@ -161,6 +161,8 @@ export type MedusaEntity<
 	T extends MedusaEntityStatic<OverriddenType> = MedusaEntityStatic<OverriddenType>
 > = StaticImplements<T>;
 
+// TODO Find a way to improve repository typings since it is a bit complicated due to multiple extensions.
+
 /**
  * @interface
  * Describe a custom entity repository instance.
