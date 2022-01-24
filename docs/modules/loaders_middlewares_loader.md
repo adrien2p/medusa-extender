@@ -30,4 +30,4 @@ Register custom middlewares into the middlewareRegistery.
 
 #### Defined in
 
-[loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/loaders/middlewares.loader.ts#L13)
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/c135947/src/loaders/middlewares.loader.ts#L13)

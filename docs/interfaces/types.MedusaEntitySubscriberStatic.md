@@ -27,4 +27,4 @@ Describe a custom subscriber constructor.
 
 #### Defined in
 
-[types.ts:195](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L195)
+[src/types.ts:207](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L207)

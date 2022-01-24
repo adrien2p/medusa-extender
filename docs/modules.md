@@ -6,6 +6,8 @@
 
 ### Modules
 
+- [decorators/onMedusaEvent.decorator](modules/decorators_onMedusaEvent_decorator.md)
+- [decorators/types](modules/decorators_types.md)
 - [index](modules/index.md)
 - [loaders](modules/loaders.md)
 - [loaders/api.loader](modules/loaders_api_loader.md)

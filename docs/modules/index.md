@@ -7,6 +7,9 @@
 ### References
 
 - [Constructor](index.md#constructor)
+- [EntityActions](index.md#entityactions)
+- [EntityEventActionOptions](index.md#entityeventactionoptions)
+- [EntityEventType](index.md#entityeventtype)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
 - [MedusaEntity](index.md#medusaentity)
@@ -16,6 +19,8 @@
 - [MedusaEntitySubscriber](index.md#medusaentitysubscriber)
 - [MedusaEntitySubscriberInstance](index.md#medusaentitysubscriberinstance)
 - [MedusaEntitySubscriberStatic](index.md#medusaentitysubscriberstatic)
+- [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
+- [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
 - [MedusaMiddleware](index.md#medusamiddleware)
 - [MedusaMiddlewareInstance](index.md#medusamiddlewareinstance)
 - [MedusaMiddlewareStatic](index.md#medusamiddlewarestatic)
@@ -31,6 +36,7 @@
 - [MedusaServiceInstance](index.md#medusaserviceinstance)
 - [MedusaServiceStatic](index.md#medusaservicestatic)
 - [Metatype](index.md#metatype)
+- [OnMedusaEvent](index.md#onmedusaevent)
 - [StaticImplements](index.md#staticimplements)
 - [Type](index.md#type)
 - [medusaEventEmitter](index.md#medusaeventemitter)
@@ -44,6 +50,24 @@
 ### Constructor
 
 Re-exports [Constructor](types.md#constructor)
+
+___
+
+### EntityActions
+
+Re-exports [EntityActions](decorators_types.md#entityactions)
+
+___
+
+### EntityEventActionOptions
+
+Re-exports [EntityEventActionOptions](decorators_types.md#entityeventactionoptions)
+
+___
+
+### EntityEventType
+
+Re-exports [EntityEventType](decorators_types.md#entityeventtype)
 
 ___
 
@@ -98,6 +122,18 @@ ___
 ### MedusaEntitySubscriberStatic
 
 Re-exports [MedusaEntitySubscriberStatic](../interfaces/types.MedusaEntitySubscriberStatic.md)
+
+___
+
+### MedusaEventEmittedParams
+
+Re-exports [MedusaEventEmittedParams](decorators_types.md#medusaeventemittedparams)
+
+___
+
+### MedusaEventHandlerParams
+
+Re-exports [MedusaEventHandlerParams](decorators_types.md#medusaeventhandlerparams)
 
 ___
 
@@ -191,6 +227,12 @@ Re-exports [Metatype](types.md#metatype)
 
 ___
 
+### OnMedusaEvent
+
+Re-exports [OnMedusaEvent](../classes/decorators_onMedusaEvent_decorator.OnMedusaEvent.md)
+
+___
+
 ### StaticImplements
 
 Re-exports [StaticImplements](types.md#staticimplements)
@@ -222,4 +264,4 @@ Re-exports [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 
 #### Defined in
 
-[index.ts:6](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/index.ts#L6)
+[src/index.ts:9](https://github.com/adrien2p/medusa-extender/blob/c135947/src/index.ts#L9)

@@ -22,8 +22,15 @@ npm i medusa-extender
 # Introduction
 
 This packages exports the necessary bits and pieces to extend [medusajs](https://github.com/medusajs/medusa)
+and fit your needs.
+
+- You need to add custom fields on an entity, extend and entity from medusa;
+- You need to override a service to extend some logic, extend a service from medusa;
+- And so on...
 
 # Dependency graph
+
+Here is the architecture of this package and how modules are related to each other. It will help you navigate into the code base.
 
 <img src="/assets/medusa-extender.jpeg"
      onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
@@ -35,206 +42,191 @@ This packages exports the necessary bits and pieces to extend [medusajs](https:/
 
 # Usage
 
-## Medusa
+> You have to know that using this package will disallow the usage of the command `medusa develop`.
 
-> `Medusa` is the entry point from `medusa-extender` and does not correspond to `medusa` itself
+Since that you need to extend the loading flow of medusa, using this package means
+that you have to start the server yourself.
 
-This is the main entry point that will allow to start your medusa server, 
-including your custom extensions.
+this is not a problem. Here is how you do that.
 
-Here is an example of how it works
+## Server
 
-```typescript
+In your project, create a file such as `main.ts`, then copy paste de code bellow.
+
+````typescript
+import express = require('express');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+import config = require('./medusa-config');
+
 async function bootstrap() {
     const expressInstance = express();
-    
+
     const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance)
-        .consume(
-            // Your custom middlewares goes there
-        )
-        .load();
-    
+    await new Medusa(rootDir, expressInstance).load();
+
     expressInstance.listen(config.serverConfig.port, () => {
-        logger.info('Server successfully started on port ' + config.serverConfig.port);
+        console.log('The server is started');
     });
 }
 
 bootstrap();
-```
-
-### API
-
-#### consume
-
-This method take an array of `MedusaMiddlewareStatic` and return an instance of `Medusa`.
-
-
-````typescript
-public consume(...middlewares: MedusaMiddlewareStatic[]): Medusa;
 ````
 
-here is an example of a custom middleware that will be handled by medusa
+The code above allows you to manually launch the medusa engine and will load all your components from the following directories
+
+```
+|- src
+|---- yourModule
+|-------- services
+|-------- entities
+|-------- repositories
+|-------- routes
+|-------- migrations
+|---- yourOtherModule
+|-------- services
+|-------- entities
+|-------- repositories
+|-------- routes
+|-------- migrations
+| ...
+```
+
+with that in mind, you can organise your code as you want, the scanner will take care of recursively looking for those
+directories.
+
+## Entities
+
+there is two possibilities, you want either to create a new entity or to override an 
+existing one.
+
+### Add entity
+
+<details>
+<summary>Click to see the example</summary>
+
+<section>
 
 ```typescript
-import { NextFunction, Response } from 'express';
-import {
-	MedusaAuthenticatedRequest,
-	MedusaMiddleware,
-	MedusaResolverKeys,
-	MedusaRouteOptions,
-	MedusaUtils,
-} from 'medusa-extender';
+import { MedusaEntity } from 'medusa-extender';
+import { Entity } from 'typeorm';
 
-export default class MyCustomMiddleware
-	implements MedusaMiddleware<typeof MyCustomMiddleware>
-{
-    // Indicate that it is a middleware that will be applied after the authentication
-	public static isPostAuth = true;
-    // Indicate that it is a middleware that should be handler by medusa. Otherwise it is manage by your project
-	public static isHandledByMedusa = true;
-
-	public static get routesOptions(): MedusaRouteOptions {
-		return {
-			path: '/admin/products/',
-			method: 'post',
-		};
-	}
-
-	public consume(options): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
-		return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            // Your custom implementation goes here
-			return next();
-		};
-	}
+@Entity()
+class Myentity implements MedusaEntity {
+    static isHandledByMedusa = true;
+    static resolutionKey = 'the_name_in_the_container';
 }
 ```
 
-### load
+</section>
+</details>
 
-This basically start the `medusa` engine which comes from `@medusa/medusa` itself.
+### Override entity
 
+<details>
+<summary>Click to see the example</summary>
 
-## MedusaEventEmitter
-
-this module allow you to emit event that will be then handled by your registered services in the medusa container.
-The main purpuse of it is to be able to intercept entity event and add custom login to them.
-
-### Usage
-
-For that purpose an utility is provided that allow multiple to attach a new subscriber on the active connection
-handled by the medusa container.
-
-Here is an example
+<section>
 
 ```typescript
-@EventSubscriber()
-export default class StoreSubscriber
-	implements EntitySubscriberInterface<Store>, MedusaEntitySubscriber<typeof StoreSubscriber>
-{
-	static attachTo(connection: Connection): void {
-        MedusaUtils.attachOrReplaceEntitySubscriber(connection, StoreSubscriber);
-    }
+import { User as MedusaUser } from '@medusa/medusa/dist';
+import { MedusaEntity } from 'medusa-extender';
+import { Entity } from 'typeorm';
 
-	public listenTo(): typeof Store {
-		return Store;
-	}
-
-	/**
-	 * Relay the event to the handlers.
-	 * @param event Event to pass to the event handler
-	 */
-	public async beforeUpdate(event: UpdateEvent<Store>): Promise<any> {
-		return await medusaEventEmitter.emitAsync(OnMedusaEvent.Before.UpdateEvent(Store), {
-			event,
-			transactionalEntityManager: event.manager,
-		});
-	}
-
-	/**
-	 * Relay the event to the handlers.
-	 * @param event Event to pass to the event handler
-	 */
-	public async beforeRemove(event: RemoveEvent<Store>): Promise<any> {
-		return await medusaEventEmitter.emitAsync(OnMedusaEvent.Before.RemoveEvent(Store), {
-			event,
-			transactionalEntityManager: event.manager,
-		});
-	}
-}
-```
-
-Those events will be subscribed/unsubscribed for each request to be sure that if any
-services are request scoped that you can access the actual cradle.
-
-Here is an example of extended services that listen to an event
-
-```typescript
-interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
-	loggedInUser: User;
-	manager: EntityManager;
-	productRepository: ObjectType<typeof ProductRepository>;
-	productVariantRepository: ObjectType<typeof ProductVariantRepository>;
-	productOptionRepository: ObjectType<typeof ProductOptionRepository>;
-	eventBusService: EventBusService;
-	productVariantService: ProductVariantService;
-	productCollectionService: ProductCollectionService;
-	productTypeRepository: ObjectType<typeof ProductTypeRepository>;
-	productTagRepository: ObjectType<typeof ProductTagRepository>;
-	imageRepository: ObjectType<typeof ImageRepository>;
-	searchService: TSearchService;
-}
-
-export default class ProductService extends MedusaProductService implements MedusaService<typeof ProductService> {
-	public static overriddenType = MedusaProductService;
-	public static isHandledByMedusa = true;
-	public static scope = Lifetime.SCOPED;
-
-	readonly #manager: EntityManager;
-
-	constructor(private readonly container: ConstructorParams) {
-		super(container);
-		this.#manager = container.manager;
-	}
-
-	@OnMedusaEvent.Before.Insert(Product, { async: true })
-	public async attachStoreToProduct(
-		params: MedusaEventHandlerParams<Product, 'Insert'>
-	): Promise<EntityEventType<Product, 'Insert'>> {
-		// Your custom implementation
-		return event;
-	}
-}
-```
-
-## Types
-
-[Read more about it](./docs/modules/types.md)
-
-## Repository
-
-When you create a new entity that extends an existing entity, you must create the
-appropriate repository that will reflect the new entity type but without breaking the 
-original one used by medusa.
-
-### Usage
-
-
-For that purpose an utility is provided that allow multiple class extension.
-
-Here is an example
-
-```typescript
-import { EntityRepository, Repository } from 'typeorm';
-import { UserRepository as MedusaUserRepository } from '@medusajs/medusa/dist/repositories/user';
-import { MedusaRepository, MedusaUtils } from 'medusa-extender';
-import User from '../entities/user.entity';
-
-@EntityRepository(User)
-class UserRepository extends Repository<User> implements MedusaRepository<MedusaUserRepository, typeof UserRepository> {
-	static overriddenType = MedusaUserRepository;
+@Entity()
+class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
+	static overriddenType = MedusaUser;
 	static isHandledByMedusa = true;
 }
-
-export default MedusaUtils.repositoryMixin<User>(UserRepository, MedusaUserRepository);
 ```
+
+</section>
+</details>
+
+## Services
+
+there is two possibilities, you want either to create a new service or to override an 
+existing one.
+
+### Add service
+
+<details>
+<summary>Click to see the example</summary>
+
+<section>
+
+```typescript
+import { MedusaService } from 'medusa-extender';
+import { UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
+import { EntityManager } from 'typeorm';
+import { Lifetime } from 'awilix';
+import EventBusService from '@medusajs/medusa/dist/services/event-bus';
+import { UserRepository } from '@medusajs/medusa/dist/repositories/user';
+
+type ConstructorParams = {
+    manager: EntityManager;
+    userRepository: typeof UserRepository;
+    eventBusService: EventBusService;
+};
+
+export default class UserService extends MedusaUserService implements MedusaService<typeof UserService> {
+    public static overriddenType = MedusaUserService;
+    public static isHandledByMedusa = true;
+    public static scope = Lifetime.SINGLETON;
+    
+    readonly #manager: EntityManager;
+    readonly #userRepository: typeof UserRepository;
+    readonly #eventBus: EventBusService;
+
+    constructor(private readonly container: ConstructorParams) {
+        super(container);
+        this.#manager = container.manager;
+        this.#userRepository = container.userRepository;
+        this.#eventBus = container.eventBusService;
+    }
+}
+```
+
+</section>
+</details>
+
+### Override entity
+
+<details>
+<summary>Click to see the example</summary>
+
+
+<section>
+
+```typescript
+import { MedusaService } from 'medusa-extender';
+import { EntityManager } from 'typeorm';
+import { Lifetime } from 'awilix';
+import EventBusService from '@medusajs/medusa/dist/services/event-bus';
+import { UserRepository } from '@medusajs/medusa/dist/repositories/user';
+
+type ConstructorParams = {
+    manager: EntityManager;
+    userRepository: typeof UserRepository;
+    eventBusService: EventBusService;
+};
+
+export default class MyService implements MedusaService<typeof MyService> {
+    public static isHandledByMedusa = true;
+    public static resolutionKey = 'the_name_in_the_container';
+    public static scope = Lifetime.SINGLETON;
+    
+    readonly #manager: EntityManager;
+    readonly #userRepository: typeof UserRepository;
+    readonly #eventBus: EventBusService;
+    
+    constructor(private readonly container: ConstructorParams) {
+        this.#manager = container.manager;
+        this.#userRepository = container.userRepository;
+        this.#eventBus = container.eventBusService;
+    }
+}
+```
+
+</section>
+</details>

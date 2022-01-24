@@ -41,7 +41,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L20)
+[src/medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L20)
 
 ## Properties
 
@@ -51,7 +51,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L18)
+[src/medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L18)
 
 ## Methods
 
@@ -74,7 +74,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[medusa-event-emitter.ts:69](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L69)
+[src/medusa-event-emitter.ts:75](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L75)
 
 ___
 
@@ -104,7 +104,7 @@ Register a new event handler.
 
 #### Defined in
 
-[medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L30)
+[src/medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L30)
 
 ___
 
@@ -126,7 +126,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L42)
+[src/medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L42)
 
 ___
 
@@ -140,4 +140,4 @@ ___
 
 #### Defined in
 
-[medusa-event-emitter.ts:57](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/medusa-event-emitter.ts#L57)
+[src/medusa-event-emitter.ts:63](https://github.com/adrien2p/medusa-extender/blob/c135947/src/medusa-event-emitter.ts#L63)

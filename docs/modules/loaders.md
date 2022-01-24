@@ -10,7 +10,6 @@
 - [authenticatedRoutesLoader](loaders.md#authenticatedroutesloader)
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
-- [middlewaresLoader](loaders.md#middlewaresloader)
 - [overriddenEntitiesLoader](loaders.md#overriddenentitiesloader)
 - [overriddenRepositoriesLoader](loaders.md#overriddenrepositoriesloader)
 - [repositoriesLoader](loaders.md#repositoriesloader)
@@ -40,12 +39,6 @@ ___
 ### entitiesLoader
 
 Re-exports [entitiesLoader](loaders_entities_loader.md#entitiesloader)
-
-___
-
-### middlewaresLoader
-
-Re-exports [middlewaresLoader](loaders_middlewares_loader.md#middlewaresloader)
 
 ___
 

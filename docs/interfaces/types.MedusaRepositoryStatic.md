@@ -23,6 +23,7 @@ Describe a custom entity repository constructor.
 
 - [isHandledByMedusa](types.MedusaRepositoryStatic.md#ishandledbymedusa)
 - [overriddenType](types.MedusaRepositoryStatic.md#overriddentype)
+- [resolutionKey](types.MedusaRepositoryStatic.md#resolutionkey)
 
 ## Constructors
 
@@ -32,7 +33,7 @@ Describe a custom entity repository constructor.
 
 #### Defined in
 
-[types.ts:173](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L173)
+[src/types.ts:185](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L185)
 
 ## Properties
 
@@ -42,14 +43,26 @@ Describe a custom entity repository constructor.
 
 #### Defined in
 
-[types.ts:171](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L171)
+[src/types.ts:178](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L178)
 
 ___
 
 ### overriddenType
 
-• **overriddenType**: [`Type`](types.Type.md)<`OverriddenType`\>
+• `Optional` **overriddenType**: [`Type`](types.Type.md)<`OverriddenType`\>
 
 #### Defined in
 
-[types.ts:170](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L170)
+[src/types.ts:177](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L177)
+
+___
+
+### resolutionKey
+
+• `Optional` **resolutionKey**: `string`
+
+Only required if there is no overriddenType
+
+#### Defined in
+
+[src/types.ts:183](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L183)

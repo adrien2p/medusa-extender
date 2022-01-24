@@ -23,6 +23,7 @@ Describe a custom entity constructor.
 
 - [isHandledByMedusa](types.MedusaEntityStatic.md#ishandledbymedusa)
 - [overriddenType](types.MedusaEntityStatic.md#overriddentype)
+- [resolutionKey](types.MedusaEntityStatic.md#resolutionkey)
 
 ## Constructors
 
@@ -32,7 +33,7 @@ Describe a custom entity constructor.
 
 #### Defined in
 
-[types.ts:148](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L148)
+[src/types.ts:153](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L153)
 
 ## Properties
 
@@ -42,7 +43,7 @@ Describe a custom entity constructor.
 
 #### Defined in
 
-[types.ts:146](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L146)
+[src/types.ts:146](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L146)
 
 ___
 
@@ -52,4 +53,16 @@ ___
 
 #### Defined in
 
-[types.ts:145](https://github.com/adrien2p/medusa-extender/blob/badcc5e/src/types.ts#L145)
+[src/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L145)
+
+___
+
+### resolutionKey
+
+• `Optional` **resolutionKey**: `string`
+
+Only required if there is no overriddenType
+
+#### Defined in
+
+[src/types.ts:151](https://github.com/adrien2p/medusa-extender/blob/c135947/src/types.ts#L151)
