@@ -1,4 +1,4 @@
-import { MedusaRepositoryStatic } from '../types';
+import { GetInjectableOption, GetInjectableOptions } from '../types';
 import { Utils } from '../medusa-utils';
 import { asClass, AwilixContainer } from 'awilix';
 
@@ -7,8 +7,11 @@ import { asClass, AwilixContainer } from 'awilix';
  * Load custom repositories that must override the existing repositories from the rootDir.
  * @param repositories Any custom repository that implements MedusaRepository
  */
-export async function overriddenRepositoriesLoader(repositories: MedusaRepositoryStatic[]): Promise<void> {
-	return load(repositories);
+export async function overriddenRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+	const filteredRepositoriesOptions = repositories.filter((options) => !!options.override);
+	for (const options of filteredRepositoriesOptions) {
+		await overrideRepository(options);
+	}
 }
 
 /**
@@ -18,69 +21,49 @@ export async function overriddenRepositoriesLoader(repositories: MedusaRepositor
  * @param container
  */
 export async function repositoriesLoader(
-	repositories: MedusaRepositoryStatic[],
+	repositories: GetInjectableOptions<'repository'>,
 	container: AwilixContainer
 ): Promise<void> {
-	return load(repositories, container);
-}
-
-/**
- * @internal
- * Load custom repositories add override existing one or add them to the container.
- * @param repositories Any custom repository that implements MedusaRepository
- * @param container
- */
-async function load(repositories: MedusaRepositoryStatic[], container?: AwilixContainer): Promise<void> {
-	for (const repository of repositories) {
-		if (repository.isHandledByMedusa) {
-			if (!repository.overriddenType) {
-				await registerRepository(container, repository);
-			} else {
-				await overrideRepository(repository);
-			}
-		}
+	const filteredRepositoriesOptions = repositories.filter((options) => !options.override);
+	for (const options of filteredRepositoriesOptions) {
+		await registerRepository(container, options);
 	}
 }
 
 /**
  * @internal
- * Load custom repositories into the container.
+ * Load custom repository into the container.
  * @param container
- * @param repository
+ * @param repositoryOptions
  */
-function registerRepository(container: AwilixContainer, repository: MedusaRepositoryStatic) {
-	if (!repository.resolutionKey) {
+function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
+	const { resolutionKey, metatype: repository } = repositoryOptions;
+	if (!resolutionKey) {
 		throw new Error('Missing static property resolutionKey from repository ' + repository.name);
 	}
 
-	const registerRepositoryName = repository.resolutionKey;
 	container.register({
-		[registerRepositoryName]: asClass(repository),
+		[resolutionKey]: asClass(repository),
 	});
 
-	const preparedLog = Utils.prepareLog(
-		'MedusaLoader#repositoriesLoader',
-		`Repository registered - ${repository.resolutionKey}`
-	);
+	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
 	console.log(preparedLog);
 }
 
 /**
  * @internal
  * Load custom repositories and override existing ones.
- * @param repository
+ * @param repositoryOptions
  */
-async function overrideRepository(repository: MedusaRepositoryStatic): Promise<void> {
+async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
+	const { metatype: repository, override } = repositoryOptions;
 	const nameParts = repository.name.split('Repository');
 	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
 	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
 	const fileName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
 	const originalEntity = await import('@medusajs/medusa/dist/repositories/' + fileName);
-	originalEntity[repository.overriddenType.name] = repository;
+	originalEntity[override.name] = repository;
 
-	const preparedLog = Utils.prepareLog(
-		'MedusaLoader#repositoriesLoader',
-		`Repository overridden - ${repository.overriddenType.name}`
-	);
+	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository overridden - ${override.name}`);
 	console.log(preparedLog);
 }

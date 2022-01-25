@@ -1,6 +1,6 @@
 import { Express } from 'express';
 import { MedusaLoader } from './medusa-loader';
-import { MedusaMiddlewareStatic } from './types';
+import { MedusaMiddlewareStatic, Type } from './types';
 import { medusaMiddlewareRepository } from './medusa-middleware.repository';
 
 /**
@@ -73,7 +73,7 @@ export class Medusa {
 	/**
 	 * Launch all the steps before/after medusa according to the `stepOptions`.
 	 */
-	public async load(): Promise<void> {
+	public async load(...modules: Type[]): Promise<void> {
 		const orderedBeforeSteps = [...this.#beforeSteps]
 			.sort(({ options: { rank: firstRank } }, { options: { rank: secondRank } }) =>
 				firstRank > secondRank ? 1 : -1
@@ -86,7 +86,7 @@ export class Medusa {
 			.map(({ step }) => step);
 
 		await this.runSteps(orderedBeforeSteps);
-		await new MedusaLoader().load(this.#rootDir, this.#express);
+		await new MedusaLoader().load(modules, this.#rootDir, this.#express);
 		await this.runSteps(orderedAfterSteps);
 	}
 

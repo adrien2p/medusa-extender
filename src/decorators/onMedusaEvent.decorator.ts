@@ -1,7 +1,7 @@
 import { Constructor, MedusaServiceStatic } from '../types';
 import { EntityActions, EntityEventActionOptions, MedusaEventEmittedParams } from './types';
 import { medusaEventEmitter } from '../medusa-event-emitter';
-import { Entity } from "typeorm";
+import { Entity } from 'typeorm';
 
 export class OnMedusaEvent {
 	readonly #when: string;

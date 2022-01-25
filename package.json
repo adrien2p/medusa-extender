@@ -43,6 +43,7 @@
     "mongoose": "^6.1.6"
   },
   "peerDependencies": {
+    "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.62",
     "awilix": "^6.0.0",
     "express": "^4.17.1",
@@ -50,8 +51,8 @@
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
+    "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.62",
-    "@nestjs/common": "^8.2.3",
     "@swc-node/jest": "^1.4.1",
     "@swc/cli": "^0.1.52",
     "@swc/core": "^1.2.118",

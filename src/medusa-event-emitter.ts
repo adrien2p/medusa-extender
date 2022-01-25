@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { AwilixContainer } from 'awilix';
-import { MedusaServiceStatic, Metatype } from './types';
+import { MedusaServiceStatic } from './types';
 
 /**
  * A listener descriptor.
@@ -8,7 +8,7 @@ import { MedusaServiceStatic, Metatype } from './types';
 type ListenerDescriptor<T = unknown> = {
 	eventName: string | symbol;
 	propertyName: string;
-	metatype: Metatype<T>;
+	metatype: MedusaServiceStatic<T>;
 };
 
 /**

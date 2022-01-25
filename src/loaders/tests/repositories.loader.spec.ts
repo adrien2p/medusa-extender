@@ -45,9 +45,9 @@ describe('Repositories loader', () => {
 			expect((MedusaOrderRepository.prototype as any).testProperty).not.toBeDefined();
 
 			await overriddenRepositoriesLoader([orderRepositoryExtended as MedusaRepositoryStatic]);
-			const { OrderRepository: MedusaOrderRepositoryReImport } = await import(
+			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
 				'@medusajs/medusa/dist/repositories/order'
-			) as unknown as { OrderRepository };
+			)) as unknown as { OrderRepository };
 
 			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
 			expect(new MedusaOrderRepositoryReImport().testProperty).toBeDefined();

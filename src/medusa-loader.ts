@@ -10,9 +10,9 @@ import {
 	MedusaRequest,
 	MedusaRoute,
 	MedusaServiceStatic,
+	Type,
 } from './types';
 import { Utils } from './medusa-utils';
-import { scanFor } from './medusa-scanner';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
@@ -23,6 +23,8 @@ import {
 	unauthenticatedRoutesLoader,
 } from './loaders';
 import { medusaEventEmitter } from './medusa-event-emitter';
+import { readMetadatas } from './read-metadatas';
+import { scanFor } from './medusa-scanner';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -62,10 +64,12 @@ type CustomComponentsRetrievalMapKeyType = {
  */
 export class MedusaLoader {
 	/**
+	 * @param modules
 	 * @param rootDir Directory where `medusa-config` is located
 	 * @param express Express instance
 	 */
-	public async load(rootDir: string, express: Express): Promise<AwilixContainer> {
+	public async load(modules: Type[], rootDir: string, express: Express): Promise<AwilixContainer> {
+		const moduleComponentsOptions = readMetadatas(modules);
 		const customComponents = await scanFor<CustomComponentsRetrievalMapKeyType>(rootDir, {
 			extname: '.js',
 			searchFor: Object.values(CustomComponentsRetrievalKeys).map((retrievalKey) => ({
@@ -75,12 +79,8 @@ export class MedusaLoader {
 		});
 
 		await this.registerEventEmitterMiddleware(express);
-		await overriddenEntitiesLoader(
-			customComponents.entities.filter((e) => e.isHandledByMedusa && e.overriddenType)
-		);
-		await overriddenRepositoriesLoader(
-			customComponents.repositories.filter((r) => r.isHandledByMedusa && r.overriddenType)
-		);
+		await overriddenEntitiesLoader(moduleComponentsOptions.get('entity'));
+		await overriddenRepositoriesLoader(moduleComponentsOptions.get('repository'));
 
 		await apiLoader(express);
 		await databaseLoader(customComponents.entities, customComponents.repositories);
