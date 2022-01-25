@@ -279,7 +279,7 @@ export default class UserService extends MedusaUserService implements MedusaServ
 </section>
 </details>
 
-### Override entity
+### Override service
 
 <details>
 <summary>Click to see the example</summary>
