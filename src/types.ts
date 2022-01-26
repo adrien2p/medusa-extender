@@ -17,18 +17,11 @@ export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'mi
 /**
  * Defines the injection options for services, entities, repositories.
  */
-export type ComplexInjectableOptions = {
+export type ComplexInjectableOptions<T = unknown> = {
 	type: Extract<InjectableComponentTypes, 'entity' | 'repository' | 'service'>;
 	scope?: LifetimeType;
-	override: Type;
-	resolutionKey: ComplexInjectableOptions['type'] extends Extract<
-		InjectableComponentTypes,
-		'entity' | 'repository' | 'service'
-	>
-		? ComplexInjectableOptions['override'] extends undefined | never
-			? string
-			: undefined
-		: undefined;
+	resolutionKey?: string;
+	override?: Type<T>;
 };
 
 /**
@@ -56,8 +49,8 @@ export type MiddlewareInjectionOptions = {
 /**
  * Union of all options type possible for injectable.
  */
-export type InjectableOptions =
-	| ComplexInjectableOptions
+export type InjectableOptions<T = unknown> =
+	| ComplexInjectableOptions<T>
 	| MigrationInjectionOptions
 	| MiddlewareInjectionOptions
 	| RoutesInjectionOptions;

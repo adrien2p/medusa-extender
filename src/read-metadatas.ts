@@ -19,7 +19,10 @@ export function readMetadatas(modules: Type[]): CustomMap {
 
 		for (const component of moduleImports) {
 			const options = readModuleImportMetadata(component);
-			optionsMap.set(options.type, [...optionsMap.get(options.type), { ...options, metatype: component }]);
+			optionsMap.set(options.type, [
+				...(optionsMap.get(options.type) ?? []),
+				{ ...options, metatype: component }]
+			);
 		}
 	}
 

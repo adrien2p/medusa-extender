@@ -6,7 +6,7 @@ import { INJECTABLE_OPTIONS_KEY } from '../contants';
  * @param options
  * @constructor
  */
-export function MedusaInjectable(options: InjectableOptions): ClassDecorator {
+export function MedusaInjectable<T = unknown>(options: InjectableOptions<T>): ClassDecorator {
 	return (target: object) => {
 		Reflect.defineMetadata(INJECTABLE_OPTIONS_KEY, options, target);
 	};
