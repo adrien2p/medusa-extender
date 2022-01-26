@@ -1,6 +1,6 @@
 {
   "name": "medusa-extender",
-  "version": "1.0.18-alpha.0",
+  "version": "1.0.18-alpha.1",
   "description": "Extends functionalities from medusajs. Add custom entity fields, override or extend entities, services, repositories, create custom middlewares",
   "keywords": [
     "medusa",
