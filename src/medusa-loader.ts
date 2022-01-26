@@ -5,7 +5,6 @@ import { AwilixContainer } from 'awilix';
 import {
 	Constructor,
 	MedusaAuthenticatedRequest,
-	MedusaEntityStatic,
 	MedusaRepositoryStatic,
 	MedusaRequest,
 	MedusaRoute,
@@ -52,7 +51,7 @@ const CustomComponentsRetrievalKeys = {
 type CustomComponentsRetrievalMapKeyType = {
 	services: MedusaServiceStatic;
 	migrations: Constructor<MigrationInterface>;
-	entities: MedusaEntityStatic;
+	entities: any;
 	repositories: MedusaRepositoryStatic;
 	routes: MedusaRoute[];
 };
@@ -81,8 +80,7 @@ export class MedusaLoader {
 		await this.registerEventEmitterMiddleware(express);
 		await overriddenEntitiesLoader(moduleComponentsOptions.get('entity'));
 		await overriddenRepositoriesLoader(moduleComponentsOptions.get('repository'));
-
-		await apiLoader(express);
+		await apiLoader(express, moduleComponentsOptions.get('middleware'));
 		await databaseLoader(customComponents.entities, customComponents.repositories);
 		unauthenticatedRoutesLoader(customComponents.routes, express);
 

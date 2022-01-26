@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import { MODULE_KEY } from '../contants';
 import { Type } from '../types';
 

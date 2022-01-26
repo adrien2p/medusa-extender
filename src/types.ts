@@ -44,6 +44,7 @@ export type RoutesInjectionOptions = {
 export type MiddlewareInjectionOptions = {
 	type: Extract<InjectableComponentTypes, 'middleware'>;
 	requireAuth: boolean;
+	routerOptions: MedusaRouteOptions[];
 };
 
 /**
@@ -67,7 +68,7 @@ export type GetInjectableOption<TComponentType extends InjectableComponentTypes 
 		? RoutesInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'middleware'>
 		? MiddlewareInjectionOptions
-		: never) & { metatype: Type };
+		: never) & { metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type };
 
 /**
  * Determine which options type it actually is depending on the component type.
@@ -106,28 +107,11 @@ export type MedusaRouteOptions = {
  * @interface
  * Describe a custom middleware instance.
  */
-export interface MedusaMiddlewareInstance {
+export interface MedusaMiddleware {
 	consume(options: {
 		app: Express;
 	}): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void>;
 }
-
-/**
- * @interface
- * Describe a custom middleware constructor.
- */
-export interface MedusaMiddlewareStatic {
-	isPostAuth?: boolean;
-	isHandledByMedusa?: boolean;
-	routesOptions: MedusaRouteOptions | MedusaRouteOptions[];
-
-	new (): MedusaMiddlewareInstance;
-}
-
-/**
- * Any custom medusa middleware must implement MedusaMiddleware.
- */
-export type MedusaMiddleware<T extends MedusaMiddlewareStatic = MedusaMiddlewareStatic> = StaticImplements<T>;
 
 /**
  * @interface

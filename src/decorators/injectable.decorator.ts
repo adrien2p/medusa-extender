@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import { InjectableOptions } from '../types';
 import { INJECTABLE_OPTIONS_KEY } from '../contants';
 
