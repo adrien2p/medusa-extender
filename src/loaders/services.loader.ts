@@ -1,4 +1,4 @@
-import { asFunction, AwilixContainer, Lifetime } from 'awilix';
+import { asFunction, Lifetime, AwilixContainer } from 'awilix';
 import { Utils } from '../utils';
 import { GetInjectableOption, GetInjectableOptions } from '../types';
 
@@ -41,6 +41,7 @@ function registerService(container: AwilixContainer, serviceOptions: GetInjectab
 /**
  * @internal
  * Load custom service and override existing ones.
+ * @param container
  * @param serviceOptions
  */
 function overrideService(container: AwilixContainer, serviceOptions: GetInjectableOption<'service'>): void {

@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 
-import { MODULE_KEY } from '../contants';
-import { Type } from '../types';
+import { MODULE_KEY, Type } from './';
 
 /**
  * Mark a class as aa module and store all injectable on it.

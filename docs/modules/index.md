@@ -8,9 +8,6 @@
 
 - [ComplexInjectableOptions](index.md#complexinjectableoptions)
 - [Constructor](index.md#constructor)
-- [EntityActions](index.md#entityactions)
-- [EntityEventActionOptions](index.md#entityeventactionoptions)
-- [EntityEventType](index.md#entityeventtype)
 - [GetInjectableOption](index.md#getinjectableoption)
 - [GetInjectableOptions](index.md#getinjectableoptions)
 - [Injectable](index.md#injectable)
@@ -18,8 +15,6 @@
 - [InjectableOptions](index.md#injectableoptions)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
-- [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
-- [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
 - [MedusaMiddleware](index.md#medusamiddleware)
 - [MedusaRequest](index.md#medusarequest)
 - [MedusaRouteMethods](index.md#medusaroutemethods)
@@ -47,24 +42,6 @@ ___
 ### Constructor
 
 Re-exports [Constructor](types.md#constructor)
-
-___
-
-### EntityActions
-
-Re-exports [EntityActions](decorators_onMedusaEvent_decorator.md#entityactions)
-
-___
-
-### EntityEventActionOptions
-
-Re-exports [EntityEventActionOptions](decorators_onMedusaEvent_decorator.md#entityeventactionoptions)
-
-___
-
-### EntityEventType
-
-Re-exports [EntityEventType](decorators_onMedusaEvent_decorator.md#entityeventtype)
 
 ___
 
@@ -107,18 +84,6 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](types.md#medusaauthenticatedrequest)
-
-___
-
-### MedusaEventEmittedParams
-
-Re-exports [MedusaEventEmittedParams](decorators_onMedusaEvent_decorator.md#medusaeventemittedparams)
-
-___
-
-### MedusaEventHandlerParams
-
-Re-exports [MedusaEventHandlerParams](decorators_onMedusaEvent_decorator.md#medusaeventhandlerparams)
 
 ___
 
@@ -201,4 +166,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:11](https://github.com/adrien2p/medusa-extender/blob/9345158/src/index.ts#L11)
+[src/index.ts:9](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/index.ts#L9)

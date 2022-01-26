@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [Internals](loader.Internals.md)
-
 ### Classes
 
 - [Loader](../classes/loader.Loader.md)

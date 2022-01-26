@@ -30,4 +30,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/services.loader.ts#L11)
+[src/loaders/services.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/services.loader.ts#L11)

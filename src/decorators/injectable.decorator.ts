@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 
-import { InjectableOptions } from '../types';
-import { INJECTABLE_OPTIONS_KEY } from '../contants';
+import { INJECTABLE_OPTIONS_KEY, InjectableOptions } from './';
 
 /**
  * Mark a class as an injectable to be used by the loader.

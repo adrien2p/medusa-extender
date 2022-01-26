@@ -31,7 +31,7 @@ Load custom entities that must be added to the container
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/entities.loader.ts#L23)
+[src/loaders/entities.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/entities.loader.ts#L23)
 
 ___
 
@@ -54,4 +54,4 @@ Load custom entities that must override the existing entities from the rootDir.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/entities.loader.ts#L10)
+[src/loaders/entities.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/entities.loader.ts#L10)

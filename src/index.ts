@@ -2,9 +2,7 @@ export { Medusa } from './medusa';
 export { customEventEmitter as eventEmitter } from './event-emmiter';
 export * from './types';
 
-export * from './decorators/onMedusaEvent.decorator';
-export * from './decorators/injectable.decorator';
-export * from './decorators/module.decorator';
+export { OnMedusaEvent, Injectable, Module } from './decorators';
 
 import { Utils as _Utils } from './utils';
 
