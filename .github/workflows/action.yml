@@ -21,5 +21,5 @@ jobs:
           node-version: "14"
           cache: "npm"
 
-      - name: Run unit tests
-        run: node --max-old-space-size=2048 ./node_modules/.bin/jest -w 1
+     - run: npm install
+     - run: npm run test
