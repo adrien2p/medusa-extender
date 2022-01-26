@@ -30,33 +30,37 @@ Here is the architecture of this package and how modules are related to each oth
      onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
      alt="Dependency graph" />
 
-# Features
+# Features :zap:
 
-- Flexible architecture.
+- :technologist: Decorators and full typings
+
+> Made DX easy with the usage of decorators for modular architecture and full typings support for a better DX
+
+- :building_construction: Flexible architecture.
 
 > No need anymore to put your services in the services directory, your entities in the models directory and so on. You put your files
 > where you want. That way you can organize your code as modules for example and group your modules by domains.
 
-- Create or extends entities
+- :bricks: Create or extends entities
 
 > If you need to add custom fields on an entity, you only need to extend the original entity from medusa and that's it.
 
-- Create or extends services
+- :bricks: Create or extends services
 
 > If you need to extend a service to manage your new fields or update the business logic according to your new needs,
 > you only need to extend the original service from medusa and that's it.
 
-- Create or extends repositories
+- :bricks: Create or extends repositories
 
 > When you extend an entity and you want to manipulate that entity in a service, you need to do that through a repository.
 > In order for that repository to reflect your extended entities, you are provided with the right tools to do so.
 
-- Create custom middlewares to apply before/after authentication
+- :bricks: Create custom middlewares to apply before/after authentication
 
 > Some times, you need to add custom middlware. For example, to store some context on the incoming request.
 > You can achieve that now with the tools provided.
 
-- Create custom route and attach custom service to handle it.
+- :bricks: Create custom route and attach custom service to handle it.
 
 > You can do that to. Create a new route, configure it, and hit the end point.
 
