@@ -6,22 +6,22 @@ import { User as MedusaUser } from '@medusajs/medusa/dist';
 import { asArray } from './utils/asArray';
 import { entitiesLoader, overriddenEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
-import { MedusaInjectable } from '../../decorators/injectable.decorator';
-import { MedusaModule } from '../../decorators/module.decorator';
+import { Injectable } from '../../decorators/injectable.decorator';
+import { Module } from '../../decorators/module.decorator';
 import { readMetadatas } from '../../read-metadatas';
 
-@MedusaInjectable({ type: 'entity', override: MedusaUser })
+@Injectable({ type: 'entity', override: MedusaUser })
 class User extends MedusaUser {
 	testProperty = 'I am the property from User that extend MedusaUser';
 }
 
-@MedusaModule({ imports: [User] })
+@Module({ imports: [User] })
 class UserModule {}
 
-@MedusaInjectable({ type: 'entity', resolutionKey: 'anotherEntity' })
+@Injectable({ type: 'entity', resolutionKey: 'anotherEntity' })
 class Another {}
 
-@MedusaModule({ imports: [Another] })
+@Module({ imports: [Another] })
 class AnotherModule {}
 
 describe('Entities loader', () => {

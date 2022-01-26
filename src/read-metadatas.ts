@@ -21,8 +21,8 @@ export function readMetadatas(modules: Type[]): CustomMap {
 			const options = readModuleImportMetadata(component);
 			optionsMap.set(options.type, [
 				...(optionsMap.get(options.type) ?? []),
-				{ ...options, metatype: component }]
-			);
+				{ ...options, metatype: component },
+			]);
 		}
 	}
 

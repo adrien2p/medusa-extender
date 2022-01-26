@@ -6,7 +6,7 @@ import { Type } from '../types';
  * @param imports The components to import
  * @constructor
  */
-export function MedusaModule({ imports }: { imports: Type[] }): ClassDecorator {
+export function Module({ imports }: { imports: Type[] }): ClassDecorator {
 	return (target: object) => {
 		Reflect.defineMetadata(MODULE_KEY, imports, target);
 	};
