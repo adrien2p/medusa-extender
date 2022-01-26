@@ -9,8 +9,10 @@ import { asValue, createContainer } from 'awilix';
 import { Injectable } from '../../decorators/injectable.decorator';
 import { Module } from '../../decorators/module.decorator';
 import { modulesMetadataReader } from '../../modules-metadata-reader';
+import { Entity } from 'typeorm';
 
 @Injectable({ type: 'entity', override: MedusaUser })
+@Entity()
 class User extends MedusaUser {
 	testProperty = 'I am the property from User that extend MedusaUser';
 }
@@ -19,6 +21,7 @@ class User extends MedusaUser {
 class UserModule {}
 
 @Injectable({ type: 'entity', resolutionKey: 'anotherEntity' })
+@Entity()
 class Another {}
 
 @Module({ imports: [Another] })
