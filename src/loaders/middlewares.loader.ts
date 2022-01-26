@@ -11,31 +11,31 @@ import { GetInjectableOptions, Utils } from './';
  * @param middlewares
  */
 export function middlewaresLoader(
-    app: Express,
-    container: AwilixContainer,
-    middlewares: GetInjectableOptions<'middleware'>
+	app: Express,
+	container: AwilixContainer,
+	middlewares: GetInjectableOptions<'middleware'>
 ): void {
-    const medusaMiddlewareService = container.resolve('middlewareService') as MiddlewareService;
+	const medusaMiddlewareService = container.resolve('middlewareService') as MiddlewareService;
 
-    for (const middlewareOptions of middlewares) {
-        let log: string;
+	for (const middlewareOptions of middlewares) {
+		let log: string;
 
-        const { metatype, requireAuth } = middlewareOptions;
-        const middleware = new metatype();
-        if (!requireAuth) {
-            medusaMiddlewareService.addPreAuthentication(middleware.consume, { app });
-            log = Utils.prepareLog(
-                'MedusaLoader#middlewaresLoader',
-                `Middleware registered before auth - ${metatype.name}`
-            );
-        } else {
-            medusaMiddlewareService.addPostAuthentication(middleware.consume, { app });
-            log = Utils.prepareLog(
-                'MedusaLoader#middlewaresLoader',
-                `Middleware registered after auth - ${metatype.name}`
-            );
-        }
+		const { metatype, requireAuth } = middlewareOptions;
+		const middleware = new metatype();
+		if (!requireAuth) {
+			medusaMiddlewareService.addPreAuthentication(middleware.consume, { app });
+			log = Utils.prepareLog(
+				'MedusaLoader#middlewaresLoader',
+				`Middleware registered before auth - ${metatype.name}`
+			);
+		} else {
+			medusaMiddlewareService.addPostAuthentication(middleware.consume, { app });
+			log = Utils.prepareLog(
+				'MedusaLoader#middlewaresLoader',
+				`Middleware registered after auth - ${metatype.name}`
+			);
+		}
 
-        console.log(log);
-    }
+		console.log(log);
+	}
 }

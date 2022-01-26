@@ -1,5 +1,5 @@
-import { Connection, Migration } from "typeorm";
-import { GetInjectableOptions, Utils } from "./";
+import { Connection, Migration } from 'typeorm';
+import { GetInjectableOptions, Utils } from './';
 
 /**
  * @internal
@@ -8,20 +8,20 @@ import { GetInjectableOptions, Utils } from "./";
  * @param dbConnection Database connection from medusa internal
  */
 export async function migrationsLoader(
-    migrationsOptions: GetInjectableOptions<'migration'>,
-    dbConnection: Connection
+	migrationsOptions: GetInjectableOptions<'migration'>,
+	dbConnection: Connection
 ): Promise<void> {
-    for (const migrationOptions of migrationsOptions) {
-        dbConnection.migrations.push(new migrationOptions.metatype() as any);
-    }
+	for (const migrationOptions of migrationsOptions) {
+		dbConnection.migrations.push(new migrationOptions.metatype() as any);
+	}
 
-    await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
-        for (const migration of ranMigrations) {
-            const preparedLog = Utils.prepareLog(
-                'MedusaLoader#runCustomMigrations',
-                `Migration applied - ${migration.name}`
-            );
-            console.log(preparedLog);
-        }
-    });
+	await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
+		for (const migration of ranMigrations) {
+			const preparedLog = Utils.prepareLog(
+				'MedusaLoader#runCustomMigrations',
+				`Migration applied - ${migration.name}`
+			);
+			console.log(preparedLog);
+		}
+	});
 }

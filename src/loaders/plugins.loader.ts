@@ -1,7 +1,7 @@
-import { Express, NextFunction, Response } from "express";
-import { AwilixContainer } from "awilix";
-import { MedusaAuthenticatedRequest, MedusaRequest } from "../types";
-import { customEventEmitter } from "../event-emmiter";
+import { Express, NextFunction, Response } from 'express';
+import { AwilixContainer } from 'awilix';
+import { MedusaAuthenticatedRequest, MedusaRequest } from '../types';
+import { customEventEmitter } from '../event-emmiter';
 
 /**
  * @internal
@@ -9,25 +9,25 @@ import { customEventEmitter } from "../event-emmiter";
  * @param app Express app
  */
 export async function pluginsLoadersAndListeners(app: Express): Promise<void> {
-    const pluginLoader = await import('@medusajs/medusa/dist/loaders/plugins');
-    const originalPluginLoader = pluginLoader.default;
-    pluginLoader.default = async (cradle: {
-        app: Express;
-        rootDirectory: string;
-        container: AwilixContainer;
-        activityId: string;
-    }) => {
-        app.use(
-            async (
-                req: MedusaRequest | MedusaAuthenticatedRequest,
-                res: Response,
-                next: NextFunction
-            ): Promise<void> => {
-                await customEventEmitter.registerListeners(req.scope);
-                return next();
-            }
-        );
+	const pluginLoader = await import('@medusajs/medusa/dist/loaders/plugins');
+	const originalPluginLoader = pluginLoader.default;
+	pluginLoader.default = async (cradle: {
+		app: Express;
+		rootDirectory: string;
+		container: AwilixContainer;
+		activityId: string;
+	}) => {
+		app.use(
+			async (
+				req: MedusaRequest | MedusaAuthenticatedRequest,
+				res: Response,
+				next: NextFunction
+			): Promise<void> => {
+				await customEventEmitter.registerListeners(req.scope);
+				return next();
+			}
+		);
 
-        return originalPluginLoader(cradle);
-    };
+		return originalPluginLoader(cradle);
+	};
 }
