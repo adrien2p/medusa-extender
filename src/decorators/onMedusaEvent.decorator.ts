@@ -1,6 +1,6 @@
 import { Type } from '../types';
 import { customEventEmitter } from '../event-emmiter';
-import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
+import { Entity, EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
 
 export type EntityEventActionOptions<T> = {
 	async: boolean;
@@ -54,40 +54,40 @@ export class OnMedusaEvent {
 		return new OnMedusaEvent(when);
 	}
 
-	public InsertEvent<Entity>(entity: Type<Entity>): string {
+	public InsertEvent<Entity extends Type>(entity: Entity): string {
 		return `${this.#when}Insert${entity.name}`;
 	}
 
-	public UpdateEvent<Entity>(entity: Type<Entity>): string {
+	public UpdateEvent<Entity extends Type>(entity: Entity): string {
 		return `${this.#when}Update${entity.name}`;
 	}
 
-	public RemoveEvent<Entity>(entity: Type<Entity>): string {
+	public RemoveEvent<Entity extends Type>(entity: Entity): string {
 		return `${this.#when}Remove${entity.name}`;
 	}
 
-	public Insert<TEntity extends Type<TEntity>>(
+	public Insert<TEntity extends Type>(
 		entity: TEntity,
 		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Insert', entity, options);
 	}
 
-	public Update<TEntity extends Type<TEntity>>(
+	public Update<TEntity extends Type>(
 		entity: TEntity,
 		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Update', entity, options);
 	}
 
-	public Remove<TEntity extends Type<TEntity>>(
+	public Remove<TEntity extends Type>(
 		entity: TEntity,
 		options: EntityEventActionOptions<TEntity> = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Remove', entity, options);
 	}
 
-	private buildDecorator<TEntity extends Type<TEntity>>(
+	private buildDecorator<TEntity extends Type>(
 		action: EntityActions,
 		entity: TEntity,
 		options: EntityEventActionOptions<TEntity> = { async: false }
@@ -104,7 +104,7 @@ export class OnMedusaEvent {
  * @param async Should the event be awaiting the result
  * @param customMetatype The key that represent the class in the container it belongs to (Used to resolve the real instance)
  */
-function OnMedusaEntityEventDecorator<TEntity extends Type<TEntity>>(
+function OnMedusaEntityEventDecorator<TEntity extends Type>(
 	eventName: string,
 	targetEntity: TEntity,
 	{ async, metatype }: { async: boolean; metatype?: Type } = {
