@@ -8,7 +8,7 @@
 
 ### Classes
 
-- [MedusaEventEmitter](../classes/medusa_event_emitter.Internals.MedusaEventEmitter.md)
+- [EventEmmiter](../classes/medusa_event_emitter.Internals.EventEmmiter.md)
 
 ### Type aliases
 
@@ -38,4 +38,4 @@ A listener descriptor.
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:8](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L8)
+[src/event-emmiter.ts:8](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L8)

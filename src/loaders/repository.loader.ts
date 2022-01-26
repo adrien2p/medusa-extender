@@ -1,5 +1,5 @@
 import { GetInjectableOption, GetInjectableOptions } from '../types';
-import { Utils } from '../medusa-utils';
+import { Utils } from '../utils';
 import { asClass, AwilixContainer } from 'awilix';
 
 /**

@@ -1,11 +1,11 @@
 export * from './medusa';
-export * from './medusa-event-emitter';
+export * from './event-emmiter';
 export * from './types';
 
 export * from './decorators/onMedusaEvent.decorator';
 export * from './decorators/types';
 
-import { Utils } from './medusa-utils';
+import { Utils } from './utils';
 export const MedusaUtils = {
 	attachOrReplaceEntitySubscriber: Utils.attachOrReplaceEntitySubscriber,
 	repositoryMixin: Utils.repositoryMixin,

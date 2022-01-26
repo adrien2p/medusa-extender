@@ -10,17 +10,17 @@
 
 ### Variables
 
-- [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
+- [customEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 
 ## Variables
 
-### medusaEventEmitter
+### customEventEmitter
 
-• **medusaEventEmitter**: [`MedusaEventEmitter`](../classes/medusa_event_emitter.Internals.MedusaEventEmitter.md)
+• **customEventEmitter**: [`EventEmmiter`](../classes/medusa_event_emitter.Internals.EventEmmiter.md)
 
 **`internal`**
 Export the instance of the event emmiter.
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:97](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L97)
+[src/event-emmiter.ts:97](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L97)

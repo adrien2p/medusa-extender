@@ -10,7 +10,7 @@ import { Repository } from 'typeorm';
 import { MedusaUtils } from '../../index';
 import { Injectable } from '../../decorators/injectable.decorator';
 import { Module } from '../../decorators/module.decorator';
-import { readMetadatas } from '../../read-metadatas';
+import { modulesMetadataReader } from '../../modules-metadata-reader';
 
 @Injectable({ type: 'entity', override: MedusaOrder })
 class Order extends MedusaOrder {
@@ -46,7 +46,7 @@ describe('Repositories loader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
 			expect((MedusaOrderRepository.prototype as any).testProperty).not.toBeDefined();
 
-			const components = readMetadatas([OrderModule]);
+			const components = modulesMetadataReader([OrderModule]);
 			await overriddenRepositoriesLoader(components.get('repository'));
 
 			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
@@ -65,7 +65,7 @@ describe('Repositories loader', () => {
 		it(' should register a new repository into the container', async () => {
 			expect(container.hasRegistration('anotherRepository')).toBeFalsy();
 
-			const components = readMetadatas([AnotherOrderModule]);
+			const components = modulesMetadataReader([AnotherOrderModule]);
 			await repositoriesLoader(components.get('repository'), container);
 
 			expect(container.hasRegistration('anotherRepository')).toBeTruthy();

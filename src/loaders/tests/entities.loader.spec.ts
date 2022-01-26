@@ -8,7 +8,7 @@ import { entitiesLoader, overriddenEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
 import { Injectable } from '../../decorators/injectable.decorator';
 import { Module } from '../../decorators/module.decorator';
-import { readMetadatas } from '../../read-metadatas';
+import { modulesMetadataReader } from '../../modules-metadata-reader';
 
 @Injectable({ type: 'entity', override: MedusaUser })
 class User extends MedusaUser {
@@ -46,7 +46,7 @@ describe('Entities loader', () => {
 		it(' should override MedusaUser with User', async () => {
 			expect((MedusaUser.prototype as any).testProperty).not.toBeDefined();
 
-			const components = readMetadatas([UserModule]);
+			const components = modulesMetadataReader([UserModule]);
 			await overriddenEntitiesLoader(components.get('entity'));
 			const { User: MedusaUserReImport } = await import('@medusajs/medusa/dist/models/user');
 
@@ -61,7 +61,7 @@ describe('Entities loader', () => {
 		it(' should register a new entity into the container', async () => {
 			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
 
-			const components = readMetadatas([AnotherModule]);
+			const components = modulesMetadataReader([AnotherModule]);
 			await entitiesLoader(components.get('entity'), container);
 
 			expect(container.hasRegistration('anotherEntity')).toBeTruthy();

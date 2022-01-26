@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [medusa-event-emitter](../modules/medusa_event_emitter.md) / [Internals](../modules/medusa_event_emitter.Internals.md) / MedusaEventEmitter
+[medusa-extender](../README.md) / [Exports](../modules.md) / [medusa-event-emitter](../modules/medusa_event_emitter.md) / [Internals](../modules/medusa_event_emitter.Internals.md) / EventEmmiter
 
-# Class: MedusaEventEmitter
+# Class: EventEmmiter
 
-[medusa-event-emitter](../modules/medusa_event_emitter.md).[Internals](../modules/medusa_event_emitter.Internals.md).MedusaEventEmitter
+[medusa-event-emitter](../modules/medusa_event_emitter.md).[Internals](../modules/medusa_event_emitter.Internals.md).EventEmmiter
 
 Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
 
@@ -10,30 +10,30 @@ Extended event emitter to register methods that must be call when certain events
 
 - `EventEmitter`
 
-  ↳ **`MedusaEventEmitter`**
+  ↳ **`EventEmmiter`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](medusa_event_emitter.Internals.MedusaEventEmitter.md#constructor)
+- [constructor](medusa_event_emitter.Internals.EventEmmiter.md#constructor)
 
 ### Properties
 
-- [#listeners](medusa_event_emitter.Internals.MedusaEventEmitter.md##listeners)
+- [#listeners](medusa_event_emitter.Internals.EventEmmiter.md##listeners)
 
 ### Methods
 
-- [emitAsync](medusa_event_emitter.Internals.MedusaEventEmitter.md#emitasync)
-- [register](medusa_event_emitter.Internals.MedusaEventEmitter.md#register)
-- [registerListeners](medusa_event_emitter.Internals.MedusaEventEmitter.md#registerlisteners)
-- [unregisterListeners](medusa_event_emitter.Internals.MedusaEventEmitter.md#unregisterlisteners)
+- [emitAsync](medusa_event_emitter.Internals.EventEmmiter.md#emitasync)
+- [register](medusa_event_emitter.Internals.EventEmmiter.md#register)
+- [registerListeners](medusa_event_emitter.Internals.EventEmmiter.md#registerlisteners)
+- [unregisterListeners](medusa_event_emitter.Internals.EventEmmiter.md#unregisterlisteners)
 
 ## Constructors
 
 ### constructor
 
-• **new MedusaEventEmitter**()
+• **new EventEmmiter**()
 
 #### Overrides
 
@@ -41,7 +41,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:20](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L20)
+[src/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L20)
 
 ## Properties
 
@@ -51,7 +51,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:18](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L18)
+[src/event-emmiter.ts:18](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L18)
 
 ## Methods
 
@@ -74,7 +74,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:75](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L75)
+[src/event-emmiter.ts:75](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L75)
 
 ___
 
@@ -104,7 +104,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:30](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L30)
+[src/event-emmiter.ts:30](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L30)
 
 ___
 
@@ -126,7 +126,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:42](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L42)
+[src/event-emmiter.ts:42](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L42)
 
 ___
 
@@ -140,4 +140,4 @@ ___
 
 #### Defined in
 
-[src/medusa-event-emitter.ts:63](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L63)
+[src/event-emmiter.ts:63](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-event-emitter.ts#L63)

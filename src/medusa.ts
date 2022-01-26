@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { MedusaLoader } from './medusa-loader';
+import { Loader } from './loader';
 import { MedusaMiddlewareStatic, Type } from './types';
 import { medusaMiddlewareRepository } from './medusa-middleware.repository';
 
@@ -86,7 +86,7 @@ export class Medusa {
 			.map(({ step }) => step);
 
 		await this.runSteps(orderedBeforeSteps);
-		await new MedusaLoader().load(modules, this.#rootDir, this.#express);
+		await new Loader().load(modules, this.#rootDir, this.#express);
 		await this.runSteps(orderedAfterSteps);
 	}
 

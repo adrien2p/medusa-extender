@@ -11,14 +11,14 @@ class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
  * Read all metadata from the imported modules and extract components that will be stored by there type.
  * @param modules The modules from which the metadata are read.
  */
-export function readMetadatas(modules: Type[]): CustomMap {
+export function modulesMetadataReader(modules: Type[]): CustomMap {
 	const optionsMap = new CustomMap();
 
 	for (const module of modules) {
 		const moduleImports = Reflect.getMetadata(MODULE_KEY, module);
 
 		for (const component of moduleImports) {
-			const options = readModuleImportMetadata(component);
+			const options = componentsMetadataReader(component);
 			optionsMap.set(options.type, [
 				...(optionsMap.get(options.type) ?? []),
 				{ ...options, metatype: component },
@@ -31,9 +31,11 @@ export function readMetadatas(modules: Type[]): CustomMap {
 
 /**
  * @Internal
- * Return the options from a component.
+ * Return the options from components.
  * @param component
  */
-function readModuleImportMetadata(component: Type[]): InjectableOptions {
+export function componentsMetadataReader<TComponentType = unknown>(
+	component: Type[]
+): InjectableOptions<TComponentType> {
 	return Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, component);
 }

@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { Utils } from '../medusa-utils';
+import { Utils } from '../utils';
 import { AwilixContainer } from 'awilix';
 import MiddlewareService from '@medusajs/medusa/dist/services/middleware';
 import { GetInjectableOptions } from '../types';

@@ -1,6 +1,6 @@
 import { Constructor, MedusaServiceStatic } from '../types';
 import { EntityActions, EntityEventActionOptions, MedusaEventEmittedParams } from './types';
-import { medusaEventEmitter } from '../medusa-event-emitter';
+import { customEventEmitter } from '../event-emmiter';
 import { Entity } from 'typeorm';
 
 export class OnMedusaEvent {
@@ -104,6 +104,6 @@ function OnMedusaEntityEventDecorator<TEntity extends typeof Entity>(
 			}
 		};
 
-		medusaEventEmitter.register(eventName, propertyKey, customMetatype ?? target);
+		customEventEmitter.register(eventName, propertyKey, customMetatype ?? target);
 	};
 }
