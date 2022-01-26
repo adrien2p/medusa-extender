@@ -4,7 +4,6 @@ export { MEDUSA_RESOLVER_KEYS } from './contants';
 export { Medusa } from './medusa';
 export { customEventEmitter as eventEmitter } from './event-emmiter';
 
-
 export { Injectable, Module } from './decorators';
 export * from './decorators/onMedusaEvent.decorator';
 

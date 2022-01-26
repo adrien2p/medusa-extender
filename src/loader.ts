@@ -1,6 +1,5 @@
 import loaders from '@medusajs/medusa/dist/loaders';
 import { Express } from 'express';
-import { Connection } from 'typeorm';
 import { AwilixContainer } from 'awilix';
 import { Type } from './types';
 import { Utils } from './utils';

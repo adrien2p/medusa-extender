@@ -1,6 +1,6 @@
 import { Type } from '../types';
 import { customEventEmitter } from '../event-emmiter';
-import { Entity, EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
+import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
 
 export type EntityEventActionOptions<T> = {
 	async: boolean;
