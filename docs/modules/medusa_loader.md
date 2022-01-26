@@ -10,4 +10,4 @@
 
 ### Classes
 
-- [MedusaLoader](../classes/medusa_loader.MedusaLoader.md)
+- [Loader](../classes/medusa_loader.MedusaLoader.md)

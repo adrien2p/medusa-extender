@@ -4,21 +4,28 @@ import 'regenerator-runtime/runtime';
 
 import { User as MedusaUser } from '@medusajs/medusa/dist';
 import { asArray } from './utils/asArray';
-import { MedusaEntity } from '../../types';
 import { entitiesLoader, overriddenEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
+import { Injectable } from '../../decorators/injectable.decorator';
+import { Module } from '../../decorators/module.decorator';
+import { modulesMetadataReader } from '../../modules-metadata-reader';
+import { Entity } from 'typeorm';
 
-class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
-	static overriddenType = MedusaUser;
-	static isHandledByMedusa = true;
-
+@Injectable({ type: 'entity', override: MedusaUser })
+@Entity()
+class User extends MedusaUser {
 	testProperty = 'I am the property from User that extend MedusaUser';
 }
 
-class Another implements MedusaEntity {
-	static isHandledByMedusa = true;
-	static resolutionKey = 'anotherEntity';
-}
+@Module({ imports: [User] })
+class UserModule {}
+
+@Injectable({ type: 'entity', resolutionKey: 'anotherEntity' })
+@Entity()
+class Another {}
+
+@Module({ imports: [Another] })
+class AnotherModule {}
 
 describe('Entities loader', () => {
 	const container = createContainer();
@@ -42,7 +49,8 @@ describe('Entities loader', () => {
 		it(' should override MedusaUser with User', async () => {
 			expect((MedusaUser.prototype as any).testProperty).not.toBeDefined();
 
-			await overriddenEntitiesLoader([User]);
+			const components = modulesMetadataReader([UserModule]);
+			await overriddenEntitiesLoader(components.get('entity'));
 			const { User: MedusaUserReImport } = await import('@medusajs/medusa/dist/models/user');
 
 			expect((new MedusaUserReImport() as User).testProperty).toBeDefined();
@@ -54,11 +62,12 @@ describe('Entities loader', () => {
 
 	describe('entitiesLoader', () => {
 		it(' should register a new entity into the container', async () => {
-			expect(container.hasRegistration(Another.resolutionKey)).toBeFalsy();
+			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
 
-			await entitiesLoader([Another], container);
+			const components = modulesMetadataReader([AnotherModule]);
+			await entitiesLoader(components.get('entity'), container);
 
-			expect(container.hasRegistration(Another.resolutionKey)).toBeTruthy();
+			expect(container.hasRegistration('anotherEntity')).toBeTruthy();
 		});
 	});
 });

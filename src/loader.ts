@@ -1,18 +1,9 @@
 import loaders from '@medusajs/medusa/dist/loaders';
 import { Express, NextFunction, Response } from 'express';
-import { Connection, Migration, MigrationInterface } from 'typeorm';
+import { Connection, Migration } from 'typeorm';
 import { AwilixContainer } from 'awilix';
-import {
-	Constructor,
-	MedusaAuthenticatedRequest,
-	MedusaEntityStatic,
-	MedusaRepositoryStatic,
-	MedusaRequest,
-	MedusaRoute,
-	MedusaServiceStatic,
-} from './types';
-import { Utils } from './medusa-utils';
-import { scanFor } from './medusa-scanner';
+import { GetInjectableOptions, MedusaAuthenticatedRequest, MedusaRequest, Type } from './types';
+import { Utils } from './utils';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
@@ -22,7 +13,8 @@ import {
 	servicesLoader,
 	unauthenticatedRoutesLoader,
 } from './loaders';
-import { medusaEventEmitter } from './medusa-event-emitter';
+import { customEventEmitter } from './event-emmiter';
+import { modulesMetadataReader } from './modules-metadata-reader';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -39,59 +31,33 @@ type MedusaStartApp = {
 	dbConnection: Connection;
 };
 
-const CustomComponentsRetrievalKeys = {
-	services: 'services',
-	migrations: 'migrations',
-	entities: 'entities',
-	repositories: 'repositories',
-	routes: 'routes',
-};
-
-type CustomComponentsRetrievalMapKeyType = {
-	services: MedusaServiceStatic;
-	migrations: Constructor<MigrationInterface>;
-	entities: MedusaEntityStatic;
-	repositories: MedusaRepositoryStatic;
-	routes: MedusaRoute[];
-};
-
 /**
  * @internal
  * Load medusa and apply all middlewares and migrations before registering the medusa
  * internal container and database connection.
  */
-export class MedusaLoader {
+export class Loader {
 	/**
+	 * @param modules
 	 * @param rootDir Directory where `medusa-config` is located
 	 * @param express Express instance
 	 */
-	public async load(rootDir: string, express: Express): Promise<AwilixContainer> {
-		const customComponents = await scanFor<CustomComponentsRetrievalMapKeyType>(rootDir, {
-			extname: '.js',
-			searchFor: Object.values(CustomComponentsRetrievalKeys).map((retrievalKey) => ({
-				lastSegmentPathDir: retrievalKey,
-				retrievalKey: retrievalKey,
-			})),
-		});
+	public async load(modules: Type[], rootDir: string, express: Express): Promise<AwilixContainer> {
+		const moduleComponentsOptions = modulesMetadataReader(modules);
 
 		await this.registerEventEmitterMiddleware(express);
-		await overriddenEntitiesLoader(
-			customComponents.entities.filter((e) => e.isHandledByMedusa && e.overriddenType)
-		);
-		await overriddenRepositoriesLoader(
-			customComponents.repositories.filter((r) => r.isHandledByMedusa && r.overriddenType)
-		);
-
-		await apiLoader(express);
-		await databaseLoader(customComponents.entities, customComponents.repositories);
-		unauthenticatedRoutesLoader(customComponents.routes, express);
+		await overriddenEntitiesLoader(moduleComponentsOptions.get('entity'));
+		await overriddenRepositoriesLoader(moduleComponentsOptions.get('repository'));
+		await apiLoader(express, moduleComponentsOptions.get('middleware'));
+		await databaseLoader(moduleComponentsOptions.get('entity'), moduleComponentsOptions.get('repository'));
+		unauthenticatedRoutesLoader(moduleComponentsOptions.get('route'), express);
 
 		const { app, container, dbConnection } = await this.startMedusaEngine(rootDir, express);
 
-		authenticatedRoutesLoader(customComponents.routes, app);
-		servicesLoader(customComponents.services, container);
+		authenticatedRoutesLoader(moduleComponentsOptions.get('route'), app);
+		servicesLoader(moduleComponentsOptions.get('service'), container);
 
-		await this.runCustomMigrations(customComponents.migrations, dbConnection);
+		await this.runCustomMigrations(moduleComponentsOptions.get('migration'), dbConnection);
 
 		Utils.logRoutes(app);
 		return container;
@@ -116,7 +82,7 @@ export class MedusaLoader {
 					res: Response,
 					next: NextFunction
 				): Promise<void> => {
-					await medusaEventEmitter.registerListeners(req.scope);
+					await customEventEmitter.registerListeners(req.scope);
 					return next();
 				}
 			);
@@ -143,14 +109,16 @@ export class MedusaLoader {
 	/**
 	 * @private
 	 * Run custom migrations that are find from the provided directory and stored in a `migrations` subdirectory.
-	 * @param migrations Any custom migration that implements MigrationInterface
+	 * @param migrationsOptions Any custom migration that implements MigrationInterface
 	 * @param dbConnection Database connection from medusa internal
 	 */
 	private async runCustomMigrations(
-		migrations: Constructor<MigrationInterface>[],
+		migrationsOptions: GetInjectableOptions<'migration'>,
 		dbConnection: Connection
 	): Promise<void> {
-		dbConnection.migrations.push(...migrations.map((Migration) => new Migration()));
+		for (const migrationOptions of migrationsOptions) {
+			dbConnection.migrations.push(new migrationOptions.metatype() as any);
+		}
 
 		await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
 			for (const migration of ranMigrations) {

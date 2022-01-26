@@ -4,54 +4,60 @@ import 'regenerator-runtime/runtime';
 
 import { Order as MedusaOrder } from '@medusajs/medusa/dist';
 import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
-import { MedusaEntity, MedusaRepository, MedusaRepositoryStatic } from '../../types';
 import { overriddenRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
-import { Repository } from 'typeorm';
-import { MedusaUtils } from '../../index';
+import { Entity, Repository, EntityRepository } from 'typeorm';
+import { Utils } from '../../utils';
+import { Injectable } from '../../decorators/injectable.decorator';
+import { Module } from '../../decorators/module.decorator';
+import { modulesMetadataReader } from '../../modules-metadata-reader';
 
-class Order extends MedusaOrder implements MedusaEntity<Order, typeof MedusaOrder> {
-	static overriddenType = MedusaOrder;
-	static isHandledByMedusa = true;
+@Injectable({ type: 'entity', override: MedusaOrder })
+@Entity()
+class Order extends MedusaOrder {
+	testPropertyOrder = 'toto';
 }
 
-class OrderRepository
-	extends Repository<Order>
-	implements MedusaRepository<MedusaOrderRepository, typeof OrderRepository>
-{
-	static overriddenType = MedusaOrderRepository;
-	static isHandledByMedusa = true;
-
+@Injectable({ type: 'repository', override: MedusaOrderRepository })
+@EntityRepository()
+class OrderRepository extends Repository<Order> {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 }
 
-const orderRepositoryExtended = MedusaUtils.repositoryMixin<Order>(OrderRepository, MedusaOrderRepository);
+Utils.repositoryMixin(OrderRepository, MedusaOrderRepository);
 
-class Another implements MedusaEntity {
+@Module({ imports: [OrderRepository] })
+class OrderModule {}
+
+@Injectable({ type: 'entity', resolutionKey: 'another' })
+@Entity()
+class Another {
 	static isHandledByMedusa = true;
 	static resolutionKey = 'anotherEntity';
 }
 
-class AnotherRepository extends Repository<Another> implements MedusaRepository<AnotherRepository> {
-	static isHandledByMedusa = true;
-	static resolutionKey = 'anotherRepository';
-}
+@Injectable({ type: 'repository', resolutionKey: 'anotherRepository' })
+@EntityRepository()
+class AnotherRepository extends Repository<Another> {}
+
+@Module({ imports: [AnotherRepository] })
+class AnotherOrderModule {}
 
 describe('Repositories loader', () => {
 	const container = createContainer();
 
 	describe('overriddenRepositoriesLoader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
-			expect((MedusaOrderRepository.prototype as any).testProperty).not.toBeDefined();
+			const components = modulesMetadataReader([OrderModule]);
+			await overriddenRepositoriesLoader(components.get('repository'));
 
-			await overriddenRepositoriesLoader([orderRepositoryExtended as MedusaRepositoryStatic]);
-			const { OrderRepository: MedusaOrderRepositoryReImport } = await import(
+			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
 				'@medusajs/medusa/dist/repositories/order'
-			) as unknown as { OrderRepository };
+			)) as { OrderRepository };
 
 			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
-			expect(new MedusaOrderRepositoryReImport().testProperty).toBeDefined();
-			expect(new MedusaOrderRepositoryReImport().testProperty).toBe(
+			expect((new MedusaOrderRepositoryReImport() as any).testProperty).toBeDefined();
+			expect((new MedusaOrderRepositoryReImport() as any).testProperty).toBe(
 				'I am the property from UserRepository that extend MedusaOrderRepository'
 			);
 		});
@@ -59,11 +65,12 @@ describe('Repositories loader', () => {
 
 	describe('repositoriesLoader', () => {
 		it(' should register a new repository into the container', async () => {
-			expect(container.hasRegistration(AnotherRepository.resolutionKey)).toBeFalsy();
+			expect(container.hasRegistration('anotherRepository')).toBeFalsy();
 
-			await repositoriesLoader([AnotherRepository], container);
+			const components = modulesMetadataReader([AnotherOrderModule]);
+			await repositoriesLoader(components.get('repository'), container);
 
-			expect(container.hasRegistration(AnotherRepository.resolutionKey)).toBeTruthy();
+			expect(container.hasRegistration('anotherRepository')).toBeTruthy();
 		});
 	});
 });

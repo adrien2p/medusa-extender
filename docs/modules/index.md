@@ -39,7 +39,7 @@
 - [OnMedusaEvent](index.md#onmedusaevent)
 - [StaticImplements](index.md#staticimplements)
 - [Type](index.md#type)
-- [medusaEventEmitter](index.md#medusaeventemitter)
+- [customEventEmitter](index.md#medusaeventemitter)
 
 ### Variables
 
@@ -245,9 +245,9 @@ Re-exports [Type](../interfaces/types.Type.md)
 
 ___
 
-### medusaEventEmitter
+### customEventEmitter
 
-Re-exports [medusaEventEmitter](medusa_event_emitter.md#medusaeventemitter)
+Re-exports [customEventEmitter](medusa_event_emitter.md#medusaeventemitter)
 
 ## Variables
 

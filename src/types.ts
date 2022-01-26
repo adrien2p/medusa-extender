@@ -2,227 +2,115 @@ import { Express, NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 
 export interface Type<T = unknown> extends Function {
-    new(...args: unknown[]): T;
+	new (...args: unknown[]): T;
 }
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type Metatype<T = unknown> = Type<T> | string | symbol | Function;
-
-export type StaticImplements<I extends new (...args: any[]) => any> = InstanceType<I>;
+/**
+ * Components that does not required any other options that Type.
+ */
+export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'migration' | 'route' | 'middleware';
 
 /**
- * Hold the name of the medusa services registered into the container for later on resolve.
+ * Defines the injection options for services, entities, repositories.
  */
-export const MedusaResolverKeys = {
-    EventBusService: 'eventbusService',
-    UserService: 'userService',
-    CustomerService: 'customerService',
-    AuthService: 'authService',
-    MiddlewareService: 'middlewareService',
-    NotificationService: 'notificationService',
-    TotalsService: 'totalsService',
-    StoreService: 'storeService',
-    PaymentProviderService: 'paymentproviderService',
-    FulfillmentProviderService: 'fulfillmentproviderService',
-    RegionService: 'regionService',
-    ProductVariantService: 'productvariantService',
-    ProductCollectionService: 'productcollectionService',
-    DefaultSearchService: 'defaultsearchService',
-    ProductService: 'productService',
-    DiscountService: 'discountService',
-    GiftCardService: 'giftcardService',
-    ShippingOptionService: 'shippingoptionService',
-    CustomShippingOptionService: 'customshippingoptionService',
-    ShippingProfileService: 'shippingprofileService',
-    LineItemService: 'lineitemService',
-    FulfillmentService: 'fulfillmentService',
-    InventoryService: 'inventoryService',
-    CartService: 'cartService',
-    DraftOrderService: 'draftorderService',
-    OrderService: 'orderService',
-    manager: 'manager',
-    logger: 'logger',
-    requestContext: 'requestContext',
+export type ComplexInjectableOptions<T = unknown> = {
+	type: Extract<InjectableComponentTypes, 'entity' | 'repository' | 'service'>;
+	scope?: LifetimeType;
+	resolutionKey?: string;
+	override?: Type<T>;
 };
+
+/**
+ * Defines the injection options for migrations.
+ */
+export type MigrationInjectionOptions = {
+	type: Extract<InjectableComponentTypes, 'migration'>;
+};
+
+/**
+ * Defines the injection options for routes.
+ */
+export type RoutesInjectionOptions = {
+	type: Extract<InjectableComponentTypes, 'route'>;
+	requiredAuth: boolean;
+	method: string;
+	path: string;
+	handler: (...args: unknown[]) => void;
+};
+
+/**
+ * Defines the injection options for middlewares.
+ */
+export type MiddlewareInjectionOptions = {
+	type: Extract<InjectableComponentTypes, 'middleware'>;
+	requireAuth: boolean;
+	routerOptions: MedusaRouteOptions[];
+};
+
+/**
+ * Union of all options type possible for injectable.
+ */
+export type InjectableOptions<T = unknown> =
+	| ComplexInjectableOptions<T>
+	| MigrationInjectionOptions
+	| MiddlewareInjectionOptions
+	| RoutesInjectionOptions;
+
+/**
+ * Determine which options type it actually is depending on the component type.
+ */
+export type GetInjectableOption<TComponentType extends InjectableComponentTypes = InjectableComponentTypes> =
+	(TComponentType extends Extract<InjectableComponentTypes, 'entity' | 'repository' | 'service'>
+		? ComplexInjectableOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'migration'>
+		? MigrationInjectionOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'route'>
+		? RoutesInjectionOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'middleware'>
+		? MiddlewareInjectionOptions
+		: never) & { metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type };
+
+/**
+ * Determine which options type it actually is depending on the component type.
+ */
+export type GetInjectableOptions<TComponentType extends InjectableComponentTypes = InjectableComponentTypes> =
+	GetInjectableOption<TComponentType>[];
 
 /**
  * Medusa request extended.
  */
 export type MedusaRequest<T = any, Cradle extends object = any> = Request & {
-    scope: AwilixContainer<Cradle & T>;
+	scope: AwilixContainer<Cradle & T>;
 };
 
 /**
  * Describe the expected request from a middleware {@link MedusaMiddleware}.
  */
 export type MedusaAuthenticatedRequest = Request &
-    MedusaRequest & {
-    user?: { id?: string; userId: string };
-    userId: string;
-    session: { jwt: string };
-};
+	MedusaRequest & {
+		user?: { id?: string; userId: string };
+		userId: string;
+		session: { jwt: string };
+	};
 
 export type MedusaRouteMethods = 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head';
+
 /**
  * Describe all the available options for the Route {@link MedusaMiddleware}.
  */
 export type MedusaRouteOptions = {
-    path: string;
-    method: MedusaRouteMethods;
+	path: string;
+	method: MedusaRouteMethods;
 };
 
 /**
  * @interface
  * Describe a custom middleware instance.
  */
-export interface MedusaMiddlewareInstance {
-    consume(options: { app: Express }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void>;
+export interface MedusaMiddleware {
+	consume(options: {
+		app: Express;
+	}): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void>;
 }
-
-/**
- * @interface
- * Describe a custom middleware constructor.
- */
-export interface MedusaMiddlewareStatic {
-    isPostAuth?: boolean;
-    isHandledByMedusa?: boolean;
-    routesOptions: MedusaRouteOptions | MedusaRouteOptions[];
-
-    new(): MedusaMiddlewareInstance;
-}
-
-/**
- * Any custom medusa middleware must implement MedusaMiddleware.
- */
-export type MedusaMiddleware<T extends MedusaMiddlewareStatic = MedusaMiddlewareStatic> = StaticImplements<T>;
-
-/**
- * @interface
- * Describe a custom service instance.
- */
-export interface MedusaServiceInstance {
-}
-
-/**
- * @interface
- * Describe a custom service constructor.
- */
-export interface MedusaServiceStatic<OverriddenType = unknown> {
-    overriddenType?: Type<OverriddenType>;
-    isHandledByMedusa?: boolean;
-    scope?: LifetimeType;
-
-    /**
-     * Only required if there is no overriddenType
-     */
-    resolutionKey?: string;
-
-    new(container: any): MedusaServiceInstance;
-}
-
-/**
- * Any custom medusa service must implement MedusaService.
- */
-export type MedusaService<OverriddenType = unknown,
-    T extends MedusaServiceStatic<OverriddenType> = MedusaServiceStatic<OverriddenType>> = StaticImplements<T>;
-
-/**
- * @interface
- * Describe a custom entity instance.
- */
-export interface MedusaEntityInstance {
-}
-
-/**
- * @interface
- * Describe a custom entity constructor.
- */
-export interface MedusaEntityStatic<OverriddenType = unknown> {
-    overriddenType?: Type<OverriddenType>;
-    isHandledByMedusa?: boolean;
-
-    /**
-     * Only required if there is no overriddenType
-     */
-    resolutionKey?: string;
-
-    new(): MedusaEntityInstance;
-}
-
-/**
- * Any custom medusa entity must implement MedusaService.
- */
-export type MedusaEntity<OverriddenType = unknown,
-    T extends MedusaEntityStatic<OverriddenType> = MedusaEntityStatic<OverriddenType>> = StaticImplements<T>;
-
-// TODO Find a way to improve repository typings since it is a bit complicated due to multiple extensions.
-
-/**
- * @interface
- * Describe a custom entity repository instance.
- */
-export interface MedusaRepositoryInstance {
-}
-
-/**
- * @interface
- * Describe a custom entity repository constructor.
- */
-export interface MedusaRepositoryStatic<OverriddenType = unknown> {
-    overriddenType?: Type<OverriddenType>;
-    isHandledByMedusa?: boolean;
-
-    /**
-     * Only required if there is no overriddenType
-     */
-    resolutionKey?: string;
-
-    new(): MedusaRepositoryInstance;
-}
-
-/**
- * Any custom medusa entity repository must implement MedusaService.
- */
-export type MedusaRepository<OverriddenType = unknown,
-    T extends MedusaRepositoryStatic<OverriddenType> = MedusaRepositoryStatic<OverriddenType>> = StaticImplements<T>;
-
-/**
- * @interface
- * Describe a custom entity rsubscriberepository instance.
- */
-export interface MedusaEntitySubscriberInstance {
-}
-
-/**
- * @interface
- * Describe a custom subscriber constructor.
- */
-export interface MedusaEntitySubscriberStatic {
-    new(request: MedusaRequest | MedusaAuthenticatedRequest): MedusaEntitySubscriberInstance;
-}
-
-/**
- * Any custom medusa subscriber must implement MedusaEntitySubscriber.
- */
-export type MedusaEntitySubscriber<T extends MedusaEntitySubscriberStatic = MedusaEntitySubscriberStatic> =
-    StaticImplements<T>;
-
-/**
- * Event types that can be emitted from an entity subscriber.
- */
-export const MedusaEntityEvents = {
-    BeforeInsert: 'beforeInsert',
-    AfterInsert: 'afterInsert',
-};
-
-/**
- * Describe a custom router handler.
- */
-export type MedusaRoute = {
-    method: MedusaRouteMethods;
-    path: string;
-    isAuthenticated?: boolean;
-    handler: (req: MedusaAuthenticatedRequest | Request, res: Response) => unknown | Promise<unknown>;
-};

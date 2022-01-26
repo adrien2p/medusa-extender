@@ -36,13 +36,14 @@
     "build": "npm run build:ts && npm run build:declarations",
     "build:doc": "./node_modules/.bin/typedoc",
     "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest -c jest.config.js"
   },
   "dependencies": {
     "chalk": "^4.1.2",
     "mongoose": "^6.1.6"
   },
   "peerDependencies": {
+    "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.62",
     "awilix": "^6.0.0",
     "express": "^4.17.1",
@@ -50,9 +51,8 @@
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
+    "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.62",
-    "@nestjs/common": "^8.2.3",
-    "@swc-node/jest": "^1.4.1",
     "@swc/cli": "^0.1.52",
     "@swc/core": "^1.2.118",
     "@swc/jest": "^0.2.17",
@@ -80,27 +80,5 @@
     "typedoc-plugin-missing-exports": "^0.22.6",
     "typeorm": "^0.2.41",
     "typescript": "^4.5.2"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": [
-        "@swc/jest",
-        {
-          "configFile": ".swcrc.spec"
-        }
-      ]
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node"
   }
 }

@@ -21,14 +21,8 @@ npm i medusa-extender
 
 # Introduction
 
-This packages exports the necessary bits and pieces to extend [medusajs](https://github.com/medusajs/medusa)
+This packages exports the necessary objects to customize [medusajs](https://github.com/medusajs/medusa)
 and fit your needs.
-
-- You need to add custom fields on an entity, extend and entity from medusa;
-- You need to override a service to extend some logic, extend a service from medusa;
-- And so on...
-
-# Dependency graph
 
 Here is the architecture of this package and how modules are related to each other. It will help you navigate into the code base.
 
@@ -36,286 +30,153 @@ Here is the architecture of this package and how modules are related to each oth
      onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
      alt="Dependency graph" />
 
+# Features
+
+- Flexible architecture.
+
+> No need anymore to put your services in the services directory, your entities in the models directory and so on. You put your files
+> where you want. That way you can organize your code as modules for example and group your modules by domains.
+
+- Create or extends entities
+
+> If you need to add custom fields on an entity, you only need to extend the original entity from medusa and that's it.
+
+- Create or extends services
+
+> If you need to extend a service to manage your new fields or update the business logic according to your new needs,
+> you only need to extend the original service from medusa and that's it.
+
+- Create or extends repositories
+
+> When you extend an entity and you want to manipulate that entity in a service, you need to do that through a repository.
+> In order for that repository to reflect your extended entities, you are provided with the right tools to do so.
+
+- Create custom middlewares to apply before/after authentication
+
+> Some times, you need to add custom middlware. For example, to store some context on the incoming request.
+> You can achieve that now with the tools provided.
+
+- Create custom route and attach custom service to handle it.
+
+> You can do that to. Create a new route, configure it, and hit the end point.
+
 # Api doc
 
 [Read more about it](./docs)
 
 # Usage
 
-> You have to know that using this package will disallow the usage of the command `medusa develop`.
-
-Since that you need to extend the loading flow of medusa, using this package means
-that you have to start the server yourself.
-
-this is not a problem. Here is how you do that.
-
-## Server
-
-In your project, create a file such as `main.ts`, then copy paste de code bellow.
-
-````typescript
-// main.ts
-
-import express = require('express');
-import { Medusa } from 'medusa-extender';
-import { resolve } from 'path';
-import config = require('./medusa-config');
-
-async function bootstrap() {
-    const expressInstance = express();
-
-    const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance).load();
-
-    expressInstance.listen(config.serverConfig.port, () => {
-        console.log('The server is started');
-    });
-}
-
-bootstrap();
-````
-
-The code above allows you to manually launch the medusa engine and will load all your components from the following directories
-
-```
-|- src
-|---- yourModule
-|-------- services
-|-------- entities
-|-------- repositories
-|-------- routes
-|-------- migrations
-|---- yourOtherModule
-|-------- services
-|-------- entities
-|-------- repositories
-|-------- routes
-|-------- migrations
-| ...
-```
-
-with that in mind, you can organise your code as you want, the scanner will take care of recursively looking for those
-directories.
-
-## Medusa module
-
-This module is the main module that wee have seen above and that allow us to load
-medusa under the hood. But, it also allows you to add custom middleware that you
-would want to be used either before or after the authentication occured.
-
-<details>
-<summary>Click to see the middleware example</summary>
-
-<section>
-
-In this example, the middleware will be applied after the authentication flow.
-When the endpoint `POST /admin/users/` will be hit, a new `UserSubscriber` will be attach
-to the entity and the previous one will be removed, in order to refresh the injected cradle and get all scoped elements available in the services
-that will listen for the event that occured on the user entity.
-
-```typescript
-import { Express, NextFunction, Response } from 'express';
-import {
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-    MedusaResolverKeys,
-    MedusaRouteOptions,
-    MedusaUtils,
-} from 'medusa-extender';
-import { Connection } from 'typeorm';
-import Utils from '@core/utils';
-import UserSubscriber from '@modules/user/subscribers/user.subscriber';
-
-export default class AttachUserSubscribersMiddleware
-	implements MedusaMiddleware<typeof AttachUserSubscribersMiddleware>
-{
-    public static isPostAuth = true;
-    public static isHandledByMedusa = true;
-    
-    public static get routesOptions(): MedusaRouteOptions {
-        return {
-            path: '/admin/users/',
-            method: 'post',
-        };
-    }
-    
-    public consume(options: { app: Express }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
-        const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
-        options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            if (Utils.isExpectedRoute([routeOptions], req)) {
-                const { connection } = req.scope.resolve(MedusaResolverKeys.manager) as { connection: Connection };
-                MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
-            }
-            return next();
-        });
-    
-        return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
-    }
-}
-```
-
-</section>
-</details>
-
-Then, to load the middlewares you have to update a bit you `main.ts` file like this
+## Create your server :checkered_flag:
 
 ```typescript
 // main.ts
 
-import express = require('express');
-import { Medusa } from 'medusa-extender';
-import { resolve } from 'path';
-import AttachUserSubscribersMiddleware from '@modules/user/middlewares/attachUserSubscribers.middleware';
-import config = require('./medusa-config');
-
 async function bootstrap() {
     const expressInstance = express();
-
+    
     const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance)
-        .consume(AttachUserSubscribersMiddleware)
-        .load();
-
+    await new Medusa(rootDir, expressInstance).load(
+        UserModule,
+        OrderModule,
+        ProductModule,
+        // And so on
+    );
+    
     expressInstance.listen(config.serverConfig.port, () => {
-        console.log('The server is started');
+        logger.info('Server successfully started on port ' + config.serverConfig.port);
     });
 }
 
 bootstrap();
 ```
 
-## Entities
+## Create your first module :rocket:
 
-there is two possibilities, you want either to create a new entity or to override an 
-existing one.
-
-### Add entity
-
-<details>
-<summary>Click to see the example</summary>
-
-<section>
+Let say that you want to add a new field on the `Product` entity.
 
 ```typescript
-import { MedusaEntity } from 'medusa-extender';
-import { Entity } from 'typeorm';
+// modules/product/product.entity.ts
 
+import { Product as MedusaProduct } from '@medusa/medusa/dist'; 
+import { Column, Entity } from "typeorm"; 
+import { Injectable } from "medusa-extender";
+
+@Injectable({ type: 'entity', override: MedusaProduct })
 @Entity()
-class Myentity implements MedusaEntity {
-    static isHandledByMedusa = true;
-    static resolutionKey = 'the_name_in_the_container';
+class Product extends MedusaProduct {
+    @Column()
+    customField: string;
 }
 ```
 
-</section>
-</details>
-
-### Override entity
-
-<details>
-<summary>Click to see the example</summary>
-
-<section>
+We will then create a new repository to reflect our custom entity.
 
 ```typescript
-import { User as MedusaUser } from '@medusa/medusa/dist';
-import { MedusaEntity } from 'medusa-extender';
-import { Entity } from 'typeorm';
+// modules/product/product.repository.ts
 
-@Entity()
-class User extends MedusaUser implements MedusaEntity<User, typeof MedusaUser> {
-    static overriddenType = MedusaUser;
-    static isHandledByMedusa = true;
+import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
+import { EntityRepository, Repository } from "typeorm"; 
+import { Injectable, Utils } from "medusa-extender"; 
+import { Product } from "./product.entity";
+
+@Injectable({ type: 'repository', override: MedusaProductRepository })
+@EntityRepository()
+class ProductRepository extends Repository<Product> {
 }
+
+export default Utils.repositoryMixin(ProductRepository, MedusaProductRepository);
 ```
 
-</section>
-</details>
+> This part `Utils.repositoryMixin(ProductRepository, MedusaProductRepository);` is mandatory
+> Since our objective is to extend an existing repository and also reflect our custom entity
+> we need to achieve a double extension. This is not possible except using the mixin pattern.
 
-## Services
-
-there is two possibilities, you want either to create a new service or to override an 
-existing one.
-
-### Add service
-
-<details>
-<summary>Click to see the example</summary>
-
-<section>
+We want now to add a custom service to implement our custom logic for our new field.
 
 ```typescript
-import { MedusaService } from 'medusa-extender';
-import { UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
-import { EntityManager } from 'typeorm';
-import { Lifetime } from 'awilix';
-import EventBusService from '@medusajs/medusa/dist/services/event-bus';
-import { UserRepository } from '@medusajs/medusa/dist/repositories/user';
+// modules/product/product.service.ts
 
-type ConstructorParams = {
+interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
     manager: EntityManager;
-    userRepository: typeof UserRepository;
+    productRepository: ObjectType<typeof ProductRepository>;
+    productVariantRepository: ObjectType<typeof ProductVariantRepository>;
+    productOptionRepository: ObjectType<typeof ProductOptionRepository>;
     eventBusService: EventBusService;
-};
+    productVariantService: ProductVariantService;
+    productCollectionService: ProductCollectionService;
+    productTypeRepository: ObjectType<typeof ProductTypeRepository>;
+    productTagRepository: ObjectType<typeof ProductTagRepository>;
+    imageRepository: ObjectType<typeof ImageRepository>;
+    searchService: TSearchService;
+}
 
-export default class UserService extends MedusaUserService implements MedusaService<typeof UserService> {
-    public static overriddenType = MedusaUserService;
-    public static isHandledByMedusa = true;
-    public static scope = Lifetime.SINGLETON;
-    
+@Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
+export default class ProductService extends MedusaProductService implements MedusaService<typeof ProductService> {
     readonly #manager: EntityManager;
-    readonly #userRepository: typeof UserRepository;
-    readonly #eventBus: EventBusService;
-
+    
     constructor(private readonly container: ConstructorParams) {
         super(container);
         this.#manager = container.manager;
-        this.#userRepository = container.userRepository;
-        this.#eventBus = container.eventBusService;
+    }
+    
+    @OnMedusaEvent.Before.Insert(Product, { async: true })
+    public async attachStoreToProduct(
+        params: MedusaEventHandlerParams<Product, 'Insert'>
+    ): Promise<EntityEventType<Product, 'Insert'>> {
+        const { event } = params;
+        event.entity.customField = 'custom_value';
+        return event;
+    }
+    
+    public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): any {
+        selector['customField'] = 'custom_value';
+        return super.prepareListQuery_(selector, config) as any;
     }
 }
 ```
 
-</section>
-</details>
+That's it you've completed your first module :rocket:
 
-### Override service
+# Contribute :ballot_box:
 
-<details>
-<summary>Click to see the example</summary>
-
-
-<section>
-
-```typescript
-import { MedusaService } from 'medusa-extender';
-import { EntityManager } from 'typeorm';
-import { Lifetime } from 'awilix';
-import EventBusService from '@medusajs/medusa/dist/services/event-bus';
-import { UserRepository } from '@medusajs/medusa/dist/repositories/user';
-
-type ConstructorParams = {
-    manager: EntityManager;
-    userRepository: typeof UserRepository;
-    eventBusService: EventBusService;
-};
-
-export default class MyService implements MedusaService<typeof MyService> {
-    public static isHandledByMedusa = true;
-    public static resolutionKey = 'the_name_in_the_container';
-    public static scope = Lifetime.SINGLETON;
-    
-    readonly #manager: EntityManager;
-    readonly #userRepository: typeof UserRepository;
-    readonly #eventBus: EventBusService;
-    
-    constructor(private readonly container: ConstructorParams) {
-        this.#manager = container.manager;
-        this.#userRepository = container.userRepository;
-        this.#eventBus = container.eventBusService;
-    }
-}
-```
-
-</section>
-</details>
+Contributions welcome!

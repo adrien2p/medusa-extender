@@ -1,6 +1,6 @@
 import chalk = require('chalk');
 import { Express } from 'express';
-import { Connection, EntityManager, EntitySubscriberInterface, ObjectType, Repository } from 'typeorm';
+import { Connection, EntityManager, EntitySubscriberInterface } from 'typeorm';
 import { Constructor } from './types';
 
 /**
@@ -12,21 +12,22 @@ export class Utils {
 	 * For repository context, you should extends repository and the medusa target repository.
 	 * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 	 * @param derivedCtor
-	 * @param baseCtors
+	 * @param medusaConstructor
 	 */
-	static repositoryMixin<TEntity, TRepository = ObjectType<Repository<TEntity>>>(
+	static repositoryMixin<TRepository, TMedusaRepository>(
 		derivedCtor: TRepository,
-		...baseCtors: any[]
-	): TRepository {
-		baseCtors.forEach((baseCtor) => {
-			// Instance members
-			Object.getOwnPropertyNames(baseCtor.prototype).forEach((name) => {
-				if (name !== 'constructor') {
-					(derivedCtor as any).prototype[name] = baseCtor.prototype[name];
-				}
+		medusaConstructor: TMedusaRepository
+	): TRepository & TMedusaRepository {
+		[medusaConstructor].forEach((baseConstructor) => {
+			Object.getOwnPropertyNames((baseConstructor as any).prototype).forEach((name) => {
+				Object.defineProperty(
+					(derivedCtor as any).prototype,
+					name,
+					Object.getOwnPropertyDescriptor((baseConstructor as any).prototype, name) || Object.create(null)
+				);
 			});
 		});
-		return derivedCtor;
+		return derivedCtor as TRepository & { [K in keyof TMedusaRepository]: TMedusaRepository[K] };
 	}
 
 	/**

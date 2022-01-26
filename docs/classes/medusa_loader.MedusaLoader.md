@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [medusa-loader](../modules/medusa_loader.md) / MedusaLoader
+[medusa-extender](../README.md) / [Exports](../modules.md) / [medusa-loader](../modules/medusa_loader.md) / Loader
 
-# Class: MedusaLoader
+# Class: Loader
 
-[medusa-loader](../modules/medusa_loader.md).MedusaLoader
+[medusa-loader](../modules/medusa_loader.md).Loader
 
 **`internal`**
 Load medusa and apply all middlewares and migrations before registering the medusa
@@ -25,7 +25,7 @@ internal container and database connection.
 
 ### constructor
 
-• **new MedusaLoader**()
+• **new Loader**()
 
 ## Methods
 
@@ -46,7 +46,7 @@ internal container and database connection.
 
 #### Defined in
 
-[src/medusa-loader.ts:68](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L68)
+[src/loader.ts:68](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L68)
 
 ___
 
@@ -68,7 +68,7 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 
 #### Defined in
 
-[src/medusa-loader.ts:104](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L104)
+[src/loader.ts:104](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L104)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/medusa-loader.ts:149](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L149)
+[src/loader.ts:149](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L149)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-[src/medusa-loader.ts:134](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L134)
+[src/loader.ts:134](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-loader.ts#L134)
