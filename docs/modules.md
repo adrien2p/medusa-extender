@@ -6,9 +6,13 @@
 
 ### Modules
 
+- [contants](modules/contants.md)
+- [decorators/injectable.decorator](modules/decorators_injectable_decorator.md)
+- [decorators/module.decorator](modules/decorators_module_decorator.md)
 - [decorators/onMedusaEvent.decorator](modules/decorators_onMedusaEvent_decorator.md)
-- [decorators/types](modules/decorators_types.md)
+- [event-emmiter](modules/event_emmiter.md)
 - [index](modules/index.md)
+- [loader](modules/loader.md)
 - [loaders](modules/loaders.md)
 - [loaders/api.loader](modules/loaders_api_loader.md)
 - [loaders/database.loader](modules/loaders_database_loader.md)
@@ -18,9 +22,6 @@
 - [loaders/routes.loader](modules/loaders_routes_loader.md)
 - [loaders/services.loader](modules/loaders_services_loader.md)
 - [medusa](modules/medusa.md)
-- [medusa-event-emitter](modules/medusa_event_emitter.md)
-- [medusa-loader](modules/medusa_loader.md)
-- [medusa-middleware.repository](modules/medusa_middleware_repository.md)
-- [medusa-scanner](modules/medusa_scanner.md)
-- [medusa-utils](modules/medusa_utils.md)
+- [modules-metadata-reader](modules/modules_metadata_reader.md)
 - [types](modules/types.md)
+- [utils](modules/utils.md)

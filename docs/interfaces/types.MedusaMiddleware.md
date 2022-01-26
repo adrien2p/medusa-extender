@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [types](../modules/types.md) / MedusaMiddlewareInstance
+[medusa-extender](../README.md) / [Exports](../modules.md) / [types](../modules/types.md) / MedusaMiddleware
 
-# Interface: MedusaMiddlewareInstance
+# Interface: MedusaMiddleware
 
-[types](../modules/types.md).MedusaMiddlewareInstance
+[types](../modules/types.md).MedusaMiddleware
 
 **`interface`**
 Describe a custom middleware instance.
@@ -11,7 +11,7 @@ Describe a custom middleware instance.
 
 ### Methods
 
-- [consume](types.MedusaMiddlewareInstance.md#consume)
+- [consume](types.MedusaMiddleware.md#consume)
 
 ## Methods
 
@@ -46,4 +46,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-[src/types.ts:81](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/types.ts#L81)
+[src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/9345158/src/types.ts#L113)

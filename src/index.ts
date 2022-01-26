@@ -1,5 +1,5 @@
 export { Medusa } from './medusa';
-export { customEventEmitter as EventEmitter } from './event-emmiter';
+export { customEventEmitter as eventEmitter } from './event-emmiter';
 export * from './types';
 
 export * from './decorators/onMedusaEvent.decorator';

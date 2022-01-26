@@ -21,8 +21,8 @@ decorate the original database loader to register our custom entities and reposi
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `entities` | [`MedusaEntityStatic`](../interfaces/types.MedusaEntityStatic.md)<`unknown`\>[] | Custom entities |
-| `repositories` | [`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`unknown`\>[] | Custom repositories |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Custom entities options |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Custom repositories options |
 
 #### Returns
 
@@ -30,4 +30,4 @@ decorate the original database loader to register our custom entities and reposi
 
 #### Defined in
 
-[src/loaders/database.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/database.loader.ts#L11)
+[src/loaders/database.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/database.loader.ts#L11)

@@ -22,7 +22,7 @@ Load custom repositories that must override the existing repositories from the r
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `repositories` | [`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`unknown`\>[] | Any custom repository that implements MedusaRepository |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Any custom repository that implements MedusaRepository |
 
 #### Returns
 
@@ -30,7 +30,7 @@ Load custom repositories that must override the existing repositories from the r
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/repository.loader.ts#L10)
+[src/loaders/repository.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/repository.loader.ts#L10)
 
 ___
 
@@ -45,7 +45,7 @@ Load custom repositories that must be added to the existing container from the r
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `repositories` | [`MedusaRepositoryStatic`](../interfaces/types.MedusaRepositoryStatic.md)<`unknown`\>[] | Any custom repository that implements MedusaRepository |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Any custom repository that implements MedusaRepository |
 | `container` | `AwilixContainer`<`any`\> |  |
 
 #### Returns
@@ -54,4 +54,4 @@ Load custom repositories that must be added to the existing container from the r
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/repository.loader.ts#L20)
+[src/loaders/repository.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/repository.loader.ts#L23)

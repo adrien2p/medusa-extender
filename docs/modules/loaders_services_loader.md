@@ -21,7 +21,7 @@ Load custom services from the rootDir.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `services` | [`MedusaServiceStatic`](../interfaces/types.MedusaServiceStatic.md)<`unknown`\>[] | Any custom service that implements MedusaService |
+| `services` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
 | `container` | `AwilixContainer`<`any`\> | The container to register the custom service under custom-medusa-extender or override existing one |
 
 #### Returns
@@ -30,4 +30,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/services.loader.ts#L11)
+[src/loaders/services.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/services.loader.ts#L11)

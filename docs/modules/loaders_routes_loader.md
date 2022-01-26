@@ -13,13 +13,13 @@
 
 ### authenticatedRoutesLoader
 
-▸ **authenticatedRoutesLoader**(`allRoutes`, `app`): `void`
+▸ **authenticatedRoutesLoader**(`routesOptions`, `app`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `allRoutes` | [`MedusaRoute`](types.md#medusaroute)[][] |
+| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"route"``\> |
 | `app` | `Express` |
 
 #### Returns
@@ -28,19 +28,19 @@
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/routes.loader.ts#L4)
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/routes.loader.ts#L4)
 
 ___
 
 ### unauthenticatedRoutesLoader
 
-▸ **unauthenticatedRoutesLoader**(`allRoutes`, `app`): `void`
+▸ **unauthenticatedRoutesLoader**(`routesOptions`, `app`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `allRoutes` | [`MedusaRoute`](types.md#medusaroute)[][] |
+| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"route"``\> |
 | `app` | `Express` |
 
 #### Returns
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/routes.loader.ts#L14)
+[src/loaders/routes.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/routes.loader.ts#L12)

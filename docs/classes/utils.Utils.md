@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [medusa-utils](../modules/medusa_utils.md) / Utils
+[medusa-extender](../README.md) / [Exports](../modules.md) / [utils](../modules/utils.md) / Utils
 
 # Class: Utils
 
-[medusa-utils](../modules/medusa_utils.md).Utils
+[utils](../modules/utils.md).Utils
 
 **`internal`**
 Utilities helper methods.
@@ -11,16 +11,16 @@ Utilities helper methods.
 
 ### Constructors
 
-- [constructor](medusa_utils.Utils.md#constructor)
+- [constructor](utils.Utils.md#constructor)
 
 ### Methods
 
-- [attachOrReplaceEntitySubscriber](medusa_utils.Utils.md#attachorreplaceentitysubscriber)
-- [logRoutes](medusa_utils.Utils.md#logroutes)
-- [prepareLog](medusa_utils.Utils.md#preparelog)
-- [printRoutes](medusa_utils.Utils.md#printroutes)
-- [repositoryMixin](medusa_utils.Utils.md#repositorymixin)
-- [splitRoutes](medusa_utils.Utils.md#splitroutes)
+- [attachOrReplaceEntitySubscriber](utils.Utils.md#attachorreplaceentitysubscriber)
+- [logRoutes](utils.Utils.md#logroutes)
+- [prepareLog](utils.Utils.md#preparelog)
+- [printRoutes](utils.Utils.md#printroutes)
+- [repositoryMixin](utils.Utils.md#repositorymixin)
+- [splitRoutes](utils.Utils.md#splitroutes)
 
 ## Constructors
 
@@ -56,7 +56,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L38)
+[src/utils.ts:39](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L39)
 
 ___
 
@@ -78,7 +78,7 @@ Log all the routes from the express instance.
 
 #### Defined in
 
-[src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L59)
+[src/utils.ts:60](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L60)
 
 ___
 
@@ -101,7 +101,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L68)
+[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L69)
 
 ___
 
@@ -122,38 +122,38 @@ ___
 
 #### Defined in
 
-[src/utils.ts:79](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L79)
+[src/utils.ts:80](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L80)
 
 ___
 
 ### repositoryMixin
 
-▸ `Static` **repositoryMixin**<`TEntity`, `TRepository`\>(`derivedCtor`, ...`baseCtors`): `TRepository`
+▸ `Static` **repositoryMixin**<`TRepository`, `TMedusaRepository`\>(`derivedCtor`, `medusaConstructor`): `TRepository` & `TMedusaRepository`
 
 For repository context, you should extends repository and the medusa target repository.
 Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `TEntity` | `TEntity` |
-| `TRepository` | `ObjectType`<`Repository`<`TEntity`\>\> |
+| Name |
+| :------ |
+| `TRepository` |
+| `TMedusaRepository` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `derivedCtor` | `TRepository` |
-| `...baseCtors` | `any`[] |
+| `medusaConstructor` | `TMedusaRepository` |
 
 #### Returns
 
-`TRepository`
+`TRepository` & `TMedusaRepository`
 
 #### Defined in
 
-[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L17)
+[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L17)
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 #### Defined in
 
-[src/utils.ts:99](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/medusa-utils.ts#L99)
+[src/utils.ts:100](https://github.com/adrien2p/medusa-extender/blob/9345158/src/utils.ts#L100)

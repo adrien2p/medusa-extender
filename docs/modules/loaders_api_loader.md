@@ -12,7 +12,7 @@
 
 ### apiLoader
 
-▸ **apiLoader**(`app`): `Promise`<`void`\>
+▸ **apiLoader**(`app`, `middlewares`): `Promise`<`void`\>
 
 **`internal`**
 Decorate the original api loader to apply our custom middleware first.
@@ -22,6 +22,7 @@ Decorate the original api loader to apply our custom middleware first.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `app` | `Express` | Express app |
+| `middlewares` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"middleware"``\> |  |
 
 #### Returns
 
@@ -29,4 +30,4 @@ Decorate the original api loader to apply our custom middleware first.
 
 #### Defined in
 
-[src/loaders/api.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/api.loader.ts#L10)
+[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/api.loader.ts#L12)

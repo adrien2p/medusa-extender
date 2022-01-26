@@ -15,12 +15,15 @@
 
 ▸ **entitiesLoader**(`entities`, `container`): `Promise`<`void`\>
 
+**`internal`**
+Load custom entities that must be added to the container
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entities` | [`MedusaEntityStatic`](../interfaces/types.MedusaEntityStatic.md)<`unknown`\>[] |
-| `container` | `AwilixContainer`<`any`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Any custom entities |
+| `container` | `AwilixContainer`<`any`\> |  |
 
 #### Returns
 
@@ -28,7 +31,7 @@
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/entities.loader.ts#L14)
+[src/loaders/entities.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/entities.loader.ts#L23)
 
 ___
 
@@ -43,7 +46,7 @@ Load custom entities that must override the existing entities from the rootDir.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `entities` | [`MedusaEntityStatic`](../interfaces/types.MedusaEntityStatic.md)<`unknown`\>[] | Any custom entity that implements MedusaEntity |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Any custom entities |
 
 #### Returns
 
@@ -51,4 +54,4 @@ Load custom entities that must override the existing entities from the rootDir.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/entities.loader.ts#L10)
+[src/loaders/entities.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/entities.loader.ts#L10)

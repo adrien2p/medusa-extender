@@ -6,46 +6,43 @@
 
 ### References
 
+- [ComplexInjectableOptions](index.md#complexinjectableoptions)
 - [Constructor](index.md#constructor)
 - [EntityActions](index.md#entityactions)
 - [EntityEventActionOptions](index.md#entityeventactionoptions)
 - [EntityEventType](index.md#entityeventtype)
+- [GetInjectableOption](index.md#getinjectableoption)
+- [GetInjectableOptions](index.md#getinjectableoptions)
+- [Injectable](index.md#injectable)
+- [InjectableComponentTypes](index.md#injectablecomponenttypes)
+- [InjectableOptions](index.md#injectableoptions)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
-- [MedusaEntity](index.md#medusaentity)
-- [MedusaEntityEvents](index.md#medusaentityevents)
-- [MedusaEntityInstance](index.md#medusaentityinstance)
-- [MedusaEntityStatic](index.md#medusaentitystatic)
-- [MedusaEntitySubscriber](index.md#medusaentitysubscriber)
-- [MedusaEntitySubscriberInstance](index.md#medusaentitysubscriberinstance)
-- [MedusaEntitySubscriberStatic](index.md#medusaentitysubscriberstatic)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
 - [MedusaMiddleware](index.md#medusamiddleware)
-- [MedusaMiddlewareInstance](index.md#medusamiddlewareinstance)
-- [MedusaMiddlewareStatic](index.md#medusamiddlewarestatic)
-- [MedusaRepository](index.md#medusarepository)
-- [MedusaRepositoryInstance](index.md#medusarepositoryinstance)
-- [MedusaRepositoryStatic](index.md#medusarepositorystatic)
 - [MedusaRequest](index.md#medusarequest)
-- [MedusaResolverKeys](index.md#medusaresolverkeys)
-- [MedusaRoute](index.md#medusaroute)
 - [MedusaRouteMethods](index.md#medusaroutemethods)
 - [MedusaRouteOptions](index.md#medusarouteoptions)
-- [MedusaService](index.md#medusaservice)
-- [MedusaServiceInstance](index.md#medusaserviceinstance)
-- [MedusaServiceStatic](index.md#medusaservicestatic)
-- [Metatype](index.md#metatype)
+- [MiddlewareInjectionOptions](index.md#middlewareinjectionoptions)
+- [MigrationInjectionOptions](index.md#migrationinjectionoptions)
+- [Module](index.md#module)
 - [OnMedusaEvent](index.md#onmedusaevent)
-- [StaticImplements](index.md#staticimplements)
+- [RoutesInjectionOptions](index.md#routesinjectionoptions)
 - [Type](index.md#type)
-- [customEventEmitter](index.md#medusaeventemitter)
+- [eventEmitter](index.md#eventemitter)
 
 ### Variables
 
-- [MedusaUtils](index.md#medusautils)
+- [Utils](index.md#utils)
 
 ## References
+
+### ComplexInjectableOptions
+
+Re-exports [ComplexInjectableOptions](types.md#complexinjectableoptions)
+
+___
 
 ### Constructor
 
@@ -55,19 +52,49 @@ ___
 
 ### EntityActions
 
-Re-exports [EntityActions](decorators_types.md#entityactions)
+Re-exports [EntityActions](decorators_onMedusaEvent_decorator.md#entityactions)
 
 ___
 
 ### EntityEventActionOptions
 
-Re-exports [EntityEventActionOptions](decorators_types.md#entityeventactionoptions)
+Re-exports [EntityEventActionOptions](decorators_onMedusaEvent_decorator.md#entityeventactionoptions)
 
 ___
 
 ### EntityEventType
 
-Re-exports [EntityEventType](decorators_types.md#entityeventtype)
+Re-exports [EntityEventType](decorators_onMedusaEvent_decorator.md#entityeventtype)
+
+___
+
+### GetInjectableOption
+
+Re-exports [GetInjectableOption](types.md#getinjectableoption)
+
+___
+
+### GetInjectableOptions
+
+Re-exports [GetInjectableOptions](types.md#getinjectableoptions)
+
+___
+
+### Injectable
+
+Re-exports [Injectable](decorators_injectable_decorator.md#injectable)
+
+___
+
+### InjectableComponentTypes
+
+Re-exports [InjectableComponentTypes](types.md#injectablecomponenttypes)
+
+___
+
+### InjectableOptions
+
+Re-exports [InjectableOptions](types.md#injectableoptions)
 
 ___
 
@@ -83,111 +110,27 @@ Re-exports [MedusaAuthenticatedRequest](types.md#medusaauthenticatedrequest)
 
 ___
 
-### MedusaEntity
-
-Re-exports [MedusaEntity](types.md#medusaentity)
-
-___
-
-### MedusaEntityEvents
-
-Re-exports [MedusaEntityEvents](types.md#medusaentityevents)
-
-___
-
-### MedusaEntityInstance
-
-Re-exports [MedusaEntityInstance](../interfaces/types.MedusaEntityInstance.md)
-
-___
-
-### MedusaEntityStatic
-
-Re-exports [MedusaEntityStatic](../interfaces/types.MedusaEntityStatic.md)
-
-___
-
-### MedusaEntitySubscriber
-
-Re-exports [MedusaEntitySubscriber](types.md#medusaentitysubscriber)
-
-___
-
-### MedusaEntitySubscriberInstance
-
-Re-exports [MedusaEntitySubscriberInstance](../interfaces/types.MedusaEntitySubscriberInstance.md)
-
-___
-
-### MedusaEntitySubscriberStatic
-
-Re-exports [MedusaEntitySubscriberStatic](../interfaces/types.MedusaEntitySubscriberStatic.md)
-
-___
-
 ### MedusaEventEmittedParams
 
-Re-exports [MedusaEventEmittedParams](decorators_types.md#medusaeventemittedparams)
+Re-exports [MedusaEventEmittedParams](decorators_onMedusaEvent_decorator.md#medusaeventemittedparams)
 
 ___
 
 ### MedusaEventHandlerParams
 
-Re-exports [MedusaEventHandlerParams](decorators_types.md#medusaeventhandlerparams)
+Re-exports [MedusaEventHandlerParams](decorators_onMedusaEvent_decorator.md#medusaeventhandlerparams)
 
 ___
 
 ### MedusaMiddleware
 
-Re-exports [MedusaMiddleware](types.md#medusamiddleware)
-
-___
-
-### MedusaMiddlewareInstance
-
-Re-exports [MedusaMiddlewareInstance](../interfaces/types.MedusaMiddlewareInstance.md)
-
-___
-
-### MedusaMiddlewareStatic
-
-Re-exports [MedusaMiddlewareStatic](../interfaces/types.MedusaMiddlewareStatic.md)
-
-___
-
-### MedusaRepository
-
-Re-exports [MedusaRepository](types.md#medusarepository)
-
-___
-
-### MedusaRepositoryInstance
-
-Re-exports [MedusaRepositoryInstance](../interfaces/types.MedusaRepositoryInstance.md)
-
-___
-
-### MedusaRepositoryStatic
-
-Re-exports [MedusaRepositoryStatic](../interfaces/types.MedusaRepositoryStatic.md)
+Re-exports [MedusaMiddleware](../interfaces/types.MedusaMiddleware.md)
 
 ___
 
 ### MedusaRequest
 
 Re-exports [MedusaRequest](types.md#medusarequest)
-
-___
-
-### MedusaResolverKeys
-
-Re-exports [MedusaResolverKeys](types.md#medusaresolverkeys)
-
-___
-
-### MedusaRoute
-
-Re-exports [MedusaRoute](types.md#medusaroute)
 
 ___
 
@@ -203,27 +146,21 @@ Re-exports [MedusaRouteOptions](types.md#medusarouteoptions)
 
 ___
 
-### MedusaService
+### MiddlewareInjectionOptions
 
-Re-exports [MedusaService](types.md#medusaservice)
-
-___
-
-### MedusaServiceInstance
-
-Re-exports [MedusaServiceInstance](../interfaces/types.MedusaServiceInstance.md)
+Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
 
 ___
 
-### MedusaServiceStatic
+### MigrationInjectionOptions
 
-Re-exports [MedusaServiceStatic](../interfaces/types.MedusaServiceStatic.md)
+Re-exports [MigrationInjectionOptions](types.md#migrationinjectionoptions)
 
 ___
 
-### Metatype
+### Module
 
-Re-exports [Metatype](types.md#metatype)
+Re-exports [Module](decorators_module_decorator.md#module)
 
 ___
 
@@ -233,9 +170,9 @@ Re-exports [OnMedusaEvent](../classes/decorators_onMedusaEvent_decorator.OnMedus
 
 ___
 
-### StaticImplements
+### RoutesInjectionOptions
 
-Re-exports [StaticImplements](types.md#staticimplements)
+Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
 
 ___
 
@@ -245,23 +182,23 @@ Re-exports [Type](../interfaces/types.Type.md)
 
 ___
 
-### customEventEmitter
+### eventEmitter
 
-Re-exports [customEventEmitter](medusa_event_emitter.md#medusaeventemitter)
+Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 ## Variables
 
-### MedusaUtils
+### Utils
 
-• **MedusaUtils**: `Object`
+• **Utils**: `Object`
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
 | `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TEntity, TRepository\>(`derivedCtor`: `TRepository`, ...`baseCtors`: `any`[]) => `TRepository` |
+| `repositoryMixin` | <TRepository, TMedusaRepository\>(`derivedCtor`: `TRepository`, `medusaConstructor`: `TMedusaRepository`) => `TRepository` & `TMedusaRepository` |
 
 #### Defined in
 
-[src/index.ts:9](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/index.ts#L9)
+[src/index.ts:11](https://github.com/adrien2p/medusa-extender/blob/9345158/src/index.ts#L11)

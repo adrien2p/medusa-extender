@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [Internals](medusa.Internals.md)
-
 ### Classes
 
 - [Medusa](../classes/medusa.Medusa.md)

@@ -12,7 +12,7 @@
 
 ### middlewaresLoader
 
-▸ **middlewaresLoader**(`app`, `container`): `void`
+▸ **middlewaresLoader**(`app`, `container`, `middlewares`): `void`
 
 **`internal`**
 Register custom middlewares into the middlewareRegistery.
@@ -23,6 +23,7 @@ Register custom middlewares into the middlewareRegistery.
 | :------ | :------ |
 | `app` | `Express` |
 | `container` | `AwilixContainer`<`any`\> |
+| `middlewares` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"middleware"``\> |
 
 #### Returns
 
@@ -30,4 +31,4 @@ Register custom middlewares into the middlewareRegistery.
 
 #### Defined in
 
-[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/682c80d/src/loaders/middlewares.loader.ts#L13)
+[src/loaders/middlewares.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/9345158/src/loaders/middlewares.loader.ts#L14)
