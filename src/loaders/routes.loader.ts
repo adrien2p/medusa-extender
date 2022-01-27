@@ -3,7 +3,7 @@ import { Express, NextFunction, Request, Response } from 'express';
 
 export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'route'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
-		if (!routeOptions.requiredAuth) {
+		if (!!routeOptions.requiredAuth) {
 			registerRoute(app, routeOptions);
 		}
 	}
@@ -23,7 +23,7 @@ function registerRoute(app: Express, routeOptions: GetInjectableOption<'route'>)
 		path,
 		async (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => {
 			try {
-				return await new handler(req, res);
+				return await handler(req, res);
 			} catch (e) {
 				return next(e);
 			}
