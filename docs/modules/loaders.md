@@ -21,6 +21,7 @@
 - [MigrationInjectionOptions](loaders.md#migrationinjectionoptions)
 - [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](loaders.md#routesinjectionoptions)
+- [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
 - [Type](loaders.md#type)
 - [Utils](loaders.md#utils)
 - [apiLoader](loaders.md#apiloader)
@@ -130,6 +131,12 @@ ___
 ### RoutesInjectionOptions
 
 Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
+
+___
+
+### RoutesInjectionRouterConfiguration
+
+Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
 
 ___
 

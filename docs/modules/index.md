@@ -33,6 +33,7 @@
 - [OnMedusaEvent](index.md#onmedusaevent)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](index.md#routesinjectionoptions)
+- [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
 - [Type](index.md#type)
 - [eventEmitter](index.md#eventemitter)
 
@@ -204,6 +205,12 @@ Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
 
 ___
 
+### RoutesInjectionRouterConfiguration
+
+Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+
+___
+
 ### Type
 
 Re-exports [Type](../interfaces/types.Type.md)
@@ -229,4 +236,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/15c1462/src/index.ts#L20)
+[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/80081b5/src/index.ts#L20)

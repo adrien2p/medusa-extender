@@ -32,6 +32,7 @@
 - [OnMedusaEvent](decorators.md#onmedusaevent)
 - [RepositoryInjectableOptions](decorators.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](decorators.md#routesinjectionoptions)
+- [RoutesInjectionRouterConfiguration](decorators.md#routesinjectionrouterconfiguration)
 - [Type](decorators.md#type)
 
 ## References
@@ -189,6 +190,12 @@ ___
 ### RoutesInjectionOptions
 
 Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
+
+___
+
+### RoutesInjectionRouterConfiguration
+
+Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
 
 ___
 
