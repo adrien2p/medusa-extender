@@ -13,10 +13,12 @@
 - [EntityEventType](index.md#entityeventtype)
 - [GetInjectableOption](index.md#getinjectableoption)
 - [GetInjectableOptions](index.md#getinjectableoptions)
+- [INJECTABLE\_OPTIONS\_KEY](index.md#injectable_options_key)
 - [Injectable](index.md#injectable)
 - [InjectableComponentTypes](index.md#injectablecomponenttypes)
 - [InjectableOptions](index.md#injectableoptions)
 - [MEDUSA\_RESOLVER\_KEYS](index.md#medusa_resolver_keys)
+- [MODULE\_KEY](index.md#module_key)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
@@ -82,6 +84,12 @@ Re-exports [GetInjectableOptions](types.md#getinjectableoptions)
 
 ___
 
+### INJECTABLE\_OPTIONS\_KEY
+
+Re-exports [INJECTABLE_OPTIONS_KEY](contants.md#injectable_options_key)
+
+___
+
 ### Injectable
 
 Re-exports [Injectable](decorators_injectable_decorator.md#injectable)
@@ -103,6 +111,12 @@ ___
 ### MEDUSA\_RESOLVER\_KEYS
 
 Re-exports [MEDUSA_RESOLVER_KEYS](contants.md#medusa_resolver_keys)
+
+___
+
+### MODULE\_KEY
+
+Re-exports [MODULE_KEY](contants.md#module_key)
 
 ___
 
@@ -215,4 +229,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:12](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/index.ts#L12)
+[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/15c1462/src/index.ts#L20)

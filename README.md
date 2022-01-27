@@ -118,7 +118,7 @@ We will then create a new repository to reflect our custom entity.
 import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
 import { EntityRepository, Repository } from "typeorm"; 
 import { Injectable, Utils } from "medusa-extender"; 
-import { Product } from "../entities/product.entity";
+import { Product } from "./product.entity";
 //...
 
 @Injectable({ type: 'repository', override: MedusaProductRepository })
@@ -186,9 +186,9 @@ And to wrap everything properly here is the module.
 // modules/products/myModule.module.ts
 
 import { Module } from 'medusa-extender';
-import { Product } from './entities/product.entity';
-import ProductRepository from './repositories/product.repository';
-import ProductService from './services/product.service';
+import { Product } from './product.entity';
+import ProductRepository from './product.repository';
+import ProductService from './product.service';
 
 @Module({
     imports: [
