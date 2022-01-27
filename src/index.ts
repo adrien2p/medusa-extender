@@ -1,11 +1,19 @@
 export * from './types';
-export { MEDUSA_RESOLVER_KEYS } from './contants';
+export * from './contants';
 
 export { Medusa } from './medusa';
 export { customEventEmitter as eventEmitter } from './event-emmiter';
 
-export { Injectable, Module } from './decorators';
-export * from './decorators/onMedusaEvent.decorator';
+export {
+	Injectable,
+	Module,
+	OnMedusaEvent,
+	EntityEventActionOptions,
+	EntityActions,
+	EntityEventType,
+	MedusaEventEmittedParams,
+	MedusaEventHandlerParams,
+} from './decorators';
 
 import { Utils as _Utils } from './utils';
 

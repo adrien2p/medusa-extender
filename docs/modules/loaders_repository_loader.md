@@ -6,23 +6,22 @@
 
 ### Functions
 
-- [overriddenRepositoriesLoader](loaders_repository_loader.md#overriddenrepositoriesloader)
+- [overrideRepositoriesLoader](loaders_repository_loader.md#overriderepositoriesloader)
+- [overrideRepository](loaders_repository_loader.md#overriderepository)
+- [registerRepository](loaders_repository_loader.md#registerrepository)
 - [repositoriesLoader](loaders_repository_loader.md#repositoriesloader)
 
 ## Functions
 
-### overriddenRepositoriesLoader
+### overrideRepositoriesLoader
 
-▸ **overriddenRepositoriesLoader**(`repositories`): `Promise`<`void`\>
-
-**`internal`**
-Load custom repositories that must override the existing repositories from the rootDir.
+▸ **overrideRepositoriesLoader**(`repositories`): `Promise`<`void`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Any custom repository that implements MedusaRepository |
+| Name | Type |
+| :------ | :------ |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
 
 #### Returns
 
@@ -30,7 +29,54 @@ Load custom repositories that must override the existing repositories from the r
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/repository.loader.ts#L10)
+[src/loaders/repository.loader.ts:17](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/repository.loader.ts#L17)
+
+___
+
+### overrideRepository
+
+▸ **overrideRepository**(`repositoryOptions`): `Promise`<`void`\>
+
+**`internal`**
+Load custom repositories and override existing ones.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `repositoryOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"repository"``\> |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/loaders/repository.loader.ts:50](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/repository.loader.ts#L50)
+
+___
+
+### registerRepository
+
+▸ **registerRepository**(`container`, `repositoryOptions`): `void`
+
+**`internal`**
+Load custom repository into the container.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `container` | `AwilixContainer`<`any`\> |
+| `repositoryOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"repository"``\> |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/loaders/repository.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/repository.loader.ts#L31)
 
 ___
 
@@ -38,15 +84,12 @@ ___
 
 ▸ **repositoriesLoader**(`repositories`, `container`): `Promise`<`void`\>
 
-**`internal`**
-Load custom repositories that must be added to the existing container from the rootDir.
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Any custom repository that implements MedusaRepository |
-| `container` | `AwilixContainer`<`any`\> |  |
+| Name | Type |
+| :------ | :------ |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
+| `container` | `AwilixContainer`<`any`\> |
 
 #### Returns
 
@@ -54,4 +97,4 @@ Load custom repositories that must be added to the existing container from the r
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/repository.loader.ts#L23)
+[src/loaders/repository.loader.ts:6](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/repository.loader.ts#L6)

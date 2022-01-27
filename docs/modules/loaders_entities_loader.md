@@ -7,7 +7,9 @@
 ### Functions
 
 - [entitiesLoader](loaders_entities_loader.md#entitiesloader)
-- [overriddenEntitiesLoader](loaders_entities_loader.md#overriddenentitiesloader)
+- [overrideEntitiesLoader](loaders_entities_loader.md#overrideentitiesloader)
+- [overrideEntity](loaders_entities_loader.md#overrideentity)
+- [registerEntity](loaders_entities_loader.md#registerentity)
 
 ## Functions
 
@@ -15,15 +17,12 @@
 
 ▸ **entitiesLoader**(`entities`, `container`): `Promise`<`void`\>
 
-**`internal`**
-Load custom entities that must be added to the container
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Any custom entities |
-| `container` | `AwilixContainer`<`any`\> |  |
+| Name | Type |
+| :------ | :------ |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
+| `container` | `AwilixContainer`<`any`\> |
 
 #### Returns
 
@@ -31,22 +30,19 @@ Load custom entities that must be added to the container
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:23](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/entities.loader.ts#L23)
+[src/loaders/entities.loader.ts:6](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/entities.loader.ts#L6)
 
 ___
 
-### overriddenEntitiesLoader
+### overrideEntitiesLoader
 
-▸ **overriddenEntitiesLoader**(`entities`): `Promise`<`void`\>
-
-**`internal`**
-Load custom entities that must override the existing entities from the rootDir.
+▸ **overrideEntitiesLoader**(`entities`): `Promise`<`void`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Any custom entities |
+| Name | Type |
+| :------ | :------ |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
 
 #### Returns
 
@@ -54,4 +50,51 @@ Load custom entities that must override the existing entities from the rootDir.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/entities.loader.ts#L10)
+[src/loaders/entities.loader.ts:17](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/entities.loader.ts#L17)
+
+___
+
+### overrideEntity
+
+▸ **overrideEntity**(`entityOptions`): `Promise`<`void`\>
+
+**`internal`**
+Load custom entity and override existing ones.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `entityOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"entity"``\> |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/entities.loader.ts#L51)
+
+___
+
+### registerEntity
+
+▸ **registerEntity**(`container`, `entityOptions`): `void`
+
+**`internal`**
+Load custom entity into the container.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `container` | `AwilixContainer`<`any`\> |
+| `entityOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"entity"``\> |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/loaders/entities.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/entities.loader.ts#L31)

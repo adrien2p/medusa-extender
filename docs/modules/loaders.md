@@ -19,6 +19,7 @@
 - [MedusaRouteOptions](loaders.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](loaders.md#middlewareinjectionoptions)
 - [MigrationInjectionOptions](loaders.md#migrationinjectionoptions)
+- [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](loaders.md#routesinjectionoptions)
 - [Type](loaders.md#type)
 - [Utils](loaders.md#utils)
@@ -27,9 +28,15 @@
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
 - [migrationsLoader](loaders.md#migrationsloader)
-- [overriddenEntitiesLoader](loaders.md#overriddenentitiesloader)
-- [overriddenRepositoriesLoader](loaders.md#overriddenrepositoriesloader)
+- [overrideEntitiesLoader](loaders.md#overrideentitiesloader)
+- [overrideEntity](loaders.md#overrideentity)
+- [overrideRepositoriesLoader](loaders.md#overriderepositoriesloader)
+- [overrideRepository](loaders.md#overriderepository)
+- [overrideService](loaders.md#overrideservice)
 - [pluginsLoadersAndListeners](loaders.md#pluginsloadersandlisteners)
+- [registerEntity](loaders.md#registerentity)
+- [registerRepository](loaders.md#registerrepository)
+- [registerService](loaders.md#registerservice)
 - [repositoriesLoader](loaders.md#repositoriesloader)
 - [servicesLoader](loaders.md#servicesloader)
 - [unauthenticatedRoutesLoader](loaders.md#unauthenticatedroutesloader)
@@ -114,6 +121,12 @@ Re-exports [MigrationInjectionOptions](types.md#migrationinjectionoptions)
 
 ___
 
+### RepositoryInjectableOptions
+
+Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
+
+___
+
 ### RoutesInjectionOptions
 
 Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
@@ -162,21 +175,57 @@ Re-exports [migrationsLoader](loaders_migrations_loader.md#migrationsloader)
 
 ___
 
-### overriddenEntitiesLoader
+### overrideEntitiesLoader
 
-Re-exports [overriddenEntitiesLoader](loaders_entities_loader.md#overriddenentitiesloader)
+Re-exports [overrideEntitiesLoader](loaders_entities_loader.md#overrideentitiesloader)
 
 ___
 
-### overriddenRepositoriesLoader
+### overrideEntity
 
-Re-exports [overriddenRepositoriesLoader](loaders_repository_loader.md#overriddenrepositoriesloader)
+Re-exports [overrideEntity](loaders_entities_loader.md#overrideentity)
+
+___
+
+### overrideRepositoriesLoader
+
+Re-exports [overrideRepositoriesLoader](loaders_repository_loader.md#overriderepositoriesloader)
+
+___
+
+### overrideRepository
+
+Re-exports [overrideRepository](loaders_repository_loader.md#overriderepository)
+
+___
+
+### overrideService
+
+Re-exports [overrideService](loaders_services_loader.md#overrideservice)
 
 ___
 
 ### pluginsLoadersAndListeners
 
 Re-exports [pluginsLoadersAndListeners](loaders_plugins_loader.md#pluginsloadersandlisteners)
+
+___
+
+### registerEntity
+
+Re-exports [registerEntity](loaders_entities_loader.md#registerentity)
+
+___
+
+### registerRepository
+
+Re-exports [registerRepository](loaders_repository_loader.md#registerrepository)
+
+___
+
+### registerService
+
+Re-exports [registerService](loaders_services_loader.md#registerservice)
 
 ___
 

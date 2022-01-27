@@ -1,7 +1,7 @@
 import { middlewaresLoader } from './middlewares.loader';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { GetInjectableOptions } from '../types';
+import { GetInjectableOptions } from './';
 
 /**
  * @internal

@@ -1,5 +1,4 @@
-import { GetInjectableOption, GetInjectableOptions } from '../types';
-import { Utils } from '../utils';
+import { Utils, GetInjectableOption, GetInjectableOptions } from './';
 import { asClass, AwilixContainer } from 'awilix';
 import { getMetadataArgsStorage } from 'typeorm';
 

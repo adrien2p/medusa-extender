@@ -56,7 +56,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:39](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L39)
+[src/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L40)
 
 ___
 
@@ -78,7 +78,7 @@ Log all the routes from the express instance.
 
 #### Defined in
 
-[src/utils.ts:60](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L60)
+[src/utils.ts:61](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L61)
 
 ___
 
@@ -101,7 +101,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L69)
+[src/utils.ts:70](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L70)
 
 ___
 
@@ -122,13 +122,13 @@ ___
 
 #### Defined in
 
-[src/utils.ts:80](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L80)
+[src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L81)
 
 ___
 
 ### repositoryMixin
 
-▸ `Static` **repositoryMixin**<`TRepository`, `TMedusaRepository`\>(`derivedCtor`, `medusaConstructor`): `TRepository` & `TMedusaRepository`
+▸ `Static` **repositoryMixin**<`TRepository`, `TMedusaRepository`\>(`target`, `source`): `TRepository` & `TMedusaRepository`
 
 For repository context, you should extends repository and the medusa target repository.
 Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
@@ -144,8 +144,8 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 | Name | Type |
 | :------ | :------ |
-| `derivedCtor` | `TRepository` |
-| `medusaConstructor` | `TMedusaRepository` |
+| `target` | `TRepository` |
+| `source` | `TMedusaRepository` |
 
 #### Returns
 
@@ -153,7 +153,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L17)
+[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L17)
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 #### Defined in
 
-[src/utils.ts:100](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/utils.ts#L100)
+[src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/utils.ts#L101)

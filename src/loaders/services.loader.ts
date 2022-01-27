@@ -1,6 +1,5 @@
 import { asFunction, AwilixContainer, Lifetime } from 'awilix';
-import { Utils } from '../utils';
-import { GetInjectableOption, GetInjectableOptions } from '../types';
+import { Utils, GetInjectableOption, GetInjectableOptions } from './';
 
 /**
  * @internal

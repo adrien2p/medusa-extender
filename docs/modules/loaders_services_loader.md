@@ -6,13 +6,65 @@
 
 ### Functions
 
+- [overrideService](loaders_services_loader.md#overrideservice)
+- [registerService](loaders_services_loader.md#registerservice)
 - [servicesLoader](loaders_services_loader.md#servicesloader)
 
 ## Functions
 
+### overrideService
+
+▸ **overrideService**(`container`, `serviceOptions`, `configModule`): `void`
+
+**`internal`**
+Load custom service and override existing ones.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `container` | `AwilixContainer`<`any`\> |
+| `serviceOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"service"``\> |
+| `configModule` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/loaders/services.loader.ts:57](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/services.loader.ts#L57)
+
+___
+
+### registerService
+
+▸ **registerService**(`container`, `serviceOptions`, `configModule`): `void`
+
+**`internal`**
+Load custom service into the container.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `container` | `AwilixContainer`<`any`\> |
+| `serviceOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"service"``\> |
+| `configModule` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/loaders/services.loader.ts:32](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/services.loader.ts#L32)
+
+___
+
 ### servicesLoader
 
-▸ **servicesLoader**(`services`, `container`): `void`
+▸ **servicesLoader**(`services`): `Promise`<`void`\>
 
 **`internal`**
 Load custom services from the rootDir.
@@ -22,12 +74,11 @@ Load custom services from the rootDir.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `services` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
-| `container` | `AwilixContainer`<`any`\> | The container to register the custom service under custom-medusa-extender or override existing one |
 
 #### Returns
 
-`void`
+`Promise`<`void`\>
 
 #### Defined in
 
-[src/loaders/services.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/services.loader.ts#L11)
+[src/loaders/services.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/services.loader.ts#L10)

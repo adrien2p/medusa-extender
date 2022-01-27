@@ -100,6 +100,7 @@ Let say that you want to add a new field on the `Product` entity.
 import { Product as MedusaProduct } from '@medusa/medusa/dist'; 
 import { Column, Entity } from "typeorm"; 
 import { Injectable } from "medusa-extender";
+//...
 
 @Injectable({ type: 'entity', override: MedusaProduct })
 @Entity()
@@ -117,7 +118,8 @@ We will then create a new repository to reflect our custom entity.
 import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
 import { EntityRepository, Repository } from "typeorm"; 
 import { Injectable, Utils } from "medusa-extender"; 
-import { Product } from "./product.entity";
+import { Product } from "../entities/product.entity";
+//...
 
 @Injectable({ type: 'repository', override: MedusaProductRepository })
 @EntityRepository()
@@ -136,6 +138,9 @@ We want now to add a custom service to implement our custom logic for our new fi
 ```typescript
 // modules/product/product.service.ts
 
+import { Injectable } from 'medusa-extender';
+//...
+
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
     manager: EntityManager;
     productRepository: typeof ProductRepository;
@@ -151,7 +156,7 @@ interface ConstructorParams<TSearchService extends DefaultSearchService = Defaul
 }
 
 @Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
-export default class ProductService extends MedusaProductService implements MedusaService<typeof ProductService> {
+export default class ProductService extends MedusaProductService {
     readonly #manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
@@ -178,6 +183,13 @@ export default class ProductService extends MedusaProductService implements Medu
 And to wrap everything properly here is the module.
 
 ```typescript
+// modules/products/myModule.module.ts
+
+import { Module } from 'medusa-extender';
+import { Product } from './entities/product.entity';
+import ProductRepository from './repositories/product.repository';
+import ProductService from './services/product.service';
+
 @Module({
     imports: [
         Product,

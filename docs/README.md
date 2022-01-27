@@ -76,17 +76,13 @@ Here is the architecture of this package and how modules are related to each oth
 
 ```typescript
 // main.ts
+import { MyModule } from './modules/myModule/myModule.module';
 
 async function bootstrap() {
     const expressInstance = express();
     
     const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance).load(
-        UserModule,
-        OrderModule,
-        ProductModule,
-        // And so on
-    );
+    await new Medusa(rootDir, expressInstance).load(MyModule);
     
     expressInstance.listen(config.serverConfig.port, () => {
         logger.info('Server successfully started on port ' + config.serverConfig.port);
@@ -106,6 +102,7 @@ Let say that you want to add a new field on the `Product` entity.
 import { Product as MedusaProduct } from '@medusa/medusa/dist'; 
 import { Column, Entity } from "typeorm"; 
 import { Injectable } from "medusa-extender";
+//...
 
 @Injectable({ type: 'entity', override: MedusaProduct })
 @Entity()
@@ -123,7 +120,8 @@ We will then create a new repository to reflect our custom entity.
 import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
 import { EntityRepository, Repository } from "typeorm"; 
 import { Injectable, Utils } from "medusa-extender"; 
-import { Product } from "./product.entity";
+import { Product } from "../entities/product.entity";
+//...
 
 @Injectable({ type: 'repository', override: MedusaProductRepository })
 @EntityRepository()
@@ -142,11 +140,14 @@ We want now to add a custom service to implement our custom logic for our new fi
 ```typescript
 // modules/product/product.service.ts
 
+import { Injectable } from 'medusa-extender';
+//...
+
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
     manager: EntityManager;
-    productRepository: ObjectType<typeof ProductRepository>;
-    productVariantRepository: ObjectType<typeof ProductVariantRepository>;
-    productOptionRepository: ObjectType<typeof ProductOptionRepository>;
+    productRepository: typeof ProductRepository;
+    productVariantRepository: typeof ProductVariantRepository;
+    productOptionRepository: typeof ProductOptionRepository;
     eventBusService: EventBusService;
     productVariantService: ProductVariantService;
     productCollectionService: ProductCollectionService;
@@ -157,7 +158,7 @@ interface ConstructorParams<TSearchService extends DefaultSearchService = Defaul
 }
 
 @Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
-export default class ProductService extends MedusaProductService implements MedusaService<typeof ProductService> {
+export default class ProductService extends MedusaProductService {
     readonly #manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
@@ -179,6 +180,26 @@ export default class ProductService extends MedusaProductService implements Medu
         return super.prepareListQuery_(selector, config) as any;
     }
 }
+```
+
+And to wrap everything properly here is the module.
+
+```typescript
+// modules/products/myModule.module.ts
+
+import { Module } from 'medusa-extender';
+import { Product } from './entities/product.entity';
+import ProductRepository from './repositories/product.repository';
+import ProductService from './services/product.service';
+
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService
+    ]
+})
+export class MyModule {}
 ```
 
 That's it you've completed your first module :rocket:

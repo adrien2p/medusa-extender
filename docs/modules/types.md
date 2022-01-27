@@ -23,34 +23,35 @@
 - [MedusaRouteOptions](types.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
 - [MigrationInjectionOptions](types.md#migrationinjectionoptions)
+- [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](types.md#routesinjectionoptions)
 
 ## Type aliases
 
 ### ComplexInjectableOptions
 
-Ƭ **ComplexInjectableOptions**<`T`\>: `Object`
+Ƭ **ComplexInjectableOptions**<`TOverride`\>: `Object`
 
-Defines the injection options for services, entities, repositories.
+Defines the injection options for services, entities.
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `unknown` |
+| `TOverride` | `unknown` |
 
 #### Type declaration
 
 | Name | Type |
 | :------ | :------ |
-| `override?` | [`Type`](../interfaces/types.Type.md)<`T`\> |
+| `override?` | [`Type`](../interfaces/types.Type.md)<`TOverride`\> |
 | `resolutionKey?` | `string` |
 | `scope?` | `LifetimeType` |
-| `type` | `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"`` \| ``"repository"`` \| ``"service"``\> |
+| `type` | `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"`` \| ``"service"``\> |
 
 #### Defined in
 
-[src/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L18)
+[src/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L18)
 
 ___
 
@@ -76,13 +77,13 @@ ___
 
 #### Defined in
 
-[src/types.ts:8](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L8)
+[src/types.ts:8](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L8)
 
 ___
 
 ### GetInjectableOption
 
-Ƭ **GetInjectableOption**<`TComponentType`\>: `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"`` \| ``"repository"`` \| ``"service"``\> ? [`ComplexInjectableOptions`](types.md#complexinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"migration"``\> ? [`MigrationInjectionOptions`](types.md#migrationinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"route"``\> ? [`RoutesInjectionOptions`](types.md#routesinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"middleware"``\> ? [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) : `never` & { `metatype`: `TComponentType` extends ``"middleware"`` ? [`Type`](../interfaces/types.Type.md)<[`MedusaMiddleware`](../interfaces/types.MedusaMiddleware.md)\> : [`Type`](../interfaces/types.Type.md)  }
+Ƭ **GetInjectableOption**<`TComponentType`\>: `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"`` \| ``"service"``\> ? [`ComplexInjectableOptions`](types.md#complexinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"repository"``\> ? [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"migration"``\> ? [`MigrationInjectionOptions`](types.md#migrationinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"route"``\> ? [`RoutesInjectionOptions`](types.md#routesinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"middleware"``\> ? [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) : `never` & { `metatype`: `TComponentType` extends ``"middleware"`` ? [`Type`](../interfaces/types.Type.md)<[`MedusaMiddleware`](../interfaces/types.MedusaMiddleware.md)\> : [`Type`](../interfaces/types.Type.md)  }
 
 Determine which options type it actually is depending on the component type.
 
@@ -94,7 +95,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/types.ts:64](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L64)
+[src/types.ts:75](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L75)
 
 ___
 
@@ -112,7 +113,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/types.ts:78](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L78)
+[src/types.ts:91](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L91)
 
 ___
 
@@ -124,13 +125,13 @@ Components that does not required any other options that Type.
 
 #### Defined in
 
-[src/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L13)
+[src/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L13)
 
 ___
 
 ### InjectableOptions
 
-Ƭ **InjectableOptions**<`T`\>: [`ComplexInjectableOptions`](types.md#complexinjectableoptions)<`T`\> \| [`MigrationInjectionOptions`](types.md#migrationinjectionoptions) \| [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) \| [`RoutesInjectionOptions`](types.md#routesinjectionoptions)
+Ƭ **InjectableOptions**<`T`\>: [`ComplexInjectableOptions`](types.md#complexinjectableoptions)<`T`\> \| [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions)<`T`\> \| [`MigrationInjectionOptions`](types.md#migrationinjectionoptions) \| [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) \| [`RoutesInjectionOptions`](types.md#routesinjectionoptions)
 
 Union of all options type possible for injectable.
 
@@ -142,7 +143,7 @@ Union of all options type possible for injectable.
 
 #### Defined in
 
-[src/types.ts:55](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L55)
+[src/types.ts:65](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L65)
 
 ___
 
@@ -154,7 +155,7 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 
 #### Defined in
 
-[src/types.ts:91](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L91)
+[src/types.ts:104](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L104)
 
 ___
 
@@ -173,7 +174,7 @@ Medusa request extended.
 
 #### Defined in
 
-[src/types.ts:84](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L84)
+[src/types.ts:97](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L97)
 
 ___
 
@@ -183,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:98](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L98)
+[src/types.ts:111](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L111)
 
 ___
 
@@ -202,7 +203,7 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 
 #### Defined in
 
-[src/types.ts:103](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L103)
+[src/types.ts:116](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L116)
 
 ___
 
@@ -222,7 +223,7 @@ Defines the injection options for middlewares.
 
 #### Defined in
 
-[src/types.ts:46](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L46)
+[src/types.ts:56](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L56)
 
 ___
 
@@ -240,7 +241,34 @@ Defines the injection options for migrations.
 
 #### Defined in
 
-[src/types.ts:28](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L28)
+[src/types.ts:38](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L38)
+
+___
+
+### RepositoryInjectableOptions
+
+Ƭ **RepositoryInjectableOptions**<`TOverride`\>: `Object`
+
+Defines the injection options for services, entities, repositories.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `TOverride` | `unknown` |
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `override?` | [`Type`](../interfaces/types.Type.md)<`TOverride`\> |
+| `resolutionKey?` | `string` |
+| `scope?` | `LifetimeType` |
+| `type` | `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"repository"``\> |
+
+#### Defined in
+
+[src/types.ts:28](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L28)
 
 ___
 
@@ -262,4 +290,4 @@ Defines the injection options for routes.
 
 #### Defined in
 
-[src/types.ts:35](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/types.ts#L35)
+[src/types.ts:45](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/types.ts#L45)

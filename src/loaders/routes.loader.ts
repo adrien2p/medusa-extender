@@ -1,4 +1,4 @@
-import { GetInjectableOption, GetInjectableOptions, MedusaAuthenticatedRequest } from '../types';
+import { GetInjectableOption, GetInjectableOptions, MedusaAuthenticatedRequest } from './';
 import { Express, NextFunction, Request, Response } from 'express';
 
 export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'route'>, app: Express): void {

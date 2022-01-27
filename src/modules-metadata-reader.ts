@@ -1,6 +1,6 @@
 import { GetInjectableOptions, InjectableComponentTypes, InjectableOptions, Type } from './types';
+import { Utils } from './utils';
 import { INJECTABLE_OPTIONS_KEY, MODULE_KEY } from './contants';
-import { Utils } from './index';
 
 class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
 	get<TComponentType extends InjectableComponentTypes>(key: TComponentType): GetInjectableOptions<TComponentType> {

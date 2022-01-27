@@ -14,15 +14,12 @@
 
 ▸ **databaseLoader**(`entities`, `repositories`): `Promise`<`void`\>
 
-**`internal`**
-decorate the original database loader to register our custom entities and repositories first.
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> | Custom entities options |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> | Custom repositories options |
+| Name | Type |
+| :------ | :------ |
+| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
+| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
 
 #### Returns
 
@@ -30,4 +27,4 @@ decorate the original database loader to register our custom entities and reposi
 
 #### Defined in
 
-[src/loaders/database.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/80bf51f/src/loaders/database.loader.ts#L11)
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/bedfabe/src/loaders/database.loader.ts#L5)

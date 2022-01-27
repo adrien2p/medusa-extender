@@ -30,6 +30,7 @@
 - [MigrationInjectionOptions](decorators.md#migrationinjectionoptions)
 - [Module](decorators.md#module)
 - [OnMedusaEvent](decorators.md#onmedusaevent)
+- [RepositoryInjectableOptions](decorators.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](decorators.md#routesinjectionoptions)
 - [Type](decorators.md#type)
 
@@ -176,6 +177,12 @@ ___
 ### OnMedusaEvent
 
 Re-exports [OnMedusaEvent](../classes/decorators_onMedusaEvent_decorator.OnMedusaEvent.md)
+
+___
+
+### RepositoryInjectableOptions
+
+Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
 
 ___
 

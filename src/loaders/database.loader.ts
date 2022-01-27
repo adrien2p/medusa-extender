@@ -1,6 +1,6 @@
 import { repositoriesLoader } from './repository.loader';
 import { entitiesLoader } from './entities.loader';
-import { GetInjectableOptions } from '../types';
+import { GetInjectableOptions } from './';
 
 export async function databaseLoader(
 	entities: GetInjectableOptions<'entity'>,
