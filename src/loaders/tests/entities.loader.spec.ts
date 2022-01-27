@@ -13,63 +13,58 @@ import { Entity } from 'typeorm';
 @Injectable({ type: 'entity', override: MedusaUser })
 @Entity()
 class User extends MedusaUser {
-    testProperty = 'I am the property from User that extend MedusaUser';
+	testProperty = 'I am the property from User that extend MedusaUser';
 }
 
 @Module({ imports: [User] })
-class UserModule {
-}
+class UserModule {}
 
 @Injectable({ type: 'entity', resolutionKey: 'anotherEntity' })
 @Entity()
-class Another {
-}
+class Another {}
 
 @Module({ imports: [Another] })
-class AnotherModule {
-}
+class AnotherModule {}
 
 describe('Entities loader', () => {
-    const container = createContainer();
-    (container as any).registerAdd = function (name, registration) {
-        const storeKey = name + '_STORE';
+	const container = createContainer();
+	(container as any).registerAdd = function (name, registration) {
+		const storeKey = name + '_STORE';
 
-        if (this.registrations[storeKey] === undefined) {
-            this.register(storeKey, asValue([]));
-        }
-        const store = this.resolve(storeKey);
+		if (this.registrations[storeKey] === undefined) {
+			this.register(storeKey, asValue([]));
+		}
+		const store = this.resolve(storeKey);
 
-        if (this.registrations[name] === undefined) {
-            this.register(name, asArray(store));
-        }
-        store.unshift(registration);
+		if (this.registrations[name] === undefined) {
+			this.register(name, asArray(store));
+		}
+		store.unshift(registration);
 
-        return this;
-    }.bind(container);
+		return this;
+	}.bind(container);
 
-    describe('overriddenEntitiesLoader', () => {
-        it(' should override MedusaUser with User', async () => {
-            expect((MedusaUser.prototype as any).testProperty).not.toBeDefined();
+	describe('overriddenEntitiesLoader', () => {
+		it(' should override MedusaUser with User', async () => {
+			expect((MedusaUser.prototype as any).testProperty).not.toBeDefined();
 
-            const components = modulesMetadataReader([UserModule]);
-            await overrideEntitiesLoader(components.get('entity'));
-            const { User: MedusaUserReImport } = await import('@medusajs/medusa/dist/models/user') as { User };
+			const components = modulesMetadataReader([UserModule]);
+			await overrideEntitiesLoader(components.get('entity'));
+			const { User: MedusaUserReImport } = (await import('@medusajs/medusa/dist/models/user')) as { User };
 
-            expect(new MedusaUserReImport().testProperty).toBeDefined();
-            expect(new MedusaUserReImport().testProperty).toBe(
-                'I am the property from User that extend MedusaUser'
-            );
-        });
-    });
+			expect(new MedusaUserReImport().testProperty).toBeDefined();
+			expect(new MedusaUserReImport().testProperty).toBe('I am the property from User that extend MedusaUser');
+		});
+	});
 
-    describe('entitiesLoader', () => {
-        it(' should register a new entity into the container', async () => {
-            expect(container.hasRegistration('anotherEntity')).toBeFalsy();
+	describe('entitiesLoader', () => {
+		it(' should register a new entity into the container', async () => {
+			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
 
-            const components = modulesMetadataReader([AnotherModule]);
-            await entitiesLoader(components.get('entity'), container);
+			const components = modulesMetadataReader([AnotherModule]);
+			await entitiesLoader(components.get('entity'), container);
 
-            expect(container.hasRegistration('anotherEntity')).toBeTruthy();
-        });
-    });
+			expect(container.hasRegistration('anotherEntity')).toBeTruthy();
+		});
+	});
 });
