@@ -74,17 +74,13 @@ Here is the architecture of this package and how modules are related to each oth
 
 ```typescript
 // main.ts
+import { MyModule } from './modules/myModule/myModule.module';
 
 async function bootstrap() {
     const expressInstance = express();
     
     const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance).load(
-        UserModule,
-        OrderModule,
-        ProductModule,
-        // And so on
-    );
+    await new Medusa(rootDir, expressInstance).load(MyModule);
     
     expressInstance.listen(config.serverConfig.port, () => {
         logger.info('Server successfully started on port ' + config.serverConfig.port);
@@ -142,9 +138,9 @@ We want now to add a custom service to implement our custom logic for our new fi
 
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
     manager: EntityManager;
-    productRepository: ObjectType<typeof ProductRepository>;
-    productVariantRepository: ObjectType<typeof ProductVariantRepository>;
-    productOptionRepository: ObjectType<typeof ProductOptionRepository>;
+    productRepository: typeof ProductRepository;
+    productVariantRepository: typeof ProductVariantRepository;
+    productOptionRepository: typeof ProductOptionRepository;
     eventBusService: EventBusService;
     productVariantService: ProductVariantService;
     productCollectionService: ProductCollectionService;
@@ -177,6 +173,19 @@ export default class ProductService extends MedusaProductService implements Medu
         return super.prepareListQuery_(selector, config) as any;
     }
 }
+```
+
+And to wrap everything properly here is the module.
+
+```typescript
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService
+    ]
+})
+export class MyModule {}
 ```
 
 That's it you've completed your first module :rocket:
