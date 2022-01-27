@@ -34,8 +34,9 @@
     "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:declarations",
-    "build:doc": "./node_modules/.bin/typedoc",
+    "build:doc": "./node_modules/.bin/typedoc && cp .github/docs/index.html docs/",
     "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
+    "serve:doc": "./node_modules/.bin/docsify serve docs",
     "test": "NODE_ENV=test ./node_modules/.bin/jest -c jest.config.js"
   },
   "dependencies": {
@@ -51,7 +52,6 @@
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
-    "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.62",
     "@swc/cli": "^0.1.52",
     "@swc/core": "^1.2.118",
@@ -63,6 +63,7 @@
     "@typescript-eslint/parser": "^5.4.0",
     "awilix": "^6.0.0",
     "core-js": "^3.20.3",
+    "docsify": "^4.12.2",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -70,6 +71,7 @@
     "jest": "^27.3.1",
     "medusa-interfaces": "^1.1.31",
     "prettier": "^2.5.0",
+    "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "^0.13.9",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
