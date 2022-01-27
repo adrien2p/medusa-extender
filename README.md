@@ -200,7 +200,7 @@ import Utils from '@core/utils';
 const routerOption = { method: 'post', path: '/admin/products/' }; 
 
 @Injectable({ type: 'middleware', requireAuth: true, routerOptions: [routerOption] })
-export class AttachProductSubscribersMiddleware  implements MedusaMiddleware {
+export class CustomMiddleware  implements MedusaMiddleware {
     public consume(
         options: { app: Express }
     ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
@@ -244,7 +244,7 @@ export class ProductRouter {
 
 ### Module
 
-And to wrap everything properly here is the module :package:
+the last step is to import everything in our module :package:
 
 ```typescript
 // modules/products/myModule.module.ts
@@ -252,6 +252,7 @@ And to wrap everything properly here is the module :package:
 import { Module } from 'medusa-extender';
 import { Product } from './product.entity';
 import { ProductRouter } from './product.router';
+import { CustomMiddleware } from './custom.middleware';
 import ProductRepository from './product.repository';
 import ProductService from './product.service';
 
@@ -260,7 +261,8 @@ import ProductService from './product.service';
         Product,
         ProductRepository,
         ProductService,
-        ProductRouter
+        ProductRouter,
+        CustomMiddleware
     ]
 })
 export class MyModule {}
