@@ -4,12 +4,11 @@ import 'regenerator-runtime/runtime';
 
 import { Order as MedusaOrder } from '@medusajs/medusa/dist';
 import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
-import { overriddenRepositoriesLoader, repositoriesLoader } from '../repository.loader';
+import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
 import { Entity, Repository, EntityRepository } from 'typeorm';
 import { Utils } from '../../utils';
-import { Injectable } from '../../decorators/injectable.decorator';
-import { Module } from '../../decorators/module.decorator';
+import { Injectable, Module } from '../../decorators';
 import { modulesMetadataReader } from '../../modules-metadata-reader';
 
 @Injectable({ type: 'entity', override: MedusaOrder })
@@ -49,15 +48,15 @@ describe('Repositories loader', () => {
 	describe('overriddenRepositoriesLoader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
 			const components = modulesMetadataReader([OrderModule]);
-			await overriddenRepositoriesLoader(components.get('repository'));
+			await overrideRepositoriesLoader(components.get('repository'));
 
 			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
 				'@medusajs/medusa/dist/repositories/order'
 			)) as { OrderRepository };
 
 			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
-			expect((new MedusaOrderRepositoryReImport() as any).testProperty).toBeDefined();
-			expect((new MedusaOrderRepositoryReImport() as any).testProperty).toBe(
+			expect(new MedusaOrderRepositoryReImport().testProperty).toBeDefined();
+			expect(new MedusaOrderRepositoryReImport().testProperty).toBe(
 				'I am the property from UserRepository that extend MedusaOrderRepository'
 			);
 		});

@@ -1,33 +1,22 @@
 import { GetInjectableOption, GetInjectableOptions } from '../types';
 import { Utils } from '../utils';
 import { asClass, AwilixContainer } from 'awilix';
+import { getMetadataArgsStorage } from "typeorm";
 
-/**
- * @internal
- * Load custom repositories that must override the existing repositories from the rootDir.
- * @param repositories Any custom repository that implements MedusaRepository
- */
-export async function overriddenRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
-	const filteredRepositoriesOptions = repositories.filter((options) => !!options.override);
-	for (const options of filteredRepositoriesOptions) {
-		await overrideRepository(options);
-	}
+export async function repositoriesLoader(repositories: GetInjectableOptions<'repository'>, container: AwilixContainer): Promise<void> {
+    for (const repositoryOptions of repositories) {
+        if (repositoryOptions.resolutionKey) {
+            registerRepository(container, repositoryOptions);
+        }
+    }
 }
 
-/**
- * @internal
- * Load custom repositories that must be added to the existing container from the rootDir.
- * @param repositories Any custom repository that implements MedusaRepository
- * @param container
- */
-export async function repositoriesLoader(
-	repositories: GetInjectableOptions<'repository'>,
-	container: AwilixContainer
-): Promise<void> {
-	const filteredRepositoriesOptions = repositories.filter((options) => !options.override);
-	for (const options of filteredRepositoriesOptions) {
-		await registerRepository(container, options);
-	}
+export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+    for (const repositoryOptions of repositories) {
+        if (repositoryOptions.override) {
+            await overrideRepository(repositoryOptions);
+        }
+    }
 }
 
 /**
@@ -36,18 +25,18 @@ export async function repositoriesLoader(
  * @param container
  * @param repositoryOptions
  */
-function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
-	const { resolutionKey, metatype: repository } = repositoryOptions;
-	if (!resolutionKey) {
-		throw new Error('Missing static property resolutionKey from repository ' + repository.name);
-	}
+export function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
+    const { resolutionKey, metatype: repository } = repositoryOptions;
+    if (!resolutionKey) {
+        throw new Error('Missing static property resolutionKey from repository ' + repository.name);
+    }
 
-	container.register({
-		[resolutionKey]: asClass(repository),
-	});
+    container.register({
+        [resolutionKey]: asClass(repository),
+    });
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
-	console.log(preparedLog);
+    const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
+    console.log(preparedLog);
 }
 
 /**
@@ -55,15 +44,25 @@ function registerRepository(container: AwilixContainer, repositoryOptions: GetIn
  * Load custom repositories and override existing ones.
  * @param repositoryOptions
  */
-async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
-	const { metatype: repository, override } = repositoryOptions;
-	const nameParts = repository.name.split('Repository');
-	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
-	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
-	const fileName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
-	const originalEntity = await import('@medusajs/medusa/dist/repositories/' + fileName);
-	originalEntity[override.name] = repository;
+export async function overrideRepository(
+    repositoryOptions: GetInjectableOption<'repository'>
+): Promise<void> {
+    const { metatype, override } = repositoryOptions;
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository overridden - ${override.name}`);
-	console.log(preparedLog);
+    const nameParts = override.name.split('Repository');
+    const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
+    const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
+    const fileName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
+
+    const originalRepository = await import('@medusajs/medusa/dist/repositories/' + fileName);
+    const originalRepositoryIndex = getMetadataArgsStorage().entityRepositories.findIndex(repository => {
+        return repository.target.name === override.name && repository.target !== metatype;
+    });
+    if (originalRepositoryIndex > -1) {
+        getMetadataArgsStorage().entityRepositories.splice(originalRepositoryIndex, 1);
+    }
+    originalRepository[override.name] = metatype;
+
+    const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository overridden - ${metatype.name}`);
+    console.log(preparedLog);
 }

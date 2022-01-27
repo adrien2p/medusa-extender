@@ -1,4 +1,4 @@
-import { asFunction, Lifetime, AwilixContainer } from 'awilix';
+import { asFunction, AwilixContainer, Lifetime } from 'awilix';
 import { Utils } from '../utils';
 import { GetInjectableOption, GetInjectableOptions } from '../types';
 
@@ -6,16 +6,20 @@ import { GetInjectableOption, GetInjectableOptions } from '../types';
  * @internal
  * Load custom services from the rootDir.
  * @param services Any custom service that implements MedusaService
- * @param container The container to register the custom service under custom-medusa-extender or override existing one
  */
-export function servicesLoader(services: GetInjectableOptions<'service'>, container: AwilixContainer): void {
-	for (const serviceOptions of services) {
-		if (!serviceOptions.resolutionKey) {
-			registerService(container, serviceOptions);
-		} else {
-			overrideService(container, serviceOptions);
+export async function servicesLoader(services: GetInjectableOptions<'service'>): Promise<void> {
+	const serviceLoader = await import('@medusajs/medusa/dist/loaders/services');
+	const originalServiceLoader = serviceLoader.default;
+	serviceLoader.default = ({ container, configModule }) => {
+		originalServiceLoader({ container, configModule });
+		for (const serviceOptions of services) {
+			if (!serviceOptions.resolutionKey) {
+				overrideService(container, serviceOptions, configModule);
+			} else {
+				registerService(container, serviceOptions, configModule);
+			}
 		}
-	}
+	};
 }
 
 /**
@@ -23,15 +27,20 @@ export function servicesLoader(services: GetInjectableOptions<'service'>, contai
  * Load custom service into the container.
  * @param container
  * @param serviceOptions
+ * @param configModule
  */
-function registerService(container: AwilixContainer, serviceOptions: GetInjectableOption<'service'>) {
+export function registerService(
+	container: AwilixContainer,
+	serviceOptions: GetInjectableOption<'service'>,
+	configModule: any
+) {
 	const { resolutionKey, metatype, scope } = serviceOptions;
 	if (!resolutionKey) {
 		throw new Error('Unable to register the ' + metatype.name + '. The resolutionKey is missing.');
 	}
 
 	container.register({
-		[resolutionKey]: asFunction((cradle) => new metatype(cradle), { lifetime: scope || 'SINGLETON' }),
+		[resolutionKey]: asFunction((cradle) => new metatype(cradle, configModule), { lifetime: scope || 'SINGLETON' }),
 	});
 
 	const preparedLog = Utils.prepareLog('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
@@ -43,13 +52,20 @@ function registerService(container: AwilixContainer, serviceOptions: GetInjectab
  * Load custom service and override existing ones.
  * @param container
  * @param serviceOptions
+ * @param configModule
  */
-function overrideService(container: AwilixContainer, serviceOptions: GetInjectableOption<'service'>): void {
+export function overrideService(
+	container: AwilixContainer,
+	serviceOptions: GetInjectableOption<'service'>,
+	configModule: any
+): void {
 	const { metatype, override, scope } = serviceOptions;
 	const formattedName = `${override.name.charAt(0).toLowerCase() + override.name.slice(1, override.name.length)}`;
 	container.cache.delete(formattedName);
 	container.register({
-		[formattedName]: asFunction((cradle) => new metatype(cradle), { lifetime: scope || Lifetime.SINGLETON }),
+		[formattedName]: asFunction((cradle) => new metatype(cradle, configModule), {
+			lifetime: scope || Lifetime.SINGLETON,
+		}),
 	});
 
 	const preparedLog = Utils.prepareLog('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
