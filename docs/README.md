@@ -37,6 +37,7 @@ medusa-extender / [Exports](modules.md)
         - [Middleware](#middleware)
         - [Router](#router)
         - [Module](#module)
+- [Decorators](#decorators)
 - [Entity event handling](#entity-event-handling)
 
 # Getting started
@@ -316,6 +317,20 @@ export class MyModule {}
 ```
 
 That's it you've completed your first module :rocket:
+
+## Decorators
+
+Here is the list of the provided decorators.
+
+| Decorator                        | Description                                                                 | Option               |
+| ----------------------           | ----------------------                                                      | ----------------------
+| @Entity(/*...*/)                 | Decorate an entity                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
+| @Repository(/*...*/)             | Decorate a repository                                                       | `{ resolutionKey?: string; override?: Type<TOverride>; };`
+| @Service(/*...*/)                | Decorate a service                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
+| @Middleware(/*...*/)             | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routerOptions: MedusaRouteOptions[]; };`
+| @Router(/*...*/)                 | Decorate a router                                                           | `{ router: RoutesInjectionRouterConfiguration[]; };`
+| @Migration(/*...*/)              | Decorate a migration                                                        | 
+| @OnMedusaEntityEvent.\*.\*(/*...*/)| Can be used to send the right event type or register handler to an event    |
 
 ## Entity event handling
 
