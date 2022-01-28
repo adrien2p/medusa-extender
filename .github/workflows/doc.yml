@@ -2,7 +2,7 @@ name: Medusa-extender Documentation
 on:
   push:
     branches:
-      - '!master'
+      - '!main'
 
 jobs:
   build-doc:
