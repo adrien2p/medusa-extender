@@ -1,8 +1,8 @@
 name: Medusa-extender Documentation
 on:
   push:
-    branches:
-      - '!main'
+    branches-ignore:
+      - 'main'
 
 jobs:
   build-doc:
