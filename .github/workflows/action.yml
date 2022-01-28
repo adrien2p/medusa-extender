@@ -54,10 +54,9 @@ jobs:
 
       - name: commit
         run: |
-          git config --local user.name [BOT]
-          git config --local user.email <>
-          git add docs
-          git commit -m "[BOT] BUILD DOC"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "[BOT] BUILD DOC" -a
 
       - name: push
         uses: ad-m/github-push-action@master
