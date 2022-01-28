@@ -57,7 +57,10 @@ jobs:
           git config --local user.name [BOT]
           git config --local user.email <>
           git add docs
-          git commit -m "Feat() Update doc"
-          git push
-        env:
-          BRANCH: ${{ github.GITHUB_HEAD_REF }}
+          git commit -m "[BOT] BUILD DOC"
+
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
