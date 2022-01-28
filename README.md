@@ -18,6 +18,22 @@
   
 </div>
 
+# Table of content
+
+- [Getting started](#getting-started)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Usage](#usage)
+    - [Create you server](#create-your-server)
+    - [Create you first module](#create-your-first-module-rocket)
+        - [Entity](#entity)
+        - [Repository](#repository)
+        - [Service](#service)
+        - [Middleware](#middleware)
+        - [Router](#router)
+        - [Module](#module)
+- [Entity event handling]()
+
 # Getting started
 
 Installation
@@ -276,6 +292,74 @@ export class MyModule {}
 ```
 
 That's it you've completed your first module :rocket:
+
+## Entity event handling
+
+One of the feature out the box is the ability to emit (sync/async) event from
+your entity subscriber and to be able to handle those event easily.
+
+To be able to achieve that, here is an example.
+
+```typescript
+// modules/products/product.subscriber.ts
+
+import { Connection, EntitySubscriberInterface, EventSubscriber, InsertEvent } from 'typeorm';
+import { eventEmitter, Utils, OnMedusaEntityEvent } from 'medusa-extender';
+import { Product } from '../entities/product.entity';
+
+@EventSubscriber()
+export default class ProductSubscriber implements EntitySubscriberInterface<Product> {
+    static attachTo(connection: Connection): void {
+        Utils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
+    }
+    
+    public listenTo(): typeof Product {
+        return Product;
+    }
+    
+    /**
+     * Relay the event to the handlers.
+     * @param event Event to pass to the event handler
+     */
+    public async beforeInsert(event: InsertEvent<Product>): Promise<void> {
+        return await eventEmitter.emitAsync(OnMedusaEntityEvent.Before.InsertEvent(Product), {
+            event,
+            transactionalEntityManager: event.manager,
+        });
+    }
+}
+```
+And then the handler will work like following.
+
+```typescript
+// modules/product/product.service.ts
+
+import { Injectable, OnMedusaEntityEvent } from 'medusa-extender';
+//...
+
+interface ConstructorParams {
+    // ...
+}
+
+@Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
+export default class ProductService extends MedusaProductService {
+    readonly #manager: EntityManager;
+    
+    constructor(private readonly container: ConstructorParams) {
+        super(container);
+        this.#manager = container.manager;
+    }
+    
+    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
+    public async attachStoreToProduct(
+        params: MedusaEventHandlerParams<Product, 'Insert'>
+    ): Promise<EntityEventType<Product, 'Insert'>> {
+        const { event } = params;
+        event.entity.customField = 'custom_value';
+        return event;
+    }
+}
+```
 
 # Contribute :ballot_box:
 

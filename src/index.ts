@@ -7,7 +7,7 @@ export { customEventEmitter as eventEmitter } from './event-emmiter';
 export {
 	Injectable,
 	Module,
-	OnMedusaEvent,
+	OnMedusaEntityEvent,
 	EntityEventActionOptions,
 	EntityActions,
 	EntityEventType,

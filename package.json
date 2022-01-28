@@ -34,7 +34,7 @@
     "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "npm run build:ts && npm run build:declarations",
-    "build:doc": "./node_modules/.bin/typedoc && cp .github/docs/index.html docs/",
+    "build:doc": "rm -rf dist && ./node_modules/.bin/typedoc && cp .github/docs/index.html docs/",
     "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
     "serve:doc": "./node_modules/.bin/docsify serve docs",
     "test": "NODE_ENV=test ./node_modules/.bin/jest -c jest.config.js"
