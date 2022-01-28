@@ -6,15 +6,15 @@
 
 ### References
 
-- [ComplexInjectableOptions](index.md#complexinjectableoptions)
 - [Constructor](index.md#constructor)
+- [Entity](index.md#entity)
 - [EntityActions](index.md#entityactions)
 - [EntityEventActionOptions](index.md#entityeventactionoptions)
 - [EntityEventType](index.md#entityeventtype)
+- [EntityInjectableOptions](index.md#entityinjectableoptions)
 - [GetInjectableOption](index.md#getinjectableoption)
 - [GetInjectableOptions](index.md#getinjectableoptions)
 - [INJECTABLE\_OPTIONS\_KEY](index.md#injectable_options_key)
-- [Injectable](index.md#injectable)
 - [InjectableComponentTypes](index.md#injectablecomponenttypes)
 - [InjectableOptions](index.md#injectableoptions)
 - [MEDUSA\_RESOLVER\_KEYS](index.md#medusa_resolver_keys)
@@ -27,13 +27,18 @@
 - [MedusaRequest](index.md#medusarequest)
 - [MedusaRouteMethods](index.md#medusaroutemethods)
 - [MedusaRouteOptions](index.md#medusarouteoptions)
+- [Middleware](index.md#middleware)
 - [MiddlewareInjectionOptions](index.md#middlewareinjectionoptions)
-- [MigrationInjectionOptions](index.md#migrationinjectionoptions)
+- [Migration](index.md#migration)
 - [Module](index.md#module)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
+- [Repository](index.md#repository)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
-- [RoutesInjectionOptions](index.md#routesinjectionoptions)
+- [Router](index.md#router)
+- [RouterInjectionOptions](index.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
+- [Service](index.md#service)
+- [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
 - [eventEmitter](index.md#eventemitter)
 
@@ -43,15 +48,15 @@
 
 ## References
 
-### ComplexInjectableOptions
-
-Re-exports [ComplexInjectableOptions](types.md#complexinjectableoptions)
-
-___
-
 ### Constructor
 
 Re-exports [Constructor](types.md#constructor)
+
+___
+
+### Entity
+
+Re-exports [Entity](decorators_components_decorator.md#entity)
 
 ___
 
@@ -73,6 +78,12 @@ Re-exports [EntityEventType](decorators_onMedusaEntityEvent_decorator.md#entitye
 
 ___
 
+### EntityInjectableOptions
+
+Re-exports [EntityInjectableOptions](types.md#entityinjectableoptions)
+
+___
+
 ### GetInjectableOption
 
 Re-exports [GetInjectableOption](types.md#getinjectableoption)
@@ -88,12 +99,6 @@ ___
 ### INJECTABLE\_OPTIONS\_KEY
 
 Re-exports [INJECTABLE_OPTIONS_KEY](contants.md#injectable_options_key)
-
-___
-
-### Injectable
-
-Re-exports [Injectable](decorators_injectable_decorator.md#injectable)
 
 ___
 
@@ -169,15 +174,21 @@ Re-exports [MedusaRouteOptions](types.md#medusarouteoptions)
 
 ___
 
+### Middleware
+
+Re-exports [Middleware](decorators_components_decorator.md#middleware)
+
+___
+
 ### MiddlewareInjectionOptions
 
 Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
 
 ___
 
-### MigrationInjectionOptions
+### Migration
 
-Re-exports [MigrationInjectionOptions](types.md#migrationinjectionoptions)
+Re-exports [Migration](decorators_components_decorator.md#migration)
 
 ___
 
@@ -193,21 +204,45 @@ Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decor
 
 ___
 
+### Repository
+
+Re-exports [Repository](decorators_components_decorator.md#repository)
+
+___
+
 ### RepositoryInjectableOptions
 
 Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
 
 ___
 
-### RoutesInjectionOptions
+### Router
 
-Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
+Re-exports [Router](decorators_components_decorator.md#router)
+
+___
+
+### RouterInjectionOptions
+
+Re-exports [RouterInjectionOptions](types.md#routerinjectionoptions)
 
 ___
 
 ### RoutesInjectionRouterConfiguration
 
 Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+
+___
+
+### Service
+
+Re-exports [Service](decorators_components_decorator.md#service)
+
+___
+
+### ServiceInjectableOptions
+
+Re-exports [ServiceInjectableOptions](types.md#serviceinjectableoptions)
 
 ___
 
@@ -236,4 +271,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/8756338/src/index.ts#L20)
+[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/1127b65/src/index.ts#L20)

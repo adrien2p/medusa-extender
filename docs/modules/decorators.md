@@ -6,15 +6,15 @@
 
 ### References
 
-- [ComplexInjectableOptions](decorators.md#complexinjectableoptions)
 - [Constructor](decorators.md#constructor)
+- [Entity](decorators.md#entity)
 - [EntityActions](decorators.md#entityactions)
 - [EntityEventActionOptions](decorators.md#entityeventactionoptions)
 - [EntityEventType](decorators.md#entityeventtype)
+- [EntityInjectableOptions](decorators.md#entityinjectableoptions)
 - [GetInjectableOption](decorators.md#getinjectableoption)
 - [GetInjectableOptions](decorators.md#getinjectableoptions)
 - [INJECTABLE\_OPTIONS\_KEY](decorators.md#injectable_options_key)
-- [Injectable](decorators.md#injectable)
 - [InjectableComponentTypes](decorators.md#injectablecomponenttypes)
 - [InjectableOptions](decorators.md#injectableoptions)
 - [MEDUSA\_RESOLVER\_KEYS](decorators.md#medusa_resolver_keys)
@@ -26,26 +26,31 @@
 - [MedusaRequest](decorators.md#medusarequest)
 - [MedusaRouteMethods](decorators.md#medusaroutemethods)
 - [MedusaRouteOptions](decorators.md#medusarouteoptions)
+- [Middleware](decorators.md#middleware)
 - [MiddlewareInjectionOptions](decorators.md#middlewareinjectionoptions)
-- [MigrationInjectionOptions](decorators.md#migrationinjectionoptions)
+- [Migration](decorators.md#migration)
 - [Module](decorators.md#module)
 - [OnMedusaEntityEvent](decorators.md#onmedusaentityevent)
+- [Repository](decorators.md#repository)
 - [RepositoryInjectableOptions](decorators.md#repositoryinjectableoptions)
-- [RoutesInjectionOptions](decorators.md#routesinjectionoptions)
+- [Router](decorators.md#router)
+- [RouterInjectionOptions](decorators.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](decorators.md#routesinjectionrouterconfiguration)
+- [Service](decorators.md#service)
+- [ServiceInjectableOptions](decorators.md#serviceinjectableoptions)
 - [Type](decorators.md#type)
 
 ## References
 
-### ComplexInjectableOptions
-
-Re-exports [ComplexInjectableOptions](types.md#complexinjectableoptions)
-
-___
-
 ### Constructor
 
 Re-exports [Constructor](types.md#constructor)
+
+___
+
+### Entity
+
+Re-exports [Entity](decorators_components_decorator.md#entity)
 
 ___
 
@@ -67,6 +72,12 @@ Re-exports [EntityEventType](decorators_onMedusaEntityEvent_decorator.md#entitye
 
 ___
 
+### EntityInjectableOptions
+
+Re-exports [EntityInjectableOptions](types.md#entityinjectableoptions)
+
+___
+
 ### GetInjectableOption
 
 Re-exports [GetInjectableOption](types.md#getinjectableoption)
@@ -82,12 +93,6 @@ ___
 ### INJECTABLE\_OPTIONS\_KEY
 
 Re-exports [INJECTABLE_OPTIONS_KEY](contants.md#injectable_options_key)
-
-___
-
-### Injectable
-
-Re-exports [Injectable](decorators_injectable_decorator.md#injectable)
 
 ___
 
@@ -157,15 +162,21 @@ Re-exports [MedusaRouteOptions](types.md#medusarouteoptions)
 
 ___
 
+### Middleware
+
+Re-exports [Middleware](decorators_components_decorator.md#middleware)
+
+___
+
 ### MiddlewareInjectionOptions
 
 Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
 
 ___
 
-### MigrationInjectionOptions
+### Migration
 
-Re-exports [MigrationInjectionOptions](types.md#migrationinjectionoptions)
+Re-exports [Migration](decorators_components_decorator.md#migration)
 
 ___
 
@@ -181,21 +192,45 @@ Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decor
 
 ___
 
+### Repository
+
+Re-exports [Repository](decorators_components_decorator.md#repository)
+
+___
+
 ### RepositoryInjectableOptions
 
 Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
 
 ___
 
-### RoutesInjectionOptions
+### Router
 
-Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
+Re-exports [Router](decorators_components_decorator.md#router)
+
+___
+
+### RouterInjectionOptions
+
+Re-exports [RouterInjectionOptions](types.md#routerinjectionoptions)
 
 ___
 
 ### RoutesInjectionRouterConfiguration
 
 Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+
+___
+
+### Service
+
+Re-exports [Service](decorators_components_decorator.md#service)
+
+___
+
+### ServiceInjectableOptions
+
+Re-exports [ServiceInjectableOptions](types.md#serviceinjectableoptions)
 
 ___
 

@@ -8,9 +8,10 @@
 
 - [contants](modules/contants.md)
 - [decorators](modules/decorators.md)
-- [decorators/injectable.decorator](modules/decorators_injectable_decorator.md)
+- [decorators/components.decorator](modules/decorators_components_decorator.md)
 - [decorators/module.decorator](modules/decorators_module_decorator.md)
 - [decorators/onMedusaEntityEvent.decorator](modules/decorators_onMedusaEntityEvent_decorator.md)
+- [decorators/utils](modules/decorators_utils.md)
 - [event-emmiter](modules/event_emmiter.md)
 - [index](modules/index.md)
 - [loader](modules/loader.md)

@@ -5,7 +5,6 @@ export { Medusa } from './medusa';
 export { customEventEmitter as eventEmitter } from './event-emmiter';
 
 export {
-	Injectable,
 	Module,
 	OnMedusaEntityEvent,
 	EntityEventActionOptions,
@@ -14,6 +13,7 @@ export {
 	MedusaEventEmittedParams,
 	MedusaEventHandlerParams,
 } from './decorators';
+export * from './decorators/components.decorator';
 
 import { Utils as _Utils } from './utils';
 

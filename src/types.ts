@@ -10,13 +10,21 @@ export type Constructor<T> = new (...args: unknown[]) => T;
 /**
  * Components that does not required any other options that Type.
  */
-export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'migration' | 'route' | 'middleware';
+export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'migration' | 'router' | 'middleware';
 
 /**
- * Defines the injection options for services, entities.
+ * Defines the injection options for entities.
  */
-export type ComplexInjectableOptions<TOverride = unknown> = {
-	type: Extract<InjectableComponentTypes, 'entity' | 'service'>;
+export type EntityInjectableOptions<TOverride = unknown> = {
+	scope?: LifetimeType;
+	resolutionKey?: string;
+	override?: Type<TOverride>;
+};
+
+/**
+ * Defines the injection options for service.
+ */
+export type ServiceInjectableOptions<TOverride = unknown> = {
 	scope?: LifetimeType;
 	resolutionKey?: string;
 	override?: Type<TOverride>;
@@ -26,21 +34,12 @@ export type ComplexInjectableOptions<TOverride = unknown> = {
  * Defines the injection options for services, entities, repositories.
  */
 export type RepositoryInjectableOptions<TOverride = unknown> = {
-	type: Extract<InjectableComponentTypes, 'repository'>;
-	scope?: LifetimeType;
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };
 
 /**
- * Defines the injection options for migrations.
- */
-export type MigrationInjectionOptions = {
-	type: Extract<InjectableComponentTypes, 'migration'>;
-};
-
-/**
- * Define a route and its configuration.
+ * Define a router and its configuration.
  */
 export type RoutesInjectionRouterConfiguration = {
 	requiredAuth: boolean;
@@ -52,8 +51,7 @@ export type RoutesInjectionRouterConfiguration = {
 /**
  * Defines the injection options for routes.
  */
-export type RoutesInjectionOptions = {
-	type: Extract<InjectableComponentTypes, 'route'>;
+export type RouterInjectionOptions = {
 	router: RoutesInjectionRouterConfiguration[];
 };
 
@@ -61,7 +59,6 @@ export type RoutesInjectionOptions = {
  * Defines the injection options for middlewares.
  */
 export type MiddlewareInjectionOptions = {
-	type: Extract<InjectableComponentTypes, 'middleware'>;
 	requireAuth: boolean;
 	routerOptions: MedusaRouteOptions[];
 };
@@ -70,27 +67,32 @@ export type MiddlewareInjectionOptions = {
  * Union of all options type possible for injectable.
  */
 export type InjectableOptions<T = unknown> =
-	| ComplexInjectableOptions<T>
+	| EntityInjectableOptions<T>
+	| ServiceInjectableOptions<T>
 	| RepositoryInjectableOptions<T>
-	| MigrationInjectionOptions
 	| MiddlewareInjectionOptions
-	| RoutesInjectionOptions;
+	| RouterInjectionOptions;
 
 /**
  * Determine which options type it actually is depending on the component type.
  */
 export type GetInjectableOption<TComponentType extends InjectableComponentTypes = InjectableComponentTypes> =
-	(TComponentType extends Extract<InjectableComponentTypes, 'entity' | 'service'>
-		? ComplexInjectableOptions
+	(TComponentType extends Extract<InjectableComponentTypes, 'entity'>
+		? EntityInjectableOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'service'>
+		? ServiceInjectableOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'repository'>
 		? RepositoryInjectableOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'migration'>
-		? MigrationInjectionOptions
-		: TComponentType extends Extract<InjectableComponentTypes, 'route'>
-		? RoutesInjectionOptions
+		? any
+		: TComponentType extends Extract<InjectableComponentTypes, 'router'>
+		? RouterInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'middleware'>
 		? MiddlewareInjectionOptions
-		: never) & { metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type };
+		: never) & {
+		type: InjectableComponentTypes;
+		metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type;
+	};
 
 /**
  * Determine which options type it actually is depending on the component type.

@@ -41,14 +41,14 @@ export class Loader {
 		await databaseLoader(moduleComponentsOptions.get('entity'), moduleComponentsOptions.get('repository'));
 		await pluginsLoadersAndListeners(express);
 		await servicesLoader(moduleComponentsOptions.get('service'));
-		unauthenticatedRoutesLoader(moduleComponentsOptions.get('route'), express);
+		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router'), express);
 
 		const { app, container, dbConnection } = await loaders({
 			directory: rootDir,
 			expressApp: express,
 		});
 
-		authenticatedRoutesLoader(moduleComponentsOptions.get('route'), app);
+		authenticatedRoutesLoader(moduleComponentsOptions.get('router'), app);
 
 		await migrationsLoader(moduleComponentsOptions.get('migration'), dbConnection);
 

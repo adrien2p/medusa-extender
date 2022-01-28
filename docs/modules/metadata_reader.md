@@ -17,7 +17,7 @@
 
 ### componentsMetadataReader
 
-▸ **componentsMetadataReader**<`TComponentType`\>(`component`): [`InjectableOptions`](types.md#injectableoptions)<`TComponentType`\>
+▸ **componentsMetadataReader**<`TComponentType`\>(`component`): [`InjectableOptions`](types.md#injectableoptions)<`TComponentType`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  }
 
 **`internal`**
 Return the options from components.
@@ -36,11 +36,11 @@ Return the options from components.
 
 #### Returns
 
-[`InjectableOptions`](types.md#injectableoptions)<`TComponentType`\>
+[`InjectableOptions`](types.md#injectableoptions)<`TComponentType`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  }
 
 #### Defined in
 
-[src/metadata-reader.ts:43](https://github.com/adrien2p/medusa-extender/blob/8756338/src/metadata-reader.ts#L43)
+[src/metadata-reader.ts:43](https://github.com/adrien2p/medusa-extender/blob/1127b65/src/metadata-reader.ts#L43)
 
 ___
 
@@ -62,4 +62,4 @@ Read all metadata from the imported modules and extract components that will be 
 
 #### Defined in
 
-[src/metadata-reader.ts:15](https://github.com/adrien2p/medusa-extender/blob/8756338/src/metadata-reader.ts#L15)
+[src/metadata-reader.ts:15](https://github.com/adrien2p/medusa-extender/blob/1127b65/src/metadata-reader.ts#L15)

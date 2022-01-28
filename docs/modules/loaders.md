@@ -6,8 +6,8 @@
 
 ### References
 
-- [ComplexInjectableOptions](loaders.md#complexinjectableoptions)
 - [Constructor](loaders.md#constructor)
+- [EntityInjectableOptions](loaders.md#entityinjectableoptions)
 - [GetInjectableOption](loaders.md#getinjectableoption)
 - [GetInjectableOptions](loaders.md#getinjectableoptions)
 - [InjectableComponentTypes](loaders.md#injectablecomponenttypes)
@@ -18,10 +18,10 @@
 - [MedusaRouteMethods](loaders.md#medusaroutemethods)
 - [MedusaRouteOptions](loaders.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](loaders.md#middlewareinjectionoptions)
-- [MigrationInjectionOptions](loaders.md#migrationinjectionoptions)
 - [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
-- [RoutesInjectionOptions](loaders.md#routesinjectionoptions)
+- [RouterInjectionOptions](loaders.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
+- [ServiceInjectableOptions](loaders.md#serviceinjectableoptions)
 - [Type](loaders.md#type)
 - [Utils](loaders.md#utils)
 - [apiLoader](loaders.md#apiloader)
@@ -44,15 +44,15 @@
 
 ## References
 
-### ComplexInjectableOptions
-
-Re-exports [ComplexInjectableOptions](types.md#complexinjectableoptions)
-
-___
-
 ### Constructor
 
 Re-exports [Constructor](types.md#constructor)
+
+___
+
+### EntityInjectableOptions
+
+Re-exports [EntityInjectableOptions](types.md#entityinjectableoptions)
 
 ___
 
@@ -116,27 +116,27 @@ Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
 
 ___
 
-### MigrationInjectionOptions
-
-Re-exports [MigrationInjectionOptions](types.md#migrationinjectionoptions)
-
-___
-
 ### RepositoryInjectableOptions
 
 Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
 
 ___
 
-### RoutesInjectionOptions
+### RouterInjectionOptions
 
-Re-exports [RoutesInjectionOptions](types.md#routesinjectionoptions)
+Re-exports [RouterInjectionOptions](types.md#routerinjectionoptions)
 
 ___
 
 ### RoutesInjectionRouterConfiguration
 
 Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+
+___
+
+### ServiceInjectableOptions
+
+Re-exports [ServiceInjectableOptions](types.md#serviceinjectableoptions)
 
 ___
 
