@@ -34,4 +34,4 @@ Mark a class as an injectable to be used by the loader.
 
 #### Defined in
 
-[src/decorators/injectable.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/79a9c0b/src/decorators/injectable.decorator.ts#L10)
+[src/decorators/injectable.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/daed756/src/decorators/injectable.decorator.ts#L10)
