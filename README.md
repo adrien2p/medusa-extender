@@ -4,10 +4,14 @@
     <img alt="Medusa" src="https://user-images.githubusercontent.com/7554214/129161578-19b83dc8-fac5-4520-bd48-53cba676edd2.png" width="200" />
   </p>
   <h1>Extend medusa to fit your needs</h1>
+  
+  <div align="center">
+    <p align="center">
+        <a href="https://adrien2p.github.io/medusa-extender/#/">Documentation</a>
+    </p>
+  </div>
     
-  <a href="https://github.com/adrien2p/awesome-medusajs">
-      <img src="https://awesome.re/badge.svg" alt="Awesome">
-  </a>
+  <a href="https://github.com/adrien2p/awesome-medusajs"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/issues"><img src="https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat-square" alt="issues" height="18"></a>
