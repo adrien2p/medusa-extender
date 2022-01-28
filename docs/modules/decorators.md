@@ -29,7 +29,7 @@
 - [MiddlewareInjectionOptions](decorators.md#middlewareinjectionoptions)
 - [MigrationInjectionOptions](decorators.md#migrationinjectionoptions)
 - [Module](decorators.md#module)
-- [OnMedusaEvent](decorators.md#onmedusaevent)
+- [OnMedusaEntityEvent](decorators.md#onmedusaentityevent)
 - [RepositoryInjectableOptions](decorators.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](decorators.md#routesinjectionoptions)
 - [RoutesInjectionRouterConfiguration](decorators.md#routesinjectionrouterconfiguration)
@@ -51,19 +51,19 @@ ___
 
 ### EntityActions
 
-Re-exports [EntityActions](decorators_onMedusaEvent_decorator.md#entityactions)
+Re-exports [EntityActions](decorators_onMedusaEntityEvent_decorator.md#entityactions)
 
 ___
 
 ### EntityEventActionOptions
 
-Re-exports [EntityEventActionOptions](decorators_onMedusaEvent_decorator.md#entityeventactionoptions)
+Re-exports [EntityEventActionOptions](decorators_onMedusaEntityEvent_decorator.md#entityeventactionoptions)
 
 ___
 
 ### EntityEventType
 
-Re-exports [EntityEventType](decorators_onMedusaEvent_decorator.md#entityeventtype)
+Re-exports [EntityEventType](decorators_onMedusaEntityEvent_decorator.md#entityeventtype)
 
 ___
 
@@ -123,13 +123,13 @@ ___
 
 ### MedusaEventEmittedParams
 
-Re-exports [MedusaEventEmittedParams](decorators_onMedusaEvent_decorator.md#medusaeventemittedparams)
+Re-exports [MedusaEventEmittedParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventemittedparams)
 
 ___
 
 ### MedusaEventHandlerParams
 
-Re-exports [MedusaEventHandlerParams](decorators_onMedusaEvent_decorator.md#medusaeventhandlerparams)
+Re-exports [MedusaEventHandlerParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventhandlerparams)
 
 ___
 
@@ -175,9 +175,9 @@ Re-exports [Module](decorators_module_decorator.md#module)
 
 ___
 
-### OnMedusaEvent
+### OnMedusaEntityEvent
 
-Re-exports [OnMedusaEvent](../classes/decorators_onMedusaEvent_decorator.OnMedusaEvent.md)
+Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
 
 ___
 

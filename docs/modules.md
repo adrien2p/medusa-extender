@@ -10,7 +10,7 @@
 - [decorators](modules/decorators.md)
 - [decorators/injectable.decorator](modules/decorators_injectable_decorator.md)
 - [decorators/module.decorator](modules/decorators_module_decorator.md)
-- [decorators/onMedusaEvent.decorator](modules/decorators_onMedusaEvent_decorator.md)
+- [decorators/onMedusaEntityEvent.decorator](modules/decorators_onMedusaEntityEvent_decorator.md)
 - [event-emmiter](modules/event_emmiter.md)
 - [index](modules/index.md)
 - [loader](modules/loader.md)

@@ -30,7 +30,7 @@
 - [MiddlewareInjectionOptions](index.md#middlewareinjectionoptions)
 - [MigrationInjectionOptions](index.md#migrationinjectionoptions)
 - [Module](index.md#module)
-- [OnMedusaEvent](index.md#onmedusaevent)
+- [OnMedusaEntityEvent](index.md#onmedusaentityevent)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
 - [RoutesInjectionOptions](index.md#routesinjectionoptions)
 - [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
@@ -57,19 +57,19 @@ ___
 
 ### EntityActions
 
-Re-exports [EntityActions](decorators_onMedusaEvent_decorator.md#entityactions)
+Re-exports [EntityActions](decorators_onMedusaEntityEvent_decorator.md#entityactions)
 
 ___
 
 ### EntityEventActionOptions
 
-Re-exports [EntityEventActionOptions](decorators_onMedusaEvent_decorator.md#entityeventactionoptions)
+Re-exports [EntityEventActionOptions](decorators_onMedusaEntityEvent_decorator.md#entityeventactionoptions)
 
 ___
 
 ### EntityEventType
 
-Re-exports [EntityEventType](decorators_onMedusaEvent_decorator.md#entityeventtype)
+Re-exports [EntityEventType](decorators_onMedusaEntityEvent_decorator.md#entityeventtype)
 
 ___
 
@@ -135,13 +135,13 @@ ___
 
 ### MedusaEventEmittedParams
 
-Re-exports [MedusaEventEmittedParams](decorators_onMedusaEvent_decorator.md#medusaeventemittedparams)
+Re-exports [MedusaEventEmittedParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventemittedparams)
 
 ___
 
 ### MedusaEventHandlerParams
 
-Re-exports [MedusaEventHandlerParams](decorators_onMedusaEvent_decorator.md#medusaeventhandlerparams)
+Re-exports [MedusaEventHandlerParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventhandlerparams)
 
 ___
 
@@ -187,9 +187,9 @@ Re-exports [Module](decorators_module_decorator.md#module)
 
 ___
 
-### OnMedusaEvent
+### OnMedusaEntityEvent
 
-Re-exports [OnMedusaEvent](../classes/decorators_onMedusaEvent_decorator.OnMedusaEvent.md)
+Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
 
 ___
 
@@ -236,4 +236,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/daed756/src/index.ts#L20)
+[src/index.ts:20](https://github.com/adrien2p/medusa-extender/blob/fbaa04d/src/index.ts#L20)

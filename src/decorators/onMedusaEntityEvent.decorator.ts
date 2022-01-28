@@ -19,7 +19,7 @@ export type EntityEventType<Entity, TEntityActions extends EntityActions> = TEnt
 	: RemoveEvent<Entity>;
 
 /**
- * The arguments expected by the {@link OnMedusaEvent} decorator.
+ * The arguments expected by the {@link OnMedusaEntityEvent} decorator.
  */
 export type MedusaEventEmittedParams<Entity, TEntityActions extends EntityActions> = {
 	values: MedusaEventHandlerParams<Entity, TEntityActions>;
@@ -34,7 +34,7 @@ export type MedusaEventHandlerParams<Entity, TEntityActions extends EntityAction
 	transactionalEntityManager?: EntityManager;
 };
 
-export class OnMedusaEvent {
+export class OnMedusaEntityEvent {
 	readonly #when: string;
 	#targetEntity: any;
 
@@ -42,16 +42,16 @@ export class OnMedusaEvent {
 		this.#when = when;
 	}
 
-	static get Before(): OnMedusaEvent {
+	static get Before(): OnMedusaEntityEvent {
 		return this.build('Before');
 	}
 
-	static get After(): OnMedusaEvent {
+	static get After(): OnMedusaEntityEvent {
 		return this.build('After');
 	}
 
-	private static build(when: string): OnMedusaEvent {
-		return new OnMedusaEvent(when);
+	private static build(when: string): OnMedusaEntityEvent {
+		return new OnMedusaEntityEvent(when);
 	}
 
 	public InsertEvent<Entity extends Type>(entity: Entity): string {
