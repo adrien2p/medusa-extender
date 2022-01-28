@@ -8,16 +8,16 @@ import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.lo
 import { createContainer } from 'awilix';
 import { Entity, Repository, EntityRepository } from 'typeorm';
 import { Utils } from '../../utils';
-import { Injectable, Module } from '../../decorators';
+import { Repository as MedusaRepository, Entity as MedusaEntity, Module } from '../../decorators';
 import { metadataReader } from '../../metadata-reader';
 
-@Injectable({ type: 'entity', override: MedusaOrder })
+@MedusaEntity({ override: MedusaOrder })
 @Entity()
 class Order extends MedusaOrder {
 	testPropertyOrder = 'toto';
 }
 
-@Injectable({ type: 'repository', override: MedusaOrderRepository })
+@MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()
 class OrderRepository extends Repository<Order> {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
@@ -28,14 +28,11 @@ Utils.repositoryMixin(OrderRepository, MedusaOrderRepository);
 @Module({ imports: [OrderRepository] })
 class OrderModule {}
 
-@Injectable({ type: 'entity', resolutionKey: 'another' })
+@MedusaEntity({ resolutionKey: 'anotherEntity' })
 @Entity()
-class Another {
-	static isHandledByMedusa = true;
-	static resolutionKey = 'anotherEntity';
-}
+class Another {}
 
-@Injectable({ type: 'repository', resolutionKey: 'anotherRepository' })
+@MedusaRepository({ resolutionKey: 'anotherRepository' })
 @EntityRepository()
 class AnotherRepository extends Repository<Another> {}
 

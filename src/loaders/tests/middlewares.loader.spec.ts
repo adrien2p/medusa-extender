@@ -3,7 +3,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import { asValue, createContainer } from 'awilix';
-import { Injectable } from '../../decorators/injectable.decorator';
+import { Middleware } from '../../decorators/components.decorator';
 import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { middlewaresLoader } from '../middlewares.loader';
@@ -17,7 +17,7 @@ const MiddlewareServiceMock = {
 	addPostAuthentication: jest.fn(),
 };
 
-@Injectable({ type: 'middleware', requireAuth: false, routerOptions: [{ path: '/admin/test', method: 'get' }] })
+@Middleware({ requireAuth: false, routerOptions: [{ path: '/admin/test', method: 'get' }] })
 class PreAuthUserMiddleware implements MedusaMiddleware {
 	consume(): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
 		return function () {
@@ -26,7 +26,7 @@ class PreAuthUserMiddleware implements MedusaMiddleware {
 	}
 }
 
-@Injectable({ type: 'middleware', requireAuth: true, routerOptions: [{ path: '/admin/test', method: 'get' }] })
+@Middleware({ requireAuth: true, routerOptions: [{ path: '/admin/test', method: 'get' }] })
 class PostAuthUserMiddleware implements MedusaMiddleware {
 	consume(): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
 		return function () {

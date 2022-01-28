@@ -19,7 +19,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"route"``\> |
+| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"router"``\> |
 | `app` | `Express` |
 
 #### Returns
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/8756338/src/loaders/routes.loader.ts#L4)
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/1d4cf61/src/loaders/routes.loader.ts#L4)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"route"``\> |
+| `routesOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"router"``\> |
 | `app` | `Express` |
 
 #### Returns
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/8756338/src/loaders/routes.loader.ts#L14)
+[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/1d4cf61/src/loaders/routes.loader.ts#L14)

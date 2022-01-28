@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-
 import { MODULE_KEY, Type } from './';
 
 /**

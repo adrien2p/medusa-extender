@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { Type } from '../types';
 import { customEventEmitter } from '../event-emmiter';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';

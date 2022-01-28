@@ -1,7 +1,7 @@
 import { GetInjectableOptions, MedusaAuthenticatedRequest, RoutesInjectionRouterConfiguration } from './';
 import { Express, NextFunction, Request, Response } from 'express';
 
-export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'route'>, app: Express): void {
+export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'router'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
 		routeOptions.router.forEach((router) => {
 			if (!!router.requiredAuth) {
@@ -11,7 +11,7 @@ export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'r
 	}
 }
 
-export function unauthenticatedRoutesLoader(routesOptions: GetInjectableOptions<'route'>, app: Express): void {
+export function unauthenticatedRoutesLoader(routesOptions: GetInjectableOptions<'router'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
 		routeOptions.router.forEach((router) => {
 			if (!router.requiredAuth) {

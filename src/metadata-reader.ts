@@ -22,7 +22,7 @@ export function metadataReader(modules: Type[]): CustomMap {
 			const options = componentsMetadataReader(component);
 
 			let metatype;
-			if (options.type === 'repository' && !!options.override) {
+			if (options.type === 'repository' && 'override' in options) {
 				metatype = Utils.repositoryMixin(component, options.override);
 			} else {
 				metatype = component;
@@ -40,6 +40,8 @@ export function metadataReader(modules: Type[]): CustomMap {
  * Return the options from components.
  * @param component
  */
-export function componentsMetadataReader<TComponentType = unknown>(component: Type): InjectableOptions<TComponentType> {
+export function componentsMetadataReader<TComponentType = unknown>(
+	component: Type
+): InjectableOptions<TComponentType> & { type: InjectableComponentTypes } {
 	return Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, component);
 }

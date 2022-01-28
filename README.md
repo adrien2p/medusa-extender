@@ -29,6 +29,7 @@
     - [Create you server](#create-your-server)
     - [Create you first module](#create-your-first-module-rocket)
         - [Entity](#entity)
+        - [Migration](#migration)
         - [Repository](#repository)
         - [Service](#service)
         - [Middleware](#middleware)
@@ -126,14 +127,36 @@ Let say that you want to add a new field on the `Product` entity.
 
 import { Product as MedusaProduct } from '@medusa/medusa/dist'; 
 import { Column, Entity } from "typeorm"; 
-import { Injectable } from "medusa-extender";
+import { Entity as MedusaEntity } from "medusa-extender";
 //...
 
-@Injectable({ type: 'entity', override: MedusaProduct })
+@MedusaEntity({ override: MedusaProduct })
 @Entity()
 class Product extends MedusaProduct {
     @Column()
     customField: string;
+}
+```
+
+### Migration
+
+After have updated your entity, you will have to migrate the database in order to reflect the new fields.
+
+```typescript
+// modules/product/20211126000001-add-field-to-product
+
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { Migration } from 'medusa-extender';
+
+@Migration()
+export default class AddFieldToProduct1611063162649 implements MigrationInterface {
+    name = 'addFieldToProduct1611063162649';
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+    }
 }
 ```
 
@@ -146,11 +169,11 @@ We will then create a new repository to reflect our custom entity.
 
 import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
 import { EntityRepository, Repository } from "typeorm"; 
-import { Injectable, Utils } from "medusa-extender"; 
+import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
 import { Product } from "./product.entity";
 //...
 
-@Injectable({ type: 'repository', override: MedusaProductRepository })
+@MedusaRepository({ override: MedusaProductRepository })
 @EntityRepository()
 class ProductRepository extends Repository<Product> {
 }
@@ -169,7 +192,7 @@ We want now to add a custom service to implement our custom logic for our new fi
 ```typescript
 // modules/product/product.service.ts
 
-import { Injectable } from 'medusa-extender';
+import { Service } from 'medusa-extender';
 //...
 
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
@@ -186,7 +209,7 @@ interface ConstructorParams<TSearchService extends DefaultSearchService = Defaul
     searchService: TSearchService;
 }
 
-@Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
+@Service({ scope: 'SCOPED', override: MedusaProductService })
 export default class ProductService extends MedusaProductService {
     readonly #manager: EntityManager;
     
@@ -220,14 +243,14 @@ Let say that you want to attach a custom middleware to certain routes
 
 import { Express, NextFunction, Response } from 'express';
 import {
-    Injectable,
+    Middleware,
     MedusaAuthenticatedRequest,
     MedusaMiddleware,
 } from 'medusa-extender';
 
 const routerOption = { method: 'post', path: '/admin/products/' }; 
 
-@Injectable({ type: 'middleware', requireAuth: true, routerOptions: [routerOption] })
+@Middleware({ requireAuth: true, routerOptions: [routerOption] })
 export class CustomMiddleware  implements MedusaMiddleware {
     public consume(
         options: { app: Express }
@@ -247,11 +270,10 @@ If you need to add custom routes to medusa here is a simple way to achieve that
 ```typescript
 // modules/product/product.router.ts
 
-import { Injectable } from 'medusa-extender';
+import { Router } from 'medusa-extender';
 import yourController from './yourController.contaoller';
 
-@Injectable({
-    type: 'route',
+@Router({
     router: [{
         requiredAuth: true,
         path: '/admin/dashboard',
@@ -276,6 +298,7 @@ import { ProductRouter } from './product.router';
 import { CustomMiddleware } from './custom.middleware';
 import ProductRepository from './product.repository';
 import ProductService from './product.service';
+import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-to-product';
 
 @Module({
     imports: [
@@ -283,7 +306,8 @@ import ProductService from './product.service';
         ProductRepository,
         ProductService,
         ProductRouter,
-        CustomMiddleware
+        CustomMiddleware,
+        AddFieldToProduct1611063162649
     ]
 })
 export class MyModule {}
@@ -332,14 +356,14 @@ And then the handler will work like following.
 ```typescript
 // modules/product/product.service.ts
 
-import { Injectable, OnMedusaEntityEvent } from 'medusa-extender';
+import { Service, OnMedusaEntityEvent } from 'medusa-extender';
 //...
 
 interface ConstructorParams {
     // ...
 }
 
-@Injectable({ type: 'service', scope: 'SCOPED', override: MedusaProductService })
+@Service({ scope: 'SCOPED', override: MedusaProductService })
 export default class ProductService extends MedusaProductService {
     readonly #manager: EntityManager;
     
@@ -367,18 +391,18 @@ it. Will see as an example a way to attach request scoped subscribers.
 
 import { Express, NextFunction, Response } from 'express';
 import {
-Injectable,
-MEDUSA_RESOLVER_KEYS,
-MedusaAuthenticatedRequest,
-MedusaMiddleware,
-MedusaRouteOptions,
-Utils as MedusaUtils,
+    Middleware,
+    MEDUSA_RESOLVER_KEYS,
+    MedusaAuthenticatedRequest,
+    MedusaMiddleware,
+    MedusaRouteOptions,
+    Utils as MedusaUtils,
 } from 'medusa-extender';
 import { Connection } from 'typeorm';
 import Utils from '@core/utils';
-import ProductSubscriber from '@modules/product/subscribers/product.subscriber';
+import ProductSubscriber from '@modules/product/subscribers/product.subscriber'; import { Middleware } from "./components.decorator";
 
-@Injectable({ type: 'middleware', requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
+@Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
 export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
     private app: Express;
     private hasBeenAttached = false;
@@ -428,6 +452,7 @@ import { ProductRouter } from './product.router';
 import { CustomMiddleware } from './custom.middleware';
 import ProductRepository from './product.repository';
 import ProductService from './product.service';
+import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-to-product';
 import { AttachProductSubscribersMiddleware } from './attachSubscriber.middleware'
 
 @Module({
@@ -437,7 +462,8 @@ import { AttachProductSubscribersMiddleware } from './attachSubscriber.middlewar
         ProductService,
         ProductRouter,
         CustomMiddleware,
-        AttachProductSubscribersMiddleware
+        AttachProductSubscribersMiddleware,
+        AddFieldToProduct1611063162649
     ]
 })
 export class MyModule {}

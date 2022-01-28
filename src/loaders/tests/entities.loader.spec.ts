@@ -6,11 +6,11 @@ import { User as MedusaUser } from '@medusajs/medusa/dist';
 import { asArray } from './utils/asArray';
 import { entitiesLoader, overrideEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
-import { Injectable, Module } from '../../decorators';
+import { Entity as MedusaEntity, Module } from '../../decorators';
 import { metadataReader } from '../../metadata-reader';
 import { Entity } from 'typeorm';
 
-@Injectable({ type: 'entity', override: MedusaUser })
+@MedusaEntity({ override: MedusaUser })
 @Entity()
 class User extends MedusaUser {
 	testProperty = 'I am the property from User that extend MedusaUser';
@@ -19,7 +19,7 @@ class User extends MedusaUser {
 @Module({ imports: [User] })
 class UserModule {}
 
-@Injectable({ type: 'entity', resolutionKey: 'anotherEntity' })
+@MedusaEntity({ resolutionKey: 'anotherEntity' })
 @Entity()
 class Another {}
 
