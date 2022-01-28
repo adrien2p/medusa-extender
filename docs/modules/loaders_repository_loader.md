@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/loaders/repository.loader.ts#L16)
+[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/1eb0898/src/loaders/repository.loader.ts#L16)
 
 ___
 
@@ -52,7 +52,7 @@ Load custom repositories and override existing ones.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/loaders/repository.loader.ts#L49)
+[src/loaders/repository.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/1eb0898/src/loaders/repository.loader.ts#L49)
 
 ___
 
@@ -76,7 +76,7 @@ Load custom repository into the container.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/loaders/repository.loader.ts#L30)
+[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/1eb0898/src/loaders/repository.loader.ts#L30)
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/loaders/repository.loader.ts#L5)
+[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/1eb0898/src/loaders/repository.loader.ts#L5)

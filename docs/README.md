@@ -89,6 +89,10 @@ Here is the architecture of this package and how modules are related to each oth
 
 > You can do that to. Create a new route, configure it, and hit the end point.
 
+- :bulb: Handle entity events from subscriber as easy as possible through the provided decorators.
+
+> Emit an event (async/sync) from your subscriber and the register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
+
 # Usage
 
 ## Create your server
