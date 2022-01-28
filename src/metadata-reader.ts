@@ -12,7 +12,7 @@ class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
  * Read all metadata from the imported modules and extract components that will be stored by there type.
  * @param modules The modules from which the metadata are read.
  */
-export function modulesMetadataReader(modules: Type[]): CustomMap {
+export function metadataReader(modules: Type[]): CustomMap {
 	const optionsMap = new CustomMap();
 
 	for (const module of modules) {

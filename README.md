@@ -361,12 +361,12 @@ it. Will see as an example a way to attach request scoped subscribers.
 
 import { Express, NextFunction, Response } from 'express';
 import {
-    Injectable,
-    MEDUSA_RESOLVER_KEYS,
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-    MedusaRouteOptions,
-    Utils as MedusaUtils,
+Injectable,
+MEDUSA_RESOLVER_KEYS,
+MedusaAuthenticatedRequest,
+MedusaMiddleware,
+MedusaRouteOptions,
+Utils as MedusaUtils,
 } from 'medusa-extender';
 import { Connection } from 'typeorm';
 import Utils from '@core/utils';
@@ -374,8 +374,8 @@ import ProductSubscriber from '@modules/product/subscribers/product.subscriber';
 
 @Injectable({ type: 'middleware', requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
 export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
-    #app: Express;
-    #hasBeenAttached = false;
+    private app: Express;
+    private hasBeenAttached = false;
     
     public static get routesOptions(): MedusaRouteOptions {
         return {
@@ -387,26 +387,26 @@ export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
     public consume(
         options: { app: Express }
     ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
-        this.#app = options.app;
+        this.app = options.app;
+    
+        const attachIfNeeded = (routeOptions: MedusaRouteOptions): void => {
+            if (!this.hasBeenAttached) {
+                this.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+                    if (Utils.isExpectedRoute([routeOptions], req)) {
+                        const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
+                        MedusaUtils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
+                    }
+                    return next();
+                });
+                this.hasBeenAttached = true;
+            }
+        }
     
         return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
             const routeOptions = AttachProductSubscribersMiddleware.routesOptions;
-            this.attachIfNeeded(routeOptions);
+            attachIfNeeded(routeOptions);
             return next();
         };
-    }
-    
-    private attachIfNeeded(routeOptions: MedusaRouteOptions): void {
-        if (!this.#hasBeenAttached) {
-            this.#app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-                if (Utils.isExpectedRoute([routeOptions], req)) {
-                    const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
-                    MedusaUtils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
-                }
-                return next();
-            });
-            this.#hasBeenAttached = true;
-        }
     }
 }
 ```

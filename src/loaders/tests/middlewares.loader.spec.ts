@@ -7,7 +7,7 @@ import { Injectable } from '../../decorators/injectable.decorator';
 import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../types';
 import { NextFunction, Request, Response } from 'express';
 import { middlewaresLoader } from '../middlewares.loader';
-import { modulesMetadataReader } from '../../modules-metadata-reader';
+import { metadataReader } from '../../metadata-reader';
 import { Module } from '../../decorators/module.decorator';
 import { MEDUSA_RESOLVER_KEYS } from '../../contants';
 import express = require('express');
@@ -49,7 +49,7 @@ describe('Middlewares loader', () => {
 		expect(MiddlewareServiceMock.addPostAuthentication).not.toHaveBeenCalled();
 		expect(MiddlewareServiceMock.addPreAuthentication).not.toHaveBeenCalled();
 
-		const components = modulesMetadataReader([UserModule]);
+		const components = metadataReader([UserModule]);
 		middlewaresLoader(app, container, components.get('middleware'));
 
 		const preAuthUserMiddlewareInstance = new PreAuthUserMiddleware();

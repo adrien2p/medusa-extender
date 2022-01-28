@@ -9,7 +9,7 @@ import { createContainer } from 'awilix';
 import { Entity, Repository, EntityRepository } from 'typeorm';
 import { Utils } from '../../utils';
 import { Injectable, Module } from '../../decorators';
-import { modulesMetadataReader } from '../../modules-metadata-reader';
+import { metadataReader } from '../../metadata-reader';
 
 @Injectable({ type: 'entity', override: MedusaOrder })
 @Entity()
@@ -47,7 +47,7 @@ describe('Repositories loader', () => {
 
 	describe('overriddenRepositoriesLoader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
-			const components = modulesMetadataReader([OrderModule]);
+			const components = metadataReader([OrderModule]);
 			await overrideRepositoriesLoader(components.get('repository'));
 
 			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
@@ -66,7 +66,7 @@ describe('Repositories loader', () => {
 		it(' should register a new repository into the container', async () => {
 			expect(container.hasRegistration('anotherRepository')).toBeFalsy();
 
-			const components = modulesMetadataReader([AnotherOrderModule]);
+			const components = metadataReader([AnotherOrderModule]);
 			await repositoriesLoader(components.get('repository'), container);
 
 			expect(container.hasRegistration('anotherRepository')).toBeTruthy();

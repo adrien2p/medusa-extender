@@ -25,6 +25,6 @@
 - [loaders/routes.loader](modules/loaders_routes_loader.md)
 - [loaders/services.loader](modules/loaders_services_loader.md)
 - [medusa](modules/medusa.md)
-- [modules-metadata-reader](modules/modules_metadata_reader.md)
+- [metadata-reader](modules/metadata_reader.md)
 - [types](modules/types.md)
 - [utils](modules/utils.md)

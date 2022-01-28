@@ -3,7 +3,7 @@ import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
 import { Type } from './types';
 import { Utils } from './utils';
-import { modulesMetadataReader } from './modules-metadata-reader';
+import { metadataReader } from './metadata-reader';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
@@ -33,7 +33,7 @@ export class Loader {
 	 * @param express Express instance
 	 */
 	public async load(modules: Type[], rootDir: string, express: Express): Promise<AwilixContainer> {
-		const moduleComponentsOptions = modulesMetadataReader(modules);
+		const moduleComponentsOptions = metadataReader(modules);
 
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity'));
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository'));

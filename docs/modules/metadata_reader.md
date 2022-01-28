@@ -1,17 +1,17 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / modules-metadata-reader
+[medusa-extender](../README.md) / [Exports](../modules.md) / metadata-reader
 
-# Module: modules-metadata-reader
+# Module: metadata-reader
 
 ## Table of contents
 
 ### Namespaces
 
-- [Internals](modules_metadata_reader.Internals.md)
+- [Internals](metadata_reader.Internals.md)
 
 ### Functions
 
-- [componentsMetadataReader](modules_metadata_reader.md#componentsmetadatareader)
-- [modulesMetadataReader](modules_metadata_reader.md#modulesmetadatareader)
+- [componentsMetadataReader](metadata_reader.md#componentsmetadatareader)
+- [metadataReader](metadata_reader.md#metadatareader)
 
 ## Functions
 
@@ -40,13 +40,13 @@ Return the options from components.
 
 #### Defined in
 
-[src/modules-metadata-reader.ts:43](https://github.com/adrien2p/medusa-extender/blob/49b9503/src/modules-metadata-reader.ts#L43)
+[src/metadata-reader.ts:43](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/metadata-reader.ts#L43)
 
 ___
 
-### modulesMetadataReader
+### metadataReader
 
-▸ **modulesMetadataReader**(`modules`): [`CustomMap`](../classes/modules_metadata_reader.Internals.CustomMap.md)
+▸ **metadataReader**(`modules`): [`CustomMap`](../classes/metadata_reader.Internals.CustomMap.md)
 
 Read all metadata from the imported modules and extract components that will be stored by there type.
 
@@ -58,8 +58,8 @@ Read all metadata from the imported modules and extract components that will be 
 
 #### Returns
 
-[`CustomMap`](../classes/modules_metadata_reader.Internals.CustomMap.md)
+[`CustomMap`](../classes/metadata_reader.Internals.CustomMap.md)
 
 #### Defined in
 
-[src/modules-metadata-reader.ts:15](https://github.com/adrien2p/medusa-extender/blob/49b9503/src/modules-metadata-reader.ts#L15)
+[src/metadata-reader.ts:15](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/metadata-reader.ts#L15)

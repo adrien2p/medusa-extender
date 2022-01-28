@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [modules-metadata-reader](../modules/modules_metadata_reader.md) / [Internals](../modules/modules_metadata_reader.Internals.md) / CustomMap
+[medusa-extender](../README.md) / [Exports](../modules.md) / [metadata-reader](../modules/metadata_reader.md) / [Internals](../modules/metadata_reader.Internals.md) / CustomMap
 
 # Class: CustomMap
 
-[modules-metadata-reader](../modules/modules_metadata_reader.md).[Internals](../modules/modules_metadata_reader.Internals.md).CustomMap
+[metadata-reader](../modules/metadata_reader.md).[Internals](../modules/metadata_reader.Internals.md).CustomMap
 
 ## Hierarchy
 
@@ -14,11 +14,11 @@
 
 ### Constructors
 
-- [constructor](modules_metadata_reader.Internals.CustomMap.md#constructor)
+- [constructor](metadata_reader.Internals.CustomMap.md#constructor)
 
 ### Methods
 
-- [get](modules_metadata_reader.Internals.CustomMap.md#get)
+- [get](metadata_reader.Internals.CustomMap.md#get)
 
 ## Constructors
 
@@ -84,4 +84,4 @@ Map.get
 
 #### Defined in
 
-[src/modules-metadata-reader.ts:6](https://github.com/adrien2p/medusa-extender/blob/49b9503/src/modules-metadata-reader.ts#L6)
+[src/metadata-reader.ts:6](https://github.com/adrien2p/medusa-extender/blob/5607bf8/src/metadata-reader.ts#L6)
