@@ -1,5 +1,5 @@
 name: Medusa-extender Pipeline
-on: [push, pull_request]
+on: [push]
 
 jobs:
   unit-tests:
@@ -54,8 +54,8 @@ jobs:
 
       - name: commit
         run: |
-          git config --local user.name adrien2p
-          git config --local user.email adrien.deperetti@gmail.com
+          git config --local user.name [BOT]
+          git config --local user.email <>
           git add docs
           git commit -m "Feat() Update doc"
           git push
