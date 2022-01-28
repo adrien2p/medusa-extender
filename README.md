@@ -32,7 +32,7 @@
         - [Middleware](#middleware)
         - [Router](#router)
         - [Module](#module)
-- [Entity event handling]()
+- [Entity event handling](#entity-event-handling)
 
 # Getting started
 
