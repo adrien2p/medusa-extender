@@ -10,7 +10,10 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/awesome-medusajs">
       <img src="https://awesome.re/badge.svg" alt="Awesome">
   </a>
-  <a href="https://badge.fury.io/js/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
+  <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
+  <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
+  <a href="https://github.com/adrien2p/medusa-extender/issues"><img src="https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat-square" alt="issues" height="18"></a>
+  
 </div>
 
 # Getting started
