@@ -52,17 +52,12 @@ jobs:
       - name: 'build doc'
         run: npm run build:doc
 
-      - name: setup git config
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "adrien2p"
-          git config user.email "adrien.deperetti@gmail.com"
-
       - name: commit
         run: |
-          # Stage the file, commit and push
+          git config --local user.name adrien2p
+          git config --local user.email adrien.deperetti@gmail.com
           git add docs
           git commit -m "Feat() Update doc"
-          git push origin $BRANCH
+          git push
         env:
           BRANCH: ${{ github.GITHUB_HEAD_REF }}
