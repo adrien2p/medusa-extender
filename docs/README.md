@@ -220,7 +220,6 @@ import {
     MedusaAuthenticatedRequest,
     MedusaMiddleware,
 } from 'medusa-extender';
-import Utils from '@core/utils';
 
 const routerOption = { method: 'post', path: '/admin/products/' }; 
 
@@ -229,13 +228,6 @@ export class CustomMiddleware  implements MedusaMiddleware {
     public consume(
         options: { app: Express }
     ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
-        options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            if (Utils.isExpectedRoute([routerOption], req)) {
-                // Your logic here
-            }
-            return next();
-        });
-
         return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
             return next();
         };
@@ -361,6 +353,90 @@ export default class ProductService extends MedusaProductService {
         return event;
     }
 }
+```
+
+And finally, we need to add the subscriber to the connection. There is different way to achieve
+it. Will see as an example a way to attach request scoped subscribers.
+
+```typescript
+// modules/product/attachSubscriber.middleware.ts
+
+import { Express, NextFunction, Response } from 'express';
+import {
+    Injectable,
+    MEDUSA_RESOLVER_KEYS,
+    MedusaAuthenticatedRequest,
+    MedusaMiddleware,
+    MedusaRouteOptions,
+    Utils as MedusaUtils,
+} from 'medusa-extender';
+import { Connection } from 'typeorm';
+import Utils from '@core/utils';
+import ProductSubscriber from '@modules/product/subscribers/product.subscriber';
+
+@Injectable({ type: 'middleware', requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
+export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
+    #app: Express;
+    #hasBeenAttached = false;
+    
+    public static get routesOptions(): MedusaRouteOptions {
+        return {
+            path: '/admin/products/',
+            method: 'post',
+        };
+    }
+    
+    public consume(
+        options: { app: Express }
+    ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
+        this.#app = options.app;
+    
+        return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+            const routeOptions = AttachProductSubscribersMiddleware.routesOptions;
+            this.attachIfNeeded(routeOptions);
+            return next();
+        };
+    }
+    
+    private attachIfNeeded(routeOptions: MedusaRouteOptions): void {
+        if (!this.#hasBeenAttached) {
+            this.#app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+                if (Utils.isExpectedRoute([routeOptions], req)) {
+                    const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
+                    MedusaUtils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
+                }
+                return next();
+            });
+            this.#hasBeenAttached = true;
+        }
+    }
+}
+```
+
+Now, you only need to add that middleware to the previous module we've created.
+
+```typescript
+// modules/products/myModule.module.ts
+
+import { Module } from 'medusa-extender';
+import { Product } from './product.entity';
+import { ProductRouter } from './product.router';
+import { CustomMiddleware } from './custom.middleware';
+import ProductRepository from './product.repository';
+import ProductService from './product.service';
+import { AttachProductSubscribersMiddleware } from './attachSubscriber.middleware'
+
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService,
+        ProductRouter,
+        CustomMiddleware,
+        AttachProductSubscribersMiddleware
+    ]
+})
+export class MyModule {}
 ```
 
 # Contribute :ballot_box:
