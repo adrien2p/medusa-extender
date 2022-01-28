@@ -63,4 +63,6 @@ jobs:
           # Stage the file, commit and push
           git add docs
           git commit -m "Feat() Update doc"
-          git push origin ${{github.GITHUB_HEAD_REF}}
+          git push origin $BRANCH
+        env:
+          BRANCH: ${{ github.GITHUB_HEAD_REF }}
