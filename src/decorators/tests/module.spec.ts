@@ -14,7 +14,6 @@ describe('Module', () => {
 		class ModuleTest {}
 
 		const imports = Reflect.getMetadata(MODULE_KEY, ModuleTest);
-		console.log(imports);
 		expect(imports.length).toBe(1);
 		expect(imports[0] === Test).toBeTruthy();
 	});

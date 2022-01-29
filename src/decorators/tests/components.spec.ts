@@ -72,7 +72,6 @@ describe('components', () => {
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
-			console.log(metadata);
 			expect(metadata.type).toBe('router');
 			expect({ ...metadata.router[0] }).toMatchObject({
 				method: 'get',
