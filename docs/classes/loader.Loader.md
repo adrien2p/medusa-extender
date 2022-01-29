@@ -44,4 +44,4 @@ internal container and database connection.
 
 #### Defined in
 
-[src/loader.ts:35](https://github.com/adrien2p/medusa-extender/blob/bc8d6ec/src/loader.ts#L35)
+[src/loader.ts:35](https://github.com/adrien2p/medusa-extender/blob/c966ad7/src/loader.ts#L35)
