@@ -4,7 +4,7 @@ import { Express, NextFunction, Request, Response } from 'express';
 export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'router'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
 		routeOptions.router.forEach((router) => {
-			if (!!router.requiredAuth) {
+			if (router.requiredAuth) {
 				registerRoute(app, router);
 			}
 		});

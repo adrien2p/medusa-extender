@@ -51,7 +51,7 @@ class CustomEventEmmiter extends EventEmitter {
 			const { resolutionKey } = serviceOptions;
 
 			let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
-			if (!!resolutionKey) {
+			if (resolutionKey) {
 				metatypeInstance = container.resolve(resolutionKey);
 			} else {
 				const metatypeName = metatype.name;
@@ -77,7 +77,7 @@ class CustomEventEmmiter extends EventEmitter {
 	 * @param eventName The event that must be triggered
 	 * @param values The data that are passed to the event handler
 	 */
-	public async emitAsync(eventName: string | symbol, values: Record<string, unknown>): Promise<any | never> {
+	public async emitAsync(eventName: string | symbol, values: Record<string, unknown>): Promise<unknown | never> {
 		const eventListenerCount = this.listenerCount(eventName);
 		if (!eventListenerCount) {
 			return Promise.resolve();

@@ -26,3 +26,6 @@ jobs:
 
       - name: 'run unit tests'
         run: npm run test
+
+      - name: 'Codiga GitHub action'
+        uses: codiga/github-action@v1

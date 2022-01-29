@@ -37,7 +37,7 @@ export type MedusaEventHandlerParams<Entity, TEntityActions extends EntityAction
 
 export class OnMedusaEntityEvent {
 	readonly #when: string;
-	#targetEntity: any;
+	#targetEntity: Type;
 
 	constructor(when?: string) {
 		this.#when = when;
@@ -105,14 +105,14 @@ export class OnMedusaEntityEvent {
  * @param async Should the event be awaiting the result
  * @param customMetatype The key that represent the class in the container it belongs to (Used to resolve the real instance)
  */
-function OnMedusaEntityEventDecorator<TEntity extends Type>(
+function OnMedusaEntityEventDecorator(
 	eventName: string,
-	targetEntity: TEntity,
+	targetEntity: Type,
 	{ async, metatype }: { async: boolean; metatype?: Type } = {
 		async: false,
 	}
 ): MethodDecorator {
-	return (target: any, propertyKey: string, descriptor: PropertyDescriptor): void => {
+	return (target: Type, propertyKey: string, descriptor: PropertyDescriptor): void => {
 		const original = descriptor.value;
 		descriptor.value = async function <Entity>(...args: any[]): Promise<void> {
 			const { values, resolveOrReject } = args.pop() as unknown as MedusaEventEmittedParams<Entity, any>;
@@ -135,6 +135,6 @@ function OnMedusaEntityEventDecorator<TEntity extends Type>(
 			}
 		};
 
-		eventEmitter.register(eventName, propertyKey, metatype ?? target.constructor);
+		eventEmitter.register(eventName, propertyKey, metatype ?? (target.constructor as Type));
 	};
 }

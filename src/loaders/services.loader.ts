@@ -31,7 +31,7 @@ export async function servicesLoader(services: GetInjectableOptions<'service'>):
 export function registerService(
 	container: AwilixContainer,
 	serviceOptions: GetInjectableOption<'service'>,
-	configModule: any
+	configModule: Record<string, unknown>
 ) {
 	const { resolutionKey, metatype, scope } = serviceOptions;
 	if (!resolutionKey) {
@@ -56,7 +56,7 @@ export function registerService(
 export function overrideService(
 	container: AwilixContainer,
 	serviceOptions: GetInjectableOption<'service'>,
-	configModule: any
+	configModule: Record<string, unknown>
 ): void {
 	const { metatype, override, scope } = serviceOptions;
 	const formattedName = `${override.name.charAt(0).toLowerCase() + override.name.slice(1, override.name.length)}`;

@@ -1,5 +1,6 @@
 import { Express, NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
+import { MigrationInterface } from 'typeorm';
 
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
@@ -84,7 +85,7 @@ export type GetInjectableOption<TComponentType extends InjectableComponentTypes 
 		: TComponentType extends Extract<InjectableComponentTypes, 'repository'>
 		? RepositoryInjectableOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'migration'>
-		? any
+		? { metatype: Type<MigrationInterface> }
 		: TComponentType extends Extract<InjectableComponentTypes, 'router'>
 		? RouterInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'middleware'>

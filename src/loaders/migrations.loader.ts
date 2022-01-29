@@ -12,7 +12,7 @@ export async function migrationsLoader(
 	dbConnection: Connection
 ): Promise<void> {
 	for (const migrationOptions of migrationsOptions) {
-		dbConnection.migrations.push(new migrationOptions.metatype() as any);
+		dbConnection.migrations.push(new migrationOptions.metatype());
 	}
 
 	await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
