@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "jest-coverage-badges": "^1.1.2",
     "mongoose": "^6.1.6"
   },
   "peerDependencies": {
@@ -71,6 +70,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.1",
     "jest": "^27.3.1",
+    "jest-coverage-badges": "^1.1.2",
     "medusa-interfaces": "^1.1.31",
     "prettier": "^2.5.0",
     "reflect-metadata": "^0.1.13",
