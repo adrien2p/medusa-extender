@@ -1,7 +1,7 @@
 import 'reflect-metadata';
-import { Type } from '../types';
-import { customEventEmitter } from '../event-emmiter';
+import { Type } from './';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
+import { eventEmitter } from '../';
 
 export type EntityEventActionOptions<T> = {
 	async: boolean;
@@ -112,12 +112,11 @@ function OnMedusaEntityEventDecorator<TEntity extends Type>(
 		async: false,
 	}
 ): MethodDecorator {
-	return (target: Type, propertyKey: string, descriptor: PropertyDescriptor): void => {
+	return (target: any, propertyKey: string, descriptor: PropertyDescriptor): void => {
 		const original = descriptor.value;
-		descriptor.value = async function <Entity>({
-			values,
-			resolveOrReject,
-		}: MedusaEventEmittedParams<Entity, any>): Promise<void> {
+		descriptor.value = async function <Entity>(...args: any[]): Promise<void> {
+			const { values, resolveOrReject } = args.pop() as unknown as MedusaEventEmittedParams<Entity, any>;
+
 			if (!(values.event.entity instanceof targetEntity)) {
 				return;
 			}
@@ -136,6 +135,6 @@ function OnMedusaEntityEventDecorator<TEntity extends Type>(
 			}
 		};
 
-		customEventEmitter.register(eventName, propertyKey, metatype ?? target);
+		eventEmitter.register(eventName, propertyKey, metatype ?? target.constructor);
 	};
 }

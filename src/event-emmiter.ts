@@ -46,20 +46,19 @@ class CustomEventEmmiter extends EventEmitter {
 		for (const listenerDescriptor of this.#listeners.values()) {
 			const { eventName, metatype, propertyName } = listenerDescriptor;
 			const serviceOptions = componentsMetadataReader<'service'>(
-				metatype.constructor as Type
+				metatype as Type
 			) as GetInjectableOption<'service'>;
 			const { resolutionKey } = serviceOptions;
 
 			let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
 			if (!!resolutionKey) {
-				metatypeInstance = (container as any).has(name) && container.resolve(resolutionKey);
+				metatypeInstance = container.resolve(resolutionKey);
 			} else {
-				const metatypeName = metatype.constructor.name;
+				const metatypeName = metatype.name;
 				const formattedMetatypeName = `${
 					metatypeName.charAt(0).toLowerCase() + metatypeName.slice(1, metatypeName.length)
 				}`;
-				metatypeInstance =
-					(container as any).has(`${formattedMetatypeName}`) && container.resolve(`${formattedMetatypeName}`);
+				metatypeInstance = container.resolve(`${formattedMetatypeName}`);
 			}
 
 			this.on(eventName, metatypeInstance[propertyName].bind(metatypeInstance));

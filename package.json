@@ -35,12 +35,14 @@
     "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
     "build": "rm -rf dist && npm run build:ts && npm run build:declarations",
     "build:doc": "rm -rf docs && ./node_modules/.bin/typedoc && cp .github/docs/index.html docs/",
-    "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
+    "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --filter '**/tests/**' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
     "serve:doc": "./node_modules/.bin/docsify serve docs",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest -c jest.config.js"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --collect-coverage -c jest.config.js && npm run coverage:badges",
+    "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output ./assets/coverage"
   },
   "dependencies": {
     "chalk": "^4.1.2",
+    "jest-coverage-badges": "^1.1.2",
     "mongoose": "^6.1.6"
   },
   "peerDependencies": {

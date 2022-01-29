@@ -1,6 +1,5 @@
 import 'reflect-metadata';
-import { InjectableComponentTypes, InjectableOptions } from './';
-import { INJECTABLE_OPTIONS_KEY } from '../contants';
+import { INJECTABLE_OPTIONS_KEY, InjectableComponentTypes, InjectableOptions } from './';
 
 export function buildComponentDecorator<T>(
 	options: InjectableOptions<T> & { type: InjectableComponentTypes }

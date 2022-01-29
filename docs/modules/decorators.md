@@ -39,6 +39,7 @@
 - [Service](decorators.md#service)
 - [ServiceInjectableOptions](decorators.md#serviceinjectableoptions)
 - [Type](decorators.md#type)
+- [buildComponentDecorator](decorators.md#buildcomponentdecorator)
 
 ## References
 
@@ -237,3 +238,9 @@ ___
 ### Type
 
 Re-exports [Type](../interfaces/types.Type.md)
+
+___
+
+### buildComponentDecorator
+
+Re-exports [buildComponentDecorator](decorators_utils.md#buildcomponentdecorator)
