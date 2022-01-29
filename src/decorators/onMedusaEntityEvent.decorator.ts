@@ -1,7 +1,7 @@
 import 'reflect-metadata';
-import { Type } from '../types';
-import { customEventEmitter } from '../event-emmiter';
+import { Type } from './';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
+import { eventEmitter } from '../';
 
 export type EntityEventActionOptions<T> = {
 	async: boolean;
@@ -136,6 +136,6 @@ function OnMedusaEntityEventDecorator<TEntity extends Type>(
 			}
 		};
 
-		customEventEmitter.register(eventName, propertyKey, metatype ?? target);
+		eventEmitter.register(eventName, propertyKey, metatype ?? target);
 	};
 }

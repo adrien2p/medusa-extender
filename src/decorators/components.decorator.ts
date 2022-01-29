@@ -4,8 +4,8 @@ import {
 	RepositoryInjectableOptions,
 	RouterInjectionOptions,
 	ServiceInjectableOptions,
+	buildComponentDecorator,
 } from './';
-import { buildComponentDecorator } from './utils';
 
 /**
  * Mark a class as an entity to be used by the loader.

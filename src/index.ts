@@ -12,8 +12,13 @@ export {
 	EntityEventType,
 	MedusaEventEmittedParams,
 	MedusaEventHandlerParams,
+	Entity,
+	Service,
+	Repository,
+	Middleware,
+	Migration,
+	Router,
 } from './decorators';
-export * from './decorators/components.decorator';
 
 import { Utils as _Utils } from './utils';
 
