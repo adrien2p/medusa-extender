@@ -84,4 +84,4 @@ Map.get
 
 #### Defined in
 
-[src/metadata-reader.ts:6](https://github.com/adrien2p/medusa-extender/blob/681ee88/src/metadata-reader.ts#L6)
+[src/metadata-reader.ts:6](https://github.com/adrien2p/medusa-extender/blob/00f227c/src/metadata-reader.ts#L6)

@@ -5,5 +5,5 @@
 		"baseUrl": "./src",
 		"rootDir": "./src"
 	},
-	"exclude": ["**/*.spec.ts", "dist", "node_modules"]
+	"exclude": ["*.spec.ts", "dist", "node_modules"]
 }

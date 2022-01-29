@@ -7,7 +7,7 @@ module.exports = {
 	"rootDir": "src",
 	"testRegex": ".*\\.spec\\.ts$",
 	transform: {
-		'^.+\\.(t|j)sx?$': ['@swc/jest'],
+		'^.+\\.(t|j)sx?$': ['@swc/jest', { configFile: '.swcrcspec' }],
 	},
 	"collectCoverageFrom": [
 		"**/*.(t|j)s"
