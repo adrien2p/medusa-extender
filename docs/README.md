@@ -18,6 +18,7 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/issues"><img src="https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat-square" alt="issues" height="18"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://img.shields.io/npm/dm/medusa-extender?style=flat-square" alt="download" height="18"></a>
+  <img src="./assets/badge-statements.svg" onerror="if (this.src != './media/coverage/badge-statements.svg') this.src = './media/coverage/badge-statements.svg';" alt="coverage" height="18">
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/LICENSE"><img src="https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat-square" alt="licence" height="18"></a>
   
 </div>
@@ -56,7 +57,7 @@ and fit your needs.
 Here is the architecture of this package and how modules are related to each other. It will help you navigate into the code base.
 
 <img src="/assets/medusa-extender.jpeg"
-     onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
+     onerror="if (this.src != '/media/medusa-extender.jpeg') this.src = '/media/medusa-extender.jpeg';"
      alt="Dependency graph" />
 
 # Features
