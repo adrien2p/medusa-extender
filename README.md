@@ -100,6 +100,9 @@ Here is the architecture of this package and how modules are related to each oth
 
 ## Create your server
 
+<details>
+<summary>Click to see the example!</summary>
+  
 ```typescript
 // main.ts
 import { MyModule } from './modules/myModule/myModule.module';
@@ -117,12 +120,15 @@ async function bootstrap() {
 
 bootstrap();
 ```
+</details>
 
 ## Create your first module :rocket:
 
 ### Entity
 
 Let say that you want to add a new field on the `Product` entity.
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/product.entity.ts
@@ -139,10 +145,14 @@ class Product extends MedusaProduct {
     customField: string;
 }
 ```
+</details>
 
 ### Migration
 
 After have updated your entity, you will have to migrate the database in order to reflect the new fields.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/20211126000001-add-field-to-product
@@ -161,10 +171,14 @@ export default class AddFieldToProduct1611063162649 implements MigrationInterfac
     }
 }
 ```
+</details>
 
 ### Repository
 
 We will then create a new repository to reflect our custom entity.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/product.repository.ts
@@ -187,9 +201,15 @@ export default Utils.repositoryMixin(ProductRepository, MedusaProductRepository)
 > Since our objective is to extend an existing repository and also reflect our custom entity
 > we need to achieve a double extension. This is not possible except using the mixin pattern.
 
+</details>
+
+
 ### Service
 
 We want now to add a custom service to implement our custom logic for our new field.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/product.service.ts
@@ -235,10 +255,14 @@ export default class ProductService extends MedusaProductService {
     }
 }
 ```
+</details>
 
 ### Middleware
 
 Let say that you want to attach a custom middleware to certain routes
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/custom.middleware.ts
@@ -264,10 +288,14 @@ export class CustomMiddleware  implements MedusaMiddleware {
 }
 
 ```
+</details>
 
 ### Router
 
 If you need to add custom routes to medusa here is a simple way to achieve that
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/product.router.ts
@@ -286,10 +314,14 @@ import yourController from './yourController.contaoller';
 export class ProductRouter {
 }
 ```
+</details>
 
 ### Module
 
 the last step is to import everything in our module :package:
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/products/myModule.module.ts
@@ -314,6 +346,7 @@ import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-t
 })
 export class MyModule {}
 ```
+</details>
 
 That's it you've completed your first module :rocket:
 
@@ -338,6 +371,9 @@ One of the feature out the box is the ability to emit (sync/async) event from
 your entity subscriber and to be able to handle those event easily.
 
 To be able to achieve that, here is an example.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/products/product.subscriber.ts
@@ -368,7 +404,12 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
 }
 ```
-And then the handler will work like following.
+</details>
+
+And then create a new handler.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/product.service.ts
@@ -399,9 +440,13 @@ export default class ProductService extends MedusaProductService {
     }
 }
 ```
+</details>
 
 And finally, we need to add the subscriber to the connection. There is different way to achieve
 it. Will see as an example a way to attach request scoped subscribers.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/product/attachSubscriber.middleware.ts
@@ -457,8 +502,12 @@ export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
     }
 }
 ```
+</details>
 
 Now, you only need to add that middleware to the previous module we've created.
+
+<details>
+<summary>Click to see the example!</summary>
 
 ```typescript
 // modules/products/myModule.module.ts
@@ -485,6 +534,7 @@ import { AttachProductSubscribersMiddleware } from './attachSubscriber.middlewar
 })
 export class MyModule {}
 ```
+</details>
 
 # Contribute :ballot_box:
 
