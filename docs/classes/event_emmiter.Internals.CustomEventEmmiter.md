@@ -41,7 +41,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L21)
+[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L21)
 
 ## Properties
 
@@ -51,13 +51,13 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L19)
+[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L19)
 
 ## Methods
 
 ### emitAsync
 
-▸ **emitAsync**(`eventName`, `values`): `Promise`<`any`\>
+▸ **emitAsync**(`eventName`, `values`): `Promise`<`unknown`\>
 
 Emit an asynchrone event entity based and wait for the result.
 
@@ -70,11 +70,11 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`<`unknown`\>
 
 #### Defined in
 
-[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L80)
+[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L80)
 
 ___
 
@@ -104,7 +104,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L31)
+[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L31)
 
 ___
 
@@ -126,7 +126,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L43)
+[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L43)
 
 ___
 
@@ -140,4 +140,4 @@ ___
 
 #### Defined in
 
-[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/event-emmiter.ts#L68)
+[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/event-emmiter.ts#L68)

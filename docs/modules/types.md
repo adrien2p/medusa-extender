@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[src/types.ts:8](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L8)
+[src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L9)
 
 ___
 
@@ -77,13 +77,13 @@ Defines the injection options for entities.
 
 #### Defined in
 
-[src/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L18)
+[src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L19)
 
 ___
 
 ### GetInjectableOption
 
-Ƭ **GetInjectableOption**<`TComponentType`\>: `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"``\> ? [`EntityInjectableOptions`](types.md#entityinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"service"``\> ? [`ServiceInjectableOptions`](types.md#serviceinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"repository"``\> ? [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"migration"``\> ? `any` : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"router"``\> ? [`RouterInjectionOptions`](types.md#routerinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"middleware"``\> ? [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) : `never` & { `metatype`: `TComponentType` extends ``"middleware"`` ? [`Type`](../interfaces/types.Type.md)<[`MedusaMiddleware`](../interfaces/types.MedusaMiddleware.md)\> : [`Type`](../interfaces/types.Type.md) ; `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  }
+Ƭ **GetInjectableOption**<`TComponentType`\>: `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"entity"``\> ? [`EntityInjectableOptions`](types.md#entityinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"service"``\> ? [`ServiceInjectableOptions`](types.md#serviceinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"repository"``\> ? [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"migration"``\> ? { `metatype`: [`Type`](../interfaces/types.Type.md)<`MigrationInterface`\>  } : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"router"``\> ? [`RouterInjectionOptions`](types.md#routerinjectionoptions) : `TComponentType` extends `Extract`<[`InjectableComponentTypes`](types.md#injectablecomponenttypes), ``"middleware"``\> ? [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) : `never` & { `metatype`: `TComponentType` extends ``"middleware"`` ? [`Type`](../interfaces/types.Type.md)<[`MedusaMiddleware`](../interfaces/types.MedusaMiddleware.md)\> : [`Type`](../interfaces/types.Type.md) ; `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  }
 
 Determine which options type it actually is depending on the component type.
 
@@ -95,7 +95,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/types.ts:79](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L79)
+[src/types.ts:80](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L80)
 
 ___
 
@@ -113,7 +113,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/types.ts:100](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L100)
+[src/types.ts:101](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L101)
 
 ___
 
@@ -125,7 +125,7 @@ Components that does not required any other options that Type.
 
 #### Defined in
 
-[src/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L13)
+[src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L14)
 
 ___
 
@@ -143,7 +143,7 @@ Union of all options type possible for injectable.
 
 #### Defined in
 
-[src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L69)
+[src/types.ts:70](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L70)
 
 ___
 
@@ -155,7 +155,7 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 
 #### Defined in
 
-[src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L113)
+[src/types.ts:114](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L114)
 
 ___
 
@@ -174,7 +174,7 @@ Medusa request extended.
 
 #### Defined in
 
-[src/types.ts:106](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L106)
+[src/types.ts:107](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L107)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/types.ts:120](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L120)
+[src/types.ts:121](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L121)
 
 ___
 
@@ -203,7 +203,7 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 
 #### Defined in
 
-[src/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L125)
+[src/types.ts:126](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L126)
 
 ___
 
@@ -222,7 +222,7 @@ Defines the injection options for middlewares.
 
 #### Defined in
 
-[src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L61)
+[src/types.ts:62](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L62)
 
 ___
 
@@ -247,7 +247,7 @@ Defines the injection options for services, entities, repositories.
 
 #### Defined in
 
-[src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L36)
+[src/types.ts:37](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L37)
 
 ___
 
@@ -265,7 +265,7 @@ Defines the injection options for routes.
 
 #### Defined in
 
-[src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L54)
+[src/types.ts:55](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L55)
 
 ___
 
@@ -286,7 +286,7 @@ Define a router and its configuration.
 
 #### Defined in
 
-[src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L44)
+[src/types.ts:45](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L45)
 
 ___
 
@@ -312,4 +312,4 @@ Defines the injection options for service.
 
 #### Defined in
 
-[src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/f8200c7/src/types.ts#L27)
+[src/types.ts:28](https://github.com/adrien2p/medusa-extender/blob/af655f6/src/types.ts#L28)
