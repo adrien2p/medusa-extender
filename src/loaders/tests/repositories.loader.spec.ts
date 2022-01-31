@@ -19,11 +19,13 @@ class Order extends MedusaOrder {
 
 @MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()
-class OrderRepository extends Repository<Order> {
+class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
-}
 
-Utils.repositoryMixin(OrderRepository, MedusaOrderRepository);
+	test(): Promise<Order[]> {
+		return this.findWithRelations() as Promise<Order[]>;
+	}
+}
 
 @Module({ imports: [OrderRepository] })
 class OrderModule {}

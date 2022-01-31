@@ -42,8 +42,7 @@ export function registerService(
 		[resolutionKey]: asFunction((cradle) => new metatype(cradle, configModule), { lifetime: scope || 'SINGLETON' }),
 	});
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
 }
 
 /**
@@ -67,6 +66,5 @@ export function overrideService(
 		}),
 	});
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
 }

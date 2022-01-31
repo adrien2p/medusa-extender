@@ -1,7 +1,7 @@
 import chalk = require('chalk');
 import { Express } from 'express';
-import { Connection, EntityManager, EntitySubscriberInterface } from 'typeorm';
-import { Constructor } from './types';
+import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
+import { Constructor, MixinReturnType, Type } from './types';
 
 /**
  * @internal
@@ -11,24 +11,22 @@ export class Utils {
 	/**
 	 * For repository context, you should extends repository and the medusa target repository.
 	 * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
-	 * @param target
 	 * @param source
 	 */
-	static repositoryMixin<TRepository, TMedusaRepository>(
-		target: TRepository,
-		source: TMedusaRepository
-	): TRepository & TMedusaRepository {
+	static repositoryMixin<TEntity, TSource>(source: Type<TSource>): MixinReturnType<Repository<TEntity>, TSource> {
+		const klass = class Base extends Repository<TEntity> {};
+
 		Object.getOwnPropertyNames((source as any).prototype).forEach((name) => {
-			if (name !== 'constructor' && !target.hasOwnProperty(name)) {
+			if (name !== 'constructor' && !klass.hasOwnProperty(name)) {
 				Object.defineProperty(
-					(target as any).prototype,
+					(klass as any).prototype,
 					name,
 					Object.getOwnPropertyDescriptor((source as any).prototype, name)
 				);
 			}
 		});
 
-		return target as TRepository & TMedusaRepository;
+		return klass as MixinReturnType<Repository<TEntity>, TSource>;
 	}
 
 	/**
@@ -66,10 +64,14 @@ export class Utils {
 	 * Prepare the log to be shown to be consistent everywhere.
 	 * @param context Where the log comes from
 	 * @param description The description of the action logged
+	 * @param variables The variable that populate the logs
 	 */
-	static prepareLog(context: string, description: string): string {
+	static log(context: string, description: string, ...variables: string[]): void {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
-		return `${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(description)}`;
+		console.log(
+			`${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(description)}`,
+			...variables
+		);
 	}
 
 	/**
@@ -84,9 +86,9 @@ export class Utils {
 		} else if (layer.name === 'router' && layer.handle.stack) {
 			layer.handle.stack.forEach(Utils.printRoutes.bind(null, path.concat(Utils.splitRoutes(layer.regexp))));
 		} else if (layer.method) {
-			const preparedLog = Utils.prepareLog('MedusaLoader', 'Route Mapped {/%s, %s}');
-			console.log(
-				preparedLog,
+			Utils.log(
+				'MedusaLoader',
+				'Route Mapped {/%s, %s}',
 				path.concat(Utils.splitRoutes(layer.regexp)).filter(Boolean).join('/'),
 				layer.method.toUpperCase()
 			);
