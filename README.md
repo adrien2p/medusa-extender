@@ -106,6 +106,10 @@ Here is the architecture of this package and how modules are related to each oth
 
 > Emit an event (async/sync) from your subscriber and then register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
 
+- :package: Build sharable modules
+
+> Build a module, export it and share it with the community.
+
 # Usage
 
 ## Create your server
