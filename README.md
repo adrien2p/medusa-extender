@@ -214,10 +214,6 @@ export class OrderRepository extends Utils.repositoryMixin<Product, MedusaProduc
 }
 ```
 
-> This part `Utils.repositoryMixin(ProductRepository, MedusaProductRepository);` is mandatory
-> Since our objective is to extend an existing repository and also reflect our custom entity
-> we need to achieve a double extension. This is not possible except using the mixin pattern.
-
 </details>
 
 
