@@ -113,7 +113,7 @@ Here is the architecture of this package and how modules are related to each oth
 <summary>Click to see the example!</summary>
   
 ```typescript
-// main.ts
+// index.ts
 import { MyModule } from './modules/myModule/myModule.module';
 
 async function bootstrap() {

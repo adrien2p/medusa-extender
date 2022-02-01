@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "es2017",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "lib": [
+      "es2015.proxy",
+      "es2017"
+    ],
+    "outDir": "dist",
+    "paths": {
+      "@modules/*": [
+        "modules/*"
+      ]
+    }
+  },
+  "exclude": [
+    "**/node_modules"
+  ]
+}
