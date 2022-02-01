@@ -1,6 +1,6 @@
 {
   "name": "medusa-extender",
-  "version": "1.0.19-alpha.14",
+  "version": "1.0.0",
   "description": "Medusa on steroid. Extends entities, repositories, services and so on. Get the full power of modular architecture. Keep your domains clean. Provide external modules for other to include them in there project.",
   "keywords": [
     "medusa",
@@ -9,7 +9,9 @@
     "ecommerce",
     "headless",
     "extension",
-    "nodejs"
+    "nodejs",
+    "modules",
+    "plugins"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",

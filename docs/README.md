@@ -30,6 +30,9 @@ medusa-extender / [Exports](modules.md)
 - [Getting started](#getting-started)
 - [Introduction](#introduction)
 - [Features](#features)
+- Starters
+    - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
+    - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 - [Usage](#usage)
     - [Create you server](#create-your-server)
     - [Create you first module](#create-your-first-module-rocket)
@@ -104,6 +107,10 @@ Here is the architecture of this package and how modules are related to each oth
 - :bulb: Handle entity events from subscriber as easy as possible through the provided decorators.
 
 > Emit an event (async/sync) from your subscriber and then register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
+
+- :package: Build sharable modules
+
+> Build a module, export it and share it with the community.
 
 # Usage
 
