@@ -6,7 +6,7 @@
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p",
   "license": "MIT",
-  "main": "dist/src/main.js",
+  "main": "dist/main.js",
   "files": [
     "dist"
   ],
