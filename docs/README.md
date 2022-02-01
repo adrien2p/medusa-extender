@@ -199,16 +199,16 @@ We will then create a new repository to reflect our custom entity.
 ```typescript
 // modules/product/product.repository.ts
 
-import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
+import { OrderRepository as MedusaOrderRepository } from '@medusa/medusa/dist/repositories/order'; 
 import { EntityRepository } from "typeorm"; 
 import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
 import { Product } from "./product.entity";
 //...
 
-@MedusaRepository({ override: MedusaProductRepository })
+@MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()
-export class OrderRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {
-	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
+export class OrderRepository extends Utils.repositoryMixin<Product, MedusaOrderRepository>(MedusaOrderRepository) {
+	testProperty = 'I am the property from OrderRepository that extend MedusaOrderRepository';
 
 	test(): Promise<Order[]> {
 		return this.findWithRelations() as Promise<Order[]>;
