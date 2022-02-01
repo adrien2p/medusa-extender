@@ -1,4 +1,4 @@
-# My servier
+# My server
 
 ## Usage
 
