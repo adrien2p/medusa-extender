@@ -75,7 +75,10 @@ Here is the architecture of this package and how modules are related to each oth
 
 - :tada: Create or extends entities
 
-> If you need to add custom fields on an entity, you only need to extend the original entity from medusa and that's it.
+> Some of the problem that developers encounter, is that when you want to add custom fields
+> to an entity, it is not that easy. You can't extends a typeorm entity and adding custom
+> fields through configuration make lost of the typings and the domains in which 
+> they exists. Here, you can now extend a typeorm entity just like any other object.
 
 - :tada: Create or extends services
 
@@ -85,20 +88,22 @@ Here is the architecture of this package and how modules are related to each oth
 - :tada: Create or extends repositories
 
 > When you extend an entity and you want to manipulate that entity in a service, you need to do that through a repository.
-> In order for that repository to reflect your extended entities, you are provided with the right tools to do so.
+> In order for that repository to reflect your extended entities, but still get access to the base repository methods,
+> you are provided with the right tools to do so.
 
 - :tada: Create custom middlewares to apply before/after authentication
 
-> Some times, you need to add custom middlware. For example, to store some context on the incoming request.
-> You can achieve that now with the tools provided.
+> Do you want to apply custom middlewares to load data on the requests or add some custom
+> checks or any other situations? Then what are you waiting for?
 
 - :tada: Create custom route and attach custom service to handle it.
 
-> You can do that to. Create a new route, configure it, and hit the end point.
+> Do you need to add new routes for new features? Do you want to receive webhook?
+> It is easy to do it now.
 
 - :bulb: Handle entity events from subscriber as easy as possible through the provided decorators.
 
-> Emit an event (async/sync) from your subscriber and the register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
+> Emit an event (async/sync) from your subscriber and then register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
 
 # Usage
 
@@ -188,17 +193,20 @@ We will then create a new repository to reflect our custom entity.
 // modules/product/product.repository.ts
 
 import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/product'; 
-import { EntityRepository, Repository } from "typeorm"; 
+import { EntityRepository } from "typeorm"; 
 import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
 import { Product } from "./product.entity";
 //...
 
 @MedusaRepository({ override: MedusaProductRepository })
 @EntityRepository()
-class ProductRepository extends Repository<Product> {
-}
+export class OrderRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {
+	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 
-export default Utils.repositoryMixin(ProductRepository, MedusaProductRepository);
+	test(): Promise<Order[]> {
+		return this.findWithRelations() as Promise<Order[]>;
+	}
+}
 ```
 
 > This part `Utils.repositoryMixin(ProductRepository, MedusaProductRepository);` is mandatory
