@@ -27,7 +27,7 @@
     "test:cov": "NODE_ENV=test jest --coverage --detectOpenHandles"
   },
   "dependencies": {
-    "medusa-extender": "^1.0.19-alpha.14",
+    "medusa-extender": "^1.0.0",
     "awilix": "^4.2.3",
     "@medusajs/medusa": "^1.1.62",
     "bcrypt": "^5.0.1",
