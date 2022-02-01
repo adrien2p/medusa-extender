@@ -28,6 +28,9 @@
 - [Getting started](#getting-started)
 - [Introduction](#introduction)
 - [Features](#features)
+- Starters
+    - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
+    - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 - [Usage](#usage)
     - [Create you server](#create-your-server)
     - [Create you first module](#create-your-first-module-rocket)
