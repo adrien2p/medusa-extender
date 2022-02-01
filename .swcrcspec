@@ -1,6 +1,6 @@
 {
   "test": [".*.ts$"],
-  "exclude": ["node_modules/", "dist", ".*.js$", ".*.map$"],
+  "exclude": ["node_modules/", "dist", "starters", ".*.js$", ".*.map$"],
   "sourceMaps": true,
   "inlineSourcesContent": true,
   "jsc": {

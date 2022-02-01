@@ -1,0 +1,109 @@
+{
+  "name": "@adrien2p/craftshop-server",
+  "version": "1.1.18",
+  "description": "",
+  "private": true,
+  "author": "adrien2p <adrien.deperetti@gmail.com>",
+  "homepage": "https://github.com/adrien2p/craftshop/tree/main/packages/craftshop-api#readme",
+  "license": "ISC",
+  "main": "dist/src/main.js",
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/adrien2p/craftshop/issues"
+  },
+  "engines": {
+    "node": ">=14.17.3"
+  },
+  "scripts": {
+    "migrate": "ts-node migrate.ts",
+    "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
+    "build:declarations": "./node_modules/.bin/tsc --emitDeclarationOnly",
+    "build": "npm run build:ts && npm run build:declarations",
+    "build:prod": "npm run build:ts && npm run build:declarations",
+    "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "NODE_ENV=development node ./dist/main.js",
+    "start:prod": "NODE_ENV=prod node dist/main",
+    "test": "NODE_ENV=test jest --detectOpenHandles",
+    "test:watch": "NODE_ENV=test jest --watch --detectOpenHandles",
+    "test:cov": "NODE_ENV=test jest --coverage --detectOpenHandles"
+  },
+  "dependencies": {
+    "medusa-extender": "file:../../",
+    "awilix": "^4.2.3",
+    "@adrien2p/craftshop-shared": "^1.1.*",
+    "@medusajs/medusa": "^1.1.62",
+    "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "dotenv": "^12.0.4",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "medusa-core-utils": "^1.1.31",
+    "medusa-file-s3": "^1.0.11",
+    "medusa-fulfillment-manual": "^1.1.30",
+    "medusa-interfaces": "^1.1.32",
+    "medusa-payment-manual": "^1.0.12",
+    "medusa-payment-stripe": "^1.1.34",
+    "mongoose": "^6.1.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "pino": "^7.5.1",
+    "pino-pretty": "^7.3.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.4.0",
+    "sequelize": "^6.6.5",
+    "sequelize-typescript": "^2.1.1",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@golevelup/ts-jest": "^0.3.2",
+    "@swc-node/jest": "^1.4.1",
+    "@swc/cli": "^0.1.52",
+    "@swc/core": "^1.2.118",
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/node": "^16.11.12",
+    "@types/passport-jwt": "^3.0.6",
+    "@types/passport-local": "^1.0.34",
+    "@types/sequelize": "^4.28.10",
+    "@types/supertest": "^2.0.11",
+    "@types/umzug": "^2.3.2",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.5.0",
+    "supertest": "^6.1.6",
+    "ts-jest": "^27.0.7",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.2",
+    "umzug": "^2.3.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "@swc-node/jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

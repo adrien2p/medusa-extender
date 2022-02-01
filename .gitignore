@@ -1,7 +1,7 @@
 .idea
 .swc/
 dist
-node_modules
+**/node_modules
 tsconfig.tsbuildinfo
 uploads
 coverage

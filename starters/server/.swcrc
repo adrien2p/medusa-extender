@@ -1,6 +1,6 @@
 {
-  "test": [".*.ts$"],
-  "exclude": ["node_modules", "tests", "dist", "starters", ".*.js$", ".*.map$"],
+  "test": ".*.ts$",
+  "exclude": ["node_modules", "test", "dist", ".*.spec.ts$", ".*.map$"],
   "sourceMaps": true,
   "inlineSourcesContent": true,
   "jsc": {
@@ -17,7 +17,10 @@
       "legacyDecorator": true,
       "decoratorMetadata": true
     },
-    "baseUrl": "."
+    "baseUrl": "./src",
+    "paths": {
+      "@modules/*": ["modules/*"]
+    }
   },
   "module": {
     "type": "commonjs",
