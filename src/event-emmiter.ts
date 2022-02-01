@@ -77,16 +77,16 @@ class CustomEventEmmiter extends EventEmitter {
 	 * @param eventName The event that must be triggered
 	 * @param values The data that are passed to the event handler
 	 */
-	public async emitAsync(eventName: string | symbol, values: Record<string, unknown>): Promise<unknown | never> {
+	public async emitAsync<T>(eventName: string | symbol, values: Record<string, unknown>): Promise<T | never> {
 		const eventListenerCount = this.listenerCount(eventName);
 		if (!eventListenerCount) {
-			return Promise.resolve();
+			return Promise.resolve(null);
 		}
 
 		return new Promise((resolve, reject) => {
 			this.emit(eventName, {
 				values,
-				resolveOrReject: (err?: Error, res?: unknown) => {
+				resolveOrReject: (err?: Error, res?: T) => {
 					if (err) return reject(err);
 					return resolve(res);
 				},

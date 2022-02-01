@@ -1,5 +1,4 @@
 import { GetInjectableOptions, InjectableComponentTypes, InjectableOptions, Type } from './types';
-import { Utils } from './utils';
 import { INJECTABLE_OPTIONS_KEY, MODULE_KEY } from './contants';
 
 class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
@@ -20,13 +19,7 @@ export function metadataReader(modules: Type[]): CustomMap {
 
 		for (const component of moduleImports) {
 			const options = componentsMetadataReader(component);
-
-			let metatype;
-			if (options.type === 'repository' && 'override' in options) {
-				metatype = Utils.repositoryMixin(component, options.override);
-			} else {
-				metatype = component;
-			}
+			const metatype = component;
 
 			optionsMap.set(options.type, [...(optionsMap.get(options.type) ?? []), { ...options, metatype }]);
 		}

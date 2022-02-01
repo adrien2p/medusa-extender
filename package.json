@@ -1,7 +1,7 @@
 {
   "name": "medusa-extender",
-  "version": "1.0.19-alpha.13",
-  "description": "Extends functionalities from medusajs. Add custom entity fields, override or extend entities, services, repositories, create custom middlewares",
+  "version": "1.0.19-alpha.14",
+  "description": "Medusa on steroid. Extends entities, repositories, services and so on. Get the full power of modular architecture. Keep your domains clean. Provide external modules for other to include them in there project.",
   "keywords": [
     "medusa",
     "medusajs",

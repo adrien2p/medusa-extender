@@ -38,8 +38,7 @@ export function registerEntity(container: AwilixContainer, entityOptions: GetInj
 
 	(container as any).registerAdd('db_entities', asValue(entity));
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity registered - ${resolutionKey}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#entitiesLoader', `Entity registered - ${resolutionKey}`);
 }
 
 /**
@@ -56,6 +55,5 @@ export async function overrideEntity(entityOptions: GetInjectableOption<'entity'
 	ChildEntity()(originalEntityModule[override.name]);
 	originalEntityModule[override.name] = entity;
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#entitiesLoader', `Entity overridden - ${override.name}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#entitiesLoader', `Entity overridden - ${override.name}`);
 }

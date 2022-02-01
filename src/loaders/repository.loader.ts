@@ -37,8 +37,7 @@ export function registerRepository(container: AwilixContainer, repositoryOptions
 		[resolutionKey]: asClass(repository),
 	});
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
 }
 
 /**
@@ -63,6 +62,5 @@ export async function overrideRepository(repositoryOptions: GetInjectableOption<
 	}
 	originalRepository[override.name] = metatype;
 
-	const preparedLog = Utils.prepareLog('MedusaLoader#repositoriesLoader', `Repository overridden - ${metatype.name}`);
-	console.log(preparedLog);
+	Utils.log('MedusaLoader#repositoriesLoader', `Repository overridden - ${metatype.name}`);
 }

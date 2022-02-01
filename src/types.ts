@@ -137,3 +137,8 @@ export interface MedusaMiddleware {
 		app: Express;
 	}): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void>;
 }
+
+/**
+ * Mix the return type of two objects.
+ */
+export type MixinReturnType<T1, T2> = new (...args: any[]) => T1 & T2;

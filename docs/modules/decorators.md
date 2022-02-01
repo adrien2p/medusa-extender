@@ -29,6 +29,7 @@
 - [Middleware](decorators.md#middleware)
 - [MiddlewareInjectionOptions](decorators.md#middlewareinjectionoptions)
 - [Migration](decorators.md#migration)
+- [MixinReturnType](decorators.md#mixinreturntype)
 - [Module](decorators.md#module)
 - [OnMedusaEntityEvent](decorators.md#onmedusaentityevent)
 - [Repository](decorators.md#repository)
@@ -178,6 +179,12 @@ ___
 ### Migration
 
 Re-exports [Migration](decorators_components_decorator.md#migration)
+
+___
+
+### MixinReturnType
+
+Re-exports [MixinReturnType](types.md#mixinreturntype)
 
 ___
 

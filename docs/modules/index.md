@@ -30,6 +30,7 @@
 - [Middleware](index.md#middleware)
 - [MiddlewareInjectionOptions](index.md#middlewareinjectionoptions)
 - [Migration](index.md#migration)
+- [MixinReturnType](index.md#mixinreturntype)
 - [Module](index.md#module)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
 - [Repository](index.md#repository)
@@ -192,6 +193,12 @@ Re-exports [Migration](decorators_components_decorator.md#migration)
 
 ___
 
+### MixinReturnType
+
+Re-exports [MixinReturnType](types.md#mixinreturntype)
+
+___
+
 ### Module
 
 Re-exports [Module](decorators_module_decorator.md#module)
@@ -267,8 +274,8 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 | Name | Type |
 | :------ | :------ |
 | `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TRepository, TMedusaRepository\>(`target`: `TRepository`, `source`: `TMedusaRepository`) => `TRepository` & `TMedusaRepository` |
+| `repositoryMixin` | <TEntity, TSource\>(`source`: [`Type`](../interfaces/types.Type.md)<`TSource`\>) => [`MixinReturnType`](types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\> |
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/e05c395/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/1400e55/src/index.ts#L25)
