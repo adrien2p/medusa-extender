@@ -15,7 +15,12 @@ medusa-extender / [Exports](modules.md)
         Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you
         but with the possibility to take your e-commerce project to the next level :rocket:
   </p>
-    
+  
+</div>
+
+---
+
+<div align="center">
   <a href="https://github.com/adrien2p/awesome-medusajs"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
@@ -27,12 +32,16 @@ medusa-extender / [Exports](modules.md)
   
 </div>
 
+--- 
+
 <div align="center">
     <p align="center">
         Access the website
         <a href="https://adrien2p.github.io/medusa-extender/#/">Documentation</a>
     </p>
 </div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00cba9" fill-opacity="1" d="M0,320L40,293.3C80,267,160,213,240,213.3C320,213,400,267,480,250.7C560,235,640,149,720,138.7C800,128,880,192,960,213.3C1040,235,1120,213,1200,176C1280,139,1360,85,1400,58.7L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
 
 # Table of contents
 
