@@ -29,4 +29,4 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 
 #### Defined in
 
-[src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/dd66dff/src/loaders/plugins.loader.ts#L11)
+[src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/loaders/plugins.loader.ts#L11)

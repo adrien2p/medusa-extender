@@ -18,8 +18,7 @@
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://img.shields.io/npm/dm/medusa-extender?style=flat-square" alt="download" height="18"></a>
   <img src="./assets/coverage/badge-statements.svg" onerror="if (this.src != './media/coverage/badge-statements.svg') this.src = './media/coverage/badge-statements.svg';" alt="coverage" height="18">
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/LICENSE"><img src="https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat-square" alt="licence" height="18"></a>
-  
-  [![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on)](https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender)
+  <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender"><img src="https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on" alt="twitter" height="18"></a>
   
 </div>
 
