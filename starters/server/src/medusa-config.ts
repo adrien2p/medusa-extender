@@ -1,12 +1,11 @@
-import { Environment } from '@core/environments';
 import * as dotenv from 'dotenv';
 
 let ENV_FILE_NAME = '';
 switch (process.env.NODE_ENV) {
-	case Environment.Prod:
+	case 'prod':
 		ENV_FILE_NAME = '.env';
 		break;
-	case Environment.Test:
+	case 'test':
 		ENV_FILE_NAME = '.env.test';
 		break;
 	default:

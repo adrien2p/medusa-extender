@@ -1,5 +1,11 @@
 # My plugin module
 
+## Install
+
+```bash
+git clone 
+```
+
 ## Usage
 
 ```bash

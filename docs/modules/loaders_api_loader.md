@@ -30,4 +30,4 @@ Decorate the original api loader to apply our custom middleware first.
 
 #### Defined in
 
-[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/bab6da5/src/loaders/api.loader.ts#L12)
+[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/dd66dff/src/loaders/api.loader.ts#L12)

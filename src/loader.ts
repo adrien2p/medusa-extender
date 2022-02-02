@@ -35,13 +35,16 @@ export class Loader {
 	public async load(modules: Type[], rootDir: string, express: Express): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
 
-		await overrideEntitiesLoader(moduleComponentsOptions.get('entity'));
-		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository'));
-		await apiLoader(express, moduleComponentsOptions.get('middleware'));
-		await databaseLoader(moduleComponentsOptions.get('entity'), moduleComponentsOptions.get('repository'));
+		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
+		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
+		await apiLoader(express, moduleComponentsOptions.get('middleware') ?? []);
+		await databaseLoader(
+			moduleComponentsOptions.get('entity') ?? [],
+			moduleComponentsOptions.get('repository') ?? []
+		);
 		await pluginsLoadersAndListeners(express);
-		await servicesLoader(moduleComponentsOptions.get('service'));
-		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router'), express);
+		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
+		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], express);
 
 		const { app, container, dbConnection } = await loaders({
 			directory: rootDir,
