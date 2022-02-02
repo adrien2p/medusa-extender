@@ -216,7 +216,7 @@ import { Order } from "./order.entity";
 //...
 
 @MedusaRepository({ override: MedusaOrderRepository })
-@EntityRepository()
+@EntityRepository(Order)
 export class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
 	testProperty = 'I am the property from OrderRepository that extend MedusaOrderRepository';
 
@@ -274,9 +274,12 @@ export default class ProductService extends MedusaProductService {
         return event;
     }
     
-    public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): any {
+    /**
+    * This is an example. you must not necessarly keep that implementation.
+    **/
+    public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): object {
         selector['customField'] = 'custom_value';
-        return super.prepareListQuery_(selector, config) as any;
+        return super.prepareListQuery_(selector, config);
     }
 }
 ```
