@@ -70,8 +70,7 @@ Here is the architecture of this package and how modules are related to each oth
 
 - :building_construction: Flexible architecture.
 
-> No need anymore to put your services in the services directory, your entities in the models directory and so on. You put your files
-> where you want. That way you can organize your code as modules for example and group your modules by domains.
+>  You can organize your code as modules and group your modules by domains.
 
 - :tada: Create or extends entities
 
