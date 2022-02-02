@@ -5,13 +5,16 @@ medusa-extender / [Exports](modules.md)
   <p align="center">
     <img alt="Medusa" src="https://user-images.githubusercontent.com/7554214/129161578-19b83dc8-fac5-4520-bd48-53cba676edd2.png" width="200" />
   </p>
+  
   <h1>Extend medusa to fit your needs</h1>
   
-  <div align="center">
-    <p align="center">
-        <a href="https://adrien2p.github.io/medusa-extender/#/">Documentation</a>
-    </p>
-  </div>
+  <p>
+        Did ever though about adding custom fields? Did you ever wonder how to add some custom features?
+        Did you ever wanted to build something more than a single store?
+        Well, this project has been made to help you reach you goal. It is now possible to customise
+        Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you
+        but with the possibility to take you e-commerce project to the next level :rocket:
+  </p>
     
   <a href="https://github.com/adrien2p/awesome-medusajs"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://badge.fury.io/js/medusa-extender.svg" alt="npm version" height="18"></a>
@@ -24,10 +27,17 @@ medusa-extender / [Exports](modules.md)
   
 </div>
 
+<div align="center">
+    <p align="center">
+        Access the website
+        <a href="https://adrien2p.github.io/medusa-extender/#/">Documentation</a>
+    </p>
+</div>
+
 # Table of contents
 
 - [Getting started](#getting-started)
-- [Introduction](#introduction)
+- [Code base overview](#code-base-overview)
 - [Features](#features)
 - Starters
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
@@ -53,12 +63,7 @@ Installation
 npm i medusa-extender
 ```
 
-# Introduction
-
-This packages exports the necessary objects to customize [medusajs](https://github.com/medusajs/medusa)
-and fit your needs.
-
-Below is the architecture of this package and how its modules are related to each other. It will help you navigate the code base.
+# Code base overview
 
 <img src="/assets/medusa-extender.jpeg"
      onerror="if (this.src != '/media/medusa-extender.jpeg') this.src = '/media/medusa-extender.jpeg';"
