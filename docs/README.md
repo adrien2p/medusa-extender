@@ -24,7 +24,7 @@ medusa-extender / [Exports](modules.md)
   
 </div>
 
-# Table of content
+# Table of contents
 
 - [Getting started](#getting-started)
 - [Introduction](#introduction)
@@ -33,8 +33,8 @@ medusa-extender / [Exports](modules.md)
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
     - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 - [Usage](#usage)
-    - [Create you server](#create-your-server)
-    - [Create you first module](#create-your-first-module-rocket)
+    - [Create your server](#create-your-server)
+    - [Create your first module](#create-your-first-module-rocket)
         - [Entity](#entity)
         - [Migration](#migration)
         - [Repository](#repository)
@@ -58,7 +58,7 @@ npm i medusa-extender
 This packages exports the necessary objects to customize [medusajs](https://github.com/medusajs/medusa)
 and fit your needs.
 
-Here is the architecture of this package and how modules are related to each other. It will help you navigate into the code base.
+Below is the architecture of this package and how its modules are related to each other. It will help you navigate the code base.
 
 <img src="/assets/medusa-extender.jpeg"
      onerror="if (this.src != '/media/medusa-extender.jpeg') this.src = '/media/medusa-extender.jpeg';"
@@ -66,31 +66,30 @@ Here is the architecture of this package and how modules are related to each oth
 
 # Features
 
-- :technologist: Decorators and full typings
+- :technologist: Decorators and full typing support
 
-> Made DX easy with the usage of decorators for modular architecture and full typings support for a better DX
+> Makes DX easy with the usage of decorators for modular architecture and full typing support for a better DX
 
 - :building_construction: Flexible architecture.
 
-> No need anymore to put your services in the services directory, your entities in the models directory and so on. You put your files
-> where you want. That way you can organize your code as modules for example and group your modules by domains.
+>  You can organize your code as modules and group your modules by domains.
 
-- :tada: Create or extends entities
+- :tada: Create or extend entities
 
-> Some of the problem that developers encounter, is that when you want to add custom fields
-> to an entity, it is not that easy. You can't extends a typeorm entity and adding custom
-> fields through configuration make lost of the typings and the domains in which 
-> they exists. Here, you can now extend a typeorm entity just like any other object.
+> Some of the problems that developers encounter are that when you want to add custom fields
+> to an entity, it is not that easy. You can't extend a typeorm entity and adding custom
+> fields through configuration makes you lose the typings and the domains in which 
+> they exist. Here, you can now extend a typeorm entity just like any other object.
 
-- :tada: Create or extends services
+- :tada: Create or extend services
 
 > If you need to extend a service to manage your new fields or update the business logic according to your new needs,
 > you only need to extend the original service from medusa and that's it.
 
-- :tada: Create or extends repositories
+- :tada: Create or extend repositories
 
-> When you extend an entity and you want to manipulate that entity in a service, you need to do that through a repository.
-> In order for that repository to reflect your extended entities, but still get access to the base repository methods,
+> When you extend an entity and you want to manipulate that entity in a service, you need to do it through a repository.
+> In order for that repository to reflect your extended entities, while still getting access to the base repository methods,
 > you are provided with the right tools to do so.
 
 - :tada: Create custom middlewares to apply before/after authentication
@@ -100,10 +99,10 @@ Here is the architecture of this package and how modules are related to each oth
 
 - :tada: Create custom route and attach custom service to handle it.
 
-> Do you need to add new routes for new features? Do you want to receive webhook?
+> Do you need to add new routes for new features? Do you want to receive webhooks?
 > It is easy to do it now.
 
-- :bulb: Handle entity events from subscriber as easy as possible through the provided decorators.
+- :bulb: Handle entity events from subscribers as easily as possible through the provided decorators.
 
 > Emit an event (async/sync) from your subscriber and then register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
 
@@ -141,7 +140,7 @@ bootstrap();
 
 ### Entity
 
-Let say that you want to add a new field on the `Product` entity.
+Let's say that you want to add a new field on the `Product` entity.
 <details>
 <summary>Click to see the example!</summary>
 
@@ -219,7 +218,7 @@ export class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRep
 
 ### Service
 
-We want now to add a custom service to implement our custom logic for our new field.
+We now want to add a custom service to implement our custom logic for our new field.
 
 <details>
 <summary>Click to see the example!</summary>
@@ -238,9 +237,9 @@ interface ConstructorParams<TSearchService extends DefaultSearchService = Defaul
     eventBusService: EventBusService;
     productVariantService: ProductVariantService;
     productCollectionService: ProductCollectionService;
-    productTypeRepository: ObjectType<typeof ProductTypeRepository>;
-    productTagRepository: ObjectType<typeof ProductTagRepository>;
-    imageRepository: ObjectType<typeof ImageRepository>;
+    productTypeRepository: typeof ProductTypeRepository;
+    productTagRepository: typeof ProductTagRepository;
+    imageRepository: typeof ImageRepository;
     searchService: TSearchService;
 }
 
@@ -272,7 +271,7 @@ export default class ProductService extends MedusaProductService {
 
 ### Middleware
 
-Let say that you want to attach a custom middleware to certain routes
+Let's say that you want to attach a custom middleware to certain routes
 
 <details>
 <summary>Click to see the example!</summary>
@@ -305,7 +304,7 @@ export class CustomMiddleware  implements MedusaMiddleware {
 
 ### Router
 
-If you need to add custom routes to medusa here is a simple way to achieve that
+If you need to add custom routes to medusa here is a simple way to achieve this
 
 <details>
 <summary>Click to see the example!</summary>
@@ -361,7 +360,7 @@ export class MyModule {}
 ```
 </details>
 
-That's it you've completed your first module :rocket:
+That's it. You've completed your first module :rocket:
 
 ## Decorators
 
@@ -379,10 +378,10 @@ Here is the list of the provided decorators.
 
 ## Entity event handling
 
-One of the feature out the box is the ability to emit (sync/async) event from
-your entity subscriber and to be able to handle those event easily.
+One of the feature out the box is the ability to emit (sync/async) events from
+your entity subscriber and to be able to handle those events easily.
 
-To be able to achieve that, here is an example.
+To be able to achieve this, here is an example.
 
 <details>
 <summary>Click to see the example!</summary>
@@ -454,8 +453,8 @@ export default class ProductService extends MedusaProductService {
 ```
 </details>
 
-And finally, we need to add the subscriber to the connection. There is different way to achieve
-it. Will see as an example a way to attach request scoped subscribers.
+And finally, we need to add the subscriber to the connection. There are different ways to achieve
+this. We will see, as an example below, a way to attach request scoped subscribers.
 
 <details>
 <summary>Click to see the example!</summary>
@@ -550,4 +549,4 @@ export class MyModule {}
 
 # Contribute :ballot_box:
 
-Contributions welcome! You can look at the contribution [guidelines](./CONTRIBUTING.md)
+Contributions are welcome! You can look at the contribution [guidelines](./CONTRIBUTING.md)

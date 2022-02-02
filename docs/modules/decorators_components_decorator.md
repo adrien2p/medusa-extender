@@ -39,7 +39,7 @@ Mark a class as an entity to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L15)
+[src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L15)
 
 ___
 
@@ -61,7 +61,7 @@ Mark a class as a middleware to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L42)
+[src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L42)
 
 ___
 
@@ -77,7 +77,7 @@ Mark a class as a migration to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L50)
+[src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L50)
 
 ___
 
@@ -105,7 +105,7 @@ Mark a class as a repository to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L33)
+[src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L33)
 
 ___
 
@@ -127,7 +127,7 @@ Mark a class as a router to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L59)
+[src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L59)
 
 ___
 
@@ -155,4 +155,4 @@ Mark a class as a service to be used by the loader.
 
 #### Defined in
 
-[src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/a0a14e5/src/decorators/components.decorator.ts#L24)
+[src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/decorators/components.decorator.ts#L24)
