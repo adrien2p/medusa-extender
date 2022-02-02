@@ -239,7 +239,7 @@ We now want to add a custom service to implement our custom logic for our new fi
 ```typescript
 // modules/product/product.service.ts
 
-import { Service } from 'medusa-extender';
+import { Service, OnMedusaEntityEvent, MedusaEventHandlerParams, EntityEventType } from 'medusa-extender';
 //...
 
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
@@ -265,7 +265,7 @@ export default class ProductService extends MedusaProductService {
         this.#manager = container.manager;
     }
     
-    @OnMedusaEvent.Before.Insert(Product, { async: true })
+    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
     public async attachStoreToProduct(
         params: MedusaEventHandlerParams<Product, 'Insert'>
     ): Promise<EntityEventType<Product, 'Insert'>> {

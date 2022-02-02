@@ -51,9 +51,9 @@ export class Loader {
 			expressApp: express,
 		});
 
-		authenticatedRoutesLoader(moduleComponentsOptions.get('router'), app);
+		authenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], app);
 
-		await migrationsLoader(moduleComponentsOptions.get('migration'), dbConnection);
+		await migrationsLoader(moduleComponentsOptions.get('migration') ?? [], dbConnection);
 
 		Utils.logRoutes(app);
 		return container as unknown as AwilixContainer;
