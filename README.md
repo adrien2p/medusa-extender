@@ -11,7 +11,7 @@
         Did you ever wanted to build something more than a single store?
         Well, this project has been made to help you reach you goal. It is now possible to customise
         Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you
-        but with the possibility to take you e-commerce project to the next level :rocket:
+        but with the possibility to take your e-commerce project to the next level :rocket:
   </p>
     
   <a href="https://github.com/adrien2p/awesome-medusajs"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
