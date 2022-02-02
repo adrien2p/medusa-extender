@@ -1,7 +1,7 @@
 {
   "name": "medusa-extender",
   "version": "1.0.2",
-  "description": "Medusa on steroid. Extends entities, repositories, services and so on. Get the full power of modular architecture. Keep your domains clean. Provide external modules for other to include them in there project.",
+  "description": " :syringe: Medusa on steroid. Extends Typeorm entities and repositories, medusa core services and so on. Get the full power of modular architecture. Keep your domains clean. Build shareable modules :rocket:",
   "keywords": [
     "medusa",
     "medusajs",
@@ -11,7 +11,9 @@
     "extension",
     "nodejs",
     "modules",
-    "plugins"
+    "plugins",
+    "typescript",
+    "typeorm"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",
