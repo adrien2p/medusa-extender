@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/6f01da1/src/loaders/routes.loader.ts#L4)
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/loaders/routes.loader.ts#L4)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/6f01da1/src/loaders/routes.loader.ts#L14)
+[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/41e0467/src/loaders/routes.loader.ts#L14)
