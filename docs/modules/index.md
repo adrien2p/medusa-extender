@@ -99,7 +99,7 @@ ___
 
 ### INJECTABLE\_OPTIONS\_KEY
 
-Re-exports [INJECTABLE_OPTIONS_KEY](contants.md#injectable_options_key)
+Re-exports [INJECTABLE_OPTIONS_KEY](constants.md#injectable_options_key)
 
 ___
 
@@ -117,13 +117,13 @@ ___
 
 ### MEDUSA\_RESOLVER\_KEYS
 
-Re-exports [MEDUSA_RESOLVER_KEYS](contants.md#medusa_resolver_keys)
+Re-exports [MEDUSA_RESOLVER_KEYS](constants.md#medusa_resolver_keys)
 
 ___
 
 ### MODULE\_KEY
 
-Re-exports [MODULE_KEY](contants.md#module_key)
+Re-exports [MODULE_KEY](constants.md#module_key)
 
 ___
 
@@ -278,4 +278,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/075fc78/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/36fff62/src/index.ts#L25)
