@@ -9,7 +9,7 @@ import { NextFunction, Request, Response } from 'express';
 import { middlewaresLoader } from '../middlewares.loader';
 import { metadataReader } from '../../metadata-reader';
 import { Module } from '../../decorators/module.decorator';
-import { MEDUSA_RESOLVER_KEYS } from '../../contants';
+import { MEDUSA_RESOLVER_KEYS } from '../../constants';
 import express = require('express');
 
 const MiddlewareServiceMock = {
