@@ -6,7 +6,7 @@
 
 ### Modules
 
-- [contants](modules/contants.md)
+- [constants](modules/constants.md)
 - [decorators](modules/decorators.md)
 - [decorators/components.decorator](modules/decorators_components_decorator.md)
 - [decorators/module.decorator](modules/decorators_module_decorator.md)

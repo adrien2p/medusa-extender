@@ -94,7 +94,7 @@ ___
 
 ### INJECTABLE\_OPTIONS\_KEY
 
-Re-exports [INJECTABLE_OPTIONS_KEY](contants.md#injectable_options_key)
+Re-exports [INJECTABLE_OPTIONS_KEY](constants.md#injectable_options_key)
 
 ___
 
@@ -112,13 +112,13 @@ ___
 
 ### MEDUSA\_RESOLVER\_KEYS
 
-Re-exports [MEDUSA_RESOLVER_KEYS](contants.md#medusa_resolver_keys)
+Re-exports [MEDUSA_RESOLVER_KEYS](constants.md#medusa_resolver_keys)
 
 ___
 
 ### MODULE\_KEY
 
-Re-exports [MODULE_KEY](contants.md#module_key)
+Re-exports [MODULE_KEY](constants.md#module_key)
 
 ___
 
