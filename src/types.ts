@@ -141,4 +141,4 @@ export interface MedusaMiddleware {
 /**
  * Mix the return type of two objects.
  */
-export type MixinReturnType<T1, T2> = new (...args: any[]) => T1 & T2;
+export type MixinReturnType<T1, T2> = Constructor<T1 & T2>;
