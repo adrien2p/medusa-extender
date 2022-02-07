@@ -13,15 +13,15 @@ export class Utils {
 	 * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 	 * @param source
 	 */
-	static repositoryMixin<TEntity, TSource>(source: Type<TSource>): MixinReturnType<Repository<TEntity>, TSource> {
+	static repositoryMixin<TEntity, TSource>(source: Constructor<TSource>): MixinReturnType<Repository<TEntity>, TSource> {
 		const klass = class Base extends Repository<TEntity> {};
 
-		Object.getOwnPropertyNames((source as any).prototype).forEach((name) => {
+		Object.getOwnPropertyNames(source.prototype).forEach((name) => {
 			if (name !== 'constructor' && !klass.hasOwnProperty(name)) {
 				Object.defineProperty(
-					(klass as any).prototype,
+					klass.prototype,
 					name,
-					Object.getOwnPropertyDescriptor((source as any).prototype, name)
+					Object.getOwnPropertyDescriptor(source.prototype, name)
 				);
 			}
 		});
