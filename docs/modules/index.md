@@ -274,8 +274,8 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 | Name | Type |
 | :------ | :------ |
 | `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TEntity, TSource\>(`source`: [`Type`](../interfaces/types.Type.md)<`TSource`\>) => [`MixinReturnType`](types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\> |
+| `repositoryMixin` | <TEntity, TSource\>(`source`: [`Constructor`](types.md#constructor)<`TSource`\>) => [`MixinReturnType`](types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\> |
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/36fff62/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/f472dcb/src/index.ts#L25)
