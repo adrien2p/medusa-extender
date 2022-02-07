@@ -1,7 +1,7 @@
 <!--lint disable awesome-list-item-->
 <div align="center">
   <p align="center">
-    <img alt="Medusa" src="https://user-images.githubusercontent.com/7554214/129161578-19b83dc8-fac5-4520-bd48-53cba676edd2.png" width="200" />
+    <img alt="Medusa" src="https://uploads-ssl.webflow.com/61fba9f6deac297b7b22017d/62000006ce573a706c92546c_logo.svg" width="200" />
   </p>
   
   <h1>Extend medusa to fit your needs</h1>
