@@ -17,7 +17,6 @@ export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'mi
  * Defines the injection options for entities.
  */
 export type EntityInjectableOptions<TOverride = unknown> = {
-	scope?: LifetimeType;
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };
