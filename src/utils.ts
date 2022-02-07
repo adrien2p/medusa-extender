@@ -1,7 +1,7 @@
-import chalk = require('chalk');
+import * as chalk from 'chalk';
 import { Express } from 'express';
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
-import { Constructor, MixinReturnType, Type } from './types';
+import { Constructor, MixinReturnType } from './types';
 
 /**
  * @internal
