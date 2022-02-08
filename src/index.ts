@@ -1,7 +1,7 @@
 export * from './types';
 export * from './constants';
 
-export { Medusa } from './medusa';
+export { Medusa } from './Medusa';
 export { customEventEmitter as eventEmitter } from './event-emmiter';
 
 export {
