@@ -7,7 +7,8 @@ import { metadataReader } from './metadata-reader';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
-	databaseLoader, validatorsLoader,
+	databaseLoader,
+	validatorsLoader,
 	migrationsLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
