@@ -41,6 +41,7 @@
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
+- [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
 - [eventEmitter](index.md#eventemitter)
 
 ### Variables
@@ -259,6 +260,12 @@ Re-exports [Type](../interfaces/types.Type.md)
 
 ___
 
+### ValidatorInjectionOptions
+
+Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
+
+___
+
 ### eventEmitter
 
 Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
@@ -278,4 +285,67 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/0490090/src/index.ts#L25)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/index.ts#L25)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+>>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/index.ts#L25)
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
+>>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/index.ts#L25)
+>>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
+>>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+=======
+>>>>>>> d802ff5... [BOT] BUILD DOC
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/index.ts#L25)
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+<<<<<<< HEAD
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+<<<<<<< HEAD
+>>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+=======
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/0490090/src/index.ts#L25)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
+>>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
+>>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/e820602/src/index.ts#L25)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

@@ -58,6 +58,7 @@
         - [Service](#service)
         - [Middleware](#middleware)
         - [Router](#router)
+        - [Validator](#validator)
         - [Module](#module)
 - [Decorators](#decorators)
 - [Entity event handling](#entity-event-handling)
@@ -344,6 +345,30 @@ export class ProductRouter {
 ```
 </details>
 
+### Validator
+
+If you add a custom field on an entity, there is a huge risk that you end up getting
+an error as soon as you it the end point with that new field. The medusa validators
+are not aware of your new field once the request arrive. In order to handle that
+you can extend the class validator in order to add your custom field constraint.
+
+<details>
+<summary>Click to see the example!</summary>
+
+```typescript
+// modules/product/AdminPostProductsReq.validator.ts
+
+import { Validator } from 'medusa-extender';
+import { AdminPostProductsReq } from "@medusajs/medusa/dist";
+
+@Validator({ override: AdminPostProductsReq })
+class ExtendedClassValidator extends AdminPostProductsReq {
+    @IsString()
+    customField: string;
+}
+```
+</details>
+
 ### Module
 
 the last step is to import everything in our module :package:
@@ -369,7 +394,8 @@ import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-t
         ProductService,
         ProductRouter,
         CustomMiddleware,
-        AddFieldToProduct1611063162649
+        AddFieldToProduct1611063162649,
+        ExtendedClassValidator
     ]
 })
 export class MyModule {}

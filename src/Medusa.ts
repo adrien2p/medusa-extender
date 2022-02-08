@@ -7,7 +7,12 @@ import { metadataReader } from './metadata-reader';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
+<<<<<<< HEAD
 	databaseLoader,
+	validatorsLoader,
+=======
+	databaseLoader, validatorsLoader,
+>>>>>>> b652414... Feat() Add support to extends validator
 	migrationsLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
@@ -44,6 +49,7 @@ export class Medusa {
 	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
 
+		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
 		await apiLoader(this.#express, moduleComponentsOptions.get('middleware') ?? []);
