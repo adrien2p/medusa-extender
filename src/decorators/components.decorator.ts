@@ -4,7 +4,8 @@ import {
 	RepositoryInjectableOptions,
 	RouterInjectionOptions,
 	ServiceInjectableOptions,
-	buildComponentDecorator, ValidatorInjectionOptions,
+	buildComponentDecorator,
+	ValidatorInjectionOptions,
 } from './';
 
 /**

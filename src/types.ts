@@ -11,7 +11,14 @@ export type Constructor<T> = new (...args: unknown[]) => T;
 /**
  * Components that does not required any other options that Type.
  */
-export type InjectableComponentTypes = 'validator' | 'entity' | 'repository' | 'service' | 'migration' | 'router' | 'middleware';
+export type InjectableComponentTypes =
+	| 'validator'
+	| 'entity'
+	| 'repository'
+	| 'service'
+	| 'migration'
+	| 'router'
+	| 'middleware';
 
 /**
  * Defines the injection options for entities.
