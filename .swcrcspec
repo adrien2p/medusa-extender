@@ -1,6 +1,6 @@
 {
   "test": [".*.ts$"],
-  "exclude": ["node_modules/", "dist", "starters", ".*.js$", ".*.map$"],
+  "exclude": ["node_modules", "dist", "starters", ".*.js$", ".*.map$"],
   "sourceMaps": true,
   "inlineSourcesContent": true,
   "jsc": {
@@ -20,10 +20,10 @@
     "baseUrl": "."
   },
   "module": {
-    "type": "CommonJS",
+    "type": "commonjs",
     "strict": true,
     "strictMode": true,
     "lazy": false,
-    "noInterop": false
+    "noInterop": true
   }
 }
