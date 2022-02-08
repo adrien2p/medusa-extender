@@ -41,6 +41,7 @@
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
+- [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
 - [eventEmitter](index.md#eventemitter)
 
 ### Variables
@@ -259,6 +260,12 @@ Re-exports [Type](../interfaces/types.Type.md)
 
 ___
 
+### ValidatorInjectionOptions
+
+Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
+
+___
+
 ### eventEmitter
 
 Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
@@ -278,4 +285,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)

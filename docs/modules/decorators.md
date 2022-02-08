@@ -40,6 +40,8 @@
 - [Service](decorators.md#service)
 - [ServiceInjectableOptions](decorators.md#serviceinjectableoptions)
 - [Type](decorators.md#type)
+- [Validator](decorators.md#validator)
+- [ValidatorInjectionOptions](decorators.md#validatorinjectionoptions)
 - [buildComponentDecorator](decorators.md#buildcomponentdecorator)
 
 ## References
@@ -245,6 +247,18 @@ ___
 ### Type
 
 Re-exports [Type](../interfaces/types.Type.md)
+
+___
+
+### Validator
+
+Re-exports [Validator](decorators_components_decorator.md#validator)
+
+___
+
+### ValidatorInjectionOptions
+
+Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
 
 ___
 
