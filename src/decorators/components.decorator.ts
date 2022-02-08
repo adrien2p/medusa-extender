@@ -4,7 +4,12 @@ import {
 	RepositoryInjectableOptions,
 	RouterInjectionOptions,
 	ServiceInjectableOptions,
+<<<<<<< HEAD
 	buildComponentDecorator,
+	ValidatorInjectionOptions,
+=======
+	buildComponentDecorator, ValidatorInjectionOptions,
+>>>>>>> b652414... Feat() Add support to extends validator
 } from './';
 
 /**
@@ -58,4 +63,13 @@ export function Migration(): ClassDecorator {
  */
 export function Router(options: RouterInjectionOptions): ClassDecorator {
 	return buildComponentDecorator({ type: 'router', ...options });
+}
+
+/**
+ * Mark a class as a validator to be used by the validator utility.
+ * @param options
+ * @constructor
+ */
+export function Validator(options: ValidatorInjectionOptions): ClassDecorator {
+	return buildComponentDecorator({ type: 'validator', ...options });
 }

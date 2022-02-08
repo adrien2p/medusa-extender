@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { Entity, Middleware, Migration, Repository, Router, Service } from '../components.decorator';
+import { Entity, Middleware, Migration, Repository, Router, Service, Validator } from '../components.decorator';
 import { INJECTABLE_OPTIONS_KEY } from '../';
 
 describe('components', () => {
@@ -80,6 +80,19 @@ describe('components', () => {
 			});
 			expect(metadata.router[0].handler).toBeDefined();
 			expect(metadata.router[0].handler('')).toEqual('');
+		});
+	});
+
+	describe('Validator', () => {
+		it('should define the validator metadata', () => {
+			class OriginalValidator {}
+
+			@Validator({ override: OriginalValidator })
+			class Test {}
+
+			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
+			expect(metadata.type).toBe('validator');
+			expect(metadata.override).toEqual(OriginalValidator);
 		});
 	});
 });

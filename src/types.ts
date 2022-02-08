@@ -11,7 +11,18 @@ export type Constructor<T> = new (...args: unknown[]) => T;
 /**
  * Components that does not required any other options that Type.
  */
-export type InjectableComponentTypes = 'entity' | 'repository' | 'service' | 'migration' | 'router' | 'middleware';
+<<<<<<< HEAD
+export type InjectableComponentTypes =
+	| 'validator'
+	| 'entity'
+	| 'repository'
+	| 'service'
+	| 'migration'
+	| 'router'
+	| 'middleware';
+=======
+export type InjectableComponentTypes = 'validator' | 'entity' | 'repository' | 'service' | 'migration' | 'router' | 'middleware';
+>>>>>>> b652414... Feat() Add support to extends validator
 
 /**
  * Defines the injection options for entities.
@@ -64,6 +75,13 @@ export type MiddlewareInjectionOptions = {
 };
 
 /**
+ * Defines the injection options for routes.
+ */
+export type ValidatorInjectionOptions<TOverride = unknown> = {
+	override?: Type<TOverride>;
+};
+
+/**
  * Union of all options type possible for injectable.
  */
 export type InjectableOptions<T = unknown> =
@@ -71,7 +89,8 @@ export type InjectableOptions<T = unknown> =
 	| ServiceInjectableOptions<T>
 	| RepositoryInjectableOptions<T>
 	| MiddlewareInjectionOptions
-	| RouterInjectionOptions;
+	| RouterInjectionOptions
+	| ValidatorInjectionOptions<T>;
 
 /**
  * Determine which options type it actually is depending on the component type.
@@ -89,6 +108,8 @@ export type GetInjectableOption<TComponentType extends InjectableComponentTypes 
 		? RouterInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'middleware'>
 		? MiddlewareInjectionOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'validator'>
+		? ValidatorInjectionOptions
 		: never) & {
 		type: InjectableComponentTypes;
 		metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type;
