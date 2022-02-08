@@ -29,10 +29,14 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/routes.loader.ts#L4)
 =======
 [src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/routes.loader.ts#L4)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/routes.loader.ts#L4)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -54,7 +58,11 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/routes.loader.ts#L14)
 =======
 [src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/routes.loader.ts#L14)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/routes.loader.ts#L14)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

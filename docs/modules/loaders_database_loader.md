@@ -28,7 +28,11 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/database.loader.ts#L5)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/database.loader.ts#L5)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

@@ -34,10 +34,14 @@ Load custom service and override existing ones.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L55)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L55)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -63,10 +67,14 @@ Load custom service into the container.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L31)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L31)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -90,7 +98,11 @@ Load custom services from the rootDir.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L9)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L9)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

@@ -57,10 +57,14 @@ Attach a new subscriber to a specific entities.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L38)
 =======
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L38)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L38)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -85,10 +89,14 @@ Prepare the log to be shown to be consistent everywhere.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L69)
 =======
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L69)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L69)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -111,10 +119,14 @@ Log all the routes from the express instance.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L59)
 =======
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L59)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L59)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -136,10 +148,14 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L83)
 =======
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L83)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L83)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -170,10 +186,14 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L16)
 =======
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L16)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L16)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -194,7 +214,11 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L103)
 =======
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L103)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/0490090/src/utils.ts#L103)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

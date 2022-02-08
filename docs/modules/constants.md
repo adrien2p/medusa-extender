@@ -22,6 +22,7 @@ Metadata key to store config from decorated injectables.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L9)
@@ -29,6 +30,9 @@ Metadata key to store config from decorated injectables.
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L9)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L9)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -76,6 +80,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L14)
@@ -83,6 +88,9 @@ Hold the name of the medusa services registered into the container for later on 
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L14)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L14)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -96,6 +104,7 @@ Metadata key to store config from decorated injectables.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L4)
 =======
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L4)
@@ -103,3 +112,6 @@ Metadata key to store config from decorated injectables.
 =======
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L4)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L4)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

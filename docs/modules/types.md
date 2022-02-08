@@ -54,10 +54,14 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L9)
 =======
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L9)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L9)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -83,10 +87,14 @@ Defines the injection options for entities.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L19)
 =======
 [src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L19)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L19)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -105,10 +113,14 @@ Determine which options type it actually is depending on the component type.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:79](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L79)
 =======
 [src/types.ts:87](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L87)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:87](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L87)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -127,10 +139,14 @@ Determine which options type it actually is depending on the component type.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:100](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L100)
 =======
 [src/types.ts:110](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L110)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:110](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L110)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -143,10 +159,14 @@ Components that does not required any other options that Type.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L14)
 =======
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L14)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L14)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -165,10 +185,14 @@ Union of all options type possible for injectable.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L69)
 =======
 [src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L76)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L76)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -181,10 +205,14 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L113)
 =======
 [src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L123)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L123)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -204,10 +232,14 @@ Medusa request extended.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:106](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L106)
 =======
 [src/types.ts:116](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L116)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:116](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L116)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -218,10 +250,14 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:120](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L120)
 =======
 [src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L130)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L130)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -241,10 +277,14 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L125)
 =======
 [src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L135)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L135)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -264,10 +304,14 @@ Defines the injection options for middlewares.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L61)
 =======
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L61)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L61)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -287,10 +331,14 @@ Mix the return type of two objects.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:143](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L143)
 =======
 [src/types.ts:153](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L153)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:153](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L153)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -316,10 +364,14 @@ Defines the injection options for services, entities, repositories.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L36)
 =======
 [src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L36)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L36)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -338,10 +390,14 @@ Defines the injection options for routes.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L54)
 =======
 [src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L54)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L54)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -363,10 +419,14 @@ Define a router and its configuration.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L44)
 =======
 [src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L44)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L44)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -393,9 +453,13 @@ Defines the injection options for service.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L27)
 =======
 [src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L27)
+=======
+[src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L27)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -419,5 +483,9 @@ Defines the injection options for routes.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L69)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L69)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

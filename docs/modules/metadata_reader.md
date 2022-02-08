@@ -41,10 +41,14 @@ Return the options from components.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L36)
 =======
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/metadata-reader.ts#L36)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/0490090/src/metadata-reader.ts#L36)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -67,7 +71,11 @@ Read all metadata from the imported modules and extract components that will be 
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L14)
 =======
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/metadata-reader.ts#L14)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/metadata-reader.ts#L14)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

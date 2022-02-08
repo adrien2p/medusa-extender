@@ -30,10 +30,14 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/repository.loader.ts#L16)
 =======
 [src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/repository.loader.ts#L16)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/repository.loader.ts#L16)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -57,10 +61,14 @@ Load custom repositories and override existing ones.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/repository.loader.ts#L48)
 =======
 [src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/repository.loader.ts#L48)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/repository.loader.ts#L48)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -85,10 +93,14 @@ Load custom repository into the container.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/repository.loader.ts#L30)
 =======
 [src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/repository.loader.ts#L30)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/repository.loader.ts#L30)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -110,7 +122,11 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/repository.loader.ts#L5)
 =======
 [src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/repository.loader.ts#L5)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/repository.loader.ts#L5)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

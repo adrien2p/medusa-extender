@@ -33,7 +33,11 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/utils.ts#L4)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/utils.ts#L4)
+>>>>>>> 1f752f6... [BOT] BUILD DOC

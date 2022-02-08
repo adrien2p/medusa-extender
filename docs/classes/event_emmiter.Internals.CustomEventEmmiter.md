@@ -42,10 +42,14 @@ EventEmitter.constructor
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L21)
 =======
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L21)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L21)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ## Properties
 
@@ -56,10 +60,14 @@ EventEmitter.constructor
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L19)
 =======
 [src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L19)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L19)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ## Methods
 
@@ -89,10 +97,14 @@ Emit an asynchrone event entity based and wait for the result.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L80)
 =======
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L80)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L80)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -123,10 +135,14 @@ Register a new event handler.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L31)
 =======
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L31)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L31)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -149,10 +165,14 @@ Apply all event handlers hold by the `listenerDescriptor`.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L43)
 =======
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L43)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L43)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
 
 ___
 
@@ -167,7 +187,11 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L68)
 =======
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L68)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L68)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
