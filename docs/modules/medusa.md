@@ -1,9 +1,9 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / medusa
+[medusa-extender](../README.md) / [Exports](../modules.md) / Medusa
 
-# Module: medusa
+# Module: Medusa
 
 ## Table of contents
 
 ### Classes
 
-- [Medusa](../classes/medusa.Medusa.md)
+- [Medusa](../classes/Medusa.Medusa-1.md)
