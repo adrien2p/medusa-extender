@@ -390,7 +390,8 @@ Here is the list of the provided decorators.
 | `@Service(/*...*/)`                  | Decorate a service                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
 | `@Middleware(/*...*/)`               | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routerOptions: MedusaRouteOptions[]; };`
 | `@Router(/*...*/)`                   | Decorate a router                                                           | `{ router: RoutesInjectionRouterConfiguration[]; };`
-| `@Migration(/*...*/)`                | Decorate a migration                                                        | 
+| `@Migration(/*...*/)`                | Decorate a migration                                                        |
+| `@Validator(/*...*/)`                | Decorate a validator                                                        | `{ override: Type<TOverride>; };`
 | `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register handler to an event    |
 
 ## Entity event handling
