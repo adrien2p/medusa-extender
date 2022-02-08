@@ -47,6 +47,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
@@ -54,6 +55,9 @@
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ## Properties
 
@@ -65,6 +69,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
@@ -72,6 +77,9 @@
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -83,6 +91,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
@@ -90,6 +99,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ## Accessors
 
@@ -105,6 +117,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
@@ -112,6 +125,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -127,6 +143,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
@@ -134,6 +151,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ## Methods
 
@@ -162,6 +182,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
@@ -169,6 +190,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -196,6 +220,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
@@ -203,6 +228,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -231,6 +259,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
@@ -238,6 +267,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -265,6 +297,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
@@ -272,6 +305,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -300,6 +336,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
@@ -307,6 +344,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -334,6 +374,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
@@ -341,6 +382,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -370,6 +414,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
@@ -377,6 +422,9 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -398,6 +446,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L54)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L54)
@@ -405,3 +454,6 @@ ___
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L54)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L54)
+>>>>>>> 92fcc31... [BOT] BUILD DOC

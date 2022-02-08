@@ -60,6 +60,7 @@ medusa-extender / [Exports](modules.md)
         - [Service](#service)
         - [Middleware](#middleware)
         - [Router](#router)
+        - [Validator](#validator)
         - [Module](#module)
 - [Decorators](#decorators)
 - [Entity event handling](#entity-event-handling)
@@ -356,7 +357,7 @@ you can extend the class validator in order to add your custom field constraint.
 <summary>Click to see the example!</summary>
 
 ```typescript
-// modules/product/product.router.ts
+// modules/product/AdminPostProductsReq.validator.ts
 
 import { Validator } from 'medusa-extender';
 import { AdminPostProductsReq } from "@medusajs/medusa/dist";

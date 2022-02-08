@@ -30,6 +30,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/routes.loader.ts#L4)
 =======
 [src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/routes.loader.ts#L4)
@@ -37,6 +38,9 @@
 =======
 [src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/routes.loader.ts#L4)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/routes.loader.ts#L4)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
 
 ___
 
@@ -59,6 +63,7 @@ ___
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/routes.loader.ts#L14)
 =======
 [src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/routes.loader.ts#L14)
@@ -66,3 +71,6 @@ ___
 =======
 [src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/routes.loader.ts#L14)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/routes.loader.ts#L14)
+>>>>>>> 92fcc31... [BOT] BUILD DOC

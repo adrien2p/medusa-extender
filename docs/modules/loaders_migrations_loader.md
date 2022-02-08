@@ -32,6 +32,7 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/migrations.loader.ts#L10)
 =======
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/migrations.loader.ts#L10)
@@ -39,3 +40,6 @@ Run custom migrations that are find from the provided directory and stored in a 
 =======
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/migrations.loader.ts#L10)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
+=======
+[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/migrations.loader.ts#L10)
+>>>>>>> 92fcc31... [BOT] BUILD DOC
