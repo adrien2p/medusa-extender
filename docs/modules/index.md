@@ -290,6 +290,7 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
 =======
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)
@@ -303,6 +304,8 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/index.ts#L25)
 =======
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
@@ -313,4 +316,13 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 =======
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/index.ts#L25)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/index.ts#L25)
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

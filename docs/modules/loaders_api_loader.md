@@ -35,6 +35,7 @@ Decorate the original api loader to apply our custom middleware first.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/api.loader.ts#L12)
 =======
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/api.loader.ts#L12)
@@ -48,6 +49,8 @@ Decorate the original api loader to apply our custom middleware first.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/api.loader.ts#L12)
 =======
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/api.loader.ts#L12)
@@ -58,4 +61,13 @@ Decorate the original api loader to apply our custom middleware first.
 =======
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/api.loader.ts#L12)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/api.loader.ts#L12)
+=======
+[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/api.loader.ts#L12)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

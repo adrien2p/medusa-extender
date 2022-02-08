@@ -38,6 +38,7 @@ Load custom service and override existing ones.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L55)
@@ -51,6 +52,8 @@ Load custom service and override existing ones.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
@@ -61,7 +64,16 @@ Load custom service and override existing ones.
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L55)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L55)
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L55)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -91,6 +103,7 @@ Load custom service into the container.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L31)
@@ -104,6 +117,8 @@ Load custom service into the container.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
@@ -114,7 +129,16 @@ Load custom service into the container.
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L31)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L31)
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L31)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -142,6 +166,7 @@ Load custom services from the rootDir.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L9)
@@ -155,6 +180,8 @@ Load custom services from the rootDir.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
@@ -165,4 +192,13 @@ Load custom services from the rootDir.
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L9)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L9)
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L9)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

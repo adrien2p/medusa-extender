@@ -45,6 +45,7 @@ Function.constructor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L6)
 =======
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L6)
@@ -58,6 +59,8 @@ Function.constructor
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L6)
 =======
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L6)
@@ -68,4 +71,13 @@ Function.constructor
 =======
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/types.ts#L6)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/types.ts#L6)
+=======
+[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L6)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

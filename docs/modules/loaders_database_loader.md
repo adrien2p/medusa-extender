@@ -32,6 +32,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/database.loader.ts#L5)
@@ -45,6 +46,8 @@
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/database.loader.ts#L5)
@@ -55,4 +58,13 @@
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/database.loader.ts#L5)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/database.loader.ts#L5)
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/database.loader.ts#L5)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

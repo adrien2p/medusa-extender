@@ -34,6 +34,7 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/plugins.loader.ts#L11)
 =======
 [src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/plugins.loader.ts#L11)
@@ -47,6 +48,8 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/plugins.loader.ts#L11)
 =======
 [src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/plugins.loader.ts#L11)
@@ -57,4 +60,13 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 =======
 [src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/plugins.loader.ts#L11)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/plugins.loader.ts#L11)
+=======
+[src/loaders/plugins.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/plugins.loader.ts#L11)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

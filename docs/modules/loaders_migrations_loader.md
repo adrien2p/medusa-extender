@@ -35,6 +35,7 @@ Run custom migrations that are find from the provided directory and stored in a 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/migrations.loader.ts#L10)
 =======
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/migrations.loader.ts#L10)
@@ -48,6 +49,8 @@ Run custom migrations that are find from the provided directory and stored in a 
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/migrations.loader.ts#L10)
 =======
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/migrations.loader.ts#L10)
@@ -58,4 +61,13 @@ Run custom migrations that are find from the provided directory and stored in a 
 =======
 [src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/migrations.loader.ts#L10)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/migrations.loader.ts#L10)
+=======
+[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/migrations.loader.ts#L10)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

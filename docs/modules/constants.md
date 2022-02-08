@@ -26,6 +26,7 @@ Metadata key to store config from decorated injectables.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L9)
@@ -42,6 +43,8 @@ Metadata key to store config from decorated injectables.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L9)
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
@@ -52,7 +55,16 @@ Metadata key to store config from decorated injectables.
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L9)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L9)
+=======
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L9)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -104,6 +116,7 @@ Hold the name of the medusa services registered into the container for later on 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L14)
@@ -120,6 +133,8 @@ Hold the name of the medusa services registered into the container for later on 
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L14)
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
@@ -130,7 +145,16 @@ Hold the name of the medusa services registered into the container for later on 
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L14)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L14)
+=======
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L14)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -142,6 +166,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,6 +189,8 @@ Metadata key to store config from decorated injectables.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L4)
 =======
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L4)
@@ -174,4 +201,13 @@ Metadata key to store config from decorated injectables.
 =======
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L4)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/constants.ts#L4)
+=======
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/constants.ts#L4)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

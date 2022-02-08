@@ -61,6 +61,7 @@ Attach a new subscriber to a specific entities.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L38)
 =======
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L38)
@@ -74,6 +75,8 @@ Attach a new subscriber to a specific entities.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:36](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L36)
 =======
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L38)
@@ -84,7 +87,16 @@ Attach a new subscriber to a specific entities.
 =======
 [src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L38)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L38)
+=======
+[src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L38)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -113,6 +125,7 @@ Prepare the log to be shown to be consistent everywhere.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L69)
 =======
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L69)
@@ -126,6 +139,8 @@ Prepare the log to be shown to be consistent everywhere.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L67)
 =======
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L69)
@@ -136,7 +151,16 @@ Prepare the log to be shown to be consistent everywhere.
 =======
 [src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L69)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L69)
+=======
+[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L69)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -163,6 +187,7 @@ Log all the routes from the express instance.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L59)
 =======
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L59)
@@ -176,6 +201,8 @@ Log all the routes from the express instance.
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:57](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L57)
 =======
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L59)
@@ -186,7 +213,16 @@ Log all the routes from the express instance.
 =======
 [src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L59)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L59)
+=======
+[src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L59)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -212,6 +248,7 @@ ___
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L83)
 =======
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L83)
@@ -225,6 +262,8 @@ ___
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L81)
 =======
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L83)
@@ -235,7 +274,16 @@ ___
 =======
 [src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L83)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L83)
+=======
+[src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L83)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -270,6 +318,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L16)
 =======
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L16)
@@ -283,6 +332,8 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L16)
 =======
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L16)
@@ -293,7 +344,16 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 =======
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L16)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L16)
+=======
+[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L16)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
 
 ___
 
@@ -318,6 +378,7 @@ ___
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L103)
 =======
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L103)
@@ -331,6 +392,8 @@ ___
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/utils.ts#L101)
 =======
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/utils.ts#L103)
@@ -341,4 +404,13 @@ ___
 =======
 [src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L103)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/utils.ts#L103)
+=======
+[src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/utils.ts#L103)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC

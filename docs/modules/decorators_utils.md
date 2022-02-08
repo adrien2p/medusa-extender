@@ -37,6 +37,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/utils.ts#L4)
@@ -50,6 +51,8 @@
 =======
 =======
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+>>>>>>> bc86ead... [BOT] BUILD DOC
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/utils.ts#L4)
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
@@ -60,4 +63,13 @@
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/utils.ts#L4)
 >>>>>>> b652414... Feat() Add support to extends validator
+<<<<<<< HEAD
 >>>>>>> b3bba94... Feat() Add support to extends validator
+=======
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/utils.ts#L4)
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/utils.ts#L4)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
+>>>>>>> 4c2e6c1... [BOT] BUILD DOC
+>>>>>>> bc86ead... [BOT] BUILD DOC
