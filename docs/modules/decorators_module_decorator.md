@@ -36,6 +36,7 @@ Mark a class as aa module and store all injectable on it.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/module.decorator.ts#L9)
 =======
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/module.decorator.ts#L9)
@@ -53,6 +54,8 @@ Mark a class as aa module and store all injectable on it.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/module.decorator.ts#L9)
 =======
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/module.decorator.ts#L9)
@@ -83,4 +86,10 @@ Mark a class as aa module and store all injectable on it.
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/module.decorator.ts#L9)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/module.decorator.ts#L9)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

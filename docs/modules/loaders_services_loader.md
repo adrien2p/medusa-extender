@@ -40,6 +40,7 @@ Load custom service and override existing ones.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L55)
@@ -57,6 +58,8 @@ Load custom service and override existing ones.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
@@ -87,7 +90,13 @@ Load custom service and override existing ones.
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L55)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/e820602/src/loaders/services.loader.ts#L55)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -119,6 +128,7 @@ Load custom service into the container.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L31)
@@ -136,6 +146,8 @@ Load custom service into the container.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
@@ -166,7 +178,13 @@ Load custom service into the container.
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L31)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/e820602/src/loaders/services.loader.ts#L31)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -196,6 +214,7 @@ Load custom services from the rootDir.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L9)
@@ -213,6 +232,8 @@ Load custom services from the rootDir.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
@@ -243,4 +264,10 @@ Load custom services from the rootDir.
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/services.loader.ts#L9)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/e820602/src/loaders/services.loader.ts#L9)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

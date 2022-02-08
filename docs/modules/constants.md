@@ -28,6 +28,7 @@ Metadata key to store config from decorated injectables.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L9)
@@ -48,6 +49,8 @@ Metadata key to store config from decorated injectables.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L9)
 =======
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
@@ -78,7 +81,13 @@ Metadata key to store config from decorated injectables.
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L9)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/e820602/src/constants.ts#L9)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -132,6 +141,7 @@ Hold the name of the medusa services registered into the container for later on 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L14)
@@ -152,6 +162,8 @@ Hold the name of the medusa services registered into the container for later on 
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L14)
 =======
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
@@ -182,7 +194,13 @@ Hold the name of the medusa services registered into the container for later on 
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L14)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/e820602/src/constants.ts#L14)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -194,6 +212,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +241,8 @@ Metadata key to store config from decorated injectables.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/constants.ts#L4)
 =======
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L4)
@@ -252,4 +273,10 @@ Metadata key to store config from decorated injectables.
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/0490090/src/constants.ts#L4)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/e820602/src/constants.ts#L4)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

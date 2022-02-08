@@ -45,6 +45,7 @@ internal container and database connection.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L36)
 =======
 [src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/Medusa.ts#L36)
@@ -65,6 +66,8 @@ internal container and database connection.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/Medusa.ts#L37)
 =======
 [src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L36)
@@ -95,7 +98,13 @@ internal container and database connection.
 [src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/0490090/src/Medusa.ts#L36)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/e820602/src/Medusa.ts#L37)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ## Properties
 
@@ -105,6 +114,7 @@ internal container and database connection.
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,6 +143,8 @@ internal container and database connection.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/Medusa.ts#L30)
 =======
 [src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L29)
@@ -163,7 +175,13 @@ internal container and database connection.
 [src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/0490090/src/Medusa.ts#L29)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/e820602/src/Medusa.ts#L30)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -173,6 +191,7 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,6 +220,8 @@ ___
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/Medusa.ts#L31)
 =======
 [src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L30)
@@ -231,7 +252,13 @@ ___
 [src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/0490090/src/Medusa.ts#L30)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/e820602/src/Medusa.ts#L31)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ## Methods
 
@@ -251,6 +278,7 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -279,6 +307,8 @@ ___
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/Medusa.ts#L45)
 =======
 [src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L44)
@@ -309,4 +339,10 @@ ___
 [src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/0490090/src/Medusa.ts#L44)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/e820602/src/Medusa.ts#L45)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

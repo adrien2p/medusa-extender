@@ -31,6 +31,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
@@ -48,6 +49,8 @@
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
@@ -78,7 +81,13 @@
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -108,6 +117,7 @@ ___
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
@@ -125,6 +135,8 @@ ___
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
@@ -155,7 +167,13 @@ ___
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -181,6 +199,7 @@ Event types that can be emitted.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
@@ -198,6 +217,8 @@ Event types that can be emitted.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
@@ -228,7 +249,13 @@ Event types that can be emitted.
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -261,6 +288,7 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
@@ -278,6 +306,8 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
@@ -308,7 +338,13 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
 
 ___
 
@@ -341,6 +377,7 @@ The arguments expected by the event handler.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
@@ -358,6 +395,8 @@ The arguments expected by the event handler.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
@@ -388,4 +427,10 @@ The arguments expected by the event handler.
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/e820602/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc

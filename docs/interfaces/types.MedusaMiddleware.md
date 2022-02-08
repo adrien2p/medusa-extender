@@ -53,6 +53,7 @@ Describe a custom middleware instance.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L135)
 =======
 [src/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L145)
@@ -70,6 +71,8 @@ Describe a custom middleware instance.
 >>>>>>> bc86ead... [BOT] BUILD DOC
 =======
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+>>>>>>> 6c0df88... Feat() Update doc
 [src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L152)
 =======
 [src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L135)
@@ -100,4 +103,10 @@ Describe a custom middleware instance.
 [src/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L145)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 >>>>>>> d802ff5... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 57061ec... [BOT] BUILD DOC
+=======
+=======
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/e820602/src/types.ts#L152)
+>>>>>>> 4c3e573... Feat() Update doc
+>>>>>>> 6c0df88... Feat() Update doc
