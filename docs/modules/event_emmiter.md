@@ -29,6 +29,7 @@ Export the instance of the event emmiter.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L102)
 =======
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L102)
@@ -44,6 +45,8 @@ Export the instance of the event emmiter.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+>>>>>>> 57061ec... [BOT] BUILD DOC
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L102)
 =======
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L102)
@@ -58,9 +61,20 @@ Export the instance of the event emmiter.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 =======
+=======
+>>>>>>> d802ff5... [BOT] BUILD DOC
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/event-emmiter.ts#L102)
 =======
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L102)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 4c2e6c1... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+=======
+=======
+[src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/0490090/src/event-emmiter.ts#L102)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
+>>>>>>> d802ff5... [BOT] BUILD DOC
+>>>>>>> 57061ec... [BOT] BUILD DOC

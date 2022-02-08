@@ -35,6 +35,7 @@ Mark a class as aa module and store all injectable on it.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/module.decorator.ts#L9)
 =======
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/module.decorator.ts#L9)
@@ -50,6 +51,8 @@ Mark a class as aa module and store all injectable on it.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+>>>>>>> 57061ec... [BOT] BUILD DOC
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/module.decorator.ts#L9)
 =======
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/module.decorator.ts#L9)
@@ -64,9 +67,20 @@ Mark a class as aa module and store all injectable on it.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 =======
+=======
+>>>>>>> d802ff5... [BOT] BUILD DOC
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/module.decorator.ts#L9)
 =======
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/module.decorator.ts#L9)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 4c2e6c1... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+=======
+=======
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/module.decorator.ts#L9)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
+>>>>>>> d802ff5... [BOT] BUILD DOC
+>>>>>>> 57061ec... [BOT] BUILD DOC

@@ -357,7 +357,11 @@ you can extend the class validator in order to add your custom field constraint.
 <summary>Click to see the example!</summary>
 
 ```typescript
+<<<<<<< HEAD
 // modules/product/AdminPostProductsReq.validator.ts
+=======
+// modules/product/product.router.ts
+>>>>>>> d802ff5... [BOT] BUILD DOC
 
 import { Validator } from 'medusa-extender';
 import { AdminPostProductsReq } from "@medusajs/medusa/dist";

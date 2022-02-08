@@ -37,6 +37,7 @@ Register custom middlewares into the middlewareRegistery.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/middlewares.loader.ts#L13)
 =======
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/middlewares.loader.ts#L13)
@@ -52,6 +53,8 @@ Register custom middlewares into the middlewareRegistery.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+>>>>>>> 57061ec... [BOT] BUILD DOC
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/middlewares.loader.ts#L13)
 =======
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/middlewares.loader.ts#L13)
@@ -66,9 +69,20 @@ Register custom middlewares into the middlewareRegistery.
 >>>>>>> b3bba94... Feat() Add support to extends validator
 =======
 =======
+=======
+>>>>>>> d802ff5... [BOT] BUILD DOC
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/middlewares.loader.ts#L13)
 =======
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/middlewares.loader.ts#L13)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> 4c2e6c1... [BOT] BUILD DOC
+<<<<<<< HEAD
 >>>>>>> bc86ead... [BOT] BUILD DOC
+=======
+=======
+=======
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/0490090/src/loaders/middlewares.loader.ts#L13)
+>>>>>>> 1f752f6... [BOT] BUILD DOC
+>>>>>>> d802ff5... [BOT] BUILD DOC
+>>>>>>> 57061ec... [BOT] BUILD DOC
