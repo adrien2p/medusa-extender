@@ -24,7 +24,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RouterInjectionOptions`](types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } |
+| `options` | [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RouterInjectionOptions`](types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`ValidatorInjectionOptions`](types.md#validatorinjectionoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } |
 
 #### Returns
 
@@ -32,4 +32,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/utils.ts#L4)
+>>>>>>> 366e7bd... [BOT] BUILD DOC

@@ -25,6 +25,7 @@
 - [ServiceInjectableOptions](loaders.md#serviceinjectableoptions)
 - [Type](loaders.md#type)
 - [Utils](loaders.md#utils)
+- [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
 - [apiLoader](loaders.md#apiloader)
 - [authenticatedRoutesLoader](loaders.md#authenticatedroutesloader)
 - [databaseLoader](loaders.md#databaseloader)
@@ -42,6 +43,7 @@
 - [repositoriesLoader](loaders.md#repositoriesloader)
 - [servicesLoader](loaders.md#servicesloader)
 - [unauthenticatedRoutesLoader](loaders.md#unauthenticatedroutesloader)
+- [validatorsLoader](loaders.md#validatorsloader)
 
 ## References
 
@@ -159,6 +161,12 @@ Re-exports [Utils](../classes/utils.Utils.md)
 
 ___
 
+### ValidatorInjectionOptions
+
+Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
+
+___
+
 ### apiLoader
 
 Re-exports [apiLoader](loaders_api_loader.md#apiloader)
@@ -258,3 +266,9 @@ ___
 ### unauthenticatedRoutesLoader
 
 Re-exports [unauthenticatedRoutesLoader](loaders_routes_loader.md#unauthenticatedroutesloader)
+
+___
+
+### validatorsLoader
+
+Re-exports [validatorsLoader](loaders_validators_loader.md#validatorsloader)

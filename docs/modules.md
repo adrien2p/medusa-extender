@@ -25,6 +25,7 @@
 - [loaders/repository.loader](modules/loaders_repository_loader.md)
 - [loaders/routes.loader](modules/loaders_routes_loader.md)
 - [loaders/services.loader](modules/loaders_services_loader.md)
+- [loaders/validators.loader](modules/loaders_validators_loader.md)
 - [metadata-reader](modules/metadata_reader.md)
 - [types](modules/types.md)
 - [utils](modules/utils.md)

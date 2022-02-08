@@ -40,4 +40,8 @@ Function.constructor
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L6)
+=======
+[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L6)
+>>>>>>> 366e7bd... [BOT] BUILD DOC
