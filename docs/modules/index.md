@@ -129,7 +129,7 @@ ___
 
 ### Medusa
 
-Re-exports [Medusa](../classes/medusa.Medusa.md)
+Re-exports [Medusa](../classes/Medusa.Medusa-1.md)
 
 ___
 
@@ -278,4 +278,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/f472dcb/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/index.ts#L25)

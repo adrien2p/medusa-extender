@@ -1,7 +1,7 @@
 import loaders from '@medusajs/medusa/dist/loaders';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Type } from './types';
+import { Constructor } from './types';
 import { Utils } from './utils';
 import { metadataReader } from './metadata-reader';
 import {
@@ -22,33 +22,42 @@ declare global {
 }
 
 /**
- * @internal
  * Load medusa and apply all middlewares and migrations before registering the medusa
  * internal container and database connection.
  */
-export class Loader {
+export class Medusa {
+	readonly #express: Express;
+	readonly #rootDir: string;
+
 	/**
-	 * @param modules
-	 * @param rootDir Directory where `medusa-config` is located
+	 * @param rootDir Directory where the `medusa-config` is located
 	 * @param express Express instance
 	 */
-	public async load(modules: Type[], rootDir: string, express: Express): Promise<AwilixContainer> {
+	constructor(rootDir: string, express: Express) {
+		this.#express = express;
+		this.#rootDir = rootDir;
+	}
+
+	/**
+	 * @param modules
+	 */
+	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
 
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
-		await apiLoader(express, moduleComponentsOptions.get('middleware') ?? []);
+		await apiLoader(this.#express, moduleComponentsOptions.get('middleware') ?? []);
 		await databaseLoader(
 			moduleComponentsOptions.get('entity') ?? [],
 			moduleComponentsOptions.get('repository') ?? []
 		);
-		await pluginsLoadersAndListeners(express);
+		await pluginsLoadersAndListeners(this.#express);
 		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
-		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], express);
+		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], this.#express);
 
 		const { app, container, dbConnection } = await loaders({
-			directory: rootDir,
-			expressApp: express,
+			directory: this.#rootDir,
+			expressApp: this.#express,
 		});
 
 		authenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], app);
