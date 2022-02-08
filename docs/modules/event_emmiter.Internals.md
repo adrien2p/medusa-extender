@@ -41,6 +41,7 @@ A listener descriptor.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L9)
 =======
 [src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L9)
@@ -51,3 +52,9 @@ A listener descriptor.
 =======
 [src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L9)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L9)
+=======
+[src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L9)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

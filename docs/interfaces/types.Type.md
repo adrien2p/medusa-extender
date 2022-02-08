@@ -43,6 +43,7 @@ Function.constructor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L6)
 =======
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L6)
@@ -53,3 +54,9 @@ Function.constructor
 =======
 [src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L6)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L6)
+=======
+[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L6)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

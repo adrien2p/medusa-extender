@@ -288,6 +288,7 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
 =======
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/index.ts#L25)
@@ -298,3 +299,9 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 =======
 [src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/index.ts#L25)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/index.ts#L25)
+=======
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/index.ts#L25)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

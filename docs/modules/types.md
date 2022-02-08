@@ -56,6 +56,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L9)
 =======
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L9)
@@ -66,6 +67,12 @@
 =======
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L9)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L9)
+=======
+[src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L9)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -93,6 +100,7 @@ Defines the injection options for entities.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L19)
 =======
 [src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L19)
@@ -103,6 +111,12 @@ Defines the injection options for entities.
 =======
 [src/types.ts:26](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L26)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:26](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L26)
+=======
+[src/types.ts:19](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L19)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -123,6 +137,7 @@ Determine which options type it actually is depending on the component type.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:79](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L79)
 =======
 [src/types.ts:87](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L87)
@@ -133,6 +148,12 @@ Determine which options type it actually is depending on the component type.
 =======
 [src/types.ts:94](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L94)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:94](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L94)
+=======
+[src/types.ts:79](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L79)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -153,6 +174,7 @@ Determine which options type it actually is depending on the component type.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:100](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L100)
 =======
 [src/types.ts:110](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L110)
@@ -163,6 +185,12 @@ Determine which options type it actually is depending on the component type.
 =======
 [src/types.ts:117](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L117)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:117](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L117)
+=======
+[src/types.ts:100](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L100)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -177,6 +205,7 @@ Components that does not required any other options that Type.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L14)
 =======
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L14)
@@ -187,6 +216,12 @@ Components that does not required any other options that Type.
 =======
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L14)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L14)
+=======
+[src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L14)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -207,6 +242,7 @@ Union of all options type possible for injectable.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L69)
 =======
 [src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L76)
@@ -217,6 +253,12 @@ Union of all options type possible for injectable.
 =======
 [src/types.ts:83](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L83)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:83](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L83)
+=======
+[src/types.ts:69](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L69)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -231,6 +273,7 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L113)
 =======
 [src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L123)
@@ -241,6 +284,12 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 =======
 [src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L130)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L130)
+=======
+[src/types.ts:113](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L113)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -262,6 +311,7 @@ Medusa request extended.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:106](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L106)
 =======
 [src/types.ts:116](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L116)
@@ -272,6 +322,12 @@ Medusa request extended.
 =======
 [src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L123)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L123)
+=======
+[src/types.ts:106](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L106)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -281,6 +337,7 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -294,6 +351,12 @@ ___
 =======
 [src/types.ts:137](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L137)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:137](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L137)
+=======
+[src/types.ts:120](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L120)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -315,6 +378,7 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L125)
 =======
 [src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L135)
@@ -325,6 +389,12 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 =======
 [src/types.ts:142](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L142)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:142](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L142)
+=======
+[src/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L125)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -346,6 +416,7 @@ Defines the injection options for middlewares.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L61)
 =======
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L61)
@@ -356,6 +427,12 @@ Defines the injection options for middlewares.
 =======
 [src/types.ts:68](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L68)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:68](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L68)
+=======
+[src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L61)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -377,6 +454,7 @@ Mix the return type of two objects.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:143](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L143)
 =======
 [src/types.ts:153](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L153)
@@ -387,6 +465,12 @@ Mix the return type of two objects.
 =======
 [src/types.ts:160](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L160)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:160](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L160)
+=======
+[src/types.ts:143](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L143)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -414,6 +498,7 @@ Defines the injection options for services, entities, repositories.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L36)
 =======
 [src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L36)
@@ -424,6 +509,12 @@ Defines the injection options for services, entities, repositories.
 =======
 [src/types.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L43)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L43)
+=======
+[src/types.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L36)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -444,6 +535,7 @@ Defines the injection options for routes.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L54)
 =======
 [src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L54)
@@ -454,6 +546,12 @@ Defines the injection options for routes.
 =======
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L61)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L61)
+=======
+[src/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L54)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -477,6 +575,7 @@ Define a router and its configuration.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L44)
 =======
 [src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L44)
@@ -487,6 +586,12 @@ Define a router and its configuration.
 =======
 [src/types.ts:51](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L51)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:51](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L51)
+=======
+[src/types.ts:44](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L44)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -515,6 +620,7 @@ Defines the injection options for service.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L27)
 =======
 [src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L27)
@@ -522,6 +628,8 @@ Defines the injection options for service.
 [src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/0490090/src/types.ts#L27)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 [src/types.ts:34](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L34)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 
@@ -556,4 +664,10 @@ Defines the injection options for routes.
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 =======
 [src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L76)
+<<<<<<< HEAD
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+=======
+[src/types.ts:27](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L27)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

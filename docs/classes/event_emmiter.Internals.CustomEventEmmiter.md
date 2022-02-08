@@ -44,6 +44,7 @@ EventEmitter.constructor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L21)
 =======
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L21)
@@ -54,6 +55,12 @@ EventEmitter.constructor
 =======
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L21)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L21)
+=======
+[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L21)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ## Properties
 
@@ -63,6 +70,7 @@ EventEmitter.constructor
 
 #### Defined in
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -76,6 +84,12 @@ EventEmitter.constructor
 =======
 [src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L19)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L19)
+=======
+[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L19)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ## Methods
 
@@ -107,6 +121,7 @@ Emit an asynchrone event entity based and wait for the result.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L80)
 =======
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L80)
@@ -117,6 +132,12 @@ Emit an asynchrone event entity based and wait for the result.
 =======
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L80)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L80)
+=======
+[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L80)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -149,6 +170,7 @@ Register a new event handler.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L31)
 =======
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L31)
@@ -159,6 +181,12 @@ Register a new event handler.
 =======
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L31)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L31)
+=======
+[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L31)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -183,6 +211,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L43)
 =======
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L43)
@@ -193,6 +222,12 @@ Apply all event handlers hold by the `listenerDescriptor`.
 =======
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L43)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L43)
+=======
+[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L43)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -209,6 +244,7 @@ ___
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L68)
 =======
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/event-emmiter.ts#L68)
@@ -219,3 +255,9 @@ ___
 =======
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L68)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/event-emmiter.ts#L68)
+=======
+[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/event-emmiter.ts#L68)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

@@ -87,6 +87,7 @@ Map.get
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L5)
 =======
 [src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/metadata-reader.ts#L5)
@@ -97,3 +98,9 @@ Map.get
 =======
 [src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L5)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L5)
+=======
+[src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L5)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

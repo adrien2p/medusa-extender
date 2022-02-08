@@ -33,6 +33,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L5)
 =======
 [src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/entities.loader.ts#L5)
@@ -43,6 +44,12 @@
 =======
 [src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L5)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L5)
+=======
+[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L5)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -65,6 +72,7 @@ ___
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L16)
 =======
 [src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/entities.loader.ts#L16)
@@ -75,6 +83,12 @@ ___
 =======
 [src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L16)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L16)
+=======
+[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L16)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -100,6 +114,7 @@ Load custom entity and override existing ones.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L49)
 =======
 [src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/entities.loader.ts#L49)
@@ -110,6 +125,12 @@ Load custom entity and override existing ones.
 =======
 [src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L49)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L49)
+=======
+[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L49)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
 
 ___
 
@@ -136,6 +157,7 @@ Load custom entity into the container.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L30)
 =======
 [src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/entities.loader.ts#L30)
@@ -146,3 +168,9 @@ Load custom entity into the container.
 =======
 [src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L30)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/entities.loader.ts#L30)
+=======
+[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/entities.loader.ts#L30)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

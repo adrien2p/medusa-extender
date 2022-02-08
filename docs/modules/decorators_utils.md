@@ -35,6 +35,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/utils.ts#L4)
@@ -45,3 +46,9 @@
 =======
 [src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/utils.ts#L4)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/utils.ts#L4)
+=======
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/utils.ts#L4)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

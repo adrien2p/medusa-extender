@@ -49,6 +49,7 @@ Describe a custom middleware instance.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L135)
 =======
 [src/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/types.ts#L145)
@@ -59,3 +60,9 @@ Describe a custom middleware instance.
 =======
 [src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L152)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/types.ts#L152)
+=======
+[src/types.ts:135](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/types.ts#L135)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section

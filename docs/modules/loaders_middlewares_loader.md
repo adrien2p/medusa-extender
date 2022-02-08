@@ -34,6 +34,7 @@ Register custom middlewares into the middlewareRegistery.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/middlewares.loader.ts#L13)
 =======
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/middlewares.loader.ts#L13)
@@ -44,3 +45,9 @@ Register custom middlewares into the middlewareRegistery.
 =======
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/middlewares.loader.ts#L13)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/middlewares.loader.ts#L13)
+=======
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/middlewares.loader.ts#L13)
+>>>>>>> 26ad56d... Feat() Update README decorators section
+>>>>>>> 7a00f8d... Feat() Update README decorators section
