@@ -31,6 +31,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/database.loader.ts#L5)
@@ -42,8 +43,16 @@
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/database.loader.ts#L5)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/database.loader.ts#L5)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/database.loader.ts#L5)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator

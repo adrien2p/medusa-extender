@@ -4,8 +4,12 @@ import {
 	RepositoryInjectableOptions,
 	RouterInjectionOptions,
 	ServiceInjectableOptions,
+<<<<<<< HEAD
 	buildComponentDecorator,
 	ValidatorInjectionOptions,
+=======
+	buildComponentDecorator, ValidatorInjectionOptions,
+>>>>>>> b652414... Feat() Add support to extends validator
 } from './';
 
 /**

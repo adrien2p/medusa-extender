@@ -44,6 +44,7 @@ Mark a class as an entity to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L15)
 =======
 [src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L15)
@@ -55,11 +56,19 @@ Mark a class as an entity to be used by the loader.
 [src/decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L16)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L16)
 =======
 [src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L15)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L15)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -85,6 +94,7 @@ Mark a class as a middleware to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L42)
 =======
 [src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L42)
@@ -96,11 +106,19 @@ Mark a class as a middleware to be used by the loader.
 [src/decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L43)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L43)
 =======
 [src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L42)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L42)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -120,6 +138,7 @@ Mark a class as a migration to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L50)
 =======
 [src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L50)
@@ -131,11 +150,19 @@ Mark a class as a migration to be used by the loader.
 [src/decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L51)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L51)
 =======
 [src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L50)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L50)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -167,6 +194,7 @@ Mark a class as a repository to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L33)
 =======
 [src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L33)
@@ -178,11 +206,19 @@ Mark a class as a repository to be used by the loader.
 [src/decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L34)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L34)
 =======
 [src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L33)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L33)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -208,6 +244,7 @@ Mark a class as a router to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L59)
 =======
 [src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L59)
@@ -219,11 +256,19 @@ Mark a class as a router to be used by the loader.
 [src/decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L60)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L60)
 =======
 [src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L59)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L59)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -255,6 +300,7 @@ Mark a class as a service to be used by the loader.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L24)
 =======
 [src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L24)
@@ -266,6 +312,12 @@ Mark a class as a service to be used by the loader.
 >>>>>>> 7a00f8d... Feat() Update README decorators section
 [src/decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L25)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
+=======
+[src/decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L25)
+=======
+[src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L24)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -289,12 +341,15 @@ Mark a class as a validator to be used by the validator utility.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:68](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/decorators/components.decorator.ts#L68)
 >>>>>>> 366e7bd... [BOT] BUILD DOC
 =======
 [src/decorators/components.decorator.ts:68](https://github.com/adrien2p/medusa-extender/blob/0490090/src/decorators/components.decorator.ts#L68)
 >>>>>>> 1f752f6... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/decorators/components.decorator.ts#L69)
 <<<<<<< HEAD
 >>>>>>> 92fcc31... [BOT] BUILD DOC
@@ -302,4 +357,10 @@ Mark a class as a validator to be used by the validator utility.
 =======
 [src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/decorators/components.decorator.ts#L24)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/decorators/components.decorator.ts:68](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/decorators/components.decorator.ts#L68)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator

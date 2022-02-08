@@ -37,6 +37,7 @@ Load custom service and override existing ones.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L55)
@@ -48,11 +49,19 @@ Load custom service and override existing ones.
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L55)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L55)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L55)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -81,6 +90,7 @@ Load custom service into the container.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L31)
@@ -92,11 +102,19 @@ Load custom service into the container.
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L31)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L31)
 =======
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L31)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L31)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -123,6 +141,7 @@ Load custom services from the rootDir.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/loaders/services.loader.ts#L9)
@@ -134,8 +153,16 @@ Load custom services from the rootDir.
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L9)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/loaders/services.loader.ts#L9)
 =======
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/loaders/services.loader.ts#L9)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/loaders/services.loader.ts#L9)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator

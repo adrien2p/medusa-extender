@@ -44,6 +44,7 @@ Return the options from components.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L36)
 =======
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/metadata-reader.ts#L36)
@@ -55,11 +56,19 @@ Return the options from components.
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L36)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L36)
 =======
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L36)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/metadata-reader.ts#L36)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
 
 ___
 
@@ -85,6 +94,7 @@ Read all metadata from the imported modules and extract components that will be 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L14)
 =======
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/23cd201/src/metadata-reader.ts#L14)
@@ -96,8 +106,16 @@ Read all metadata from the imported modules and extract components that will be 
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L14)
 >>>>>>> 92fcc31... [BOT] BUILD DOC
 =======
+=======
+>>>>>>> b3bba94... Feat() Add support to extends validator
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/7e89c01/src/metadata-reader.ts#L14)
 =======
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/metadata-reader.ts#L14)
 >>>>>>> 26ad56d... Feat() Update README decorators section
+<<<<<<< HEAD
 >>>>>>> 7a00f8d... Feat() Update README decorators section
+=======
+=======
+[src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/834fee1/src/metadata-reader.ts#L14)
+>>>>>>> b652414... Feat() Add support to extends validator
+>>>>>>> b3bba94... Feat() Add support to extends validator
