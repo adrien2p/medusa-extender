@@ -67,6 +67,7 @@
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "awilix": "^6.1.0",
+    "class-validator": "^0.13.1",
     "core-js": "^3.21.0",
     "docsify": "^4.12.2",
     "eslint": "^8.8.0",

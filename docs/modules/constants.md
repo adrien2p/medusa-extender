@@ -20,7 +20,11 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L9)
+=======
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L9)
+>>>>>>> 23cd201... Feat() Add support to extends validator
 
 ___
 
@@ -66,7 +70,11 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L14)
+=======
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L14)
+>>>>>>> 23cd201... Feat() Add support to extends validator
 
 ___
 
@@ -78,4 +86,8 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/constants.ts#L4)
+=======
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/constants.ts#L4)
+>>>>>>> 23cd201... Feat() Add support to extends validator

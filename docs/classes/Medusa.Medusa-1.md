@@ -37,7 +37,11 @@ internal container and database connection.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L36)
+=======
+[src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/Medusa.ts#L36)
+>>>>>>> 23cd201... Feat() Add support to extends validator
 
 ## Properties
 
@@ -47,7 +51,11 @@ internal container and database connection.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L29)
+=======
+[src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/Medusa.ts#L29)
+>>>>>>> 23cd201... Feat() Add support to extends validator
 
 ___
 
@@ -57,7 +65,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L30)
+=======
+[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/Medusa.ts#L30)
+>>>>>>> 23cd201... Feat() Add support to extends validator
 
 ## Methods
 
@@ -77,4 +89,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/89f7223/src/Medusa.ts#L44)
+=======
+[src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/c048da3/src/Medusa.ts#L44)
+>>>>>>> 23cd201... Feat() Add support to extends validator
