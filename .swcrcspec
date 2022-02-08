@@ -24,6 +24,6 @@
     "strict": true,
     "strictMode": true,
     "lazy": false,
-    "noInterop": true
+    "noInterop": false
   }
 }
