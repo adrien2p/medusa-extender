@@ -285,4 +285,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/index.ts#L25)
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/f9bbca9/src/index.ts#L25)

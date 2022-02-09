@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/validators.loader.ts#L4)
+[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/f9bbca9/src/loaders/validators.loader.ts#L4)
