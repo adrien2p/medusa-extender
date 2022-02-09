@@ -59,12 +59,27 @@ medusa-extender / [Exports](modules.md)
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
     - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 - [Usage](#usage)
+<<<<<<< HEAD
     - [Extending an existing feature](#extending-an-existing-feature)
     - [Create a custom feature module](#create-a-custom-feature-module)
     - [Build a shareable module](#build-a-shareable-module)
     - [Use custom configuration inside service](#use-custom-configuration-inside-service)
     - [Integration in an existing medusa project](#integration-in-an-existing-medusa-project)
 - [Decorators API](#decorators-api)
+=======
+    - [Create your server](#create-your-server)
+    - [Create your first module](#create-your-first-module-rocket)
+        - [Entity](#entity)
+        - [Migration](#migration)
+        - [Repository](#repository)
+        - [Service](#service)
+        - [Middleware](#middleware)
+        - [Router](#router)
+        - [Validator](#validator)
+        - [Module](#module)
+- [Decorators](#decorators)
+- [Entity event handling](#entity-event-handling)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 # Getting started
 
@@ -329,7 +344,35 @@ export default class addCustomFieldToProduct1611063162649 implements MigrationIn
 ```
 </details>
 
+<<<<<<< HEAD
 ### Step 6: Wrapping everything in a module
+=======
+### Validator
+
+If you add a custom field on an entity, there is a huge risk that you end up getting
+an error as soon as you it the end point with that new field. The medusa validators
+are not aware of your new field once the request arrive. In order to handle that
+you can extend the class validator in order to add your custom field constraint.
+
+<details>
+<summary>Click to see the example!</summary>
+
+```typescript
+// modules/product/AdminPostProductsReq.validator.ts
+
+import { Validator } from 'medusa-extender';
+import { AdminPostProductsReq } from "@medusajs/medusa/dist";
+
+@Validator({ override: AdminPostProductsReq })
+class ExtendedClassValidator extends AdminPostProductsReq {
+    @IsString()
+    customField: string;
+}
+```
+</details>
+
+### Module
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 Now that we have done the job, we will import the entity, repository and service into a module
 that will be loaded by Medusa.
@@ -356,8 +399,15 @@ import { addCustomFieldToProduct1611063162649 } from './customField.migration';
         Product,
         ProductRepository,
         ProductService,
+<<<<<<< HEAD
         ExtendedClassValidator,
         addCustomFieldToProduct1611063162649
+=======
+        ProductRouter,
+        CustomMiddleware,
+        AddFieldToProduct1611063162649,
+        ExtendedClassValidator
+>>>>>>> 51e6b4d... feat: Add support of commitlint
     ]
 })
 export class ProductModule {}

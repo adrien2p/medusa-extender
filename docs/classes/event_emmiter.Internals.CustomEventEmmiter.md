@@ -41,7 +41,11 @@ EventEmitter.constructor
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L21)
+=======
+[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L21)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ## Properties
 
@@ -51,7 +55,11 @@ EventEmitter.constructor
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L19)
+=======
+[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L19)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ## Methods
 
@@ -80,7 +88,11 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L80)
+=======
+[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L80)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -110,7 +122,11 @@ Register a new event handler.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L31)
+=======
+[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L31)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -132,7 +148,11 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L43)
+=======
+[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L43)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -146,4 +166,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L68)
+=======
+[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L68)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

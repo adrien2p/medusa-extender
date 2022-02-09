@@ -29,7 +29,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/repository.loader.ts#L16)
+=======
+[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/repository.loader.ts#L16)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -52,7 +56,11 @@ Load custom repositories and override existing ones.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/repository.loader.ts#L48)
+=======
+[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/repository.loader.ts#L48)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -76,7 +84,11 @@ Load custom repository into the container.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/repository.loader.ts#L30)
+=======
+[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/repository.loader.ts#L30)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -97,4 +109,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/repository.loader.ts#L5)
+=======
+[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/repository.loader.ts#L5)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

@@ -26,4 +26,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/validators.loader.ts#L4)
+=======
+[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/validators.loader.ts#L4)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

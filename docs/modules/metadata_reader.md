@@ -40,7 +40,11 @@ Return the options from components.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/metadata-reader.ts#L36)
+=======
+[src/metadata-reader.ts:36](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/metadata-reader.ts#L36)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -62,4 +66,8 @@ Read all metadata from the imported modules and extract components that will be 
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/metadata-reader.ts#L14)
+=======
+[src/metadata-reader.ts:14](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/metadata-reader.ts#L14)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

@@ -23,4 +23,8 @@ Export the instance of the event emmiter.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L102)
+=======
+[src/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L102)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

@@ -30,4 +30,8 @@ Decorate the original api loader to apply our custom middleware first.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/api.loader.ts#L12)
+=======
+[src/loaders/api.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/api.loader.ts#L12)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

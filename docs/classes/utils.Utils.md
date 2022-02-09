@@ -56,7 +56,11 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:36](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L36)
+=======
+[src/utils.ts:36](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L36)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -80,7 +84,11 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L67)
+=======
+[src/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L67)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -102,7 +110,11 @@ Log all the routes from the express instance.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:57](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L57)
+=======
+[src/utils.ts:57](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L57)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -123,7 +135,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L81)
+=======
+[src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L81)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -153,7 +169,11 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L16)
+=======
+[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L16)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -173,4 +193,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/utils.ts#L101)
+=======
+[src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/utils.ts#L101)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

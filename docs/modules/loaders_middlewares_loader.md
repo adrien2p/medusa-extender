@@ -31,4 +31,8 @@ Register custom middlewares into the middlewareRegistery.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/middlewares.loader.ts#L13)
+=======
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/middlewares.loader.ts#L13)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

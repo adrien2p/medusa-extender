@@ -37,7 +37,11 @@ internal container and database connection.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/Medusa.ts#L37)
+=======
+[src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/Medusa.ts#L37)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ## Properties
 
@@ -47,7 +51,11 @@ internal container and database connection.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/Medusa.ts#L30)
+=======
+[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/Medusa.ts#L30)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -57,7 +65,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/Medusa.ts#L31)
+=======
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/Medusa.ts#L31)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ## Methods
 
@@ -77,4 +89,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/Medusa.ts#L45)
+=======
+[src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/Medusa.ts#L45)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

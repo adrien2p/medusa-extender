@@ -53,7 +53,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L9)
+=======
+[src/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L9)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -78,7 +82,11 @@ Defines the injection options for entities.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:26](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L26)
+=======
+[src/types.ts:26](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L26)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -96,7 +104,11 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:94](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L94)
+=======
+[src/types.ts:94](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L94)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -114,7 +126,11 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:117](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L117)
+=======
+[src/types.ts:117](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L117)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -126,7 +142,11 @@ Components that does not required any other options that Type.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L14)
+=======
+[src/types.ts:14](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L14)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -144,7 +164,11 @@ Union of all options type possible for injectable.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:83](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L83)
+=======
+[src/types.ts:83](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L83)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -156,7 +180,11 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L130)
+=======
+[src/types.ts:130](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L130)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -175,7 +203,11 @@ Medusa request extended.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L123)
+=======
+[src/types.ts:123](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L123)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -185,7 +217,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:137](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L137)
+=======
+[src/types.ts:137](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L137)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -204,7 +240,11 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:142](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L142)
+=======
+[src/types.ts:142](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L142)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -223,7 +263,11 @@ Defines the injection options for middlewares.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:68](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L68)
+=======
+[src/types.ts:68](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L68)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -242,7 +286,11 @@ Mix the return type of two objects.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:160](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L160)
+=======
+[src/types.ts:160](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L160)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -267,7 +315,11 @@ Defines the injection options for services, entities, repositories.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:43](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L43)
+=======
+[src/types.ts:43](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L43)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -285,7 +337,11 @@ Defines the injection options for routes.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L61)
+=======
+[src/types.ts:61](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L61)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -306,7 +362,11 @@ Define a router and its configuration.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:51](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L51)
+=======
+[src/types.ts:51](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L51)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -332,7 +392,11 @@ Defines the injection options for service.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:34](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L34)
+=======
+[src/types.ts:34](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L34)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -356,4 +420,8 @@ Defines the injection options for routes.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L76)
+=======
+[src/types.ts:76](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L76)
+>>>>>>> 51e6b4d... feat: Add support of commitlint

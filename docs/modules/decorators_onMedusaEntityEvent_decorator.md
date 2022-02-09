@@ -24,7 +24,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/onMedusaEntityEvent.decorator.ts#L11)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -41,7 +45,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:6](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/onMedusaEntityEvent.decorator.ts#L6)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -60,7 +68,11 @@ Event types that can be emitted.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/onMedusaEntityEvent.decorator.ts#L16)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -86,7 +98,11 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/onMedusaEntityEvent.decorator.ts#L25)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
 
 ___
 
@@ -112,4 +128,8 @@ The arguments expected by the event handler.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/onMedusaEntityEvent.decorator.ts#L33)
+>>>>>>> 51e6b4d... feat: Add support of commitlint
