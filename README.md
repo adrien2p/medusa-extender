@@ -75,7 +75,7 @@ npm i medusa-extender
 
 # Code base overview
 
-<img src="https://github.com/adrien2p/medusa-extender/blob/assets/medusa-extender.jpeg" alt="Dependency graph" />
+<img src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/medusa-extender.jpeg" alt="Dependency graph" />
 
 # Features
 
