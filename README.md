@@ -75,7 +75,7 @@ npm i medusa-extender
 # Code base overview
 
 <img src="/assets/medusa-extender.jpeg"
-     onerror="if (this.src != '/media/medusa-extender.jpeg') this.src = '/media/medusa-extender.jpeg';"
+     onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
      alt="Dependency graph" />
 
 # Features
@@ -135,7 +135,7 @@ I will organise my files in the following manner
 (You can organise it as you want, there is no restrictions to your architecture).
 
 <img width='75%' src="/assets/readme/scenario-1-architecture.png"
-     onerror="if (this.src != '/media/readme/scenario-1-architecture.png') this.src = '/media/readme/scenario-1-architecture.png';"
+     onerror="if (this.src != './media/readme/scenario-1-architecture.png') this.src = './media/readme/scenario-1-architecture.png';"
      alt="Scenario 1 module architecture" />
 
 ## Extending an existing feature
@@ -161,10 +161,11 @@ The idea here, is that we will import the medusa product entity that we will ext
 order to add our new field. Of course, you can do everything typeorm provides (if you need to add a custom relationships, then follow the typeorm doc.).
 
 <img width='75%' src="/assets/readme/src-modules-product-product-entity.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-product-entity.png') this.src = '/media/readme/src-modules-product-product-entity.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-product-entity.png') this.src = './media/readme/src-modules-product-product-entity.png';"
      alt="Step 1 Extend the product entity" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -181,6 +182,7 @@ export class Product extends MedusaProduct {
     customField: string;
 }
 ```
+
 </details>
 
 ### Step 2: Extend the product repository
@@ -189,10 +191,11 @@ The idea here, is that we will import the medusa product repository that we will
 order to reflect our custom entity.
 
 <img width='75%' src="/assets/readme/src-modules-product-product-repository.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-product-repository.png') this.src = '/media/readme/src-modules-product-product-repository.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-product-repository.png') this.src = './media/readme/src-modules-product-product-repository.png';"
      alt="Step 2: Extend the product repository" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -209,6 +212,7 @@ export class ProductRepository extends Utils.repositoryMixin<Product, MedusaProd
     /* You can implement custom repository methods here. */
 }
 ```
+
 </details>
 
 ### Step 3: Extend the product service to manage our custom entity field
@@ -218,10 +222,11 @@ order to override the product creation method of the base class in order to take
 of our extended product entity.
 
 <img width='75%' src="/assets/readme/src-modules-product-product-service.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-product-service.png') this.src = '/media/readme/src-modules-product-product-service.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-product-service.png') this.src = './media/readme/src-modules-product-product-service.png';"
      alt="Step 3: Extend the product service" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -268,6 +273,7 @@ export class ProductService extends MedusaProductService {
     }
 }
 ```
+
 </details>
 
 ### Step 4: Extend the product validator class to reflect the new field
@@ -277,10 +283,11 @@ about it. In order to handle that, it is possible to extend the validator to add
 the constraint on the new custom field.
 
 <img width='75%' src="/assets/readme/src-modules-product-adminPostProductsReq-validator.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-adminPostProductsReq-validator.png') this.src = '/media/readme/src-modules-product-adminPostProductsReq-validator.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-adminPostProductsReq-validator.png') this.src = './media/readme/src-modules-product-adminPostProductsReq-validator.png';"
      alt="Step 4: Extend the product validator class to reflect the new field" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -292,6 +299,7 @@ class ExtendedClassValidator extends AdminPostProductsReq {
   customField: string;
 }
 ```
+
 </details>
 
 ### Step 5: Create the migration
@@ -300,10 +308,11 @@ To persist your custom field, you need to add it to the corresponding table.
 As normal, write a new migration, except this time, you decorate it with the `@Migration()` decorator.
 
 <img width='75%' src="/assets/readme/src-modules-product-customField-migration.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-customField-migration.png') this.src = '/media/readme/src-modules-product-customField-migration.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-customField-migration.png') this.src = './media/readme/src-modules-product-customField-migration.png';"
      alt="Step 5: Create the migration" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -325,6 +334,7 @@ export default class addCustomFieldToProduct1611063162649 implements MigrationIn
     }
 }
 ```
+
 </details>
 
 ### Step 6: Wrapping everything in a module
@@ -333,10 +343,11 @@ Now that we have done the job, we will import the entity, repository and service
 that will be loaded by Medusa.
 
 <img width='75%' src="/assets/readme/src-modules-product-product-module.png"
-     onerror="if (this.src != '/media/readme/src-modules-product-product-module.png') this.src = '/media/readme/src-modules-product-product-module.png';"
+     onerror="if (this.src != './media/readme/src-modules-product-product-module.png') this.src = './media/readme/src-modules-product-product-module.png';"
      alt="Step 4: Create the product module" />
      
 <details>
+
 <summary>Click to see the raw example!</summary>
   
 ```typescript
@@ -360,6 +371,7 @@ import { addCustomFieldToProduct1611063162649 } from './customField.migration';
 })
 export class ProductModule {}
 ```
+
 </details>
 
 ## Handling entity subscribers
@@ -370,6 +382,7 @@ your entity subscriber and to be able to handle those events easily.
 To be able to achieve this, here is an example.
 
 <details>
+
 <summary>Click to see the example!</summary>
 
 ```typescript
@@ -401,11 +414,13 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
 }
 ```
+
 </details>
 
 And then create a new handler.
 
 <details>
+
 <summary>Click to see the example!</summary>
 
 ```typescript
@@ -435,12 +450,14 @@ export default class ProductService extends MedusaProductService {
     }
 }
 ```
+
 </details>
 
 And finally, we need to add the subscriber to the connection. There are different ways to achieve
 this. We will see, as an example below, a way to attach a request scoped subscribers.
 
 <details>
+
 <summary>Click to see the example!</summary>
 
 ```typescript
@@ -496,11 +513,13 @@ export default class AttachProductSubscribersMiddleware {
 }
 
 ```
+
 </details>
 
 Now, you only need to add that middleware to the previous module we've created.
 
 <details>
+
 <summary>Click to see the example!</summary>
 
 ```typescript
@@ -517,6 +536,7 @@ import { AttachProductSubscribersMiddleware } from './attachSubscriber.middlewar
 })
 export class ProductModule {}
 ```
+
 </details>
 
 ## Create a custom feature module
