@@ -1,6 +1,6 @@
 {
   "name": "medusa-extender",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": " :syringe: Medusa on steroid. Extends Typeorm entities and repositories, medusa core services and so on. Get the full power of modular architecture. Keep your domains clean. Build shareable modules :rocket:",
   "keywords": [
     "medusa",
