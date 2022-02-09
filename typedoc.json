@@ -11,7 +11,6 @@
     "**/.*.e2e.ts"
   ],
   "internalNamespace": "Internals",
-  "media": "./assets",
   "darkHighlightTheme": "dark-plus",
   "out": "./docs",
   "logLevel": "Verbose"
