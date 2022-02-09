@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/adrien2p/medusa-extender/compare/v1.1.3...v1.1.4) (2022-02-09)
+
+
+### Features
+
+* Move all project assets to an orphan branch (assets) ([bd48723](https://github.com/adrien2p/medusa-extender/commits/bd48723f504366e5d54e7e4f1457550f4cbe9f5f))
+
+
+### Bug Fixes
+
+* action workflow ([7801459](https://github.com/adrien2p/medusa-extender/commits/78014593f84a13ebaaa868e40fc32f6f6d4877a8))
+* Broken link for graph dependencies in README ([99b0a79](https://github.com/adrien2p/medusa-extender/commits/99b0a79157c2a73f686c22851721d50b2e0b6fe6))
+* Dedent action workflow ([001b3e8](https://github.com/adrien2p/medusa-extender/commits/001b3e8534179cace8b7b10c9345c4c0c19aee4e))
+
 ### [1.1.3](https://github.com/adrien2p/medusa-extender/compare/v1.1.2...v1.1.3) (2022-02-09)
 
 ### [1.1.2](https://github.com/adrien2p/medusa-extender/compare/v1.1.1...v1.1.2) (2022-02-09)
