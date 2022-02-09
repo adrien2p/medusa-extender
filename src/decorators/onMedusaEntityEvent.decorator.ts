@@ -3,9 +3,9 @@ import { Type } from './';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
 import { eventEmitter } from '../';
 
-export type EntityEventActionOptions<T> = {
+export type EntityEventActionOptions = {
 	async: boolean;
-	metatype?: Type<T>;
+	metatype?: Type;
 };
 
 export type EntityActions = 'Insert' | 'Update' | 'Remove';
@@ -69,21 +69,21 @@ export class OnMedusaEntityEvent {
 
 	public Insert<TEntity extends Type>(
 		entity: TEntity,
-		options: EntityEventActionOptions<TEntity> = { async: false }
+		options: EntityEventActionOptions = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Insert', entity, options);
 	}
 
 	public Update<TEntity extends Type>(
 		entity: TEntity,
-		options: EntityEventActionOptions<TEntity> = { async: false }
+		options: EntityEventActionOptions = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Update', entity, options);
 	}
 
 	public Remove<TEntity extends Type>(
 		entity: TEntity,
-		options: EntityEventActionOptions<TEntity> = { async: false }
+		options: EntityEventActionOptions = { async: false }
 	): MethodDecorator {
 		return this.buildDecorator('Remove', entity, options);
 	}
@@ -91,7 +91,7 @@ export class OnMedusaEntityEvent {
 	private buildDecorator<TEntity extends Type>(
 		action: EntityActions,
 		entity: TEntity,
-		options: EntityEventActionOptions<TEntity> = { async: false }
+		options: EntityEventActionOptions = { async: false }
 	) {
 		this.#targetEntity = entity;
 		return OnMedusaEntityEventDecorator(`${this.#when}${action}${entity.name}`, entity, options);

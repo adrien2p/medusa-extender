@@ -56,7 +56,11 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:36](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L36)
+=======
+[src/utils.ts:38](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L38)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -80,7 +84,11 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L67)
+=======
+[src/utils.ts:69](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L69)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -102,7 +110,11 @@ Log all the routes from the express instance.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:57](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L57)
+=======
+[src/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L59)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -123,7 +135,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L81)
+=======
+[src/utils.ts:83](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L83)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -153,7 +169,11 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L16)
+=======
+[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L16)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -173,4 +193,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/utils.ts#L101)
+=======
+[src/utils.ts:103](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/utils.ts#L103)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity

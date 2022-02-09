@@ -6,11 +6,11 @@ medusa-extender / [Exports](modules.md)
     <img alt="Medusa" src="https://uploads-ssl.webflow.com/61fba9f6deac297b7b22017d/62000006ce573a706c92546c_logo.svg" width="200" />
   </p>
   
-  <h1>Extend medusa to fit your needs</h1>
+  <h1>Extend medusa badass features</h1>
   
   <p>
-        Did ever though about adding custom fields? Did you ever wonder how to add some custom features?
-        Did you ever wanted to build something more than a single store?
+        Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one
+        in a module way? Did you ever wanted to build something more than a single store?
         Well, this project has been made to help you reach you goal. It is now possible to customise
         Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you
         but with the possibility to take your e-commerce project to the next level :rocket:
@@ -29,6 +29,12 @@ medusa-extender / [Exports](modules.md)
   <img src="./assets/coverage/badge-statements.svg" onerror="if (this.src != './media/coverage/badge-statements.svg') this.src = './media/coverage/badge-statements.svg';" alt="coverage" height="18">
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/LICENSE"><img src="https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat-square" alt="licence" height="18"></a>
   <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender"><img src="https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on" alt="twitter" height="18"></a>
+  <a href="https://discord.gg/xpCwq3Kfn8">
+    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
+  </a>
+  <a href="https://github.com/adrien2p/medusa-extender/blob/main/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
+  </a>
   
 </div>
 
@@ -46,12 +52,14 @@ medusa-extender / [Exports](modules.md)
 # Table of contents
 
 - [Getting started](#getting-started)
+- [Full documentation including API](https://adrien2p.github.io/medusa-extender/#/)
 - [Code base overview](#code-base-overview)
 - [Features](#features)
 - Starters
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
     - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 - [Usage](#usage)
+<<<<<<< HEAD
     - [Create your server](#create-your-server)
     - [Create your first module](#create-your-first-module-rocket)
         - [Entity](#entity)
@@ -64,10 +72,18 @@ medusa-extender / [Exports](modules.md)
         - [Module](#module)
 - [Decorators](#decorators)
 - [Entity event handling](#entity-event-handling)
+=======
+    - [Extending an existing feature](#extending-an-existing-feature)
+    - [Create a custom feature module](#create-a-custom-feature-module)
+    - [Build a shareable module](#build-a-shareable-module)
+    - [Use custom configuration inside service](#use-custom-configuration-inside-service)
+    - [Integration in an existing medusa project](#integration-in-an-existing-medusa-project)
+- [Decorators API](#decorators-api)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 # Getting started
 
-Installation
+> The usage of the extender does not break any features from the original medusa.
 
 ```bash
 npm i medusa-extender
@@ -89,7 +105,7 @@ npm i medusa-extender
 
 >  You can organize your code as modules and group your modules by domains.
 
-- :tada: Create or extend entities
+- :tada: Create or extend entities (Custom fields)
 
 > Some of the problems that developers encounter are that when you want to add custom fields
 > to an entity, it is not that easy. You can't extend a typeorm entity and adding custom
@@ -107,17 +123,21 @@ npm i medusa-extender
 > In order for that repository to reflect your extended entities, while still getting access to the base repository methods,
 > you are provided with the right tools to do so.
 
-- :tada: Create custom middlewares to apply before/after authentication
+- :tada: Create custom middlewares that are applied before/after authentication
 
 > Do you want to apply custom middlewares to load data on the requests or add some custom
 > checks or any other situations? Then what are you waiting for?
 
-- :tada: Create custom route and attach custom service to handle it.
+- :tada: Create custom route and attach custom handler to it.
 
 > Do you need to add new routes for new features? Do you want to receive webhooks?
-> It is easy to do it now.
+> Create a new route, attach an handler and enjoy.
 
-- :bulb: Handle entity events from subscribers as easily as possible through the provided decorators.
+- :tada: Override existing validators.
+
+> Really useful when your adding custom fields.
+
+- :bulb: Handle entity events from subscribers as smoothly as possible.
 
 > Emit an event (async/sync) from your subscriber and then register a new handler in any of your files. Just use the `OnMedusaEntityEvent` decorator.
 
@@ -127,98 +147,81 @@ npm i medusa-extender
 
 # Usage
 
-## Create your server
+For the purpose of the examples that will follow in the next sections,
+I will organise my files in the following manner 
+(You can organise it as you want, there is no restrictions to your architecture).
 
+<img width='75%' src="/assets/readme/scenario-1-architecture.png"
+     onerror="if (this.src != '/media/readme/scenario-1-architecture.png') this.src = '/media/readme/scenario-1-architecture.png';"
+     alt="Scenario 1 module architecture" />
+
+## Extending an existing feature
+
+Let's create a scenario.
+
+> As a user, I want to add a new field to the existing product entity to manage some custom data.
+> For that I will need:
+>
+> - To extend an entity (for the example we will use the product);
+> - To extend the custom repository in order to reflect the extended entity through the repository;
+> - To extend the service, in order to take that new field in count;
+> - To create a validator that will extend and existing one to add the custom field.
+> - To create a migration that will add the field in the database.
+>
+> For the purpose of the example, I will want to be able to register an handler on an entity event that I will implement in
+> the extended service. That subscriber will be request scoped, which means a middleware
+> will attach the subscriber to the connection for each request (This is only for the purpose of showing some features).
+
+### Step 1: Extend the product entity
+
+The idea here, is that we will import the medusa product entity that we will extend in
+order to add our new field. Of course, you can do everything typeorm provides (if you need to add a custom relationships, then follow the typeorm doc.).
+
+<img width='75%' src="/assets/readme/src-modules-product-product-entity.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-product-entity.png') this.src = '/media/readme/src-modules-product-product-entity.png';"
+     alt="Step 1 Extend the product entity" />
+     
 <details>
-<summary>Click to see the example!</summary>
+<summary>Click to see the raw example!</summary>
   
 ```typescript
-// index.ts
-import { MyModule } from './modules/myModule/myModule.module';
+// src/modules/product/product.entity.ts
 
-async function bootstrap() {
-    const expressInstance = express();
-    
-    const rootDir = resolve(__dirname);
-    await new Medusa(rootDir, expressInstance).load(MyModule);
-    
-    expressInstance.listen(config.serverConfig.port, () => {
-        logger.info('Server successfully started on port ' + config.serverConfig.port);
-    });
-}
-
-bootstrap();
-```
-</details>
-
-## Create your first module :rocket:
-
-### Entity
-
-Let's say that you want to add a new field on the `Product` entity.
-<details>
-<summary>Click to see the example!</summary>
-
-```typescript
-// modules/product/product.entity.ts
-
-import { Product as MedusaProduct } from '@medusa/medusa/dist'; 
 import { Column, Entity } from "typeorm"; 
+import { Product as MedusaProduct } from '@medusa/medusa/dist';
 import { Entity as MedusaEntity } from "medusa-extender";
-//...
 
 @MedusaEntity({ override: MedusaProduct })
 @Entity()
-class Product extends MedusaProduct {
+export class Product extends MedusaProduct {
     @Column()
     customField: string;
 }
 ```
 </details>
 
-### Migration
+### Step 2: Extend the product repository
 
-After have updated your entity, you will have to migrate the database in order to reflect the new fields.
+The idea here, is that we will import the medusa product repository that we will extend in
+order to reflect our custom entity.
 
+<img width='75%' src="/assets/readme/src-modules-product-product-repository.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-product-repository.png') this.src = '/media/readme/src-modules-product-product-repository.png';"
+     alt="Step 2: Extend the product repository" />
+     
 <details>
-<summary>Click to see the example!</summary>
-
+<summary>Click to see the raw example!</summary>
+  
 ```typescript
-// modules/product/20211126000001-add-field-to-product
+// src/modules/product/product.repository.ts
 
-import { MigrationInterface, QueryRunner } from 'typeorm';
-import { Migration } from 'medusa-extender';
-
-@Migration()
-export default class AddFieldToProduct1611063162649 implements MigrationInterface {
-    name = 'addFieldToProduct1611063162649';
-
-    public async up(queryRunner: QueryRunner): Promise<void> {
-    }
-
-    public async down(queryRunner: QueryRunner): Promise<void> {
-    }
-}
-```
-</details>
-
-### Repository
-
-We will then create a new repository to reflect our custom entity.
-
-<details>
-<summary>Click to see the example!</summary>
-
-```typescript
-// modules/product/product.repository.ts
-
-import { OrderRepository as MedusaOrderRepository } from '@medusa/medusa/dist/repositories/order'; 
+import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/order'; 
 import { EntityRepository } from "typeorm"; 
 import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
-import { Order } from "./order.entity";
-//...
+import { Product } from "./product.entity";
 
 @MedusaRepository({ override: MedusaOrderRepository })
+<<<<<<< HEAD
 @EntityRepository(Order)
 export class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
 	testProperty = 'I am the property from OrderRepository that extend MedusaOrderRepository';
@@ -226,40 +229,39 @@ export class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRep
 	test(): Promise<Order[]> {
 		return this.findWithRelations() as Promise<Order[]>;
 	}
+=======
+@EntityRepository(Product)
+export class ProductRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {
+    /* You can implement custom repository methods here. */
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 }
 ```
-
 </details>
 
-### Service
+### Step 3: Extend the product service to manage our custom entity field
 
-We now want to add a custom service to implement our custom logic for our new field.
+The idea here, is that we will import the medusa product service that we will extend in
+order to override the product creation method of the base class in order to take in count the new field
+of our extended product entity.
 
+<img width='75%' src="/assets/readme/src-modules-product-product-service.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-product-service.png') this.src = '/media/readme/src-modules-product-product-service.png';"
+     alt="Step 3: Extend the product service" />
+     
 <details>
-<summary>Click to see the example!</summary>
-
+<summary>Click to see the raw example!</summary>
+  
 ```typescript
-// modules/product/product.service.ts
+// src/modules/product/product.service.ts
 
 import { Service, OnMedusaEntityEvent, MedusaEventHandlerParams, EntityEventType } from 'medusa-extender';
-//...
+import { ProductService as MedusaProductService } from '@medusa/medusa/dist/services';
+import { EntityManager } from "typeorm";
 
-interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
-    manager: EntityManager;
-    productRepository: typeof ProductRepository;
-    productVariantRepository: typeof ProductVariantRepository;
-    productOptionRepository: typeof ProductOptionRepository;
-    eventBusService: EventBusService;
-    productVariantService: ProductVariantService;
-    productCollectionService: ProductCollectionService;
-    productTypeRepository: typeof ProductTypeRepository;
-    productTagRepository: typeof ProductTagRepository;
-    imageRepository: typeof ImageRepository;
-    searchService: TSearchService;
-}
+type ConstructorParams = /* ... */
 
 @Service({ scope: 'SCOPED', override: MedusaProductService })
-export default class ProductService extends MedusaProductService {
+export class ProductService extends MedusaProductService {
     readonly #manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
@@ -267,6 +269,10 @@ export default class ProductService extends MedusaProductService {
         this.#manager = container.manager;
     }
     
+    /**
+    * In that example, the customField could represent a static value
+    * such as a store_id which depends on the loggedInUser store_id.
+    **/
     @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
     public async attachStoreToProduct(
         params: MedusaEventHandlerParams<Product, 'Insert'>
@@ -278,6 +284,13 @@ export default class ProductService extends MedusaProductService {
     
     /**
     * This is an example. you must not necessarly keep that implementation.
+<<<<<<< HEAD
+=======
+    * Here, we are overriding the existing method to add a custom constraint.
+    * For example, if you add a store_id on a product, that value
+    * will probably depends on the loggedInUser store_id which is a static
+    * value.
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
     **/
     public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): object {
         selector['customField'] = 'custom_value';
@@ -287,65 +300,64 @@ export default class ProductService extends MedusaProductService {
 ```
 </details>
 
-### Middleware
+### Step 4: Extend the product validator class to reflect the new field
 
-Let's say that you want to attach a custom middleware to certain routes
+When adding a new field, the class validator of the end point handler is not aware
+about it. In order to handle that, it is possible to extend the validator to add
+the constraint on the new custom field.
 
+<img width='75%' src="/assets/readme/src-modules-product-adminPostProductsReq-validator.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-adminPostProductsReq-validator.png') this.src = '/media/readme/src-modules-product-adminPostProductsReq-validator.png';"
+     alt="Step 4: Extend the product validator class to reflect the new field" />
+     
 <details>
-<summary>Click to see the example!</summary>
-
+<summary>Click to see the raw example!</summary>
+  
 ```typescript
-// modules/product/custom.middleware.ts
+// src/modules/product/adminPostProductsReq.validator.ts
 
-import { Express, NextFunction, Response } from 'express';
-import {
-    Middleware,
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-} from 'medusa-extender';
+@Validator({ override: AdminPostProductsReq })
+class ExtendedClassValidator extends AdminPostProductsReq {
+  @IsString()
+  customField: string;
+}
+```
+</details>
 
-const routerOption = { method: 'post', path: '/admin/products/' }; 
+### Step 5: Create the migration
 
-@Middleware({ requireAuth: true, routerOptions: [routerOption] })
-export class CustomMiddleware  implements MedusaMiddleware {
-    public consume(
-        options: { app: Express }
-    ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
-        return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            return next();
-        };
+To persist your custom field, you need to add it to the corresponding table.
+As normal, write a new migration, except this time, you decorate it with the `@Migration()` decorator.
+
+<img width='75%' src="/assets/readme/src-modules-product-customField-migration.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-customField-migration.png') this.src = '/media/readme/src-modules-product-customField-migration.png';"
+     alt="Step 5: Create the migration" />
+     
+<details>
+<summary>Click to see the raw example!</summary>
+  
+```typescript
+// src/modules/product/customField.migration.ts
+
+import { Migration } from 'medusa-extender';
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+@Migration()
+export default class addCustomFieldToProduct1611063162649 implements MigrationInterface {
+    name = 'addCustomFieldToProduct1611063162649';
+    
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        /* Write your query there. */
+    }
+    
+    public async down(queryRunner: QueryRunner): Promise<void> {
+        /* Write your query there. */
     }
 }
-
 ```
 </details>
 
-### Router
-
-If you need to add custom routes to medusa here is a simple way to achieve this
-
-<details>
-<summary>Click to see the example!</summary>
-
-```typescript
-// modules/product/product.router.ts
-
-import { Router } from 'medusa-extender';
-import yourController from './yourController.contaoller';
-
-@Router({
-    router: [{
-        requiredAuth: true,
-        path: '/admin/dashboard',
-        method: 'get',
-        handler: yourController.getStats
-    }]
-})
-export class ProductRouter {
-}
-```
-</details>
-
+<<<<<<< HEAD
 ### Validator
 
 If you add a custom field on an entity, there is a huge risk that you end up getting
@@ -371,38 +383,51 @@ class ExtendedClassValidator extends AdminPostProductsReq {
 </details>
 
 ### Module
+=======
+### Step 6: Wrapping everything in a module
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
-the last step is to import everything in our module :package:
+Now that we have done the job, we will import the entity, repository and service into a module
+that will be loaded by Medusa.
 
+<img width='75%' src="/assets/readme/src-modules-product-product-module.png"
+     onerror="if (this.src != '/media/readme/src-modules-product-product-module.png') this.src = '/media/readme/src-modules-product-product-module.png';"
+     alt="Step 4: Create the product module" />
+     
 <details>
-<summary>Click to see the example!</summary>
-
+<summary>Click to see the raw example!</summary>
+  
 ```typescript
-// modules/products/myModule.module.ts
+// src/modules/product/product.module.ts
 
 import { Module } from 'medusa-extender';
 import { Product } from './product.entity';
-import { ProductRouter } from './product.router';
-import { CustomMiddleware } from './custom.middleware';
-import ProductRepository from './product.repository';
-import ProductService from './product.service';
-import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-to-product';
+import { ProductRepository } from './product.repository';
+import { ProductService } from './product.service';
+import { ExtendedClassValidator } from './adminPostProductsReq.validator';
+import { addCustomFieldToProduct1611063162649 } from './customField.migration';
 
 @Module({
     imports: [
         Product,
         ProductRepository,
         ProductService,
+<<<<<<< HEAD
         ProductRouter,
         CustomMiddleware,
         AddFieldToProduct1611063162649,
         ExtendedClassValidator
+=======
+        ExtendedClassValidator,
+        addCustomFieldToProduct1611063162649
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
     ]
 })
-export class MyModule {}
+export class ProductModule {}
 ```
 </details>
 
+<<<<<<< HEAD
 That's it. You've completed your first module :rocket:
 
 ## Decorators
@@ -421,6 +446,9 @@ Here is the list of the provided decorators.
 | `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register handler to an event    |
 
 ## Entity event handling
+=======
+## Handling entity subscribers
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 One of the feature out the box is the ability to emit (sync/async) events from
 your entity subscriber and to be able to handle those events easily.
@@ -431,11 +459,11 @@ To be able to achieve this, here is an example.
 <summary>Click to see the example!</summary>
 
 ```typescript
-// modules/products/product.subscriber.ts
+// src/modules/product/product.subscriber.ts
 
 import { Connection, EntitySubscriberInterface, EventSubscriber, InsertEvent } from 'typeorm';
 import { eventEmitter, Utils, OnMedusaEntityEvent } from 'medusa-extender';
-import { Product } from '../entities/product.entity';
+import { Product } from './product.entity';
 
 @EventSubscriber()
 export default class ProductSubscriber implements EntitySubscriberInterface<Product> {
@@ -467,14 +495,12 @@ And then create a new handler.
 <summary>Click to see the example!</summary>
 
 ```typescript
-// modules/product/product.service.ts
+// src/modules/product/product.service.ts
 
 import { Service, OnMedusaEntityEvent } from 'medusa-extender';
-//...
+/* ... */
 
-interface ConstructorParams {
-    // ...
-}
+interface ConstructorParams { /* ... */ }
 
 @Service({ scope: 'SCOPED', override: MedusaProductService })
 export default class ProductService extends MedusaProductService {
@@ -498,64 +524,63 @@ export default class ProductService extends MedusaProductService {
 </details>
 
 And finally, we need to add the subscriber to the connection. There are different ways to achieve
-this. We will see, as an example below, a way to attach request scoped subscribers.
+this. We will see, as an example below, a way to attach a request scoped subscribers.
 
 <details>
 <summary>Click to see the example!</summary>
 
 ```typescript
-// modules/product/attachSubscriber.middleware.ts
+// src/modules/product/attachSubscriber.middleware.ts
 
-import { Express, NextFunction, Response } from 'express';
+import { Express, NextFunction, Request, Response } from 'express';
 import {
-    Middleware,
-    MEDUSA_RESOLVER_KEYS,
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-    MedusaRouteOptions,
-    Utils as MedusaUtils,
+	Middleware,
+	MedusaAuthenticatedRequest,
+	Utils as MedusaUtils,
+	MEDUSA_RESOLVER_KEYS,
+	MedusaRouteOptions,
 } from 'medusa-extender';
 import { Connection } from 'typeorm';
-import Utils from '@core/utils';
-import ProductSubscriber from '@modules/product/subscribers/product.subscriber'; import { Middleware } from "./components.decorator";
+import UserSubscriber from './product.subscriber';
 
 @Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
-export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
-    private app: Express;
-    private hasBeenAttached = false;
-    
-    public static get routesOptions(): MedusaRouteOptions {
-        return {
-            path: '/admin/products/',
-            method: 'post',
-        };
+export default class AttachProductSubscribersMiddleware {
+	public static get routesOptions(): MedusaRouteOptions {
+		return {
+			path: '/admin/products/',
+			method: 'post',
+		};
+	}
+
+	public consume(options: {
+		app: Express;
+	}): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
+		const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
+		options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+			if (this.isExpectedRoute([routeOptions], req)) {
+				const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
+				MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
+			}
+			return next();
+		});
+
+		return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
+	}
+
+    private isExpectedRoute(
+        routesOptions: MedusaRouteOptions[],
+        req: MedusaAuthenticatedRequest | Request
+    ): boolean {
+        return routesOptions.some((routeOption) => {
+            return (
+                req.method.toLowerCase() === routeOption.method &&
+                req.originalUrl.toLowerCase() === routeOption.path.toLowerCase()
+            );
+        });
     }
-    
-    public consume(
-        options: { app: Express }
-    ): (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void | Promise<void> {
-        this.app = options.app;
-    
-        const attachIfNeeded = (routeOptions: MedusaRouteOptions): void => {
-            if (!this.hasBeenAttached) {
-                this.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-                    if (Utils.isExpectedRoute([routeOptions], req)) {
-                        const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
-                        MedusaUtils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
-                    }
-                    return next();
-                });
-                this.hasBeenAttached = true;
-            }
-        }
-    
-        return (req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            const routeOptions = AttachProductSubscribersMiddleware.routesOptions;
-            attachIfNeeded(routeOptions);
-            return next();
-        };
-    }
+
 }
+
 ```
 </details>
 
@@ -565,31 +590,133 @@ Now, you only need to add that middleware to the previous module we've created.
 <summary>Click to see the example!</summary>
 
 ```typescript
-// modules/products/myModule.module.ts
+// src/modules/products/product.module.ts
 
 import { Module } from 'medusa-extender';
-import { Product } from './product.entity';
-import { ProductRouter } from './product.router';
-import { CustomMiddleware } from './custom.middleware';
-import ProductRepository from './product.repository';
-import ProductService from './product.service';
-import AddFieldToProduct1611063162649 from './product.20211126000001-add-field-to-product';
 import { AttachProductSubscribersMiddleware } from './attachSubscriber.middleware'
 
 @Module({
     imports: [
-        Product,
-        ProductRepository,
-        ProductService,
-        ProductRouter,
-        CustomMiddleware,
-        AttachProductSubscribersMiddleware,
-        AddFieldToProduct1611063162649
+        /* ... */
+        AttachProductSubscribersMiddleware
     ]
 })
-export class MyModule {}
+export class ProductModule {}
 ```
 </details>
+
+## Create a custom feature module
+
+This is the same principle as overriding an existing feature. Instead of giving an
+`override` options to the decorators, you'll have to use the `resolutionKey` in order
+to register them into the container using that key. You'll be then able
+to retrieve them using the custom `resolutionKey` to resolve through the container.
+
+## Build a shareable module
+
+Building a shareable module is nothing more that the previous section. to achieve that
+you can start using the [plugin-module starter](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module).
+
+## Use custom configuration inside service
+
+Each service is resolve by the container. One of the object that the container holds is,
+the `configModule`. Which means that in any service, you are able to retrieve everything
+that is in your `medusa-config` file. In other word, all the config you need to access
+in a service, can be added to your `medusa-config` file.
+
+## Integration in an existing medusa project
+
+To benefit from all the features that the extender offers you, the usage of typescript is recommended.
+If you have already an existing project scaffold with the command `medusa new ...` here is how are the following steps to integrate
+the extender in your project.
+
+follow the next steps yo be ready to launch :rocket:
+
+```bash
+npm i -D typescript
+echo '{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "es2017",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "esModuleInterop": true
+  },
+  "include": ["src", "medusa-config.js"],
+  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
+}' > tsconfig.json
+```
+
+update the scripts in your `package.json`
+
+```json
+{
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "start": "npm run build && node dist/src/main.js"
+  } 
+}
+```
+
+add a main file in the `src` directory
+
+```typescript
+// src/main.ts
+
+import express = require('express');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+
+async function bootstrap() {
+    const expressInstance = express();
+    
+    const rootDir = resolve(__dirname) + '/../';
+    await new Medusa(rootDir, expressInstance).load();
+    
+    expressInstance.listen(9000, () => {
+        console.info('Server successfully started on port 9000');
+    });
+}
+
+bootstrap();
+```
+
+And finally update the `develop.sh` script with the following
+
+```bash
+# develop.sh
+
+#!/bin/bash
+
+#Run migrations to ensure the database is updated
+medusa migrations run
+
+#Start development environment
+npm run start
+```
+
+## Decorators API
+
+Here is the list of the provided decorators.
+
+| Decorator                            | Description                                                                 | Option               |
+| ----------------------               | ----------------------                                                      | ----------------------
+| `@Entity(/*...*/)`                   | Decorate an entity                                                          | `{ resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Repository(/*...*/)`               | Decorate a repository                                                       | `{ resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Service(/*...*/)`                  | Decorate a service                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Middleware(/*...*/)`               | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routerOptions: MedusaRouteOptions[]; };`
+| `@Router(/*...*/)`                   | Decorate a router                                                           | `{ router: RoutesInjectionRouterConfiguration[]; };`
+| `@Validator(/*...*/)`                | Decorate a validator                                                        | `{ override: Type<TOverride>; };`
+| `@Migration(/*...*/)`                | Decorate a migration                                                        | 
+| `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event|  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })
 
 # Contribute :ballot_box:
 

@@ -27,4 +27,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/database.loader.ts#L5)
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/database.loader.ts#L5)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity

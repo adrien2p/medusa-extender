@@ -40,7 +40,11 @@ Mark a class as an entity to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L16)
+=======
+[src/decorators/components.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L15)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -62,7 +66,11 @@ Mark a class as a middleware to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L43)
+=======
+[src/decorators/components.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L42)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -78,7 +86,11 @@ Mark a class as a migration to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L51)
+=======
+[src/decorators/components.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L50)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -106,7 +118,11 @@ Mark a class as a repository to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L34)
+=======
+[src/decorators/components.decorator.ts:33](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L33)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -128,7 +144,11 @@ Mark a class as a router to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L60)
+=======
+[src/decorators/components.decorator.ts:59](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L59)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -156,6 +176,7 @@ Mark a class as a service to be used by the loader.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L25)
 
 ___
@@ -179,3 +200,6 @@ Mark a class as a validator to be used by the validator utility.
 #### Defined in
 
 [src/decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/decorators/components.decorator.ts#L69)
+=======
+[src/decorators/components.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/decorators/components.decorator.ts#L24)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity

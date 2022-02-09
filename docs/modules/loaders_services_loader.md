@@ -33,7 +33,11 @@ Load custom service and override existing ones.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/services.loader.ts#L55)
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/services.loader.ts#L55)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -58,7 +62,11 @@ Load custom service into the container.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/services.loader.ts#L31)
+=======
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/services.loader.ts#L31)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -81,4 +89,8 @@ Load custom services from the rootDir.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/services.loader.ts#L9)
+=======
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/services.loader.ts#L9)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity

@@ -6,7 +6,10 @@
 
 ### Modules
 
+<<<<<<< HEAD
 - [Medusa](modules/Medusa.md)
+=======
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 - [constants](modules/constants.md)
 - [decorators](modules/decorators.md)
 - [decorators/components.decorator](modules/decorators_components_decorator.md)

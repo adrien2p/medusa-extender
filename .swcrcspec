@@ -20,10 +20,10 @@
     "baseUrl": "."
   },
   "module": {
-    "type": "commonjs",
+    "type": "CommonJS",
     "strict": true,
     "strictMode": true,
     "lazy": false,
-    "noInterop": true
+    "noInterop": false
   }
 }

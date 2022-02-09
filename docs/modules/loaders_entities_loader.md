@@ -30,7 +30,11 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/entities.loader.ts#L5)
+=======
+[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/entities.loader.ts#L5)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -50,7 +54,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/entities.loader.ts#L16)
+=======
+[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/entities.loader.ts#L16)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -73,7 +81,11 @@ Load custom entity and override existing ones.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/entities.loader.ts#L49)
+=======
+[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/entities.loader.ts#L49)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
 
 ___
 
@@ -97,4 +109,8 @@ Load custom entity into the container.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/entities.loader.ts#L30)
+=======
+[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/entities.loader.ts#L30)
+>>>>>>> 959e3a1... feat: rewrite documentation for more clarity
