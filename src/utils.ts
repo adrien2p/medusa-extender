@@ -1,4 +1,4 @@
-import chalk = require('chalk');
+const chalk = require('chalk');
 import { Express } from 'express';
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
 import { Constructor, MixinReturnType } from './types';
