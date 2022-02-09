@@ -29,11 +29,7 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/repository.loader.ts#L16)
-=======
-[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/repository.loader.ts#L16)
->>>>>>> 959e3a1... feat: rewrite documentation for more clarity
+[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/loaders/repository.loader.ts#L16)
 
 ___
 
@@ -56,11 +52,7 @@ Load custom repositories and override existing ones.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/repository.loader.ts#L48)
-=======
-[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/repository.loader.ts#L48)
->>>>>>> 959e3a1... feat: rewrite documentation for more clarity
+[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/loaders/repository.loader.ts#L48)
 
 ___
 
@@ -84,11 +76,7 @@ Load custom repository into the container.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/repository.loader.ts#L30)
-=======
-[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/repository.loader.ts#L30)
->>>>>>> 959e3a1... feat: rewrite documentation for more clarity
+[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/loaders/repository.loader.ts#L30)
 
 ___
 
@@ -109,8 +97,4 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/loaders/repository.loader.ts#L5)
-=======
-[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/e917dcd/src/loaders/repository.loader.ts#L5)
->>>>>>> 959e3a1... feat: rewrite documentation for more clarity
+[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/loaders/repository.loader.ts#L5)

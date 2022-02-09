@@ -37,7 +37,7 @@ internal container and database connection.
 
 #### Defined in
 
-[src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/Medusa.ts#L37)
+[src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/Medusa.ts#L37)
 
 ## Properties
 
@@ -47,7 +47,7 @@ internal container and database connection.
 
 #### Defined in
 
-[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/Medusa.ts#L30)
+[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/Medusa.ts#L30)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/Medusa.ts#L31)
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/Medusa.ts#L31)
 
 ## Methods
 
@@ -77,4 +77,4 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/Medusa.ts#L45)
+[src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/ab2e512/src/Medusa.ts#L45)
