@@ -11,7 +11,6 @@ export type Constructor<T> = new (...args: unknown[]) => T;
 /**
  * Components that does not required any other options that Type.
  */
-<<<<<<< HEAD
 export type InjectableComponentTypes =
 	| 'validator'
 	| 'entity'
@@ -20,9 +19,6 @@ export type InjectableComponentTypes =
 	| 'migration'
 	| 'router'
 	| 'middleware';
-=======
-export type InjectableComponentTypes = 'validator' | 'entity' | 'repository' | 'service' | 'migration' | 'router' | 'middleware';
->>>>>>> b652414... Feat() Add support to extends validator
 
 /**
  * Defines the injection options for entities.

@@ -7,12 +7,8 @@ import { metadataReader } from './metadata-reader';
 import {
 	apiLoader,
 	authenticatedRoutesLoader,
-<<<<<<< HEAD
 	databaseLoader,
 	validatorsLoader,
-=======
-	databaseLoader, validatorsLoader,
->>>>>>> b652414... Feat() Add support to extends validator
 	migrationsLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
