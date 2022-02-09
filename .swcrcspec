@@ -20,7 +20,7 @@
     "baseUrl": "."
   },
   "module": {
-    "type": "CommonJS",
+    "type": "commonjs",
     "strict": true,
     "strictMode": true,
     "lazy": false,
