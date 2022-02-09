@@ -1,7 +1,7 @@
 <!--lint disable awesome-list-item-->
 <div align="center">
   <p align="center">
-    <img alt="Medusa" src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png" width="200" />
+    <img alt="Medusa" src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png"/>
   </p>
   
   <h1>Extend medusa with badass features</h1>
