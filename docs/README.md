@@ -3,10 +3,10 @@ medusa-extender / [Exports](modules.md)
 <!--lint disable awesome-list-item-->
 <div align="center">
   <p align="center">
-    <img alt="Medusa" src="https://uploads-ssl.webflow.com/61fba9f6deac297b7b22017d/62000006ce573a706c92546c_logo.svg" width="200" />
+    <img alt="Medusa" src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png"/>
   </p>
   
-  <h1>Extend medusa badass features</h1>
+  <h1>Extend medusa with badass features</h1>
   
   <p>
         Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one
@@ -26,7 +26,7 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/issues"><img src="https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat-square" alt="issues" height="18"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://img.shields.io/npm/dm/medusa-extender?style=flat-square" alt="download" height="18"></a>
-  <a href="https://github.com/adrien2p/medusa-extender/blob/main/assets/coverage/badge-statements.svg"><img src="https://github.com/adrien2p/medusa-extender/blob/main/assets/coverage/badge-statements.svg" alt="coverage" height="18"></a>
+  <a href="https://github.com/adrien2p/medusa-extender/blob/assets/assets/coverage/badge-statements.svg"><img src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/coverage/badge-statements.svg" alt="coverage" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/LICENSE"><img src="https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat-square" alt="licence" height="18"></a>
   <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender"><img src="https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on" alt="twitter" height="18"></a>
   <a href="https://discord.gg/xpCwq3Kfn8">
@@ -77,9 +77,7 @@ npm i medusa-extender
 
 # Code base overview
 
-<img src="/assets/medusa-extender.jpeg"
-     onerror="if (this.src != './media/medusa-extender.jpeg') this.src = './media/medusa-extender.jpeg';"
-     alt="Dependency graph" />
+<img src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/medusa-extender.jpeg" alt="Dependency graph" />
 
 # Features
 
@@ -137,9 +135,7 @@ For the purpose of the examples that will follow in the next sections,
 I will organise my files in the following manner 
 (You can organise it as you want, there is no restrictions to your architecture).
 
-<img width='75%' src="/assets/readme/scenario-1-architecture.png"
-     onerror="if (this.src != './media/readme/scenario-1-architecture.png') this.src = './media/readme/scenario-1-architecture.png';"
-     alt="Scenario 1 module architecture" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/scenario-1-architecture.png" alt="Scenario 1 module architecture" />
 
 ## Extending an existing feature
 
@@ -163,9 +159,7 @@ Let's create a scenario.
 The idea here, is that we will import the medusa product entity that we will extend in
 order to add our new field. Of course, you can do everything typeorm provides (if you need to add a custom relationships, then follow the typeorm doc.).
 
-<img width='75%' src="/assets/readme/src-modules-product-product-entity.png"
-     onerror="if (this.src != './media/readme/src-modules-product-product-entity.png') this.src = './media/readme/src-modules-product-product-entity.png';"
-     alt="Step 1 Extend the product entity" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-entity.png" alt="Step 1 Extend the product entity" />
      
 <details>
 
@@ -193,9 +187,7 @@ order to add our new field. Of course, you can do everything typeorm provides (i
 The idea here, is that we will import the medusa product repository that we will extend in
 order to reflect our custom entity.
 
-<img width='75%' src="/assets/readme/src-modules-product-product-repository.png"
-     onerror="if (this.src != './media/readme/src-modules-product-product-repository.png') this.src = './media/readme/src-modules-product-product-repository.png';"
-     alt="Step 2: Extend the product repository" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-repository.png" alt="Step 2: Extend the product repository" />
      
 <details>
 
@@ -224,9 +216,7 @@ The idea here, is that we will import the medusa product service that we will ex
 order to override the product creation method of the base class in order to take in count the new field
 of our extended product entity.
 
-<img width='75%' src="/assets/readme/src-modules-product-product-service.png"
-     onerror="if (this.src != './media/readme/src-modules-product-product-service.png') this.src = './media/readme/src-modules-product-product-service.png';"
-     alt="Step 3: Extend the product service" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-service.png" alt="Step 3: Extend the product service" />
      
 <details>
 
@@ -285,9 +275,7 @@ When adding a new field, the class validator of the end point handler is not awa
 about it. In order to handle that, it is possible to extend the validator to add
 the constraint on the new custom field.
 
-<img width='75%' src="/assets/readme/src-modules-product-adminPostProductsReq-validator.png"
-     onerror="if (this.src != './media/readme/src-modules-product-adminPostProductsReq-validator.png') this.src = './media/readme/src-modules-product-adminPostProductsReq-validator.png';"
-     alt="Step 4: Extend the product validator class to reflect the new field" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-adminPostProductsReq-validator.png" alt="Step 4: Extend the product validator class to reflect the new field" />
      
 <details>
 
@@ -310,9 +298,7 @@ the constraint on the new custom field.
 To persist your custom field, you need to add it to the corresponding table.
 As normal, write a new migration, except this time, you decorate it with the `@Migration()` decorator.
 
-<img width='75%' src="/assets/readme/src-modules-product-customField-migration.png"
-     onerror="if (this.src != './media/readme/src-modules-product-customField-migration.png') this.src = './media/readme/src-modules-product-customField-migration.png';"
-     alt="Step 5: Create the migration" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-customField-migration.png" alt="Step 5: Create the migration" />
      
 <details>
 
@@ -345,9 +331,7 @@ As normal, write a new migration, except this time, you decorate it with the `@M
 Now that we have done the job, we will import the entity, repository and service into a module
 that will be loaded by Medusa.
 
-<img width='75%' src="/assets/readme/src-modules-product-product-module.png"
-     onerror="if (this.src != './media/readme/src-modules-product-product-module.png') this.src = './media/readme/src-modules-product-product-module.png';"
-     alt="Step 4: Create the product module" />
+<img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-module.png" alt="Step 4: Create the product module" />
      
 <details>
 
