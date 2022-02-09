@@ -30,8 +30,4 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/migrations.loader.ts#L10)
-=======
-[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/migrations.loader.ts#L10)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/migrations.loader.ts#L10)

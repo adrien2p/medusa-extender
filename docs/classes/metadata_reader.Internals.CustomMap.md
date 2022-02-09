@@ -84,8 +84,4 @@ Map.get
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/metadata-reader.ts#L5)
-=======
-[src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/metadata-reader.ts#L5)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/metadata-reader.ts#L5)

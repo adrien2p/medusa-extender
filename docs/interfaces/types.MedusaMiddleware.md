@@ -46,8 +46,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/types.ts#L152)
-=======
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/types.ts#L152)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/types.ts#L152)

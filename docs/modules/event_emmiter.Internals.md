@@ -38,8 +38,4 @@ A listener descriptor.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/event-emmiter.ts#L9)
-=======
-[src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/event-emmiter.ts#L9)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/event-emmiter.ts:9](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/event-emmiter.ts#L9)

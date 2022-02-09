@@ -27,8 +27,4 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/database.loader.ts#L5)
-=======
-[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/database.loader.ts#L5)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/database.loader.ts#L5)

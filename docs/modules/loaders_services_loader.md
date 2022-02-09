@@ -33,11 +33,7 @@ Load custom service and override existing ones.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/services.loader.ts#L55)
-=======
-[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/services.loader.ts#L55)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/services.loader.ts#L55)
 
 ___
 
@@ -62,11 +58,7 @@ Load custom service into the container.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/services.loader.ts#L31)
-=======
-[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/services.loader.ts#L31)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/services.loader.ts#L31)
 
 ___
 
@@ -89,8 +81,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/services.loader.ts#L9)
-=======
-[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/services.loader.ts#L9)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/services.loader.ts#L9)

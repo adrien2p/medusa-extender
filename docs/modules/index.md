@@ -285,8 +285,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/index.ts#L25)
-=======
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/index.ts#L25)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/index.ts#L25)

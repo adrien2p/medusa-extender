@@ -32,8 +32,4 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/utils.ts#L4)
-=======
-[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/utils.ts#L4)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/decorators/utils.ts#L4)

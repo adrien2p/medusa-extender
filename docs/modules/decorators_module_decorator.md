@@ -29,8 +29,4 @@ Mark a class as aa module and store all injectable on it.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/decorators/module.decorator.ts#L9)
-=======
-[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/decorators/module.decorator.ts#L9)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/decorators/module.decorator.ts#L9)

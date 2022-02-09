@@ -20,11 +20,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/constants.ts#L9)
-=======
-[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/constants.ts#L9)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/constants.ts#L9)
 
 ___
 
@@ -70,11 +66,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/constants.ts#L14)
-=======
-[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/constants.ts#L14)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/constants.ts#L14)
 
 ___
 
@@ -86,8 +78,4 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/constants.ts#L4)
-=======
-[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/constants.ts#L4)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/constants.ts#L4)

@@ -28,11 +28,7 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/routes.loader.ts#L4)
-=======
-[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/routes.loader.ts#L4)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/routes.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/routes.loader.ts#L4)
 
 ___
 
@@ -53,8 +49,4 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/6bd2587/src/loaders/routes.loader.ts#L14)
-=======
-[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/be0642a/src/loaders/routes.loader.ts#L14)
->>>>>>> 51e6b4d... feat: Add support of commitlint
+[src/loaders/routes.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/6176cb6/src/loaders/routes.loader.ts#L14)
