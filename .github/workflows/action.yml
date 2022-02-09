@@ -26,12 +26,3 @@ jobs:
 
       - name: 'run unit tests'
         run: npm run test
-
-      - name: Push coverage badges
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: assets
-          FOLDER: assets
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "misc: Build new coverage badges"
