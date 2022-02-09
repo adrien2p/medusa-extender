@@ -1,52 +1,48 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / index
+[medusa-extender](../README.md) / [Exports](../modules.md) / decorators
 
-# Module: index
+# Module: decorators
 
 ## Table of contents
 
 ### References
 
-- [Constructor](index.md#constructor)
-- [Entity](index.md#entity)
-- [EntityActions](index.md#entityactions)
-- [EntityEventActionOptions](index.md#entityeventactionoptions)
-- [EntityEventType](index.md#entityeventtype)
-- [EntityInjectableOptions](index.md#entityinjectableoptions)
-- [GetInjectableOption](index.md#getinjectableoption)
-- [GetInjectableOptions](index.md#getinjectableoptions)
-- [INJECTABLE\_OPTIONS\_KEY](index.md#injectable_options_key)
-- [InjectableComponentTypes](index.md#injectablecomponenttypes)
-- [InjectableOptions](index.md#injectableoptions)
-- [MEDUSA\_RESOLVER\_KEYS](index.md#medusa_resolver_keys)
-- [MODULE\_KEY](index.md#module_key)
-- [Medusa](index.md#medusa)
-- [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
-- [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
-- [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
-- [MedusaMiddleware](index.md#medusamiddleware)
-- [MedusaRequest](index.md#medusarequest)
-- [MedusaRouteMethods](index.md#medusaroutemethods)
-- [MedusaRouteOptions](index.md#medusarouteoptions)
-- [Middleware](index.md#middleware)
-- [MiddlewareInjectionOptions](index.md#middlewareinjectionoptions)
-- [Migration](index.md#migration)
-- [MixinReturnType](index.md#mixinreturntype)
-- [Module](index.md#module)
-- [OnMedusaEntityEvent](index.md#onmedusaentityevent)
-- [Repository](index.md#repository)
-- [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
-- [Router](index.md#router)
-- [RouterInjectionOptions](index.md#routerinjectionoptions)
-- [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
-- [Service](index.md#service)
-- [ServiceInjectableOptions](index.md#serviceinjectableoptions)
-- [Type](index.md#type)
-- [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
-- [eventEmitter](index.md#eventemitter)
-
-### Variables
-
-- [Utils](index.md#utils)
+- [Constructor](decorators.md#constructor)
+- [Entity](decorators.md#entity)
+- [EntityActions](decorators.md#entityactions)
+- [EntityEventActionOptions](decorators.md#entityeventactionoptions)
+- [EntityEventType](decorators.md#entityeventtype)
+- [EntityInjectableOptions](decorators.md#entityinjectableoptions)
+- [GetInjectableOption](decorators.md#getinjectableoption)
+- [GetInjectableOptions](decorators.md#getinjectableoptions)
+- [INJECTABLE\_OPTIONS\_KEY](decorators.md#injectable_options_key)
+- [InjectableComponentTypes](decorators.md#injectablecomponenttypes)
+- [InjectableOptions](decorators.md#injectableoptions)
+- [MEDUSA\_RESOLVER\_KEYS](decorators.md#medusa_resolver_keys)
+- [MODULE\_KEY](decorators.md#module_key)
+- [MedusaAuthenticatedRequest](decorators.md#medusaauthenticatedrequest)
+- [MedusaEventEmittedParams](decorators.md#medusaeventemittedparams)
+- [MedusaEventHandlerParams](decorators.md#medusaeventhandlerparams)
+- [MedusaMiddleware](decorators.md#medusamiddleware)
+- [MedusaRequest](decorators.md#medusarequest)
+- [MedusaRouteMethods](decorators.md#medusaroutemethods)
+- [MedusaRouteOptions](decorators.md#medusarouteoptions)
+- [Middleware](decorators.md#middleware)
+- [MiddlewareInjectionOptions](decorators.md#middlewareinjectionoptions)
+- [Migration](decorators.md#migration)
+- [MixinReturnType](decorators.md#mixinreturntype)
+- [Module](decorators.md#module)
+- [OnMedusaEntityEvent](decorators.md#onmedusaentityevent)
+- [Repository](decorators.md#repository)
+- [RepositoryInjectableOptions](decorators.md#repositoryinjectableoptions)
+- [Router](decorators.md#router)
+- [RouterInjectionOptions](decorators.md#routerinjectionoptions)
+- [RoutesInjectionRouterConfiguration](decorators.md#routesinjectionrouterconfiguration)
+- [Service](decorators.md#service)
+- [ServiceInjectableOptions](decorators.md#serviceinjectableoptions)
+- [Type](decorators.md#type)
+- [Validator](decorators.md#validator)
+- [ValidatorInjectionOptions](decorators.md#validatorinjectionoptions)
+- [buildComponentDecorator](decorators.md#buildcomponentdecorator)
 
 ## References
 
@@ -125,12 +121,6 @@ ___
 ### MODULE\_KEY
 
 Re-exports [MODULE_KEY](constants.md#module_key)
-
-___
-
-### Medusa
-
-Re-exports [Medusa](../classes/Medusa.Medusa-1.md)
 
 ___
 
@@ -260,29 +250,18 @@ Re-exports [Type](../interfaces/types.Type.md)
 
 ___
 
+### Validator
+
+Re-exports [Validator](decorators_components_decorator.md#validator)
+
+___
+
 ### ValidatorInjectionOptions
 
 Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
 
 ___
 
-### eventEmitter
+### buildComponentDecorator
 
-Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
-
-## Variables
-
-### Utils
-
-• **Utils**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TEntity, TSource\>(`source`: [`Constructor`](types.md#constructor)<`TSource`\>) => [`MixinReturnType`](types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\> |
-
-#### Defined in
-
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/b52b129/src/index.ts#L25)
+Re-exports [buildComponentDecorator](decorators_utils.md#buildcomponentdecorator)
