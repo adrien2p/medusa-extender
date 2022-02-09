@@ -1,4 +1,4 @@
-name: Medusa-extender Pipeline
+name: Tests pipeline
 on: [push]
 
 jobs:
