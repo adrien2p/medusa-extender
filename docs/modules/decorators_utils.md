@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/b4aa420/src/decorators/utils.ts#L4)
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/1b80393/src/decorators/utils.ts#L4)

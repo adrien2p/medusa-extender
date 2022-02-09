@@ -26,7 +26,7 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/medusa-extender/commits/main"><img src="https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat-square" alt="activity" height="18"></a>
   <a href="https://github.com/adrien2p/medusa-extender/issues"><img src="https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat-square" alt="issues" height="18"></a>
   <a href="https://www.npmjs.com/package/medusa-extender"><img src="https://img.shields.io/npm/dm/medusa-extender?style=flat-square" alt="download" height="18"></a>
-  <img src="./assets/coverage/badge-statements.svg" onerror="if (this.src != './media/coverage/badge-statements.svg') this.src = './media/coverage/badge-statements.svg';" alt="coverage" height="18">
+  <img src="https://github.com/adrien2p/medusa-extender/blob/main/assets/coverage/badge-statements.svg" alt="coverage" height="18">
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/LICENSE"><img src="https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat-square" alt="licence" height="18"></a>
   <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender"><img src="https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on" alt="twitter" height="18"></a>
   <a href="https://discord.gg/xpCwq3Kfn8">
@@ -35,7 +35,8 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
   </a>
-  
+  <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg"><img src="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg" alt="Pipeline"></a>
+  <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg"><img src="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Pages build deployment"></a>
 </div>
 
 --- 
@@ -47,7 +48,7 @@ medusa-extender / [Exports](modules.md)
     </p>
 </div>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00cba9" fill-opacity="1" d="M0,320L40,293.3C80,267,160,213,240,213.3C320,213,400,267,480,250.7C560,235,640,149,720,138.7C800,128,880,192,960,213.3C1040,235,1120,213,1200,176C1280,139,1360,85,1400,58.7L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#b974ff" fill-opacity="1" d="M0,224L34.3,186.7C68.6,149,137,75,206,74.7C274.3,75,343,149,411,165.3C480,181,549,139,617,101.3C685.7,64,754,32,823,42.7C891.4,53,960,107,1029,122.7C1097.1,139,1166,117,1234,138.7C1302.9,160,1371,224,1406,256L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
 
 # Table of contents
 

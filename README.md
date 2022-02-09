@@ -33,7 +33,8 @@
   <a href="https://github.com/adrien2p/medusa-extender/blob/main/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
   </a>
-  
+  <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg"><img src="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg" alt="Pipeline"></a>
+  <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg"><img src="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Pages build deployment"></a>
 </div>
 
 --- 
