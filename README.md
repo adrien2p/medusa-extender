@@ -160,23 +160,22 @@ order to add our new field. Of course, you can do everything typeorm provides (i
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-entity.png?raw=true" alt="Step 1 Extend the product entity" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/product.entity.ts
-    
-    import { Column, Entity } from "typeorm"; 
-    import { Product as MedusaProduct } from '@medusa/medusa/dist';
-    import { Entity as MedusaEntity } from "medusa-extender";
-    
-    @MedusaEntity({ override: MedusaProduct })
-    @Entity()
-    export class Product extends MedusaProduct {
-        @Column()
-        customField: string;
-    }
-    ```
+```typescript
+// src/modules/product/product.entity.ts
+
+import { Column, Entity } from "typeorm"; 
+import { Product as MedusaProduct } from '@medusa/medusa/dist';
+import { Entity as MedusaEntity } from "medusa-extender";
+
+@MedusaEntity({ override: MedusaProduct })
+@Entity()
+export class Product extends MedusaProduct {
+    @Column()
+    customField: string;
+}
+```
 
 </details>
 
@@ -188,23 +187,22 @@ order to reflect our custom entity.
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-repository.png?raw=true" alt="Step 2: Extend the product repository" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/product.repository.ts
-    
-    import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/order'; 
-    import { EntityRepository } from "typeorm"; 
-    import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
-    import { Product } from "./product.entity";
-    
-    @MedusaRepository({ override: MedusaProductRepository })
-    @EntityRepository(Product)
-    export class ProductRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {
-        /* You can implement custom repository methods here. */
-    }
-    ```
+```typescript
+// src/modules/product/product.repository.ts
+
+import { ProductRepository as MedusaProductRepository } from '@medusa/medusa/dist/repositories/order'; 
+import { EntityRepository } from "typeorm"; 
+import { Repository as MedusaRepository, Utils } from "medusa-extender"; 
+import { Product } from "./product.entity";
+
+@MedusaRepository({ override: MedusaProductRepository })
+@EntityRepository(Product)
+export class ProductRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {
+    /* You can implement custom repository methods here. */
+}
+```
 
 </details>
 
@@ -217,53 +215,52 @@ of our extended product entity.
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-service.png?raw=true" alt="Step 3: Extend the product service" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/product.service.ts
+```typescript
+// src/modules/product/product.service.ts
+
+import { Service, OnMedusaEntityEvent, MedusaEventHandlerParams, EntityEventType } from 'medusa-extender';
+import { ProductService as MedusaProductService } from '@medusa/medusa/dist/services';
+import { EntityManager } from "typeorm";
+
+type ConstructorParams = /* ... */
+
+@Service({ scope: 'SCOPED', override: MedusaProductService })
+export class ProductService extends MedusaProductService {
+    readonly #manager: EntityManager;
     
-    import { Service, OnMedusaEntityEvent, MedusaEventHandlerParams, EntityEventType } from 'medusa-extender';
-    import { ProductService as MedusaProductService } from '@medusa/medusa/dist/services';
-    import { EntityManager } from "typeorm";
-    
-    type ConstructorParams = /* ... */
-    
-    @Service({ scope: 'SCOPED', override: MedusaProductService })
-    export class ProductService extends MedusaProductService {
-        readonly #manager: EntityManager;
-        
-        constructor(private readonly container: ConstructorParams) {
-            super(container);
-            this.#manager = container.manager;
-        }
-        
-        /**
-        * In that example, the customField could represent a static value
-        * such as a store_id which depends on the loggedInUser store_id.
-        **/
-        @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
-        public async attachStoreToProduct(
-            params: MedusaEventHandlerParams<Product, 'Insert'>
-        ): Promise<EntityEventType<Product, 'Insert'>> {
-            const { event } = params;
-            event.entity.customField = 'custom_value';
-            return event;
-        }
-        
-        /**
-        * This is an example. you must not necessarly keep that implementation.
-        * Here, we are overriding the existing method to add a custom constraint.
-        * For example, if you add a store_id on a product, that value
-        * will probably depends on the loggedInUser store_id which is a static
-        * value.
-        **/
-        public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): object {
-            selector['customField'] = 'custom_value';
-            return super.prepareListQuery_(selector, config);
-        }
+    constructor(private readonly container: ConstructorParams) {
+        super(container);
+        this.#manager = container.manager;
     }
-    ```
+    
+    /**
+    * In that example, the customField could represent a static value
+    * such as a store_id which depends on the loggedInUser store_id.
+    **/
+    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
+    public async attachStoreToProduct(
+        params: MedusaEventHandlerParams<Product, 'Insert'>
+    ): Promise<EntityEventType<Product, 'Insert'>> {
+        const { event } = params;
+        event.entity.customField = 'custom_value';
+        return event;
+    }
+    
+    /**
+    * This is an example. you must not necessarly keep that implementation.
+    * Here, we are overriding the existing method to add a custom constraint.
+    * For example, if you add a store_id on a product, that value
+    * will probably depends on the loggedInUser store_id which is a static
+    * value.
+    **/
+    public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): object {
+        selector['customField'] = 'custom_value';
+        return super.prepareListQuery_(selector, config);
+    }
+}
+```
 
 </details>
 
@@ -276,18 +273,17 @@ the constraint on the new custom field.
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-adminPostProductsReq-validator.png?raw=true" alt="Step 4: Extend the product validator class to reflect the new field" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/adminPostProductsReq.validator.ts
-    
-    @Validator({ override: AdminPostProductsReq })
-    class ExtendedClassValidator extends AdminPostProductsReq {
-      @IsString()
-      customField: string;
-    }
-    ```
+```typescript
+// src/modules/product/adminPostProductsReq.validator.ts
+
+@Validator({ override: AdminPostProductsReq })
+class ExtendedClassValidator extends AdminPostProductsReq {
+  @IsString()
+  customField: string;
+}
+```
 
 </details>
 
@@ -299,28 +295,27 @@ As normal, write a new migration, except this time, you decorate it with the `@M
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-customField-migration.png?raw=true" alt="Step 5: Create the migration" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/customField.migration.ts
+```typescript
+// src/modules/product/customField.migration.ts
+
+import { Migration } from 'medusa-extender';
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+@Migration()
+export default class addCustomFieldToProduct1611063162649 implements MigrationInterface {
+    name = 'addCustomFieldToProduct1611063162649';
     
-    import { Migration } from 'medusa-extender';
-    import { MigrationInterface, QueryRunner } from 'typeorm';
-    
-    @Migration()
-    export default class addCustomFieldToProduct1611063162649 implements MigrationInterface {
-        name = 'addCustomFieldToProduct1611063162649';
-        
-        public async up(queryRunner: QueryRunner): Promise<void> {
-            /* Write your query there. */
-        }
-        
-        public async down(queryRunner: QueryRunner): Promise<void> {
-            /* Write your query there. */
-        }
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        /* Write your query there. */
     }
-    ```
+    
+    public async down(queryRunner: QueryRunner): Promise<void> {
+        /* Write your query there. */
+    }
+}
+```
 
 </details>
 
@@ -332,30 +327,29 @@ that will be loaded by Medusa.
 <img width='75%' src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/src-modules-product-product-module.png?raw=true" alt="Step 4: Create the product module" />
      
 <details>
+<summary>Click to see the raw example!</summary>
 
-    <summary>Click to see the raw example!</summary>
-      
-    ```typescript
-    // src/modules/product/product.module.ts
-    
-    import { Module } from 'medusa-extender';
-    import { Product } from './product.entity';
-    import { ProductRepository } from './product.repository';
-    import { ProductService } from './product.service';
-    import { ExtendedClassValidator } from './adminPostProductsReq.validator';
-    import { addCustomFieldToProduct1611063162649 } from './customField.migration';
-    
-    @Module({
-        imports: [
-            Product,
-            ProductRepository,
-            ProductService,
-            ExtendedClassValidator,
-            addCustomFieldToProduct1611063162649
-        ]
-    })
-    export class ProductModule {}
-    ```
+```typescript
+// src/modules/product/product.module.ts
+
+import { Module } from 'medusa-extender';
+import { Product } from './product.entity';
+import { ProductRepository } from './product.repository';
+import { ProductService } from './product.service';
+import { ExtendedClassValidator } from './adminPostProductsReq.validator';
+import { addCustomFieldToProduct1611063162649 } from './customField.migration';
+
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService,
+        ExtendedClassValidator,
+        addCustomFieldToProduct1611063162649
+    ]
+})
+export class ProductModule {}
+```
 
 </details>
 
@@ -367,74 +361,72 @@ your entity subscriber and to be able to handle those events easily.
 To be able to achieve this, here is an example.
 
 <details>
+<summary>Click to see the example!</summary>
 
-    <summary>Click to see the example!</summary>
-    
-    ```typescript
-    // src/modules/product/product.subscriber.ts
-    
-    import { Connection, EntitySubscriberInterface, EventSubscriber, InsertEvent } from 'typeorm';
-    import { eventEmitter, Utils, OnMedusaEntityEvent } from 'medusa-extender';
-    import { Product } from './product.entity';
-    
-    @EventSubscriber()
-    export default class ProductSubscriber implements EntitySubscriberInterface<Product> {
-        static attachTo(connection: Connection): void {
-            Utils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
-        }
-        
-        public listenTo(): typeof Product {
-            return Product;
-        }
-        
-        /**
-         * Relay the event to the handlers.
-         * @param event Event to pass to the event handler
-         */
-        public async beforeInsert(event: InsertEvent<Product>): Promise<void> {
-            return await eventEmitter.emitAsync(OnMedusaEntityEvent.Before.InsertEvent(Product), {
-                event,
-                transactionalEntityManager: event.manager,
-            });
-        }
+```typescript
+// src/modules/product/product.subscriber.ts
+
+import { Connection, EntitySubscriberInterface, EventSubscriber, InsertEvent } from 'typeorm';
+import { eventEmitter, Utils, OnMedusaEntityEvent } from 'medusa-extender';
+import { Product } from './product.entity';
+
+@EventSubscriber()
+export default class ProductSubscriber implements EntitySubscriberInterface<Product> {
+    static attachTo(connection: Connection): void {
+        Utils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
     }
-    ```
+    
+    public listenTo(): typeof Product {
+        return Product;
+    }
+    
+    /**
+     * Relay the event to the handlers.
+     * @param event Event to pass to the event handler
+     */
+    public async beforeInsert(event: InsertEvent<Product>): Promise<void> {
+        return await eventEmitter.emitAsync(OnMedusaEntityEvent.Before.InsertEvent(Product), {
+            event,
+            transactionalEntityManager: event.manager,
+        });
+    }
+}
+```
 
 </details>
 
 And then create a new handler.
 
 <details>
+<summary>Click to see the example!</summary>
 
-    <summary>Click to see the example!</summary>
+```typescript
+// src/modules/product/product.service.ts
+
+import { Service, OnMedusaEntityEvent } from 'medusa-extender';
+/* ... */
+
+interface ConstructorParams { /* ... */ }
+
+@Service({ scope: 'SCOPED', override: MedusaProductService })
+export default class ProductService extends MedusaProductService {
+    readonly #manager: EntityManager;
     
-    ```typescript
-    // src/modules/product/product.service.ts
-    
-    import { Service, OnMedusaEntityEvent } from 'medusa-extender';
-    /* ... */
-    
-    interface ConstructorParams { /* ... */ }
-    
-    @Service({ scope: 'SCOPED', override: MedusaProductService })
-    export default class ProductService extends MedusaProductService {
-        readonly #manager: EntityManager;
-        
-        constructor(private readonly container: ConstructorParams) {
-            super(container);
-            this.#manager = container.manager;
-        }
-        
-        @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
-        public async attachStoreToProduct(
-            params: MedusaEventHandlerParams<Product, 'Insert'>
-        ): Promise<EntityEventType<Product, 'Insert'>> {
-            const { event } = params;
-            event.entity.customField = 'custom_value';
-            return event;
-        }
+    constructor(private readonly container: ConstructorParams) {
+        super(container);
+        this.#manager = container.manager;
     }
-    ```
+    
+    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
+    public async attachStoreToProduct(
+        params: MedusaEventHandlerParams<Product, 'Insert'>
+    ): Promise<EntityEventType<Product, 'Insert'>> {
+        const { event } = params;
+        event.entity.customField = 'custom_value';
+        return event;
+    }
+}
+```
 
 </details>
 
@@ -442,85 +434,82 @@ And finally, we need to add the subscriber to the connection. There are differen
 this. We will see, as an example below, a way to attach a request scoped subscribers.
 
 <details>
+<summary>Click to see the example!</summary>
 
-    <summary>Click to see the example!</summary>
-    
-    ```typescript
-    // src/modules/product/attachSubscriber.middleware.ts
-    
-    import { Express, NextFunction, Request, Response } from 'express';
-    import {
-        Middleware,
-        MedusaAuthenticatedRequest,
-        Utils as MedusaUtils,
-        MEDUSA_RESOLVER_KEYS,
-        MedusaRouteOptions,
-    } from 'medusa-extender';
-    import { Connection } from 'typeorm';
-    import UserSubscriber from './product.subscriber';
-    
-    @Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
-    export default class AttachProductSubscribersMiddleware {
-        public static get routesOptions(): MedusaRouteOptions {
-            return {
-                path: '/admin/products/',
-                method: 'post',
-            };
-        }
-    
-        public consume(options: {
-            app: Express;
-        }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
-            const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
-            options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-                if (this.isExpectedRoute([routeOptions], req)) {
-                    const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
-                    MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
-                }
-                return next();
-            });
-    
-            return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
-        }
-    
-        private isExpectedRoute(
-            routesOptions: MedusaRouteOptions[],
-            req: MedusaAuthenticatedRequest | Request
-        ): boolean {
-            return routesOptions.some((routeOption) => {
-                return (
-                    req.method.toLowerCase() === routeOption.method &&
-                    req.originalUrl.toLowerCase() === routeOption.path.toLowerCase()
-                );
-            });
-        }
-    
+```typescript
+// src/modules/product/attachSubscriber.middleware.ts
+
+import { Express, NextFunction, Request, Response } from 'express';
+import {
+    Middleware,
+    MedusaAuthenticatedRequest,
+    Utils as MedusaUtils,
+    MEDUSA_RESOLVER_KEYS,
+    MedusaRouteOptions,
+} from 'medusa-extender';
+import { Connection } from 'typeorm';
+import UserSubscriber from './product.subscriber';
+
+@Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
+export default class AttachProductSubscribersMiddleware {
+    public static get routesOptions(): MedusaRouteOptions {
+        return {
+            path: '/admin/products/',
+            method: 'post',
+        };
     }
-    
-    ```
+
+    public consume(options: {
+        app: Express;
+    }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
+        const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
+        options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
+            if (this.isExpectedRoute([routeOptions], req)) {
+                const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
+                MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
+            }
+            return next();
+        });
+
+        return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
+    }
+
+    private isExpectedRoute(
+        routesOptions: MedusaRouteOptions[],
+        req: MedusaAuthenticatedRequest | Request
+    ): boolean {
+        return routesOptions.some((routeOption) => {
+            return (
+                req.method.toLowerCase() === routeOption.method &&
+                req.originalUrl.toLowerCase() === routeOption.path.toLowerCase()
+            );
+        });
+    }
+
+}
+```
 
 </details>
 
 Now, you only need to add that middleware to the previous module we've created.
 
 <details>
+<summary>Click to see the example!</summary>
 
-    <summary>Click to see the example!</summary>
-    
-    ```typescript
-    // src/modules/products/product.module.ts
-    
-    import { Module } from 'medusa-extender';
-    import { AttachProductSubscribersMiddleware } from './attachSubscriber.middleware'
-    
-    @Module({
-        imports: [
-            /* ... */
-            AttachProductSubscribersMiddleware
-        ]
-    })
-    export class ProductModule {}
-    ```
+```typescript
+// src/modules/products/product.module.ts
+
+import { Module } from 'medusa-extender';
+import { AttachProductSubscribersMiddleware } from './attachSubscriber.middleware'
+
+@Module({
+    imports: [
+        /* ... */
+        AttachProductSubscribersMiddleware
+    ]
+})
+export class ProductModule {}
+```
 
 </details>
 
