@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/adrien2p/medusa-extender/compare/v1.1.4...v1.1.5) (2022-02-09)
+
+
+### Bug Fixes
+
+* Update link to github assets to be raw ([bd1b77e](https://github.com/adrien2p/medusa-extender/commits/bd1b77e5a6ebe1b7cb1b88db0238d58e6104d68e))
+
 ### [1.1.4](https://github.com/adrien2p/medusa-extender/compare/v1.1.3...v1.1.4) (2022-02-09)
 
 
