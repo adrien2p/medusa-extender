@@ -34,7 +34,8 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "feat: build documentation" -a
+          git add -A
+          git commit -m "feat(docs): re-build documentation"
 
       - name: push
         uses: ad-m/github-push-action@master

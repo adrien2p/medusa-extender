@@ -42,7 +42,11 @@
     "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --filter '**/tests/**' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
     "serve:doc": "./node_modules/.bin/docsify serve docs",
     "test": "NODE_ENV=test ./node_modules/.bin/jest --collect-coverage --config ./jest.config.js && npm run coverage:badges",
-    "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output ./assets/coverage"
+    "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output ./assets/coverage",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -57,6 +61,10 @@
     "typeorm": "^0.2.41"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-angular": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/prompt-cli": "^16.1.0",
     "@medusajs/medusa": "^1.1.64",
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.136",
@@ -74,12 +82,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.2",
+    "husky": "^7.0.0",
     "jest": "^27.5.0",
     "jest-coverage-badges": "^1.1.2",
     "medusa-interfaces": "^1.1.34",
     "prettier": "^2.5.1",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "^0.13.9",
+    "standard-version": "^9.3.2",
     "ts-jest": "^27.1.3",
     "ts-loader": "^9.2.6",
     "ts_dependency_graph": "^1.2.0",
