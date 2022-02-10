@@ -33,7 +33,6 @@
     "url": "https://github.com/adrien2p/medusa-extender/issues"
   },
   "scripts": {
-    "postinstall": "husky install",
     "lint": "./node_modules/.bin/eslint src --fix",
     "format": "./node_modules/.bin/prettier src --write",
     "build:ts": "./node_modules/.bin/swc src -d ./dist --config-file .swcrc",
