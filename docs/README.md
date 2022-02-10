@@ -590,7 +590,7 @@ async function bootstrap() {
     const expressInstance = express();
     
     const rootDir = resolve(__dirname) + '/../';
-    await new Medusa(rootDir, expressInstance).load();
+    await new Medusa(rootDir, expressInstance).load([]);
     
     expressInstance.listen(9000, () => {
         console.info('Server successfully started on port 9000');
