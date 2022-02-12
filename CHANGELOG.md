@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/adrien2p/medusa-extender/compare/v1.1.8...v1.1.9) (2022-02-12)
+
+
+### Bug Fixes
+
+* Remove monggose dependency ([b0192c8](https://github.com/adrien2p/medusa-extender/commits/b0192c89a0b9c5d7c1467488dd388ed78dd1bea9))
+
 ### [1.1.8](https://github.com/adrien2p/medusa-extender/compare/v1.1.7...v1.1.8) (2022-02-10)
 
 
