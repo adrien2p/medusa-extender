@@ -1,4 +1,4 @@
-import { Express, NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { MigrationInterface } from 'typeorm';
 
