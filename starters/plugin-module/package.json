@@ -23,11 +23,11 @@
     "test:cov": "NODE_ENV=test jest --coverage --detectOpenHandles"
   },
   "peerDependencies": {
-    "medusa-extender": "^1.0.0",
+    "medusa-extender": "latest",
     "awilix": "^4.2.3",
-    "@medusajs/medusa": "^1.1.62",
-    "medusa-core-utils": "^1.1.31",
-    "medusa-interfaces": "^1.1.32",
+    "@medusajs/medusa": "latest",
+    "medusa-core-utils": "latest",
+    "medusa-interfaces": "latest",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.41"
   },
