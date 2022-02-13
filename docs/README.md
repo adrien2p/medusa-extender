@@ -442,53 +442,21 @@ this. We will see, as an example below, a way to attach a request scoped subscri
 ```typescript
 // src/modules/product/attachSubscriber.middleware.ts
 
-import { Express, NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import {
     Middleware,
     MedusaAuthenticatedRequest,
     Utils as MedusaUtils,
-    MEDUSA_RESOLVER_KEYS,
-    MedusaRouteOptions,
+    MedusaMiddleware
 } from 'medusa-extender';
-import { Connection } from 'typeorm';
 import UserSubscriber from './product.subscriber';
 
 @Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
-export default class AttachProductSubscribersMiddleware {
-    public static get routesOptions(): MedusaRouteOptions {
-        return {
-            path: '/admin/products/',
-            method: 'post',
-        };
+export default class AttachProductSubscribersMiddleware implements MedusaMiddleware {
+    public consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+        MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
+        return next();
     }
-
-    public consume(options: {
-        app: Express;
-    }): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
-        const routeOptions = AttachUserSubscribersMiddleware.routesOptions;
-        options.app.use((req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void => {
-            if (this.isExpectedRoute([routeOptions], req)) {
-                const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as { connection: Connection };
-                MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
-            }
-            return next();
-        });
-
-        return (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => next();
-    }
-
-    private isExpectedRoute(
-        routesOptions: MedusaRouteOptions[],
-        req: MedusaAuthenticatedRequest | Request
-    ): boolean {
-        return routesOptions.some((routeOption) => {
-            return (
-                req.method.toLowerCase() === routeOption.method &&
-                req.originalUrl.toLowerCase() === routeOption.path.toLowerCase()
-            );
-        });
-    }
-
 }
 ```
 

@@ -56,7 +56,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:36](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L36)
+[src/utils.ts:37](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L37)
 
 ___
 
@@ -80,7 +80,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L67)
+[src/utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L68)
 
 ___
 
@@ -102,7 +102,7 @@ Log all the routes from the express instance.
 
 #### Defined in
 
-[src/utils.ts:57](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L57)
+[src/utils.ts:58](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L58)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/utils.ts:81](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L81)
+[src/utils.ts:82](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L82)
 
 ___
 
@@ -153,7 +153,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/utils.ts:16](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L16)
+[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L17)
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 #### Defined in
 
-[src/utils.ts:101](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/utils.ts#L101)
+[src/utils.ts:102](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/utils.ts#L102)

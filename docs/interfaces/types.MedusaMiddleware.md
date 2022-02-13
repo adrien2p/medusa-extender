@@ -17,22 +17,9 @@ Describe a custom middleware instance.
 
 ### consume
 
-▸ **consume**(`options`): (`req`: [`MedusaAuthenticatedRequest`](../modules/types.md#medusaauthenticatedrequest) \| `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>, `res`: `Response`<`any`, `Record`<`string`, `any`\>\>, `next`: `NextFunction`) => `void` \| `Promise`<`void`\>
+▸ **consume**(`req`, `res`, `next`): `void` \| `Promise`<`void`\>
 
 #### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options` | `Object` |
-| `options.app` | `Express` |
-
-#### Returns
-
-`fn`
-
-▸ (`req`, `res`, `next`): `void` \| `Promise`<`void`\>
-
-##### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -40,10 +27,10 @@ Describe a custom middleware instance.
 | `res` | `Response`<`any`, `Record`<`string`, `any`\>\> |
 | `next` | `NextFunction` |
 
-##### Returns
+#### Returns
 
 `void` \| `Promise`<`void`\>
 
 #### Defined in
 
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/52722f4/src/types.ts#L152)
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/types.ts#L152)
