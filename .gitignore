@@ -1,0 +1,5 @@
+.idea
+coverage
+dist
+uploads
+node_modules
