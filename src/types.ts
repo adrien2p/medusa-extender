@@ -1,4 +1,4 @@
-import { Express, NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { MigrationInterface } from 'typeorm';
 
@@ -149,9 +149,7 @@ export type MedusaRouteOptions = {
  * Describe a custom middleware instance.
  */
 export interface MedusaMiddleware {
-	consume(options: {
-		app: Express;
-	}): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void>;
+	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void>;
 }
 
 /**

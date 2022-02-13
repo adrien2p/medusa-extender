@@ -3,12 +3,11 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import { asValue, createContainer } from 'awilix';
-import { Middleware } from '../../decorators/components.decorator';
+import { Middleware, Module } from '../../decorators';
 import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../types';
 import { NextFunction, Request, Response } from 'express';
-import { middlewaresLoader } from '../middlewares.loader';
+import { middlewaresLoader, wrapMiddleware } from '../middlewares.loader';
 import { metadataReader } from '../../metadata-reader';
-import { Module } from '../../decorators/module.decorator';
 import { MEDUSA_RESOLVER_KEYS } from '../../constants';
 import express = require('express');
 
@@ -19,19 +18,17 @@ const MiddlewareServiceMock = {
 
 @Middleware({ requireAuth: false, routerOptions: [{ path: '/admin/test', method: 'get' }] })
 class PreAuthUserMiddleware implements MedusaMiddleware {
-	consume(): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
-		return function () {
-			return undefined;
-		};
+	/* eslint-disable @typescript-eslint/no-unused-vars */
+	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+		return;
 	}
 }
 
 @Middleware({ requireAuth: true, routerOptions: [{ path: '/admin/test', method: 'get' }] })
 class PostAuthUserMiddleware implements MedusaMiddleware {
-	consume(): (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => void | Promise<void> {
-		return function () {
-			return undefined;
-		};
+	/* eslint-disable @typescript-eslint/no-unused-vars */
+	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+		return;
 	}
 }
 
@@ -52,17 +49,12 @@ describe('Middlewares loader', () => {
 		const components = metadataReader([UserModule]);
 		middlewaresLoader(app, container, components.get('middleware'));
 
-		const preAuthUserMiddlewareInstance = new PreAuthUserMiddleware();
-		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(preAuthUserMiddlewareInstance.consume, {
-			app,
-		});
+		console.log(wrapMiddleware(components.get('middleware')[0]));
 
-		const postAuthUserMiddlewareInstance = new PostAuthUserMiddleware();
+		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalled();
+		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
+
 		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(
-			postAuthUserMiddlewareInstance.consume,
-			{ app }
-		);
+		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
 	});
 });

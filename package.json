@@ -85,6 +85,7 @@
     "jest": "^27.5.0",
     "jest-coverage-badges": "^1.1.2",
     "medusa-interfaces": "^1.1.34",
+    "mongoose": "^6.2.1",
     "prettier": "^2.5.1",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "^0.13.9",
