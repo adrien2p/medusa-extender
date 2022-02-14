@@ -1,7 +1,7 @@
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
 import MiddlewareService from '@medusajs/medusa/dist/services/middleware';
-import { GetInjectableOption, GetInjectableOptions, Utils } from './';
+import { GetInjectableOptions, Utils } from './';
 
 /**
  * @internal
@@ -18,31 +18,20 @@ export function middlewaresLoader(
 	const medusaMiddlewareService = container.resolve('middlewareService') as MiddlewareService;
 
 	for (const middlewareOptions of middlewares) {
-		const { requireAuth } = middlewareOptions;
-		const wrappedMiddleware = wrapMiddleware(middlewareOptions);
+		const { requireAuth, metatype } = middlewareOptions;
+		const middleware = new metatype().consume;
 		if (!requireAuth) {
-			medusaMiddlewareService.addPreAuthentication(wrappedMiddleware, { app });
+			medusaMiddlewareService.addPreAuthentication(middleware, { app });
 			Utils.log(
 				'MedusaLoader#middlewaresLoader',
 				`Middleware registered before auth - ${middlewareOptions.metatype.name}`
 			);
 		} else {
-			medusaMiddlewareService.addPostAuthentication(wrappedMiddleware, { app });
+			medusaMiddlewareService.addPostAuthentication(middleware, { app });
 			Utils.log(
 				'MedusaLoader#middlewaresLoader',
 				`Middleware registered after auth - ${middlewareOptions.metatype.name}`
 			);
 		}
 	}
-}
-
-export function wrapMiddleware(
-	middleware: GetInjectableOption<'middleware'>
-): (options: { app: Express }) => (...args: unknown[]) => void {
-	return ({ app }: { app: Express }): ((req, res, next) => void) => {
-		for (const routeOption of middleware.routerOptions) {
-			app[routeOption.method](routeOption.path, new middleware.metatype().consume);
-		}
-		return (req, res, next) => next();
-	};
 }
