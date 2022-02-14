@@ -60,9 +60,9 @@ describe('Middlewares loader', () => {
 		console.log(wrapMiddleware(components.get('middleware')[0]));
 
 		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
+		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(expect.any(Function), {});
 
 		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
+		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(expect.any(Function), {});
 	});
 });

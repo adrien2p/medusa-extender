@@ -35,14 +35,14 @@ describe('components', () => {
 
 	describe('Middleware', () => {
 		it('should define the middleware metadata', () => {
-			@Middleware({ requireAuth: true, routerOptions: [{ path: '', method: 'get' }] })
+			@Middleware({ requireAuth: true, routes: [{ path: '', method: 'get' }] })
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
 			expect(metadata).toEqual({
 				type: 'middleware',
 				requireAuth: true,
-				routerOptions: [{ path: '', method: 'get' }],
+				routes: [{ path: '', method: 'get' }],
 			});
 		});
 	});
@@ -60,7 +60,7 @@ describe('components', () => {
 	describe('Router', () => {
 		it('should define the router metadata', () => {
 			@Router({
-				router: [
+				routes: [
 					{
 						handler: () => '',
 						method: 'get',
@@ -73,13 +73,13 @@ describe('components', () => {
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
 			expect(metadata.type).toBe('router');
-			expect({ ...metadata.router[0] }).toMatchObject({
+			expect({ ...metadata.routes[0] }).toMatchObject({
 				method: 'get',
 				path: '',
 				requiredAuth: true,
 			});
-			expect(metadata.router[0].handler).toBeDefined();
-			expect(metadata.router[0].handler('')).toEqual('');
+			expect(metadata.routes[0].handler).toBeDefined();
+			expect(metadata.routes[0].handler('')).toEqual('');
 		});
 	});
 
