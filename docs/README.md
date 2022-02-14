@@ -57,6 +57,7 @@ medusa-extender / [Exports](modules.md)
 - [Full documentation including API](https://adrien2p.github.io/medusa-extender/#/)
 - [Code base overview](#code-base-overview)
 - [Features](#features)
+- [Demo: Products scoped per store (Marketplace)](#demo-products-scoped-per-store-marketplace)
 - Starters
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
     - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
@@ -130,6 +131,10 @@ npm i medusa-extender
 - :package: Build sharable modules
 
 > Build a module, export it and share it with the community.
+
+# Demo: Products scoped per store (Marketplace)
+
+[![Video demo: scoped products per store](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/store_scoped_demo_thumbnail.png?raw=true)](https://streamable.com/e/oel4vl)
 
 # Usage
 
