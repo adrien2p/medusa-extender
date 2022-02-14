@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/adrien2p/medusa-extender/compare/v1.1.9...v1.2.0) (2022-02-14)
+
+
+### Features
+
+* Improve middleware handling ([#27](https://github.com/adrien2p/medusa-extender/issues/27)) ([82601e9](https://github.com/adrien2p/medusa-extender/commits/82601e98da4d53f15ca35830822844e208ed8ba2))
+* Improve middleware handling to increase DX ([786e03c](https://github.com/adrien2p/medusa-extender/commits/786e03c2e039597c89829af9a66164f9b72348b2))
+
 ### [1.1.9](https://github.com/adrien2p/medusa-extender/compare/v1.1.8...v1.1.9) (2022-02-12)
 
 
