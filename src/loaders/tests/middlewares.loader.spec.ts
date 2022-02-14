@@ -20,7 +20,6 @@ const MiddlewareServiceMock = {
 class PreAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
 	consume(
-		err: unknown,
 		req: MedusaAuthenticatedRequest | Request,
 		res: Response,
 		next: NextFunction
@@ -33,7 +32,6 @@ class PreAuthUserMiddleware implements MedusaMiddleware {
 class PostAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
 	consume(
-		err: unknown,
 		req: MedusaAuthenticatedRequest | Request,
 		res: Response,
 		next: NextFunction

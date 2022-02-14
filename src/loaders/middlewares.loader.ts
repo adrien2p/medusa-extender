@@ -39,18 +39,16 @@ export function middlewaresLoader(
 export function wrapMiddleware(
 	middleware: GetInjectableOption<'middleware'>
 ): (options: { app: Express }) => (...args: unknown[]) => void {
-	return (): ((
-		err: unknown,
-		req: MedusaRequest | MedusaAuthenticatedRequest,
-		res: Response,
-		next: NextFunction
-	) => void) => {
-		return (err: unknown, req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
+	return (): ((req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void) => {
+		return (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
 			const shouldHandle = middleware.routes.some((route) => {
-				return req.method.toLowerCase() === route.method.toLowerCase() && req.path === route.path;
+				return (
+					(route.method === 'all' || req.method.toLowerCase() === route.method.toLowerCase()) &&
+					(route.path === '*' || req.path === route.path)
+				);
 			});
 			if (shouldHandle) {
-				return new middleware.metatype().consume(err, req, res, next);
+				return new middleware.metatype().consume(req, res, next);
 			}
 			return next();
 		};
