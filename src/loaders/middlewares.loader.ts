@@ -21,13 +21,13 @@ export function middlewaresLoader(
 		const { requireAuth } = middlewareOptions;
 		const wrappedMiddleware = wrapMiddleware(middlewareOptions);
 		if (!requireAuth) {
-			medusaMiddlewareService.addPreAuthentication(wrappedMiddleware, {});
+			medusaMiddlewareService.addPreAuthentication(wrappedMiddleware, { app });
 			Utils.log(
 				'MedusaLoader#middlewaresLoader',
 				`Middleware registered before auth - ${middlewareOptions.metatype.name}`
 			);
 		} else {
-			medusaMiddlewareService.addPostAuthentication(wrappedMiddleware, {});
+			medusaMiddlewareService.addPostAuthentication(wrappedMiddleware, { app });
 			Utils.log(
 				'MedusaLoader#middlewaresLoader',
 				`Middleware registered after auth - ${middlewareOptions.metatype.name}`
@@ -38,19 +38,31 @@ export function middlewaresLoader(
 
 export function wrapMiddleware(
 	middleware: GetInjectableOption<'middleware'>
-): (options: { app: Express }) => (...args: unknown[]) => void {
-	return (): ((req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => void) => {
-		return (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
+): ({ app }: { app: Express }) => (...args: unknown[]) => void {
+	return ({
+		app,
+	}: {
+		app: Express;
+	}): ((
+		err: unknown,
+		req: MedusaRequest | MedusaAuthenticatedRequest,
+		res: Response,
+		next: NextFunction
+	) => void | Promise<void>) => {
+		app.use(async (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
 			const shouldHandle = middleware.routes.some((route) => {
 				return (
 					(route.method === 'all' || req.method.toLowerCase() === route.method.toLowerCase()) &&
-					(route.path === '*' || req.path === route.path)
+					(route.path === '*' || req.originalUrl === route.path)
 				);
 			});
 			if (shouldHandle) {
-				return new middleware.metatype().consume(req, res, next);
+				await new middleware.metatype().consume(req, res, next);
+				return;
 			}
 			return next();
-		};
+		});
+		return (err: unknown, req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) =>
+			next();
 	};
 }

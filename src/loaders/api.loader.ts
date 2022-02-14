@@ -6,7 +6,7 @@ import { GetInjectableOptions } from './';
 /**
  * @internal
  * Decorate the original api loader to apply our custom middleware first.
- * @param app Express app
+ * @param app
  * @param middlewares
  */
 export async function apiLoader(app: Express, middlewares: GetInjectableOptions<'middleware'>): Promise<void> {

@@ -19,11 +19,7 @@ const MiddlewareServiceMock = {
 @Middleware({ requireAuth: false, routes: [{ path: '/admin/test', method: 'get' }] })
 class PreAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
-	consume(
-		req: MedusaAuthenticatedRequest | Request,
-		res: Response,
-		next: NextFunction
-	): void | Promise<void> {
+	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
 		return;
 	}
 }
@@ -31,11 +27,7 @@ class PreAuthUserMiddleware implements MedusaMiddleware {
 @Middleware({ requireAuth: true, routes: [{ path: '/admin/test', method: 'get' }] })
 class PostAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
-	consume(
-		req: MedusaAuthenticatedRequest | Request,
-		res: Response,
-		next: NextFunction
-	): void | Promise<void> {
+	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
 		return;
 	}
 }
@@ -60,9 +52,9 @@ describe('Middlewares loader', () => {
 		console.log(wrapMiddleware(components.get('middleware')[0]));
 
 		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(expect.any(Function), {});
+		expect(MiddlewareServiceMock.addPreAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
 
 		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalled();
-		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(expect.any(Function), {});
+		expect(MiddlewareServiceMock.addPostAuthentication).toHaveBeenCalledWith(expect.any(Function), { app });
 	});
 });
