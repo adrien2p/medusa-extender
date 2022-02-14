@@ -59,7 +59,7 @@ export type RoutesInjectionRouterConfiguration = {
  * Defines the injection options for routes.
  */
 export type RouterInjectionOptions = {
-	router: RoutesInjectionRouterConfiguration[];
+	routes: RoutesInjectionRouterConfiguration[];
 };
 
 /**
@@ -67,7 +67,7 @@ export type RouterInjectionOptions = {
  */
 export type MiddlewareInjectionOptions = {
 	requireAuth: boolean;
-	routerOptions: MedusaRouteOptions[];
+	routes: MedusaRouteOptions[];
 };
 
 /**
@@ -149,14 +149,12 @@ export type MedusaRouteOptions = {
  * Describe a custom middleware instance.
  */
 export interface MedusaMiddleware {
-	consume({
-		app: Express,
-	}): (
+	consume(
 		err: unknown,
 		req: MedusaAuthenticatedRequest | Request,
 		res: Response,
 		next: NextFunction
-	) => void | Promise<void>;
+	): void | Promise<void>;
 }
 
 /**

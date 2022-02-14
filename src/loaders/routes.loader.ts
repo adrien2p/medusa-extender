@@ -3,9 +3,9 @@ import { Express, NextFunction, Request, Response } from 'express';
 
 export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'router'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
-		routeOptions.router.forEach((router) => {
-			if (router.requiredAuth) {
-				registerRoute(app, router);
+		routeOptions.routes.forEach((route) => {
+			if (route.requiredAuth) {
+				registerRoute(app, route);
 			}
 		});
 	}
@@ -13,16 +13,16 @@ export function authenticatedRoutesLoader(routesOptions: GetInjectableOptions<'r
 
 export function unauthenticatedRoutesLoader(routesOptions: GetInjectableOptions<'router'>, app: Express): void {
 	for (const routeOptions of routesOptions) {
-		routeOptions.router.forEach((router) => {
-			if (!router.requiredAuth) {
-				registerRoute(app, router);
+		routeOptions.routes.forEach((route) => {
+			if (!route.requiredAuth) {
+				registerRoute(app, route);
 			}
 		});
 	}
 }
 
-function registerRoute(app: Express, router: RoutesInjectionRouterConfiguration): void {
-	const { method, path, handler } = router;
+function registerRoute(app: Express, route: RoutesInjectionRouterConfiguration): void {
+	const { method, path, handler } = route;
 	app[method.toLowerCase()](
 		path,
 		async (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => {

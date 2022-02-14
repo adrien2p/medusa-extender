@@ -17,21 +17,9 @@ Describe a custom middleware instance.
 
 ### consume
 
-▸ **consume**(`__namedParameters`): (`err`: `unknown`, `req`: [`MedusaAuthenticatedRequest`](../modules/types.md#medusaauthenticatedrequest) \| `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>, `res`: `Response`<`any`, `Record`<`string`, `any`\>\>, `next`: `NextFunction`) => `void` \| `Promise`<`void`\>
+▸ **consume**(`err`, `req`, `res`, `next`): `void` \| `Promise`<`void`\>
 
 #### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `__namedParameters` | `Object` |
-
-#### Returns
-
-`fn`
-
-▸ (`err`, `req`, `res`, `next`): `void` \| `Promise`<`void`\>
-
-##### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -40,10 +28,10 @@ Describe a custom middleware instance.
 | `res` | `Response`<`any`, `Record`<`string`, `any`\>\> |
 | `next` | `NextFunction` |
 
-##### Returns
+#### Returns
 
 `void` \| `Promise`<`void`\>
 
 #### Defined in
 
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/9d6ee37/src/types.ts#L152)
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/00dfd85/src/types.ts#L152)

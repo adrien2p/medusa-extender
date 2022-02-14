@@ -16,18 +16,28 @@ const MiddlewareServiceMock = {
 	addPostAuthentication: jest.fn(),
 };
 
-@Middleware({ requireAuth: false, routerOptions: [{ path: '/admin/test', method: 'get' }] })
+@Middleware({ requireAuth: false, routes: [{ path: '/admin/test', method: 'get' }] })
 class PreAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
-	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+	consume(
+		err: unknown,
+		req: MedusaAuthenticatedRequest | Request,
+		res: Response,
+		next: NextFunction
+	): void | Promise<void> {
 		return;
 	}
 }
 
-@Middleware({ requireAuth: true, routerOptions: [{ path: '/admin/test', method: 'get' }] })
+@Middleware({ requireAuth: true, routes: [{ path: '/admin/test', method: 'get' }] })
 class PostAuthUserMiddleware implements MedusaMiddleware {
 	/* eslint-disable @typescript-eslint/no-unused-vars */
-	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+	consume(
+		err: unknown,
+		req: MedusaAuthenticatedRequest | Request,
+		res: Response,
+		next: NextFunction
+	): void | Promise<void> {
 		return;
 	}
 }
