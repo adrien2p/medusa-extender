@@ -61,6 +61,7 @@
 - [Usage](#usage)
     - [Extending an existing feature](#extending-an-existing-feature)
     - [Create a custom feature module](#create-a-custom-feature-module)
+    - [Handling entity subscribers](#handling-entity-subscribers)
     - [Build a shareable module](#build-a-shareable-module)
     - [Use custom configuration inside service](#use-custom-configuration-inside-service)
     - [Integration in an existing medusa project](#integration-in-an-existing-medusa-project)
