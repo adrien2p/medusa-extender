@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/adrien2p/medusa-extender/compare/v1.3.2...v1.3.3) (2022-02-14)
+
+
+### Bug Fixes
+
+* Wrapped middleware passed to medusa ([9a61b5c](https://github.com/adrien2p/medusa-extender/commits/9a61b5c5dde5d9e0295a95c2e7cd8701206e77bc))
+
 ### [1.3.2](https://github.com/adrien2p/medusa-extender/compare/v1.3.1...v1.3.2) (2022-02-14)
 
 
