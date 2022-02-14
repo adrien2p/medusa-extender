@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/adrien2p/medusa-extender/compare/v1.3.1...v1.3.2) (2022-02-14)
+
+
+### Features
+
+* Improve middleware/router API ([ea9ab8a](https://github.com/adrien2p/medusa-extender/commits/ea9ab8ae3ce307589919d15d62f45816e01f9b21))
+
 ### [1.3.1](https://github.com/adrien2p/medusa-extender/compare/v1.3.0...v1.3.1) (2022-02-14)
 
 
