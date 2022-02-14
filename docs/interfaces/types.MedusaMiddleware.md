@@ -17,13 +17,12 @@ Describe a custom middleware instance.
 
 ### consume
 
-▸ **consume**(`err`, `req`, `res`, `next`): `void` \| `Promise`<`void`\>
+▸ **consume**(`req`, `res`, `next`): `void` \| `Promise`<`void`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `err` | `unknown` |
 | `req` | [`MedusaAuthenticatedRequest`](../modules/types.md#medusaauthenticatedrequest) \| `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> |
 | `res` | `Response`<`any`, `Record`<`string`, `any`\>\> |
 | `next` | `NextFunction` |
@@ -34,4 +33,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/00dfd85/src/types.ts#L152)
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/c9943bc/src/types.ts#L152)

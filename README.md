@@ -451,7 +451,7 @@ import UserSubscriber from './product.subscriber';
 
 @Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
 export default class AttachProductSubscribersMiddleware implements MedusaMiddleware {
-    public consume(err: unknonw, req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+    public consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
         MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
         return next();
     }
