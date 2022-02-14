@@ -7,7 +7,6 @@
 ### Functions
 
 - [middlewaresLoader](loaders_middlewares_loader.md#middlewaresloader)
-- [wrapMiddleware](loaders_middlewares_loader.md#wrapmiddleware)
 
 ## Functions
 
@@ -32,49 +31,4 @@ Register custom middlewares into medusa middleware service to be applied at the 
 
 #### Defined in
 
-[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/loaders/middlewares.loader.ts#L13)
-
-___
-
-### wrapMiddleware
-
-▸ **wrapMiddleware**(`middleware`): (`options`: { `app`: `Express`  }) => (...`args`: `unknown`[]) => `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `middleware` | [`GetInjectableOption`](types.md#getinjectableoption)<``"middleware"``\> |
-
-#### Returns
-
-`fn`
-
-▸ (`options`): (...`args`: `unknown`[]) => `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options` | `Object` |
-| `options.app` | `Express` |
-
-##### Returns
-
-`fn`
-
-▸ (...`args`): `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...args` | `unknown`[] |
-
-##### Returns
-
-`void`
-
-#### Defined in
-
-[src/loaders/middlewares.loader.ts:39](https://github.com/adrien2p/medusa-extender/blob/82601e9/src/loaders/middlewares.loader.ts#L39)
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/6eb943e/src/loaders/middlewares.loader.ts#L13)
