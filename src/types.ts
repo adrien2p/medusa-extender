@@ -149,12 +149,14 @@ export type MedusaRouteOptions = {
  * Describe a custom middleware instance.
  */
 export interface MedusaMiddleware {
-	consume(
+	consume({
+		app: Express,
+	}): (
 		err: unknown,
 		req: MedusaAuthenticatedRequest | Request,
 		res: Response,
 		next: NextFunction
-	): void | Promise<void>;
+	) => void | Promise<void>;
 }
 
 /**
