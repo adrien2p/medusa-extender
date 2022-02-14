@@ -129,6 +129,10 @@ npm i medusa-extender
 
 > Build a module, export it and share it with the community.
 
+# Demo with products scoped per store
+
+<div style="width:100%;height:0px;position:relative;padding-bottom:62.500%;"><iframe src="https://streamable.com/e/oel4vl" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+
 # Usage
 
 For the purpose of the examples that will follow in the next sections,
