@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/adrien2p/medusa-extender/compare/v1.3.4...v1.3.5) (2022-02-14)
+
+
+### Bug Fixes
+
+* Fix middlaware medusa integration ([bf18ba8](https://github.com/adrien2p/medusa-extender/commits/bf18ba8eacb8a9e3a7438ecc618e5835d6a5c66e))
+
 ### [1.3.4](https://github.com/adrien2p/medusa-extender/compare/v1.3.3...v1.3.4) (2022-02-14)
 
 
