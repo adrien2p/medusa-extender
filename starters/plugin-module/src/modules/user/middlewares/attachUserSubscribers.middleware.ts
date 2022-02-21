@@ -9,7 +9,7 @@ import {
 import { Connection } from 'typeorm';
 import UserSubscriber from '@modules/user/subscribers/user.subscriber';
 
-@Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/users/' }] })
+@Middleware({ requireAuth: true, routes: [{ method: 'post', path: '/admin/users/' }] })
 export default class AttachUserSubscribersMiddleware {
     public static get routesOptions(): MedusaRouteOptions {
         return {
