@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.6](https://github.com/adrien2p/medusa-extender/compare/v1.3.5...v1.3.6) (2022-02-21)
+
+
+### Features
+
+* Add demo video for products per store ([16c7f70](https://github.com/adrien2p/medusa-extender/commits/16c7f702f404dbd97c9df6e4baf42ad1d8a1ebca))
+* drop swc support and update starters accordingly ([#31](https://github.com/adrien2p/medusa-extender/issues/31)) ([7317122](https://github.com/adrien2p/medusa-extender/commits/7317122bd4b9e6005765ae11ccdd5a38173c1040))
+
 ### [1.3.5](https://github.com/adrien2p/medusa-extender/compare/v1.3.4...v1.3.5) (2022-02-14)
 
 
