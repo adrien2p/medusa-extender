@@ -4,11 +4,10 @@ module.exports = {
 		"json",
 		"ts"
 	],
+	"preset": 'ts-jest',
 	"rootDir": "src",
 	"testRegex": ".*\\.spec\\.ts$",
-	transform: {
-		'^.+\\.(t|j)sx?$': ['@swc/jest', { configFile: '.swcrcspec' }],
-	},
+	"transformIgnorePatterns": ["/node_modules/"],
 	"collectCoverageFrom": [
 		"**/*.(t|j)s"
 	],

@@ -8,9 +8,9 @@ async function bootstrap() {
 	const expressInstance = express();
 
 	const rootDir = resolve(__dirname);
-	await new Medusa(rootDir, expressInstance).load(
+	await new Medusa(rootDir, expressInstance).load([
 		UserModule
-	);
+	]);
 
 	expressInstance.listen(config.serverConfig.port, () => {
 		console.info('Server successfully started on port ' + config.serverConfig.port);
