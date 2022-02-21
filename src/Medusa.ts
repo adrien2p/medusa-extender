@@ -23,8 +23,7 @@ declare global {
 }
 
 /**
- * Load medusa and apply all middlewares and migrations before registering the medusa
- * internal container and database connection.
+ * Load medusa and apply all components
  */
 export class Medusa {
 	readonly #express: Express;
