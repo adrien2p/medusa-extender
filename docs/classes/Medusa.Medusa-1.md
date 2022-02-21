@@ -4,8 +4,7 @@
 
 [Medusa](../modules/Medusa.md).Medusa
 
-Load medusa and apply all middlewares and migrations before registering the medusa
-internal container and database connection.
+Load medusa and apply all components
 
 ## Table of contents
 
@@ -37,7 +36,7 @@ internal container and database connection.
 
 #### Defined in
 
-[src/Medusa.ts:37](https://github.com/adrien2p/medusa-extender/blob/ad977cf/src/Medusa.ts#L37)
+[src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L36)
 
 ## Properties
 
@@ -47,7 +46,7 @@ internal container and database connection.
 
 #### Defined in
 
-[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/ad977cf/src/Medusa.ts#L30)
+[src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L29)
 
 ___
 
@@ -57,7 +56,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/ad977cf/src/Medusa.ts#L31)
+[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L30)
 
 ## Methods
 
@@ -77,4 +76,4 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:45](https://github.com/adrien2p/medusa-extender/blob/ad977cf/src/Medusa.ts#L45)
+[src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L44)

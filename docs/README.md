@@ -458,7 +458,7 @@ import {
 } from 'medusa-extender';
 import UserSubscriber from './product.subscriber';
 
-@Middleware({ requireAuth: true, routerOptions: [{ method: 'post', path: '/admin/products/' }] })
+@Middleware({ requireAuth: true, routes: [{ method: 'post', path: '/admin/products/' }] })
 export default class AttachProductSubscribersMiddleware implements MedusaMiddleware {
     public consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
         MedusaUtils.attachOrReplaceEntitySubscriber(connection, UserSubscriber);
@@ -598,11 +598,11 @@ Here is the list of the provided decorators.
 | `@Entity(/*...*/)`                   | Decorate an entity                                                          | `{ resolutionKey?: string; override?: Type<TOverride>; };`
 | `@Repository(/*...*/)`               | Decorate a repository                                                       | `{ resolutionKey?: string; override?: Type<TOverride>; };`
 | `@Service(/*...*/)`                  | Decorate a service                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
-| `@Middleware(/*...*/)`               | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routerOptions: MedusaRouteOptions[]; };`
+| `@Middleware(/*...*/)`               | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routes: MedusaRouteOptions[]; };`
 | `@Router(/*...*/)`                   | Decorate a router                                                           | `{ router: RoutesInjectionRouterConfiguration[]; };`
 | `@Validator(/*...*/)`                | Decorate a validator                                                        | `{ override: Type<TOverride>; };`
 | `@Migration(/*...*/)`                | Decorate a migration                                                        | 
-| `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event|  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })
+| `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event|  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })`
 
 # Contribute :ballot_box:
 
