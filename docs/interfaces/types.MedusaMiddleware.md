@@ -23,7 +23,7 @@ Describe a custom middleware instance.
 
 | Name | Type |
 | :------ | :------ |
-| `req` | [`MedusaAuthenticatedRequest`](../modules/types.md#medusaauthenticatedrequest) \| `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> |
+| `req` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> \| [`MedusaAuthenticatedRequest`](../modules/types.md#medusaauthenticatedrequest) |
 | `res` | `Response`<`any`, `Record`<`string`, `any`\>\> |
 | `next` | `NextFunction` |
 
@@ -33,4 +33,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/types.ts#L152)
+[src/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/types.ts#L152)

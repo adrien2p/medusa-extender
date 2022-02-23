@@ -70,6 +70,7 @@ medusa-extender / [Exports](modules.md)
     - [Use custom configuration inside service](#use-custom-configuration-inside-service)
     - [Integration in an existing medusa project](#integration-in-an-existing-medusa-project)
 - [Decorators API](#decorators-api)
+- [Monitoring](#monitoring)
 
 # Getting started
 
@@ -133,9 +134,14 @@ npm i medusa-extender
 
 > Build a module, export it and share it with the community.
 
+- :chart_with_upwards_trend: Monitor your app
+
+> Using swagger stats you can access all the stats from the ui in your app or 
+> use the raw stats to show with grafana, elasticsearch or event kibana.
+
 # Demo: Products scoped per store (Marketplace)
 
-[![Video demo: scoped products per store](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/store_scoped_demo_thumbnail.png?raw=true)](https://streamable.com/e/oel4vl)
+[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/store_scoped_demo_thumbnail.png)](https://streamable.com/e/oel4vl)
 
 # Usage
 
@@ -589,7 +595,7 @@ medusa migrations run
 npm run start
 ```
 
-## Decorators API
+# Decorators API
 
 Here is the list of the provided decorators.
 
@@ -603,6 +609,55 @@ Here is the list of the provided decorators.
 | `@Validator(/*...*/)`                | Decorate a validator                                                        | `{ override: Type<TOverride>; };`
 | `@Migration(/*...*/)`                | Decorate a migration                                                        | 
 | `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event|  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })`
+
+# Monitoring
+
+If you want to monitor whats going on on your app, you must specify the config
+in your `medusa-config` file.
+
+Here are the expected config
+
+```typescript
+interface MonitoringOptions {
+    version?: string;
+    hostname?: string;
+    ip?: string;
+    timelineBucketDuration?: number;
+    swaggerSpec?: string | OpenAPI.Document;
+    uriPath: string;
+    durationBuckets?: number[];
+    requestSizeBuckets?: number[];
+    responseSizeBuckets?: number[];
+    apdexThreshold?: number;
+    onResponseFinish?: (req: Request, res: Response, next: NextFunction) => void | Promise<void>;
+    authentication?: boolean;
+    sessionMaxAge?: number;
+    elasticsearch?: string;
+    onAuthenticate?: (req: Request, username: string, password: string) => boolean | Promise<boolean>;
+}
+```
+
+so your `medusa-config` will looks like
+
+```typescript
+import { MonitoringOptions } from 'medusa-extender';
+
+const config = {
+    /* ... */
+    monitoring: {
+        uriPath: '/monitoring'
+    } as MonitoringOptions,
+    /* ... */
+};
+```
+
+Now, run your app and go to /monitoring url to get access to your dashboard.
+
+For more information on the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
+
+## Demo: Monitoring
+
+[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)
 
 # Contribute :ballot_box:
 

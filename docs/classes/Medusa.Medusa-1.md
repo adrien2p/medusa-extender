@@ -20,6 +20,7 @@ Load medusa and apply all components
 ### Methods
 
 - [load](Medusa.Medusa-1.md#load)
+- [loadMonitoringModuleIfNecessary](Medusa.Medusa-1.md#loadmonitoringmoduleifnecessary)
 
 ## Constructors
 
@@ -36,7 +37,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:36](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L36)
+[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -46,7 +47,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L29)
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/Medusa.ts#L31)
 
 ___
 
@@ -56,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:30](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L30)
+[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/Medusa.ts#L32)
 
 ## Methods
 
@@ -66,9 +67,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `modules` | [`Constructor`](../modules/types.md#constructor)<`unknown`\>[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `modules` | [`Constructor`](../modules/types.md#constructor)<`unknown`\>[] | The modules to load into medusa |
 
 #### Returns
 
@@ -76,4 +77,18 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:44](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/Medusa.ts#L44)
+[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/Medusa.ts#L46)
+
+___
+
+### loadMonitoringModuleIfNecessary
+
+▸ `Private` **loadMonitoringModuleIfNecessary**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/Medusa.ts:76](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/Medusa.ts#L76)
