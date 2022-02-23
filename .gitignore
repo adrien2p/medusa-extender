@@ -5,3 +5,4 @@ dist
 tsconfig.tsbuildinfo
 uploads
 coverage
+coverage-badges

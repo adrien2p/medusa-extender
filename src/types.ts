@@ -52,7 +52,7 @@ export type RoutesInjectionRouterConfiguration = {
 	requiredAuth: boolean;
 	method: string;
 	path: string;
-	handler: (...args: unknown[]) => void;
+	handlers: ((...args: unknown[]) => void)[];
 };
 
 /**

@@ -62,7 +62,7 @@ describe('components', () => {
 			@Router({
 				routes: [
 					{
-						handler: () => '',
+						handlers: [() => ''],
 						method: 'get',
 						path: '',
 						requiredAuth: true,
@@ -78,8 +78,8 @@ describe('components', () => {
 				path: '',
 				requiredAuth: true,
 			});
-			expect(metadata.routes[0].handler).toBeDefined();
-			expect(metadata.routes[0].handler('')).toEqual('');
+			expect(metadata.routes[0].handlers).toBeDefined();
+			expect(metadata.routes[0].handlers[0]('')).toEqual('');
 		});
 	});
 
