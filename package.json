@@ -13,7 +13,10 @@
     "modules",
     "plugins",
     "typescript",
-    "typeorm"
+    "typeorm",
+    "swagger-stats",
+    "prometheus",
+    "monitoring"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",
