@@ -56,7 +56,6 @@
 
 - [Getting started](#getting-started)
 - [Full documentation including API](https://adrien2p.github.io/medusa-extender/#/)
-- [Code base overview](#code-base-overview)
 - [Features](#features)
 - [Demo: Products scoped per store (Marketplace)](#demo-products-scoped-per-store-marketplace)
 - Starters
@@ -79,10 +78,6 @@
 ```bash
 npm i medusa-extender
 ```
-
-# Code base overview
-
-<img src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/medusa-extender.jpeg?raw=true" alt="Dependency graph" />
 
 # Features
 

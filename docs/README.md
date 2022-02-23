@@ -16,6 +16,8 @@ medusa-extender / [Exports](modules.md)
         but with the possibility to take your e-commerce project to the next level :rocket:
   </p>
   
+  <a href="https://www.buymeacoffee.com/adriendeperetti" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+  
 </div>
 
 ---
@@ -56,7 +58,6 @@ medusa-extender / [Exports](modules.md)
 
 - [Getting started](#getting-started)
 - [Full documentation including API](https://adrien2p.github.io/medusa-extender/#/)
-- [Code base overview](#code-base-overview)
 - [Features](#features)
 - [Demo: Products scoped per store (Marketplace)](#demo-products-scoped-per-store-marketplace)
 - Starters
@@ -79,10 +80,6 @@ medusa-extender / [Exports](modules.md)
 ```bash
 npm i medusa-extender
 ```
-
-# Code base overview
-
-<img src="https://github.com/adrien2p/medusa-extender/blob/assets/assets/medusa-extender.jpeg?raw=true" alt="Dependency graph" />
 
 # Features
 
