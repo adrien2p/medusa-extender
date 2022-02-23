@@ -3,7 +3,6 @@ import { OpenAPI } from "openapi-types";
 import { Express, NextFunction, Request, Response } from "express";
 
 export interface MonitoringOptions {
-    name: string;
     version: string;
     hostname: string;
     ip: string;
@@ -22,6 +21,11 @@ export interface MonitoringOptions {
 }
 
 export async function buildMonitoringMiddleware(app: Express, options: MonitoringOptions) {
+    options = {
+        ...options,
+        name: 'Medusa-extender monitoring Dashboard'
+    } as MonitoringOptions & { name: string };
+
     if (options.swaggerSpec && typeof options.swaggerSpec === 'string') {
         const { default: swaggerParser } = await import('swagger-parser');
         const parser = new swaggerParser();
