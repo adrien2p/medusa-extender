@@ -22,7 +22,7 @@ export {
 
 import { Utils as _Utils } from './utils';
 
-export { MonitoringOptions } from 'modules/monitoring';
+export { MonitoringOptions } from './modules/monitoring';
 
 export const Utils = {
 	attachOrReplaceEntitySubscriber: _Utils.attachOrReplaceEntitySubscriber,
