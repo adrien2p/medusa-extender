@@ -27,5 +27,6 @@
 - [loaders/services.loader](modules/loaders_services_loader.md)
 - [loaders/validators.loader](modules/loaders_validators_loader.md)
 - [metadata-reader](modules/metadata_reader.md)
+- [modules/monitoring](modules/modules_monitoring.md)
 - [types](modules/types.md)
 - [utils](modules/utils.md)

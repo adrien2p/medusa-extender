@@ -47,13 +47,19 @@
     "release:major": "standard-version --release-as major"
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "openapi-types": "^10.0.0",
+    "swagger-parser": "^10.0.3",
+    "swagger-stats": "^0.99.2",
+    "prom-client": "^12.0.0",
+    "webpack": "^5.0.0"
   },
   "peerDependencies": {
     "reflect-metadata": "^0.1.13",
     "@medusajs/medusa": "^1.1.64",
     "awilix": "^6.1.0",
     "express": "^4.17.2",
+    "medusa-core-utils": "^1.1.31",
     "medusa-interfaces": "^1.1.34",
     "typeorm": "^0.2.41"
   },
@@ -79,6 +85,7 @@
     "husky": "^7.0.0",
     "jest": "^27.5.0",
     "jest-coverage-badges": "^1.1.2",
+    "medusa-core-utils": "^1.1.31",
     "medusa-interfaces": "^1.1.34",
     "mongoose": "^6.2.1",
     "prettier": "^2.5.1",

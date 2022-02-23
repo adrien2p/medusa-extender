@@ -32,6 +32,7 @@
 - [Migration](index.md#migration)
 - [MixinReturnType](index.md#mixinreturntype)
 - [Module](index.md#module)
+- [MonitoringOptions](index.md#monitoringoptions)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
 - [Repository](index.md#repository)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
@@ -206,6 +207,12 @@ Re-exports [Module](decorators_module_decorator.md#module)
 
 ___
 
+### MonitoringOptions
+
+Re-exports [MonitoringOptions](../interfaces/modules_monitoring.MonitoringOptions.md)
+
+___
+
 ### OnMedusaEntityEvent
 
 Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
@@ -285,4 +292,4 @@ Renames and re-exports [customEventEmitter](event_emmiter.md#customeventemitter)
 
 #### Defined in
 
-[src/index.ts:25](https://github.com/adrien2p/medusa-extender/blob/56af3a5/src/index.ts#L25)
+[src/index.ts:27](https://github.com/adrien2p/medusa-extender/blob/ea4bdcd/src/index.ts#L27)
