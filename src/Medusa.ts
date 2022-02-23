@@ -1,4 +1,5 @@
 import loaders from '@medusajs/medusa/dist/loaders';
+import { getConfigFile } from "medusa-core-utils/dist";
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
 import { Constructor } from './types';
@@ -16,6 +17,7 @@ import {
 	servicesLoader,
 	unauthenticatedRoutesLoader,
 } from './loaders';
+import { buildMonitoringMiddleware, MonitoringOptions } from "./modules/monitoring";
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -39,10 +41,12 @@ export class Medusa {
 	}
 
 	/**
-	 * @param modules
+	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
+
+		await this.loadMonitoringModuleIfNecessary();
 
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
@@ -67,5 +71,14 @@ export class Medusa {
 
 		Utils.logRoutes(app);
 		return container as unknown as AwilixContainer;
+	}
+
+	private async loadMonitoringModuleIfNecessary(): Promise<void> {
+		const config = getConfigFile(this.#rootDir, 'medusa-config') as { monitoring: MonitoringOptions };
+		if (config.monitoring) {
+			Utils.log('Monitoring module', 'Loading monitoring module with the configuration found in medusa-config');
+			await buildMonitoringMiddleware(this.#express, config.monitoring);
+			Utils.log('Monitoring module', 'Monitoring module successfully attached');
+		}
 	}
 }
