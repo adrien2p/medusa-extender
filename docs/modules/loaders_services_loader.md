@@ -33,7 +33,7 @@ Load custom service and override existing ones.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/b811430/src/loaders/services.loader.ts#L55)
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/737355b/src/loaders/services.loader.ts#L55)
 
 ___
 
@@ -58,7 +58,7 @@ Load custom service into the container.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/b811430/src/loaders/services.loader.ts#L31)
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/737355b/src/loaders/services.loader.ts#L31)
 
 ___
 
@@ -81,4 +81,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/b811430/src/loaders/services.loader.ts#L9)
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/737355b/src/loaders/services.loader.ts#L9)

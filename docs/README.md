@@ -446,6 +446,9 @@ export default class ProductService extends MedusaProductService {
 And finally, we need to add the subscriber to the connection. There are different ways to achieve
 this. We will see, as an example below, a way to attach a request scoped subscribers.
 
+Every middleware decorated with the `@Middleware` decorator will be applied globally on the specified route
+before/after medusa authentication. Otherwise, to apply a middleware directly to a route you can have a look to the `@Router` decorator.
+
 <details>
 <summary>Click to see the example!</summary>
 
@@ -596,16 +599,16 @@ npm run start
 
 Here is the list of the provided decorators.
 
-| Decorator                            | Description                                                                 | Option               |
-| ----------------------               | ----------------------                                                      | ----------------------
-| `@Entity(/*...*/)`                   | Decorate an entity                                                          | `{ resolutionKey?: string; override?: Type<TOverride>; };`
-| `@Repository(/*...*/)`               | Decorate a repository                                                       | `{ resolutionKey?: string; override?: Type<TOverride>; };`
-| `@Service(/*...*/)`                  | Decorate a service                                                          | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
-| `@Middleware(/*...*/)`               | Decorate a middleware                                                       | `{ requireAuth: boolean; string; routes: MedusaRouteOptions[]; };`
-| `@Router(/*...*/)`                   | Decorate a router                                                           | `{ router: RoutesInjectionRouterConfiguration[]; };`
-| `@Validator(/*...*/)`                | Decorate a validator                                                        | `{ override: Type<TOverride>; };`
-| `@Migration(/*...*/)`                | Decorate a migration                                                        | 
-| `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event|  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })`
+| Decorator                            | Description                                                                                | Option               |
+| ----------------------               | ----------------------                                                                     | ----------------------
+| `@Entity(/*...*/)`                   | Decorate an entity                                                                         | `{ resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Repository(/*...*/)`               | Decorate a repository                                                                      | `{ resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Service(/*...*/)`                  | Decorate a service                                                                         | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; };`
+| `@Middleware(/*...*/)`               | Decorate a middleware                                                                      | `{ requireAuth: boolean; string; routes: MedusaRouteOptions[]; };`
+| `@Router(/*...*/)`                   | Decorate a router, can provide a list of handlers that can include route related middleware| `{ router: RoutesInjectionRouterConfiguration[]; };`
+| `@Validator(/*...*/)`                | Decorate a validator                                                                       | `{ override: Type<TOverride>; };`
+| `@Migration(/*...*/)`                | Decorate a migration                                                                       | 
+| `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event               |  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })`
 
 # Monitoring
 
