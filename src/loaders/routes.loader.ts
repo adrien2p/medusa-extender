@@ -27,12 +27,7 @@ function registerRoute(app: Express, route: RoutesInjectionRouterConfiguration):
         path,
         handlers.map(handler => {
             return async (req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction) => {
-                try {
-                    await handler(req, res);
-                    return next();
-                } catch (e) {
-                    return next(e);
-                }
+                await handler(req, res, next);
             };
         })
     );
