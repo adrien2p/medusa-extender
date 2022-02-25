@@ -637,16 +637,14 @@ interface MonitoringOptions {
 }
 ```
 
-so your `medusa-config` will looks like
+so your `medusa-config.js` will looks like
 
 ```typescript
-import { MonitoringOptions } from 'medusa-extender';
-
 const config = {
     /* ... */
     monitoring: {
         uriPath: '/monitoring'
-    } as MonitoringOptions,
+    },
     /* ... */
 };
 ```
