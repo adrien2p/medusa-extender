@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/adrien2p/medusa-extender/compare/v1.4.0...v1.4.1) (2022-02-25)
+
+
+### Features
+
+* Allow to pass a list of handlers to the router decorator ([737355b](https://github.com/adrien2p/medusa-extender/commits/737355b00783f963b85ada8035438885bbc4c69e))
+* **starters:** Improve server ([c2d2cfc](https://github.com/adrien2p/medusa-extender/commits/c2d2cfc274a2f86eadc4b37e15523e1383c05ec9))
+
+
+### Bug Fixes
+
+* Wrong local path in the index when reaching modules ([2631023](https://github.com/adrien2p/medusa-extender/commits/2631023a225b96f7f9da14cff1beac5bdd316fd4))
+
 ## [1.4.0](https://github.com/adrien2p/medusa-extender/compare/v1.3.6...v1.4.0) (2022-02-23)
 
 ### [1.3.6](https://github.com/adrien2p/medusa-extender/compare/v1.3.5...v1.3.6) (2022-02-21)
