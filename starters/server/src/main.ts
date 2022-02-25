@@ -1,14 +1,12 @@
 import express = require('express');
-import config = require('./medusa-config');
+const config = require('../medusa-config');
 import { Medusa } from 'medusa-extender';
-import { resolve } from 'path';
-import { UserModule } from '@modules/user/user.module';
+import { UserModule } from './modules/user/user.module';
 
 async function bootstrap() {
 	const expressInstance = express();
 
-	const rootDir = resolve(__dirname);
-	await new Medusa(rootDir, expressInstance).load([
+	await new Medusa(__dirname + '/../', expressInstance).load([
 		UserModule
 	]);
 

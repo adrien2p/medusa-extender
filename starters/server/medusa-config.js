@@ -9,11 +9,11 @@ switch (process.env.NODE_ENV) {
 		ENV_FILE_NAME = '.env.test';
 		break;
 	default:
-		ENV_FILE_NAME = '.env.local';
+		ENV_FILE_NAME = '.env';
 		break;
 }
 
-dotenv.config({ path: __dirname + '../' + ENV_FILE_NAME });
+dotenv.config({ path: process.cwd() + '/' + ENV_FILE_NAME });
 
 const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
 const PORT = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ const plugins = [
 	`medusa-payment-manual`,
 ];
 
-const config = {
+module.exports = {
 	serverConfig: {
 		port: PORT,
 	},
@@ -35,7 +35,7 @@ const config = {
 		jwtSecret: process.env.JWT_SECRET,
 		cookieSecret: process.env.COOKIE_SECRET,
 
-		database_url: `postgres://${process.env.DB_HOST}:${process.env.DB_PORT}/medusa`,
+		database_url: `postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/medusa`,
 		database_type: 'postgres',
 		store_cors: STORE_CORS,
 		admin_cors: ADMIN_CORS,
@@ -43,5 +43,3 @@ const config = {
 	},
 	plugins,
 };
-
-export = config;

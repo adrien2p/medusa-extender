@@ -6,7 +6,7 @@
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p",
   "license": "MIT",
-  "main": "dist/main.js",
+  "main": "dist/src/main.js",
   "files": [
     "dist"
   ],
@@ -17,8 +17,8 @@
     "migrate": "ts-node migrate.ts",
     "build": "rm -rf dist && ./node_modules/.bin/tsc -p tsconfig.json",
     "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "npm run build && NODE_ENV=development node ./dist/main.js",
-    "start:prod": "npm run build:prod && NODE_ENV=prod node dist/main",
+    "start": "npm run build && NODE_ENV=development node ./dist/src/main.js",
+    "start:prod": "npm run build:prod && NODE_ENV=prod node dist/src/main",
     "test": "NODE_ENV=test jest --detectOpenHandles",
     "test:watch": "NODE_ENV=test jest --watch --detectOpenHandles",
     "test:cov": "NODE_ENV=test jest --coverage --detectOpenHandles"

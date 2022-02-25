@@ -7,7 +7,7 @@ import {
     Utils as MedusaUtils,
 } from 'medusa-extender';
 import { Connection } from 'typeorm';
-import UserSubscriber from '@modules/user/subscribers/user.subscriber';
+import UserSubscriber from '../subscribers/user.subscriber';
 
 @Middleware({ requireAuth: true, routes: [{ method: 'post', path: '/admin/users/' }] })
 export default class AttachUserSubscribersMiddleware {

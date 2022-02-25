@@ -10,19 +10,16 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "allowJs": true,
     "baseUrl": "./src",
-    "rootDir": "./src",
+    "rootDir": ".",
     "lib": [
       "es2015.proxy",
       "es2017"
     ],
-    "outDir": "dist",
-    "paths": {
-      "@modules/*": [
-        "modules/*"
-      ]
-    }
+    "outDir": "dist"
   },
+  "include": ["src", "medusa-config.js"],
   "exclude": [
     "**/node_modules"
   ]
