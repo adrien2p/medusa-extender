@@ -32,7 +32,7 @@ Register custom middlewares into medusa middleware service to be applied at the 
 
 #### Defined in
 
-[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/2631023/src/loaders/middlewares.loader.ts#L13)
+[src/loaders/middlewares.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/loaders/middlewares.loader.ts#L13)
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 #### Defined in
 
-[src/loaders/middlewares.loader.ts:39](https://github.com/adrien2p/medusa-extender/blob/2631023/src/loaders/middlewares.loader.ts#L39)
+[src/loaders/middlewares.loader.ts:39](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/loaders/middlewares.loader.ts#L39)

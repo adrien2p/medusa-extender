@@ -43,6 +43,10 @@ medusa-extender / [Exports](modules.md)
   <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg"><img src="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL analysis status"></a>
 </div>
 
+### Support us on Product Hunt
+
+<a href="https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark" alt="Medusa-extender - Badass modules for medusa (extend, monitor, marketplace) | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 --- 
 
 <div align="center">
