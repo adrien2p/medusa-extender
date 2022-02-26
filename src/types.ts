@@ -50,7 +50,7 @@ export type RepositoryInjectableOptions<TOverride = unknown> = {
  */
 export type RoutesInjectionRouterConfiguration = {
 	requiredAuth: boolean;
-	method: string;
+	method: MedusaRouteMethods;
 	path: string;
 	handlers: ((...args: unknown[]) => void)[];
 };
