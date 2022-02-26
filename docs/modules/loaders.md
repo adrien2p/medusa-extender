@@ -26,8 +26,7 @@
 - [Type](loaders.md#type)
 - [Utils](loaders.md#utils)
 - [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
-- [apiLoader](loaders.md#apiloader)
-- [authenticatedRoutesLoader](loaders.md#authenticatedroutesloader)
+- [adminApiLoader](loaders.md#adminapiloader)
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
 - [migrationsLoader](loaders.md#migrationsloader)
@@ -42,7 +41,7 @@
 - [registerService](loaders.md#registerservice)
 - [repositoriesLoader](loaders.md#repositoriesloader)
 - [servicesLoader](loaders.md#servicesloader)
-- [unauthenticatedRoutesLoader](loaders.md#unauthenticatedroutesloader)
+- [storeApiLoader](loaders.md#storeapiloader)
 - [validatorsLoader](loaders.md#validatorsloader)
 
 ## References
@@ -167,15 +166,9 @@ Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
 
 ___
 
-### apiLoader
+### adminApiLoader
 
-Re-exports [apiLoader](loaders_api_loader.md#apiloader)
-
-___
-
-### authenticatedRoutesLoader
-
-Re-exports [authenticatedRoutesLoader](loaders_routes_loader.md#authenticatedroutesloader)
+Re-exports [adminApiLoader](loaders_admin_api_loader.md#adminapiloader)
 
 ___
 
@@ -263,9 +256,9 @@ Re-exports [servicesLoader](loaders_services_loader.md#servicesloader)
 
 ___
 
-### unauthenticatedRoutesLoader
+### storeApiLoader
 
-Re-exports [unauthenticatedRoutesLoader](loaders_routes_loader.md#unauthenticatedroutesloader)
+Re-exports [storeApiLoader](loaders_store_api_loader.md#storeapiloader)
 
 ___
 

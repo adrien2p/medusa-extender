@@ -17,7 +17,7 @@ export async function migrationsLoader(
 
 	await dbConnection.runMigrations().then((ranMigrations: Migration[]) => {
 		for (const migration of ranMigrations) {
-			Utils.log('MedusaLoader#runCustomMigrations', `Migration applied - ${migration.name}`);
+			Utils.hydrateLog('MedusaLoader#runCustomMigrations', `Migration applied - ${migration.name}`);
 		}
 	});
 }

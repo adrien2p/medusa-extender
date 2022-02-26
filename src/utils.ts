@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const chalk = require('chalk');
 import { Express } from 'express';
+import * as getEndpoints from 'express-list-endpoints';
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
 import { Constructor, MixinReturnType } from './types';
 
@@ -9,6 +10,8 @@ import { Constructor, MixinReturnType } from './types';
  * Utilities helper methods.
  */
 export class Utils {
+	static logs: string[][] = [];
+
 	/**
 	 * For repository context, you should extends repository and the medusa target repository.
 	 * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
@@ -52,65 +55,44 @@ export class Utils {
 	}
 
 	/**
-	 * Log all the routes from the express instance.
-	 * @param express Express instance
-	 */
-	static logRoutes(express: Express): void {
-		express._router.stack.forEach(Utils.printRoutes.bind(null, []));
-	}
-
-	/**
+	 * @internal
 	 * Prepare the log to be shown to be consistent everywhere.
 	 * @param context Where the log comes from
 	 * @param description The description of the action logged
 	 * @param variables The variable that populate the logs
 	 */
-	static log(context: string, description: string, ...variables: string[]): void {
+	static hydrateLog(context: string, description: string, ...variables: string[]): void {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
-		console.log(
+		this.logs.push([
 			`${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(description)}`,
-			...variables
-		);
+			...variables,
+		]);
 	}
 
 	/**
-	 * @private
-	 * Print all the routes from `path` and `layer` that comes from express.
-	 * @param path
-	 * @param layer
+	 * @internal
+	 * Prepare the logs the show all available routes on the app.
+	 * @param app
 	 */
-	private static printRoutes(path: string[], layer: any) {
-		if (layer.route) {
-			layer.route.stack.forEach(Utils.printRoutes.bind(null, path.concat(Utils.splitRoutes(layer.route.path))));
-		} else if (layer.name === 'router' && layer.handle.stack) {
-			layer.handle.stack.forEach(Utils.printRoutes.bind(null, path.concat(Utils.splitRoutes(layer.regexp))));
-		} else if (layer.method) {
-			Utils.log(
-				'MedusaLoader',
-				'Route Mapped {/%s, %s}',
-				path.concat(Utils.splitRoutes(layer.regexp)).filter(Boolean).join('/'),
-				layer.method.toUpperCase()
-			);
+	static hydrateRouteLog(app: Express): void {
+		const endPoints = getEndpoints(app);
+		for (const endPoint of endPoints) {
+			endPoint.methods.map((method) => {
+				this.hydrateLog('MedusaLoader', 'Route Mapped {/%s, %s}', endPoint.path, method);
+			});
 		}
 	}
 
 	/**
-	 * @private
-	 * Split the routes contained in express.
-	 * @param thing
+	 * @internal
+	 * Display the logs that has been registered during the build time.
 	 */
-	private static splitRoutes(thing: string | (RegExp & { fast_slash: boolean })) {
-		if (typeof thing === 'string') {
-			return thing.split('/');
-		} else if (thing.fast_slash) {
-			return '';
-		} else {
-			const match = thing
-				.toString()
-				.replace('\\/?', '')
-				.replace('(?=\\/|$)', '$')
-				.match(/^\/\^((?:\\[.*+?^${}()|[\]\\\/]|[^.*+?^${}()|[\]\\\/])*)\$\//);
-			return match ? match[1].replace(/\\(.)/g, '$1').split('/') : '<complex:' + thing.toString() + '>';
+	static displayLogs() {
+		if (this.logs.length) {
+			this.logs.map((logArgs) => {
+				console.log(...logArgs);
+			});
+			this.logs.length = 0;
 		}
 	}
 }

@@ -42,7 +42,7 @@ export function registerService(
 		[resolutionKey]: asFunction((cradle) => new metatype(cradle, configModule), { lifetime: scope || 'SINGLETON' }),
 	});
 
-	Utils.log('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
+	Utils.hydrateLog('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
 }
 
 /**
@@ -66,5 +66,5 @@ export function overrideService(
 		}),
 	});
 
-	Utils.log('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
+	Utils.hydrateLog('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
 }

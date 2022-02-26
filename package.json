@@ -43,7 +43,7 @@
     "build:graph": "./node_modules/.bin/ts_dependency_graph --filter 'types.ts' --filter '**/tests/**' --base_path ./src --max_depth 4 --start ./src/index.ts | dot -T jpeg > ./assets/medusa-extender.jpeg",
     "serve:doc": "./node_modules/.bin/docsify serve docs",
     "test": "NODE_ENV=test ./node_modules/.bin/jest --collect-coverage --config ./jest.config.js && npm run coverage:badges",
-    "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output coverage-bages",
+    "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output coverage-badges",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
@@ -51,10 +51,11 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
+    "express-list-endpoints": "^6.0.0",
     "openapi-types": "^10.0.0",
+    "prom-client": "^12.0.0",
     "swagger-parser": "^10.0.3",
     "swagger-stats": "^0.99.2",
-    "prom-client": "^12.0.0",
     "webpack": "^5.0.0"
   },
   "peerDependencies": {

@@ -13,20 +13,33 @@ Utilities helper methods.
 
 - [constructor](utils.Utils.md#constructor)
 
+### Properties
+
+- [logs](utils.Utils.md#logs)
+
 ### Methods
 
 - [attachOrReplaceEntitySubscriber](utils.Utils.md#attachorreplaceentitysubscriber)
-- [log](utils.Utils.md#log)
-- [logRoutes](utils.Utils.md#logroutes)
-- [printRoutes](utils.Utils.md#printroutes)
+- [displayLogs](utils.Utils.md#displaylogs)
+- [hydrateLog](utils.Utils.md#hydratelog)
+- [hydrateRouteLog](utils.Utils.md#hydrateroutelog)
 - [repositoryMixin](utils.Utils.md#repositorymixin)
-- [splitRoutes](utils.Utils.md#splitroutes)
 
 ## Constructors
 
 ### constructor
 
 • **new Utils**()
+
+## Properties
+
+### logs
+
+▪ `Static` **logs**: `string`[][] = `[]`
+
+#### Defined in
+
+[src/utils.ts:13](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L13)
 
 ## Methods
 
@@ -56,14 +69,32 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:37](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L37)
+[src/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L40)
 
 ___
 
-### log
+### displayLogs
 
-▸ `Static` **log**(`context`, `description`, ...`variables`): `void`
+▸ `Static` **displayLogs**(): `void`
 
+**`internal`**
+Display the logs that has been registered during the build time.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/utils.ts:90](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L90)
+
+___
+
+### hydrateLog
+
+▸ `Static` **hydrateLog**(`context`, `description`, ...`variables`): `void`
+
+**`internal`**
 Prepare the log to be shown to be consistent everywhere.
 
 #### Parameters
@@ -80,42 +111,22 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L68)
+[src/utils.ts:64](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L64)
 
 ___
 
-### logRoutes
+### hydrateRouteLog
 
-▸ `Static` **logRoutes**(`express`): `void`
+▸ `Static` **hydrateRouteLog**(`app`): `void`
 
-Log all the routes from the express instance.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `express` | `Express` | Express instance |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/utils.ts:58](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L58)
-
-___
-
-### printRoutes
-
-▸ `Static` `Private` **printRoutes**(`path`, `layer`): `void`
+**`internal`**
+Prepare the logs the show all available routes on the app.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `path` | `string`[] |
-| `layer` | `any` |
+| `app` | `Express` |
 
 #### Returns
 
@@ -123,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/utils.ts:82](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L82)
+[src/utils.ts:77](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L77)
 
 ___
 
@@ -153,24 +164,4 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/utils.ts:17](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L17)
-
-___
-
-### splitRoutes
-
-▸ `Static` `Private` **splitRoutes**(`thing`): `string` \| `string`[]
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `thing` | `string` \| `RegExp` & { `fast_slash`: `boolean`  } |
-
-#### Returns
-
-`string` \| `string`[]
-
-#### Defined in
-
-[src/utils.ts:102](https://github.com/adrien2p/medusa-extender/blob/c2d2cfc/src/utils.ts#L102)
+[src/utils.ts:20](https://github.com/adrien2p/medusa-extender/blob/575c26f/src/utils.ts#L20)

@@ -6,15 +6,14 @@ import { Constructor } from './types';
 import { Utils } from './utils';
 import { metadataReader } from './metadata-reader';
 import {
-	apiLoader,
-	authenticatedRoutesLoader,
+	adminApiLoader,
 	databaseLoader,
 	migrationsLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
 	pluginsLoadersAndListeners,
 	servicesLoader,
-	unauthenticatedRoutesLoader,
+	storeApiLoader,
 	validatorsLoader,
 } from './loaders';
 import { buildMonitoringMiddleware, MonitoringOptions } from './modules/monitoring';
@@ -51,25 +50,32 @@ export class Medusa {
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
-		await apiLoader(this.#express, moduleComponentsOptions.get('middleware') ?? []);
+		await adminApiLoader(
+			this.#express,
+			moduleComponentsOptions.get('middleware') ?? [],
+			moduleComponentsOptions.get('router') ?? []
+		);
+		await storeApiLoader(
+			this.#express,
+			moduleComponentsOptions.get('middleware') ?? [],
+			moduleComponentsOptions.get('router') ?? []
+		);
 		await databaseLoader(
 			moduleComponentsOptions.get('entity') ?? [],
 			moduleComponentsOptions.get('repository') ?? []
 		);
 		await pluginsLoadersAndListeners(this.#express);
 		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
-		unauthenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], this.#express);
 
-		const { app, container, dbConnection } = await loaders({
+		const { container, dbConnection } = await loaders({
 			directory: this.#rootDir,
 			expressApp: this.#express,
 		});
 
-		authenticatedRoutesLoader(moduleComponentsOptions.get('router') ?? [], app);
-
 		await migrationsLoader(moduleComponentsOptions.get('migration') ?? [], dbConnection);
 
-		Utils.logRoutes(app);
+		Utils.hydrateRouteLog(this.#express);
+		Utils.displayLogs();
 		return container as unknown as AwilixContainer;
 	}
 
@@ -78,9 +84,12 @@ export class Medusa {
 			configModule: { monitoring: MonitoringOptions };
 		};
 		if (configModule.monitoring) {
-			Utils.log('Monitoring module', 'Loading monitoring module with the configuration found in medusa-config');
+			Utils.hydrateLog(
+				'Monitoring module',
+				'Loading monitoring module with the configuration found in medusa-config'
+			);
 			await buildMonitoringMiddleware(this.#express, configModule.monitoring);
-			Utils.log('Monitoring module', 'Monitoring module successfully attached');
+			Utils.hydrateLog('Monitoring module', 'Monitoring module successfully attached');
 		}
 	}
 }

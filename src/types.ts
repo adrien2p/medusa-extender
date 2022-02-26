@@ -74,7 +74,7 @@ export type MiddlewareInjectionOptions = {
  * Defines the injection options for routes.
  */
 export type ValidatorInjectionOptions<TOverride = unknown> = {
-	override?: Type<TOverride>;
+	override: Type<TOverride>;
 };
 
 /**
