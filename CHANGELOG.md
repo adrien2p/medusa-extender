@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/adrien2p/medusa-extender/compare/v1.4.1...v1.4.2) (2022-02-26)
+
+
+### Features
+
+* Improve middlewares and routers management when adding to medusa core ([db44735](https://github.com/adrien2p/medusa-extender/commits/db44735f24662614b5fd8635511d50a938eec2cc))
+
+
+### Bug Fixes
+
+* Router - pass next to the handler to let the consumer decide what to do ([575c26f](https://github.com/adrien2p/medusa-extender/commits/575c26fee79b487044d9ed9b90cc9696859ca0bb))
+
 ### [1.4.1](https://github.com/adrien2p/medusa-extender/compare/v1.4.0...v1.4.1) (2022-02-25)
 
 
