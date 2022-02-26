@@ -74,7 +74,7 @@ export class Medusa {
 
 		await migrationsLoader(moduleComponentsOptions.get('migration') ?? [], dbConnection);
 
-		Utils.hydrateRouteLog(this.#express);
+		Utils.hydrateRouterLog(this.#express);
 		Utils.displayLogs();
 		return container as unknown as AwilixContainer;
 	}

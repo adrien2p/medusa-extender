@@ -74,11 +74,11 @@ export class Utils {
 	 * Prepare the logs the show all available routes on the app.
 	 * @param app
 	 */
-	static hydrateRouteLog(app: Express): void {
+	static hydrateRouterLog(app: Express): void {
 		const endPoints = getEndpoints(app);
 		for (const endPoint of endPoints) {
 			endPoint.methods.map((method) => {
-				this.hydrateLog('MedusaLoader', 'Route Mapped {/%s, %s}', endPoint.path, method);
+				this.hydrateLog('MedusaLoader', 'Route Mapped {%s, %s}', endPoint.path, method);
 			});
 		}
 	}
