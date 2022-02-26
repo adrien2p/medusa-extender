@@ -39,7 +39,7 @@ Utilities helper methods.
 
 #### Defined in
 
-[src/utils.ts:13](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L13)
+[src/utils.ts:13](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L13)
 
 ## Methods
 
@@ -69,7 +69,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L40)
+[src/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L40)
 
 ___
 
@@ -86,7 +86,7 @@ Display the logs that has been registered during the build time.
 
 #### Defined in
 
-[src/utils.ts:90](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L90)
+[src/utils.ts:90](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L90)
 
 ___
 
@@ -111,7 +111,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:64](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L64)
+[src/utils.ts:64](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L64)
 
 ___
 
@@ -134,7 +134,7 @@ Prepare the logs the show all available routes on the app.
 
 #### Defined in
 
-[src/utils.ts:77](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L77)
+[src/utils.ts:77](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L77)
 
 ___
 
@@ -164,4 +164,4 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/utils.ts:20](https://github.com/adrien2p/medusa-extender/blob/af3b06d/src/utils.ts#L20)
+[src/utils.ts:20](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L20)
