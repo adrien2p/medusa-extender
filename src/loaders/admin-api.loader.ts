@@ -19,11 +19,7 @@ export async function adminApiLoader(
 		.map((middleware) => ({
 			...middleware,
 			routes: middleware.routes.filter((route) => {
-				if (route.path.startsWith('/admin')) {
-					route.path = route.path.replace('/admin', '');
-					return true;
-				}
-				return false;
+				return route.path.startsWith('*') || route.path.startsWith('/admin');
 			}),
 		}))
 		.filter((middleware) => middleware.routes.length);
