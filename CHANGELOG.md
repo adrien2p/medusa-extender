@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.4](https://github.com/adrien2p/medusa-extender/compare/v1.4.3...v1.4.4) (2022-02-26)
+
+
+### Bug Fixes
+
+* Middleware loading on seprate domains ([ae4f660](https://github.com/adrien2p/medusa-extender/commits/ae4f660d5ec4c8e72a0723cf60220049c64aa35e))
+
 ### [1.4.3](https://github.com/adrien2p/medusa-extender/compare/v1.4.2...v1.4.3) (2022-02-26)
 
 
