@@ -9,8 +9,8 @@ import { Utils, GetInjectableOption, GetInjectableOptions } from './';
 export async function servicesLoader(services: GetInjectableOptions<'service'>): Promise<void> {
 	const serviceLoader = await import('@medusajs/medusa/dist/loaders/services');
 	const originalServiceLoader = serviceLoader.default;
-	serviceLoader.default = ({ container, configModule }) => {
-		originalServiceLoader({ container, configModule });
+	serviceLoader.default = ({ container, configModule, isTest }) => {
+		originalServiceLoader({ container, configModule, isTest });
 		for (const serviceOptions of services) {
 			if (!serviceOptions.resolutionKey) {
 				overrideService(container, serviceOptions, configModule);
