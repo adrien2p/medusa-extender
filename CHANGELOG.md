@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://github.com/adrien2p/medusa-extender/compare/v1.4.4...v1.4.5) (2022-03-08)
+
+
+### Features
+
+* Allow to pass modules along side the components to a @Module ([cc3c8f9](https://github.com/adrien2p/medusa-extender/commits/cc3c8f935f90467c86e93d6f0b5276a2073a6ca1))
+* Reorganise files and add runtime package install for optional modules such as monitoring ([c7fec4d](https://github.com/adrien2p/medusa-extender/commits/c7fec4d1c6642d38da51c17e12f41969b210d0fe))
+
+
+### Bug Fixes
+
+* Test pipeline with new medusa versions ([b8bfac7](https://github.com/adrien2p/medusa-extender/commits/b8bfac72ccc99b3a2c194a80eef516df80e064e8))
+
 ### [1.4.4](https://github.com/adrien2p/medusa-extender/compare/v1.4.3...v1.4.4) (2022-02-26)
 
 
