@@ -3,5 +3,5 @@ export * from './components.decorator';
 export * from './onMedusaEntityEvent.decorator';
 export * from './utils';
 
-export * from '../constants';
-export * from '../types';
+export * from '../core/constants';
+export * from '../core/types';

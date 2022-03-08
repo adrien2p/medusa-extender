@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 import { Module, Validator } from '../../decorators';
-import { metadataReader } from '../../metadata-reader';
+import { metadataReader } from '../../core/metadata-reader';
 import { validatorsLoader } from '../validators.loader';
 import { AdminPostProductsReq } from '@medusajs/medusa/dist';
 

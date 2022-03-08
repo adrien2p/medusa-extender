@@ -41,5 +41,8 @@ module.exports = {
 		admin_cors: ADMIN_CORS,
 		redis_url: REDIS_URL,
 	},
+	monitoring: {
+        uriPath: '/monitoring'
+    },
 	plugins,
 };

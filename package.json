@@ -51,11 +51,9 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
+    "detect-package-manager": "^2.0.1",
     "express-list-endpoints": "^6.0.0",
     "openapi-types": "^10.0.0",
-    "prom-client": "^12.0.0",
-    "swagger-parser": "^10.0.3",
-    "swagger-stats": "^0.99.2",
     "webpack": "^5.0.0"
   },
   "peerDependencies": {

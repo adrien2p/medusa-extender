@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { GetInjectableOptions, RoutesInjectionRouterConfiguration } from '../../types';
+import { GetInjectableOptions, RoutesInjectionRouterConfiguration } from '../../core/types';
 
 export function applyBeforeAuthRouters(app: Router, routesOptions: GetInjectableOptions<'router'>): void {
 	for (const routeOptions of routesOptions) {

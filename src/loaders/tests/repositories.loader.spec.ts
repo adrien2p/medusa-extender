@@ -7,9 +7,9 @@ import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/
 import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
 import { Entity, EntityRepository, Repository } from 'typeorm';
-import { Utils } from '../../utils';
+import { Utils } from '../../core/utils';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
-import { metadataReader } from '../../metadata-reader';
+import { metadataReader } from '../../core/metadata-reader';
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()

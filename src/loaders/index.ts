@@ -8,5 +8,5 @@ export * from './plugins.loader';
 export * from './migrations.loader';
 export * from './validators.loader';
 
-export * from '../types';
-export * from '../utils';
+export * from '../core/types';
+export * from '../core/utils';

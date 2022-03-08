@@ -1,7 +1,7 @@
 import { Express, NextFunction, Response } from 'express';
 import { AwilixContainer } from 'awilix';
 import { MedusaAuthenticatedRequest, MedusaRequest } from './';
-import { customEventEmitter } from '../event-emmiter';
+import { customEventEmitter } from '../core/event-emmiter';
 
 /**
  * @internal

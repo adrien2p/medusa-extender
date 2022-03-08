@@ -2,9 +2,9 @@ import loaders from '@medusajs/medusa/dist/loaders';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Constructor } from './types';
-import { Utils } from './utils';
-import { metadataReader } from './metadata-reader';
+import { Constructor } from './core/types';
+import { Utils } from './core/utils';
+import { metadataReader } from './core/metadata-reader';
 import {
     adminApiLoader,
     databaseLoader,
@@ -16,7 +16,7 @@ import {
     storeApiLoader,
     validatorsLoader,
 } from './loaders';
-import { buildMonitoringMiddleware, MonitoringOptions } from './modules/monitoring';
+import { buildMonitoringModule, MonitoringOptions } from './modules/monitoring';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -89,7 +89,7 @@ export class Medusa {
                 'Monitoring module',
                 'Loading monitoring module with the configuration found in medusa-config'
             );
-            await buildMonitoringMiddleware(this.#express, configModule.monitoring);
+            await buildMonitoringModule(this.#express, configModule.monitoring);
             Utils.hydrateLog('Monitoring module', 'Monitoring module successfully attached');
         }
     }

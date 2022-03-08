@@ -10,13 +10,13 @@
 
 ### Functions
 
-- [buildMonitoringMiddleware](modules_monitoring.md#buildmonitoringmiddleware)
+- [buildMonitoringModule](modules_monitoring.md#buildmonitoringmiddleware)
 
 ## Functions
 
-### buildMonitoringMiddleware
+### buildMonitoringModule
 
-▸ **buildMonitoringMiddleware**(`app`, `options`): `Promise`<`void`\>
+▸ **buildMonitoringModule**(`app`, `options`): `Promise`<`void`\>
 
 #### Parameters
 

@@ -1,4 +1,4 @@
-import { GetInjectableOptions, Type } from '../types';
+import { GetInjectableOptions, Type } from '../core/types';
 import { ValidatorOptions } from 'class-validator';
 
 export async function validatorsLoader(validatorsOptions: GetInjectableOptions<'validator'>): Promise<void> {

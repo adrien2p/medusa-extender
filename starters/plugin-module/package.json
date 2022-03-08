@@ -22,9 +22,9 @@
   "peerDependencies": {
     "medusa-extender": "^1.4.4",
     "awilix": "^4.2.3",
-    "@medusajs/medusa": "^1.1.64",
+    "@medusajs/medusa": "^1.2.1",
     "medusa-core-utils": "^1.1.31",
-    "medusa-interfaces": "^1.1.34",
+    "medusa-interfaces": "^1.2.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.41"
   },
@@ -39,8 +39,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1",
     "medusa-core-utils": "^1.1.31",
+    "medusa-interfaces": "^1.2.1",
     "medusa-extender": "^1.0.19-alpha.14",
-    "medusa-interfaces": "^1.1.32",
     "prettier": "^2.5.0",
     "reflect-metadata": "^0.1.13",
     "supertest": "^6.1.6",

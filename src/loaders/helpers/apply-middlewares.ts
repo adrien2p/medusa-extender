@@ -1,6 +1,6 @@
 import { NextFunction, Response, Router } from 'express';
-import { GetInjectableOption, GetInjectableOptions, MedusaAuthenticatedRequest, MedusaRequest } from '../../types';
-import { Utils } from '../../utils';
+import { GetInjectableOption, GetInjectableOptions, MedusaAuthenticatedRequest, MedusaRequest } from '../../core/types';
+import { Utils } from '../../core/utils';
 
 export function applyBeforeAuthMiddleware(app: Router, middlewares: GetInjectableOptions<'middleware'>): void {
 	for (const middlewareOptions of middlewares) {
