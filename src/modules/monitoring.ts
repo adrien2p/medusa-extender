@@ -1,6 +1,6 @@
 import { OpenAPI } from 'openapi-types';
 import { Express, NextFunction, Request, Response } from 'express';
-import { loadPackages } from "../core";
+import { loadPackages } from '../core';
 
 export interface MonitoringOptions {
 	version?: string;
@@ -24,7 +24,7 @@ export async function buildMonitoringModule(app: Express, options: MonitoringOpt
 	await loadPackages('Monitoring module', [
 		{ name: 'prom-client', version: '12.0.0' },
 		{ name: 'swagger-parser', version: '10.0.3' },
-		{ name: 'swagger-stats', version: '0.99.2' }
+		{ name: 'swagger-stats', version: '0.99.2' },
 	]);
 	// @ts-ignore
 	const swStats = await import('swagger-stats');
