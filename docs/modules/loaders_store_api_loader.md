@@ -22,8 +22,8 @@ Apply middlewares and routes on store API.
 | Name | Type |
 | :------ | :------ |
 | `app` | `Router` |
-| `middlewares` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"middleware"``\> |
-| `routers` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"router"``\> |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
+| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
 
 #### Returns
 
@@ -31,4 +31,4 @@ Apply middlewares and routes on store API.
 
 #### Defined in
 
-[src/loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/store-api.loader.ts#L13)
+[src/loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/store-api.loader.ts#L13)

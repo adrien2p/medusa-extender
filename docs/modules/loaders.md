@@ -48,121 +48,121 @@
 
 ### Constructor
 
-Re-exports [Constructor](types.md#constructor)
+Re-exports [Constructor](core_types.md#constructor)
 
 ___
 
 ### EntityInjectableOptions
 
-Re-exports [EntityInjectableOptions](types.md#entityinjectableoptions)
+Re-exports [EntityInjectableOptions](core_types.md#entityinjectableoptions)
 
 ___
 
 ### GetInjectableOption
 
-Re-exports [GetInjectableOption](types.md#getinjectableoption)
+Re-exports [GetInjectableOption](core_types.md#getinjectableoption)
 
 ___
 
 ### GetInjectableOptions
 
-Re-exports [GetInjectableOptions](types.md#getinjectableoptions)
+Re-exports [GetInjectableOptions](core_types.md#getinjectableoptions)
 
 ___
 
 ### InjectableComponentTypes
 
-Re-exports [InjectableComponentTypes](types.md#injectablecomponenttypes)
+Re-exports [InjectableComponentTypes](core_types.md#injectablecomponenttypes)
 
 ___
 
 ### InjectableOptions
 
-Re-exports [InjectableOptions](types.md#injectableoptions)
+Re-exports [InjectableOptions](core_types.md#injectableoptions)
 
 ___
 
 ### MedusaAuthenticatedRequest
 
-Re-exports [MedusaAuthenticatedRequest](types.md#medusaauthenticatedrequest)
+Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
 
 ___
 
 ### MedusaMiddleware
 
-Re-exports [MedusaMiddleware](../interfaces/types.MedusaMiddleware.md)
+Re-exports [MedusaMiddleware](../interfaces/core_types.MedusaMiddleware.md)
 
 ___
 
 ### MedusaRequest
 
-Re-exports [MedusaRequest](types.md#medusarequest)
+Re-exports [MedusaRequest](core_types.md#medusarequest)
 
 ___
 
 ### MedusaRouteMethods
 
-Re-exports [MedusaRouteMethods](types.md#medusaroutemethods)
+Re-exports [MedusaRouteMethods](core_types.md#medusaroutemethods)
 
 ___
 
 ### MedusaRouteOptions
 
-Re-exports [MedusaRouteOptions](types.md#medusarouteoptions)
+Re-exports [MedusaRouteOptions](core_types.md#medusarouteoptions)
 
 ___
 
 ### MiddlewareInjectionOptions
 
-Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
+Re-exports [MiddlewareInjectionOptions](core_types.md#middlewareinjectionoptions)
 
 ___
 
 ### MixinReturnType
 
-Re-exports [MixinReturnType](types.md#mixinreturntype)
+Re-exports [MixinReturnType](core_types.md#mixinreturntype)
 
 ___
 
 ### RepositoryInjectableOptions
 
-Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
+Re-exports [RepositoryInjectableOptions](core_types.md#repositoryinjectableoptions)
 
 ___
 
 ### RouterInjectionOptions
 
-Re-exports [RouterInjectionOptions](types.md#routerinjectionoptions)
+Re-exports [RouterInjectionOptions](core_types.md#routerinjectionoptions)
 
 ___
 
 ### RoutesInjectionRouterConfiguration
 
-Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+Re-exports [RoutesInjectionRouterConfiguration](core_types.md#routesinjectionrouterconfiguration)
 
 ___
 
 ### ServiceInjectableOptions
 
-Re-exports [ServiceInjectableOptions](types.md#serviceinjectableoptions)
+Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
 
 ___
 
 ### Type
 
-Re-exports [Type](../interfaces/types.Type.md)
+Re-exports [Type](../interfaces/core_types.Type.md)
 
 ___
 
 ### Utils
 
-Re-exports [Utils](../classes/utils.Utils.md)
+Re-exports [Utils](../classes/core_utils.Utils.md)
 
 ___
 
 ### ValidatorInjectionOptions
 
-Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
+Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
 
 ___
 

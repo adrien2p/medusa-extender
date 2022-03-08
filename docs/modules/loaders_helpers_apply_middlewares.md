@@ -20,7 +20,7 @@
 | Name | Type |
 | :------ | :------ |
 | `app` | `Router` |
-| `middlewares` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"middleware"``\> |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
 
 #### Returns
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/helpers/apply-middlewares.ts#L18)
+[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/helpers/apply-middlewares.ts#L18)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `app` | `Router` |
-| `middlewares` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"middleware"``\> |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
 
 #### Returns
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:5](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/helpers/apply-middlewares.ts#L5)
+[src/loaders/helpers/apply-middlewares.ts:5](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/helpers/apply-middlewares.ts#L5)

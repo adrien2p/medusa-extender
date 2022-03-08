@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [types](../modules/types.md) / Type
+[medusa-extender](../README.md) / [Exports](../modules.md) / [core/types](../modules/core_types.md) / Type
 
 # Interface: Type<T\>
 
-[types](../modules/types.md).Type
+[core/types](../modules/core_types.md).Type
 
 ## Type parameters
 
@@ -20,7 +20,7 @@
 
 ### Constructors
 
-- [constructor](types.Type.md#constructor)
+- [constructor](core_types.Type.md#constructor)
 
 ## Constructors
 
@@ -40,4 +40,4 @@ Function.constructor
 
 #### Defined in
 
-[src/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/types.ts#L6)
+[src/core/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/types.ts#L6)

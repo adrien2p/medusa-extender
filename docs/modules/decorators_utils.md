@@ -24,7 +24,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`MiddlewareInjectionOptions`](types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RouterInjectionOptions`](types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } & [`ValidatorInjectionOptions`](types.md#validatorinjectionoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](types.md#injectablecomponenttypes)  } |
+| `options` | [`MiddlewareInjectionOptions`](core_types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`RouterInjectionOptions`](core_types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](core_types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](core_types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](core_types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ValidatorInjectionOptions`](core_types.md#validatorinjectionoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } |
 
 #### Returns
 
@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/utils.ts#L4)
+[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/utils.ts#L4)

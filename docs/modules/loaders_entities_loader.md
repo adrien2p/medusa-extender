@@ -21,7 +21,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
+| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
 | `container` | `AwilixContainer`<`any`\> |
 
 #### Returns
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/entities.loader.ts#L5)
+[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/entities.loader.ts#L5)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
+| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
 
 #### Returns
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/entities.loader.ts#L16)
+[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/entities.loader.ts#L16)
 
 ___
 
@@ -65,7 +65,7 @@ Load custom entity and override existing ones.
 
 | Name | Type |
 | :------ | :------ |
-| `entityOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"entity"``\> |
+| `entityOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"entity"``\> |
 
 #### Returns
 
@@ -73,7 +73,7 @@ Load custom entity and override existing ones.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/entities.loader.ts#L49)
+[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/entities.loader.ts#L49)
 
 ___
 
@@ -89,7 +89,7 @@ Load custom entity into the container.
 | Name | Type |
 | :------ | :------ |
 | `container` | `AwilixContainer`<`any`\> |
-| `entityOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"entity"``\> |
+| `entityOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"entity"``\> |
 
 #### Returns
 
@@ -97,4 +97,4 @@ Load custom entity into the container.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/entities.loader.ts#L30)
+[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/entities.loader.ts#L30)

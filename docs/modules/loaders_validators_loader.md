@@ -18,7 +18,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `validatorsOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"validator"``\> |
+| `validatorsOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"validator"``\> |
 
 #### Returns
 
@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/validators.loader.ts#L4)
+[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/validators.loader.ts#L4)

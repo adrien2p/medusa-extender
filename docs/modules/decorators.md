@@ -48,7 +48,7 @@
 
 ### Constructor
 
-Re-exports [Constructor](types.md#constructor)
+Re-exports [Constructor](core_types.md#constructor)
 
 ___
 
@@ -78,55 +78,55 @@ ___
 
 ### EntityInjectableOptions
 
-Re-exports [EntityInjectableOptions](types.md#entityinjectableoptions)
+Re-exports [EntityInjectableOptions](core_types.md#entityinjectableoptions)
 
 ___
 
 ### GetInjectableOption
 
-Re-exports [GetInjectableOption](types.md#getinjectableoption)
+Re-exports [GetInjectableOption](core_types.md#getinjectableoption)
 
 ___
 
 ### GetInjectableOptions
 
-Re-exports [GetInjectableOptions](types.md#getinjectableoptions)
+Re-exports [GetInjectableOptions](core_types.md#getinjectableoptions)
 
 ___
 
 ### INJECTABLE\_OPTIONS\_KEY
 
-Re-exports [INJECTABLE_OPTIONS_KEY](constants.md#injectable_options_key)
+Re-exports [INJECTABLE_OPTIONS_KEY](core_constants.md#injectable_options_key)
 
 ___
 
 ### InjectableComponentTypes
 
-Re-exports [InjectableComponentTypes](types.md#injectablecomponenttypes)
+Re-exports [InjectableComponentTypes](core_types.md#injectablecomponenttypes)
 
 ___
 
 ### InjectableOptions
 
-Re-exports [InjectableOptions](types.md#injectableoptions)
+Re-exports [InjectableOptions](core_types.md#injectableoptions)
 
 ___
 
 ### MEDUSA\_RESOLVER\_KEYS
 
-Re-exports [MEDUSA_RESOLVER_KEYS](constants.md#medusa_resolver_keys)
+Re-exports [MEDUSA_RESOLVER_KEYS](core_constants.md#medusa_resolver_keys)
 
 ___
 
 ### MODULE\_KEY
 
-Re-exports [MODULE_KEY](constants.md#module_key)
+Re-exports [MODULE_KEY](core_constants.md#module_key)
 
 ___
 
 ### MedusaAuthenticatedRequest
 
-Re-exports [MedusaAuthenticatedRequest](types.md#medusaauthenticatedrequest)
+Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
 
 ___
 
@@ -144,25 +144,25 @@ ___
 
 ### MedusaMiddleware
 
-Re-exports [MedusaMiddleware](../interfaces/types.MedusaMiddleware.md)
+Re-exports [MedusaMiddleware](../interfaces/core_types.MedusaMiddleware.md)
 
 ___
 
 ### MedusaRequest
 
-Re-exports [MedusaRequest](types.md#medusarequest)
+Re-exports [MedusaRequest](core_types.md#medusarequest)
 
 ___
 
 ### MedusaRouteMethods
 
-Re-exports [MedusaRouteMethods](types.md#medusaroutemethods)
+Re-exports [MedusaRouteMethods](core_types.md#medusaroutemethods)
 
 ___
 
 ### MedusaRouteOptions
 
-Re-exports [MedusaRouteOptions](types.md#medusarouteoptions)
+Re-exports [MedusaRouteOptions](core_types.md#medusarouteoptions)
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 ### MiddlewareInjectionOptions
 
-Re-exports [MiddlewareInjectionOptions](types.md#middlewareinjectionoptions)
+Re-exports [MiddlewareInjectionOptions](core_types.md#middlewareinjectionoptions)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 ### MixinReturnType
 
-Re-exports [MixinReturnType](types.md#mixinreturntype)
+Re-exports [MixinReturnType](core_types.md#mixinreturntype)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 ### RepositoryInjectableOptions
 
-Re-exports [RepositoryInjectableOptions](types.md#repositoryinjectableoptions)
+Re-exports [RepositoryInjectableOptions](core_types.md#repositoryinjectableoptions)
 
 ___
 
@@ -222,13 +222,13 @@ ___
 
 ### RouterInjectionOptions
 
-Re-exports [RouterInjectionOptions](types.md#routerinjectionoptions)
+Re-exports [RouterInjectionOptions](core_types.md#routerinjectionoptions)
 
 ___
 
 ### RoutesInjectionRouterConfiguration
 
-Re-exports [RoutesInjectionRouterConfiguration](types.md#routesinjectionrouterconfiguration)
+Re-exports [RoutesInjectionRouterConfiguration](core_types.md#routesinjectionrouterconfiguration)
 
 ___
 
@@ -240,13 +240,13 @@ ___
 
 ### ServiceInjectableOptions
 
-Re-exports [ServiceInjectableOptions](types.md#serviceinjectableoptions)
+Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
 
 ___
 
 ### Type
 
-Re-exports [Type](../interfaces/types.Type.md)
+Re-exports [Type](../interfaces/core_types.Type.md)
 
 ___
 
@@ -258,7 +258,7 @@ ___
 
 ### ValidatorInjectionOptions
 
-Re-exports [ValidatorInjectionOptions](types.md#validatorinjectionoptions)
+Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
 
 ___
 

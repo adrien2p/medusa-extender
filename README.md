@@ -73,7 +73,8 @@
     - [Use custom configuration inside service](#use-custom-configuration-inside-service)
     - [Integration in an existing medusa project](#integration-in-an-existing-medusa-project)
 - [Decorators API](#decorators-api)
-- [Monitoring](#monitoring)
+- [Internal modules (Optional)](#internal-modules-optional)
+    - [Monitoring](#monitoring)
 
 # Getting started
 
@@ -612,7 +613,14 @@ Here is the list of the provided decorators.
 | `@Migration(/*...*/)`                | Decorate a migration                                                                       | 
 | `@OnMedusaEntityEvent.\*.\*(/*...*/)`| Can be used to send the right event type or register the handler to an event               |  `(entity: TEntity, { async? boolean; metatype?: Type<unknown> })`
 
-# Monitoring
+# Internal modules (Optional)
+
+> If you specify a config, that correspond to an optional module such as `monitoring`, into the `medusa-config` file,
+> we assume that you want to use the module. This is at runtime that the modules dependencies
+> will be loaded. That way, if you don't want to use the module then you will
+> not get the module dependencies install for nothing.
+
+## Monitoring
 
 If you want to monitor whats going on on your app, you must specify the config
 in your `medusa-config` file.

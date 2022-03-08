@@ -45,17 +45,17 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
+[src/decorators/onMedusaEntityEvent.decorator.ts:42](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L42)
 
 ## Properties
 
 ### #targetEntity
 
-• `Private` **#targetEntity**: [`Type`](../interfaces/types.Type.md)<`unknown`\>
+• `Private` **#targetEntity**: [`Type`](../interfaces/core_types.Type.md)<`unknown`\>
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
+[src/decorators/onMedusaEntityEvent.decorator.ts:40](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L40)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
+[src/decorators/onMedusaEntityEvent.decorator.ts:39](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L39)
 
 ## Accessors
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
+[src/decorators/onMedusaEntityEvent.decorator.ts:50](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L50)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
+[src/decorators/onMedusaEntityEvent.decorator.ts:46](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L46)
 
 ## Methods
 
@@ -105,7 +105,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `TEntity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `TEntity`\> |
+| `TEntity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `TEntity`\> |
 
 #### Parameters
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
+[src/decorators/onMedusaEntityEvent.decorator.ts:70](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L70)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `Entity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `Entity`\> |
+| `Entity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `Entity`\> |
 
 #### Parameters
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
+[src/decorators/onMedusaEntityEvent.decorator.ts:58](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L58)
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `TEntity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `TEntity`\> |
+| `TEntity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `TEntity`\> |
 
 #### Parameters
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
+[src/decorators/onMedusaEntityEvent.decorator.ts:84](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L84)
 
 ___
 
@@ -185,7 +185,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `Entity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `Entity`\> |
+| `Entity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `Entity`\> |
 
 #### Parameters
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
+[src/decorators/onMedusaEntityEvent.decorator.ts:66](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L66)
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `TEntity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `TEntity`\> |
+| `TEntity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `TEntity`\> |
 
 #### Parameters
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
+[src/decorators/onMedusaEntityEvent.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L77)
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `Entity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `Entity`\> |
+| `Entity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `Entity`\> |
 
 #### Parameters
 
@@ -252,7 +252,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
+[src/decorators/onMedusaEntityEvent.decorator.ts:62](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L62)
 
 ___
 
@@ -264,7 +264,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `TEntity` | extends [`Type`](../interfaces/types.Type.md)<`unknown`, `TEntity`\> |
+| `TEntity` | extends [`Type`](../interfaces/core_types.Type.md)<`unknown`, `TEntity`\> |
 
 #### Parameters
 
@@ -280,7 +280,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
+[src/decorators/onMedusaEntityEvent.decorator.ts:91](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L91)
 
 ___
 
@@ -300,4 +300,4 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/onMedusaEntityEvent.decorator.ts#L54)
+[src/decorators/onMedusaEntityEvent.decorator.ts:54](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/onMedusaEntityEvent.decorator.ts#L54)

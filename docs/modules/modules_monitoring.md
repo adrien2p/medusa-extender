@@ -10,7 +10,7 @@
 
 ### Functions
 
-- [buildMonitoringModule](modules_monitoring.md#buildmonitoringmiddleware)
+- [buildMonitoringModule](modules_monitoring.md#buildmonitoringmodule)
 
 ## Functions
 
@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/modules/monitoring.ts:23](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/modules/monitoring.ts#L23)
+[src/modules/monitoring.ts:23](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/modules/monitoring.ts#L23)

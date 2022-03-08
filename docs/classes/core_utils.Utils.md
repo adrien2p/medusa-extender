@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [utils](../modules/utils.md) / Utils
+[medusa-extender](../README.md) / [Exports](../modules.md) / [core/utils](../modules/core_utils.md) / Utils
 
 # Class: Utils
 
-[utils](../modules/utils.md).Utils
+[core/utils](../modules/core_utils.md).Utils
 
 **`internal`**
 Utilities helper methods.
@@ -11,19 +11,19 @@ Utilities helper methods.
 
 ### Constructors
 
-- [constructor](utils.Utils.md#constructor)
+- [constructor](core_utils.Utils.md#constructor)
 
 ### Properties
 
-- [logs](utils.Utils.md#logs)
+- [logs](core_utils.Utils.md#logs)
 
 ### Methods
 
-- [attachOrReplaceEntitySubscriber](utils.Utils.md#attachorreplaceentitysubscriber)
-- [displayLogs](utils.Utils.md#displaylogs)
-- [hydrateLog](utils.Utils.md#hydratelog)
-- [hydrateRouterLog](utils.Utils.md#hydraterouterlog)
-- [repositoryMixin](utils.Utils.md#repositorymixin)
+- [attachOrReplaceEntitySubscriber](core_utils.Utils.md#attachorreplaceentitysubscriber)
+- [displayLogs](core_utils.Utils.md#displaylogs)
+- [hydrateLog](core_utils.Utils.md#hydratelog)
+- [hydrateRouterLog](core_utils.Utils.md#hydraterouterlog)
+- [repositoryMixin](core_utils.Utils.md#repositorymixin)
 
 ## Constructors
 
@@ -39,7 +39,7 @@ Utilities helper methods.
 
 #### Defined in
 
-[src/utils.ts:13](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L13)
+[src/core/utils.ts:13](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L13)
 
 ## Methods
 
@@ -53,7 +53,7 @@ Attach a new subscriber to a specific entities.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](../modules/types.md#constructor)<`EntitySubscriberInterface`<`unknown`\>\> |
+| `T` | extends [`Constructor`](../modules/core_types.md#constructor)<`EntitySubscriberInterface`<`unknown`\>\> |
 
 #### Parameters
 
@@ -69,7 +69,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L40)
+[src/core/utils.ts:40](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L40)
 
 ___
 
@@ -86,7 +86,7 @@ Display the logs that has been registered during the build time.
 
 #### Defined in
 
-[src/utils.ts:90](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L90)
+[src/core/utils.ts:90](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L90)
 
 ___
 
@@ -111,7 +111,7 @@ Prepare the log to be shown to be consistent everywhere.
 
 #### Defined in
 
-[src/utils.ts:64](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L64)
+[src/core/utils.ts:64](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L64)
 
 ___
 
@@ -134,13 +134,13 @@ Prepare the logs the show all available routes on the app.
 
 #### Defined in
 
-[src/utils.ts:77](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L77)
+[src/core/utils.ts:77](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L77)
 
 ___
 
 ### repositoryMixin
 
-▸ `Static` **repositoryMixin**<`TEntity`, `TSource`\>(`source`): [`MixinReturnType`](../modules/types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
+▸ `Static` **repositoryMixin**<`TEntity`, `TSource`\>(`source`): [`MixinReturnType`](../modules/core_types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
 
 For repository context, you should extends repository and the medusa target repository.
 Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
@@ -156,12 +156,12 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 | Name | Type |
 | :------ | :------ |
-| `source` | [`Constructor`](../modules/types.md#constructor)<`TSource`\> |
+| `source` | [`Constructor`](../modules/core_types.md#constructor)<`TSource`\> |
 
 #### Returns
 
-[`MixinReturnType`](../modules/types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
+[`MixinReturnType`](../modules/core_types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
 
 #### Defined in
 
-[src/utils.ts:20](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/utils.ts#L20)
+[src/core/utils.ts:20](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/utils.ts#L20)

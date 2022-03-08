@@ -18,8 +18,8 @@
 
 | Name | Type |
 | :------ | :------ |
-| `entities` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"entity"``\> |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
+| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
+| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
 
 #### Returns
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/database.loader.ts#L5)
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/database.loader.ts#L5)

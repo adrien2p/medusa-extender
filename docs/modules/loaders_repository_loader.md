@@ -21,7 +21,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
+| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
 
 #### Returns
 
@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/repository.loader.ts#L16)
+[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/repository.loader.ts#L16)
 
 ___
 
@@ -44,7 +44,7 @@ Load custom repositories and override existing ones.
 
 | Name | Type |
 | :------ | :------ |
-| `repositoryOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"repository"``\> |
+| `repositoryOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"repository"``\> |
 
 #### Returns
 
@@ -52,7 +52,7 @@ Load custom repositories and override existing ones.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/repository.loader.ts#L48)
+[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/repository.loader.ts#L48)
 
 ___
 
@@ -68,7 +68,7 @@ Load custom repository into the container.
 | Name | Type |
 | :------ | :------ |
 | `container` | `AwilixContainer`<`any`\> |
-| `repositoryOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"repository"``\> |
+| `repositoryOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"repository"``\> |
 
 #### Returns
 
@@ -76,7 +76,7 @@ Load custom repository into the container.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/repository.loader.ts#L30)
+[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/repository.loader.ts#L30)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"repository"``\> |
+| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
 | `container` | `AwilixContainer`<`any`\> |
 
 #### Returns
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/repository.loader.ts#L5)
+[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/repository.loader.ts#L5)

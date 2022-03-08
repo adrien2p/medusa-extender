@@ -24,7 +24,7 @@ Load custom service and override existing ones.
 | Name | Type |
 | :------ | :------ |
 | `container` | `AwilixContainer`<`any`\> |
-| `serviceOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"service"``\> |
+| `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
 #### Returns
@@ -33,7 +33,7 @@ Load custom service and override existing ones.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/services.loader.ts#L55)
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/services.loader.ts#L55)
 
 ___
 
@@ -49,7 +49,7 @@ Load custom service into the container.
 | Name | Type |
 | :------ | :------ |
 | `container` | `AwilixContainer`<`any`\> |
-| `serviceOptions` | [`GetInjectableOption`](types.md#getinjectableoption)<``"service"``\> |
+| `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
 #### Returns
@@ -58,7 +58,7 @@ Load custom service into the container.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/services.loader.ts#L31)
+[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/services.loader.ts#L31)
 
 ___
 
@@ -73,7 +73,7 @@ Load custom services from the rootDir.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `services` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
+| `services` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
 
 #### Returns
 
@@ -81,4 +81,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/services.loader.ts#L9)
+[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/services.loader.ts#L9)

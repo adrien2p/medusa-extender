@@ -21,7 +21,7 @@ Mark a class as aa module and store all injectable on it.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `imports` | `Object` | The components to import |
-| `imports.imports` | [`Type`](../interfaces/types.Type.md)<`unknown`\>[] | - |
+| `imports.imports` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] | - |
 
 #### Returns
 
@@ -29,4 +29,4 @@ Mark a class as aa module and store all injectable on it.
 
 #### Defined in
 
-[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/decorators/module.decorator.ts#L9)
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/decorators/module.decorator.ts#L9)

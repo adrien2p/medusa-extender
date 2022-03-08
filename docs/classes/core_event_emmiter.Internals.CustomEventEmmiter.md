@@ -1,8 +1,8 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [event-emmiter](../modules/event_emmiter.md) / [Internals](../modules/event_emmiter.Internals.md) / CustomEventEmmiter
+[medusa-extender](../README.md) / [Exports](../modules.md) / [core/event-emmiter](../modules/core_event_emmiter.md) / [Internals](../modules/core_event_emmiter.Internals.md) / CustomEventEmmiter
 
 # Class: CustomEventEmmiter
 
-[event-emmiter](../modules/event_emmiter.md).[Internals](../modules/event_emmiter.Internals.md).CustomEventEmmiter
+[core/event-emmiter](../modules/core_event_emmiter.md).[Internals](../modules/core_event_emmiter.Internals.md).CustomEventEmmiter
 
 Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
 
@@ -16,18 +16,18 @@ Extended event emitter to register methods that must be call when certain events
 
 ### Constructors
 
-- [constructor](event_emmiter.Internals.CustomEventEmmiter.md#constructor)
+- [constructor](core_event_emmiter.Internals.CustomEventEmmiter.md#constructor)
 
 ### Properties
 
-- [#listeners](event_emmiter.Internals.CustomEventEmmiter.md##listeners)
+- [#listeners](core_event_emmiter.Internals.CustomEventEmmiter.md##listeners)
 
 ### Methods
 
-- [emitAsync](event_emmiter.Internals.CustomEventEmmiter.md#emitasync)
-- [register](event_emmiter.Internals.CustomEventEmmiter.md#register)
-- [registerListeners](event_emmiter.Internals.CustomEventEmmiter.md#registerlisteners)
-- [unregisterListeners](event_emmiter.Internals.CustomEventEmmiter.md#unregisterlisteners)
+- [emitAsync](core_event_emmiter.Internals.CustomEventEmmiter.md#emitasync)
+- [register](core_event_emmiter.Internals.CustomEventEmmiter.md#register)
+- [registerListeners](core_event_emmiter.Internals.CustomEventEmmiter.md#registerlisteners)
+- [unregisterListeners](core_event_emmiter.Internals.CustomEventEmmiter.md#unregisterlisteners)
 
 ## Constructors
 
@@ -41,17 +41,17 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L21)
+[src/core/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L21)
 
 ## Properties
 
 ### #listeners
 
-• `Private` **#listeners**: `Set`<[`ListenerDescriptor`](../modules/event_emmiter.Internals.md#listenerdescriptor)<`unknown`\>\>
+• `Private` **#listeners**: `Set`<[`ListenerDescriptor`](../modules/core_event_emmiter.Internals.md#listenerdescriptor)<`unknown`\>\>
 
 #### Defined in
 
-[src/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L19)
+[src/core/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L19)
 
 ## Methods
 
@@ -80,7 +80,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L80)
+[src/core/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L80)
 
 ___
 
@@ -102,7 +102,7 @@ Register a new event handler.
 | :------ | :------ | :------ |
 | `eventName` | `string` \| `symbol` | The name of the event that has to be triggered |
 | `propertyName` | `string` | The name of the class property that will handle the event |
-| `metatype` | [`Type`](../interfaces/types.Type.md)<`T`\> | The object that contains the property above |
+| `metatype` | [`Type`](../interfaces/core_types.Type.md)<`T`\> | The object that contains the property above |
 
 #### Returns
 
@@ -110,7 +110,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L31)
+[src/core/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L31)
 
 ___
 
@@ -132,7 +132,7 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[src/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L43)
+[src/core/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L43)
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 #### Defined in
 
-[src/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/event-emmiter.ts#L68)
+[src/core/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/core/event-emmiter.ts#L68)

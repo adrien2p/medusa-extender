@@ -21,7 +21,7 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `migrationsOptions` | [`GetInjectableOptions`](types.md#getinjectableoptions)<``"migration"``\> | Any custom migration that implements MigrationInterface |
+| `migrationsOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"migration"``\> | Any custom migration that implements MigrationInterface |
 | `dbConnection` | `Connection` | Database connection from medusa internal |
 
 #### Returns
@@ -30,4 +30,4 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 #### Defined in
 
-[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/ae4f660/src/loaders/migrations.loader.ts#L10)
+[src/loaders/migrations.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/migrations.loader.ts#L10)
