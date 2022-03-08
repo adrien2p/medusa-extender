@@ -1,6 +1,13 @@
 import { execSync } from 'child_process';
 import { detect } from 'detect-package-manager';
 
+/**
+ * @Internal
+ *
+ * Load packages at run time.
+ * @param context The context string description for which it is executed
+ * @param packages The packages descriptors that must be installed
+ */
 export async function loadPackages(context: string, packages: { name: string; version: string }[]): Promise<void> {
 	const installCommand = await getPackageManagerCommand();
 	for (const { name, version } of packages) {
@@ -14,6 +21,11 @@ export async function loadPackages(context: string, packages: { name: string; ve
 	}
 }
 
+/**
+ * @Internal
+ *
+ * Return the install command from the user package manager.
+ */
 export async function getPackageManagerCommand(): Promise<string | never> {
 	const packageManager = await detect({ cwd: process.cwd() });
 	const installCmd =

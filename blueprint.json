@@ -1,0 +1,112 @@
+{
+  "package": "package.json",
+  "blueprint": "blueprint.md",
+  "input": "blueprint.md",
+  "output": "README.md",
+  "line": "cloudy",
+  "text": "Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one\n        in a module way? Did you ever wanted to build something more than a single store?\n        Well, this project has been made to help you reach you goal. It is now possible to customise\n        Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you\n        but with the possibility to take your e-commerce project to the next level :rocket:",
+  "documentationConfig": {
+    "markdown": {
+      "titleLevel": 2
+    }
+  },
+  "headingPrefix": {
+    "1": "➟ ",
+    "2": "",
+    "3": ""
+  },
+  "ids": {
+    "github": "adrien2p/medusa-extender",
+    "npm": "medusa-extender"
+  },
+  "logo": {
+    "src": "https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png?raw=true",
+    "width": 500,
+    "align": "center",
+    "alt": "Medusa-extender logo"
+  },
+  "badges": [
+    {
+      "alt": "Awesome medusajs",
+      "url": "https://github.com/adrien2p/awesome-medusajs",
+      "img": "https://awesome.re/badge.svg"
+    },
+    {
+      "alt": "Documentation",
+      "url": "https://adrien2p.github.io/medusa-extender/#/",
+      "img": "https://img.shields.io/badge/documentation-online-important"
+    },
+    {
+      "alt": "Twitter",
+      "url": "https://twitter.com/intent/tweet?text=Check%20this%20out!%20The%20new%20medusa%20headless%20e-commerce%20extender&url=https://github.com/adrien2p/medusa-extender",
+      "img": "https://badgen.net/badge/icon/twitter?icon=twitter&label=Share%20it%20on"
+    },
+    {
+      "alt": "Discord",
+      "url": "https://discord.gg/xpCwq3Kfn8",
+      "img": "https://img.shields.io/badge/chat-on%20discord-7289DA.svg"
+    },
+    {
+      "alt": "Npm download",
+      "url": "https://www.npmjs.com/package/medusa-extender",
+      "img": "https://img.shields.io/npm/dt/medusa-extender"
+    },
+    {
+      "alt": "Activity",
+      "url": "https://github.com/adrien2p/medusa-extender/commits/main",
+      "img": "https://img.shields.io/github/commit-activity/m/adrien2p/medusa-extender?style=flat"
+    },
+    {
+      "alt": "Issues",
+      "url": "https://github.com/adrien2p/medusa-extender/issues",
+      "img": "https://img.shields.io/github/issues/adrien2p/medusa-extender?style=flat"
+    },
+    {
+      "alt": "Licence",
+      "url": "https://github.com/adrien2p/medusa-extender/blob/main/LICENSE",
+      "img": "https://img.shields.io/github/license/adrien2p/medusa-extender?style=flat"
+    },
+    {
+      "alt": "Contributing",
+      "url": "https://github.com/adrien2p/medusa-extender/blob/main/CONTRIBUTING.md",
+      "img": "https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat"
+    },
+    {
+      "alt": "Test pipeline status",
+      "url": "https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml",
+      "img": "https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg"
+    },
+    {
+      "alt": "Page build deployment status",
+      "url": "https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment",
+      "img": "https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg"
+    },
+    {
+      "alt": "CodeQL security analysis status",
+      "url": "https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml",
+      "img": "https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg"
+    },
+    {
+      "alt": "Product hunt",
+      "url": "https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender",
+      "img": "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark"
+    }
+  ],
+  "templates": [
+    {
+      "name": "monitoring-demo-video",
+      "template": "[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)"
+    }
+  ],
+  "decoratorApiSummary": [
+    ["Decorator", "Parameters", "Description"],
+    ["`@Entity`", "`{ resolutionKey?: string; override?: Type<TOverride>; }`", "Allow to create a new entity or to override an existing entity from medusa."],
+    ["`@Repository`", "`{ resolutionKey?: string; override?: Type<TOverride>; }`", "Allow to create a new custom repository or to override an existing custom repository from medusa."],
+    ["`@Service`", "`{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; }`", "Allow to create a new service or to override an existing service from medusa."],
+    ["`@Middleware`", "`{ requireAuth: boolean; routes: MedusaRouteOptions[]; }`", "Allow to apply a custom middleware that will be resolve before or after the authentication on the specified routes."],
+    ["`@Router`", "`{ requiredAuth: boolean; method: MedusaRouteMethods; path: string; handlers: ((...args: unknown[]) => void)[]; }`", "Allow to register new custom routes with a set of handlers."],
+    ["`@Validator`", "`{ override: Type<TOverride>; }`", "Allow to override an existing validator from medusa."],
+    ["`@Migration`", "", "Create a new migration to applied for your entity modifications."],
+    ["`@OnMedusaEntityEvent.When.Action`", "take an entity and an option object such as `{ async: boolean; metatype?: Type; }`", "Emit and listen to entity subscriber events."]
+  ]
+}
