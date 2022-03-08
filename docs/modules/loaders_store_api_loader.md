@@ -31,4 +31,4 @@ Apply middlewares and routes on store API.
 
 #### Defined in
 
-[src/loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/loaders/store-api.loader.ts#L13)
+[src/loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/9b7daf1/src/loaders/store-api.loader.ts#L13)

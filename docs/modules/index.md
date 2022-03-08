@@ -292,4 +292,4 @@ Renames and re-exports [customEventEmitter](core_event_emmiter.md#customeventemi
 
 #### Defined in
 
-[src/index.ts:27](https://github.com/adrien2p/medusa-extender/blob/cc3c8f9/src/index.ts#L27)
+[src/index.ts:27](https://github.com/adrien2p/medusa-extender/blob/9b7daf1/src/index.ts#L27)

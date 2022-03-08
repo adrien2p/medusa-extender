@@ -59,9 +59,8 @@
 # Table of contents
 
 - [Getting started](#getting-started)
-- [Full documentation including API](https://adrien2p.github.io/medusa-extender/#/)
+- [Full documentation](https://adrien2p.github.io/medusa-extender/#/)
 - [Features](#features)
-- [Demo: Products scoped per store (Marketplace)](#demo-products-scoped-per-store-marketplace)
 - Starters
     - [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
     - [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
@@ -75,6 +74,8 @@
 - [Decorators API](#decorators-api)
 - [Internal modules (Optional)](#internal-modules-optional)
     - [Monitoring](#monitoring)
+- [Resources](#marketplace)
+    - [Marketplace](#marketplace)
 
 # Getting started
 
@@ -138,10 +139,6 @@ npm i medusa-extender
 
 > Using swagger stats you can access all the stats from the ui in your app or 
 > use the raw stats to show with grafana, elasticsearch or event kibana.
-
-# Demo: Products scoped per store (Marketplace)
-
-[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/store_scoped_demo_thumbnail.png)](https://streamable.com/e/oel4vl)
 
 # Usage
 
@@ -663,9 +660,19 @@ Now, run your app and go to /monitoring url to get access to your dashboard.
 
 For more information on the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
 
-## Demo: Monitoring
+### Demo
 
 [![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)
+
+# Marketplace
+
+If you want to build a marketplace, the extender is your friend.
+To help you in that process, a series of article will soon come out and will be referenced here.
+
+Resources:
+
+- [Marketplace tutorial](https://github.com/shahednasser/medusa-marketplace-tutorial) 
+- [Marketplace Plugin](https://github.com/shahednasser/medusa-marketplace)
 
 # Contribute :ballot_box:
 
