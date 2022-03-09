@@ -192,7 +192,7 @@ All those features provide you a way to
 - Create a media store to sell nft - video - images - keys - etc.
 - And basically create whatever you want on top of `@medusajs`
 
-Sharing your code
+Share your code
 
 - Build shareable modules/plugins to use across your project or to share with the community
 
