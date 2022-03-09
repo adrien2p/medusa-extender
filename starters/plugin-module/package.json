@@ -10,9 +10,6 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": ">=14.17.3"
-  },
   "scripts": {
     "build": "rm -rf dist && ./node_modules/.bin/tsc -p tsconfig.json",
     "test": "NODE_ENV=test jest --detectOpenHandles",
@@ -20,7 +17,7 @@
     "test:cov": "NODE_ENV=test jest --coverage --detectOpenHandles"
   },
   "peerDependencies": {
-    "medusa-extender": "^1.4.4",
+    "medusa-extender": "^1.5.0",
     "awilix": "^4.2.3",
     "@medusajs/medusa": "^1.2.1",
     "medusa-core-utils": "^1.1.31",

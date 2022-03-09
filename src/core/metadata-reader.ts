@@ -2,9 +2,9 @@ import { GetInjectableOptions, InjectableComponentTypes, InjectableOptions, Type
 import { INJECTABLE_OPTIONS_KEY, MODULE_KEY } from './constants';
 
 class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
-    get<TComponentType extends InjectableComponentTypes>(key: TComponentType): GetInjectableOptions<TComponentType> {
-        return super.get(key) as GetInjectableOptions<TComponentType>;
-    }
+	get<TComponentType extends InjectableComponentTypes>(key: TComponentType): GetInjectableOptions<TComponentType> {
+		return super.get(key) as GetInjectableOptions<TComponentType>;
+	}
 }
 
 /**
@@ -14,30 +14,30 @@ class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
  * @param modules The modules from which the metadata are read.
  */
 export function metadataReader(modules: Type[]): CustomMap {
-    let componentMap = new CustomMap();
+	let componentMap = new CustomMap();
 
-    for (const module of modules) {
-        const moduleImports = Reflect.getMetadata(MODULE_KEY, module);
+	for (const module of modules) {
+		const moduleImports = Reflect.getMetadata(MODULE_KEY, module);
 
-        for (const component of moduleImports) {
-            const subModuleImports = Reflect.getMetadata(MODULE_KEY, component);
-            if (subModuleImports) {
-                const subComponentMap = metadataReader([component]);
-                componentMap = new CustomMap([
-                    ...Array.from(componentMap.entries()),
-                    ...Array.from(subComponentMap.entries())
-                ]);
-                continue;
-            }
+		for (const component of moduleImports) {
+			const subModuleImports = Reflect.getMetadata(MODULE_KEY, component);
+			if (subModuleImports) {
+				const subComponentMap = metadataReader([component]);
+				componentMap = new CustomMap([
+					...Array.from(componentMap.entries()),
+					...Array.from(subComponentMap.entries()),
+				]);
+				continue;
+			}
 
-            const options = componentsMetadataReader(component);
-            const metatype = component;
+			const options = componentsMetadataReader(component);
+			const metatype = component;
 
-            componentMap.set(options.type, [...(componentMap.get(options.type) ?? []), { ...options, metatype }]);
-        }
-    }
+			componentMap.set(options.type, [...(componentMap.get(options.type) ?? []), { ...options, metatype }]);
+		}
+	}
 
-    return componentMap;
+	return componentMap;
 }
 
 /**
@@ -47,7 +47,7 @@ export function metadataReader(modules: Type[]): CustomMap {
  * @param component
  */
 export function componentsMetadataReader<TComponentType = unknown>(
-    component: Type
+	component: Type
 ): InjectableOptions<TComponentType> & { type: InjectableComponentTypes } {
-    return Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, component);
+	return Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, component);
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const chalk = require('chalk');
+import { blue, yellow } from 'chalk';
 import { Express } from 'express';
 import * as getEndpoints from 'express-list-endpoints';
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
@@ -64,7 +64,7 @@ export class Utils {
 	static hydrateLog(context: string, description: string, ...variables: string[]): void {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		this.logs.push([
-			`${chalk.blue(`[Server]      -`)} ${date}   ${chalk.yellow(`[${context}]`)} ${chalk.blue(description)}`,
+			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${context}]`)} ${blue(description)}`,
 			...variables,
 		]);
 	}
