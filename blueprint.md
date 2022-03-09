@@ -11,11 +11,11 @@
 
 {{ load:readme/01-getting-started.md }}
 {{ load:readme/06-integration-with-medusa.md }}
+{{ load:readme/09-features.md }}
 {{ load:readme/02-api-documentation.md }}
 {{ load:readme/03-starters.md }}
 {{ load:readme/04-internal-modules.md }}
 {{ load:readme/05-resources.md }}
-
-# Contribute
-
-Contributions are welcome! You can look at the contribution [guidelines](./CONTRIBUTING.md)
+{{ load:readme/07-discussions.md }}
+{{ load:readme/10-like-my-work.md }}
+{{ load:readme/08-contribute.md }}
