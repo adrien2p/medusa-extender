@@ -23,4 +23,4 @@ Export the instance of the event emmiter.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/ed817d6/src/core/event-emmiter.ts#L102)
+[src/core/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/5dd90ce/src/core/event-emmiter.ts#L102)

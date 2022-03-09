@@ -1,5 +1,10 @@
 {{ template:logo }}
 {{ template:title }}
+
+<h4 align="center">
+    <a href="https://adrien2p.github.io/medusa-extender/#/" alt="Full documentation">Full documentation website</a>
+</h4>
+
 {{ template:badges }}
 {{ template:description }}
 
