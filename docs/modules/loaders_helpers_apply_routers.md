@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:14](https://github.com/adrien2p/medusa-extender/blob/49fb8fa/src/loaders/helpers/apply-routers.ts#L14)
+[src/loaders/helpers/apply-routers.ts:14](https://github.com/adrien2p/medusa-extender/blob/8569577/src/loaders/helpers/apply-routers.ts#L14)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:4](https://github.com/adrien2p/medusa-extender/blob/49fb8fa/src/loaders/helpers/apply-routers.ts#L4)
+[src/loaders/helpers/apply-routers.ts:4](https://github.com/adrien2p/medusa-extender/blob/8569577/src/loaders/helpers/apply-routers.ts#L4)
