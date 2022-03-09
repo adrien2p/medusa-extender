@@ -18,7 +18,7 @@
     <meta content="summary_large_image" name="twitter:card">
 
     <link href="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png?raw=true" rel="icon" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
 </head>
 <body>
 <div data-app id="main">Please wait...</div>
@@ -31,7 +31,7 @@
 		search: {
 			maxAge: 86400000, // Expiration time, the default one day
 			paths: 'auto', // or 'auto'
-			placeholder: 'Type to search',
+			placeholder: 'Looking for something?',
 
 			noData: 'No Results!',
 
@@ -47,5 +47,7 @@
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//polyfill.io/v3/polyfill.min.js?features=String.prototype.normalize"></script>
 </body>
 </html>
