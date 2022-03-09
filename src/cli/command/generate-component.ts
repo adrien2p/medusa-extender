@@ -33,7 +33,7 @@ export function createComponentIfNecessary(component: string, content: string): 
 	console.info(`Generating component.`);
 
 	const { componentName, componentFileName, relativeDestinationPath, fullDestinationPath } =
-		parseComponentValue(component);
+	parseComponentValue(component);
 	createDirectoryIfNecessary(relativeDestinationPath, fullDestinationPath);
 
 	const exists = doesFileExists(fullDestinationPath + '/' + componentName, componentName);

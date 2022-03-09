@@ -26,6 +26,7 @@ export async function buildMonitoringModule(app: Express, options: MonitoringOpt
 		{ name: 'swagger-parser', version: '10.0.3' },
 		{ name: 'swagger-stats', version: '0.99.2' },
 	]);
+
 	// @ts-ignore
 	const swStats = await import('swagger-stats');
 
@@ -35,6 +36,7 @@ export async function buildMonitoringModule(app: Express, options: MonitoringOpt
 	} as MonitoringOptions & { name: string };
 
 	if (options.swaggerSpec && typeof options.swaggerSpec === 'string') {
+
 		// @ts-ignore
 		const { default: swaggerParser } = await import('swagger-parser');
 		const parser = new swaggerParser();
