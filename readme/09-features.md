@@ -41,6 +41,7 @@ Here is the proposed folder structure that you can add to your medusa project
 |           ├── module1.service.ts
 |           ├── module1.repository.ts
 |           ├── module1.middleware.ts
+|           ├── module1.module.ts       # This is where the above components are referenced
 |           ├── ...
 |       ├── Module2
 |           ├── ...
