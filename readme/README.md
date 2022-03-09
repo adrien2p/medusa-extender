@@ -84,7 +84,7 @@
 > IMPORTANT! Using the extender does not break any features from medusa under the hood.
 > The only thing it provides are some badass features
 
-Run the following command in your terminal (The last version is 1.4.5)
+Run the following command in your terminal (The last version is 1.4.6)
 
 ```bash
 npm install medusa-extender

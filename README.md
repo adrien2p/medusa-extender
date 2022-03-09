@@ -54,7 +54,7 @@
 	* [Non exhaustive list](#non-exhaustive-list)
 	* [Architecture](#architecture)
 * [Documentation](#documentation)
-* [Resources](#tutorials)
+* [Resources](#resources)
 * [Discussions](#discussions)
 * [Like my work? :heartbeat:](#like-my-work-heartbeat)
 * [Contribute](#contribute)
