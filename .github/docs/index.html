@@ -17,8 +17,15 @@
           name="og:description">
     <meta content="summary_large_image" name="twitter:card">
 
-    <link href="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png?raw=true" rel="icon" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" rel="stylesheet"/>
+    <link href="https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png?raw=true" rel="icon"
+          type="image/x-icon">
+    <link href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/style.min.css" rel="stylesheet"
+          type="text/css">
+    <!-- docsify-themeable styles-->
+    <link href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" rel="stylesheet"
+          title="light">
+    <link href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+          rel="stylesheet alternative" title="dark">
 </head>
 <body>
 <div data-app id="main">Please wait...</div>
@@ -28,14 +35,14 @@
 		el: "#main",
 		repo: 'https://github.com/adrien2p/medusa-extender',
 		themeColor: '#793ef9',
+		coverpage: true,
+		defaultTheme: 'light | dark',
 		search: {
 			maxAge: 86400000, // Expiration time, the default one day
 			paths: 'auto', // or 'auto'
-			placeholder: 'Type to search',
+			placeholder: 'Looking for something?',
 
 			noData: 'No Results!',
-
-			depth: 2,
 
 			hideOtherSidebarContent: false, // whether or not to hide other sidebar content
 		},
@@ -47,5 +54,16 @@
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//polyfill.io/v3/polyfill.min.js?features=String.prototype.normalize"></script>
+<script
+        src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/main.min.js"
+        type="text/javascript">
+</script>
+
+<script
+        src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/index.min.js"
+        type="text/javascript">
+</script>
 </body>
 </html>

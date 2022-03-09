@@ -2,8 +2,8 @@ import { Service } from 'medusa-extender';
 import { EntityManager } from 'typeorm';
 import { UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
 import EventBusService from '@medusajs/medusa/dist/services/event-bus';
-import UserRepository from '../repositories/user.repository';
-import { User } from '../entities/user.entity';
+import UserRepository from './user.repository';
+import { User } from './user.entity';
 
 type ConstructorParams = {
 	loggedInUser: User;

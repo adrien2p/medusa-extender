@@ -40,4 +40,4 @@ Function.constructor
 
 #### Defined in
 
-[src/core/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/9b7daf1/src/core/types.ts#L6)
+[src/core/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/7b65142/src/core/types.ts#L6)
