@@ -107,6 +107,7 @@
     ["`@Router`", "`{ requiredAuth: boolean; method: MedusaRouteMethods; path: string; handlers: ((...args: unknown[]) => void)[]; }`", "Allow to register new custom routes with a set of handlers."],
     ["`@Validator`", "`{ override: Type<TOverride>; }`", "Allow to override an existing validator from medusa."],
     ["`@Migration`", "", "Create a new migration to applied for your entity modifications."],
+    ["`@Module`", "`{ imports: Type[] }`", "Import all previous components including modules."],
     ["`@OnMedusaEntityEvent.When.Action`", "take an entity and an option object such as `{ async: boolean; metatype?: Type; }`", "Emit and listen to entity subscriber events."]
   ]
 }

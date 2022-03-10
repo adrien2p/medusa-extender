@@ -63,6 +63,7 @@
 		* [@Middleware](#middleware)
 		* [@Router](#router)
 		* [@Validator](#validator)
+* [@Module](#module)
 		* [@OnMedusaEntityEvent](#onmedusaentityevent)
 	* [Utilities :wrench:](#utilities-wrench)
 		* [attachOrReplaceEntitySubscriber](#attachorreplaceentitysubscriber)
@@ -269,6 +270,7 @@ Let see each of the decorators that are available and what are there purpose.
 | `@Router`                          | `{ requiredAuth: boolean; method: MedusaRouteMethods; path: string; handlers: ((...args: unknown[]) => void)[]; }` | Allow to register new custom routes with a set of handlers. |
 | `@Validator`                       | `{ override: Type<TOverride>; }`                 | Allow to override an existing validator from medusa. |
 | `@Migration`                       |                                                  | Create a new migration to applied for your entity modifications. |
+| `@Module`                          | `{ imports: Type[] }`                            | Import all previous components including modules. |
 | `@OnMedusaEntityEvent.When.Action` | take an entity and an option object such as `{ async: boolean; metatype?: Type; }` | Emit and listen to entity subscriber events.     |
 
 
@@ -681,6 +683,57 @@ But without doing anything else, medusa will handle it through the underlying
 handler for the creation but will now be aware of that field and therefor
 will take care of saving it. Otherwise, you will end up with an error thrown by the
 validator to tell you that this fields is not recognised.
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#module)
+
+# @Module
+
+This decorator allow to aggregate any modules and components. This is mainly
+to avoid the need to import each independent components and simplify the usage.
+
+Let see an example
+
+```typescript
+import { Module } from 'medusa-extender';
+import { Product } from './product.entity';
+import ProductRepository from './product.repository';
+import ProductService from './product.service';
+
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService
+    ],
+})
+export class ProductModule {}
+```
+
+Then this module can be imported into the main file as the following example
+
+```typescript
+import express = require('express');
+const config = require('../medusa-config');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+import { ProductModule } from './modules/product/product.module';
+
+async function bootstrap() {
+    const expressInstance = express();
+    
+    const rootDir = resolve(__dirname, '..');
+    await new Medusa(rootDir, expressInstance).load([
+        ProductModule
+    ]);
+    
+    expressInstance.listen(config.serverConfig.port, () => {
+        console.log('Server listening on port ' + config.serverConfig.port);
+    });
+}
+
+bootstrap();
+```
 
 ### @OnMedusaEntityEvent
 

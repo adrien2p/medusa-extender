@@ -25,7 +25,7 @@ Return the install command from the user package manager.
 
 #### Defined in
 
-[src/core/package-loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/a1229a5/src/core/package-loader.ts#L29)
+[src/core/package-loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/99d42d2/src/core/package-loader.ts#L29)
 
 ___
 
@@ -50,4 +50,4 @@ Load packages at run time.
 
 #### Defined in
 
-[src/core/package-loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/a1229a5/src/core/package-loader.ts#L11)
+[src/core/package-loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/99d42d2/src/core/package-loader.ts#L11)

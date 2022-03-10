@@ -426,6 +426,54 @@ handler for the creation but will now be aware of that field and therefor
 will take care of saving it. Otherwise, you will end up with an error thrown by the
 validator to tell you that this fields is not recognised.
 
+# @Module
+
+This decorator allow to aggregate any modules and components. This is mainly
+to avoid the need to import each independent components and simplify the usage.
+
+Let see an example
+
+```typescript
+import { Module } from 'medusa-extender';
+import { Product } from './product.entity';
+import ProductRepository from './product.repository';
+import ProductService from './product.service';
+
+@Module({
+    imports: [
+        Product,
+        ProductRepository,
+        ProductService
+    ],
+})
+export class ProductModule {}
+```
+
+Then this module can be imported into the main file as the following example
+
+```typescript
+import express = require('express');
+const config = require('../medusa-config');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+import { ProductModule } from './modules/product/product.module';
+
+async function bootstrap() {
+    const expressInstance = express();
+    
+    const rootDir = resolve(__dirname, '..');
+    await new Medusa(rootDir, expressInstance).load([
+        ProductModule
+    ]);
+    
+    expressInstance.listen(config.serverConfig.port, () => {
+        console.log('Server listening on port ' + config.serverConfig.port);
+    });
+}
+
+bootstrap();
+```
+
 ### @OnMedusaEntityEvent
 
 This decorator is a special one and work in two ways, it allow to
