@@ -2,7 +2,7 @@
   "package": "package.json",
   "blueprint": "blueprint.md",
   "input": "blueprint.md",
-  "output": "readme/README.md",
+  "output": "documentation/_README_BUILT.md",
   "line": "cloudy",
   "text": "Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one\n        in a module way? Did you ever wanted to build something more than a single store?\n        Well, this project has been made to help you reach you goal. It is now possible to customise\n        Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you\n        but with the possibility to take your e-commerce project to the next level :rocket:",
   "documentationConfig": {

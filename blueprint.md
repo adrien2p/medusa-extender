@@ -14,13 +14,14 @@
 
 {{ template:toc }}
 
-{{ load:readme/01-getting-started.md }}
-{{ load:readme/06-integration-with-medusa.md }}
-{{ load:readme/09-features.md }}
-{{ load:readme/02-api-documentation.md }}
-{{ load:readme/03-starters.md }}
-{{ load:readme/04-internal-modules.md }}
-{{ load:readme/05-resources.md }}
-{{ load:readme/07-discussions.md }}
-{{ load:readme/10-like-my-work.md }}
-{{ load:readme/08-contribute.md }}
+{{ load:documentation/01-getting-started.md }}
+{{ load:documentation/06-integration-with-medusa.md }}
+{{ load:documentation/09-features.md }}
+{{ load:documentation/11-cli.md }}
+{{ load:documentation/02-api-documentation.md }}
+{{ load:documentation/03-starters.md }}
+{{ load:documentation/04-internal-modules.md }}
+{{ load:documentation/05-resources.md }}
+{{ load:documentation/07-discussions.md }}
+{{ load:documentation/10-like-my-work.md }}
+{{ load:documentation/08-contribute.md }}

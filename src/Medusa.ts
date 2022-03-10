@@ -2,9 +2,7 @@ import loaders from '@medusajs/medusa/dist/loaders';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Constructor } from './core/types';
-import { Utils } from './core/utils';
-import { metadataReader } from './core/metadata-reader';
+import { Constructor, metadataReader, Utils } from './core';
 import {
 	adminApiLoader,
 	databaseLoader,

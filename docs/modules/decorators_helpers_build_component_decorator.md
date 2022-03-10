@@ -1,12 +1,12 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / decorators/utils
+[medusa-extender](../README.md) / [Exports](../modules.md) / decorators/helpers/build-component-decorator
 
-# Module: decorators/utils
+# Module: decorators/helpers/build-component-decorator
 
 ## Table of contents
 
 ### Functions
 
-- [buildComponentDecorator](decorators_utils.md#buildcomponentdecorator)
+- [buildComponentDecorator](decorators_helpers_build_component_decorator.md#buildcomponentdecorator)
 
 ## Functions
 
@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[src/decorators/utils.ts:4](https://github.com/adrien2p/medusa-extender/blob/1e764f3/src/decorators/utils.ts#L4)
+[src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/decorators/helpers/build-component-decorator.ts#L4)

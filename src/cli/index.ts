@@ -11,11 +11,12 @@ program.name('medex').description('Medusa extender CLI').version('0.8.1');
 
 program
 	.command('migrate')
-	.option('-r, --run', 'Run migrations up method.')
-	.option('-s, --show', 'Show all applied migrations.')
+	.alias('m')
 	.description(
 		"Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']"
 	)
+	.option('-r, --run', 'Run migrations up method')
+	.option('-s, --show', 'Show all applied and non applied migrations')
 	.action(async (options, program) => {
 		console.time(green('Migration command'));
 		if (Object.values(options).every((value) => !value)) {
@@ -27,39 +28,16 @@ program
 
 program
 	.command('generate')
-	.description('Generate a new component')
-	.option(
-		'-m, --module <string>',
-		'Generate a new module with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-md, --middleware <string>',
-		'Generate a new middleware with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-s, --service <string>',
-		'Generate a new service with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-r, --router <string>',
-		'Generate a new router with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-e, --entity <string>',
-		'Generate a new entity with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-re, --repository <string>',
-		'Generate a new repository with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-mi, --migration <string>',
-		'Generate a new migration with the specified name. The name must include the relative path where the component must be generated.'
-	)
-	.option(
-		'-va, --validator <string>',
-		'Generate a new validator with the specified name. The name must include the relative path where the component must be generated.'
-	)
+	.alias('g')
+	.description('Generate a new component from the given component path (eg. src/modules/myModule/myModule.module.ts)')
+	.option('-m, --module <string>', 'Generate a new module')
+	.option('-md, --middleware <string>', 'Generate a new middleware')
+	.option('-s, --service <string>', 'Generate a new service')
+	.option('-r, --router <string>', 'Generate a new router')
+	.option('-e, --entity <string>', 'Generate a new entity')
+	.option('-re, --repository <string>', 'Generate a new repository')
+	.option('-mi, --migration <string>', 'Generate a new migration')
+	.option('-va, --validator <string>', 'Generate a new validator')
 	.action((options, program) => {
 		console.time(green('Component generated successfully'));
 		if (Object.values(options).every((value) => !value)) {
