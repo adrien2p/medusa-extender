@@ -7,5 +7,5 @@ export function createDirectoryIfNecessary(relativeDestinationPath: string, full
 		return mkdirSync(fullDestinationPath);
 	}
 
-	console.warn(yellow(`Directory ${relativeDestinationPath} already exists. Skipping.`));
+	console.info(yellow(`Directory ${relativeDestinationPath} already exists. Skipping.`));
 }

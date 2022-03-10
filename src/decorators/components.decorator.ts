@@ -6,7 +6,7 @@ import {
 	ServiceInjectableOptions,
 	ValidatorInjectionOptions,
 } from '../core';
-import { buildComponentDecorator } from "./helpers/build-component-decorator";
+import { buildComponentDecorator } from './helpers/build-component-decorator';
 
 /**
  * Mark a class as an entity to be used by the loader.

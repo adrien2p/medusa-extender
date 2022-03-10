@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Entity, Middleware, Migration, Repository, Router, Service, Validator } from '../components.decorator';
-import { INJECTABLE_OPTIONS_KEY } from '../';
+import { INJECTABLE_OPTIONS_KEY } from '../../core';
 
 describe('components', () => {
 	describe('Entity', () => {

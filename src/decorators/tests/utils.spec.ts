@@ -1,5 +1,6 @@
 import 'reflect-metadata';
-import { buildComponentDecorator, INJECTABLE_OPTIONS_KEY, InjectableComponentTypes, InjectableOptions } from '../';
+import { INJECTABLE_OPTIONS_KEY, InjectableComponentTypes, InjectableOptions } from '../../core';
+import { buildComponentDecorator } from '../helpers/build-component-decorator';
 
 class Test {}
 
