@@ -1,6 +1,6 @@
 {
   "name": "medusa-extender",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "description": " :syringe: Medusa on steroid. Extends Typeorm entities and repositories, medusa core services and so on. Get the full power of modular architecture. Keep your domains clean. Build shareable modules :rocket:",
   "keywords": [
     "medusa",
@@ -24,7 +24,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "bin": {
     "medex": "dist/cli/index.js"
   },

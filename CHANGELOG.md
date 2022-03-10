@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/adrien2p/medusa-extender/compare/v1.4.6...v1.5.0) (2022-03-10)
+
+
+### Features
+
+* Add CLI for components generation and migration management ([#41](https://github.com/adrien2p/medusa-extender/issues/41)) ([41a41d2](https://github.com/adrien2p/medusa-extender/commits/41a41d22eeb49855fb8fd7fbfb89e2ba331564f3))
+
 ### [1.4.6](https://github.com/adrien2p/medusa-extender/compare/v1.4.5...v1.4.6) (2022-03-09)
 
 ### [1.4.5](https://github.com/adrien2p/medusa-extender/compare/v1.4.4...v1.4.5) (2022-03-08)
