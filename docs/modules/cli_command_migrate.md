@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/cli/command/migrate.ts:4](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/cli/command/migrate.ts#L4)
+[src/cli/command/migrate.ts:4](https://github.com/adrien2p/medusa-extender/blob/4c4f0f5/src/cli/command/migrate.ts#L4)

@@ -252,6 +252,8 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
+{{ template:cli-demo }}
+
 Let see that CLI usage together
 
 
@@ -769,7 +771,6 @@ validator to tell you that this fields is not recognised.
 
 This decorator allow to aggregate any modules and components. This is mainly
 to avoid the need to import each independent components and simplify the usage.
-
 Let see an example
 
 ```typescript
@@ -777,7 +778,6 @@ import { Module } from 'medusa-extender';
 import { Product } from './product.entity';
 import ProductRepository from './product.repository';
 import ProductService from './product.service';
-
 @Module({
     imports: [
         Product,
@@ -796,7 +796,6 @@ const config = require('../medusa-config');
 import { Medusa } from 'medusa-extender';
 import { resolve } from 'path';
 import { ProductModule } from './modules/product/product.module';
-
 async function bootstrap() {
     const expressInstance = express();
     
@@ -809,7 +808,6 @@ async function bootstrap() {
         console.log('Server listening on port ' + config.serverConfig.port);
     });
 }
-
 bootstrap();
 ```
 

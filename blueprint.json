@@ -96,6 +96,10 @@
     {
       "name": "monitoring-demo-video",
       "template": "[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)"
+    },
+    {
+      "name": "cli-demo-gif",
+      "template": "![CLI demo](https://streamable.com/5zpzbe)"
     }
   ],
   "decoratorApiSummary": [

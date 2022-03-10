@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/loaders/entities.loader.ts#L5)
+[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/4c4f0f5/src/loaders/entities.loader.ts#L5)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/loaders/entities.loader.ts#L16)
+[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/4c4f0f5/src/loaders/entities.loader.ts#L16)
 
 ___
 
@@ -73,7 +73,7 @@ Load custom entity and override existing ones.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/loaders/entities.loader.ts#L49)
+[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/4c4f0f5/src/loaders/entities.loader.ts#L49)
 
 ___
 
@@ -97,4 +97,4 @@ Load custom entity into the container.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/6db7d47/src/loaders/entities.loader.ts#L30)
+[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/4c4f0f5/src/loaders/entities.loader.ts#L30)
