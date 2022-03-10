@@ -25,7 +25,7 @@
   "types": "dist/index.d.ts",
   "private": false,
   "files": [
-    "./dist"
+    "dist"
   ],
   "bin": {
     "medex": "dist/cli/index.js"
