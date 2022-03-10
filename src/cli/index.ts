@@ -3,10 +3,27 @@
 import { Command } from 'commander';
 import { generateComponent } from './command/generate-component';
 import { green } from 'chalk';
+import { migrate } from './command/migrate';
 
 const program = new Command();
 
 program.name('medex').description('Medusa extender CLI').version('0.8.1');
+
+program
+	.command('migrate')
+	.option('-r, --run', 'Run migrations up method.')
+	.option('-s, --show', 'Show all applied migrations.')
+	.description(
+		"Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']"
+	)
+	.action(async (options, program) => {
+		console.time(green('Migration command'));
+		if (Object.values(options).every((value) => !value)) {
+			return program.showHelpAfterError(true).error('You must specify one of the options.');
+		}
+		await migrate(options);
+		console.timeEnd(green('Migration command'));
+	});
 
 program
 	.command('generate')

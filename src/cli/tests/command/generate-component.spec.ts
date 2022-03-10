@@ -107,7 +107,7 @@ describe('generateComponent', () => {
 		expect(existsSync(componentFileName));
 
 		const componentContent = readFileSync(componentFileName).toString();
-		expect(componentContent).toEqual(getMigrationTemplate('TestMigration'));
+		expect(componentContent.replace(/\d+/g, '')).toEqual(getMigrationTemplate('TestMigration').replace(/\d+/g, ''));
 
 		cleanup(componentFileName);
 	});

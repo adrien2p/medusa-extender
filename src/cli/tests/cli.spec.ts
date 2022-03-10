@@ -4,14 +4,18 @@ import * as dedent from 'dedent';
 
 function cli(args, cwd): Promise<{ code: number; error: any; stdout: any; stderr: any }> {
 	return new Promise((resolve) => {
-		exec(`node ${path.resolve('./dist/cli/index')} ${args.join(' ')}`, { cwd }, (error, stdout, stderr) => {
-			resolve({
-				code: error && error.code ? error.code : 0,
-				error,
-				stdout,
-				stderr,
-			});
-		});
+		exec(
+			`${process.cwd()}/node_modules/.bin/ts-node ${path.resolve(__dirname, '../index.ts')} ${args.join(' ')}`,
+			{ cwd },
+			(error, stdout, stderr) => {
+				resolve({
+					code: error && error.code ? error.code : 0,
+					error,
+					stdout,
+					stderr,
+				});
+			}
+		);
 	});
 }
 
@@ -29,6 +33,9 @@ describe('CLI', () => {
               -h, --help          display help for command
             
             Commands:
+              migrate [options]   Migrate all migrations from ['src/**/*.migration.js',
+                                  'src/**/migrations/*.js', 'dist/**/*.migration.js',
+                                  'dist/**/migrations/*.js']
               generate [options]  Generate a new component
               help [command]      display help for command
         `);
