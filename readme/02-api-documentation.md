@@ -33,7 +33,7 @@ Let see an example
 import { Column, Entity } from "typeorm"; 
 import { Entity as MedusaEntity } from "medusa-extender";
 
-@MedusaEntity({ resoltionKey: "MyCustomEntity" })
+@MedusaEntity({ resolutionKey: "MyCustomEntity" })
 @Entity()
 export class MyCustomEntity {
     @Column()
