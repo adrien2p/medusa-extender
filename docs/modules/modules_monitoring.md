@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/modules/monitoring.ts:23](https://github.com/adrien2p/medusa-extender/blob/1e764f3/src/modules/monitoring.ts#L23)
+[src/modules/monitoring.ts:23](https://github.com/adrien2p/medusa-extender/blob/4eae4d9/src/modules/monitoring.ts#L23)

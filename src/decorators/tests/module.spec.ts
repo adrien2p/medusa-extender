@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { Migration } from '../components.decorator';
 import { Module } from '../module.decorator';
-import { MODULE_KEY } from '../';
+import { MODULE_KEY } from '../../core';
 
 describe('Module', () => {
 	it('should define the module metadata', () => {

@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/logo.png?raw=true)
 
-# Medusa-extender <small>1.4.5</small>
+# Medusa-extender
 
 > Badass features on top of @medusajs
 

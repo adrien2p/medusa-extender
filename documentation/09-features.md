@@ -24,6 +24,11 @@ Share your code
 
 - Build shareable modules/plugins to use across your project or to share with the community
 
+CLI
+
+- Generate new components
+- Migrate your data
+
 ## Architecture
 
 Using this package also allow you to manage your architecture as you want.

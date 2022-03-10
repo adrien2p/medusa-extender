@@ -50,10 +50,11 @@
 
 * [Getting started :rocket:](#getting-started-rocket)
 * [Integration within your medusa project](#integration-within-your-medusa-project)
+* [CLI `medex`](#cli-medex)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
 	* [Architecture](#architecture)
-* [Documentation](#documentation)
+* [Documentation](https://adrien2p.github.io/medusa-extender/)
 * [Resources](#resources)
 * [Discussions](#discussions)
 * [Like my work? :heartbeat:](#like-my-work-heartbeat)
@@ -153,6 +154,18 @@ medusa migrations run
 npm run start
 ```
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#cli-medex)
+
+# CLI `medex`
+
+To make things easier for you, the project comes with a CLI that allow
+you to generate any component with minimum code implementation and also
+to be able to run the migrations and show the list of applied and to be applied migrations.
+
+![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)
+
+To see more about the usage, [see the documentation](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)
 
 # Features :monocle_face:
@@ -183,6 +196,11 @@ All those features provide you a way to
 Share your code
 
 - Build shareable modules/plugins to use across your project or to share with the community
+
+CLI
+
+- Generate new components
+- Migrate your data
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#architecture)
@@ -217,12 +235,6 @@ Here is the proposed folder structure that you can add to your medusa project
 │   ├── main.ts                         # this is where the magic happen and your modules will be passed to the load method
 └── ...
 ```
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#documentation)
-
-# Documentation
-
-See our dedicated documentation website for the Medusa-extender package, follow the [link](https://adrien2p.github.io/medusa-extender/)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#discussions)
 

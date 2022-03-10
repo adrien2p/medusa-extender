@@ -6,3 +6,4 @@ tsconfig.tsbuildinfo
 uploads
 coverage
 coverage-badges/
+./.env*

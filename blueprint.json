@@ -2,7 +2,7 @@
   "package": "package.json",
   "blueprint": "blueprint.md",
   "input": "blueprint.md",
-  "output": "readme/README.md",
+  "output": "documentation/_README_BUILT.md",
   "line": "cloudy",
   "text": "Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one\n        in a module way? Did you ever wanted to build something more than a single store?\n        Well, this project has been made to help you reach you goal. It is now possible to customise\n        Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you\n        but with the possibility to take your e-commerce project to the next level :rocket:",
   "documentationConfig": {
@@ -96,6 +96,10 @@
     {
       "name": "monitoring-demo-video",
       "template": "[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)"
+    },
+    {
+      "name": "cli-demo-gif",
+      "template": "![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)"
     }
   ],
   "decoratorApiSummary": [

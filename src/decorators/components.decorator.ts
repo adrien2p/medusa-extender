@@ -4,9 +4,9 @@ import {
 	RepositoryInjectableOptions,
 	RouterInjectionOptions,
 	ServiceInjectableOptions,
-	buildComponentDecorator,
 	ValidatorInjectionOptions,
-} from './';
+} from '../core';
+import { buildComponentDecorator } from './helpers/build-component-decorator';
 
 /**
  * Mark a class as an entity to be used by the loader.
