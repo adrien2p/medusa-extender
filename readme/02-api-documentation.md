@@ -426,7 +426,7 @@ handler for the creation but will now be aware of that field and therefor
 will take care of saving it. Otherwise, you will end up with an error thrown by the
 validator to tell you that this fields is not recognised.
 
-# @Module
+### @Module
 
 This decorator allow to aggregate any modules and components. This is mainly
 to avoid the need to import each independent components and simplify the usage.

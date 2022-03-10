@@ -11,4 +11,4 @@
 - Full typings and Modular architecture
 
 [GitHub](https://github.com/adrien2p/medusa-extender)
-[Get Started](https://adrien2p.github.io/medusa-extender/#/?id=getting-started-rocket)
+[Get Started](#getting-started-rocket)
