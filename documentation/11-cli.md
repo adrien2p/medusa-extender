@@ -4,7 +4,7 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
-{{ template:cli-demo }}
+{{ template:cli-demo-gif }}
 
 Let see that CLI usage together
 

@@ -88,7 +88,7 @@
 > IMPORTANT! Using the extender does not break any features from medusa under the hood.
 > The only thing it provides are some badass features
 
-Run the following command in your terminal (The last version is 1.4.6)
+Run the following command in your terminal (The last version is 1.5.1)
 
 ```bash
 npm install medusa-extender
@@ -252,7 +252,7 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
-{{ template:cli-demo }}
+![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)
 
 Let see that CLI usage together
 
