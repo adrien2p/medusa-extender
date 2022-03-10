@@ -99,7 +99,7 @@
     },
     {
       "name": "cli-demo-gif",
-      "template": "![CLI demo](https://streamable.com/5zpzbe)"
+      "template": "![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)"
     }
   ],
   "decoratorApiSummary": [

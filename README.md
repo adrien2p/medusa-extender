@@ -162,7 +162,7 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
-![CLI demo](https://streamable.com/5zpzbe)
+![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)
 
 To see more about the usage, [see the documentation](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
 

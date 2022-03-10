@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/cli/templates/repository-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/1756998/src/cli/templates/repository-template.ts#L3)
+[src/cli/templates/repository-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/4eae4d9/src/cli/templates/repository-template.ts#L3)

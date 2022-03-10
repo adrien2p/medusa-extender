@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/cli/utils/create-directory.ts:4](https://github.com/adrien2p/medusa-extender/blob/1756998/src/cli/utils/create-directory.ts#L4)
+[src/cli/utils/create-directory.ts:4](https://github.com/adrien2p/medusa-extender/blob/4eae4d9/src/cli/utils/create-directory.ts#L4)
