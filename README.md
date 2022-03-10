@@ -50,7 +50,7 @@
 
 * [Getting started :rocket:](#getting-started-rocket)
 * [Integration within your medusa project](#integration-within-your-medusa-project)
-# [CLI `medex`](#cli-medex)
+* [CLI `medex`](#cli-medex)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
 	* [Architecture](#architecture)
