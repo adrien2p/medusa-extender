@@ -23,6 +23,7 @@ type Options = {
 	entity?: string;
 	repository?: string;
 	migration?: string;
+	path?: string;
 };
 
 export function generateComponent({
@@ -34,45 +35,52 @@ export function generateComponent({
 	entity,
 	repository,
 	migration,
+	path,
 }: Options) {
 	if (module) {
-		const { componentName } = parseComponentValue(module);
-		return createComponentIfNecessary(module, getModuleTemplate(componentName));
+		const componentDescriptor = parseComponentValue(module, 'module', path);
+		return createComponentIfNecessary(componentDescriptor, getModuleTemplate(componentDescriptor.componentName));
 	}
 
 	if (middleware) {
-		const { componentName } = parseComponentValue(middleware);
-		return createComponentIfNecessary(middleware, getMiddlewareTemplate(componentName));
+		const componentDescriptor = parseComponentValue(middleware, 'middleware', path);
+		return createComponentIfNecessary(
+			componentDescriptor,
+			getMiddlewareTemplate(componentDescriptor.componentName)
+		);
 	}
 
 	if (service) {
-		const { componentName } = parseComponentValue(service);
-		return createComponentIfNecessary(service, getServiceTemplate(componentName));
+		const componentDescriptor = parseComponentValue(service, 'service', path);
+		return createComponentIfNecessary(componentDescriptor, getServiceTemplate(componentDescriptor.componentName));
 	}
 
 	if (router) {
-		const { componentName } = parseComponentValue(router);
-		return createComponentIfNecessary(router, getRouterTemplate(componentName));
+		const componentDescriptor = parseComponentValue(router, 'router', path);
+		return createComponentIfNecessary(componentDescriptor, getRouterTemplate(componentDescriptor.componentName));
 	}
 
 	if (validator) {
-		const { componentName } = parseComponentValue(validator);
-		return createComponentIfNecessary(validator, getValidatorTemplate(componentName));
+		const componentDescriptor = parseComponentValue(validator, 'validator', path);
+		return createComponentIfNecessary(componentDescriptor, getValidatorTemplate(componentDescriptor.componentName));
 	}
 
 	if (entity) {
-		const { componentName } = parseComponentValue(entity);
-		return createComponentIfNecessary(entity, getEntityTemplate(componentName));
+		const componentDescriptor = parseComponentValue(entity, 'entity', path);
+		return createComponentIfNecessary(componentDescriptor, getEntityTemplate(componentDescriptor.componentName));
 	}
 
 	if (repository) {
-		const { componentName } = parseComponentValue(repository);
-		return createComponentIfNecessary(repository, getRepositoryTemplate(componentName));
+		const componentDescriptor = parseComponentValue(repository, 'repository', path);
+		return createComponentIfNecessary(
+			componentDescriptor,
+			getRepositoryTemplate(componentDescriptor.componentName)
+		);
 	}
 
 	if (migration) {
-		const { componentName } = parseComponentValue(migration);
-		return createComponentIfNecessary(migration, getMigrationTemplate(componentName));
+		const componentDescriptor = parseComponentValue(migration, 'migration', path);
+		return createComponentIfNecessary(componentDescriptor, getMigrationTemplate(componentDescriptor.componentName));
 	}
 
 	console.info(
@@ -80,9 +88,20 @@ export function generateComponent({
 	);
 }
 
-export function createComponentIfNecessary(component: string, content: string): void {
-	const { componentName, componentFileName, relativeDestinationPath, fullDestinationPath } =
-		parseComponentValue(component);
+export function createComponentIfNecessary(
+	{
+		relativeDestinationPath,
+		fullDestinationPath,
+		componentName,
+		componentFileName,
+	}: {
+		relativeDestinationPath: string;
+		fullDestinationPath: string;
+		componentName: string;
+		componentFileName: string;
+	},
+	content: string
+): void {
 	createDirectoryIfNecessary(relativeDestinationPath, fullDestinationPath);
 
 	const exists = doesFileExists(fullDestinationPath + '/' + componentName, componentName);

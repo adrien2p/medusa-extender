@@ -2,6 +2,8 @@ import * as path from 'path';
 import { exec } from 'child_process';
 import * as dedent from 'dedent';
 
+jest.setTimeout(10000);
+
 function cli(args, cwd): Promise<{ code: number; error: any; stdout: any; stderr: any }> {
 	return new Promise((resolve) => {
 		exec(
@@ -41,8 +43,7 @@ describe('CLI', () => {
 				migrate|m [options]   Migrate all migrations from ['src/**/*.migration.js',
 									  'src/**/migrations/*.js', 'dist/**/*.migration.js',
 									  'dist/**/migrations/*.js']
-				generate|g [options]  Generate a new component from the given component path
-									  (eg. src/modules/myModule/myModule.module.ts)
+				generate|g [options]  Generate a new component
 				help [command]        display help for command
         `)
 		);
@@ -57,19 +58,19 @@ describe('CLI', () => {
 
             Usage: medex generate|g [options]
             
-            Generate a new component from the given component path
-            (eg. src/modules/myModule/myModule.module.ts)
+            Generate a new component
             
             Options:
-              -m, --module <string>       Generate a new module
-              -md, --middleware <string>  Generate a new middleware
-              -s, --service <string>      Generate a new service
-              -r, --router <string>       Generate a new router
-              -e, --entity <string>       Generate a new entity
-              -re, --repository <string>  Generate a new repository
-              -mi, --migration <string>   Generate a new migration
-              -va, --validator <string>   Generate a new validator
-              -h, --help                  display help for command
+              -m, --module <name>       Generate a new module
+              -md, --middleware <name>  Generate a new middleware
+              -s, --service <name>      Generate a new service
+              -r, --router <name>       Generate a new router
+              -e, --entity <name>       Generate a new entity
+              -re, --repository <name>  Generate a new repository
+              -mi, --migration <name>   Generate a new migration
+              -va, --validator <name>   Generate a new validator
+              -p, --path <path>			specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]
+              -h, --help                display help for command
         `)
 		);
 	});
@@ -98,7 +99,7 @@ describe('CLI', () => {
 		expect(error.code).toBe(1);
 		expect(normalizeString(stderr)).toBe(
 			normalizeString(`
-            error: option '-m, --module <string>' argument missing
+            error: option '-m, --module <name>' argument missing
         `)
 		);
 	});

@@ -1,17 +1,16 @@
-export function parseComponentValue(value: string): {
+export function parseComponentValue(
+	name: string,
+	componentType: string,
+	path = `src/modules/${name}/`
+): {
 	relativeDestinationPath: string;
 	fullDestinationPath: string;
 	componentName: string;
 	componentFileName: string;
 } {
-	const splitPath = value.split('/');
-	const componentFileName = splitPath.pop();
-	const componentName = componentFileName
-		.split('.')
-		.slice(0, -1)
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join('');
-	const relativeDestinationPath = splitPath.join('/');
-	const fullDestinationPath = process.cwd() + '/' + relativeDestinationPath;
-	return { relativeDestinationPath, fullDestinationPath, componentName, componentFileName };
+	const componentFileName = `${name}.${componentType}.ts`;
+	const componentName =
+		name.charAt(0).toUpperCase() + name.slice(1) + componentType?.charAt(0).toUpperCase() + componentType?.slice(1);
+	const fullDestinationPath = process.cwd() + '/' + path;
+	return { relativeDestinationPath: path, fullDestinationPath, componentName, componentFileName };
 }
