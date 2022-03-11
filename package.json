@@ -1,7 +1,7 @@
 {
   "name": "medusa-extender",
   "version": "1.5.3",
-  "description": " :syringe: Medusa on steroid. Extends Typeorm entities and repositories, medusa core services and so on. Get the full power of modular architecture. Keep your domains clean. Build shareable modules :rocket:",
+  "description": ":syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:",
   "keywords": [
     "medusa",
     "medusajs",
@@ -16,7 +16,8 @@
     "typeorm",
     "swagger-stats",
     "prometheus",
-    "monitoring"
+    "monitoring",
+    "cli"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",

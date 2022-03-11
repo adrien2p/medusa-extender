@@ -28,12 +28,10 @@
 	</p>
 
 <p align="center">
-  <b> :syringe: Medusa on steroid. Extends Typeorm entities and repositories, medusa core services and so on. Get the full power of modular architecture. Keep your domains clean. Build shareable modules :rocket:</b></br>
-  <sub>Do you want to extend existing entities to add custom fields? Do you want to implement your own feature or extend existing one
-        in a module way? Did you ever wanted to build something more than a single store?
-        Well, this project has been made to help you reach you goal. It is now possible to customise
-        Medusa in a way you will be able to enjoy all the awesome features that Medusa provides you
-        but with the possibility to take your e-commerce project to the next level :rocket:<sub>
+  <b>:syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:</b></br>
+  <sub>Fully customisable medusa, create custom fields in any entity, implement your own feature or extend existing one in a minutes, make your own architecture or choose the modular architecture provided.
+        Build a store, marketplace, media store and anything you want to do you can do it.
+        Enjoy the full power of Medusa with extra badass features :rocket:<sub>
 </p>
 
 <br />
