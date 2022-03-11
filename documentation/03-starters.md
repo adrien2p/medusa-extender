@@ -8,7 +8,7 @@ In that repository, you will find two starters
 Follow that link to go to the starter and see how to install it.
 [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
 
-> The plugin module starter is provide a starting point to create your own plugin (shareable module).
+> The plugin module starter is providing you a starting point to create your own plugin (shareable module).
 
 Follow that link to go to the starter and see how to install it.
 [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)

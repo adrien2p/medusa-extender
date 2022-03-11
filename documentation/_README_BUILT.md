@@ -49,6 +49,8 @@
 ## Table of Contents
 
 * [Getting started :rocket:](#getting-started-rocket)
+	* [Existing medusa project](#existing-medusa-project)
+	* [From server starter](#from-server-starter)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
 	* [Architecture](#architecture)
@@ -88,6 +90,13 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#getting-started-rocket)
 
 # Getting started :rocket:
+
+Depending on your situation, pick the right getting started section.
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#existing-medusa-project)
+
+## Existing medusa project
 
 Run the following command in your terminal (The last version is 1.5.1)
 
@@ -169,6 +178,26 @@ npm run start
 ```
 
 That's it, your now ready to run your server :rocket:
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-server-starter)
+
+## From server starter
+
+You can directly clone the `starters/server` to get started quickly.
+
+Follow the next command to be ready in minutes
+
+```bash
+npx degit github:adrien2p/medusa-extender/starters/server#main server
+cd server
+npm i
+npm run build
+npm run start
+```
+
+That's it, your server is not up and running :rocket:
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)
 
@@ -915,7 +944,7 @@ In that repository, you will find two starters
 Follow that link to go to the starter and see how to install it.
 [Server](https://github.com/adrien2p/medusa-extender/tree/main/starters/server)
 
-> The plugin module starter is provide a starting point to create your own plugin (shareable module).
+> The plugin module starter is providing you a starting point to create your own plugin (shareable module).
 
 Follow that link to go to the starter and see how to install it.
 [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)

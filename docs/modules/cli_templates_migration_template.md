@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/cli/templates/migration-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/ef51195/src/cli/templates/migration-template.ts#L3)
+[src/cli/templates/migration-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/5fdc11f/src/cli/templates/migration-template.ts#L3)

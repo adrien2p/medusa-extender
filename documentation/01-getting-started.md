@@ -1,5 +1,9 @@
 # Getting started :rocket:
 
+Depending on your situation, pick the right getting started section.
+
+## Existing medusa project
+
 Run the following command in your terminal (The last version is {{ pkg.version }})
 
 ```bash
@@ -80,3 +84,19 @@ npm run start
 ```
 
 That's it, your now ready to run your server :rocket:
+
+## From server starter
+
+You can directly clone the `starters/server` to get started quickly.
+
+Follow the next command to be ready in minutes
+
+```bash
+npx degit github:adrien2p/medusa-extender/starters/server#main server
+cd server
+npm i
+npm run build
+npm run start
+```
+
+That's it, your server is not up and running :rocket:

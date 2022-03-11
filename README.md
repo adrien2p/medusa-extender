@@ -64,12 +64,14 @@
 
 # Getting started :rocket:
 
-# Getting started :rocket:
+Depending on your situation, pick the right getting started section.
+
+## Existing medusa project
 
 Run the following command in your terminal (The last version is {{ pkg.version }})
 
 ```bash
-npm install {{ pkg.name }}
+npm install medusa-extender
 ```
 
 To benefit from all the features that the extender offers you, the usage of typescript is recommended.
@@ -144,6 +146,22 @@ medusa migrations run
 #Start development environment
 npm run start
 ```
+
+## From server starter
+
+You can directly clone the `starters/server` to get started quickly.
+
+Follow the next command to be ready in minutes
+
+```bash
+npx degit github:adrien2p/medusa-extender/starters/server#main server
+cd server
+npm i
+npm run build
+npm run start
+```
+
+That's it, your server is not up and running :rocket:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#cli-medex)
 
