@@ -20,6 +20,24 @@ to be able to run the migrations and show the list of applied and to be applied 
 
 {{ cliGenerateOptionsSchematics }}
 
+:point_right: __Examples__
+
+Without specifying the location `-p`
+
+```bash
+./node_modules/.bin/medex g -m store
+```
+
+> Generate the store modules at `src/modules/store/store.module.ts`
+
+With specifying the location `-p`
+
+```bash
+./node_modules/.bin/medex g -m store -p src/modules
+```
+
+> Generate the store modules at `src/modules/store.module.ts`
+
 ### Command `migrate` reference
 
 #### Usage

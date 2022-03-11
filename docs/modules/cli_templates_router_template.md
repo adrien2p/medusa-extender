@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/cli/templates/router-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/5fdc11f/src/cli/templates/router-template.ts#L3)
+[src/cli/templates/router-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/6afd1c2/src/cli/templates/router-template.ts#L3)

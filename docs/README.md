@@ -98,7 +98,7 @@ Depending on your situation, pick the right getting started section.
 
 ## Existing medusa project
 
-Run the following command in your terminal (The last version is 1.5.1)
+Run the following command in your terminal (The last version is 1.5.2)
 
 ```bash
 npm install medusa-extender
@@ -312,6 +312,24 @@ to be able to run the migrations and show the list of applied and to be applied 
 | `--validator <name>`  | `-va` | Generate a new validator.                        |
 | `--path`              | `-p`  | specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]. |
 
+
+:point_right: __Examples__
+
+Without specifying the location `-p`
+
+```bash
+./node_modules/.bin/medex g -m store
+```
+
+> Generate the store modules at src/modules/store/store.module.ts
+
+With specifying the location `-p`
+
+```bash
+./node_modules/.bin/medex g -m store -p src/modules
+```
+
+> Generate the store modules at src/modules/store.module.ts
 
 ### Command `migrate` reference
 
