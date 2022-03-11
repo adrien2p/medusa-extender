@@ -49,13 +49,17 @@
 ## Table of Contents
 
 * [Getting started :rocket:](#getting-started-rocket)
-* [Integration within your medusa project](#integration-within-your-medusa-project)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
 	* [Architecture](#architecture)
 * [CLI `medex`](#cli-medex)
-	* [Usage](#usage)
-	* [Commands](#commands)
+	* [Commands references](#commands-references)
+		* [Command `generate` reference](#command-generate-reference)
+			* [Usage](#usage)
+			* [Options](#options)
+		* [Command `migrate` reference](#command-migrate-reference)
+			* [Usage](#usage-1)
+			* [Options](#options-1)
 * [Full code API :mag:](#full-code-api-mag)
 * [API documentation :bulb:](#api-documentation-bulb)
 	* [Decorators](#decorators)
@@ -85,25 +89,15 @@
 
 # Getting started :rocket:
 
-> IMPORTANT! Using the extender does not break any features from medusa under the hood.
-> The only thing it provides are some badass features
-
 Run the following command in your terminal (The last version is 1.5.1)
 
 ```bash
 npm install medusa-extender
 ```
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#integration-within-your-medusa-project)
-
-# Integration within your medusa project
-
 To benefit from all the features that the extender offers you, the usage of typescript is recommended.
-If you have already an existing project scaffold with the command `medusa new ...` here is how are the following steps to integrate
-the extender in your project.
 
-follow the next steps yo be ready to launch :rocket:
+Then let's create the `tsconfig.json` configuration
 
 ```bash
 npm i -D typescript
@@ -173,6 +167,8 @@ medusa migrations run
 #Start development environment
 npm run start
 ```
+
+That's it, your now ready to run your server :rocket:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)
 
@@ -252,72 +248,58 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
-![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)
 
-Let see that CLI usage together
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#commands-references)
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#usage)
-
-## Usage
-
-```bash
-./node_modules/.bin/medex --help
-```
-
-Help output:
-
-```bash
-Usage: medex [options] [command]
-
-Medusa extender CLI
-
-Options:
-  -V, --version       output the version number
-  -h, --help          display help for command
-
-Commands:
-  migrate [options]   Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']
-  generate [options]  Generate a new component
-  help [command]      display help for command
-```
+## Commands references
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#commands)
+| Name       | Alias | Description                                      |
+|------------|-------|--------------------------------------------------|
+| `migrate`  | `m`   | Migrate the migrations that has not been applied yet. Can also show you the migrations already applied and to be applied. |
+| `generate` | `g`   | Generate a new component among: module, service, entity, repository, migration, validator, router, middleware |
 
-## Commands
 
-> The `migrate | m` command allow you to run or show migrations.
+### Command `generate` reference
+
+#### Usage
 
 ```bash
-Usage: medex migrate [options]
-
-Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']
-
-Options:
-  -r, --run   Run migrations up method
-  -s, --show  Show all applied migrations
-  -h, --help  display help for command
+./node_modules/.bin/medex g [option]
 ```
 
-> The `generate | g` command allow you to genrate any component with minimal code implementation.
+#### Options
+
+
+| Name                  | Alias | Description                                      |
+|-----------------------|-------|--------------------------------------------------|
+| `--module <name>`     | `-m`  | Generate a new module.                           |
+| `--middleware <name>` | `-mi` | Generate a new middleware.                       |
+| `--service <name>`    | `-s`  | Generate a new service.                          |
+| `--router <name>`     | `-r`  | Generate a new router.                           |
+| `--entity <name>`     | `-e`  | Generate a new entity.                           |
+| `--repository <name>` | `-re` | Generate a new repository.                       |
+| `--migration <name>`  | `-mi` | Generate a new migration.                        |
+| `--validator <name>`  | `-va` | Generate a new validator.                        |
+| `--path`              | `-p`  | specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]. |
+
+
+### Command `migrate` reference
+
+#### Usage
 
 ```bash
-Usage: medex generate [options]
-
-Generate a new component
-
-Options:
-  -m, --module <string>       Generate a new module
-  -md, --middleware <string>  Generate a new middleware
-  -s, --service <string>      Generate a new service
-  -r, --router <string>       Generate a new router
-  -e, --entity <string>       Generate a new entity
-  -re, --repository <string>  Generate a new repository
-  -mi, --migration <string>   Generate a new migration
-  -va, --validator <string>   Generate a new validator
-  -h, --help                  display help for command
+./node_modules/.bin/medex m [option]
 ```
+
+#### Options
+
+
+| Name     | Alias | Description                                  |
+|----------|-------|----------------------------------------------|
+| `--run`  | `-r`  | Run migrations up method.                    |
+| `--show` | `-s`  | Show all applied and non applied migrations. |
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#full-code-api-mag)
 

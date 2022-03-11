@@ -15,100 +15,103 @@ function cleanup(path: string): void {
 	unlinkSync(path);
 }
 
+const path = '.';
+const componentName = 'test';
+
 describe('generateComponent', () => {
 	it('should generate a module', () => {
-		const componentFileName = 'test.module.ts';
-		generateComponent({ module: componentFileName });
+		generateComponent({ module: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.module.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getModuleTemplate('TestModule'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a middleware', () => {
-		const componentFileName = 'test.middleware.ts';
-		generateComponent({ middleware: componentFileName });
+		generateComponent({ middleware: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.middleware.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getMiddlewareTemplate('TestMiddleware'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a service', () => {
-		const componentFileName = 'test.service.ts';
-		generateComponent({ service: componentFileName });
+		generateComponent({ service: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.service.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getServiceTemplate('TestService'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a router', () => {
-		const componentFileName = 'test.router.ts';
-		generateComponent({ router: componentFileName });
+		generateComponent({ router: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.router.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getRouterTemplate('TestRouter'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a validator', () => {
-		const componentFileName = 'test.validator.ts';
-		generateComponent({ validator: componentFileName });
+		generateComponent({ validator: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.validator.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getValidatorTemplate('TestValidator'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a entity', () => {
-		const componentFileName = 'test.entity.ts';
-		generateComponent({ entity: componentFileName });
+		generateComponent({ entity: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.entity.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getEntityTemplate('TestEntity'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a repository', () => {
-		const componentFileName = 'test.repository.ts';
-		generateComponent({ repository: componentFileName });
+		generateComponent({ repository: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.repository.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent).toEqual(getRepositoryTemplate('TestRepository'));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 
 	it('should generate a migration', () => {
-		const componentFileName = 'test.migration.ts';
-		generateComponent({ migration: componentFileName });
+		generateComponent({ migration: componentName, path });
 
-		expect(existsSync(componentFileName));
+		const expectedComponentFile = `${componentName}.migration.ts`;
+		expect(existsSync(expectedComponentFile));
 
-		const componentContent = readFileSync(componentFileName).toString();
+		const componentContent = readFileSync(expectedComponentFile).toString();
 		expect(componentContent.replace(/\d+/g, '')).toEqual(getMigrationTemplate('TestMigration').replace(/\d+/g, ''));
 
-		cleanup(componentFileName);
+		cleanup(expectedComponentFile);
 	});
 });

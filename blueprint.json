@@ -113,5 +113,27 @@
     ["`@Migration`", "", "Create a new migration to applied for your entity modifications."],
     ["`@Module`", "`{ imports: Type[] }`", "Import all previous components including modules."],
     ["`@OnMedusaEntityEvent.When.Action`", "take an entity and an option object such as `{ async: boolean; metatype?: Type; }`", "Emit and listen to entity subscriber events."]
+  ],
+  "cliCommandsSchematics": [
+    ["Name", "Alias", "Description"],
+    ["`migrate`", "`m`", "Migrate the migrations that has not been applied yet. Can also show you the migrations already applied and to be applied."],
+    ["`generate`", "`g`", "Generate a new component among: module, service, entity, repository, migration, validator, router, middleware"]
+  ],
+  "cliMigrateOptionsSchematics": [
+    ["Name", "Alias", "Description"],
+    ["`--run`", "`-r`", "Run migrations up method."],
+    ["`--show`", "`-s`", "Show all applied and non applied migrations."]
+  ],
+  "cliGenerateOptionsSchematics": [
+    ["Name", "Alias", "Description"],
+    ["`--module <name>`", "`-m`", "Generate a new module."],
+    ["`--middleware <name>`", "`-mi`", "Generate a new middleware."],
+    ["`--service <name>`", "`-s`", "Generate a new service."],
+    ["`--router <name>`", "`-r`", "Generate a new router."],
+    ["`--entity <name>`", "`-e`", "Generate a new entity."],
+    ["`--repository <name>`", "`-re`", "Generate a new repository."],
+    ["`--migration <name>`", "`-mi`", "Generate a new migration."],
+    ["`--validator <name>`", "`-va`", "Generate a new validator."],
+    ["`--path`", "`-p`", "specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]."]
   ]
 }

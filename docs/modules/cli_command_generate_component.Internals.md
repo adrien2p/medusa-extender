@@ -24,6 +24,7 @@
 | `middleware?` | `string` |
 | `migration?` | `string` |
 | `module?` | `string` |
+| `path?` | `string` |
 | `repository?` | `string` |
 | `router?` | `string` |
 | `service?` | `string` |
@@ -31,4 +32,4 @@
 
 #### Defined in
 
-[src/cli/command/generate-component.ts:17](https://github.com/adrien2p/medusa-extender/blob/af38280/src/cli/command/generate-component.ts#L17)
+[src/cli/command/generate-component.ts:17](https://github.com/adrien2p/medusa-extender/blob/ef51195/src/cli/command/generate-component.ts#L17)

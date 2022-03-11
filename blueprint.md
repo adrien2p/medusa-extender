@@ -15,7 +15,6 @@
 {{ template:toc }}
 
 {{ load:documentation/01-getting-started.md }}
-{{ load:documentation/06-integration-with-medusa.md }}
 {{ load:documentation/09-features.md }}
 {{ load:documentation/11-cli.md }}
 {{ load:documentation/02-api-documentation.md }}

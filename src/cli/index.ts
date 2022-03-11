@@ -29,19 +29,26 @@ program
 program
 	.command('generate')
 	.alias('g')
-	.description('Generate a new component from the given component path (eg. src/modules/myModule/myModule.module.ts)')
-	.option('-m, --module <string>', 'Generate a new module')
-	.option('-md, --middleware <string>', 'Generate a new middleware')
-	.option('-s, --service <string>', 'Generate a new service')
-	.option('-r, --router <string>', 'Generate a new router')
-	.option('-e, --entity <string>', 'Generate a new entity')
-	.option('-re, --repository <string>', 'Generate a new repository')
-	.option('-mi, --migration <string>', 'Generate a new migration')
-	.option('-va, --validator <string>', 'Generate a new validator')
+	.description('Generate a new component')
+	.option('-m, --module <name>', 'Generate a new module')
+	.option('-md, --middleware <name>', 'Generate a new middleware')
+	.option('-s, --service <name>', 'Generate a new service')
+	.option('-r, --router <name>', 'Generate a new router')
+	.option('-e, --entity <name>', 'Generate a new entity')
+	.option('-re, --repository <name>', 'Generate a new repository')
+	.option('-mi, --migration <name>', 'Generate a new migration')
+	.option('-va, --validator <name>', 'Generate a new validator')
+	.option(
+		'-p, --path <path>',
+		'specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]'
+	)
 	.action((options, program) => {
 		console.time(green('Component generated successfully'));
-		if (Object.values(options).every((value) => !value)) {
-			return program.showHelpAfterError(true).error('You must specify one of the options.');
+		const { path, ...componentOptions } = options;
+		if (Object.values(componentOptions).every((value) => !value)) {
+			return program
+				.showHelpAfterError(true)
+				.error(`You must specify one of the options.${path ? ' --path only is not sufficient.' : ''}`);
 		}
 		generateComponent(options);
 		console.timeEnd(green('Component generated successfully'));
