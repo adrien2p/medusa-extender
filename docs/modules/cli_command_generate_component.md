@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/cli/command/generate-component.ts:91](https://github.com/adrien2p/medusa-extender/blob/1c9ae69/src/cli/command/generate-component.ts#L91)
+[src/cli/command/generate-component.ts:91](https://github.com/adrien2p/medusa-extender/blob/3ee1b1f/src/cli/command/generate-component.ts#L91)
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 #### Defined in
 
-[src/cli/command/generate-component.ts:29](https://github.com/adrien2p/medusa-extender/blob/1c9ae69/src/cli/command/generate-component.ts#L29)
+[src/cli/command/generate-component.ts:29](https://github.com/adrien2p/medusa-extender/blob/3ee1b1f/src/cli/command/generate-component.ts#L29)
