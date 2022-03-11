@@ -134,6 +134,6 @@
     ["`--repository <name>`", "`-re`", "Generate a new repository."],
     ["`--migration <name>`", "`-mi`", "Generate a new migration."],
     ["`--validator <name>`", "`-va`", "Generate a new validator."],
-    ["`--path`", "`-p`", "specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]."]
+    ["`--path`", "`-p`", "specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]."]
   ]
 }
