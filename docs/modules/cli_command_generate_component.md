@@ -17,13 +17,17 @@
 
 ### createComponentIfNecessary
 
-▸ **createComponentIfNecessary**(`component`, `content`): `void`
+▸ **createComponentIfNecessary**(`__namedParameters`, `content`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `component` | `string` |
+| `__namedParameters` | `Object` |
+| `__namedParameters.componentFileName` | `string` |
+| `__namedParameters.componentName` | `string` |
+| `__namedParameters.fullDestinationPath` | `string` |
+| `__namedParameters.relativeDestinationPath` | `string` |
 | `content` | `string` |
 
 #### Returns
@@ -32,7 +36,7 @@
 
 #### Defined in
 
-[src/cli/command/generate-component.ts:83](https://github.com/adrien2p/medusa-extender/blob/af38280/src/cli/command/generate-component.ts#L83)
+[src/cli/command/generate-component.ts:91](https://github.com/adrien2p/medusa-extender/blob/ef51195/src/cli/command/generate-component.ts#L91)
 
 ___
 
@@ -52,4 +56,4 @@ ___
 
 #### Defined in
 
-[src/cli/command/generate-component.ts:28](https://github.com/adrien2p/medusa-extender/blob/af38280/src/cli/command/generate-component.ts#L28)
+[src/cli/command/generate-component.ts:29](https://github.com/adrien2p/medusa-extender/blob/ef51195/src/cli/command/generate-component.ts#L29)

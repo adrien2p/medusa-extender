@@ -12,13 +12,15 @@
 
 ### parseComponentValue
 
-▸ **parseComponentValue**(`value`): `Object`
+▸ **parseComponentValue**(`name`, `componentType`, `path?`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `string` |
+| `name` | `string` |
+| `componentType` | `string` |
+| `path` | `string` |
 
 #### Returns
 
@@ -33,4 +35,4 @@
 
 #### Defined in
 
-[src/cli/utils/parse-component-value.ts:1](https://github.com/adrien2p/medusa-extender/blob/af38280/src/cli/utils/parse-component-value.ts#L1)
+[src/cli/utils/parse-component-value.ts:1](https://github.com/adrien2p/medusa-extender/blob/ef51195/src/cli/utils/parse-component-value.ts#L1)

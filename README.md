@@ -49,7 +49,6 @@
 ## Table of Contents
 
 * [Getting started :rocket:](#getting-started-rocket)
-* [Integration within your medusa project](#integration-within-your-medusa-project)
 * [CLI `medex`](#cli-medex)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
@@ -65,25 +64,17 @@
 
 # Getting started :rocket:
 
-> IMPORTANT! Using the extender does not break any features from medusa under the hood.
-> The only thing it provides are some badass features
+# Getting started :rocket:
 
-Run the following command in your terminal (The last version is 1.4.5)
+Run the following command in your terminal (The last version is {{ pkg.version }})
 
 ```bash
-npm install medusa-extender
+npm install {{ pkg.name }}
 ```
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#integration-within-your-medusa-project)
-
-# Integration within your medusa project
-
 To benefit from all the features that the extender offers you, the usage of typescript is recommended.
-If you have already an existing project scaffold with the command `medusa new ...` here is how are the following steps to integrate
-the extender in your project.
 
-follow the next steps yo be ready to launch :rocket:
+Then let's create the `tsconfig.json` configuration
 
 ```bash
 npm i -D typescript
@@ -162,9 +153,7 @@ To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
 
-![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)
-
-To see more about the usage, [see the documentation](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
+To see more about the usage and references, [click here to see the documentation](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)
 
