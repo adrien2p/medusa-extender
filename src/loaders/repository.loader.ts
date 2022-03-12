@@ -46,7 +46,7 @@ export async function overrideRepositoriesLoader(repositories: GetInjectableOpti
 		}
 	}
 
-	logger.log(`${count} entities overridden`);
+	logger.log(`${count} repositories overridden`);
 }
 
 function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
