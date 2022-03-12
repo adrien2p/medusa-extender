@@ -46,6 +46,7 @@
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Getting started :rocket:](#getting-started-rocket)
 * [CLI `medex`](#cli-medex)
 * [Features :monocle_face:](#features-monocle_face)
@@ -57,6 +58,16 @@
 * [Like my work? :heartbeat:](#like-my-work-heartbeat)
 * [Contribute](#contribute)
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#introduction)
+
+# Introduction
+
+[Medusa](https://github.com/medusajs/medusa) is an open source headless commerce platform that allows you to create your own store in a matter of minutes. Part of what makes Medusa a good choice for your ecommerce store is its extensibility. Now, it is also possible to create multi-vendor marketplaces using Medusa.
+
+:point_right: __And here is why I've done that package for medusa__
+
+> "I've been looking for an e-commerce solution that could provide me with some core features while being fully customisable... After some research, where I found that none of the present solutions could provide what I needed, I chose Medusa as it provided me with many of the needed features while being easy to extend. I ended up loving the community atmosphere, especially the proximity with the team, and have been helping those in the community looking for a similar fully-customisable solution by sharing a part of my private project. This is how the medusa-extender was born." — Adrien de Peretti
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#getting-started-rocket)
 
@@ -66,7 +77,9 @@ Depending on your situation, pick the right getting started section.
 
 ## Existing medusa project
 
-Run the following command in your terminal (The last version is {{ pkg.version }})
+In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
+
+Run the following command in your terminal
 
 ```bash
 npm install medusa-extender

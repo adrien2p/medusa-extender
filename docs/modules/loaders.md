@@ -24,22 +24,21 @@
 - [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
 - [ServiceInjectableOptions](loaders.md#serviceinjectableoptions)
 - [Type](loaders.md#type)
-- [Utils](loaders.md#utils)
 - [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
 - [adminApiLoader](loaders.md#adminapiloader)
+- [attachOrReplaceEntitySubscriber](loaders.md#attachorreplaceentitysubscriber)
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
 - [migrationsLoader](loaders.md#migrationsloader)
 - [overrideEntitiesLoader](loaders.md#overrideentitiesloader)
 - [overrideEntity](loaders.md#overrideentity)
 - [overrideRepositoriesLoader](loaders.md#overriderepositoriesloader)
-- [overrideRepository](loaders.md#overriderepository)
 - [overrideService](loaders.md#overrideservice)
 - [pluginsLoadersAndListeners](loaders.md#pluginsloadersandlisteners)
 - [registerEntity](loaders.md#registerentity)
-- [registerRepository](loaders.md#registerrepository)
 - [registerService](loaders.md#registerservice)
 - [repositoriesLoader](loaders.md#repositoriesloader)
+- [repositoryMixin](loaders.md#repositorymixin)
 - [servicesLoader](loaders.md#servicesloader)
 - [storeApiLoader](loaders.md#storeapiloader)
 - [validatorsLoader](loaders.md#validatorsloader)
@@ -154,12 +153,6 @@ Re-exports [Type](../interfaces/core_types.Type.md)
 
 ___
 
-### Utils
-
-Re-exports [Utils](../classes/core_utils.Utils.md)
-
-___
-
 ### ValidatorInjectionOptions
 
 Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
@@ -169,6 +162,12 @@ ___
 ### adminApiLoader
 
 Re-exports [adminApiLoader](loaders_admin_api_loader.md#adminapiloader)
+
+___
+
+### attachOrReplaceEntitySubscriber
+
+Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
 
 ___
 
@@ -208,12 +207,6 @@ Re-exports [overrideRepositoriesLoader](loaders_repository_loader.md#overriderep
 
 ___
 
-### overrideRepository
-
-Re-exports [overrideRepository](loaders_repository_loader.md#overriderepository)
-
-___
-
 ### overrideService
 
 Re-exports [overrideService](loaders_services_loader.md#overrideservice)
@@ -232,12 +225,6 @@ Re-exports [registerEntity](loaders_entities_loader.md#registerentity)
 
 ___
 
-### registerRepository
-
-Re-exports [registerRepository](loaders_repository_loader.md#registerrepository)
-
-___
-
 ### registerService
 
 Re-exports [registerService](loaders_services_loader.md#registerservice)
@@ -247,6 +234,12 @@ ___
 ### repositoriesLoader
 
 Re-exports [repositoriesLoader](loaders_repository_loader.md#repositoriesloader)
+
+___
+
+### repositoryMixin
+
+Re-exports [repositoryMixin](core_utils.md#repositorymixin)
 
 ___
 

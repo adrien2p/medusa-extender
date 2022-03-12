@@ -94,6 +94,14 @@
   ],
   "templates": [
     {
+      "name": "introduction-medusa",
+      "template": "[Medusa](https://github.com/medusajs/medusa) is an open source headless commerce platform that allows you to create your own store in a matter of minutes. Part of what makes Medusa a good choice for your ecommerce store is its extensibility. Now, it is also possible to create multi-vendor marketplaces using Medusa but you can also do so much more."
+    },
+    {
+      "name": "introduction-medusa-extender",
+      "template": "> \"I've been looking for an e-commerce solution that could provide me with some core features while being fully customisable... After some research, where I found that none of the present solutions could provide what I needed, I chose Medusa as it provided me with many of the needed features while being easy to extend. I ended up loving the community atmosphere, especially the proximity with the team, and have been helping those in the community looking for a similar fully-customisable solution by sharing a part of my private project. This is how the medusa-extender was born.\" — Adrien de Peretti"
+    },
+    {
       "name": "monitoring-demo-video",
       "template": "[![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)"
     },

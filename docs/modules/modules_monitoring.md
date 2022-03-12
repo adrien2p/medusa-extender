@@ -10,13 +10,13 @@
 
 ### Functions
 
-- [buildMonitoringModule](modules_monitoring.md#buildmonitoringmodule)
+- [loadMonitoringModule](modules_monitoring.md#loadmonitoringmodule)
 
 ## Functions
 
-### buildMonitoringModule
+### loadMonitoringModule
 
-▸ **buildMonitoringModule**(`app`, `options`): `Promise`<`void`\>
+▸ **loadMonitoringModule**(`app`, `options`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -31,4 +31,4 @@
 
 #### Defined in
 
-[src/modules/monitoring.ts:23](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/modules/monitoring.ts#L23)
+[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/modules/monitoring.ts#L25)

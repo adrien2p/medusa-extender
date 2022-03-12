@@ -1,12 +1,20 @@
 import { asFunction, AwilixContainer, Lifetime } from 'awilix';
-import { Utils, GetInjectableOption, GetInjectableOptions } from './';
+import { GetInjectableOption, GetInjectableOptions } from './';
+import { Logger } from '../core';
+
+const logger = Logger.contextualize('ServicesLoader');
 
 /**
  * @internal
- * Load custom services from the rootDir.
+ * Load all custom services and overridden services into the underlying @medusajs instance.
  * @param services Any custom service that implements MedusaService
  */
 export async function servicesLoader(services: GetInjectableOptions<'service'>): Promise<void> {
+	logger.log('Loading services into the underlying @medusajs');
+
+	let customCount = 0;
+	let overriddenCount = 0;
+
 	const serviceLoader = await import('@medusajs/medusa/dist/loaders/services');
 	const originalServiceLoader = serviceLoader.default;
 	serviceLoader.default = ({ container, configModule, isTest }) => {
@@ -14,20 +22,21 @@ export async function servicesLoader(services: GetInjectableOptions<'service'>):
 		for (const serviceOptions of services) {
 			if (!serviceOptions.resolutionKey) {
 				overrideService(container, serviceOptions, configModule);
+				logger.log(`Service overridden - ${serviceOptions.metatype.name}`);
+				++overriddenCount;
 			} else {
 				registerService(container, serviceOptions, configModule);
+				logger.log(`Service loaded - ${serviceOptions.resolutionKey}`);
+
+				++customCount;
 			}
 		}
+
+		logger.log(`${customCount} services registered`);
+		logger.log(`${overriddenCount} services overridden`);
 	};
 }
 
-/**
- * @internal
- * Load custom service into the container.
- * @param container
- * @param serviceOptions
- * @param configModule
- */
 export function registerService(
 	container: AwilixContainer,
 	serviceOptions: GetInjectableOption<'service'>,
@@ -41,17 +50,8 @@ export function registerService(
 	container.register({
 		[resolutionKey]: asFunction((cradle) => new metatype(cradle, configModule), { lifetime: scope || 'SINGLETON' }),
 	});
-
-	Utils.hydrateLog('MedusaLoader#servicesLoader', `Service registered - ${resolutionKey}`);
 }
 
-/**
- * @internal
- * Load custom service and override existing ones.
- * @param container
- * @param serviceOptions
- * @param configModule
- */
 export function overrideService(
 	container: AwilixContainer,
 	serviceOptions: GetInjectableOption<'service'>,
@@ -65,6 +65,4 @@ export function overrideService(
 			lifetime: scope || Lifetime.SINGLETON,
 		}),
 	});
-
-	Utils.hydrateLog('MedusaLoader#servicesLoader', `Service overridden - ${metatype.name}`);
 }

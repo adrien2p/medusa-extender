@@ -15,6 +15,9 @@
 
 ▸ **applyAfterAuthMiddleware**(`app`, `middlewares`): `void`
 
+**`internal`**
+Apply all middlewares on the app that must be applied after the @medusajs authentication
+
 #### Parameters
 
 | Name | Type |
@@ -28,7 +31,7 @@
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/helpers/apply-middlewares.ts#L18)
+[src/loaders/helpers/apply-middlewares.ts:40](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/helpers/apply-middlewares.ts#L40)
 
 ___
 
@@ -36,6 +39,9 @@ ___
 
 ▸ **applyBeforeAuthMiddleware**(`app`, `middlewares`): `void`
 
+**`internal`**
+Apply all middlewares on the app that must be applied before the @medusajs authentication
+
 #### Parameters
 
 | Name | Type |
@@ -49,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:5](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/helpers/apply-middlewares.ts#L5)
+[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/helpers/apply-middlewares.ts#L18)

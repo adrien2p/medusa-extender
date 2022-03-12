@@ -14,6 +14,9 @@
 
 ▸ **validatorsLoader**(`validatorsOptions`): `Promise`<`void`\>
 
+**`internal`**
+Load all custom extended validators into the underlying @medusajs instance.
+
 #### Parameters
 
 | Name | Type |
@@ -26,4 +29,4 @@
 
 #### Defined in
 
-[src/loaders/validators.loader.ts:4](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/validators.loader.ts#L4)
+[src/loaders/validators.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/validators.loader.ts#L11)

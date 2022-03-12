@@ -24,6 +24,7 @@
 - [core](modules/core.md)
 - [core/constants](modules/core_constants.md)
 - [core/event-emmiter](modules/core_event_emmiter.md)
+- [core/logger](modules/core_logger.md)
 - [core/metadata-reader](modules/core_metadata_reader.md)
 - [core/package-loader](modules/core_package_loader.md)
 - [core/types](modules/core_types.md)

@@ -13,6 +13,7 @@
 - [INJECTABLE\_OPTIONS\_KEY](core.md#injectable_options_key)
 - [InjectableComponentTypes](core.md#injectablecomponenttypes)
 - [InjectableOptions](core.md#injectableoptions)
+- [Logger](core.md#logger)
 - [MEDUSA\_RESOLVER\_KEYS](core.md#medusa_resolver_keys)
 - [MODULE\_KEY](core.md#module_key)
 - [MedusaAuthenticatedRequest](core.md#medusaauthenticatedrequest)
@@ -27,13 +28,14 @@
 - [RoutesInjectionRouterConfiguration](core.md#routesinjectionrouterconfiguration)
 - [ServiceInjectableOptions](core.md#serviceinjectableoptions)
 - [Type](core.md#type)
-- [Utils](core.md#utils)
 - [ValidatorInjectionOptions](core.md#validatorinjectionoptions)
+- [attachOrReplaceEntitySubscriber](core.md#attachorreplaceentitysubscriber)
 - [componentsMetadataReader](core.md#componentsmetadatareader)
 - [customEventEmitter](core.md#customeventemitter)
 - [getPackageManagerCommand](core.md#getpackagemanagercommand)
 - [loadPackages](core.md#loadpackages)
 - [metadataReader](core.md#metadatareader)
+- [repositoryMixin](core.md#repositorymixin)
 
 ## References
 
@@ -76,6 +78,12 @@ ___
 ### InjectableOptions
 
 Re-exports [InjectableOptions](core_types.md#injectableoptions)
+
+___
+
+### Logger
+
+Re-exports [Logger](../classes/core_logger.Logger.md)
 
 ___
 
@@ -163,15 +171,15 @@ Re-exports [Type](../interfaces/core_types.Type.md)
 
 ___
 
-### Utils
-
-Re-exports [Utils](../classes/core_utils.Utils.md)
-
-___
-
 ### ValidatorInjectionOptions
 
 Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
+
+___
+
+### attachOrReplaceEntitySubscriber
+
+Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
 
 ___
 
@@ -202,3 +210,9 @@ ___
 ### metadataReader
 
 Re-exports [metadataReader](core_metadata_reader.md#metadatareader)
+
+___
+
+### repositoryMixin
+
+Re-exports [repositoryMixin](core_utils.md#repositorymixin)

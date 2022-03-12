@@ -29,7 +29,7 @@
 
 <p align="center">
   <b>:syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:</b></br>
-  <sub>Fully customisable medusa, create custom fields in any entity, implement your own feature or extend existing one in a minutes, make your own architecture or choose the modular architecture provided.
+  <sub>Fully customisable medusa, create custom fields in any entity, implement your own feature or extend existing one in minutes! Make your own architecture or choose the modular architecture provided.
         Build a store, marketplace, media store and anything you want to do you can do it.
         Enjoy the full power of Medusa with extra badass features :rocket:<sub>
 </p>
@@ -46,6 +46,7 @@
 
 ## Table of Contents
 
+* [Introduction](#introduction)
 * [Getting started :rocket:](#getting-started-rocket)
 	* [Existing medusa project](#existing-medusa-project)
 	* [From server starter](#from-server-starter)
@@ -85,6 +86,16 @@
 * [Contribute](#contribute)
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#introduction)
+
+# Introduction
+
+[Medusa](https://github.com/medusajs/medusa) is an open source headless commerce platform that allows you to create your own store in a matter of minutes. Part of what makes Medusa a good choice for your ecommerce store is its extensibility. Now, it is also possible to create multi-vendor marketplaces using Medusa but you can also do so much more.
+
+:point_right: __And here is why I've done that package for medusa__
+
+> "I've been looking for an e-commerce solution that could provide me with some core features while being fully customisable... After some research, where I found that none of the present solutions could provide what I needed, I chose Medusa as it provided me with many of the needed features while being easy to extend. I ended up loving the community atmosphere, especially the proximity with the team, and have been helping those in the community looking for a similar fully-customisable solution by sharing a part of my private project. This is how the medusa-extender was born." — Adrien de Peretti
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#getting-started-rocket)
 
 # Getting started :rocket:
@@ -95,6 +106,8 @@ Depending on your situation, pick the right getting started section.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#existing-medusa-project)
 
 ## Existing medusa project
+
+In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
 Run the following command in your terminal (The last version is 1.5.3)
 

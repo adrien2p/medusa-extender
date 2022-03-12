@@ -4,6 +4,8 @@ Depending on your situation, pick the right getting started section.
 
 ## Existing medusa project
 
+In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
+
 Run the following command in your terminal (The last version is {{ pkg.version }})
 
 ```bash

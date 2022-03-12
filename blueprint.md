@@ -14,6 +14,7 @@
 
 {{ template:toc }}
 
+{{ load:documentation/00-introduction.md }}
 {{ load:documentation/01-getting-started.md }}
 {{ load:documentation/09-features.md }}
 {{ load:documentation/11-cli.md }}

@@ -7,9 +7,8 @@ import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/
 import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
 import { Entity, EntityRepository, Repository } from 'typeorm';
-import { Utils } from '../../core/utils';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
-import { metadataReader } from '../../core/metadata-reader';
+import { metadataReader, repositoryMixin } from '../../core';
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()
@@ -19,7 +18,7 @@ class Order extends MedusaOrder {
 
 @MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()
-class OrderRepository extends Utils.repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
+class OrderRepository extends repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 
 	test(): Promise<Order[]> {

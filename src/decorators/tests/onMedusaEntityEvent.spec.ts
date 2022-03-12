@@ -4,7 +4,7 @@ import { Entity as MedusaEntity } from '../components.decorator';
 import { eventEmitter, Module, Service } from '../../index';
 import { AwilixContainer, createContainer } from 'awilix';
 import { registerEntity, registerService } from '../../loaders';
-import { metadataReader } from '../../core/metadata-reader';
+import { metadataReader } from '../../core';
 import SpyInstance = jest.SpyInstance;
 
 const getMockContainer = (container: AwilixContainer) => {

@@ -16,9 +16,6 @@
 
 ▸ **overrideService**(`container`, `serviceOptions`, `configModule`): `void`
 
-**`internal`**
-Load custom service and override existing ones.
-
 #### Parameters
 
 | Name | Type |
@@ -33,7 +30,7 @@ Load custom service and override existing ones.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/services.loader.ts#L55)
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/services.loader.ts#L55)
 
 ___
 
@@ -41,9 +38,6 @@ ___
 
 ▸ **registerService**(`container`, `serviceOptions`, `configModule`): `void`
 
-**`internal`**
-Load custom service into the container.
-
 #### Parameters
 
 | Name | Type |
@@ -58,7 +52,7 @@ Load custom service into the container.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:31](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/services.loader.ts#L31)
+[src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/services.loader.ts#L40)
 
 ___
 
@@ -67,7 +61,7 @@ ___
 ▸ **servicesLoader**(`services`): `Promise`<`void`\>
 
 **`internal`**
-Load custom services from the rootDir.
+Load all custom services and overridden services into the underlying @medusajs instance.
 
 #### Parameters
 
@@ -81,4 +75,4 @@ Load custom services from the rootDir.
 
 #### Defined in
 
-[src/loaders/services.loader.ts:9](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/services.loader.ts#L9)
+[src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/services.loader.ts#L12)

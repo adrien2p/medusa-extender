@@ -1,8 +1,9 @@
 import loaders from '@medusajs/medusa/dist/loaders';
 import { getConfigFile } from 'medusa-core-utils/dist';
+import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Constructor, metadataReader, Utils } from './core';
+import { Constructor, metadataReader, Logger } from './core';
 import {
 	adminApiLoader,
 	databaseLoader,
@@ -14,12 +15,14 @@ import {
 	storeApiLoader,
 	validatorsLoader,
 } from './loaders';
-import { buildMonitoringModule, MonitoringOptions } from './modules/monitoring';
+import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
 
 // Use to fix MiddlewareService typings
 declare global {
 	type ExpressApp = Express;
 }
+
+const logger = Logger.contextualize('Medusa');
 
 /**
  * Load medusa and apply all components
@@ -42,8 +45,13 @@ export class Medusa {
 	 */
 	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
+		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
+			configModule: { monitoring: MonitoringOptions };
+		};
 
-		await this.loadMonitoringModuleIfNecessary();
+		if (configModule.monitoring) {
+			await loadMonitoringModule(this.#express, configModule.monitoring);
+		}
 
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
@@ -73,22 +81,14 @@ export class Medusa {
 
 		await migrationsLoader(moduleComponentsOptions.get('migration') ?? [], dbConnection);
 
-		Utils.hydrateRouterLog(this.#express);
-		Utils.displayLogs();
-		return container as unknown as AwilixContainer;
-	}
-
-	private async loadMonitoringModuleIfNecessary(): Promise<void> {
-		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: { monitoring: MonitoringOptions };
-		};
-		if (configModule.monitoring) {
-			Utils.hydrateLog(
-				'Monitoring module',
-				'Loading monitoring module with the configuration found in medusa-config'
-			);
-			await buildMonitoringModule(this.#express, configModule.monitoring);
-			Utils.hydrateLog('Monitoring module', 'Monitoring module successfully attached');
+		const endPoints = getEndpoints(this.#express);
+		for (const endPoint of endPoints) {
+			endPoint.methods.map((method) => {
+				logger.push('Route Mapped {%s, %s}', endPoint.path, method);
+			});
 		}
+		logger.flush();
+
+		return container as unknown as AwilixContainer;
 	}
 }

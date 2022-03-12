@@ -5,7 +5,7 @@ import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-r
 
 /**
  * @internal
- * Apply middlewares and routes on admin API.
+ * Apply middlewares and routes on the underlying @medusajs admin API.
  * @param app
  * @param middlewares
  * @param routers

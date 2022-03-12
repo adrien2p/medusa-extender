@@ -7,8 +7,6 @@
 ### Functions
 
 - [overrideRepositoriesLoader](loaders_repository_loader.md#overriderepositoriesloader)
-- [overrideRepository](loaders_repository_loader.md#overriderepository)
-- [registerRepository](loaders_repository_loader.md#registerrepository)
 - [repositoriesLoader](loaders_repository_loader.md#repositoriesloader)
 
 ## Functions
@@ -17,6 +15,9 @@
 
 ▸ **overrideRepositoriesLoader**(`repositories`): `Promise`<`void`\>
 
+**`internal`**
+Load all custom repositories that override @medusajs instance entities.
+
 #### Parameters
 
 | Name | Type |
@@ -29,54 +30,7 @@
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/repository.loader.ts#L16)
-
-___
-
-### overrideRepository
-
-▸ **overrideRepository**(`repositoryOptions`): `Promise`<`void`\>
-
-**`internal`**
-Load custom repositories and override existing ones.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `repositoryOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"repository"``\> |
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Defined in
-
-[src/loaders/repository.loader.ts:48](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/repository.loader.ts#L48)
-
-___
-
-### registerRepository
-
-▸ **registerRepository**(`container`, `repositoryOptions`): `void`
-
-**`internal`**
-Load custom repository into the container.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `container` | `AwilixContainer`<`any`\> |
-| `repositoryOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"repository"``\> |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/loaders/repository.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/repository.loader.ts#L30)
+[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/repository.loader.ts#L37)
 
 ___
 
@@ -84,6 +38,9 @@ ___
 
 ▸ **repositoriesLoader**(`repositories`, `container`): `Promise`<`void`\>
 
+**`internal`**
+Load all custom repositories into the underlying @medusajs instance.
+
 #### Parameters
 
 | Name | Type |
@@ -97,4 +54,4 @@ ___
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/repository.loader.ts#L5)
+[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/repository.loader.ts#L14)

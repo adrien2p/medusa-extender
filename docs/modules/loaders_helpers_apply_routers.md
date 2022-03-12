@@ -15,6 +15,9 @@
 
 ▸ **applyAfterAuthRouters**(`app`, `routesOptions`): `void`
 
+**`internal`**
+Apply all routes on the app that must be applied after the @medusajs authentication
+
 #### Parameters
 
 | Name | Type |
@@ -28,7 +31,7 @@
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:14](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/helpers/apply-routers.ts#L14)
+[src/loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/helpers/apply-routers.ts#L26)
 
 ___
 
@@ -36,6 +39,9 @@ ___
 
 ▸ **applyBeforeAuthRouters**(`app`, `routesOptions`): `void`
 
+**`internal`**
+Apply all routes on the app that must be applied before the @medusajs authentication
+
 #### Parameters
 
 | Name | Type |
@@ -49,4 +55,4 @@ ___
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:4](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/helpers/apply-routers.ts#L4)
+[src/loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/helpers/apply-routers.ts#L10)

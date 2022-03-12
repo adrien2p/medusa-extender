@@ -1,33 +1,55 @@
-import { Utils, GetInjectableOption, GetInjectableOptions } from './';
+import { GetInjectableOption, GetInjectableOptions } from './';
 import { asClass, AwilixContainer } from 'awilix';
 import { getMetadataArgsStorage } from 'typeorm';
+import { Logger } from '../core/logger';
 
+const logger = Logger.contextualize('RepositoriesLoader');
+
+/**
+ * @internal
+ * Load all custom repositories into the underlying @medusajs instance.
+ * @param repositories
+ * @param container
+ */
 export async function repositoriesLoader(
 	repositories: GetInjectableOptions<'repository'>,
 	container: AwilixContainer
 ): Promise<void> {
+	logger.log('Loading custom entities into the underlying @medusajs');
+
+	let count = 0;
 	for (const repositoryOptions of repositories) {
 		if (repositoryOptions.resolutionKey) {
 			registerRepository(container, repositoryOptions);
+			logger.log(`Repository loaded - ${repositoryOptions.resolutionKey}`);
+			++count;
 		}
 	}
-}
 
-export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
-	for (const repositoryOptions of repositories) {
-		if (repositoryOptions.override) {
-			await overrideRepository(repositoryOptions);
-		}
-	}
+	logger.log(`${count} repositories registered`);
 }
 
 /**
  * @internal
- * Load custom repository into the container.
- * @param container
- * @param repositoryOptions
+ * Load all custom repositories that override @medusajs instance entities.
+ * @param repositories
  */
-export function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
+export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+	logger.log('Loading overridden entities into the underlying @medusajs');
+
+	let count = 0;
+	for (const repositoryOptions of repositories) {
+		if (repositoryOptions.override) {
+			await overrideRepository(repositoryOptions);
+			logger.log(`Repository overridden - ${repositoryOptions.metatype.name}`);
+			++count;
+		}
+	}
+
+	logger.log(`${count} entities overridden`);
+}
+
+function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
 	const { resolutionKey, metatype: repository } = repositoryOptions;
 	if (!resolutionKey) {
 		throw new Error('Missing static property resolutionKey from repository ' + repository.name);
@@ -36,16 +58,9 @@ export function registerRepository(container: AwilixContainer, repositoryOptions
 	container.register({
 		[resolutionKey]: asClass(repository),
 	});
-
-	Utils.hydrateLog('MedusaLoader#repositoriesLoader', `Repository registered - ${resolutionKey}`);
 }
 
-/**
- * @internal
- * Load custom repositories and override existing ones.
- * @param repositoryOptions
- */
-export async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
+async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
 	const { metatype, override } = repositoryOptions;
 
 	const nameParts = override.name.split('Repository');
@@ -61,6 +76,4 @@ export async function overrideRepository(repositoryOptions: GetInjectableOption<
 		getMetadataArgsStorage().entityRepositories.splice(originalRepositoryIndex, 1);
 	}
 	originalRepository[override.name] = metatype;
-
-	Utils.hydrateLog('MedusaLoader#repositoriesLoader', `Repository overridden - ${metatype.name}`);
 }

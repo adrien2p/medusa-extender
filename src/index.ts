@@ -1,5 +1,6 @@
 export * from './core/types';
 export * from './core/constants';
+export * from './core/utils';
 
 export { Medusa } from './Medusa';
 export { customEventEmitter as eventEmitter } from './core/event-emmiter';
@@ -20,11 +21,4 @@ export {
 	Router,
 } from './decorators';
 
-import { Utils as _Utils } from './core/utils';
-
 export { MonitoringOptions } from './modules/monitoring';
-
-export const Utils = {
-	attachOrReplaceEntitySubscriber: _Utils.attachOrReplaceEntitySubscriber,
-	repositoryMixin: _Utils.repositoryMixin,
-};

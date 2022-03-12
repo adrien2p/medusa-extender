@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/cli/utils/check-file-exists.ts:4](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/cli/utils/check-file-exists.ts#L4)
+[src/cli/utils/check-file-exists.ts:4](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/cli/utils/check-file-exists.ts#L4)

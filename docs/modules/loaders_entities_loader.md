@@ -17,6 +17,9 @@
 
 ▸ **entitiesLoader**(`entities`, `container`): `Promise`<`void`\>
 
+**`internal`**
+Load all custom entities into the underlying @medusajs instance.
+
 #### Parameters
 
 | Name | Type |
@@ -30,13 +33,16 @@
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/entities.loader.ts#L5)
+[src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/entities.loader.ts#L13)
 
 ___
 
 ### overrideEntitiesLoader
 
 ▸ **overrideEntitiesLoader**(`entities`): `Promise`<`void`\>
+
+**`internal`**
+Load all custom entities that override @medusajs instance entities.
 
 #### Parameters
 
@@ -50,16 +56,13 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:16](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/entities.loader.ts#L16)
+[src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/entities.loader.ts#L36)
 
 ___
 
 ### overrideEntity
 
 ▸ **overrideEntity**(`entityOptions`): `Promise`<`void`\>
-
-**`internal`**
-Load custom entity and override existing ones.
 
 #### Parameters
 
@@ -73,16 +76,13 @@ Load custom entity and override existing ones.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:49](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/entities.loader.ts#L49)
+[src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/entities.loader.ts#L63)
 
 ___
 
 ### registerEntity
 
 ▸ **registerEntity**(`container`, `entityOptions`): `void`
-
-**`internal`**
-Load custom entity into the container.
 
 #### Parameters
 
@@ -97,4 +97,4 @@ Load custom entity into the container.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/loaders/entities.loader.ts#L30)
+[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/loaders/entities.loader.ts#L51)

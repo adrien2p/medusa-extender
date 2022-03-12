@@ -16,7 +16,6 @@
 ▸ **getPackageManagerCommand**(): `Promise`<`string` \| `never`\>
 
 **`internal`**
-
 Return the install command from the user package manager.
 
 #### Returns
@@ -25,23 +24,22 @@ Return the install command from the user package manager.
 
 #### Defined in
 
-[src/core/package-loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/core/package-loader.ts#L29)
+[src/core/package-loader.ts:32](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/package-loader.ts#L32)
 
 ___
 
 ### loadPackages
 
-▸ **loadPackages**(`context`, `packages`): `Promise`<`void`\>
+▸ **loadPackages**(`logger`, `packages`): `Promise`<`void`\>
 
 **`internal`**
-
 Load packages at run time.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `context` | `string` | The context string description for which it is executed |
+| `logger` | [`Logger`](../classes/core_logger.Logger.md) |  |
 | `packages` | { `name`: `string` ; `version`: `string`  }[] | The packages descriptors that must be installed |
 
 #### Returns
@@ -50,4 +48,4 @@ Load packages at run time.
 
 #### Defined in
 
-[src/core/package-loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/core/package-loader.ts#L11)
+[src/core/package-loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/package-loader.ts#L13)

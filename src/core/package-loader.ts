@@ -1,19 +1,23 @@
 import { execSync } from 'child_process';
 import { detect } from 'detect-package-manager';
+import { resolve } from 'path';
+import { Logger } from './logger';
+const packageJson = require('../../package.json');
 
 /**
  * @Internal
- *
  * Load packages at run time.
- * @param context The context string description for which it is executed
+ * @param logger
  * @param packages The packages descriptors that must be installed
  */
-export async function loadPackages(context: string, packages: { name: string; version: string }[]): Promise<void> {
+export async function loadPackages(logger: Logger, packages: { name: string; version: string }[]): Promise<void> {
 	const installCommand = await getPackageManagerCommand();
 	for (const { name, version } of packages) {
-		console.info(`[${context}] Installing ${name}:${version}...`);
+		if (packageJson.dependencies[name]) {
+		}
+		logger.log(`[Installing ${name}:${version}...`);
 		try {
-			execSync(`${installCommand} ${name}@${version}`, { cwd: process.cwd() });
+			execSync(`${installCommand} ${name}@${version}`, { cwd: resolve(__dirname, '../../') });
 		} catch (e) {
 			console.error(`Unable to install ${name}@${version}.`);
 			process.exit(1);
@@ -23,7 +27,6 @@ export async function loadPackages(context: string, packages: { name: string; ve
 
 /**
  * @Internal
- *
  * Return the install command from the user package manager.
  */
 export async function getPackageManagerCommand(): Promise<string | never> {

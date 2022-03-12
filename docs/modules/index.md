@@ -43,11 +43,9 @@
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
 - [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
+- [attachOrReplaceEntitySubscriber](index.md#attachorreplaceentitysubscriber)
 - [eventEmitter](index.md#eventemitter)
-
-### Variables
-
-- [Utils](index.md#utils)
+- [repositoryMixin](index.md#repositorymixin)
 
 ## References
 
@@ -273,23 +271,18 @@ Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
 
 ___
 
+### attachOrReplaceEntitySubscriber
+
+Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
+
+___
+
 ### eventEmitter
 
 Renames and re-exports [customEventEmitter](core_event_emmiter.md#customeventemitter)
 
-## Variables
+___
 
-### Utils
+### repositoryMixin
 
-• `Const` **Utils**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `attachOrReplaceEntitySubscriber` | <T\>(`connection`: `Connection`, `Subscriber`: `T`, `transactionalEntityManager?`: `EntityManager`) => `void` |
-| `repositoryMixin` | <TEntity, TSource\>(`source`: [`Constructor`](core_types.md#constructor)<`TSource`\>) => [`MixinReturnType`](core_types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\> |
-
-#### Defined in
-
-[src/index.ts:27](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/index.ts#L27)
+Re-exports [repositoryMixin](core_utils.md#repositorymixin)

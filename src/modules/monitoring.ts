@@ -1,6 +1,6 @@
 import { OpenAPI } from 'openapi-types';
 import { Express, NextFunction, Request, Response } from 'express';
-import { loadPackages } from '../core';
+import { loadPackages, Logger } from '../core';
 
 export interface MonitoringOptions {
 	version?: string;
@@ -20,12 +20,19 @@ export interface MonitoringOptions {
 	onAuthenticate?: (req: Request, username: string, password: string) => boolean | Promise<boolean>;
 }
 
-export async function buildMonitoringModule(app: Express, options: MonitoringOptions) {
-	await loadPackages('Monitoring module', [
+const logger = Logger.contextualize('Monitoring module');
+
+export async function loadMonitoringModule(app: Express, options: MonitoringOptions) {
+	logger.log('Found monitoring config in medusa-config');
+
+	logger.log('Install necessary packages if they are not already installed');
+	await loadPackages(logger, [
 		{ name: 'prom-client', version: '12.0.0' },
 		{ name: 'swagger-parser', version: '10.0.3' },
 		{ name: 'swagger-stats', version: '0.99.2' },
 	]);
+
+	logger.log('Packages installed');
 
 	// @ts-ignore
 	const swStats = await import('swagger-stats');
@@ -47,4 +54,6 @@ export async function buildMonitoringModule(app: Express, options: MonitoringOpt
 	}
 
 	app.use(swStats.getMiddleware(options));
+
+	logger.log('Module properly attached');
 }

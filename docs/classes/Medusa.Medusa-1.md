@@ -20,7 +20,6 @@ Load medusa and apply all components
 ### Methods
 
 - [load](Medusa.Medusa-1.md#load)
-- [loadMonitoringModuleIfNecessary](Medusa.Medusa-1.md#loadmonitoringmoduleifnecessary)
 
 ## Constructors
 
@@ -37,7 +36,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:35](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/Medusa.ts#L35)
+[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -47,7 +46,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:28](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/Medusa.ts#L28)
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/Medusa.ts#L31)
 
 ___
 
@@ -57,7 +56,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:29](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/Medusa.ts#L29)
+[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/Medusa.ts#L32)
 
 ## Methods
 
@@ -77,18 +76,4 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:43](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/Medusa.ts#L43)
-
-___
-
-### loadMonitoringModuleIfNecessary
-
-▸ `Private` **loadMonitoringModuleIfNecessary**(): `Promise`<`void`\>
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Defined in
-
-[src/Medusa.ts:81](https://github.com/adrien2p/medusa-extender/blob/c92cd38/src/Medusa.ts#L81)
+[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/Medusa.ts#L46)
