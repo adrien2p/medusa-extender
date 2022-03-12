@@ -15,7 +15,7 @@ export async function loadPackages(logger: Logger, packages: { name: string; ver
 	for (const { name, version } of packages) {
 		if (packageJson.dependencies[name]) {
 		}
-		logger.log(`[Installing ${name}:${version}...`);
+		logger.log(`Installing ${name}:${version}...`);
 		try {
 			execSync(`${installCommand} ${name}@${version}`, { cwd: resolve(__dirname, '../../') });
 		} catch (e) {
