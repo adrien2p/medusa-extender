@@ -109,7 +109,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.5.3)
+Run the following command in your terminal (The last version is 1.5.4)
 
 ```bash
 npm install medusa-extender
@@ -188,7 +188,7 @@ medusa migrations run
 npm run start
 ```
 
-That's it, your now ready to run your server :rocket:
+That's it, you are now ready to run your server :rocket:
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-server-starter)
@@ -207,7 +207,7 @@ npm run build
 npm run start
 ```
 
-That's it, your server is not up and running :rocket:
+That's it, your server is now up and running :rocket:
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)

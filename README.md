@@ -158,6 +158,8 @@ medusa migrations run
 npm run start
 ```
 
+That's it, you are now ready to run your server :rocket:
+
 ## From server starter
 
 You can directly clone the `starters/server` to get started quickly.
@@ -172,7 +174,7 @@ npm run build
 npm run start
 ```
 
-That's it, your server is not up and running :rocket:
+That's it, your server is now up and running :rocket:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#cli-medex)
 

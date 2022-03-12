@@ -39,7 +39,7 @@ Internal logger to display information about the build.
 
 #### Defined in
 
-[src/core/logger.ts:11](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L11)
+[src/core/logger.ts:11](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L11)
 
 ## Properties
 
@@ -49,7 +49,7 @@ Internal logger to display information about the build.
 
 #### Defined in
 
-[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L9)
+[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L9)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L8)
+[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L8)
 
 ## Methods
 
@@ -75,7 +75,7 @@ Show all queues logs and then reset the queue.
 
 #### Defined in
 
-[src/core/logger.ts:50](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L50)
+[src/core/logger.ts:50](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L50)
 
 ___
 
@@ -98,7 +98,7 @@ Display log immediately.
 
 #### Defined in
 
-[src/core/logger.ts:38](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L38)
+[src/core/logger.ts:38](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L38)
 
 ___
 
@@ -121,7 +121,7 @@ Push new logs to queue and then show them later on.
 
 #### Defined in
 
-[src/core/logger.ts:24](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L24)
+[src/core/logger.ts:24](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L24)
 
 ___
 
@@ -141,4 +141,4 @@ ___
 
 #### Defined in
 
-[src/core/logger.ts:15](https://github.com/adrien2p/medusa-extender/blob/e2dff45/src/core/logger.ts#L15)
+[src/core/logger.ts:15](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L15)

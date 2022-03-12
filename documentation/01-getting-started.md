@@ -85,7 +85,7 @@ medusa migrations run
 npm run start
 ```
 
-That's it, your now ready to run your server :rocket:
+That's it, you are now ready to run your server :rocket:
 
 ## From server starter
 
@@ -101,4 +101,4 @@ npm run build
 npm run start
 ```
 
-That's it, your server is not up and running :rocket:
+That's it, your server is now up and running :rocket:

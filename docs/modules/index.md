@@ -42,10 +42,9 @@
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
+- [Utils](index.md#utils)
 - [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
-- [attachOrReplaceEntitySubscriber](index.md#attachorreplaceentitysubscriber)
 - [eventEmitter](index.md#eventemitter)
-- [repositoryMixin](index.md#repositorymixin)
 
 ## References
 
@@ -265,24 +264,18 @@ Re-exports [Type](../interfaces/core_types.Type.md)
 
 ___
 
+### Utils
+
+Renames and re-exports [core/utils](core_utils.md)
+
+___
+
 ### ValidatorInjectionOptions
 
 Re-exports [ValidatorInjectionOptions](core_types.md#validatorinjectionoptions)
 
 ___
 
-### attachOrReplaceEntitySubscriber
-
-Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
-
-___
-
 ### eventEmitter
 
 Renames and re-exports [customEventEmitter](core_event_emmiter.md#customeventemitter)
-
-___
-
-### repositoryMixin
-
-Re-exports [repositoryMixin](core_utils.md#repositorymixin)
