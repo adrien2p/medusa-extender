@@ -20,19 +20,16 @@ export interface MonitoringOptions {
 	onAuthenticate?: (req: Request, username: string, password: string) => boolean | Promise<boolean>;
 }
 
-const logger = Logger.contextualize('Monitoring module');
+const logger = Logger.contextualize('MonitoringModule');
 
-export async function loadMonitoringModule(app: Express, options: MonitoringOptions) {
+export async function loadMonitoringModule(app: Express, options: MonitoringOptions): Promise<void> {
 	logger.log('Found monitoring config in medusa-config');
 
-	logger.log('Install necessary packages if they are not already installed');
 	await loadPackages(logger, [
 		{ name: 'prom-client', version: '12.0.0' },
 		{ name: 'swagger-parser', version: '10.0.3' },
 		{ name: 'swagger-stats', version: '0.99.2' },
 	]);
-
-	logger.log('Packages installed');
 
 	// @ts-ignore
 	const swStats = await import('swagger-stats');

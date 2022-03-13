@@ -5,7 +5,7 @@ import { Module, Service } from '../../decorators';
 import { OrderService as MedusaOrderService } from '@medusajs/medusa/dist/services';
 import { asFunction, createContainer, Lifetime } from 'awilix';
 import { metadataReader } from '../../core';
-import { overrideService, registerService, servicesLoader } from '../services.loader';
+import { overrideService, registerService } from '../services.loader';
 
 @Service({ override: MedusaOrderService })
 class OrderService extends MedusaOrderService {

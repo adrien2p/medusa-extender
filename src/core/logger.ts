@@ -1,4 +1,4 @@
-import { blue, yellow } from 'chalk';
+import { blue, red, yellow } from 'chalk';
 
 /**
  * @internal
@@ -6,10 +6,14 @@ import { blue, yellow } from 'chalk';
  */
 export class Logger {
 	private logsQueue = [];
-	private readonly context: string;
+	private readonly _context: string;
+
+	public get context() {
+		return this._context;
+	}
 
 	constructor(context: string) {
-		this.context = context;
+		this._context = context;
 	}
 
 	static contextualize(context: string): Logger {
@@ -24,7 +28,7 @@ export class Logger {
 	public push(description: string, ...variables: string[]): this {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		this.logsQueue.push([
-			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this.context}]`)} ${blue(description)}`,
+			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${blue(description)}`,
 			...variables,
 		]);
 		return this;
@@ -38,7 +42,21 @@ export class Logger {
 	public log(description: string, ...variables: string[]): this {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		console.log(
-			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this.context}]`)} ${blue(description)}`,
+			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${blue(description)}`,
+			...variables
+		);
+		return this;
+	}
+
+	/**
+	 * Display error logs in red immediately
+	 * @param description
+	 * @param variables
+	 */
+	public error(description: string, ...variables: string[]): this {
+		const date = new Date().toLocaleString('en-US', { hour12: true });
+		console.log(
+			`${red(`[Server]      -`)} ${date}   ${red(`[${this._context}]`)} ${red(description)}`,
 			...variables
 		);
 		return this;

@@ -46,7 +46,9 @@ export class Medusa {
 	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
 		const moduleComponentsOptions = metadataReader(modules);
 		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: { monitoring: MonitoringOptions };
+			configModule: {
+				monitoring: MonitoringOptions;
+			};
 		};
 
 		if (configModule.monitoring) {
