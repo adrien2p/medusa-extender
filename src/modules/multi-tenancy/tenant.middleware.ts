@@ -1,32 +1,30 @@
 import { NextFunction, Response } from 'express';
-import { createConnection, EntityManager, getManager } from 'typeorm';
+import { createConnection, EntityManager, getManager, LoggerOptions } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
-import { asValue } from 'awilix';
+import { asValue, AwilixContainer } from 'awilix';
 import TenantRepository from './tenant.repository';
 import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../core';
 import { Middleware } from '../../decorators';
+import { Tenant } from "./tenant.entity";
 
 @Middleware({ requireAuth: false, routes: [{ method: 'all', path: '*' }] })
 export class TenantMiddleware implements MedusaMiddleware {
 	private static async getOrCreateConnection(
-		configModule: any,
-		container: any,
-		host: string
+		configModule: { multiTenancy?: boolean, projectConfig: { database_logging?: LoggerOptions } },
+		container: AwilixContainer,
+		hostname: string,
+		tenant: Tenant
 	): Promise<EntityManager> {
 		try {
-			return getManager(host);
+			return getManager(hostname);
 		} catch (e) {
 			const entities = container.resolve('db_entities');
-			const db_url =
-				process.env.DATABASE_URL ||
-				`postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/storetest`;
 			const connection = await createConnection({
-				name: host,
-				type: configModule.projectConfig.database_type,
-				url: db_url,
-				database: configModule.projectConfig.database_database,
-				extra: configModule.projectConfig.database_extra || {},
+				name: hostname,
+				type: tenant.database_type as any,
+				url: tenant.database_url,
+				extra: tenant.database_extra || {},
 				entities,
 				namingStrategy: new ShortenedNamingStrategy(),
 				logging: configModule.projectConfig.database_logging || false,
@@ -38,9 +36,9 @@ export class TenantMiddleware implements MedusaMiddleware {
 	public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
 		const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as any;
 		const tenantRepository = getManager().getCustomRepository(TenantRepository);
-		const tenantDb = await tenantRepository.findOne({ where: { host: req.hostname } });
-		if (tenantDb) {
-			const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.host);
+		const tenant = await tenantRepository.findOne({ where: { host: req.hostname } });
+		if (tenant) {
+			const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.hostname, tenant);
 			req.scope.register({
 				manager: asValue(manager),
 			});
