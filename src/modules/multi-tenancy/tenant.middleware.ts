@@ -1,4 +1,3 @@
-import { MedusaAuthenticatedRequest, MedusaMiddleware, Middleware } from '../../';
 import { NextFunction, Response } from 'express';
 import { createConnection, EntityManager, getManager } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
@@ -6,6 +5,8 @@ import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-stra
 import { asValue } from 'awilix';
 import TenantRepository from './tenant.repository';
 import { logger } from './loader';
+import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../core';
+import { Middleware } from '../../decorators';
 
 @Middleware({ requireAuth: false, routes: [{ method: 'all', path: '*' }] })
 export class TenantMiddleware implements MedusaMiddleware {

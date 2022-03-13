@@ -1,5 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { Migration } from '../../';
+import { Migration } from '../../decorators';
 
 @Migration()
 export default class TenantMigration1647204670085 implements MigrationInterface {
