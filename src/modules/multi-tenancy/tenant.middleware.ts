@@ -27,7 +27,7 @@ export class TenantMiddleware implements MedusaMiddleware {
 				extra: tenant.database_extra || {},
 				entities,
 				namingStrategy: new ShortenedNamingStrategy(),
-				logging: configModule.projectConfig.database_logging || false,
+				logging: configModule.projectConfig.database_logging ?? false,
 			});
 			return connection.manager;
 		}
