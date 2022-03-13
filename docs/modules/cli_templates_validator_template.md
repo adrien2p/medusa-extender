@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/cli/templates/validator-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/cli/templates/validator-template.ts#L3)
+[src/cli/templates/validator-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/cli/templates/validator-template.ts#L3)

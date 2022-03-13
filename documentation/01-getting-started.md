@@ -91,7 +91,9 @@ That's it, you are now ready to run your server :rocket:
 
 You can directly clone the `starters/server` to get started quickly.
 
-Follow the next command to be ready in minutes
+First, update your `medusa-config.js` accordingly to your needs.
+
+Then, follow the next command to be ready in minutes
 
 ```bash
 npx degit github:adrien2p/medusa-extender/starters/server#main server

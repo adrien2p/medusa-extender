@@ -15,11 +15,16 @@ Internal logger to display information about the build.
 
 ### Properties
 
-- [context](core_logger.Logger.md#context)
+- [\_context](core_logger.Logger.md#_context)
 - [logsQueue](core_logger.Logger.md#logsqueue)
+
+### Accessors
+
+- [context](core_logger.Logger.md#context)
 
 ### Methods
 
+- [error](core_logger.Logger.md#error)
 - [flush](core_logger.Logger.md#flush)
 - [log](core_logger.Logger.md#log)
 - [push](core_logger.Logger.md#push)
@@ -39,17 +44,17 @@ Internal logger to display information about the build.
 
 #### Defined in
 
-[src/core/logger.ts:11](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L11)
+[src/core/logger.ts:15](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L15)
 
 ## Properties
 
-### context
+### \_context
 
-• `Private` `Readonly` **context**: `string`
+• `Private` `Readonly` **\_context**: `string`
 
 #### Defined in
 
-[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L9)
+[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L9)
 
 ___
 
@@ -59,9 +64,46 @@ ___
 
 #### Defined in
 
-[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L8)
+[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L8)
+
+## Accessors
+
+### context
+
+• `get` **context**(): `string`
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/core/logger.ts:11](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L11)
 
 ## Methods
+
+### error
+
+▸ **error**(`description`, ...`variables`): [`Logger`](core_logger.Logger.md)
+
+Display error logs in red immediately
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `description` | `string` |
+| `...variables` | `string`[] |
+
+#### Returns
+
+[`Logger`](core_logger.Logger.md)
+
+#### Defined in
+
+[src/core/logger.ts:56](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L56)
+
+___
 
 ### flush
 
@@ -75,7 +117,7 @@ Show all queues logs and then reset the queue.
 
 #### Defined in
 
-[src/core/logger.ts:50](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L50)
+[src/core/logger.ts:68](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L68)
 
 ___
 
@@ -98,7 +140,7 @@ Display log immediately.
 
 #### Defined in
 
-[src/core/logger.ts:38](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L38)
+[src/core/logger.ts:42](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L42)
 
 ___
 
@@ -121,7 +163,7 @@ Push new logs to queue and then show them later on.
 
 #### Defined in
 
-[src/core/logger.ts:24](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L24)
+[src/core/logger.ts:28](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L28)
 
 ___
 
@@ -141,4 +183,4 @@ ___
 
 #### Defined in
 
-[src/core/logger.ts:15](https://github.com/adrien2p/medusa-extender/blob/8c068bd/src/core/logger.ts#L15)
+[src/core/logger.ts:19](https://github.com/adrien2p/medusa-extender/blob/55f4a3a/src/core/logger.ts#L19)
