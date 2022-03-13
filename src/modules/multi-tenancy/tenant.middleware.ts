@@ -8,42 +8,44 @@ import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../core';
 import { Middleware } from '../../decorators';
 import { Tenant } from "./tenant.entity";
 
+type ConfigModule = { multiTenancy?: boolean, projectConfig: { database_logging?: LoggerOptions } };
+
 @Middleware({ requireAuth: false, routes: [{ method: 'all', path: '*' }] })
 export class TenantMiddleware implements MedusaMiddleware {
-	private static async getOrCreateConnection(
-		configModule: { multiTenancy?: boolean, projectConfig: { database_logging?: LoggerOptions } },
-		container: AwilixContainer,
-		hostname: string,
-		tenant: Tenant
-	): Promise<EntityManager> {
-		try {
-			return getManager(hostname);
-		} catch (e) {
-			const entities = container.resolve('db_entities');
-			const connection = await createConnection({
-				name: hostname,
-				type: tenant.database_type as any,
-				url: tenant.database_url,
-				extra: tenant.database_extra || {},
-				entities,
-				namingStrategy: new ShortenedNamingStrategy(),
-				logging: configModule.projectConfig.database_logging ?? false,
-			});
-			return connection.manager;
-		}
-	}
+    private static async getOrCreateConnection(
+        configModule: ConfigModule,
+        container: AwilixContainer,
+        hostname: string,
+        tenant: Tenant
+    ): Promise<EntityManager> {
+        try {
+            return getManager(hostname);
+        } catch (e) {
+            const entities = container.resolve('db_entities');
+            const connection = await createConnection({
+                name: hostname,
+                type: tenant.database_type as any,
+                url: tenant.database_url,
+                extra: tenant.database_extra || {},
+                entities,
+                namingStrategy: new ShortenedNamingStrategy(),
+                logging: configModule.projectConfig.database_logging ?? false,
+            });
+            return connection.manager;
+        }
+    }
 
-	public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
-		const tenantRepository = getManager().getCustomRepository(TenantRepository);
-		const tenant = await tenantRepository.findOne({ where: { host: req.hostname } });
-		if (tenant) {
-			const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as any;
-			const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.hostname, tenant);
-			req.scope.register({
-				manager: asValue(manager),
-			});
-			req.scope = req.scope.createScope();
-		}
-		return next();
-	}
+    public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
+        const tenantRepository = getManager().getCustomRepository(TenantRepository);
+        const tenant = await tenantRepository.findOne({ where: { host: req.hostname } });
+        if (tenant) {
+            const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
+            const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.hostname, tenant);
+            req.scope.register({
+                manager: asValue(manager),
+            });
+            req.scope = req.scope.createScope();
+        }
+        return next();
+    }
 }
