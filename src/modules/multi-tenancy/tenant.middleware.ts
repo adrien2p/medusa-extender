@@ -34,10 +34,10 @@ export class TenantMiddleware implements MedusaMiddleware {
 	}
 
 	public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
-		const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as any;
 		const tenantRepository = getManager().getCustomRepository(TenantRepository);
 		const tenant = await tenantRepository.findOne({ where: { host: req.hostname } });
 		if (tenant) {
+			const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as any;
 			const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.hostname, tenant);
 			req.scope.register({
 				manager: asValue(manager),
