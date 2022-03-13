@@ -23,4 +23,4 @@ export {
 } from './decorators';
 
 export { MonitoringOptions } from './modules/monitoring';
-export { TenantModule } from './modules/multi-tenancy/tenant.module';
+export * from './modules/multi-tenancy';
