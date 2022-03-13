@@ -7,7 +7,7 @@ export function getEntityTemplate(entityName: string): string {
         
         @MedusaEntity({ resolutionKey: "${entityName}" })
         @Entity()
-        export class ${entityName} {
+        export class ${entityName.replace('Entity', '')} {
             @Column()
             name: string;
         }
