@@ -8,12 +8,12 @@ import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../core';
 import { Middleware } from '../../decorators';
 import { Tenant } from "./tenant.entity";
 
-type ConfigModule = { multiTenancy?: boolean, projectConfig: { database_logging?: LoggerOptions } };
+export type TenantModuleExpectedConfig = { multiTenancy?: boolean, projectConfig: { database_logging?: LoggerOptions } };
 
 @Middleware({ requireAuth: false, routes: [{ method: 'all', path: '*' }] })
 export class TenantMiddleware implements MedusaMiddleware {
     private static async getOrCreateConnection(
-        configModule: ConfigModule,
+        configModule: TenantModuleExpectedConfig,
         container: AwilixContainer,
         hostname: string,
         tenant: Tenant
@@ -39,7 +39,7 @@ export class TenantMiddleware implements MedusaMiddleware {
         const tenantRepository = getManager().getCustomRepository(TenantRepository);
         const tenant = await tenantRepository.findOne({ where: { host: req.hostname } });
         if (tenant) {
-            const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
+            const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: TenantModuleExpectedConfig };
             const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.hostname, tenant);
             req.scope.register({
                 manager: asValue(manager),
