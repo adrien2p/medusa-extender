@@ -22,7 +22,13 @@ export interface MonitoringOptions {
 
 const logger = Logger.contextualize('MonitoringModule');
 
-export async function loadMonitoringModule(app: Express, options: MonitoringOptions): Promise<void> {
+export async function loadMonitoringModule(
+	configModule: { monitoring?: MonitoringOptions },
+	app: Express,
+	options: MonitoringOptions
+): Promise<void> {
+	if (!configModule?.monitoring) return;
+
 	logger.log('Found monitoring config in medusa-config');
 
 	await loadPackages(logger, [

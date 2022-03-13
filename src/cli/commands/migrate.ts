@@ -1,6 +1,7 @@
 import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
+import { getTenantMigrationDirs } from '../../modules/multi-tenancy/loader';
 
 /**
  * Run the migrations using the medusa-config.js config.
@@ -18,6 +19,8 @@ export async function migrate({ run, show }): Promise<void> {
 	].map((dir) => {
 		return normalize(resolve(process.cwd(), dir));
 	});
+
+	migrationDirs.push(...getTenantMigrationDirs(configModule));
 
 	const connection = await createConnection({
 		type: configModule.projectConfig.database_type,

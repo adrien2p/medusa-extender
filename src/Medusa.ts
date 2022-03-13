@@ -16,6 +16,7 @@ import {
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
+import { loadTenantModule } from './modules/multi-tenancy/loader';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -47,12 +48,15 @@ export class Medusa {
 		const moduleComponentsOptions = metadataReader(modules);
 		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
 			configModule: {
-				monitoring: MonitoringOptions;
+				monitoring?: MonitoringOptions;
+				multiTenancy?: boolean;
 			};
 		};
 
-		if (configModule.monitoring) {
-			await loadMonitoringModule(this.#express, configModule.monitoring);
+		await loadMonitoringModule(configModule, this.#express, configModule.monitoring);
+		const tenantModule = loadTenantModule(configModule);
+		if (tenantModule) {
+			modules.unshift(tenantModule);
 		}
 
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
