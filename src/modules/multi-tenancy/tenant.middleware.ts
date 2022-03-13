@@ -4,7 +4,6 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { asValue } from 'awilix';
 import TenantRepository from './tenant.repository';
-import { logger } from './loader';
 import { MedusaAuthenticatedRequest, MedusaMiddleware } from '../../core';
 import { Middleware } from '../../decorators';
 
@@ -41,14 +40,11 @@ export class TenantMiddleware implements MedusaMiddleware {
 		const tenantRepository = getManager().getCustomRepository(TenantRepository);
 		const tenantDb = await tenantRepository.findOne({ where: { host: req.hostname } });
 		if (tenantDb) {
-			logger.log(`Tenant database info found for hostname: ${req.hostname}`);
 			const manager = await TenantMiddleware.getOrCreateConnection(configModule, req.scope, req.host);
 			req.scope.register({
 				manager: asValue(manager),
 			});
 			req.scope = req.scope.createScope();
-		} else {
-			logger.log(`Tenant database info not found for hostname: ${req.hostname}`);
 		}
 		return next();
 	}
