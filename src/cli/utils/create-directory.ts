@@ -1,11 +1,11 @@
 import { existsSync, mkdirSync } from 'fs';
-import { blue, yellow } from 'chalk';
+import { Logger } from "../../core";
 
-export function createDirectoryIfNecessary(relativeDestinationPath: string, fullDestinationPath: string): void {
-	if (!existsSync(fullDestinationPath)) {
-		console.info(blue(`Creating directory ${fullDestinationPath}.`));
-		return mkdirSync(fullDestinationPath);
-	}
+export function createDirectoryIfNecessary(relativeDestinationPath: string, fullDestinationPath: string, logger: Logger | typeof console = console): void {
+    if (!existsSync(fullDestinationPath)) {
+        logger.log(`Creating directory ${fullDestinationPath}.`);
+        return mkdirSync(fullDestinationPath);
+    }
 
-	console.info(yellow(`Directory ${relativeDestinationPath} already exists. Skipping.`));
+    logger.log(`Directory ${relativeDestinationPath} already exists. Skipping.`);
 }
