@@ -1,4 +1,3 @@
-import { yellow } from 'chalk';
 import { parseComponentValue } from '../utils/parse-component-value';
 import { createDirectoryIfNecessary } from '../utils/create-directory';
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
@@ -16,14 +15,14 @@ import {
 import { Logger } from '../../core';
 
 type Options = {
-	module?: string;
-	middleware?: string;
-	service?: string;
-	router?: string;
-	validator?: string;
-	entity?: string;
-	repository?: string;
-	migration?: string;
+	module?: boolean;
+	middleware?: boolean;
+	service?: boolean;
+	router?: boolean;
+	validator?: boolean;
+	entity?: boolean;
+	repository?: boolean;
+	migration?: boolean;
 	path?: string;
 };
 
@@ -80,9 +79,7 @@ export function generateComponent(
 
 	updateModuleImports(name, fullDestinationPath);
 
-	logger.log(
-		yellow(`!!ATTENTION!! Check the newly created component(s) to validate the config and update it if needed.`)
-	);
+	logger.warn(`!!ATTENTION!! Check the newly created component(s) to validate the config and update it if needed.`);
 }
 
 export function createComponentIfNecessary(

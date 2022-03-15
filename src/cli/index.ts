@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
 import { Command } from 'commander';
-import { generateComponent } from './command/generate-component';
+import { generateComponent } from './commands/generate-component';
 import { green } from 'chalk';
-import { migrate } from './command/migrate';
+import { migrate } from './commands/migrate';
 
 const program = new Command();
 
@@ -15,7 +15,7 @@ program
 	.description(
 		"Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']"
 	)
-	.argument('-r, --run', 'Run migrations up method')
+	.option('-r, --run', 'Run migrations up method')
 	.option('-s, --show', 'Show all applied and non applied migrations')
 	.action(async (options, program) => {
 		console.time(green('Migration command'));
@@ -43,7 +43,7 @@ program
 		'specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]'
 	)
 	.argument('<name>', 'specify the name of the component(s) to create')
-	.action((name: string, options: any) => {
+	.action((name: string, options: any, program: Command) => {
 		const { path, ...componentOptions } = options;
 		if (Object.values(componentOptions).every((value) => !value)) {
 			return program

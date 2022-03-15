@@ -4,15 +4,15 @@ module.exports = {
 		"json",
 		"ts"
 	],
+	"testTimeout": 100000,
 	"preset": 'ts-jest',
 	"rootDir": "src",
 	"testRegex": ".*\\.spec\\.ts$",
 	"transformIgnorePatterns": ["/node_modules/"],
 	"collectCoverageFrom": [
 		"**/*.(t|j)s",
-		"!**/cli/index.(t|j)s",
-		"!**/cli/utils/check-file-exists.(t|j)s",
-		"!**/cli/utils/create-directory.(t|j)s"
+		"!**/__*__/*.(t|j)s",
+		"!**/cli/index.(t|j)s"
 	],
 	"coverageReporters": [
 		"json-summary",
