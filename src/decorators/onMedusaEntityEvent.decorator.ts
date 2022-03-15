@@ -113,8 +113,8 @@ function OnMedusaEntityEventDecorator(
 ): MethodDecorator {
 	return (target: Type, propertyKey: string, descriptor: PropertyDescriptor): void => {
 		const original = descriptor.value;
-		descriptor.value = async function <Entity>(...args: any[]): Promise<void> {
-			const { values, resolveOrReject } = args.pop() as unknown as MedusaEventEmittedParams<Entity, any>;
+		descriptor.value = async function <Entity>(...args: unknown[]): Promise<void> {
+			const { values, resolveOrReject } = args.pop() as MedusaEventEmittedParams<Entity, EntityActions>;
 
 			if (!(values.event.entity instanceof targetEntity)) {
 				return;

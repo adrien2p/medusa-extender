@@ -3,13 +3,24 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
 import { getTenantMigrationDirs } from '../../modules/multi-tenancy/loader';
 
+<<<<<<< HEAD:src/cli/commands/migrate.ts
 /**
  * Run the migrations using the medusa-config.js config.
  * @param run
  * @param show
  */
+type ConfigModule = {
+	projectConfig: {
+		database_type: string;
+		database_url: string;
+		database_database: string;
+		database_extra: Record<string, string>;
+	};
+	multiTenancy?: boolean;
+};
+
 export async function migrate({ run, show }): Promise<void> {
-	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: any };
+	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 
 	const migrationDirs = [
 		'src/**/*.migration.js',

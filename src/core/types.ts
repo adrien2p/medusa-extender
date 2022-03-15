@@ -8,6 +8,8 @@ export interface Type<T = unknown> extends Function {
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
+export type MedusaCustomContainer = AwilixContainer & { registerAdd: (...args: unknown[]) => void };
+
 /**
  * Components that does not required any other options that Type.
  */
@@ -120,7 +122,7 @@ export type GetInjectableOptions<TComponentType extends InjectableComponentTypes
 /**
  * Medusa request extended.
  */
-export type MedusaRequest<T = any, Cradle extends object = any> = Request & {
+export type MedusaRequest<T = unknown, Cradle extends object = object> = Request & {
 	scope: AwilixContainer<Cradle & T>;
 };
 

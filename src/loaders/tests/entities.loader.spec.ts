@@ -1,4 +1,3 @@
-// TODO fix the fact that medusa is using babel
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
@@ -7,7 +6,7 @@ import { asArray } from './utils/asArray';
 import { entitiesLoader, overrideEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
-import { metadataReader } from '../../core';
+import { MedusaCustomContainer, metadataReader } from '../../core';
 import { Entity } from 'typeorm';
 
 @MedusaEntity({ override: MedusaUser })
@@ -28,7 +27,7 @@ class AnotherModule {}
 
 describe('Entities loader', () => {
 	const container = createContainer();
-	(container as any).registerAdd = function (name, registration) {
+	(container as MedusaCustomContainer).registerAdd = function (name, registration) {
 		const storeKey = name + '_STORE';
 
 		if (this.registrations[storeKey] === undefined) {
@@ -46,7 +45,7 @@ describe('Entities loader', () => {
 
 	describe('overriddenEntitiesLoader', () => {
 		it(' should override MedusaUser with User', async () => {
-			expect((MedusaUser.prototype as any).testProperty).not.toBeDefined();
+			expect((MedusaUser.prototype as User & { testProperty: string }).testProperty).not.toBeDefined();
 
 			const components = metadataReader([UserModule]);
 			await overrideEntitiesLoader(components.get('entity'));
