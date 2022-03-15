@@ -1,31 +1,30 @@
 import * as path from 'path';
 import { exec, ExecException } from 'child_process';
 import { normalizeString } from './__utils__/normalizeString';
-import * as dedent from 'dedent';
 
 function cli(args, cwd): Promise<{ code: number; error: ExecException; stdout: string; stderr: string }> {
-    return new Promise((resolve) => {
-        exec(
-            `${process.cwd()}/node_modules/.bin/ts-node ${path.resolve(__dirname, '../index.ts')} ${args.join(' ')}`,
-            { cwd },
-            (error, stdout, stderr) => {
-                resolve({
-                    code: error && error.code ? error.code : 0,
-                    error,
-                    stdout,
-                    stderr,
-                });
-            }
-        );
-    });
+	return new Promise((resolve) => {
+		exec(
+			`${process.cwd()}/node_modules/.bin/ts-node ${path.resolve(__dirname, '../index.ts')} ${args.join(' ')}`,
+			{ cwd },
+			(error, stdout, stderr) => {
+				resolve({
+					code: error && error.code ? error.code : 0,
+					error,
+					stdout,
+					stderr,
+				});
+			}
+		);
+	});
 }
 
 describe('CLI', () => {
-    it('should failed on missing command', async () => {
-        const { error, stderr } = await cli([''], '.');
-        expect(error.code).toBe(1);
-        expect(normalizeString(stderr)).toBe(
-            normalizeString(`
+	it('should failed on missing command', async () => {
+		const { error, stderr } = await cli([''], '.');
+		expect(error.code).toBe(1);
+		expect(normalizeString(stderr)).toBe(
+			normalizeString(`
             Usage: medex [options] [command]
 
 			Medusa extender CLI
@@ -42,8 +41,8 @@ describe('CLI', () => {
 			    init|-i                     Update your existing medusa project to include the necessary configuration to use the medusa-extender package
 				help [command]              display help for command
         `)
-        );
-    });
+		);
+	});
 
 	it('should failed on generate command with missing options', async () => {
 		const { error, stderr } = await cli(['generate name'], '.');
@@ -71,8 +70,8 @@ describe('CLI', () => {
               -p, --path <path>  specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]
               -h, --help         display help for command
         `)
-        );
-    });
+		);
+	});
 
 	it('should failed on generate command with missing argument', async () => {
 		const { error, stderr } = await cli(['generate -m'], '.');
