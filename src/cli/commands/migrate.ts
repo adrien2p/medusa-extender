@@ -3,7 +3,6 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
 import { getTenantMigrationDirs } from '../../modules/multi-tenancy/loader';
 
-<<<<<<< HEAD:src/cli/commands/migrate.ts
 /**
  * Run the migrations using the medusa-config.js config.
  * @param run
