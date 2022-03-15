@@ -1,4 +1,4 @@
-import { blue, red, yellow } from 'chalk';
+import { blue, Chalk, red, yellow } from 'chalk';
 
 /**
  * @internal
@@ -22,7 +22,7 @@ export class Logger {
 		this._app = app;
 	}
 
-	static contextualize(context: string, app: string = 'Server'): Logger {
+	static contextualize(context: string, app = 'Server'): Logger {
 		return new Logger(context, app);
 	}
 
@@ -86,7 +86,7 @@ export class Logger {
 	 * @param description
 	 * @param variables
 	 */
-	private buildLog(color: Function, description: string, ...variables: string[]) {
+	private buildLog(color: Chalk, description: string, ...variables: string[]) {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		console.log(
 			`${blue(`[${this._app}]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${color(description)}`,
