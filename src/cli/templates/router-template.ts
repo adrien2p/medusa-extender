@@ -1,5 +1,9 @@
 import * as dedent from 'dedent';
 
+/**
+ * Provide a basic template for the router component generation.
+ * @param routerName
+ */
 export function getRouterTemplate(routerName: string): string {
 	return dedent`
         import { MedusaAuthenticatedRequest, Router } from 'medusa-extender';

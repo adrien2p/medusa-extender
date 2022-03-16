@@ -1,4 +1,4 @@
-import { blue, red, yellow } from 'chalk';
+import { blue, Chalk, red, yellow } from 'chalk';
 
 /**
  * @internal
@@ -7,17 +7,23 @@ import { blue, red, yellow } from 'chalk';
 export class Logger {
 	private logsQueue = [];
 	private readonly _context: string;
+	private readonly _app: string;
 
 	public get context() {
 		return this._context;
 	}
 
-	constructor(context: string) {
-		this._context = context;
+	public get app() {
+		return this._app;
 	}
 
-	static contextualize(context: string): Logger {
-		return new Logger(context);
+	constructor(context: string, app: string) {
+		this._context = context;
+		this._app = app;
+	}
+
+	static contextualize(context: string, app = 'Server'): Logger {
+		return new Logger(context, app);
 	}
 
 	/**
@@ -28,7 +34,7 @@ export class Logger {
 	public push(description: string, ...variables: string[]): this {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		this.logsQueue.push([
-			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${blue(description)}`,
+			`${blue(`[${this._app}]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${blue(description)}`,
 			...variables,
 		]);
 		return this;
@@ -40,12 +46,16 @@ export class Logger {
 	 * @param variables
 	 */
 	public log(description: string, ...variables: string[]): this {
-		const date = new Date().toLocaleString('en-US', { hour12: true });
-		console.log(
-			`${blue(`[Server]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${blue(description)}`,
-			...variables
-		);
-		return this;
+		return this.buildLog(blue, description, ...variables);
+	}
+
+	/**
+	 * Display warning immediately.
+	 * @param description
+	 * @param variables
+	 */
+	public warn(description: string, ...variables: string[]): this {
+		return this.buildLog(yellow, description, ...variables);
 	}
 
 	/**
@@ -54,16 +64,11 @@ export class Logger {
 	 * @param variables
 	 */
 	public error(description: string, ...variables: string[]): this {
-		const date = new Date().toLocaleString('en-US', { hour12: true });
-		console.log(
-			`${red(`[Server]      -`)} ${date}   ${red(`[${this._context}]`)} ${red(description)}`,
-			...variables
-		);
-		return this;
+		return this.buildLog(red, description, ...variables);
 	}
 
 	/**
-	 * Show all queues logs and then reset the queue.
+	 * display all queues logs and then reset the queue.
 	 */
 	public flush(): this {
 		if (this.logsQueue.length) {
@@ -72,6 +77,21 @@ export class Logger {
 			});
 			this.logsQueue.length = 0;
 		}
+		return this;
+	}
+
+	/**
+	 * Build logs taking in count the level color
+	 * @param color
+	 * @param description
+	 * @param variables
+	 */
+	private buildLog(color: Chalk, description: string, ...variables: string[]) {
+		const date = new Date().toLocaleString('en-US', { hour12: true });
+		console.log(
+			`${blue(`[${this._app}]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${color(description)}`,
+			...variables
+		);
 		return this;
 	}
 }

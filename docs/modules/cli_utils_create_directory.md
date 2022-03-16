@@ -12,14 +12,17 @@
 
 ### createDirectoryIfNecessary
 
-▸ **createDirectoryIfNecessary**(`relativeDestinationPath`, `fullDestinationPath`): `void`
+▸ **createDirectoryIfNecessary**(`relativeDestinationPath`, `fullDestinationPath`, `logger?`): `void`
+
+Create the new directory, if necessary, that will receive the components.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `relativeDestinationPath` | `string` |
-| `fullDestinationPath` | `string` |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `relativeDestinationPath` | `string` | `undefined` |
+| `fullDestinationPath` | `string` | `undefined` |
+| `logger` | [`Logger`](../classes/core_logger.Logger.md) \| `Console` | `console` |
 
 #### Returns
 
@@ -27,4 +30,4 @@
 
 #### Defined in
 
-[src/cli/utils/create-directory.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/cli/utils/create-directory.ts#L4)
+[src/cli/utils/create-directory.ts:10](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/cli/utils/create-directory.ts#L10)

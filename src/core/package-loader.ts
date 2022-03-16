@@ -16,7 +16,7 @@ export async function loadPackages(logger: Logger, packages: { name: string; ver
 	const installCommand = await getPackageManagerCommand();
 	for (const { name, version } of packages) {
 		if (packageJson.dependencies[name]) {
-			logger.log(`Skipping installation of ${name}@${version}. package already installed.`);
+			logger.log(`Skipping installation of ${name}@${version}. package already installed`);
 			continue;
 		}
 
@@ -26,7 +26,7 @@ export async function loadPackages(logger: Logger, packages: { name: string; ver
 			packageJson.dependencies[name] = `^${version}`;
 			writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(packageJson, null, 2));
 		} catch (e) {
-			logger.error(`Unable to install ${name}@${version}.`);
+			logger.error(`Unable to install ${name}@${version}`);
 			process.exit(1);
 		}
 	}

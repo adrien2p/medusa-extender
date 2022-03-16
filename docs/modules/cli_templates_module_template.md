@@ -14,6 +14,8 @@
 
 ▸ **getModuleTemplate**(`moduleName`): `string`
 
+Provide a basic template for the module component generation.
+
 #### Parameters
 
 | Name | Type |
@@ -26,4 +28,4 @@
 
 #### Defined in
 
-[src/cli/templates/module-template.ts:3](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/cli/templates/module-template.ts#L3)
+[src/cli/templates/module-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/cli/templates/module-template.ts#L7)

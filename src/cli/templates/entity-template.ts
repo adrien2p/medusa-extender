@@ -1,5 +1,9 @@
 import * as dedent from 'dedent';
 
+/**
+ * Provide a basic template for the entity component generation.
+ * @param entityName
+ */
 export function getEntityTemplate(entityName: string): string {
 	return dedent`
         import { Column, Entity } from "typeorm"; 

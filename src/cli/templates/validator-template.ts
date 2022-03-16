@@ -1,5 +1,9 @@
 import * as dedent from 'dedent';
 
+/**
+ * Provide a basic template for the validator component generation.
+ * @param validatorName
+ */
 export function getValidatorTemplate(validatorName: string): string {
 	return dedent`
         import { Validator } from 'medusa-extender';

@@ -58,6 +58,7 @@
 		* [Command `generate` reference](#command-generate-reference)
 			* [Usage](#usage)
 			* [Options](#options)
+			* [Examples](#examples)
 		* [Command `migrate` reference](#command-migrate-reference)
 			* [Usage](#usage-1)
 			* [Options](#options-1)
@@ -310,6 +311,9 @@ to be able to run the migrations and show the list of applied and to be applied 
 
 ### Command `generate` reference
 
+Each time a component is generated, the cli will try to find the closest module to 
+that newly created component and add it to the `imports` list automatically.
+
 #### Usage
 
 ```bash
@@ -319,36 +323,31 @@ to be able to run the migrations and show the list of applied and to be applied 
 #### Options
 
 
-| Name                  | Alias | Description                                      |
-|-----------------------|-------|--------------------------------------------------|
-| `--module <name>`     | `-m`  | Generate a new module.                           |
-| `--middleware <name>` | `-mi` | Generate a new middleware.                       |
-| `--service <name>`    | `-s`  | Generate a new service.                          |
-| `--router <name>`     | `-r`  | Generate a new router.                           |
-| `--entity <name>`     | `-e`  | Generate a new entity.                           |
-| `--repository <name>` | `-re` | Generate a new repository.                       |
-| `--migration <name>`  | `-mi` | Generate a new migration.                        |
-| `--validator <name>`  | `-va` | Generate a new validator.                        |
-| `--path`              | `-p`  | specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]. |
+| Name           | Alias | Description                                      |
+|----------------|-------|--------------------------------------------------|
+| <nam>>         |       | Component name to generate                       |
+| `--module`     | `-m`  | Generate a new module.                           |
+| `--middleware` | `-mi` | Generate a new middleware.                       |
+| `--service`    | `-s`  | Generate a new service.                          |
+| `--router`     | `-r`  | Generate a new router.                           |
+| `--entity`     | `-e`  | Generate a new entity.                           |
+| `--repository` | `-re` | Generate a new repository.                       |
+| `--migration`  | `-mi` | Generate a new migration.                        |
+| `--validator`  | `-va` | Generate a new validator.                        |
+| `--path`       | `-p`  | specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]. |
 
 
-:point_right: __Examples__
+#### Examples
 
-Without specifying the location `-p`
-
-```bash
-./node_modules/.bin/medex g -m store
-```
-
-> Generate the store modules at `src/modules/store/store.module.ts`
-
-With specifying the location `-p`
+Lets run the following command
 
 ```bash
-./node_modules/.bin/medex g -m store -p src/modules
+./node_modules/.bin/medex g -m myModule
 ```
 
-> Generate the store modules at `src/modules/store.module.ts`
+This command will generate a new `myModule` component. Without specifying the path (`-p`)
+where to generate the component, the cli will automatically create the directory `myModule` under `src`.
+The result will be the generation of the module component at `src/modules/myModule/myModule.module.ts`.
 
 ### Command `migrate` reference
 
