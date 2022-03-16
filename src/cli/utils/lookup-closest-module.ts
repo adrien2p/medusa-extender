@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 
-export function lookupClosestModule(fullDestinationPath: string): string | undefined {
+export function lookupClosestModule(fullDestinationPath: string, isMain = true): string | undefined {
 	let resolvedModulePath = undefined;
 
 	const isRootDir = !!readdirSync(fullDestinationPath, { withFileTypes: true }).some(
@@ -12,17 +12,25 @@ export function lookupClosestModule(fullDestinationPath: string): string | undef
 	}
 
 	const components = readdirSync(fullDestinationPath, { withFileTypes: true });
-	for (const component of components) {
-		if (component.isDirectory()) {
-			continue;
-		}
-
-		const componentFullDestinationPath = resolve(fullDestinationPath, component.name);
+	const files = components.filter((component) => component.isFile());
+	for (const file of files) {
+		const componentFullDestinationPath = resolve(fullDestinationPath, file.name);
 		const componentContent = readFileSync(componentFullDestinationPath).toString();
 		const containsModuleDecorator = !!componentContent.match(/@Module\(/g);
 		if (containsModuleDecorator) {
-			resolvedModulePath = resolve(componentFullDestinationPath);
+			resolvedModulePath = componentFullDestinationPath;
 			break;
+		}
+	}
+
+	const directories = components.filter((component) => component.isDirectory());
+	if (!resolvedModulePath) {
+		for (const directory of directories) {
+			const childFullDestinationPath = resolve(fullDestinationPath, directory.name);
+			resolvedModulePath = lookupClosestModule(childFullDestinationPath, false);
+			if (resolvedModulePath) {
+				break;
+			}
 		}
 	}
 
@@ -30,10 +38,12 @@ export function lookupClosestModule(fullDestinationPath: string): string | undef
 	 * At this point, the module was not found in the current and children directories,
 	 * so we will look into the parent directory until the root is reached.
 	 */
-	const parentFullDestinationPath = fullDestinationPath.split('/').slice(0, -1).join('/');
-	const modulePath = lookupClosestModule(parentFullDestinationPath);
-	if (modulePath) {
-		resolvedModulePath = modulePath;
+	if (isMain && !resolvedModulePath) {
+		const parentFullDestinationPath = fullDestinationPath.split('/').slice(0, -1).join('/');
+		const modulePath = lookupClosestModule(parentFullDestinationPath);
+		if (modulePath) {
+			resolvedModulePath = modulePath;
+		}
 	}
 
 	return resolvedModulePath;

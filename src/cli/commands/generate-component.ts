@@ -78,7 +78,7 @@ export function generateComponent(
 		createComponentIfNecessary(componentDescriptor, getMigrationTemplate(componentDescriptor.componentName));
 	}
 
-	updateModuleImports(name, fullDestinationPath);
+	updateModuleImports(fullDestinationPath);
 
 	logger.warn(`!!ATTENTION!! Check the newly created component(s) to validate the config and update it if needed.`);
 }
@@ -106,7 +106,7 @@ export function createComponentIfNecessary(
 	logger.log(`Component ${componentFileName} successfully generated at ${fullDestinationPath}`);
 }
 
-export function updateModuleImports(name: string, fullDestinationPath: string): void {
+export function updateModuleImports(fullDestinationPath: string): void {
 	const resolvedModulePath = lookupClosestModule(fullDestinationPath);
 	if (!resolvedModulePath) {
 		logger.warn('Unable to resolve the closest module from your component. Skipping module imports update');
@@ -118,25 +118,16 @@ export function updateModuleImports(name: string, fullDestinationPath: string): 
 
 	const updateModuleImportsContent = (_fullDestinationPath: string) => {
 		const components = readdirSync(_fullDestinationPath, { withFileTypes: true });
-		for (const component of components) {
-			if (component.isDirectory()) {
-				updateModuleImportsContent(_fullDestinationPath + '/' + component.name);
-				continue;
-			}
+		const files = components.filter((component) => component.isFile());
+		for (const file of files) {
+			if (file.name.includes('.module.')) continue;
 
-			if (!component.isFile()) {
-				continue;
-			}
-
-			if (component.name.includes('.module.')) continue;
-
-			const componentFullPath = resolve(_fullDestinationPath, component.name);
+			const componentFullPath = resolve(_fullDestinationPath, file.name);
 			const componentContent = readFileSync(componentFullPath).toString();
 
-			const componentClassNameMatches = componentContent.match(/class\s(\w+)/);
-			if (!componentClassNameMatches) continue;
+			const componentClassName = componentContent.match(/class\s(\w+)/)?.pop();
+			if (!componentClassName) continue;
 
-			const componentClassName = componentClassNameMatches[1];
 			const moduleContent = readFileSync(resolvedModulePath).toString();
 
 			const shouldUpdateModuleImport = !moduleContent.match(`${componentClassName}`);
@@ -155,12 +146,15 @@ export function updateModuleImports(name: string, fullDestinationPath: string): 
 						: null;
 					return `${matches ? `${matches}\n` : ''}import { ${componentClassName} } from './${
 						subDirectoryRelativePath ? subDirectoryRelativePath + '/' : ''
-					}${parse(component.name).name}';`;
+					}${parse(file.name).name}';`;
 				});
 
 			writeFileSync(resolvedModulePath, updatedModuleContent);
-			logger.log(`Module ${moduleFileName} imports updated with ${component} component`);
+			logger.log(`Module ${moduleFileName} imports updated from ${file.name} component`);
 		}
+
+		const directories = components.filter((component) => component.isDirectory());
+		directories.forEach((directory) => updateModuleImportsContent(resolve(_fullDestinationPath, directory.name)));
 	};
 
 	const resolvedModuleLocationPath = resolvedModulePath.split('/').slice(0, -1).join('/');
