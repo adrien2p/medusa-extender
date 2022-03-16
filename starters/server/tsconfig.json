@@ -9,18 +9,17 @@
     "target": "es2017",
     "sourceMap": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowJs": true,
-    "baseUrl": "./src",
-    "rootDir": ".",
-    "lib": [
-      "es2015.proxy",
-      "es2017"
-    ],
-    "outDir": "dist"
+    "outDir": "dist",
+    "rootDir": "src",
+    "esModuleInterop": true
   },
-  "include": ["src", "medusa-config.js"],
+  "include": [
+    "src"
+  ],
   "exclude": [
-    "**/node_modules"
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
