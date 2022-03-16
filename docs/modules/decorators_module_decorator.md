@@ -29,4 +29,8 @@ Mark a class as aa module and store all injectable on it.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/module.decorator.ts#L9)
+=======
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/module.decorator.ts#L9)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

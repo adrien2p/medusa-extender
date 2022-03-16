@@ -23,4 +23,8 @@ Export the instance of the event emmiter.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L102)
+=======
+[src/core/event-emmiter.ts:102](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L102)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

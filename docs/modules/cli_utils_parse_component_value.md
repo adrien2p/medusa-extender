@@ -35,4 +35,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/cli/utils/parse-component-value.ts:1](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/cli/utils/parse-component-value.ts#L1)
+=======
+[src/cli/utils/parse-component-value.ts:1](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/utils/parse-component-value.ts#L1)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

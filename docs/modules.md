@@ -7,8 +7,8 @@
 ### Modules
 
 - [Medusa](modules/Medusa.md)
-- [cli/command/generate-component](modules/cli_command_generate_component.md)
-- [cli/command/migrate](modules/cli_command_migrate.md)
+- [cli/commands/generate-component](modules/cli_commands_generate_component.md)
+- [cli/commands/migrate](modules/cli_commands_migrate.md)
 - [cli/templates](modules/cli_templates.md)
 - [cli/templates/entity-template](modules/cli_templates_entity_template.md)
 - [cli/templates/middleware-template](modules/cli_templates_middleware_template.md)
@@ -18,8 +18,8 @@
 - [cli/templates/router-template](modules/cli_templates_router_template.md)
 - [cli/templates/service-template](modules/cli_templates_service_template.md)
 - [cli/templates/validator-template](modules/cli_templates_validator_template.md)
-- [cli/utils/check-file-exists](modules/cli_utils_check_file_exists.md)
 - [cli/utils/create-directory](modules/cli_utils_create_directory.md)
+- [cli/utils/lookup-closest-module](modules/cli_utils_lookup_closest_module.md)
 - [cli/utils/parse-component-value](modules/cli_utils_parse_component_value.md)
 - [core](modules/core.md)
 - [core/constants](modules/core_constants.md)

@@ -10,6 +10,9 @@ to be able to run the migrations and show the list of applied and to be applied 
 
 ### Command `generate` reference
 
+Each time a component is generated, the cli will try to find the closest module to 
+that newly created component and add it to the `imports` list automatically.
+
 #### Usage
 
 ```bash
@@ -20,23 +23,17 @@ to be able to run the migrations and show the list of applied and to be applied 
 
 {{ cliGenerateOptionsSchematics }}
 
-:point_right: __Examples__
+#### Examples
 
-Without specifying the location `-p`
-
-```bash
-./node_modules/.bin/medex g -m store
-```
-
-> Generate the store modules at `src/modules/store/store.module.ts`
-
-With specifying the location `-p`
+Lets run the following command
 
 ```bash
-./node_modules/.bin/medex g -m store -p src/modules
+./node_modules/.bin/medex g -m myModule
 ```
 
-> Generate the store modules at `src/modules/store.module.ts`
+This command will generate a new `myModule` component. Without specifying the path (`-p`)
+where to generate the component, the cli will automatically create the directory `myModule` under `src`.
+The result will be the generation of the module component at `src/modules/myModule/myModule.module.ts`.
 
 ### Command `migrate` reference
 

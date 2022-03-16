@@ -31,4 +31,8 @@ Apply middlewares and routes on the underlying @medusajs admin API.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/admin-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/admin-api.loader.ts#L13)
+=======
+[src/loaders/admin-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/admin-api.loader.ts#L13)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

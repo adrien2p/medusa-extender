@@ -31,4 +31,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L25)
+=======
+[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L25)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

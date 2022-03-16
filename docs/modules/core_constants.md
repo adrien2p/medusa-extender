@@ -20,7 +20,11 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L9)
+=======
+[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L9)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -66,7 +70,11 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L14)
+=======
+[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L14)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -78,4 +86,8 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L4)
+=======
+[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L4)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

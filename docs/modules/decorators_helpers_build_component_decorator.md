@@ -32,4 +32,8 @@
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/helpers/build-component-decorator.ts#L4)
+=======
+[src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/helpers/build-component-decorator.ts#L4)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

@@ -31,7 +31,11 @@ Apply all routes on the app that must be applied after the @medusajs authenticat
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/helpers/apply-routers.ts#L26)
+=======
+[src/loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/helpers/apply-routers.ts#L26)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -55,4 +59,8 @@ Apply all routes on the app that must be applied before the @medusajs authentica
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/helpers/apply-routers.ts#L10)
+=======
+[src/loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/helpers/apply-routers.ts#L10)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

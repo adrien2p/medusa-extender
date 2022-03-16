@@ -33,7 +33,11 @@ Load all custom entities into the underlying @medusajs instance.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/entities.loader.ts#L13)
+=======
+[src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/entities.loader.ts#L13)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -56,7 +60,11 @@ Load all custom entities that override @medusajs instance entities.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/entities.loader.ts#L36)
+=======
+[src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/entities.loader.ts#L36)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -76,7 +84,11 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/entities.loader.ts#L63)
+=======
+[src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/entities.loader.ts#L63)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -97,4 +109,8 @@ ___
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/entities.loader.ts#L51)
+=======
+[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/entities.loader.ts#L51)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

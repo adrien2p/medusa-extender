@@ -40,4 +40,8 @@ Function.constructor
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/types.ts#L6)
+=======
+[src/core/types.ts:6](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/types.ts#L6)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation

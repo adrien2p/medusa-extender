@@ -37,7 +37,11 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/utils.ts#L30)
+=======
+[src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/utils.ts#L30)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
 
 ___
 
@@ -67,4 +71,8 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
+<<<<<<< HEAD
 [src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/utils.ts#L10)
+=======
+[src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/utils.ts#L10)
+>>>>>>> 04c62ec... docs(cli): Update cli documentation
