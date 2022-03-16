@@ -134,11 +134,17 @@ echo '{
     "skipLibCheck": true,
     "allowJs": true,
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "src",
     "esModuleInterop": true
   },
-  "include": ["src", "medusa-config.js"],
-  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }' > tsconfig.json
 ```
 
@@ -148,7 +154,7 @@ update the scripts in your `package.json`
 {
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "start": "npm run build && node dist/src/main.js"
+    "start": "npm run build && node dist/main.js"
   } 
 }
 ```
@@ -165,7 +171,7 @@ import { resolve } from 'path';
 async function bootstrap() {
     const expressInstance = express();
     
-    const rootDir = resolve(__dirname) + '/../';
+    const rootDir = resolve(__dirname, '..');
     await new Medusa(rootDir, expressInstance).load([]);
     
     expressInstance.listen(9000, () => {
