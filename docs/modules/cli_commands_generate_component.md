@@ -20,6 +20,8 @@
 
 ▸ **createComponentIfNecessary**(`__namedParameters`, `content`): `void`
 
+Create the component file and fill it with the template content.
+
 #### Parameters
 
 | Name | Type |
@@ -36,13 +38,15 @@
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:86](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/commands/generate-component.ts#L86)
+[src/cli/commands/generate-component.ts:106](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/commands/generate-component.ts#L106)
 
 ___
 
 ### generateComponent
 
 ▸ **generateComponent**(`name`, `__namedParameters`): `void`
+
+Generate the required components from the user command.
 
 #### Parameters
 
@@ -57,19 +61,20 @@ ___
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:32](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/commands/generate-component.ts#L32)
+[src/cli/commands/generate-component.ts:45](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/commands/generate-component.ts#L45)
 
 ___
 
 ### updateModuleImports
 
-▸ **updateModuleImports**(`name`, `fullDestinationPath`): `void`
+▸ **updateModuleImports**(`fullDestinationPath`): `void`
+
+Lookup for the closest module from the component and update its imports.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
 | `fullDestinationPath` | `string` |
 
 #### Returns
@@ -78,4 +83,4 @@ ___
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:109](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/commands/generate-component.ts#L109)
+[src/cli/commands/generate-component.ts:133](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/commands/generate-component.ts#L133)

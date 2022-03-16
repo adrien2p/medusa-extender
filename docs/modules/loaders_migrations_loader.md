@@ -31,7 +31,11 @@ Run custom migrations that are find from the provided directory and stored in a 
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/migrations.loader.ts#L13)
 =======
 [src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/migrations.loader.ts#L13)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/migrations.loader.ts#L13)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

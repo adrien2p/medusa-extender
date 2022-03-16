@@ -1,3 +1,9 @@
+/**
+ * Parse the component information to create a kind of descriptor.
+ * @param name
+ * @param componentType
+ * @param path
+ */
 export function parseComponentValue(
 	name: string,
 	componentType: string,

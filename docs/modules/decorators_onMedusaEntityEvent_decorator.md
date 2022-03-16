@@ -25,10 +25,14 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -46,10 +50,14 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -69,10 +77,14 @@ Event types that can be emitted.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -99,10 +111,14 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -129,7 +145,11 @@ The arguments expected by the event handler.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/onMedusaEntityEvent.decorator.ts#L32)
 =======
 [src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/onMedusaEntityEvent.decorator.ts#L32)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/onMedusaEntityEvent.decorator.ts#L32)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

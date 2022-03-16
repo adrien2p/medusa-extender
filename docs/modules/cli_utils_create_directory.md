@@ -14,6 +14,8 @@
 
 ▸ **createDirectoryIfNecessary**(`relativeDestinationPath`, `fullDestinationPath`, `logger?`): `void`
 
+Create the new directory, if necessary, that will receive the components.
+
 #### Parameters
 
 | Name | Type | Default value |
@@ -29,7 +31,11 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/cli/utils/create-directory.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/cli/utils/create-directory.ts#L4)
 =======
 [src/cli/utils/create-directory.ts:4](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/utils/create-directory.ts#L4)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/cli/utils/create-directory.ts:10](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/utils/create-directory.ts#L10)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

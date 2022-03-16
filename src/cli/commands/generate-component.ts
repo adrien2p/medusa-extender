@@ -29,6 +29,19 @@ type Options = {
 
 const logger = Logger.contextualize('Generate command', 'MEDEX-CLI');
 
+/**
+ * Generate the required components from the user command.
+ * @param name
+ * @param module
+ * @param middleware
+ * @param service
+ * @param router
+ * @param validator
+ * @param entity
+ * @param repository
+ * @param migration
+ * @param path
+ */
 export function generateComponent(
 	name: string,
 	{ module, middleware, service, router, validator, entity, repository, migration, path }: Options
@@ -83,6 +96,13 @@ export function generateComponent(
 	logger.warn(`!!ATTENTION!! Check the newly created component(s) to validate the config and update it if needed.`);
 }
 
+/**
+ * Create the component file and fill it with the template content.
+ * @param fullDestinationPath
+ * @param componentName
+ * @param componentFileName
+ * @param content
+ */
 export function createComponentIfNecessary(
 	{
 		fullDestinationPath,
@@ -106,6 +126,10 @@ export function createComponentIfNecessary(
 	logger.log(`Component ${componentFileName} successfully generated at ${fullDestinationPath}`);
 }
 
+/**
+ * Lookup for the closest module from the component and update its imports.
+ * @param fullDestinationPath
+ */
 export function updateModuleImports(fullDestinationPath: string): void {
 	const resolvedModulePath = lookupClosestModule(fullDestinationPath);
 	if (!resolvedModulePath) {

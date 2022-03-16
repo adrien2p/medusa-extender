@@ -31,10 +31,14 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/services.loader.ts#L55)
 =======
 [src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/services.loader.ts#L55)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/loaders/services.loader.ts:55](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/services.loader.ts#L55)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -57,10 +61,14 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/services.loader.ts#L40)
 =======
 [src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/services.loader.ts#L40)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/services.loader.ts#L40)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -84,7 +92,11 @@ Load all custom services and overridden services into the underlying @medusajs i
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/services.loader.ts#L12)
 =======
 [src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/services.loader.ts#L12)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/services.loader.ts#L12)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

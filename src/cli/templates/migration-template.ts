@@ -1,5 +1,9 @@
 import * as dedent from 'dedent';
 
+/**
+ * Provide a basic template for the migration component generation.
+ * @param migrationName
+ */
 export function getMigrationTemplate(migrationName: string): string {
 	const timestamp = Date.now();
 	return dedent`

@@ -33,7 +33,11 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/decorators/helpers/build-component-decorator.ts#L4)
 =======
 [src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/decorators/helpers/build-component-decorator.ts#L4)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/decorators/helpers/build-component-decorator.ts#L4)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

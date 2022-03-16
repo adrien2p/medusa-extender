@@ -1,6 +1,11 @@
 import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 
+/**
+ * Run the migrations using the medusa-config.js config.
+ * @param run
+ * @param show
+ */
 export async function migrate({ run, show }): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: any };
 

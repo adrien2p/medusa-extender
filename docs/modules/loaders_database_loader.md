@@ -28,7 +28,11 @@
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/database.loader.ts#L5)
 =======
 [src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/database.loader.ts#L5)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/database.loader.ts#L5)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation

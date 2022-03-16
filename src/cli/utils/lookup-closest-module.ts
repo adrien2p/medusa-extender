@@ -1,6 +1,11 @@
 import { readdirSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 
+/**
+ * Lookup for the closest module component from the destination path.
+ * @param fullDestinationPath
+ * @param isMain
+ */
 export function lookupClosestModule(fullDestinationPath: string, isMain = true): string | undefined {
 	let resolvedModulePath = undefined;
 

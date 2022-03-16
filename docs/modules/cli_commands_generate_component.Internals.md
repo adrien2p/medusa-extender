@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:18](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/cli/commands/generate-component.ts#L18)
+[src/cli/commands/generate-component.ts:18](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/commands/generate-component.ts#L18)

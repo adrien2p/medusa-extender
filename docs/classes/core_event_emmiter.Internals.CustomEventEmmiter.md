@@ -42,10 +42,14 @@ EventEmitter.constructor
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L21)
 =======
 [src/core/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L21)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:21](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L21)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ## Properties
 
@@ -56,10 +60,14 @@ EventEmitter.constructor
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L19)
 =======
 [src/core/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L19)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:19](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L19)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ## Methods
 
@@ -89,10 +97,14 @@ Emit an asynchrone event entity based and wait for the result.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L80)
 =======
 [src/core/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L80)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:80](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L80)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -123,10 +135,14 @@ Register a new event handler.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L31)
 =======
 [src/core/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L31)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:31](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L31)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -149,10 +165,14 @@ Apply all event handlers hold by the `listenerDescriptor`.
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L43)
 =======
 [src/core/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L43)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:43](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L43)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
 
 ___
 
@@ -167,7 +187,11 @@ ___
 #### Defined in
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [src/core/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/event-emmiter.ts#L68)
 =======
 [src/core/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/event-emmiter.ts#L68)
 >>>>>>> 04c62ec... docs(cli): Update cli documentation
+=======
+[src/core/event-emmiter.ts:68](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/event-emmiter.ts#L68)
+>>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
