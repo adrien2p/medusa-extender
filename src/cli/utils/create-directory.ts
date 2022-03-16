@@ -7,10 +7,10 @@ export function createDirectoryIfNecessary(
 	logger: Logger | typeof console = console
 ): void {
 	if (existsSync(fullDestinationPath)) {
-		logger.log(`Directory ${relativeDestinationPath} already exists. Skipping.`);
+		logger.log(`Directory ${relativeDestinationPath} already exists. Skipping`);
 		return;
 	}
 
-	logger.log(`Creating directory ${fullDestinationPath}.`);
+	logger.log(`Creating directory ${fullDestinationPath}`);
 	mkdirSync(fullDestinationPath, { recursive: true });
 }

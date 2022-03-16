@@ -13,6 +13,7 @@ import {
 	getValidatorTemplate,
 } from '../templates';
 import { Logger } from '../../core';
+import { lookupClosestModule } from '../utils/lookup-closest-module';
 
 type Options = {
 	module?: boolean;
@@ -97,49 +98,73 @@ export function createComponentIfNecessary(
 	const componentFullPath = resolve(fullDestinationPath, componentFileName);
 	const exists = existsSync(componentFullPath);
 	if (exists) {
-		logger.warn(`Component ${componentName} already exists. Skipping.`);
+		logger.warn(`Component ${componentName} already exists. Skipping component creation`);
 		return;
 	}
 
 	writeFileSync(componentFullPath, content);
-	logger.log(`Component ${componentFileName} successfully generated at ${fullDestinationPath}.`);
+	logger.log(`Component ${componentFileName} successfully generated at ${fullDestinationPath}`);
 }
 
 export function updateModuleImports(name: string, fullDestinationPath: string): void {
-	const moduleFullPath = resolve(fullDestinationPath, `${name}.module.ts`);
-	if (!existsSync(moduleFullPath)) return;
-
-	logger.log(`Updating ${name} module imports.`);
-
-	const components = readdirSync(fullDestinationPath);
-	for (const component of components) {
-		if (component.includes('.module.')) continue;
-
-		const componentFullPath = resolve(fullDestinationPath, component);
-		const componentContent = readFileSync(componentFullPath).toString();
-
-		const componentClassNameMatches = componentContent.match(/class\s(\w+)/);
-		if (!componentClassNameMatches) continue;
-
-		const componentClassName = componentClassNameMatches[1];
-		const moduleContent = readFileSync(moduleFullPath).toString();
-
-		const shouldUpdateModuleImport = !moduleContent.match(`${componentClassName}`);
-		if (!shouldUpdateModuleImport) continue;
-
-		const updatedModuleContent = moduleContent
-			.replace(/imports: \[(.*)\]/, (str: string, match: string) => {
-				return `imports: [${match ? `${match}, ` : ''}${componentClassName}]`;
-			})
-			.replace(/(import\s+.*\s+from\s+.*(?!;))/, (str: string, matches: string) => {
-				return `${matches ? `${matches}\n` : ''}import { ${componentClassName} } from './${
-					parse(component).name
-				}';`;
-			});
-
-		writeFileSync(moduleFullPath, updatedModuleContent);
-		logger.log(`Module ${name} imports updated with ${component} component.`);
+	const resolvedModulePath = lookupClosestModule(fullDestinationPath);
+	if (!resolvedModulePath) {
+		logger.warn('Unable to resolve the closest module from your component. Skipping module imports update');
+		return;
 	}
 
-	logger.log(`Module ${name} module updated.`);
+	const moduleFileName = resolvedModulePath.split('/').slice(-1).pop();
+	logger.log(`Updating module ${moduleFileName}`);
+
+	const updateModuleImportsContent = (_fullDestinationPath: string) => {
+		const components = readdirSync(_fullDestinationPath, { withFileTypes: true });
+		for (const component of components) {
+			if (component.isDirectory()) {
+				updateModuleImportsContent(_fullDestinationPath + '/' + component.name);
+				continue;
+			}
+
+			if (!component.isFile()) {
+				continue;
+			}
+
+			if (component.name.includes('.module.')) continue;
+
+			const componentFullPath = resolve(_fullDestinationPath, component.name);
+			const componentContent = readFileSync(componentFullPath).toString();
+
+			const componentClassNameMatches = componentContent.match(/class\s(\w+)/);
+			if (!componentClassNameMatches) continue;
+
+			const componentClassName = componentClassNameMatches[1];
+			const moduleContent = readFileSync(resolvedModulePath).toString();
+
+			const shouldUpdateModuleImport = !moduleContent.match(`${componentClassName}`);
+			if (!shouldUpdateModuleImport) continue;
+
+			const isComponentInSubDirectory =
+				_fullDestinationPath.split('/').slice(-1).pop() !== resolvedModulePath.split('/').slice(-2).shift();
+
+			const updatedModuleContent = moduleContent
+				.replace(/imports: \[(.*)\]/, (str: string, match: string) => {
+					return `imports: [${match ? `${match}, ` : ''}${componentClassName}]`;
+				})
+				.replace(/(import\s+.*\s+from\s+.*(?!;))/, (str: string, matches: string) => {
+					const subDirectoryRelativePath = isComponentInSubDirectory
+						? _fullDestinationPath.split('/').slice(-1).pop()
+						: null;
+					return `${matches ? `${matches}\n` : ''}import { ${componentClassName} } from './${
+						subDirectoryRelativePath ? subDirectoryRelativePath + '/' : ''
+					}${parse(component.name).name}';`;
+				});
+
+			writeFileSync(resolvedModulePath, updatedModuleContent);
+			logger.log(`Module ${moduleFileName} imports updated with ${component} component`);
+		}
+	};
+
+	const resolvedModuleLocationPath = resolvedModulePath.split('/').slice(0, -1).join('/');
+	updateModuleImportsContent(resolvedModuleLocationPath);
+
+	logger.log(`Module ${moduleFileName} updated`);
 }

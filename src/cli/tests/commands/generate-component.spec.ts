@@ -133,6 +133,9 @@ describe('generateComponent', () => {
 		generateComponent(componentName, { repository: true, path });
 		generateComponent(componentName, { router: true, path });
 
+		const subDirectory = 'subDirectory';
+		generateComponent(componentName, { validator: true, path: path + '/' + subDirectory });
+
 		const expectedComponentFile = getExpectedComponentPath(componentName, 'module');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
@@ -140,13 +143,14 @@ describe('generateComponent', () => {
 		expect(normalizeString(componentContent)).toEqual(
 			normalizeString(`
 			import { Module } from 'medusa-extender';
+			import { TestValidator } from './${subDirectory}/test.validator';
 			import { TestRouter } from './test.router';
 			import { TestRepository } from './test.repository';
 			import { TestService } from './test.service';
 			import { TestMiddleware } from './test.middleware';
 			
 			@Module({
-				imports: [TestMiddleware, TestService, TestRepository, TestRouter]
+				imports: [TestMiddleware, TestService, TestRepository, TestRouter, TestValidator]
 			})
 			export class TestModule {}
 		`)
