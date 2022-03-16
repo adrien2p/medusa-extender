@@ -36,15 +36,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/Medusa.ts#L38)
-=======
-[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/Medusa.ts#L38)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/Medusa.ts#L38)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -54,15 +46,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/Medusa.ts#L31)
-=======
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/Medusa.ts#L31)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/Medusa.ts#L31)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/Medusa.ts#L31)
 
 ___
 
@@ -72,15 +56,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/Medusa.ts#L32)
-=======
-[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/Medusa.ts#L32)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/Medusa.ts#L32)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/Medusa.ts#L32)
 
 ## Methods
 
@@ -100,12 +76,4 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/Medusa.ts#L46)
-=======
-[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/Medusa.ts#L46)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/Medusa.ts#L46)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/Medusa.ts#L46)

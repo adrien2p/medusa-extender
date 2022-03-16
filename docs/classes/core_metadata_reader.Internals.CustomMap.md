@@ -84,12 +84,4 @@ Map.get
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/metadata-reader.ts#L5)
-=======
-[src/core/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/metadata-reader.ts#L5)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/metadata-reader.ts#L5)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/metadata-reader.ts#L5)

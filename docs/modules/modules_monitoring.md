@@ -31,12 +31,4 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L25)
-=======
-[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L25)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L25)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L25)

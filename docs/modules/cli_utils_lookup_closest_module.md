@@ -29,4 +29,4 @@ Lookup for the closest module component from the destination path.
 
 #### Defined in
 
-[src/cli/utils/lookup-closest-module.ts:9](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/cli/utils/lookup-closest-module.ts#L9)
+[src/cli/utils/lookup-closest-module.ts:9](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/cli/utils/lookup-closest-module.ts#L9)

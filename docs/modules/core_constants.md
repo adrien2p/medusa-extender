@@ -20,15 +20,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L9)
-=======
-[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L9)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/constants.ts#L9)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/constants.ts#L9)
 
 ___
 
@@ -74,15 +66,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L14)
-=======
-[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L14)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/constants.ts#L14)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/constants.ts#L14)
 
 ___
 
@@ -94,12 +78,4 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/constants.ts#L4)
-=======
-[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/constants.ts#L4)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/constants.ts#L4)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/constants.ts#L4)

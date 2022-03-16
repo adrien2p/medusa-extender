@@ -35,15 +35,7 @@
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:15](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L15)
-=======
-[src/modules/monitoring.ts:15](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L15)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:15](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L15)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:15](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L15)
 
 ___
 
@@ -53,15 +45,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:17](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L17)
-=======
-[src/modules/monitoring.ts:17](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L17)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:17](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L17)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:17](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L17)
 
 ___
 
@@ -71,15 +55,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:12](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L12)
-=======
-[src/modules/monitoring.ts:12](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L12)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:12](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L12)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:12](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L12)
 
 ___
 
@@ -89,15 +65,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:19](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L19)
-=======
-[src/modules/monitoring.ts:19](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L19)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:19](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L19)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:19](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L19)
 
 ___
 
@@ -107,15 +75,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:7](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L7)
-=======
-[src/modules/monitoring.ts:7](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L7)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:7](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L7)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:7](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L7)
 
 ___
 
@@ -125,15 +85,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:8](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L8)
-=======
-[src/modules/monitoring.ts:8](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L8)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:8](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L8)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:8](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L8)
 
 ___
 
@@ -143,15 +95,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:13](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L13)
-=======
-[src/modules/monitoring.ts:13](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L13)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:13](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L13)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:13](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L13)
 
 ___
 
@@ -161,15 +105,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:14](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L14)
-=======
-[src/modules/monitoring.ts:14](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L14)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:14](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L14)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:14](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L14)
 
 ___
 
@@ -179,15 +115,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:18](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L18)
-=======
-[src/modules/monitoring.ts:18](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L18)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:18](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L18)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:18](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L18)
 
 ___
 
@@ -197,15 +125,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:10](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L10)
-=======
-[src/modules/monitoring.ts:10](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L10)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:10](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L10)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:10](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L10)
 
 ___
 
@@ -215,15 +135,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:9](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L9)
-=======
-[src/modules/monitoring.ts:9](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L9)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:9](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L9)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:9](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L9)
 
 ___
 
@@ -233,15 +145,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:11](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L11)
-=======
-[src/modules/monitoring.ts:11](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L11)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:11](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L11)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:11](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L11)
 
 ___
 
@@ -251,15 +155,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:6](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L6)
-=======
-[src/modules/monitoring.ts:6](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L6)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:6](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L6)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:6](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L6)
 
 ## Methods
 
@@ -281,15 +177,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:20](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L20)
-=======
-[src/modules/monitoring.ts:20](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L20)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:20](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L20)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:20](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L20)
 
 ___
 
@@ -311,12 +199,4 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/modules/monitoring.ts:16](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/modules/monitoring.ts#L16)
-=======
-[src/modules/monitoring.ts:16](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/modules/monitoring.ts#L16)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/modules/monitoring.ts:16](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/modules/monitoring.ts#L16)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/modules/monitoring.ts:16](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/modules/monitoring.ts#L16)

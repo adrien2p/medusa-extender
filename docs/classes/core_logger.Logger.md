@@ -49,15 +49,7 @@ Internal logger to display information about the build.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:15](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L15)
-=======
-[src/core/logger.ts:20](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L20)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:20](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L20)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:20](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L20)
 
 ## Properties
 
@@ -67,7 +59,7 @@ Internal logger to display information about the build.
 
 #### Defined in
 
-[src/core/logger.ts:10](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L10)
+[src/core/logger.ts:10](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L10)
 
 ___
 
@@ -77,15 +69,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L9)
-=======
-[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L9)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L9)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:9](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L9)
 
 ___
 
@@ -95,15 +79,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L8)
-=======
-[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L8)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L8)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:8](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L8)
 
 ## Accessors
 
@@ -117,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/core/logger.ts:16](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L16)
+[src/core/logger.ts:16](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L16)
 
 ___
 
@@ -131,15 +107,7 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:11](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L11)
-=======
-[src/core/logger.ts:12](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L12)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:12](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L12)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:12](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L12)
 
 ## Methods
 
@@ -163,7 +131,7 @@ Build logs taking in count the level color
 
 #### Defined in
 
-[src/core/logger.ts:89](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L89)
+[src/core/logger.ts:89](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L89)
 
 ___
 
@@ -186,15 +154,7 @@ Display error logs in red immediately
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:56](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L56)
-=======
-[src/core/logger.ts:66](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L66)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:66](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L66)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:66](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L66)
 
 ___
 
@@ -210,15 +170,7 @@ display all queues logs and then reset the queue.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:68](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L68)
-=======
-[src/core/logger.ts:73](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L73)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:73](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L73)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:73](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L73)
 
 ___
 
@@ -241,15 +193,7 @@ Display log immediately.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:42](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L42)
-=======
-[src/core/logger.ts:48](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L48)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:48](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L48)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:48](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L48)
 
 ___
 
@@ -272,15 +216,7 @@ Push new logs to queue and then show them later on.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:28](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L28)
-=======
-[src/core/logger.ts:34](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L34)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:34](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L34)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:34](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L34)
 
 ___
 
@@ -303,7 +239,7 @@ Display warning immediately.
 
 #### Defined in
 
-[src/core/logger.ts:57](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L57)
+[src/core/logger.ts:57](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L57)
 
 ___
 
@@ -324,12 +260,4 @@ ___
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/core/logger.ts:19](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/core/logger.ts#L19)
-=======
-[src/core/logger.ts:25](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/core/logger.ts#L25)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/core/logger.ts:25](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/core/logger.ts#L25)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/core/logger.ts:25](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/logger.ts#L25)

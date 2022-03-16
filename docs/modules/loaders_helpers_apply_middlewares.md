@@ -31,15 +31,7 @@ Apply all middlewares on the app that must be applied after the @medusajs authen
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/loaders/helpers/apply-middlewares.ts:40](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/helpers/apply-middlewares.ts#L40)
-=======
-[src/loaders/helpers/apply-middlewares.ts:40](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/helpers/apply-middlewares.ts#L40)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/loaders/helpers/apply-middlewares.ts:40](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/helpers/apply-middlewares.ts#L40)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/loaders/helpers/apply-middlewares.ts:40](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/loaders/helpers/apply-middlewares.ts#L40)
 
 ___
 
@@ -63,12 +55,4 @@ Apply all middlewares on the app that must be applied before the @medusajs authe
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/helpers/apply-middlewares.ts#L18)
-=======
-[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/helpers/apply-middlewares.ts#L18)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/helpers/apply-middlewares.ts#L18)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/loaders/helpers/apply-middlewares.ts:18](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/loaders/helpers/apply-middlewares.ts#L18)

@@ -30,15 +30,7 @@ Load all custom repositories that override @medusajs instance entities.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/repository.loader.ts#L37)
-=======
-[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/repository.loader.ts#L37)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/repository.loader.ts#L37)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/loaders/repository.loader.ts#L37)
 
 ___
 
@@ -62,12 +54,4 @@ Load all custom repositories into the underlying @medusajs instance.
 
 #### Defined in
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/8d611e7/src/loaders/repository.loader.ts#L14)
-=======
-[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/b9aa690/src/loaders/repository.loader.ts#L14)
->>>>>>> 04c62ec... docs(cli): Update cli documentation
-=======
-[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/d7ce7dc/src/loaders/repository.loader.ts#L14)
->>>>>>> 17eff7d... docs(cli): Update CLI reference api documentation
+[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/loaders/repository.loader.ts#L14)
