@@ -38,6 +38,7 @@ describe('CLI', () => {
 									        'src/**/migrations/*.js', 'dist/**/*.migration.js',
 									        'dist/**/migrations/*.js']
 				generate|g [options] <name> Generate a new component
+			    init|-i                     Update your existing medusa project to include the necessary configuration to use the medusa-extender package
 				help [command]              display help for command
         `)
 		);

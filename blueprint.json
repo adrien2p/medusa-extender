@@ -124,6 +124,7 @@
   ],
   "cliCommandsSchematics": [
     ["Name", "Alias", "Description"],
+    ["`init`", "`-i`", "Create or update your medusa project configuration in order to gives you a working api using the medusa-extender."],
     ["`migrate`", "`m`", "Migrate the migrations that has not been applied yet. Can also show you the migrations already applied and to be applied."],
     ["`generate`", "`g`", "Generate a new component among: module, service, entity, repository, migration, validator, router, middleware"]
   ],
