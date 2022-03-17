@@ -11,20 +11,13 @@ import {
 	getValidatorTemplate,
 } from '../../templates';
 import { normalizeString } from '../__utils__/normalizeString';
+import { getExpectedComponentPath } from '../__utils__/getExpectedComponentPath';
 
 const parentPath = './modules';
 const path = parentPath + '/test';
 const componentName = 'test';
 
-function cleanup(path: string): void {
-	unlinkSync(path);
-}
-
-function getExpectedComponentPath(componentName: string, type: string): string {
-	return process.cwd() + `/${path}/${componentName}.${type}.ts`;
-}
-
-describe('generateComponent', () => {
+describe('GenerateComponent', () => {
 	afterAll(() => {
 		rmSync(path, { recursive: true, force: true });
 		rmdirSync(parentPath);
@@ -33,11 +26,11 @@ describe('generateComponent', () => {
 	it('should generate a module', () => {
 		generateComponent(componentName, { module: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'module');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'module');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getModuleTemplate('TestModule'));
 	});
@@ -45,11 +38,11 @@ describe('generateComponent', () => {
 	it('should generate a middleware', () => {
 		generateComponent(componentName, { middleware: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'middleware');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'middleware');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getMiddlewareTemplate('TestMiddleware'));
 	});
@@ -57,11 +50,11 @@ describe('generateComponent', () => {
 	it('should generate a service', () => {
 		generateComponent(componentName, { service: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'service');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'service');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getServiceTemplate('TestService'));
 	});
@@ -69,11 +62,11 @@ describe('generateComponent', () => {
 	it('should generate a router', () => {
 		generateComponent(componentName, { router: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'router');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'router');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getRouterTemplate('TestRouter'));
 	});
@@ -81,11 +74,11 @@ describe('generateComponent', () => {
 	it('should generate a validator', () => {
 		generateComponent(componentName, { validator: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'validator');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'validator');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getValidatorTemplate('TestValidator'));
 	});
@@ -93,11 +86,11 @@ describe('generateComponent', () => {
 	it('should generate a entity', () => {
 		generateComponent(componentName, { entity: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'entity');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'entity');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getEntityTemplate('TestEntity'));
 	});
@@ -105,11 +98,11 @@ describe('generateComponent', () => {
 	it('should generate a repository', () => {
 		generateComponent(componentName, { repository: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'repository');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'repository');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent).toEqual(getRepositoryTemplate('TestRepository'));
 	});
@@ -117,11 +110,11 @@ describe('generateComponent', () => {
 	it('should generate a migration', () => {
 		generateComponent(componentName, { migration: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'migration');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'migration');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
-		cleanup(expectedComponentFile);
+		unlinkSync(expectedComponentFile);
 
 		expect(componentContent.replace(/\d+/g, '')).toEqual(getMigrationTemplate('TestMigration').replace(/\d+/g, ''));
 	});
@@ -136,7 +129,7 @@ describe('generateComponent', () => {
 		const subDirectory = 'subDirectory';
 		generateComponent(componentName, { validator: true, path: path + '/' + subDirectory });
 
-		const expectedComponentFile = getExpectedComponentPath(componentName, 'module');
+		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'module');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();

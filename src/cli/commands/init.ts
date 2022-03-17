@@ -157,6 +157,6 @@ function updateDevelopScript(): void {
 		#Start development environment
 		npm run start
 	`,
-		{ mode: 765 }
+		{ mode: 777 }
 	);
 }
