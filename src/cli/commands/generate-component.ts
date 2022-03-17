@@ -1,7 +1,7 @@
 import { parseComponentValue } from '../utils/parse-component-value';
 import { createDirectoryIfNecessary } from '../utils/create-directory';
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
-import { parse, resolve } from 'path';
+import { parse, resolve, normalize } from 'path';
 import {
 	getEntityTemplate,
 	getMiddlewareTemplate,
@@ -141,7 +141,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 	logger.log(`Updating module ${moduleFileName}`);
 
 	const updateModuleImportsContent = (_fullDestinationPath: string) => {
-		const components = readdirSync(_fullDestinationPath, { withFileTypes: true });
+		const components = readdirSync(normalize(_fullDestinationPath), { withFileTypes: true });
 		const files = components.filter((component) => component.isFile());
 		for (const file of files) {
 			if (file.name.includes('.module.')) continue;

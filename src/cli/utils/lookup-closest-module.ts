@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, normalize } from 'path';
 
 /**
  * Lookup for the closest module component from the destination path.
@@ -51,5 +51,5 @@ export function lookupClosestModule(fullDestinationPath: string, isMain = true):
 		}
 	}
 
-	return resolvedModulePath;
+	return resolvedModulePath ? normalize(resolvedModulePath) : resolvedModulePath;
 }

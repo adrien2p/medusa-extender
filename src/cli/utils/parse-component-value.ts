@@ -1,3 +1,5 @@
+import { normalize, resolve } from 'path';
+
 /**
  * Parse the component information to create a kind of descriptor.
  * @param name
@@ -17,6 +19,6 @@ export function parseComponentValue(
 	const componentFileName = `${name}.${componentType}.ts`;
 	const componentName =
 		name.charAt(0).toUpperCase() + name.slice(1) + componentType?.charAt(0).toUpperCase() + componentType?.slice(1);
-	const fullDestinationPath = process.cwd() + '/' + path;
-	return { relativeDestinationPath: path, fullDestinationPath, componentName, componentFileName };
+	const fullDestinationPath = normalize(resolve(process.cwd(), path));
+	return { relativeDestinationPath: normalize(path), fullDestinationPath, componentName, componentFileName };
 }
