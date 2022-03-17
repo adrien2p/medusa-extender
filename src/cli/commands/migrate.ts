@@ -21,6 +21,7 @@ export async function migrate({ run, show }): Promise<void> {
 	const connection = await createConnection({
 		type: configModule.projectConfig.database_type,
 		url: configModule.projectConfig.database_url,
+		database: configModule.projectConfig.database_database,
 		extra: configModule.projectConfig.database_extra || {},
 		logging: ['schema'],
 		migrations: migrationDirs,
