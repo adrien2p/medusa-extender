@@ -24,7 +24,7 @@ Return the install command from the user package manager.
 
 #### Defined in
 
-[src/core/package-loader.ts:41](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/package-loader.ts#L41)
+[src/core/package-loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/0a84360/src/core/package-loader.ts#L52)
 
 ___
 
@@ -40,7 +40,7 @@ Load packages at run time.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `logger` | [`Logger`](../classes/core_logger.Logger.md) |  |
-| `packages` | { `name`: `string` ; `version`: `string`  }[] | The packages descriptors that must be installed |
+| `packages` | { `isDevDependency?`: `boolean` ; `name`: `string` ; `version`: `string`  }[] | The packages descriptors that must be installed |
 
 #### Returns
 
@@ -48,4 +48,4 @@ Load packages at run time.
 
 #### Defined in
 
-[src/core/package-loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/30feff3/src/core/package-loader.ts#L13)
+[src/core/package-loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/0a84360/src/core/package-loader.ts#L12)

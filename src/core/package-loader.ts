@@ -2,7 +2,6 @@ import { execSync } from 'child_process';
 import { detect } from 'detect-package-manager';
 import { Logger } from './logger';
 import { writeFileSync } from 'fs';
-const packageJson = require(`${process.cwd()}/package.json`);
 
 /**
  * @Internal
@@ -10,11 +9,16 @@ const packageJson = require(`${process.cwd()}/package.json`);
  * @param logger
  * @param packages The packages descriptors that must be installed
  */
-export async function loadPackages(logger: Logger, packages: { name: string; version: string }[]): Promise<void> {
-	logger.log('Install necessary packages if they are not already installed');
+export async function loadPackages(
+	logger: Logger,
+	packages: { name: string; version: string; isDevDependency?: boolean }[]
+): Promise<void> {
+	logger.log('Installing the necessary packages if they are not already installed');
 
 	const installCommand = await getPackageManagerCommand();
-	for (const { name, version } of packages) {
+	for (const { name, version, isDevDependency } of packages) {
+		const packageJson = await import(`${process.cwd()}/package.json`);
+
 		if (packageJson.dependencies[name]) {
 			logger.log(`Skipping installation of ${name}@${version}. package already installed`);
 			continue;
@@ -22,8 +26,15 @@ export async function loadPackages(logger: Logger, packages: { name: string; ver
 
 		logger.log(`Installing ${name}@${version}...`);
 		try {
-			execSync(`${installCommand} ${name}@${version}`, { cwd: process.cwd(), env: process.env });
-			packageJson.dependencies[name] = `^${version}`;
+			execSync(`${installCommand} ${isDevDependency ? '-D' : ''} ${name}@${version}`, {
+				cwd: process.cwd(),
+				env: process.env,
+			});
+			if (isDevDependency) {
+				packageJson.devDependencies[name] = `^${version}`;
+			} else {
+				packageJson.dependencies[name] = `^${version}`;
+			}
 			writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(packageJson, null, 2));
 		} catch (e) {
 			logger.error(`Unable to install ${name}@${version}`);

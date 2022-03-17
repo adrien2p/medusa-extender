@@ -8,6 +8,7 @@
 
 - [Medusa](modules/Medusa.md)
 - [cli/commands/generate-component](modules/cli_commands_generate_component.md)
+- [cli/commands/init](modules/cli_commands_init.md)
 - [cli/commands/migrate](modules/cli_commands_migrate.md)
 - [cli/templates](modules/cli_templates.md)
 - [cli/templates/entity-template](modules/cli_templates_entity_template.md)

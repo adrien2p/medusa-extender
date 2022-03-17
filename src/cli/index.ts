@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { generateComponent } from './commands/generate-component';
 import { green } from 'chalk';
 import { migrate } from './commands/migrate';
+import { init } from './commands/init';
 
 const program = new Command();
 
@@ -51,6 +52,16 @@ program
 				.error(`You must specify one of the options.${path ? ' --path only is not sufficient.' : ''}`);
 		}
 		generateComponent(name, options);
+	});
+
+program
+	.command('init')
+	.alias('-i')
+	.description(
+		'Update your existing medusa project to include the necessary configuration to use the medusa-extender package'
+	)
+	.action(async () => {
+		await init();
 	});
 
 program.parse();

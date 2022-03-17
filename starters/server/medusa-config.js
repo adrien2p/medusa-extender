@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 
 let ENV_FILE_NAME = '';
 switch (process.env.NODE_ENV) {
-	case 'prod':
+	case 'production':
 		ENV_FILE_NAME = '.env';
 		break;
 	case 'test':
