@@ -42,6 +42,7 @@
 </p>
 
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cfdc7d2913ff4ce3a7f4d87ee8848fe9)](https://app.codacy.com/gh/adrien2p/medusa-extender?utm_source=github.com&utm_medium=referral&utm_content=adrien2p/medusa-extender&utm_campaign=Badge_Grade_Settings)
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#table-of-contents)
 
 ## Table of Contents
