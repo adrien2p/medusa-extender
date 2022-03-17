@@ -11,6 +11,6 @@ export function getRepositoryTemplate(repositoryName: string): string {
         
         @MedusaRepository({ resolutionKey: '${repositoryName}' })
         @EntityRepository(/* Specify your entity */)
-        export default class ${repositoryName} extends Repository</* Specify your entity */> {}
+        export class ${repositoryName} extends Repository</* Specify your entity */> {}
     `;
 }

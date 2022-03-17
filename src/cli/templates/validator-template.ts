@@ -11,7 +11,7 @@ export function getValidatorTemplate(validatorName: string): string {
         import { IsString } from 'class-validator';
         
         @Validator({ override: /* Which validator must be overridden */ })
-        class ${validatorName} { /* extends AdminPostProductsReq { */
+        export class ${validatorName} { /* extends AdminPostProductsReq { */
           @IsString()
           customField: string;
         }

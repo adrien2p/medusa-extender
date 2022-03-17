@@ -11,7 +11,7 @@ export function getMigrationTemplate(migrationName: string): string {
         import { Migration } from 'medusa-extender';
         
         @Migration()
-        export default class ${migrationName + timestamp} implements MigrationInterface {
+        export class ${migrationName + timestamp} implements MigrationInterface {
             name = '${migrationName + timestamp}';
             
             public async up(queryRunner: QueryRunner): Promise<void> {
