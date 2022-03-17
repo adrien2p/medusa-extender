@@ -87,8 +87,12 @@ export function generateComponent(
 	}
 
 	if (migration) {
-		const componentDescriptor = parseComponentValue(name, 'migration', path);
-		createComponentIfNecessary(componentDescriptor, getMigrationTemplate(componentDescriptor.componentName));
+		const timestamp = Date.now().toString();
+		const componentDescriptor = parseComponentValue(name, 'migration', path, timestamp);
+		createComponentIfNecessary(
+			componentDescriptor,
+			getMigrationTemplate(componentDescriptor.componentName, timestamp)
+		);
 	}
 
 	updateModuleImports(fullDestinationPath);

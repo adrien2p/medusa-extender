@@ -13,6 +13,8 @@ import {
 import { normalizeString } from '../__utils__/normalizeString';
 import { getExpectedComponentPath } from '../__utils__/getExpectedComponentPath';
 
+const dateMock = jest.spyOn(Date, 'now').mockImplementation(() => 1);
+
 const parentPath = './modules';
 const path = parentPath + '/test';
 const componentName = 'test';
@@ -21,6 +23,7 @@ describe('GenerateComponent', () => {
 	afterAll(() => {
 		rmSync(path, { recursive: true, force: true });
 		rmdirSync(parentPath);
+		dateMock.mockClear();
 	});
 
 	it('should generate a module', () => {
@@ -110,13 +113,15 @@ describe('GenerateComponent', () => {
 	it('should generate a migration', () => {
 		generateComponent(componentName, { migration: true, path });
 
-		const expectedComponentFile = getExpectedComponentPath(path, componentName, 'migration');
+		const expectedComponentFile = getExpectedComponentPath(path, '1-' + componentName, 'migration');
 		expect(existsSync(expectedComponentFile)).toBeTruthy();
 
 		const componentContent = readFileSync(expectedComponentFile).toString();
 		unlinkSync(expectedComponentFile);
 
-		expect(componentContent.replace(/\d+/g, '')).toEqual(getMigrationTemplate('TestMigration').replace(/\d+/g, ''));
+		expect(componentContent.replace(/\d+/g, '')).toEqual(
+			getMigrationTemplate('TestMigration', '1').replace(/\d+/g, '')
+		);
 	});
 
 	it('should generate a module that includes other generated components automatically', () => {
