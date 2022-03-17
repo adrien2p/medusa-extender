@@ -28,4 +28,4 @@ Provide a basic template for the router component generation.
 
 #### Defined in
 
-[src/cli/templates/router-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/a04f7cb/src/cli/templates/router-template.ts#L7)
+[src/cli/templates/router-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/23da83e/src/cli/templates/router-template.ts#L7)
