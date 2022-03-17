@@ -43,3 +43,11 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
 		connection.subscribers.splice(subscriberIndex, 1, subscriberReplacement);
 	}
 }
+
+/**
+ * Allow to omit some property from a class.
+ * @param Class
+ * @param keys
+ * @constructor
+ */
+export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, typeof keys[number]> => Class;
