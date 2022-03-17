@@ -17,7 +17,9 @@
     "swagger-stats",
     "prometheus",
     "monitoring",
-    "cli"
+    "cli",
+    "javascript",
+    "architecture"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",
