@@ -6,10 +6,43 @@
 
 ### Functions
 
+- [Omit](core_utils.md#omit)
 - [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
 - [repositoryMixin](core_utils.md#repositorymixin)
 
 ## Functions
+
+### Omit
+
+▸ **Omit**<`T`, `K`\>(`Class`, `keys`): () => `Omit`<`T`, `K`\>
+
+Allow to omit some property from a class.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` |
+| `K` | extends `string` \| `number` \| `symbol` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Class` | () => `T` |
+| `keys` | `K`[] |
+
+#### Returns
+
+`fn`
+
+• **new Omit**()
+
+#### Defined in
+
+[src/core/utils.ts:53](https://github.com/adrien2p/medusa-extender/blob/a04f7cb/src/core/utils.ts#L53)
+
+___
 
 ### attachOrReplaceEntitySubscriber
 
@@ -37,7 +70,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/37cc0bb/src/core/utils.ts#L30)
+[src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/a04f7cb/src/core/utils.ts#L30)
 
 ___
 
@@ -67,4 +100,4 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/37cc0bb/src/core/utils.ts#L10)
+[src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/a04f7cb/src/core/utils.ts#L10)

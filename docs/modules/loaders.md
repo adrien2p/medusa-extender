@@ -19,6 +19,7 @@
 - [MedusaRouteOptions](loaders.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](loaders.md#middlewareinjectionoptions)
 - [MixinReturnType](loaders.md#mixinreturntype)
+- [Omit](loaders.md#omit)
 - [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
 - [RouterInjectionOptions](loaders.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
@@ -120,6 +121,12 @@ ___
 ### MixinReturnType
 
 Re-exports [MixinReturnType](core_types.md#mixinreturntype)
+
+___
+
+### Omit
+
+Re-exports [Omit](core_utils.md#omit)
 
 ___
 

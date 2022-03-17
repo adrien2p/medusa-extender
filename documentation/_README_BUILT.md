@@ -78,6 +78,7 @@
 	* [Utilities :wrench:](#utilities-wrench)
 		* [attachOrReplaceEntitySubscriber](#attachorreplaceentitysubscriber)
 		* [repositoryMixin](#repositorymixin)
+		* [Omit](#omit)
 * [Starters](#starters)
 * [Internal modules](#internal-modules)
 	* [Monitoring](#monitoring)
@@ -115,85 +116,7 @@ Run the following command in your terminal (The last version is 1.5.5)
 
 ```bash
 npm install medusa-extender
-```
-
-To benefit from all the features that the extender offers you, the usage of typescript is recommended.
-
-Then let's create the `tsconfig.json` configuration
-
-```bash
-npm i -D typescript
-echo '{
-  "compilerOptions": {
-    "module": "CommonJS",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "target": "es2017",
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "outDir": "dist",
-    "rootDir": "src",
-    "esModuleInterop": true
-  },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "**/*.spec.ts"
-  ]
-}' > tsconfig.json
-```
-
-update the scripts in your `package.json`
-
-```json
-{
-  "scripts": {
-    "build": "rm -rf dist && tsc",
-    "start": "npm run build && node dist/main.js"
-  } 
-}
-```
-
-add a main file in the `src` directory
-
-```typescript
-// src/main.ts
-
-import express = require('express');
-import { Medusa } from 'medusa-extender';
-import { resolve } from 'path';
-
-async function bootstrap() {
-    const expressInstance = express();
-    
-    const rootDir = resolve(__dirname, '..');
-    await new Medusa(rootDir, expressInstance).load([]);
-    
-    expressInstance.listen(9000, () => {
-        console.info('Server successfully started on port 9000');
-    });
-}
-
-bootstrap();
-```
-
-And finally update the `develop.sh` script with the following
-
-```bash
-#!/bin/bash
-
-#Run migrations to ensure the database is updated
-medusa migrations run
-
-#Start development environment
-npm run start
+./node_modules/.bin/medex init
 ```
 
 That's it, you are now ready to run your server :rocket:
@@ -969,6 +892,16 @@ To usage is easy and can be seen [here](#onmedusaentityevent).
 This utility is mandatory when you extend an existing repository.
 Since that to be able to work the repository must extend multiple classes in order to reflect the original repository
 and the custom extension that you've made. The usage is easy and can be seen [here](#repository).
+
+### Omit
+
+The `Omit` utility allows you to omit a set of properties from a class.
+In some cases, extending a class to change the type of a property makes
+typescript complains about the typings. In such cases, omitting the parent
+property in order to re-create it with your own type in the child class.
+
+> ATTENTION!! This usage must be done carefully to avoid to break things without
+> noticing it.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#starters)
 

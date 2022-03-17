@@ -576,3 +576,13 @@ To usage is easy and can be seen [here](#onmedusaentityevent).
 This utility is mandatory when you extend an existing repository.
 Since that to be able to work the repository must extend multiple classes in order to reflect the original repository
 and the custom extension that you've made. The usage is easy and can be seen [here](#repository).
+
+### Omit
+
+The `Omit` utility allows you to omit a set of properties from a class.
+In some cases, extending a class to change the type of a property makes
+typescript complains about the typings. In such cases, omitting the parent
+property in order to re-create it with your own type in the child class.
+
+> ATTENTION!! This usage must be done carefully to avoid to break things without
+> noticing it.
