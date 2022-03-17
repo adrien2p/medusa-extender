@@ -24,6 +24,7 @@
 <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml"><img alt="Test pipeline status" src="https://github.com/adrien2p/medusa-extender/actions/workflows/action.yml/badge.svg" height="20"/></a>
 <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment"><img alt="Page build deployment status" src="https://github.com/adrien2p/medusa-extender/actions/workflows/pages/pages-build-deployment/badge.svg" height="20"/></a>
 <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml"><img alt="CodeQL security analysis status" src="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg" height="20"/></a>
+<a href="https://www.codacy.com/gh/adrien2p/medusa-extender/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adrien2p/medusa-extender&amp;utm_campaign=Badge_Grade"><img alt="Codacy code quality" src="https://app.codacy.com/project/badge/Grade/379a920025324868a7445d39ae586c39" height="20"/></a>
 <a href="https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender"><img alt="Product hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark" height="20"/></a>
 	</p>
 

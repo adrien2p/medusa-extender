@@ -87,6 +87,11 @@
       "img": "https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg"
     },
     {
+      "alt": "Codacy code quality",
+      "url": "https://www.codacy.com/gh/adrien2p/medusa-extender/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adrien2p/medusa-extender&amp;utm_campaign=Badge_Grade",
+      "img": "https://app.codacy.com/project/badge/Grade/379a920025324868a7445d39ae586c39"
+    },
+    {
       "alt": "Product hunt",
       "url": "https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender",
       "img": "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark"

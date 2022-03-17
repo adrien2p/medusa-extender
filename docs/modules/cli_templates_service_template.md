@@ -28,4 +28,4 @@ Provide a basic template for the service component generation.
 
 #### Defined in
 
-[src/cli/templates/service-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/6e8e0f9/src/cli/templates/service-template.ts#L7)
+[src/cli/templates/service-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/37cc0bb/src/cli/templates/service-template.ts#L7)
