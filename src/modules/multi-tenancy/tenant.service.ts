@@ -1,5 +1,5 @@
 import { Service } from '../../decorators';
-import { createConnection, EntityManager, EntitySchema, getConnectionManager } from 'typeorm';
+import { createConnection, EntityManager, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
 import { MedusaRequest } from '../../core';
@@ -22,6 +22,10 @@ export class TenantService {
 		this.#tenantRepository = container.tenantRepository;
 	}
 
+	/**
+	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
+	 * @param req
+	 */
 	public async getOrCreateConnection(req: MedusaRequest): Promise<EntityManager> {
 		const tenantCode = this.getTenantCodeFromReq(req);
 		const tenantRepo = this.#manager.getCustomRepository(this.#tenantRepository);
@@ -56,6 +60,11 @@ export class TenantService {
 		}
 	}
 
+	/**
+	 * @internal
+	 * Retrieve the tenant code from the request based on the config provided by the user.
+	 * @param req
+	 */
 	private getTenantCodeFromReq(req: MedusaRequest): string {
 		const pathToReqProperties = this.config.multiTenancy.pathToReqProperties;
 
