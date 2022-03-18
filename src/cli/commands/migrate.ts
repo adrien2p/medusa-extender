@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
+import { normalize, resolve } from 'path';
 
 /**
  * Run the migrations using the medusa-config.js config.
@@ -15,7 +16,7 @@ export async function migrate({ run, show }): Promise<void> {
 		'dist/**/*.migration.js',
 		'dist/**/migrations/*.js',
 	].map((dir) => {
-		return process.cwd() + '/' + dir;
+		return normalize(resolve(process.cwd(), dir));
 	});
 
 	const connection = await createConnection({

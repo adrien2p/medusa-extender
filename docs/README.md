@@ -217,6 +217,13 @@ Here is the proposed folder structure that you can add to your medusa project
 
 # CLI `medex`
 
+To install the cli globally instead of using the local one, you can run the
+following command
+
+```bash
+npm i -g medusa-extender
+```
+
 To make things easier for you, the project comes with a CLI that allow
 you to generate any component with minimum code implementation and also
 to be able to run the migrations and show the list of applied and to be applied migrations.
