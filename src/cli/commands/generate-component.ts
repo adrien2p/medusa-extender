@@ -1,7 +1,7 @@
 import { parseComponentValue } from '../utils/parse-component-value';
 import { createDirectoryIfNecessary } from '../utils/create-directory';
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
-import { parse, resolve, normalize } from 'path';
+import { normalize, resolve } from 'path';
 import {
 	getEntityTemplate,
 	getMiddlewareTemplate,
@@ -174,7 +174,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 						: null;
 					return `${matches ? `${matches}\n` : ''}import { ${componentClassName} } from './${
 						subDirectoryRelativePath ? subDirectoryRelativePath + '/' : ''
-					}${parse(file.name).name}';`;
+					}${file.name}';`;
 				});
 
 			writeFileSync(resolvedModulePath, updatedModuleContent);

@@ -5,7 +5,7 @@ import * as dedent from 'dedent';
  * @param repositoryName
  */
 export function getRepositoryTemplate(repositoryName: string): string {
-    const resolutionKey = repositoryName.charAt(0).toLowerCase() + repositoryName.slice(1, -1);
+	const resolutionKey = repositoryName.charAt(0).toLowerCase() + repositoryName.slice(1, -1);
 	return dedent`
         import { Repository as MedusaRepository } from "medusa-extender";
         import { EntityRepository, Repository } from "typeorm";

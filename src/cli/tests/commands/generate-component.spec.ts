@@ -125,11 +125,9 @@ describe('GenerateComponent', () => {
 	});
 
 	it('should generate a module that includes other generated components automatically', () => {
-		generateComponent(componentName, { middleware: true, path });
-		generateComponent(componentName, { service: true, path });
+		generateComponent(componentName, { middleware: true, service: true, path });
 		generateComponent(componentName, { module: true, path });
-		generateComponent(componentName, { repository: true, path });
-		generateComponent(componentName, { router: true, path });
+		generateComponent(componentName, { repository: true, router: true, path });
 
 		const subDirectory = 'subDirectory';
 		generateComponent(componentName, { validator: true, path: path + '/' + subDirectory });
