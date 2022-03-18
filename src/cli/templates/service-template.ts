@@ -5,6 +5,7 @@ import * as dedent from 'dedent';
  * @param serviceName
  */
 export function getServiceTemplate(serviceName: string): string {
+    const resolutionKey = serviceName.charAt(0).toLowerCase() + serviceName.slice(1, -1);
 	return dedent`
         import { Service } from 'medusa-extender';
         import { EntityManager } from 'typeorm';
@@ -13,7 +14,7 @@ export function getServiceTemplate(serviceName: string): string {
             manager: EntityManager;
         };
         
-        @Service({ resolutionKey: '${serviceName}' })
+        @Service({ resolutionKey: '${resolutionKey}' })
         export class ${serviceName} {
             constructor(private readonly container: ConstructorParams, options: any) {}
         }
