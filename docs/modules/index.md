@@ -43,6 +43,7 @@
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Type](index.md#type)
 - [Utils](index.md#utils)
+- [Validator](index.md#validator)
 - [ValidatorInjectionOptions](index.md#validatorinjectionoptions)
 - [eventEmitter](index.md#eventemitter)
 
@@ -267,6 +268,12 @@ ___
 ### Utils
 
 Renames and re-exports [core/utils](core_utils.md)
+
+___
+
+### Validator
+
+Re-exports [Validator](decorators_components_decorator.md#validator)
 
 ___
 

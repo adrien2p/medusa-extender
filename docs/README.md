@@ -257,7 +257,7 @@ that newly created component and add it to the `imports` list automatically.
 
 | Name           | Alias | Description                                      |
 |----------------|-------|--------------------------------------------------|
-| <nam>>         |       | Component name to generate                       |
+| `<name>`       |       | Component name to generate                       |
 | `--module`     | `-m`  | Generate a new module.                           |
 | `--middleware` | `-mi` | Generate a new middleware.                       |
 | `--service`    | `-s`  | Generate a new service.                          |

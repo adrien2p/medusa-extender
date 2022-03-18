@@ -22,6 +22,7 @@
 - [cli/utils/create-directory](modules/cli_utils_create_directory.md)
 - [cli/utils/lookup-closest-module](modules/cli_utils_lookup_closest_module.md)
 - [cli/utils/parse-component-value](modules/cli_utils_parse_component_value.md)
+- [cli/utils/slash](modules/cli_utils_slash.md)
 - [core](modules/core.md)
 - [core/constants](modules/core_constants.md)
 - [core/event-emmiter](modules/core_event_emmiter.md)

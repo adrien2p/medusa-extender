@@ -30,4 +30,4 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 #### Defined in
 
-[src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/d3510d0/src/loaders/migrations.loader.ts#L13)
+[src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/dfc6819/src/loaders/migrations.loader.ts#L13)
