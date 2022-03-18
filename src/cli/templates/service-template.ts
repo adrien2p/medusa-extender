@@ -10,7 +10,7 @@ export function getServiceTemplate(serviceName: string): string {
         import { Service } from 'medusa-extender';
         import { EntityManager } from 'typeorm';
         
-        type ConstructorParams = {
+        type ContainerInjection = {
             manager: EntityManager;
         };
         
@@ -18,7 +18,7 @@ export function getServiceTemplate(serviceName: string): string {
         export class ${serviceName} {
         	static resolutionKey = ${resolutionKey};
         	
-            constructor(private readonly container: ConstructorParams, options: any) {}
+            constructor(private readonly container: ContainerInjection, config: any) {}
         }
     `;
 }
