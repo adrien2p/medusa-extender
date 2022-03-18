@@ -148,7 +148,8 @@ export function updateModuleImports(fullDestinationPath: string): void {
 	logger.log(`Updating module ${moduleFileName}`);
 
 	const updateModuleImportsContent = (_fullDestinationPath: string) => {
-		const components = readdirSync(normalize(_fullDestinationPath), { withFileTypes: true });
+		_fullDestinationPath = normalize(_fullDestinationPath);
+		const components = readdirSync(_fullDestinationPath, { withFileTypes: true });
 		const files = components.filter((component) => component.isFile());
 		for (const file of files) {
 			if (file.name.includes('.module.')) continue;
@@ -165,7 +166,8 @@ export function updateModuleImports(fullDestinationPath: string): void {
 			if (!shouldUpdateModuleImport) continue;
 
 			const isComponentInSubDirectory =
-				_fullDestinationPath.split(slashRegexp).slice(-1).pop() !== resolvedModulePath.split(slashRegexp).slice(-2).shift();
+				_fullDestinationPath.split(slashRegexp).slice(-1).pop() !==
+				resolvedModulePath.split(slashRegexp).slice(-2).shift();
 
 			const updatedModuleContent = moduleContent
 				.replace(/imports: \[(.*)\]/, (str: string, match: string) => {
