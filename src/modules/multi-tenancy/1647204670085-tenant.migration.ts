@@ -10,7 +10,7 @@ export default class TenantMigration1647204670085 implements MigrationInterface 
             CREATE TABLE tenant
             (
                 id             text PRIMARY KEY,
-                host           text  NOT NULL,
+                code           text  NOT NULL,
                 database_url   text  NOT NULL,
                 database_type  text  NOT NULL,
                 database_extra jsonb not null default '{}'::jsonb

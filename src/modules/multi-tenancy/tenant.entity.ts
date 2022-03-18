@@ -9,7 +9,7 @@ export class Tenant {
 	id: string;
 
 	@Column({ nullable: false })
-	host: string;
+	code: string;
 
 	@Column({ nullable: false })
 	database_url: string;
