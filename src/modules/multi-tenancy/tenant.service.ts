@@ -1,9 +1,14 @@
 import { Service } from '../../decorators';
-import { createConnection, EntityManager, getConnectionManager } from 'typeorm';
+import { createConnection, EntityManager, EntitySchema, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
 import { MedusaRequest } from '../../core';
 import TenantRepository from './tenant.repository';
+
+type ConstructorParams = {
+	manager: EntityManager;
+	tenantRepository: typeof TenantRepository;
+};
 
 @Service({ resolutionKey: 'tenantService' })
 export class TenantService {
@@ -12,7 +17,7 @@ export class TenantService {
 	#manager: EntityManager;
 	#tenantRepository: typeof TenantRepository;
 
-	constructor(private readonly container: any, private readonly config: ConfigModule) {
+	constructor(private readonly container: ConstructorParams, private readonly config: ConfigModule) {
 		this.#manager = container.manager;
 		this.#tenantRepository = container.tenantRepository;
 	}
@@ -33,12 +38,13 @@ export class TenantService {
 				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
 			);
 		} else {
+			const db_entities = req.scope.resolve('db_entities') as any[];
 			await createConnection({
 				name: connectionName,
 				type: tenant.database_type as any,
 				url: tenant.database_url,
 				extra: tenant.database_extra || {},
-				entities: this.container.resolve('db_entities'),
+				entities: db_entities,
 				namingStrategy: new ShortenedNamingStrategy(),
 				logging: this.config.projectConfig.database_logging ?? false,
 			});
