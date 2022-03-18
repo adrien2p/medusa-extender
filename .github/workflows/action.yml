@@ -1,5 +1,8 @@
 name: Tests pipeline
-on: [push]
+on:
+  push:
+  pull_request:
+    if: '!synchronize'
 
 jobs:
   unit-tests:
