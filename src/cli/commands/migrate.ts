@@ -33,13 +33,13 @@ export async function migrate({ run, show }): Promise<void> {
 	migrationDirs.push(...getTenantMigrationDirs(configModule));
 
 	const connection = await createConnection({
-		type: configModule.projectConfig.database_type,
+		type: configModule.projectConfig.database_type as any,
 		url: configModule.projectConfig.database_url,
 		database: configModule.projectConfig.database_database,
 		extra: configModule.projectConfig.database_extra || {},
 		logging: ['schema'],
 		migrations: migrationDirs,
-	} as any);
+	});
 
 	if (run) {
 		await connection.runMigrations();

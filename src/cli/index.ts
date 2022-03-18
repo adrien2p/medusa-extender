@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { Command } from 'commander';
-import { generateComponent } from './commands/generate-component';
+import { GenerateCommandOptions, generateComponent } from './commands/generate-component';
 import { green } from 'chalk';
 import { migrate } from './commands/migrate';
 import { init } from './commands/init';
@@ -44,7 +44,7 @@ program
 		'specify the path where the component must be generated (by default the component will be generated at [src/modules/<name>/<name>.<type>.ts]'
 	)
 	.argument('<name>', 'specify the name of the component(s) to create')
-	.action((name: string, options: any, program: Command) => {
+	.action((name: string, options: GenerateCommandOptions, program: Command) => {
 		const { path, ...componentOptions } = options;
 		if (Object.values(componentOptions).every((value) => !value)) {
 			return program

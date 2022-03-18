@@ -22,6 +22,7 @@ module.exports = {
       '**/*.js'
   ],
   rules: {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": "off"
   },
 };
