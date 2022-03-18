@@ -28,4 +28,4 @@ Run the migrations using the medusa-config.js config.
 
 #### Defined in
 
-[src/cli/commands/migrate.ts:10](https://github.com/adrien2p/medusa-extender/blob/dfc6819/src/cli/commands/migrate.ts#L10)
+[src/cli/commands/migrate.ts:10](https://github.com/adrien2p/medusa-extender/blob/87e9fff/src/cli/commands/migrate.ts#L10)

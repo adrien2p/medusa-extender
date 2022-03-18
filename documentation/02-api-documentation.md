@@ -569,13 +569,13 @@ Here are the utilities that this package provides you.
 
 this utility is used mainly by the subscriber in order to help you attach a new subscriber on the fly with ease.
 It will take the `connection` as an argument and manage to remove the previous subscriber and attach the new one if needed.
-To usage is easy and can be seen [here](#onmedusaentityevent).
+[See how to use it here](#onmedusaentityevent).
 
 ### repositoryMixin
 
 This utility is mandatory when you extend an existing repository.
 Since that to be able to work the repository must extend multiple classes in order to reflect the original repository
-and the custom extension that you've made. The usage is easy and can be seen [here](#repository).
+and the custom extension that you've made. [See how to use it here](#repository).
 
 ### Omit
 
@@ -586,3 +586,27 @@ property in order to re-create it with your own type in the child class.
 
 > ATTENTION!! This usage must be done carefully to avoid to break things without
 > noticing it.
+
+Let see a use case where you want to override the type of an
+existing property from the parent class
+
+```typescript
+import { Entity, Column } from 'typeorm';
+import { Entity as MedusaEntity, Utils } from 'medusa-extender';
+import { User as MedusaUser} from '@medusajs/medusa/dist/models';
+
+enum UserRolesExtended {
+    BRANCH_STAFF = 0
+}
+
+@MedusaEntity({ override: MedusaUser })
+@Entity()
+export class User extends Utils.Omit(MedusaUser, ['role']) {
+    @Column({ 
+        nullable: true, 
+        enum: UserRolesExtended, 
+        default: UserRolesExtended.BRANCH_STAFF}
+    )
+    role: UserRolesExtended;
+}
+```
