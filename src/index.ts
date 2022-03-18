@@ -19,7 +19,7 @@ export {
 	Middleware,
 	Migration,
 	Router,
-	Validator
+	Validator,
 } from './decorators';
 
 export { MonitoringOptions } from './modules/monitoring';
