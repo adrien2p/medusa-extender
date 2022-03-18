@@ -1,5 +1,8 @@
 import { readdirSync, readFileSync } from 'fs';
 import { normalize, resolve } from 'path';
+import { getSlashRegexpFromPlatform } from './slash';
+
+const slashRegexp = getSlashRegexpFromPlatform();
 
 /**
  * Lookup for the closest module component from the destination path.
@@ -44,7 +47,7 @@ export function lookupClosestModule(fullDestinationPath: string, isMain = true):
      * so we will look into the parent directory until the root is reached.
      */
     if (isMain && !resolvedModulePath) {
-        const parentFullDestinationPath = fullDestinationPath.split('/').slice(0, -1).join('/');
+        const parentFullDestinationPath = fullDestinationPath.split(slashRegexp).slice(0, -1).join('/');
         if (parentFullDestinationPath) {
             const modulePath = lookupClosestModule(parentFullDestinationPath);
             if (modulePath) {

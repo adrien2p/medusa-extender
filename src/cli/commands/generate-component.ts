@@ -14,6 +14,9 @@ import {
 } from '../templates';
 import { Logger } from '../../core';
 import { lookupClosestModule } from '../utils/lookup-closest-module';
+import { getSlashRegexpFromPlatform } from '../utils/slash';
+
+const slashRegexp = getSlashRegexpFromPlatform();
 
 type Options = {
 	module?: boolean;
@@ -141,7 +144,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 		return;
 	}
 
-	const moduleFileName = resolvedModulePath.split('/').slice(-1).pop();
+	const moduleFileName = resolvedModulePath.split(slashRegexp).slice(-1).pop();
 	logger.log(`Updating module ${moduleFileName}`);
 
 	const updateModuleImportsContent = (_fullDestinationPath: string) => {
@@ -162,7 +165,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 			if (!shouldUpdateModuleImport) continue;
 
 			const isComponentInSubDirectory =
-				_fullDestinationPath.split('/').slice(-1).pop() !== resolvedModulePath.split('/').slice(-2).shift();
+				_fullDestinationPath.split(slashRegexp).slice(-1).pop() !== resolvedModulePath.split(slashRegexp).slice(-2).shift();
 
 			const updatedModuleContent = moduleContent
 				.replace(/imports: \[(.*)\]/, (str: string, match: string) => {
@@ -170,7 +173,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 				})
 				.replace(/(import\s+.*\s+from\s+.*(?!;))/, (str: string, matches: string) => {
 					const subDirectoryRelativePath = isComponentInSubDirectory
-						? _fullDestinationPath.split('/').slice(-1).pop()
+						? _fullDestinationPath.split(slashRegexp).slice(-1).pop()
 						: null;
 					return `${matches ? `${matches}\n` : ''}import { ${componentClassName} } from './${
 						subDirectoryRelativePath ? subDirectoryRelativePath + '/' : ''
@@ -185,7 +188,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 		directories.forEach((directory) => updateModuleImportsContent(resolve(_fullDestinationPath, directory.name)));
 	};
 
-	const resolvedModuleLocationPath = resolvedModulePath.split('/').slice(0, -1).join('/');
+	const resolvedModuleLocationPath = resolvedModulePath.split(slashRegexp).slice(0, -1).join('/');
 	updateModuleImportsContent(resolvedModuleLocationPath);
 
 	logger.log(`Module ${moduleFileName} updated`);
