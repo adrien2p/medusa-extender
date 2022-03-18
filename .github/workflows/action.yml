@@ -1,8 +1,11 @@
 name: Tests pipeline
 on:
   push:
+    branches:
+      - main
   pull_request:
-    if: '!synchronize'
+    branches:
+      - main
 
 jobs:
   unit-tests:
