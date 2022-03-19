@@ -1,11 +1,12 @@
 import { LoggerOptions } from 'typeorm';
+import { MedusaRequest } from '../../core';
 
 export type ConfigModule = Record<string, unknown> & {
-	multiTenancy: MultiTenancyConfig;
+	multiTenancy?: MultiTenancyConfig;
 	projectConfig: { database_logging?: LoggerOptions };
 };
 
 export type MultiTenancyConfig = {
 	enable: boolean;
-	pathToReqProperties: string[];
+	tenantCodeResolver: (req: MedusaRequest) => string;
 };

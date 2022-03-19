@@ -6,7 +6,6 @@ import { MedusaRequest } from '../../core';
 import TenantRepository from './tenant.repository';
 
 type ConstructorParams = {
-	manager: EntityManager;
 	tenantRepository: typeof TenantRepository;
 };
 
@@ -14,28 +13,30 @@ type ConstructorParams = {
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
 
-	readonly #manager: EntityManager;
 	readonly #tenantRepository: typeof TenantRepository;
 
 	constructor(private readonly container: ConstructorParams, private readonly config: ConfigModule) {
-		this.#manager = container.manager;
 		this.#tenantRepository = container.tenantRepository;
 	}
 
 	/**
 	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
+	 * @param defaultManager
 	 * @param req
 	 */
-	public async getOrCreateConnection(req: MedusaRequest): Promise<EntityManager> {
-		const tenantCode = this.getTenantCodeFromReq(req);
+	public async getOrCreateConnection(defaultManager: EntityManager, req: MedusaRequest): Promise<EntityManager> {
+		if (!this.config.multiTenancy?.tenantCodeResolver) {
+			throw new Error('Missing tenantCodeResolver from multiTenancy config in medusa-config.');
+		}
+		const tenantCode = this.config.multiTenancy.tenantCodeResolver(req);
 		if (!tenantCode) {
-			return this.#manager;
+			return defaultManager;
 		}
 
-		const tenantRepo = this.#manager.getCustomRepository(this.#tenantRepository);
+		const tenantRepo = defaultManager.getCustomRepository(this.#tenantRepository);
 		const tenant = await tenantRepo.findOne({ where: { code: tenantCode } });
 		if (!tenant) {
-			throw new Error('Unable to find the tenant code.');
+			throw new Error('Unable to find the tenant from the code found.');
 		}
 
 		const connectionManager = getConnectionManager();
@@ -61,30 +62,5 @@ export class TenantService {
 				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
 			);
 		}
-	}
-
-	/**
-	 * @internal
-	 * Retrieve the tenant code from the request based on the config provided by the user.
-	 * @param req
-	 */
-	private getTenantCodeFromReq(req: MedusaRequest): string {
-		const pathToReqProperties = this.config.multiTenancy.pathToReqProperties;
-
-		let tenantCode;
-		for (const path of pathToReqProperties) {
-			const code = path.split('.').reduce(<T, K extends keyof T>(obj: T, prop: string): T[K] => {
-				if (obj && typeof obj === 'object' && obj[prop]) {
-					return obj[prop];
-				}
-				return null;
-			}, req);
-			if (code) {
-				tenantCode = code;
-				break;
-			}
-		}
-
-		return tenantCode;
 	}
 }

@@ -2,6 +2,7 @@ import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
 import { getTenantMigrationDirs } from '../../modules/multi-tenancy/loader';
+import { MultiTenancyConfig } from '../../modules/multi-tenancy/types';
 
 /**
  * Run the migrations using the medusa-config.js config.
@@ -15,7 +16,7 @@ type ConfigModule = {
 		database_database: string;
 		database_extra: Record<string, string>;
 	};
-	multiTenancy?: boolean;
+	multiTenancy?: MultiTenancyConfig;
 };
 
 export async function migrate({ run, show }): Promise<void> {

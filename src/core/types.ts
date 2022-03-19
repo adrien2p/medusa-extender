@@ -124,6 +124,7 @@ export type GetInjectableOptions<TComponentType extends InjectableComponentTypes
  */
 export type MedusaRequest<T = unknown, Cradle extends Record<string, unknown> = Record<string, unknown>> = Request & {
 	scope: AwilixContainer<Cradle & T>;
+	container: AwilixContainer<Cradle & T>;
 };
 
 /**

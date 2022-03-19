@@ -2,6 +2,7 @@ import { asFunction, asValue, createContainer } from 'awilix';
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { Connection, ConnectionManager } from 'typeorm';
+import { MedusaRequest } from '../../../core';
 
 class FakeService {
 	manager: any;
@@ -81,7 +82,7 @@ const configMock = {
 	},
 	multiTenancy: {
 		enable: true,
-		pathToReqProperties: ['headers.x-tenant'],
+		tenantCodeResolver: (req: MedusaRequest) => req.headers['x-tenant'] as string,
 	},
 };
 
@@ -115,19 +116,21 @@ describe('Tenant service', () => {
 		let fakeService, tenantService, manager;
 
 		tenantService = container.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateConnection(reqMock)) as { connection: any };
+		manager = (await tenantService.getOrCreateConnection(defaultManagerMock, reqMock)) as { connection: any };
 		expect(manager.connection.name).toBe(tenantCodes[0]);
 
 		fakeService = container.resolve('fakeService') as FakeService;
 		expect(fakeService.manager.connection.name).toBe(defaultManagerMock.connection.name);
 
-		reqMock.scope.cradle.manager.connection = manager.connection;
+		container.register({ manager: asValue(manager) });
+		container.cache.clear();
+		reqMock.scope = container.createScope();
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
 		expect(fakeService.manager.connection.name).toBe(tenantCodes[0]);
 
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateConnection(reqMock)) as { connection: any };
+		manager = (await tenantService.getOrCreateConnection(defaultManagerMock, reqMock)) as { connection: any };
 		expect(manager.connection.name).toBe(tenantCodes[0]);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
@@ -135,20 +138,22 @@ describe('Tenant service', () => {
 
 		reqMock.headers['x-tenant'] = tenantCodes[1];
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateConnection(reqMock)) as { connection: any };
+		manager = (await tenantService.getOrCreateConnection(defaultManagerMock, reqMock)) as { connection: any };
 		expect(manager.connection.name).toBe(tenantCodes[1]);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
 		expect(fakeService.manager.connection.name).toBe(tenantCodes[0]);
 
-		reqMock.scope.cradle.manager.connection = manager.connection;
+		container.register({ manager: asValue(manager) });
+		container.cache.clear();
+		reqMock.scope = container.createScope();
 		reqMock.headers = {};
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
 		expect(fakeService.manager.connection.name).toBe(tenantCodes[1]);
 
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateConnection(reqMock)) as { connection: any };
+		manager = (await tenantService.getOrCreateConnection(defaultManagerMock, reqMock)) as { connection: any };
 		expect(manager.connection.name).toBe(defaultManagerMock.connection.name);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;

@@ -1,4 +1,6 @@
-export function getTenantMigrationDirs(configModule: { multiTenancy?: boolean }): string[] {
-	if (configModule?.multiTenancy !== true) return [];
+import { ConfigModule } from './types';
+
+export function getTenantMigrationDirs(configModule: ConfigModule): string[] {
+	if (!configModule?.multiTenancy?.enable) return [];
 	return [__dirname + '/**.migration.js', __dirname + '/**.migration.ts'];
 }

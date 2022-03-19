@@ -23,6 +23,7 @@ export async function pluginsLoadersAndListeners(app: Express): Promise<void> {
 				res: Response,
 				next: NextFunction
 			): Promise<void> => {
+				req.container = cradle.container;
 				await customEventEmitter.registerListeners(req.scope);
 				return next();
 			}
