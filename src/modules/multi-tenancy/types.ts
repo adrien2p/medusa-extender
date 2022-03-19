@@ -1,6 +1,6 @@
 import { LoggerOptions } from 'typeorm';
 
-export type ConfigModule = {
+export type ConfigModule = Record<string, unknown> & {
 	multiTenancy: MultiTenancyConfig;
 	projectConfig: { database_logging?: LoggerOptions };
 };

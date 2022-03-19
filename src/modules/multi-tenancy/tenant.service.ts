@@ -12,10 +12,10 @@ type ConstructorParams = {
 
 @Service({ resolutionKey: 'tenantService' })
 export class TenantService {
-	static resolutionKey = 'tenantService';
+	static readonly resolutionKey = 'tenantService';
 
-	#manager: EntityManager;
-	#tenantRepository: typeof TenantRepository;
+	readonly #manager: EntityManager;
+	readonly #tenantRepository: typeof TenantRepository;
 
 	constructor(private readonly container: ConstructorParams, private readonly config: ConfigModule) {
 		this.#manager = container.manager;
@@ -28,23 +28,26 @@ export class TenantService {
 	 */
 	public async getOrCreateConnection(req: MedusaRequest): Promise<EntityManager> {
 		const tenantCode = this.getTenantCodeFromReq(req);
+		if (!tenantCode) {
+			return this.#manager;
+		}
+
 		const tenantRepo = this.#manager.getCustomRepository(this.#tenantRepository);
-		const tenant = await tenantRepo.findOne({ where: { host: tenantCode } });
+		const tenant = await tenantRepo.findOne({ where: { code: tenantCode } });
 		if (!tenant) {
 			throw new Error('Unable to find the tenant code.');
 		}
 
-		const connectionName = `tenant_${tenant.code}`;
 		const connectionManager = getConnectionManager();
-		if (connectionManager.has(connectionName)) {
-			const connection = await connectionManager.get(connectionName);
+		if (connectionManager.has(tenant.code)) {
+			const connection = await connectionManager.get(tenant.code);
 			return Promise.resolve(
 				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
 			);
 		} else {
 			const db_entities = req.scope.resolve('db_entities') as any[];
 			await createConnection({
-				name: connectionName,
+				name: tenant.code,
 				type: tenant.database_type as any,
 				url: tenant.database_url,
 				extra: tenant.database_extra || {},
@@ -53,7 +56,7 @@ export class TenantService {
 				logging: this.config.projectConfig.database_logging ?? false,
 			});
 
-			const connection = await connectionManager.get(connectionName);
+			const connection = await connectionManager.get(tenant.code);
 			return Promise.resolve(
 				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
 			);
