@@ -1,7 +1,7 @@
 import { asFunction, asValue, createContainer } from 'awilix';
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
-import { Connection, ConnectionManager, ConnectionOptions } from 'typeorm';
+import { Connection, ConnectionManager } from 'typeorm';
 
 class FakeService {
 	manager: any;
@@ -112,7 +112,7 @@ describe('Tenant service', () => {
 			},
 		};
 
-		let fakeService, tenantService, manager, newContainer, parentContainerItem;
+		let fakeService, tenantService, manager;
 
 		tenantService = container.resolve(TenantService.resolutionKey) as TenantService;
 		manager = (await tenantService.getOrCreateConnection(reqMock)) as { connection: any };
