@@ -82,6 +82,7 @@
 * [Starters](#starters)
 * [Internal modules](#internal-modules)
 	* [Monitoring](#monitoring)
+	* [Multi-tenancy](#multi-tenancy)
 * [Resources](#resources)
 	* [Marketplace tutorial](#marketplace-tutorial)
 * [Discussions](#discussions)
@@ -154,30 +155,30 @@ That's it, your server is now up and running :rocket:
 
 Here is a list of the features that you can find in that package
 
-- Create or extend an entity
-- Create or extend a repository
-- Create or extend a service
-- Create middleware before or after medusa authentication strategy
-- Create new migrations
-- Create new router handler
-- Extend validators from medusa to includes custom fields
-- Emit entity subscribers events
-- Listen to entity subscribers and handle them wherever you want
+- [Create or extend an entity](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Create or extend a repository](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Create or extend a service](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Create middleware before or after medusa authentication strategy](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Create new migrations](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Create new router handler](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Extend validators from medusa to includes custom fields](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Emit entity subscribers events](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Listen to entity subscribers and handle them wherever you want](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [CLI](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
+    - [Generate new components](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
+    - [Migrate your data](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
+- [Monitoring `(Optional module)`](https://adrien2p.github.io/medusa-extender/#/?id=monitoring)
+- [Multi-tenancy architecture `(Optional module)`](#https://adrien2p.github.io/medusa-extender/#/?id=multi-tenancy)
 
-All those features provide you a way to
+All those features aims to help you build what you want such as
 
-- Create and manage a market place
-- Create a media store to sell nft - video - images - keys - etc.
+- Creating and managing a marketplace
+- Creating a media store to sell nft - video - images - keys - etc.
 - And basically create whatever you want on top of `@medusajs`
 
 Share your code
 
 - Build shareable modules/plugins to use across your project or to share with the community
-
-CLI
-
-- Generate new components
-- Migrate your data
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#architecture)
@@ -1005,13 +1006,53 @@ const config = {
 };
 ```
 
-Now, run your app and go to /monitoring url to get access to your dashboard.
+Now, run your app and go to `/monitoring` url to get access to your dashboard.
 
-For more information on the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
+For more information about the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
 
 :point_right: __Here is a demo video__
 
 [![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#multi-tenancy)
+
+## Multi-tenancy
+
+As part of the extender, you can choose to use a multi-tenancy architecture or a single-tenancy architecture depending
+on your needs.
+
+Here is a schema of different architecture, with this module we are in the `Multi-tenant 1` schema.
+
+![Multi-tenancy](https://acropolium.com/img/articles/multi-tenant-vs-single-tenant/img05.jpg)
+
+> However, you must read some articles about pros and cons of this type of architecture
+> and be fully aware of those before making your choice.
+
+Here is the expected config
+
+```json
+interface MultiTenancyOptions {
+    enable: boolean;
+    tenantCodeResolver: (req: MedusaRequest) => string;
+}
+```
+
+so your `medusa-config.js` will looks like
+
+```typescript
+const config = {
+    /* ... */
+    multiTenancy: {
+        enable: true,
+        tenantCodeResolver: (req) => req.headers['x-tenant']
+    },
+    /* ... */
+};
+```
+
+Ant hat's it, you can now run your server and play around your multi-tenancy
+architecture.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#resources)
 

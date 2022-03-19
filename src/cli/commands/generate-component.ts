@@ -18,7 +18,7 @@ import { getSlashRegexpFromPlatform } from '../utils/slash';
 
 const slashRegexp = getSlashRegexpFromPlatform();
 
-type Options = {
+export type GenerateCommandOptions = {
 	module?: boolean;
 	middleware?: boolean;
 	service?: boolean;
@@ -47,7 +47,7 @@ const logger = Logger.contextualize('Generate command', 'MEDEX-CLI');
  */
 export function generateComponent(
 	name: string,
-	{ module, middleware, service, router, validator, entity, repository, migration, path }: Options
+	{ module, middleware, service, router, validator, entity, repository, migration, path }: GenerateCommandOptions
 ): void {
 	logger.log(`Start generating component(s)`);
 

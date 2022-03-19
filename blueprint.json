@@ -113,6 +113,10 @@
     {
       "name": "cli-demo-gif",
       "template": "![CLI demo](https://github.com/adrien2p/medusa-extender/blob/assets/assets/readme/medusa_extender_cli.gif?raw=true)"
+    },
+    {
+      "name": "multi-tenancy-schema",
+      "template": "![Multi-tenancy](https://acropolium.com/img/articles/multi-tenant-vs-single-tenant/img05.jpg)"
     }
   ],
   "decoratorApiSummary": [

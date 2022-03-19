@@ -22,7 +22,13 @@ export interface MonitoringOptions {
 
 const logger = Logger.contextualize('MonitoringModule');
 
-export async function loadMonitoringModule(app: Express, options: MonitoringOptions): Promise<void> {
+export async function loadMonitoringModule(
+	configModule: { monitoring?: MonitoringOptions },
+	app: Express,
+	options: MonitoringOptions
+): Promise<void> {
+	if (!configModule?.monitoring) return;
+
 	logger.log('Found monitoring config in medusa-config');
 
 	await loadPackages(logger, [
@@ -31,7 +37,6 @@ export async function loadMonitoringModule(app: Express, options: MonitoringOpti
 		{ name: 'swagger-stats', version: '0.99.2' },
 	]);
 
-	// @ts-ignore
 	const swStats = await import('swagger-stats');
 
 	options = {
@@ -40,7 +45,6 @@ export async function loadMonitoringModule(app: Express, options: MonitoringOpti
 	} as MonitoringOptions & { name: string };
 
 	if (options.swaggerSpec && typeof options.swaggerSpec === 'string') {
-		// @ts-ignore
 		const { default: swaggerParser } = await import('swagger-parser');
 		const parser = new swaggerParser();
 		parser.validate(options.swaggerSpec, (err, api) => {

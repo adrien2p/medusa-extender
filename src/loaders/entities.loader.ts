@@ -1,4 +1,4 @@
-import { GetInjectableOption, GetInjectableOptions } from './';
+import { GetInjectableOption, GetInjectableOptions, MedusaCustomContainer } from './';
 import { asClass, asValue, AwilixContainer } from 'awilix';
 import { Logger } from '../core';
 
@@ -57,7 +57,7 @@ export function registerEntity(container: AwilixContainer, entityOptions: GetInj
 		[resolutionKey]: asClass(entity),
 	});
 
-	(container as any).registerAdd('db_entities', asValue(entity));
+	(container as MedusaCustomContainer).registerAdd('db_entities', asValue(entity));
 }
 
 export async function overrideEntity(entityOptions: GetInjectableOption<'entity'>): Promise<void> {

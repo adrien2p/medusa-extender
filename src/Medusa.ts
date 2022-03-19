@@ -3,7 +3,7 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Constructor, metadataReader, Logger } from './core';
+import { Constructor, Logger, metadataReader } from './core';
 import {
 	adminApiLoader,
 	databaseLoader,
@@ -51,9 +51,7 @@ export class Medusa {
 			};
 		};
 
-		if (configModule.monitoring) {
-			await loadMonitoringModule(this.#express, configModule.monitoring);
-		}
+		await loadMonitoringModule(configModule, this.#express, configModule.monitoring);
 
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);

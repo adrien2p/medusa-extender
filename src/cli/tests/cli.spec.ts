@@ -1,8 +1,8 @@
 import * as path from 'path';
-import { exec } from 'child_process';
+import { exec, ExecException } from 'child_process';
 import { normalizeString } from './__utils__/normalizeString';
 
-function cli(args, cwd): Promise<{ code: number; error: any; stdout: any; stderr: any }> {
+function cli(args, cwd): Promise<{ code: number; error: ExecException; stdout: string; stderr: string }> {
 	return new Promise((resolve) => {
 		exec(
 			`${process.cwd()}/node_modules/.bin/ts-node ${path.resolve(__dirname, '../index.ts')} ${args.join(' ')}`,

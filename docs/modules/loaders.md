@@ -13,6 +13,7 @@
 - [InjectableComponentTypes](loaders.md#injectablecomponenttypes)
 - [InjectableOptions](loaders.md#injectableoptions)
 - [MedusaAuthenticatedRequest](loaders.md#medusaauthenticatedrequest)
+- [MedusaCustomContainer](loaders.md#medusacustomcontainer)
 - [MedusaMiddleware](loaders.md#medusamiddleware)
 - [MedusaRequest](loaders.md#medusarequest)
 - [MedusaRouteMethods](loaders.md#medusaroutemethods)
@@ -85,6 +86,12 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
+
+___
+
+### MedusaCustomContainer
+
+Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 

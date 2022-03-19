@@ -16,9 +16,9 @@ export function getServiceTemplate(serviceName: string): string {
         
         @Service({ resolutionKey: '${resolutionKey}' })
         export class ${serviceName} {
-        	static resolutionKey = ${resolutionKey};
+        	static readonly resolutionKey = ${resolutionKey};
         	
-            constructor(private readonly container: ContainerInjection, config: any) {}
+            constructor(private readonly container: ContainerInjection, private readonly config: any) {}
         }
     `;
 }

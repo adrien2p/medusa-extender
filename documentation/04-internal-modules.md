@@ -47,10 +47,47 @@ const config = {
 };
 ```
 
-Now, run your app and go to /monitoring url to get access to your dashboard.
+Now, run your app and go to `/monitoring` url to get access to your dashboard.
 
-For more information on the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
+For more information about the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
 
 :point_right: __Here is a demo video__
 
 {{ template:monitoring-demo-video }}
+
+## Multi-tenancy
+
+As part of the extender, you can choose to use a multi-tenancy architecture or a single-tenancy architecture depending
+on your needs.
+
+Here is a schema of different architecture, with this module we are in the `Multi-tenant 1` schema.
+
+{{ template:multi-tenancy-schema }}
+
+> However, you must read some articles about pros and cons of this type of architecture
+> and be fully aware of those before making your choice.
+
+Here is the expected config
+
+```json
+interface MultiTenancyOptions {
+    enable: boolean;
+    tenantCodeResolver: (req: MedusaRequest) => string;
+}
+```
+
+so your `medusa-config.js` will looks like
+
+```typescript
+const config = {
+    /* ... */
+    multiTenancy: {
+        enable: true,
+        tenantCodeResolver: (req) => req.headers['x-tenant']
+    },
+    /* ... */
+};
+```
+
+Ant hat's it, you can now run your server and play around your multi-tenancy
+architecture.
