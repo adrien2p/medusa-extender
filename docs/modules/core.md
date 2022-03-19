@@ -17,6 +17,7 @@
 - [MEDUSA\_RESOLVER\_KEYS](core.md#medusa_resolver_keys)
 - [MODULE\_KEY](core.md#module_key)
 - [MedusaAuthenticatedRequest](core.md#medusaauthenticatedrequest)
+- [MedusaCustomContainer](core.md#medusacustomcontainer)
 - [MedusaMiddleware](core.md#medusamiddleware)
 - [MedusaRequest](core.md#medusarequest)
 - [MedusaRouteMethods](core.md#medusaroutemethods)
@@ -103,6 +104,12 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
+
+___
+
+### MedusaCustomContainer
+
+Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 

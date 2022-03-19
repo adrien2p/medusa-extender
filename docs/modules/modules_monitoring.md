@@ -16,12 +16,14 @@
 
 ### loadMonitoringModule
 
-▸ **loadMonitoringModule**(`app`, `options`): `Promise`<`void`\>
+▸ **loadMonitoringModule**(`configModule`, `app`, `options`): `Promise`<`void`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
+| `configModule` | `Object` |
+| `configModule.monitoring?` | [`MonitoringOptions`](../interfaces/modules_monitoring.MonitoringOptions.md) |
 | `app` | `Express` |
 | `options` | [`MonitoringOptions`](../interfaces/modules_monitoring.MonitoringOptions.md) |
 
@@ -31,4 +33,4 @@
 
 #### Defined in
 
-[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/87e9fff/src/modules/monitoring.ts#L25)
+[src/modules/monitoring.ts:25](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/monitoring.ts#L25)

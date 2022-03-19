@@ -7,6 +7,10 @@
 **`interface`**
 Describe a custom middleware instance.
 
+## Implemented by
+
+- [`TenantMiddleware`](../classes/modules_multi_tenancy_tenant_middleware.TenantMiddleware.md)
+
 ## Table of contents
 
 ### Methods
@@ -33,4 +37,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-[src/core/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/87e9fff/src/core/types.ts#L152)
+[src/core/types.ts:155](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/core/types.ts#L155)

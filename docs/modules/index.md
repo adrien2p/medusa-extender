@@ -21,6 +21,7 @@
 - [MODULE\_KEY](index.md#module_key)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
+- [MedusaCustomContainer](index.md#medusacustomcontainer)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
 - [MedusaMiddleware](index.md#medusamiddleware)
@@ -41,6 +42,9 @@
 - [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
+- [Tenant](index.md#tenant)
+- [TenantMiddleware](index.md#tenantmiddleware)
+- [TenantModule](index.md#tenantmodule)
 - [Type](index.md#type)
 - [Utils](index.md#utils)
 - [Validator](index.md#validator)
@@ -136,6 +140,12 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
+
+___
+
+### MedusaCustomContainer
+
+Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 
@@ -256,6 +266,24 @@ ___
 ### ServiceInjectableOptions
 
 Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
+
+___
+
+### Tenant
+
+Re-exports [Tenant](../classes/modules_multi_tenancy_tenant_entity.Tenant.md)
+
+___
+
+### TenantMiddleware
+
+Re-exports [TenantMiddleware](../classes/modules_multi_tenancy_tenant_middleware.TenantMiddleware.md)
+
+___
+
+### TenantModule
+
+Re-exports [TenantModule](../classes/modules_multi_tenancy_tenant_module.TenantModule.md)
 
 ___
 
