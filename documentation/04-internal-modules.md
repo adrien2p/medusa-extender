@@ -1,7 +1,7 @@
-# Internal modules
+# Internal modules (Optional)
 
-The meudsa-extender comes with an internal module that provide a simple but complete
-solution to monitor your application. With the time, it is possible that more internal modules
+The meudsa-extender comes with some internal modules that provide a simple but complete
+solution. With the time, it is possible that more internal modules
 will be provided.
 
 > If you choose to not use an internal module, none of its dependencies will be installed.

@@ -13,6 +13,7 @@
 ### Properties
 
 - [code](modules_multi_tenancy_tenant_entity.Tenant.md#code)
+- [database\_database](modules_multi_tenancy_tenant_entity.Tenant.md#database_database)
 - [database\_extra](modules_multi_tenancy_tenant_entity.Tenant.md#database_extra)
 - [database\_type](modules_multi_tenancy_tenant_entity.Tenant.md#database_type)
 - [database\_url](modules_multi_tenancy_tenant_entity.Tenant.md#database_url)
@@ -36,7 +37,17 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:12](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L12)
+[src/modules/multi-tenancy/tenant.entity.ts:12](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L12)
+
+___
+
+### database\_database
+
+• **database\_database**: `string`
+
+#### Defined in
+
+[src/modules/multi-tenancy/tenant.entity.ts:21](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L21)
 
 ___
 
@@ -53,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:21](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L21)
+[src/modules/multi-tenancy/tenant.entity.ts:24](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L24)
 
 ___
 
@@ -63,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:18](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L18)
+[src/modules/multi-tenancy/tenant.entity.ts:18](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L18)
 
 ___
 
@@ -73,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:15](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L15)
+[src/modules/multi-tenancy/tenant.entity.ts:15](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L15)
 
 ___
 
@@ -83,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:9](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L9)
+[src/modules/multi-tenancy/tenant.entity.ts:9](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L9)
 
 ## Methods
 
@@ -97,4 +108,4 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:24](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/modules/multi-tenancy/tenant.entity.ts#L24)
+[src/modules/multi-tenancy/tenant.entity.ts:27](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/modules/multi-tenancy/tenant.entity.ts#L27)

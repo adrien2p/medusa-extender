@@ -38,4 +38,4 @@ Parse the component information to create a kind of descriptor.
 
 #### Defined in
 
-[src/cli/utils/parse-component-value.ts:10](https://github.com/adrien2p/medusa-extender/blob/35e8185/src/cli/utils/parse-component-value.ts#L10)
+[src/cli/utils/parse-component-value.ts:10](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/cli/utils/parse-component-value.ts#L10)

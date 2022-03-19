@@ -53,7 +53,7 @@
 	* [From server starter](#from-server-starter)
 * [Features :monocle_face:](#features-monocle_face)
 	* [Non exhaustive list](#non-exhaustive-list)
-	* [Architecture](#architecture)
+	* [Directory Architecture](#directory-architecture)
 * [CLI `medex`](#cli-medex)
 	* [Commands references](#commands-references)
 		* [Command `generate` reference](#command-generate-reference)
@@ -80,7 +80,7 @@
 		* [repositoryMixin](#repositorymixin)
 		* [Omit](#omit)
 * [Starters](#starters)
-* [Internal modules](#internal-modules)
+* [Internal modules (Optional)](#internal-modules-optional)
 	* [Monitoring](#monitoring)
 	* [Multi-tenancy](#multi-tenancy)
 * [Resources](#resources)
@@ -181,9 +181,9 @@ Share your code
 - Build shareable modules/plugins to use across your project or to share with the community
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#architecture)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#directory-architecture)
 
-## Architecture
+## Directory Architecture
 
 Using this package also allow you to manage your architecture as you want.
 you will not be limited by any constraint as long as the component are decorated
@@ -952,12 +952,12 @@ Follow that link to go to the starter and see how to install it.
 Follow that link to go to the starter and see how to install it.
 [Plugin module](https://github.com/adrien2p/medusa-extender/tree/main/starters/plugin-module)
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#internal-modules)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#internal-modules-optional)
 
-# Internal modules
+# Internal modules (Optional)
 
-The meudsa-extender comes with an internal module that provide a simple but complete
-solution to monitor your application. With the time, it is possible that more internal modules
+The meudsa-extender comes with some internal modules that provide a simple but complete
+solution. With the time, it is possible that more internal modules
 will be provided.
 
 > If you choose to not use an internal module, none of its dependencies will be installed.
