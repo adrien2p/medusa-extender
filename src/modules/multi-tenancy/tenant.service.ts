@@ -51,6 +51,7 @@ export class TenantService {
 				name: tenant.code,
 				type: tenant.database_type as any,
 				url: tenant.database_url,
+				database: tenant.database_database,
 				extra: tenant.database_extra || {},
 				entities: db_entities,
 				namingStrategy: new ShortenedNamingStrategy(),

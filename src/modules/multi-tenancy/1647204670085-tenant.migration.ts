@@ -9,12 +9,13 @@ export default class TenantMigration1647204670085 implements MigrationInterface 
 		const query = `
             CREATE TABLE tenant
             (
-                id             text PRIMARY KEY,
-                code           text  NOT NULL,
-                database_url   text  NOT NULL,
-                database_type  text  NOT NULL,
-                database_extra jsonb not null default '{}'::jsonb
-                
+                id                text PRIMARY KEY,
+                code              text  NOT NULL,
+                database_url      text  NOT NULL,
+                database_type     text  NOT NULL,
+                database_database text,
+                database_extra    jsonb not null default '{}'::jsonb
+
             );
         `;
 		await queryRunner.query(query);

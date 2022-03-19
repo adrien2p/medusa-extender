@@ -17,6 +17,9 @@ export class Tenant {
 	@Column({ nullable: false })
 	database_type: string;
 
+	@Column({ nullable: true })
+	database_database: string;
+
 	@Column({ type: 'jsonb', default: '{}' })
 	database_extra: { ssl: { rejectUnauthorized: boolean } };
 
