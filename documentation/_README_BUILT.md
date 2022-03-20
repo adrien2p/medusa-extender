@@ -156,22 +156,22 @@ That's it, your server is now up and running :rocket:
 
 Here is a list of the features that you can find in that package
 
-- [Create or extend an entity](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Create or extend a repository](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Create or extend a service](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Create middleware before or after medusa authentication strategy](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Create new migrations](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Create new router handler](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Extend validators from medusa to includes custom fields](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Emit entity subscribers events](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [Group your component by module](https://adrien2p.github.io/medusa-extender/#/?id=module)
-- [Register component dynamically with dynamic module](https://adrien2p.github.io/medusa-extender/#/?id=module-dynamic-module)
-- [Listen to entity subscribers and handle them wherever you want](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
-- [CLI](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
-    - [Generate new components](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
-    - [Migrate your data](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
-- [Monitoring `(Optional module)`](https://adrien2p.github.io/medusa-extender/#/?id=monitoring)
-- [Multi-tenancy architecture `(Optional module)`](#https://adrien2p.github.io/medusa-extender/#/?id=multi-tenancy)
+- [Create or extend an entity](#decorators)
+- [Create or extend a repository](#decorators)
+- [Create or extend a service](#decorators)
+- [Create middleware before or after medusa authentication strategy](#decorators)
+- [Create new migrations](#decorators)
+- [Create new router handler](#decorators)
+- [Extend validators from medusa to includes custom fields](#decorators)
+- [Emit entity subscribers events](#decorators)
+- [Group your component by module](#module)
+- [Register component dynamically with dynamic module](#module-dynamic-module)
+- [Listen to entity subscribers and handle them wherever you want](#decorators)
+- [CLI](#cli-medex)
+    - [Generate new components](#cli-medex)
+    - [Migrate your data](#cli-medex)
+- [Monitoring `(Optional module)`](#monitoring)
+- [Multi-tenancy architecture `(Optional module)`](#multi-tenancy)
 
 All those features aims to help you build what you want such as
 
