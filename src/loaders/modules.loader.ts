@@ -15,9 +15,9 @@ export async function modulesLoader(
 			const resolvedImports = await new module().forRoot(configModule);
 
 			@Module({ imports: resolvedImports.imports })
-			class TransientModule {}
+			class TransitionalModule {}
 
-			const subComponentMap = await modulesLoader([TransientModule], configModule);
+			const subComponentMap = await modulesLoader([TransitionalModule], configModule);
 			componentMap = new ComponentMap([
 				...Array.from(componentMap.entries()),
 				...Array.from(subComponentMap.entries()),
