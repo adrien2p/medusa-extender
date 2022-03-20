@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/cli/utils/slash.ts:1](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/cli/utils/slash.ts#L1)
+[src/cli/utils/slash.ts:1](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/cli/utils/slash.ts#L1)

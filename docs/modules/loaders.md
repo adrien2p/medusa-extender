@@ -33,6 +33,7 @@
 - [attachOrReplaceEntitySubscriber](loaders.md#attachorreplaceentitysubscriber)
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
+- [lowerCaseFirst](loaders.md#lowercasefirst)
 - [migrationsLoader](loaders.md#migrationsloader)
 - [modulesLoader](loaders.md#modulesloader)
 - [overrideEntitiesLoader](loaders.md#overrideentitiesloader)
@@ -46,6 +47,7 @@
 - [repositoryMixin](loaders.md#repositorymixin)
 - [servicesLoader](loaders.md#servicesloader)
 - [storeApiLoader](loaders.md#storeapiloader)
+- [upperCaseFirst](loaders.md#uppercasefirst)
 - [validatorsLoader](loaders.md#validatorsloader)
 
 ## References
@@ -212,6 +214,12 @@ Re-exports [entitiesLoader](loaders_entities_loader.md#entitiesloader)
 
 ___
 
+### lowerCaseFirst
+
+Re-exports [lowerCaseFirst](core_utils.md#lowercasefirst)
+
+___
+
 ### migrationsLoader
 
 Re-exports [migrationsLoader](loaders_migrations_loader.md#migrationsloader)
@@ -287,6 +295,12 @@ ___
 ### storeApiLoader
 
 Re-exports [storeApiLoader](loaders_store_api_loader.md#storeapiloader)
+
+___
+
+### upperCaseFirst
+
+Re-exports [upperCaseFirst](core_utils.md#uppercasefirst)
 
 ___
 

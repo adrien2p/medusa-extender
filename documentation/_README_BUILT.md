@@ -114,7 +114,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.5.5)
+Run the following command in your terminal (The last version is 1.6.0)
 
 ```bash
 npm install medusa-extender
@@ -811,7 +811,7 @@ import ProductRepository from './product.repository';
 import ProductService from './product.service'; 
 import { MedusaDynamicModule,ModuleInjectionOptions } from "./types";
 
-@Module()
+@Module(~~~~)
 export class ProductModule implements MedusaDynamicModule {
     async forRoot(configModule: Record<string, unknown>): Promise<ModuleInjectionOptions> {
         return { 

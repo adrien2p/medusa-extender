@@ -28,4 +28,4 @@ Provide a basic template for the repository component generation.
 
 #### Defined in
 
-[src/cli/templates/repository-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/cli/templates/repository-template.ts#L7)
+[src/cli/templates/repository-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/cli/templates/repository-template.ts#L8)

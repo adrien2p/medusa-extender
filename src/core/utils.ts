@@ -61,6 +61,10 @@ export function lowerCaseFirst(str: string): string {
 	return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
+/**
+ * Upper case the first character of the input string.
+ * @param str
+ */
 export function upperCaseFirst(str: string): string {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }

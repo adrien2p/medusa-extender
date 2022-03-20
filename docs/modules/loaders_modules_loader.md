@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[src/loaders/modules.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/loaders/modules.loader.ts#L5)
+[src/loaders/modules.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/loaders/modules.loader.ts#L5)
