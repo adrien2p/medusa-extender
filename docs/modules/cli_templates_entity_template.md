@@ -28,4 +28,4 @@ Provide a basic template for the entity component generation.
 
 #### Defined in
 
-[src/cli/templates/entity-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/0c5dedf/src/cli/templates/entity-template.ts#L7)
+[src/cli/templates/entity-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/f0b5bec/src/cli/templates/entity-template.ts#L8)
