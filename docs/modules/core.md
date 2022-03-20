@@ -38,8 +38,10 @@
 - [customEventEmitter](core.md#customeventemitter)
 - [getPackageManagerCommand](core.md#getpackagemanagercommand)
 - [loadPackages](core.md#loadpackages)
+- [lowerCaseFirst](core.md#lowercasefirst)
 - [metadataReader](core.md#metadatareader)
 - [repositoryMixin](core.md#repositorymixin)
+- [upperCaseFirst](core.md#uppercasefirst)
 
 ## References
 
@@ -235,6 +237,12 @@ Re-exports [loadPackages](core_package_loader.md#loadpackages)
 
 ___
 
+### lowerCaseFirst
+
+Re-exports [lowerCaseFirst](core_utils.md#lowercasefirst)
+
+___
+
 ### metadataReader
 
 Re-exports [metadataReader](core_metadata_reader.md#metadatareader)
@@ -244,3 +252,9 @@ ___
 ### repositoryMixin
 
 Re-exports [repositoryMixin](core_utils.md#repositorymixin)
+
+___
+
+### upperCaseFirst
+
+Re-exports [upperCaseFirst](core_utils.md#uppercasefirst)

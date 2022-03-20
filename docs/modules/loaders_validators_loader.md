@@ -29,4 +29,4 @@ Load all custom extended validators into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/validators.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/loaders/validators.loader.ts#L11)
+[src/loaders/validators.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/loaders/validators.loader.ts#L11)

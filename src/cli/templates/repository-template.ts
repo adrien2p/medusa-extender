@@ -1,11 +1,12 @@
 import * as dedent from 'dedent';
+import { lowerCaseFirst } from '../../core';
 
 /**
  * Provide a basic template for the repository component generation.
  * @param repositoryName
  */
 export function getRepositoryTemplate(repositoryName: string): string {
-	const resolutionKey = repositoryName.charAt(0).toLowerCase() + repositoryName.slice(1, -1);
+	const resolutionKey = lowerCaseFirst(repositoryName);
 	return dedent`
         import { Repository as MedusaRepository } from "medusa-extender";
         import { EntityRepository, Repository } from "typeorm";
