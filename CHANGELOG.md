@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/adrien2p/medusa-extender/compare/v1.5.5...v1.6.0) (2022-03-20)
+
+
+### Features
+
+* **cli:** Add new 'init' command to setup a medusa project using the extender ([#55](https://github.com/adrien2p/medusa-extender/issues/55)) ([24f8317](https://github.com/adrien2p/medusa-extender/commits/24f8317e445fc6ecbb017e5043373b3588fb0322))
+* **cli:** Allow chainable options for the generate command and auto update module for each new component ([#51](https://github.com/adrien2p/medusa-extender/issues/51)) ([0a84360](https://github.com/adrien2p/medusa-extender/commits/0a84360080c328f3b449beb30dd2121e5979955b))
+* **cli:** Improve service template ([dfc6819](https://github.com/adrien2p/medusa-extender/commits/dfc681932b748bb0ca3e394c1d988db464967601))
+* **cli:** Update service template to include a static resolutionKey property for easy usage ([cba394d](https://github.com/adrien2p/medusa-extender/commits/cba394d0d8fb6e1f3f98b9496a26e7b0ac445d35))
+* Dynamic module enables you to create customizable modules to register components dynamically ([e34168e](https://github.com/adrien2p/medusa-extender/commits/e34168ebb2778110382a9786f6f8de4e1b0d0fe7))
+* **modules/multi-tenancy:** Provide an internal (optional) modules for multi-tenancy architecture ([#46](https://github.com/adrien2p/medusa-extender/issues/46)) ([de37aa5](https://github.com/adrien2p/medusa-extender/commits/de37aa56473a320a36b8c226464c615beda38bf8))
+* Provide an Omit utility ([a04f7cb](https://github.com/adrien2p/medusa-extender/commits/a04f7cb40236d25cc129383e5d87ead66f433a61))
+
+
+### Bug Fixes
+
+* **cli:** Entity Template ([55f4a3a](https://github.com/adrien2p/medusa-extender/commits/55f4a3aca471ab134cc4d43b4769d885d650a8f2))
+* **cli:** Migrate command should pass the database_database configuration for sqlite connection ([37cc0bb](https://github.com/adrien2p/medusa-extender/commits/37cc0bbef5f3f7aaad2240711dadfe98a5209bf8))
+* **cli:** Normalize path to work on any platform ([#59](https://github.com/adrien2p/medusa-extender/issues/59)) ([2a6354e](https://github.com/adrien2p/medusa-extender/commits/2a6354e9b0c517f6c1c2f8c5f1b7b43e57ef4659))
+* Export validator from "medusa-extender" lib ([#61](https://github.com/adrien2p/medusa-extender/issues/61)) ([c5e54cd](https://github.com/adrien2p/medusa-extender/commits/c5e54cdb95b5a0c3cbaef12697a4df8ae01b94e6))
+* Monitoring module log typo ([50da54c](https://github.com/adrien2p/medusa-extender/commits/50da54c1e9e9cd59a9eb0a911a6ae657ba1a419b))
+* Repository loader log typo ([46c898a](https://github.com/adrien2p/medusa-extender/commits/46c898ab34900f3f48f16cefb067056ee461c340))
+* **starters:** Build config to allow medusa to discover native expected directories. eg. subscribers ([#52](https://github.com/adrien2p/medusa-extender/issues/52)) ([988d11b](https://github.com/adrien2p/medusa-extender/commits/988d11be489ab28bb128e851ce03b66718016980))
+
 ### [1.5.5](https://github.com/adrien2p/medusa-extender/compare/v1.5.4...v1.5.5) (2022-03-12)
 
 
