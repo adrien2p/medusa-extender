@@ -123,6 +123,28 @@ npm install medusa-extender
 
 That's it, you are now ready to run your server :rocket:
 
+Note: If you want to run the server on a custom port update medusa-config.js as follows:
+
+```
+module.exports = {
+  projectConfig: {
+    // redis_url: REDIS_URL,
+    // For more production-like environment install PostgresQL
+    // database_url: DATABASE_URL,
+    // database_type: "postgres",
+    database_database: "./medusa-db.sql",
+    database_type: "sqlite",
+    store_cors: STORE_CORS,
+    admin_cors: ADMIN_CORS,
+  },
+  serverConfig:{
+	  port: <PORT_NUMBER>
+  }
+  plugins,
+};
+
+```
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#from-server-starter)
 

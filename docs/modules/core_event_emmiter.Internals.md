@@ -38,4 +38,4 @@ A listener descriptor.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:10](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/event-emmiter.ts#L10)
+[src/core/event-emmiter.ts:10](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/event-emmiter.ts#L10)
