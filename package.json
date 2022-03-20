@@ -43,8 +43,7 @@
     "url": "https://github.com/adrien2p/medusa-extender/issues"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint src --fix",
-    "format": "./node_modules/.bin/prettier src --write",
+    "lint": "./node_modules/.bin/eslint . --fix",
     "build": "rm -rf dist && ./node_modules/.bin/tsc -p tsconfig.json",
     "build:readme": "npx @appnest/readme generate",
     "build:doc": "npm run build:readme && rm -rf docs && ./node_modules/.bin/typedoc && cp .github/docs/* docs/ && cp documentation/_README_BUILT.md docs/README.md",

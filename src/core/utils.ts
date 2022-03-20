@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
 import { Constructor, MixinReturnType } from './types';
 

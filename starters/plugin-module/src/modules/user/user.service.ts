@@ -8,7 +8,7 @@ import { User } from './user.entity';
 type ConstructorParams = {
 	loggedInUser: User;
 	manager: EntityManager;
-	userRepository: typeof UserRepository
+	userRepository: typeof UserRepository;
 	eventBusService: EventBusService;
 };
 

@@ -14,7 +14,7 @@ export async function storeApiLoader(
 	app: Router,
 	middlewares: GetInjectableOptions<'middleware'>,
 	routers: GetInjectableOptions<'router'>
-) {
+): Promise<void> {
 	const storeMiddlewares = middlewares
 		.map((middleware) => ({
 			...middleware,

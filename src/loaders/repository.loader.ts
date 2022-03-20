@@ -49,7 +49,7 @@ export async function overrideRepositoriesLoader(repositories: GetInjectableOpti
 	logger.log(`${count} repositories overridden`);
 }
 
-function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>) {
+function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>): void {
 	const { resolutionKey, metatype: repository } = repositoryOptions;
 	if (!resolutionKey) {
 		throw new Error('Missing static property resolutionKey from repository ' + repository.name);

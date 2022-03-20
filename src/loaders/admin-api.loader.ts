@@ -14,7 +14,7 @@ export async function adminApiLoader(
 	app: Router,
 	middlewares: GetInjectableOptions<'middleware'>,
 	routers: GetInjectableOptions<'router'>
-) {
+): Promise<void> {
 	const adminMiddlewares = middlewares
 		.map((middleware) => ({
 			...middleware,

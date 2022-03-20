@@ -1,4 +1,5 @@
 import express = require('express');
+/* eslint-disable @typescript-eslint/no-var-requires */
 const config = require('../medusa-config');
 import { Medusa } from 'medusa-extender';
 import { resolve } from 'path';

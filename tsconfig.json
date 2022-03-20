@@ -5,5 +5,5 @@
 		"baseUrl": "./src",
 		"rootDir": "./src"
 	},
-	"exclude": ["**/tests", "starters","dist", "node_modules"]
+	"exclude": ["**/tests", "node_modules"]
 }
