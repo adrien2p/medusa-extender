@@ -128,9 +128,11 @@ function generateEntryPoint(): void {
             const expressInstance = express();
             
             await new Medusa(resolve(__dirname, '..'), expressInstance).load([ExampleModule]);
-            
-            expressInstance.listen(config.serverConfig.port, () => {
-                console.info('Server successfully started on port ' + config.serverConfig.port);
+
+			const PORT = config?.serverConfig?.port || 9000
+
+            expressInstance.listen(PORT () => {
+                console.info('Server successfully started on port ' + PORT);
             });
         }
         
