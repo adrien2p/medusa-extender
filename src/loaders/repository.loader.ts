@@ -1,7 +1,7 @@
 import { GetInjectableOption, GetInjectableOptions } from './';
 import { asClass, AwilixContainer } from 'awilix';
 import { getMetadataArgsStorage } from 'typeorm';
-import { Logger } from '../core/logger';
+import { Logger } from '../core';
 
 const logger = Logger.contextualize('RepositoriesLoader');
 

@@ -1,4 +1,5 @@
 import { normalize, resolve } from 'path';
+import { upperCaseFirst } from '../../core';
 
 /**
  * Parse the component information to create a kind of descriptor.
@@ -19,8 +20,7 @@ export function parseComponentValue(
 	componentFileName: string;
 } {
 	const componentFileName = `${filePrefix ? filePrefix + '-' : ''}${name}.${componentType}.ts`;
-	const componentName =
-		name.charAt(0).toUpperCase() + name.slice(1) + componentType?.charAt(0).toUpperCase() + componentType?.slice(1);
+	const componentName = upperCaseFirst(name) + upperCaseFirst(componentType);
 	const fullDestinationPath = normalize(resolve(process.cwd(), path));
 	return { relativeDestinationPath: normalize(path), fullDestinationPath, componentName, componentFileName };
 }

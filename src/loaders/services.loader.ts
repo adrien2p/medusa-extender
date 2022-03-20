@@ -1,6 +1,6 @@
 import { asFunction, AwilixContainer, Lifetime } from 'awilix';
 import { GetInjectableOption, GetInjectableOptions } from './';
-import { Logger } from '../core';
+import { Logger, lowerCaseFirst } from '../core';
 
 const logger = Logger.contextualize('ServicesLoader');
 
@@ -58,7 +58,7 @@ export function overrideService(
 	configModule: Record<string, unknown>
 ): void {
 	const { metatype, override, scope } = serviceOptions;
-	const formattedName = `${override.name.charAt(0).toLowerCase() + override.name.slice(1, override.name.length)}`;
+	const formattedName = lowerCaseFirst(override.name);
 	container.cache.delete(formattedName);
 	container.register({
 		[formattedName]: asFunction((cradle) => new metatype(cradle, configModule), {

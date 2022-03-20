@@ -52,3 +52,15 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
  */
 export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, typeof keys[number]> =>
 	Class;
+
+/**
+ * Lower case the first character of the input string.
+ * @param str
+ */
+export function lowerCaseFirst(str: string): string {
+	return str.charAt(0).toLowerCase() + str.slice(1);
+}
+
+export function upperCaseFirst(str: string): string {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}

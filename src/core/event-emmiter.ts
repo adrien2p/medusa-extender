@@ -2,6 +2,7 @@ import { EventEmitter } from 'events';
 import { AwilixContainer } from 'awilix';
 import { GetInjectableOption, Type } from './types';
 import { componentsMetadataReader } from './metadata-reader';
+import { lowerCaseFirst } from './utils';
 
 /**
  * A listener descriptor.
@@ -55,9 +56,7 @@ class CustomEventEmmiter extends EventEmitter {
 				metatypeInstance = container.resolve(resolutionKey);
 			} else {
 				const metatypeName = metatype.name;
-				const formattedMetatypeName = `${
-					metatypeName.charAt(0).toLowerCase() + metatypeName.slice(1, metatypeName.length)
-				}`;
+				const formattedMetatypeName = lowerCaseFirst(metatypeName);
 				metatypeInstance = container.resolve(`${formattedMetatypeName}`);
 			}
 
