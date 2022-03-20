@@ -42,7 +42,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:53](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/utils.ts#L53)
+[src/core/utils.ts:53](https://github.com/adrien2p/medusa-extender/blob/0c5dedf/src/core/utils.ts#L53)
 
 ___
 
@@ -72,29 +72,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/utils.ts#L30)
-
-___
-
-### lowerCaseFirst
-
-▸ **lowerCaseFirst**(`str`): `string`
-
-Lower case the first character of the input string.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `str` | `string` |
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-[src/core/utils.ts:60](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/utils.ts#L60)
+[src/core/utils.ts:30](https://github.com/adrien2p/medusa-extender/blob/0c5dedf/src/core/utils.ts#L30)
 
 ___
 
@@ -124,26 +102,4 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/utils.ts#L10)
-
-___
-
-### upperCaseFirst
-
-▸ **upperCaseFirst**(`str`): `string`
-
-Upper case the first character of the input string.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `str` | `string` |
-
-#### Returns
-
-`string`
-
-#### Defined in
-
-[src/core/utils.ts:68](https://github.com/adrien2p/medusa-extender/blob/b33e0e2/src/core/utils.ts#L68)
+[src/core/utils.ts:10](https://github.com/adrien2p/medusa-extender/blob/0c5dedf/src/core/utils.ts#L10)

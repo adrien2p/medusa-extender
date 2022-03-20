@@ -50,6 +50,28 @@ The result will be the generation of the module component at `src/modules/myModu
 ./node_modules/.bin/medex m [option]
 ```
 
+#### Config
+
+In order to be flexible you can specify complement path to the migration files
+in your `medusa-config.js` file using the `cliMigrationsDirs` config.
+
+It can be useful when you have installed some external modules that contains migrations.
+In that case, you can specify the relative paths and globs to the plugin/shareable module migrations.
+
+Let see an example
+
+```javascript
+modules.exports = {
+    /* ... */
+    projectConfig: {
+        /* ... */
+        cliMigrationsDirs: ['node_modules/external-module/dist/**/*.migration.js']
+        /* ... */
+    }
+    /* ... */
+}
+``` 
+
 #### Options
 
 {{ cliMigrateOptionsSchematics }}
