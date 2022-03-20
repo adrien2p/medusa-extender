@@ -40,4 +40,4 @@ Function.constructor
 
 #### Defined in
 
-[src/core/types.ts:6](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/types.ts#L6)
+[src/core/types.ts:6](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/core/types.ts#L6)

@@ -31,7 +31,7 @@ Apply all routes on the app that must be applied after the @medusajs authenticat
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:26](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/helpers/apply-routers.ts#L26)
+[src/loaders/helpers/apply-routers.ts:26](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/loaders/helpers/apply-routers.ts#L26)
 
 ___
 
@@ -55,4 +55,4 @@ Apply all routes on the app that must be applied before the @medusajs authentica
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:10](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/helpers/apply-routers.ts#L10)
+[src/loaders/helpers/apply-routers.ts:10](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/loaders/helpers/apply-routers.ts#L10)
