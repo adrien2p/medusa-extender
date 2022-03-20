@@ -1,11 +1,6 @@
-import { GetInjectableOptions, InjectableComponentTypes, InjectableOptions, Type } from './types';
+import { InjectableComponentTypes, InjectableOptions, Type } from './types';
 import { INJECTABLE_OPTIONS_KEY, MODULE_KEY } from './constants';
-
-class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
-	get<TComponentType extends InjectableComponentTypes>(key: TComponentType): GetInjectableOptions<TComponentType> {
-		return super.get(key) as GetInjectableOptions<TComponentType>;
-	}
-}
+import { ComponentMap } from './componentMap';
 
 /**
  * @Internal
@@ -13,8 +8,8 @@ class CustomMap extends Map<InjectableComponentTypes, GetInjectableOptions> {
  * Read all metadata from the imported modules and extract components that will be stored by there type.
  * @param modules The modules from which the metadata are read.
  */
-export function metadataReader(modules: Type[]): CustomMap {
-	let componentMap = new CustomMap();
+export function metadataReader(modules: Type[]): ComponentMap {
+	let componentMap = new ComponentMap();
 
 	for (const module of modules) {
 		const moduleImports = Reflect.getMetadata(MODULE_KEY, module);
@@ -23,7 +18,7 @@ export function metadataReader(modules: Type[]): CustomMap {
 			const subModuleImports = Reflect.getMetadata(MODULE_KEY, component);
 			if (subModuleImports) {
 				const subComponentMap = metadataReader([component]);
-				componentMap = new CustomMap([
+				componentMap = new ComponentMap([
 					...Array.from(componentMap.entries()),
 					...Array.from(subComponentMap.entries()),
 				]);

@@ -80,6 +80,13 @@ export type ValidatorInjectionOptions<TOverride = unknown> = {
 };
 
 /**
+ * Defines the injection options for routes.
+ */
+export type ModuleInjectionOptions<T = unknown> = {
+	imports: Type<T>[];
+};
+
+/**
  * Union of all options type possible for injectable.
  */
 export type InjectableOptions<T = unknown> =
@@ -153,6 +160,14 @@ export type MedusaRouteOptions = {
  */
 export interface MedusaMiddleware {
 	consume(req: MedusaAuthenticatedRequest | Request, res: Response, next: NextFunction): void | Promise<void>;
+}
+
+/**
+ * @interface
+ * Describe a dynamic module which resolve its import dynamically.
+ */
+export interface MedusaDynamicModule {
+	forRoot<T>(configModule: T): Promise<ModuleInjectionOptions>;
 }
 
 /**

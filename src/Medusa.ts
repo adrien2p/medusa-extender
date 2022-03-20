@@ -3,11 +3,12 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { AwilixContainer } from 'awilix';
-import { Constructor, Logger, metadataReader } from './core';
+import { Logger, Type } from './core';
 import {
 	adminApiLoader,
 	databaseLoader,
 	migrationsLoader,
+	modulesLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
 	pluginsLoadersAndListeners,
@@ -43,13 +44,14 @@ export class Medusa {
 	/**
 	 * @param modules The modules to load into medusa
 	 */
-	public async load(modules: Constructor<unknown>[]): Promise<AwilixContainer> {
-		const moduleComponentsOptions = metadataReader(modules);
+	public async load(modules: Type[]): Promise<AwilixContainer> {
 		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
 			configModule: {
 				monitoring: MonitoringOptions;
 			};
 		};
+
+		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 
 		await loadMonitoringModule(configModule, this.#express, configModule.monitoring);
 
