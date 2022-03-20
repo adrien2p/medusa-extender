@@ -20,7 +20,8 @@
     "cli",
     "javascript",
     "architecture",
-    "multi-tenancy"
+    "multi-tenancy",
+    "dynamic-module"
   ],
   "author": "adrien2p <adrien.deperetti@gmail.com>",
   "homepage": "https://github.com/adrien2p/medusa-extender",
