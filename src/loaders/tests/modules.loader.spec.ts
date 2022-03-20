@@ -8,7 +8,7 @@ class TestService {}
 @Module({ imports: [TestService] })
 class MyModule {}
 
-@Module({ imports: [] })
+@Module()
 class MyDynamicModule implements MedusaDynamicModule {
 	async forRoot(): Promise<ModuleInjectionOptions> {
 		return { imports: [TestService] };
@@ -18,7 +18,7 @@ class MyDynamicModule implements MedusaDynamicModule {
 @Service({ resolutionKey: 'testService2' })
 class TestService2 {}
 
-@Module({ imports: [] })
+@Module()
 class MyDynamicModuleWithSubModule implements MedusaDynamicModule {
 	async forRoot(): Promise<ModuleInjectionOptions> {
 		return { imports: [MyModule, TestService2] };

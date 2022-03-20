@@ -12,15 +12,15 @@
 
 ### Module
 
-▸ **Module**(`imports`): `ClassDecorator`
+▸ **Module**(`options?`): `ClassDecorator`
 
 Mark a class as aa module and store all injectable on it.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `imports` | [`ModuleInjectionOptions`](core_types.md#moduleinjectionoptions)<`unknown`\> | The components to import |
+| Name | Type |
+| :------ | :------ |
+| `options` | [`ModuleInjectionOptions`](core_types.md#moduleinjectionoptions)<`unknown`\> |
 
 #### Returns
 
@@ -28,4 +28,4 @@ Mark a class as aa module and store all injectable on it.
 
 #### Defined in
 
-[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/f7e05f2/src/decorators/module.decorator.ts#L9)
+[src/decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/decorators/module.decorator.ts#L9)

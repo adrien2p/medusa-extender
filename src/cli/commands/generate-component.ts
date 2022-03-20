@@ -170,7 +170,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 				resolvedModulePath.split(slashRegexp).slice(-2).shift();
 
 			const updatedModuleContent = moduleContent
-				.replace(/imports: \[(.*)\]/, (str: string, match: string) => {
+				.replace(/imports: \[(.*)\]/s, (str: string, match: string) => {
 					return `imports: [${match ? `${match}, ` : ''}${componentClassName}]`;
 				})
 				.replace(/(import\s+.*\s+from\s+.*(?!;))/, (str: string, matches: string) => {

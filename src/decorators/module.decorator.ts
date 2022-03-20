@@ -3,11 +3,11 @@ import { MODULE_KEY, ModuleInjectionOptions } from '../core';
 
 /**
  * Mark a class as aa module and store all injectable on it.
- * @param imports The components to import
  * @constructor
+ * @param options
  */
-export function Module({ imports }: ModuleInjectionOptions): ClassDecorator {
+export function Module(options: ModuleInjectionOptions = { imports: [] }): ClassDecorator {
 	return (target: object) => {
-		Reflect.defineMetadata(MODULE_KEY, imports, target);
+		Reflect.defineMetadata(MODULE_KEY, options?.imports, target);
 	};
 }

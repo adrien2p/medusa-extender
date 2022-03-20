@@ -811,7 +811,7 @@ import ProductRepository from './product.repository';
 import ProductService from './product.service'; 
 import { MedusaDynamicModule,ModuleInjectionOptions } from "./types";
 
-@Module({ imports: [] })
+@Module()
 export class ProductModule implements MedusaDynamicModule {
     async forRoot(configModule: Record<string, unknown>): Promise<ModuleInjectionOptions> {
         return { 

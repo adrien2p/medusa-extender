@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/loader.ts:3](https://github.com/adrien2p/medusa-extender/blob/f7e05f2/src/modules/multi-tenancy/loader.ts#L3)
+[src/modules/multi-tenancy/loader.ts:3](https://github.com/adrien2p/medusa-extender/blob/d90c32e/src/modules/multi-tenancy/loader.ts#L3)
