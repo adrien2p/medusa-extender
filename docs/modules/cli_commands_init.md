@@ -22,4 +22,4 @@ Update or create everything related to medusa-extender in an existing medusa pro
 
 #### Defined in
 
-[src/cli/commands/init.ts:12](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/cli/commands/init.ts#L12)
+[src/cli/commands/init.ts:12](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/cli/commands/init.ts#L12)

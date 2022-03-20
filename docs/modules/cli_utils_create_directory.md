@@ -30,4 +30,4 @@ Create the new directory, if necessary, that will receive the components.
 
 #### Defined in
 
-[src/cli/utils/create-directory.ts:10](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/cli/utils/create-directory.ts#L10)
+[src/cli/utils/create-directory.ts:10](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/cli/utils/create-directory.ts#L10)

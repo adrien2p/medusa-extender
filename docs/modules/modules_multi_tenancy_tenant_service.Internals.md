@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:8](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/modules/multi-tenancy/tenant.service.ts#L8)
+[src/modules/multi-tenancy/tenant.service.ts:8](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/modules/multi-tenancy/tenant.service.ts#L8)

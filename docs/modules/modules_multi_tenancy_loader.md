@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/loader.ts:3](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/modules/multi-tenancy/loader.ts#L3)
+[src/modules/multi-tenancy/loader.ts:3](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/modules/multi-tenancy/loader.ts#L3)

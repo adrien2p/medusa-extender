@@ -29,4 +29,4 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 
 #### Defined in
 
-[src/loaders/plugins.loader.ts:11](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/loaders/plugins.loader.ts#L11)
+[src/loaders/plugins.loader.ts:11](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/plugins.loader.ts#L11)

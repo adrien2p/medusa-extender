@@ -42,7 +42,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:53](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/utils.ts#L53)
+[src/core/utils.ts:53](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/utils.ts#L53)
 
 ___
 
@@ -72,7 +72,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:30](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/utils.ts#L30)
+[src/core/utils.ts:30](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/utils.ts#L30)
 
 ___
 
@@ -94,7 +94,7 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:60](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/utils.ts#L60)
+[src/core/utils.ts:60](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/utils.ts#L60)
 
 ___
 
@@ -124,7 +124,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:10](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/utils.ts#L10)
+[src/core/utils.ts:10](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/utils.ts#L10)
 
 ___
 
@@ -146,4 +146,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:68](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/core/utils.ts#L68)
+[src/core/utils.ts:68](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/core/utils.ts#L68)

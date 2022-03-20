@@ -33,7 +33,7 @@ Load all custom entities into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:13](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/loaders/entities.loader.ts#L13)
+[src/loaders/entities.loader.ts:13](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/entities.loader.ts#L13)
 
 ___
 
@@ -56,7 +56,7 @@ Load all custom entities that override @medusajs instance entities.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:36](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/loaders/entities.loader.ts#L36)
+[src/loaders/entities.loader.ts:36](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/entities.loader.ts#L36)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:63](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/loaders/entities.loader.ts#L63)
+[src/loaders/entities.loader.ts:63](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/entities.loader.ts#L63)
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:51](https://github.com/octalpixel/medusa-extender/blob/3e7bd11/src/loaders/entities.loader.ts#L51)
+[src/loaders/entities.loader.ts:51](https://github.com/octalpixel/medusa-extender/blob/1a4be63/src/loaders/entities.loader.ts#L51)
