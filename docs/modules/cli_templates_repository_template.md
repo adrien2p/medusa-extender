@@ -28,4 +28,4 @@ Provide a basic template for the repository component generation.
 
 #### Defined in
 
-[src/cli/templates/repository-template.ts:8](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/cli/templates/repository-template.ts#L8)
+[src/cli/templates/repository-template.ts:8](https://github.com/octalpixel/medusa-extender/blob/a877266/src/cli/templates/repository-template.ts#L8)

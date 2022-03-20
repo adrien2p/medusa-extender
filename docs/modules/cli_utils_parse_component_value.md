@@ -38,4 +38,4 @@ Parse the component information to create a kind of descriptor.
 
 #### Defined in
 
-[src/cli/utils/parse-component-value.ts:11](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/cli/utils/parse-component-value.ts#L11)
+[src/cli/utils/parse-component-value.ts:11](https://github.com/octalpixel/medusa-extender/blob/a877266/src/cli/utils/parse-component-value.ts#L11)

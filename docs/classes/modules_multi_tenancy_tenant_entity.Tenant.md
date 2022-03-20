@@ -37,7 +37,7 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:12](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L12)
+[src/modules/multi-tenancy/tenant.entity.ts:12](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L12)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:21](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L21)
+[src/modules/multi-tenancy/tenant.entity.ts:21](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L21)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:24](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L24)
+[src/modules/multi-tenancy/tenant.entity.ts:24](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L24)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:18](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L18)
+[src/modules/multi-tenancy/tenant.entity.ts:18](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L18)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:15](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L15)
+[src/modules/multi-tenancy/tenant.entity.ts:15](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L15)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:9](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L9)
+[src/modules/multi-tenancy/tenant.entity.ts:9](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L9)
 
 ## Methods
 
@@ -108,4 +108,4 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.entity.ts:27](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/modules/multi-tenancy/tenant.entity.ts#L27)
+[src/modules/multi-tenancy/tenant.entity.ts:27](https://github.com/octalpixel/medusa-extender/blob/a877266/src/modules/multi-tenancy/tenant.entity.ts#L27)

@@ -20,7 +20,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-[src/core/constants.ts:9](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/core/constants.ts#L9)
+[src/core/constants.ts:9](https://github.com/octalpixel/medusa-extender/blob/a877266/src/core/constants.ts#L9)
 
 ___
 
@@ -66,7 +66,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-[src/core/constants.ts:14](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/core/constants.ts#L14)
+[src/core/constants.ts:14](https://github.com/octalpixel/medusa-extender/blob/a877266/src/core/constants.ts#L14)
 
 ___
 
@@ -78,4 +78,4 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-[src/core/constants.ts:4](https://github.com/octalpixel/medusa-extender/blob/317cb2f/src/core/constants.ts#L4)
+[src/core/constants.ts:4](https://github.com/octalpixel/medusa-extender/blob/a877266/src/core/constants.ts#L4)
