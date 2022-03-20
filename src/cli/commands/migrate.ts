@@ -1,7 +1,6 @@
 import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
-import { getTenantMigrationDirs } from '../../modules/multi-tenancy/loader';
 import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
 
 /**
@@ -15,6 +14,7 @@ type ConfigModule = {
 		database_url: string;
 		database_database: string;
 		database_extra: Record<string, string>;
+		cliMigrationsDirs?: string[];
 	};
 	multiTenancy?: MultiTenancyOptions;
 };
@@ -22,16 +22,22 @@ type ConfigModule = {
 export async function migrate({ run, show }): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 
+	let uniqMigrationDirs = new Set<string>();
+	if (configModule.projectConfig?.cliMigrationsDirs?.length) {
+		uniqMigrationDirs = new Set(configModule.projectConfig.cliMigrationsDirs);
+	}
+
 	const migrationDirs = [
-		'src/**/*.migration.js',
-		'src/**/migrations/*.js',
-		'dist/**/*.migration.js',
-		'dist/**/migrations/*.js',
+		...new Set([
+			...uniqMigrationDirs,
+			'src/**/*.migration.js',
+			'src/**/migrations/*.js',
+			'dist/**/*.migration.js',
+			'dist/**/migrations/*.js',
+		]),
 	].map((dir) => {
 		return normalize(resolve(process.cwd(), dir));
 	});
-
-	migrationDirs.push(...getTenantMigrationDirs(configModule));
 
 	const connection = await createConnection({
 		type: configModule.projectConfig.database_type as any,
