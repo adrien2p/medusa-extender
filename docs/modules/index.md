@@ -22,6 +22,7 @@
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
 - [MedusaCustomContainer](index.md#medusacustomcontainer)
+- [MedusaDynamicModule](index.md#medusadynamicmodule)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
 - [MedusaMiddleware](index.md#medusamiddleware)
@@ -33,6 +34,7 @@
 - [Migration](index.md#migration)
 - [MixinReturnType](index.md#mixinreturntype)
 - [Module](index.md#module)
+- [ModuleInjectionOptions](index.md#moduleinjectionoptions)
 - [MonitoringOptions](index.md#monitoringoptions)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
 - [Repository](index.md#repository)
@@ -149,6 +151,12 @@ Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 
+### MedusaDynamicModule
+
+Re-exports [MedusaDynamicModule](../interfaces/core_types.MedusaDynamicModule.md)
+
+___
+
 ### MedusaEventEmittedParams
 
 Re-exports [MedusaEventEmittedParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventemittedparams)
@@ -212,6 +220,12 @@ ___
 ### Module
 
 Re-exports [Module](decorators_module_decorator.md#module)
+
+___
+
+### ModuleInjectionOptions
+
+Re-exports [ModuleInjectionOptions](core_types.md#moduleinjectionoptions)
 
 ___
 

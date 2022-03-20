@@ -1,30 +1,30 @@
-[medusa-extender](../README.md) / [Exports](../modules.md) / [core/metadata-reader](../modules/core_metadata_reader.md) / [Internals](../modules/core_metadata_reader.Internals.md) / CustomMap
+[medusa-extender](../README.md) / [Exports](../modules.md) / [core/componentMap](../modules/core_componentMap.md) / ComponentMap
 
-# Class: CustomMap
+# Class: ComponentMap
 
-[core/metadata-reader](../modules/core_metadata_reader.md).[Internals](../modules/core_metadata_reader.Internals.md).CustomMap
+[core/componentMap](../modules/core_componentMap.md).ComponentMap
 
 ## Hierarchy
 
 - `Map`<[`InjectableComponentTypes`](../modules/core_types.md#injectablecomponenttypes), [`GetInjectableOptions`](../modules/core_types.md#getinjectableoptions)\>
 
-  ↳ **`CustomMap`**
+  ↳ **`ComponentMap`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](core_metadata_reader.Internals.CustomMap.md#constructor)
+- [constructor](core_componentMap.ComponentMap.md#constructor)
 
 ### Methods
 
-- [get](core_metadata_reader.Internals.CustomMap.md#get)
+- [get](core_componentMap.ComponentMap.md#get)
 
 ## Constructors
 
 ### constructor
 
-• **new CustomMap**(`entries?`)
+• **new ComponentMap**(`entries?`)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Map<InjectableComponentTypes, GetInjectableOptions\>.constructor
 
 node_modules/typescript/lib/lib.es2015.collection.d.ts:33
 
-• **new CustomMap**(`iterable?`)
+• **new ComponentMap**(`iterable?`)
 
 #### Parameters
 
@@ -84,4 +84,4 @@ Map.get
 
 #### Defined in
 
-[src/core/metadata-reader.ts:5](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/core/metadata-reader.ts#L5)
+[src/core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/core/componentMap.ts#L4)

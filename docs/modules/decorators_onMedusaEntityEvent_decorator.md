@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
+[src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
+[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
 
 ___
 
@@ -60,7 +60,7 @@ Event types that can be emitted.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
+[src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
 
 ___
 
@@ -86,7 +86,7 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
+[src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
 
 ___
 
@@ -112,4 +112,4 @@ The arguments expected by the event handler.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/decorators/onMedusaEntityEvent.decorator.ts#L32)
+[src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/decorators/onMedusaEntityEvent.decorator.ts#L32)

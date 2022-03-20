@@ -14,12 +14,14 @@
 - [InjectableOptions](loaders.md#injectableoptions)
 - [MedusaAuthenticatedRequest](loaders.md#medusaauthenticatedrequest)
 - [MedusaCustomContainer](loaders.md#medusacustomcontainer)
+- [MedusaDynamicModule](loaders.md#medusadynamicmodule)
 - [MedusaMiddleware](loaders.md#medusamiddleware)
 - [MedusaRequest](loaders.md#medusarequest)
 - [MedusaRouteMethods](loaders.md#medusaroutemethods)
 - [MedusaRouteOptions](loaders.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](loaders.md#middlewareinjectionoptions)
 - [MixinReturnType](loaders.md#mixinreturntype)
+- [ModuleInjectionOptions](loaders.md#moduleinjectionoptions)
 - [Omit](loaders.md#omit)
 - [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
 - [RouterInjectionOptions](loaders.md#routerinjectionoptions)
@@ -32,6 +34,7 @@
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
 - [migrationsLoader](loaders.md#migrationsloader)
+- [modulesLoader](loaders.md#modulesloader)
 - [overrideEntitiesLoader](loaders.md#overrideentitiesloader)
 - [overrideEntity](loaders.md#overrideentity)
 - [overrideRepositoriesLoader](loaders.md#overriderepositoriesloader)
@@ -95,6 +98,12 @@ Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 
+### MedusaDynamicModule
+
+Re-exports [MedusaDynamicModule](../interfaces/core_types.MedusaDynamicModule.md)
+
+___
+
 ### MedusaMiddleware
 
 Re-exports [MedusaMiddleware](../interfaces/core_types.MedusaMiddleware.md)
@@ -128,6 +137,12 @@ ___
 ### MixinReturnType
 
 Re-exports [MixinReturnType](core_types.md#mixinreturntype)
+
+___
+
+### ModuleInjectionOptions
+
+Re-exports [ModuleInjectionOptions](core_types.md#moduleinjectionoptions)
 
 ___
 
@@ -200,6 +215,12 @@ ___
 ### migrationsLoader
 
 Re-exports [migrationsLoader](loaders_migrations_loader.md#migrationsloader)
+
+___
+
+### modulesLoader
+
+Re-exports [modulesLoader](loaders_modules_loader.md#modulesloader)
 
 ___
 

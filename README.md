@@ -146,6 +146,8 @@ Here is a list of the features that you can find in that package
 - [Create new router handler](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [Extend validators from medusa to includes custom fields](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [Emit entity subscribers events](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Group your component by module](https://adrien2p.github.io/medusa-extender/#/?id=module)
+- [Register component dynamically with dynamic module](https://adrien2p.github.io/medusa-extender/#/?id=module-dynamic-module)
 - [Listen to entity subscribers and handle them wherever you want](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [CLI](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
     - [Generate new components](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)

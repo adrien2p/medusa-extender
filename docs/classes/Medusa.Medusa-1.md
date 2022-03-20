@@ -36,7 +36,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/Medusa.ts#L38)
+[src/Medusa.ts:39](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/Medusa.ts#L39)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/Medusa.ts#L31)
+[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/Medusa.ts#L32)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/Medusa.ts#L32)
+[src/Medusa.ts:33](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/Medusa.ts#L33)
 
 ## Methods
 
@@ -68,7 +68,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `modules` | [`Constructor`](../modules/core_types.md#constructor)<`unknown`\>[] | The modules to load into medusa |
+| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] | The modules to load into medusa |
 
 #### Returns
 
@@ -76,4 +76,4 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/Medusa.ts#L46)
+[src/Medusa.ts:47](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/Medusa.ts#L47)

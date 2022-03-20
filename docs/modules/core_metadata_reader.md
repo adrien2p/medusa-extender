@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [Internals](core_metadata_reader.Internals.md)
-
 ### Functions
 
 - [componentsMetadataReader](core_metadata_reader.md#componentsmetadatareader)
@@ -41,13 +37,13 @@ Return the options from components.
 
 #### Defined in
 
-[src/core/metadata-reader.ts:49](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/core/metadata-reader.ts#L49)
+[src/core/metadata-reader.ts:44](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/core/metadata-reader.ts#L44)
 
 ___
 
 ### metadataReader
 
-▸ **metadataReader**(`modules`): [`CustomMap`](../classes/core_metadata_reader.Internals.CustomMap.md)
+▸ **metadataReader**(`modules`): [`ComponentMap`](../classes/core_componentMap.ComponentMap.md)
 
 **`internal`**
 
@@ -61,8 +57,8 @@ Read all metadata from the imported modules and extract components that will be 
 
 #### Returns
 
-[`CustomMap`](../classes/core_metadata_reader.Internals.CustomMap.md)
+[`ComponentMap`](../classes/core_componentMap.ComponentMap.md)
 
 #### Defined in
 
-[src/core/metadata-reader.ts:16](https://github.com/adrien2p/medusa-extender/blob/9d393f9/src/core/metadata-reader.ts#L16)
+[src/core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/45a826d/src/core/metadata-reader.ts#L11)

@@ -74,6 +74,7 @@
 		* [@Router](#router)
 		* [@Validator](#validator)
 		* [@Module](#module)
+		* [@Module (Dynamic module)](#module-dynamic-module)
 		* [@OnMedusaEntityEvent](#onmedusaentityevent)
 	* [Utilities :wrench:](#utilities-wrench)
 		* [attachOrReplaceEntitySubscriber](#attachorreplaceentitysubscriber)
@@ -163,6 +164,8 @@ Here is a list of the features that you can find in that package
 - [Create new router handler](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [Extend validators from medusa to includes custom fields](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [Emit entity subscribers events](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
+- [Group your component by module](https://adrien2p.github.io/medusa-extender/#/?id=module)
+- [Register component dynamically with dynamic module](https://adrien2p.github.io/medusa-extender/#/?id=module-dynamic-module)
 - [Listen to entity subscribers and handle them wherever you want](https://adrien2p.github.io/medusa-extender/#/?id=decorators)
 - [CLI](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
     - [Generate new components](https://adrien2p.github.io/medusa-extender/#/?id=cli-medex)
@@ -749,8 +752,9 @@ validator to tell you that this fields is not recognised.
 
 ### @Module
 
-This decorator allow to aggregate any modules and components. This is mainly
-to avoid the need to import each independent components and simplify the usage.
+This decorator allow to aggregate any modules and components in one place to simplify the usage
+by the medusa-extender loader and allows you to simplify you exports and organise your features by group.
+
 Let see an example
 
 ```typescript
@@ -758,6 +762,7 @@ import { Module } from 'medusa-extender';
 import { Product } from './product.entity';
 import ProductRepository from './product.repository';
 import ProductService from './product.service';
+
 @Module({
     imports: [
         Product,
@@ -776,6 +781,59 @@ const config = require('../medusa-config');
 import { Medusa } from 'medusa-extender';
 import { resolve } from 'path';
 import { ProductModule } from './modules/product/product.module';
+
+async function bootstrap() {
+    const expressInstance = express();
+    
+    const rootDir = resolve(__dirname, '..');
+    await new Medusa(rootDir, expressInstance).load([
+        ProductModule
+    ]);
+    
+    expressInstance.listen(config.serverConfig.port, () => {
+        console.log('Server listening on port ' + config.serverConfig.port);
+    });
+}
+bootstrap();
+```
+
+### @Module (Dynamic module)
+
+It is also possible to create dynamic modules that enable to register component dynamically depending on some config 
+or external call api for example. 
+
+Let see an example
+
+```typescript
+import { Module } from 'medusa-extender';
+import { Product } from './product.entity';
+import ProductRepository from './product.repository';
+import ProductService from './product.service'; 
+import { MedusaDynamicModule,ModuleInjectionOptions } from "./types";
+
+@Module({ imports: [] })
+export class ProductModule implements MedusaDynamicModule {
+    async forRoot(configModule: Record<string, unknown>): Promise<ModuleInjectionOptions> {
+        return { 
+            imports: [
+                Product,
+                ProductRepository,
+                ProductService
+            ]
+        };
+    }
+}
+```
+
+Then this module can be imported into the main file as the following example
+
+```typescript
+import express = require('express');
+const config = require('../medusa-config');
+import { Medusa } from 'medusa-extender';
+import { resolve } from 'path';
+import { ProductModule } from './modules/product/product.module';
+
 async function bootstrap() {
     const expressInstance = express();
     

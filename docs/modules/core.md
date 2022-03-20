@@ -18,12 +18,14 @@
 - [MODULE\_KEY](core.md#module_key)
 - [MedusaAuthenticatedRequest](core.md#medusaauthenticatedrequest)
 - [MedusaCustomContainer](core.md#medusacustomcontainer)
+- [MedusaDynamicModule](core.md#medusadynamicmodule)
 - [MedusaMiddleware](core.md#medusamiddleware)
 - [MedusaRequest](core.md#medusarequest)
 - [MedusaRouteMethods](core.md#medusaroutemethods)
 - [MedusaRouteOptions](core.md#medusarouteoptions)
 - [MiddlewareInjectionOptions](core.md#middlewareinjectionoptions)
 - [MixinReturnType](core.md#mixinreturntype)
+- [ModuleInjectionOptions](core.md#moduleinjectionoptions)
 - [Omit](core.md#omit)
 - [RepositoryInjectableOptions](core.md#repositoryinjectableoptions)
 - [RouterInjectionOptions](core.md#routerinjectionoptions)
@@ -113,6 +115,12 @@ Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
 
 ___
 
+### MedusaDynamicModule
+
+Re-exports [MedusaDynamicModule](../interfaces/core_types.MedusaDynamicModule.md)
+
+___
+
 ### MedusaMiddleware
 
 Re-exports [MedusaMiddleware](../interfaces/core_types.MedusaMiddleware.md)
@@ -146,6 +154,12 @@ ___
 ### MixinReturnType
 
 Re-exports [MixinReturnType](core_types.md#mixinreturntype)
+
+___
+
+### ModuleInjectionOptions
+
+Re-exports [ModuleInjectionOptions](core_types.md#moduleinjectionoptions)
 
 ___
 
