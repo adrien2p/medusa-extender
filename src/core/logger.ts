@@ -9,11 +9,11 @@ export class Logger {
 	private readonly _context: string;
 	private readonly _app: string;
 
-	public get context() {
+	public get context(): string {
 		return this._context;
 	}
 
-	public get app() {
+	public get app(): string {
 		return this._app;
 	}
 
@@ -86,7 +86,7 @@ export class Logger {
 	 * @param description
 	 * @param variables
 	 */
-	private buildLog(color: Chalk, description: string, ...variables: string[]) {
+	private buildLog(color: Chalk, description: string, ...variables: string[]): this {
 		const date = new Date().toLocaleString('en-US', { hour12: true });
 		console.log(
 			`${blue(`[${this._app}]      -`)} ${date}   ${yellow(`[${this._context}]`)} ${color(description)}`,

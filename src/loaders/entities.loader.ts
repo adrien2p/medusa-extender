@@ -48,7 +48,7 @@ export async function overrideEntitiesLoader(entities: GetInjectableOptions<'ent
 	logger.log(`${count} entities overridden`);
 }
 
-export function registerEntity(container: AwilixContainer, entityOptions: GetInjectableOption<'entity'>) {
+export function registerEntity(container: AwilixContainer, entityOptions: GetInjectableOption<'entity'>): void {
 	const { resolutionKey, metatype: entity } = entityOptions;
 	if (!resolutionKey) {
 		throw new Error('Missing static property resolutionKey from entity ' + entity.name);
