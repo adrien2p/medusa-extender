@@ -29,4 +29,4 @@ Provide a basic template for the migration component generation.
 
 #### Defined in
 
-[src/cli/templates/migration-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/ba1daa1/src/cli/templates/migration-template.ts#L8)
+[src/cli/templates/migration-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/b5afe4d/src/cli/templates/migration-template.ts#L8)
