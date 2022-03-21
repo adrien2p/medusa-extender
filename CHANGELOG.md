@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/adrien2p/medusa-extender/compare/v1.6.0...v1.6.1) (2022-03-21)
+
+
+### Features
+
+* Deprecate resolutionKey from API ([#70](https://github.com/adrien2p/medusa-extender/issues/70)) ([830b730](https://github.com/adrien2p/medusa-extender/commits/830b7301d663ecce8a3075ba97f48c11f1200bcc))
+
+
+### Bug Fixes
+
+* **cli:** Use default port 9000 when generating main entry point file ([#71](https://github.com/adrien2p/medusa-extender/issues/71)) ([b5afe4d](https://github.com/adrien2p/medusa-extender/commits/b5afe4d6955b494528db32d83256f40446a2504b))
+
 ## [1.6.0](https://github.com/adrien2p/medusa-extender/compare/v1.5.5...v1.6.0) (2022-03-20)
 
 
