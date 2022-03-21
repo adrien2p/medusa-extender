@@ -15,10 +15,10 @@ export function getServiceTemplate(serviceName: string): string {
             manager: EntityManager;
         };
         
-        @Service({ resolutionKey: '${resolutionKey}' })
+        @Service()
         export class ${serviceName} {
-        	static readonly resolutionKey = '${resolutionKey}';
-        	
+        	static resolutionKey = '${resolutionKey}';
+	
             constructor(private readonly container: ContainerInjection, private readonly config: any) {}
         }
     `;

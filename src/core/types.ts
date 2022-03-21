@@ -26,6 +26,9 @@ export type InjectableComponentTypes =
  * Defines the injection options for entities.
  */
 export type EntityInjectableOptions<TOverride = unknown> = {
+	/**
+	 * @deprecated since v1.6.1
+	 */
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };
@@ -35,6 +38,9 @@ export type EntityInjectableOptions<TOverride = unknown> = {
  */
 export type ServiceInjectableOptions<TOverride = unknown> = {
 	scope?: LifetimeType;
+	/**
+	 * @deprecated since v1.6.1
+	 */
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };
@@ -43,6 +49,9 @@ export type ServiceInjectableOptions<TOverride = unknown> = {
  * Defines the injection options for services, entities, repositories.
  */
 export type RepositoryInjectableOptions<TOverride = unknown> = {
+	/**
+	 * @deprecated since v1.6.1
+	 */
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };

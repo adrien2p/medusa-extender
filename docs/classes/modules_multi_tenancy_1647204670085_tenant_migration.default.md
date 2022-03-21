@@ -41,7 +41,7 @@ MigrationInterface.name
 
 #### Defined in
 
-[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:6](https://github.com/adrien2p/medusa-extender/blob/6404d7f/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L6)
+[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:6](https://github.com/adrien2p/medusa-extender/blob/6d94c10/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L6)
 
 ## Methods
 
@@ -65,7 +65,7 @@ MigrationInterface.down
 
 #### Defined in
 
-[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:24](https://github.com/adrien2p/medusa-extender/blob/6404d7f/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L24)
+[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:24](https://github.com/adrien2p/medusa-extender/blob/6d94c10/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L24)
 
 ___
 
@@ -89,4 +89,4 @@ MigrationInterface.up
 
 #### Defined in
 
-[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:8](https://github.com/adrien2p/medusa-extender/blob/6404d7f/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L8)
+[src/modules/multi-tenancy/1647204670085-tenant.migration.ts:8](https://github.com/adrien2p/medusa-extender/blob/6d94c10/src/modules/multi-tenancy/1647204670085-tenant.migration.ts#L8)

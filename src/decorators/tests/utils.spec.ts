@@ -10,7 +10,7 @@ describe('Utils decorators', () => {
 			const metadataKeys = Reflect.getOwnMetadataKeys(Test);
 			expect(metadataKeys.length).toBe(0);
 
-			const metadata = { type: 'service', resolutionKey: 'resolutionKey' } as InjectableOptions & {
+			const metadata = { type: 'service' } as InjectableOptions & {
 				type: InjectableComponentTypes;
 			};
 			buildComponentDecorator(metadata)(Test);

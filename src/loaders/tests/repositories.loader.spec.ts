@@ -29,11 +29,11 @@ class OrderRepository extends repositoryMixin<Order, MedusaOrderRepository>(Medu
 @Module({ imports: [OrderRepository] })
 class OrderModule {}
 
-@MedusaEntity({ resolutionKey: 'anotherEntity' })
+@MedusaEntity()
 @Entity()
 class Another {}
 
-@MedusaRepository({ resolutionKey: 'anotherRepository' })
+@MedusaRepository()
 @EntityRepository()
 class AnotherRepository extends Repository<Another> {}
 

@@ -12,11 +12,11 @@ const getMockContainer = (container: AwilixContainer) => {
 	return container;
 };
 
-@MedusaEntity({ resolutionKey: 'entityTest' })
+@MedusaEntity()
 @Entity()
 class EntityTest {}
 
-@Service({ resolutionKey: 'testHandlers' })
+@Service()
 class TestHandlers {
 	@OnMedusaEntityEvent.Before.Insert(EntityTest, { async: true })
 	async testAsyncBeforeInsertHandler() {

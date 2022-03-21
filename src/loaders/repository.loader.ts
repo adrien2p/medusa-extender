@@ -1,4 +1,4 @@
-import { GetInjectableOption, GetInjectableOptions } from './';
+import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
 import { asClass, AwilixContainer } from 'awilix';
 import { getMetadataArgsStorage } from 'typeorm';
 import { Logger } from '../core';
@@ -19,9 +19,9 @@ export async function repositoriesLoader(
 
 	let count = 0;
 	for (const repositoryOptions of repositories) {
-		if (repositoryOptions.resolutionKey) {
+		if (!repositoryOptions.override) {
 			registerRepository(container, repositoryOptions);
-			logger.log(`Repository loaded - ${repositoryOptions.resolutionKey}`);
+			logger.log(`Repository loaded - ${lowerCaseFirst(repositoryOptions.metatype.name)}`);
 			++count;
 		}
 	}
@@ -50,11 +50,12 @@ export async function overrideRepositoriesLoader(repositories: GetInjectableOpti
 }
 
 function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>): void {
-	const { resolutionKey, metatype: repository } = repositoryOptions;
-	if (!resolutionKey) {
-		throw new Error('Missing static property resolutionKey from repository ' + repository.name);
-	}
-
+	const { metatype: repository } = repositoryOptions;
+	const resolutionKey =
+		repositoryOptions.resolutionKey ??
+		`${lowerCaseFirst(repository.name)}${
+			!repository.name.toLowerCase().includes('repository') ? 'Repository' : ''
+		}`;
 	container.register({
 		[resolutionKey]: asClass(repository),
 	});

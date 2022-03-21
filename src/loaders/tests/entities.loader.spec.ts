@@ -18,7 +18,7 @@ class User extends MedusaUser {
 @Module({ imports: [User] })
 class UserModule {}
 
-@MedusaEntity({ resolutionKey: 'anotherEntity' })
+@MedusaEntity()
 @Entity()
 class Another {}
 
