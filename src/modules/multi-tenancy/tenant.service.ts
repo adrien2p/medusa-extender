@@ -9,7 +9,7 @@ type ConstructorParams = {
 	tenantRepository: typeof TenantRepository;
 };
 
-@Service({ resolutionKey: 'tenantService' })
+@Service()
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
 

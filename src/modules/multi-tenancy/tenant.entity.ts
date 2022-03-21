@@ -2,7 +2,7 @@ import { BeforeInsert, Column, Entity, PrimaryColumn } from 'typeorm';
 import { Entity as MedusaEntity } from '../../decorators';
 import { ulid } from 'ulid';
 
-@MedusaEntity({ resolutionKey: 'TenantEntity' })
+@MedusaEntity()
 @Entity()
 export class Tenant {
 	@PrimaryColumn()

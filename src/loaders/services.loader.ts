@@ -20,13 +20,13 @@ export async function servicesLoader(services: GetInjectableOptions<'service'>):
 	serviceLoader.default = ({ container, configModule, isTest }) => {
 		originalServiceLoader({ container, configModule, isTest });
 		for (const serviceOptions of services) {
-			if (!serviceOptions.resolutionKey) {
+			if (serviceOptions.override) {
 				overrideService(container, serviceOptions, configModule);
 				logger.log(`Service overridden - ${serviceOptions.metatype.name}`);
 				++overriddenCount;
 			} else {
 				registerService(container, serviceOptions, configModule);
-				logger.log(`Service loaded - ${serviceOptions.resolutionKey}`);
+				logger.log(`Service loaded - ${lowerCaseFirst(serviceOptions.metatype.name)}`);
 
 				++customCount;
 			}
@@ -42,11 +42,8 @@ export function registerService(
 	serviceOptions: GetInjectableOption<'service'>,
 	configModule: Record<string, unknown>
 ) {
-	const { resolutionKey, metatype, scope } = serviceOptions;
-	if (!resolutionKey) {
-		throw new Error('Unable to register the ' + metatype.name + '. The resolutionKey is missing.');
-	}
-
+	const { metatype, scope } = serviceOptions;
+	const resolutionKey = serviceOptions.resolutionKey ?? lowerCaseFirst(metatype.name);
 	container.register({
 		[resolutionKey]: asFunction((cradle) => new metatype(cradle, configModule), { lifetime: scope || 'SINGLETON' }),
 	});

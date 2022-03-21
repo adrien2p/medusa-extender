@@ -4,13 +4,13 @@ import { Middleware, Module, Service } from '../../decorators';
 @Middleware({ requireAuth: false, routes: [] })
 export class FakeMiddleware {}
 
-@Service({ resolutionKey: 'FakeService' })
+@Service()
 export class FakeService {}
 
 @Middleware({ requireAuth: false, routes: [] })
 export class FakeMiddleware2 {}
 
-@Service({ resolutionKey: 'FakeService2' })
+@Service()
 export class FakeService2 {}
 
 @Module({ imports: [FakeMiddleware2, FakeService2] })

@@ -33,7 +33,7 @@ Let see an example
 import { Column, Entity } from "typeorm"; 
 import { Entity as MedusaEntity } from "medusa-extender";
 
-@MedusaEntity({ resolutionKey: "MyCustomEntity" })
+@MedusaEntity()
 @Entity()
 export class MyCustomEntity {
     @Column()
@@ -41,7 +41,7 @@ export class MyCustomEntity {
 }
 ```
 
-> The `resolutionKey` parameter of the `@MedusaEntity` decorator will only be used by medusa in order to store
+> `@MedusaEntity` decorator will only be used by medusa in order to store
 > that entity into the container. The stored entity will then be added to typeorm.
 
 :point_right: __Override an existing entity__
@@ -88,15 +88,15 @@ import { Repository as MedusaRepository } from "medusa-extender";
 import { EntityRepository, Repository } from "typeorm";
 import { MyCustomEntity } from "./custom.entity";
 
-@MedusaRepository({ resolutionKey: 'MyCustomEntity' })
+@MedusaRepository()
 @EntityRepository(MyCustomEntity)
-export default class MyCustomEntityRepository extends Repository<MyCustomEntity> {}
+export default class MyCustomRepository extends Repository<MyCustomEntity> {}
 ```
 
-> The `resolutionKey` parameter of the `@MedusaRepository` decorator will only be used by medusa in order to store
+> `@MedusaRepository` decorator will only be used by medusa in order to store
 > that custom repository into the container. The stored repository will be accessible through the dependency
 > injection in any of your services. You can also access the container to resolve
-> a dependency in your routes handler through `req.scope.resolve('key')`.
+> a dependency in your routes handler through `req.scope.resolve('myCustomRepository')`.
 
 :point_right: __Override an existing custom repository__
 
@@ -178,8 +178,10 @@ type ConstructorParams = {
     manager: EntityManager;
 };
 
-@Service({ resolutionKey: 'MyCustomService' })
+@Service()
 export default class MyCustomService {
+    static resolutionKey = 'myCustomService';
+ 
     private readonly manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
@@ -188,10 +190,10 @@ export default class MyCustomService {
 }
 ```
 
-> The `resolutionKey` parameter of the `@Service` decorator will only be used by medusa in order to store
+> `@Service` decorator will only be used by medusa in order to store
 > that service into the container. The stored service will be accessible through the dependency
 > injection in any of your other services. You can also access the container to resolve
-> a dependency in your routes handler through `req.scope.resolve('key')`.
+> a dependency in your routes handler through `req.scope.resolve('myCustomService')`.
 
 The `@Service` decorator also accept a `scope` property that is of type `LifetimeType`.
 The scope will be used by the container to manage that resource.
@@ -219,8 +221,10 @@ type ConstructorParams = {
     manager: EntityManager;
 };
 
-@Service({ resolutionKey: 'MyCustomService', scope: 'SCOPED' })
+@Service({ scope: 'SCOPED' })
 export default class MyCustomService {
+    static resolutionKey = 'myCustomService';
+
     private readonly manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {

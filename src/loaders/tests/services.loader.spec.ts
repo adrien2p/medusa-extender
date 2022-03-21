@@ -15,7 +15,7 @@ class OrderService extends MedusaOrderService {
 @Module({ imports: [OrderService] })
 class OrderModule {}
 
-@Service({ resolutionKey: 'customService' })
+@Service()
 class CustomService {
 	testProperty = 'custom property';
 }

@@ -2,7 +2,7 @@ import { Module, Service } from '../../decorators';
 import { MedusaDynamicModule, ModuleInjectionOptions } from '../../core';
 import { modulesLoader } from '../modules.loader';
 
-@Service({ resolutionKey: 'testService' })
+@Service()
 class TestService {}
 
 @Module({ imports: [TestService] })
@@ -15,7 +15,7 @@ class MyDynamicModule implements MedusaDynamicModule {
 	}
 }
 
-@Service({ resolutionKey: 'testService2' })
+@Service()
 class TestService2 {}
 
 @Module()

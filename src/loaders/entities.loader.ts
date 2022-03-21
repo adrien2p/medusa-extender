@@ -1,4 +1,4 @@
-import { GetInjectableOption, GetInjectableOptions, MedusaCustomContainer } from './';
+import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst, MedusaCustomContainer } from './';
 import { asClass, asValue, AwilixContainer } from 'awilix';
 import { Logger } from '../core';
 
@@ -18,9 +18,9 @@ export async function entitiesLoader(
 
 	let count = 0;
 	for (const entityOptions of entities) {
-		if (entityOptions.resolutionKey) {
+		if (!entityOptions.override) {
 			registerEntity(container, entityOptions);
-			logger.log(`Entity loaded - ${entityOptions.resolutionKey}`);
+			logger.log(`Entity loaded - ${lowerCaseFirst(entityOptions.metatype.name)}`);
 			++count;
 		}
 	}
@@ -49,10 +49,10 @@ export async function overrideEntitiesLoader(entities: GetInjectableOptions<'ent
 }
 
 export function registerEntity(container: AwilixContainer, entityOptions: GetInjectableOption<'entity'>): void {
-	const { resolutionKey, metatype: entity } = entityOptions;
-	if (!resolutionKey) {
-		throw new Error('Missing static property resolutionKey from entity ' + entity.name);
-	}
+	const { metatype: entity } = entityOptions;
+	const resolutionKey =
+		entityOptions.resolutionKey ??
+		`${lowerCaseFirst(entity.name)}${!entity.name.toLowerCase().includes('entity') ? 'Entity' : ''}`;
 	container.register({
 		[resolutionKey]: asClass(entity),
 	});

@@ -13,7 +13,7 @@ import { buildComponentDecorator } from './helpers/build-component-decorator';
  * @param options
  * @constructor
  */
-export function Entity<T = unknown>(options: EntityInjectableOptions<T>): ClassDecorator {
+export function Entity<T = unknown>(options: EntityInjectableOptions<T> = {}): ClassDecorator {
 	return buildComponentDecorator({ type: 'entity', ...options });
 }
 
@@ -22,7 +22,7 @@ export function Entity<T = unknown>(options: EntityInjectableOptions<T>): ClassD
  * @param options
  * @constructor
  */
-export function Service<T = unknown>(options: ServiceInjectableOptions<T>): ClassDecorator {
+export function Service<T = unknown>(options: ServiceInjectableOptions<T> = {}): ClassDecorator {
 	return buildComponentDecorator({ type: 'service', ...options });
 }
 
@@ -31,7 +31,7 @@ export function Service<T = unknown>(options: ServiceInjectableOptions<T>): Clas
  * @param options
  * @constructor
  */
-export function Repository<T = unknown>(options: RepositoryInjectableOptions<T>): ClassDecorator {
+export function Repository<T = unknown>(options: RepositoryInjectableOptions<T> = {}): ClassDecorator {
 	return buildComponentDecorator({ type: 'repository', ...options });
 }
 

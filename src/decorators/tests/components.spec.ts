@@ -5,31 +5,31 @@ import { INJECTABLE_OPTIONS_KEY } from '../../core';
 describe('components', () => {
 	describe('Entity', () => {
 		it('should define the entity metadata', () => {
-			@Entity({ resolutionKey: 'resolutionLKey' })
+			@Entity()
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
-			expect(metadata).toEqual({ type: 'entity', resolutionKey: 'resolutionLKey' });
+			expect(metadata).toEqual({ type: 'entity' });
 		});
 	});
 
 	describe('Service', () => {
 		it('should define the service metadata', () => {
-			@Service({ resolutionKey: 'resolutionLKey' })
+			@Service()
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
-			expect(metadata).toEqual({ type: 'service', resolutionKey: 'resolutionLKey' });
+			expect(metadata).toEqual({ type: 'service' });
 		});
 	});
 
 	describe('Repository', () => {
 		it('should define the repository metadata', () => {
-			@Repository({ resolutionKey: 'resolutionLKey' })
+			@Repository()
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
-			expect(metadata).toEqual({ type: 'repository', resolutionKey: 'resolutionLKey' });
+			expect(metadata).toEqual({ type: 'repository' });
 		});
 	});
 
