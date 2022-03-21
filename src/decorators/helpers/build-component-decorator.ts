@@ -4,7 +4,7 @@ import { INJECTABLE_OPTIONS_KEY, InjectableComponentTypes, InjectableOptions } f
 export function buildComponentDecorator<T>(
 	options: InjectableOptions<T> & { type: InjectableComponentTypes }
 ): ClassDecorator {
-	return (target: object) => {
+	return <T>(target: T) => {
 		Reflect.defineMetadata(INJECTABLE_OPTIONS_KEY, options, target);
 	};
 }

@@ -41,7 +41,7 @@ export function registerService(
 	container: AwilixContainer,
 	serviceOptions: GetInjectableOption<'service'>,
 	configModule: Record<string, unknown>
-) {
+): void {
 	const { metatype, scope } = serviceOptions;
 	const resolutionKey = serviceOptions.resolutionKey ?? lowerCaseFirst(metatype.name);
 	container.register({

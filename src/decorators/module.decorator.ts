@@ -7,7 +7,7 @@ import { MODULE_KEY, ModuleInjectionOptions } from '../core';
  * @param options
  */
 export function Module(options: ModuleInjectionOptions = { imports: [] }): ClassDecorator {
-	return (target: object) => {
+	return <T>(target: T) => {
 		Reflect.defineMetadata(MODULE_KEY, options?.imports, target);
 	};
 }
