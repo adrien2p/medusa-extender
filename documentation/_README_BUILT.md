@@ -29,10 +29,10 @@
 	</p>
 
 <p align="center">
-  <b>:syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:</b></br>
-  <sub>Fully customisable medusa, create custom fields in any entity, implement your own feature or extend existing one in minutes! Make your own architecture or choose the modular architecture provided.
-        Build a store, marketplace, media store and anything you want to do you can do it.
-        Enjoy the full power of Medusa with extra badass features :rocket:<sub>
+  <b>Medusa on steroid, take your medusa project to the next level with some badass features :rocket:</b></br>
+  <sub>The extender provides an out-of-the-box application architecture which allows developers and teams to create highly testable, scalable, loosely coupled, and easily maintainable applications.
+In also increase medusa extensibility and customisation for special use cases. It comes with handy
+decorators approach to increase the DX and full typings support for easier development. It is a complement to medusa but not a replacement :rocket:<sub>
 </p>
 
 <br />
@@ -51,9 +51,7 @@
 * [Getting started :rocket:](#getting-started-rocket)
 	* [Existing medusa project](#existing-medusa-project)
 	* [From server starter](#from-server-starter)
-* [Features :monocle_face:](#features-monocle_face)
-	* [Non exhaustive list](#non-exhaustive-list)
-	* [Directory Architecture](#directory-architecture)
+* [Directory Architecture](#directory-architecture)
 * [CLI `medex`](#cli-medex)
 	* [Commands references](#commands-references)
 		* [Command `generate` reference](#command-generate-reference)
@@ -146,52 +144,11 @@ npm run start
 That's it, your server is now up and running :rocket:
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#features-monocle_face)
-
-# Features :monocle_face:
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#non-exhaustive-list)
-
-## Non exhaustive list
-
-Here is a list of the features that you can find in that package
-
-- [Create or extend an entity](#decorators)
-- [Create or extend a repository](#decorators)
-- [Create or extend a service](#decorators)
-- [Create middleware before or after medusa authentication strategy](#decorators)
-- [Create new migrations](#decorators)
-- [Create new router handler](#decorators)
-- [Extend validators from medusa to includes custom fields](#decorators)
-- [Emit entity subscribers events](#decorators)
-- [Group your component by module](#module)
-- [Register component dynamically with dynamic module](#module-dynamic-module)
-- [Listen to entity subscribers and handle them wherever you want](#decorators)
-- [CLI](#cli-medex)
-    - [Generate new components](#cli-medex)
-    - [Migrate your data](#cli-medex)
-- [Monitoring `(Optional module)`](#monitoring)
-- [Multi-tenancy architecture `(Optional module)`](#multi-tenancy)
-
-All those features aims to help you build what you want such as
-
-- Creating and managing a marketplace
-- Creating a media store to sell nft - video - images - keys - etc.
-- And basically create whatever you want on top of `@medusajs`
-
-Share your code
-
-- Build shareable modules/plugins to use across your project or to share with the community
-
-
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#directory-architecture)
 
-## Directory Architecture
+# Directory Architecture
 
-Using this package also allow you to manage your architecture as you want.
-you will not be limited by any constraint as long as the component are decorated
-and the modules are referenced into the main file to be loaded, everything is fine.
+Using this package help you organise your code in a module approach.
 That means that you can go for a modular architecture and decoupled
 your code depending on your domains.
 

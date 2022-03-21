@@ -4,7 +4,7 @@
   "input": "blueprint.md",
   "output": "documentation/_README_BUILT.md",
   "line": "cloudy",
-  "text": "Fully customisable medusa, create custom fields in any entity, implement your own feature or extend existing one in minutes! Make your own architecture or choose the modular architecture provided.\n        Build a store, marketplace, media store and anything you want to do you can do it.\n        Enjoy the full power of Medusa with extra badass features :rocket:",
+  "text": "The extender provides an out-of-the-box application architecture which allows developers and teams to create highly testable, scalable, loosely coupled, and easily maintainable applications.\nIn also increase medusa extensibility and customisation for special use cases. It comes with handy\ndecorators approach to increase the DX and full typings support for easier development. It is a complement to medusa but not a replacement :rocket:",
   "documentationConfig": {
     "markdown": {
       "titleLevel": 2
