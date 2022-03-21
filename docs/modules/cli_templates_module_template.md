@@ -28,4 +28,4 @@ Provide a basic template for the module component generation.
 
 #### Defined in
 
-[src/cli/templates/module-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/6d94c10/src/cli/templates/module-template.ts#L7)
+[src/cli/templates/module-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/ba1daa1/src/cli/templates/module-template.ts#L7)

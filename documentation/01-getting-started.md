@@ -15,6 +15,18 @@ npm install {{ pkg.name }}
 
 That's it, you are now ready to run your server :rocket:
 
+Note: The default port is `9000`, if you want to run the server on a custom port update `medusa-config.js` as follows:
+
+```
+module.exports = {
+  /* ... */
+  serverConfig:{
+    port: <PORT_NUMBER>
+  }
+  /* ... */
+};
+```
+
 ## From server starter
 
 You can directly clone the `starters/server` to get started quickly.

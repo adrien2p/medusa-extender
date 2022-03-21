@@ -6,3 +6,4 @@ export * from './entity-template';
 export * from './repository-template';
 export * from './migration-template';
 export * from './validator-template';
+export * from './main-template';
