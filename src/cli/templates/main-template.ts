@@ -18,7 +18,7 @@ export function getMainEntryPointTemplate(): string {
             
             const port = config?.serverConfig?.port ?? 9000;
             expressInstance.listen(port, () => {
-                console.info('Server successfully started on port ' + config.serverConfig.port);
+                console.info('Server successfully started on port ' + port);
             });
         }
         
