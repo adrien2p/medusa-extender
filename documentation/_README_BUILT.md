@@ -113,7 +113,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.6.0)
+Run the following command in your terminal (The last version is 1.6.1)
 
 ```bash
 npm install medusa-extender
