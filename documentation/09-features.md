@@ -1,4 +1,4 @@
-# Directory Architecture
+# Application Architecture
 
 Using this package help you organise your code in a module approach.
 That means that you can go for a modular architecture and decoupled

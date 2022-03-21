@@ -51,7 +51,7 @@ decorators approach to increase the DX and full typings support for easier devel
 * [Getting started :rocket:](#getting-started-rocket)
 	* [Existing medusa project](#existing-medusa-project)
 	* [From server starter](#from-server-starter)
-* [Directory Architecture](#directory-architecture)
+* [Application Architecture](#application-architecture)
 * [CLI `medex`](#cli-medex)
 	* [Commands references](#commands-references)
 		* [Command `generate` reference](#command-generate-reference)
@@ -144,9 +144,9 @@ npm run start
 That's it, your server is now up and running :rocket:
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#directory-architecture)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#application-architecture)
 
-# Directory Architecture
+# Application Architecture
 
 Using this package help you organise your code in a module approach.
 That means that you can go for a modular architecture and decoupled
