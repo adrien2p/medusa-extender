@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/6d94c10/src/loaders/database.loader.ts#L5)
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/ba1daa1/src/loaders/database.loader.ts#L5)

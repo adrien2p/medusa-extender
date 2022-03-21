@@ -12,6 +12,7 @@
 - [cli/commands/migrate](modules/cli_commands_migrate.md)
 - [cli/templates](modules/cli_templates.md)
 - [cli/templates/entity-template](modules/cli_templates_entity_template.md)
+- [cli/templates/main-template](modules/cli_templates_main_template.md)
 - [cli/templates/middleware-template](modules/cli_templates_middleware_template.md)
 - [cli/templates/migration-template](modules/cli_templates_migration_template.md)
 - [cli/templates/module-template](modules/cli_templates_module_template.md)

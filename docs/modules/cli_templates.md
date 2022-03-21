@@ -7,6 +7,7 @@
 ### References
 
 - [getEntityTemplate](cli_templates.md#getentitytemplate)
+- [getMainEntryPointTemplate](cli_templates.md#getmainentrypointtemplate)
 - [getMiddlewareTemplate](cli_templates.md#getmiddlewaretemplate)
 - [getMigrationTemplate](cli_templates.md#getmigrationtemplate)
 - [getModuleTemplate](cli_templates.md#getmoduletemplate)
@@ -20,6 +21,12 @@
 ### getEntityTemplate
 
 Re-exports [getEntityTemplate](cli_templates_entity_template.md#getentitytemplate)
+
+___
+
+### getMainEntryPointTemplate
+
+Re-exports [getMainEntryPointTemplate](cli_templates_main_template.md#getmainentrypointtemplate)
 
 ___
 
