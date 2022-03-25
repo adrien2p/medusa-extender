@@ -8,6 +8,7 @@ import { lowerCaseFirst } from '../../core';
 export function getServiceTemplate(serviceName: string): string {
 	const resolutionKey = lowerCaseFirst(serviceName);
 	return dedent`
+		import { BaseService } from "medusa-interfaces";
         import { Service } from 'medusa-extender';
         import { EntityManager } from 'typeorm';
         
@@ -16,7 +17,7 @@ export function getServiceTemplate(serviceName: string): string {
         };
         
         @Service()
-        export class ${serviceName} {
+        export class ${serviceName} extends BaseService {
         	static resolutionKey = '${resolutionKey}';
 	
             constructor(private readonly container: ContainerInjection, private readonly config: any) {}
