@@ -33,7 +33,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "medusa-core-utils": "^1.1.31",
-    "medusa-extender": "^1.5.2",
+    "medusa-extender": "^1.6.1",
     "medusa-fulfillment-manual": "^1.1.30",
     "medusa-interfaces": "^1.1.34",
     "medusa-payment-manual": "^1.0.12",

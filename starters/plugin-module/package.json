@@ -37,7 +37,7 @@
     "jest": "^27.3.1",
     "medusa-core-utils": "^1.1.31",
     "medusa-interfaces": "^1.2.1",
-    "medusa-extender": "^1.0.19-alpha.14",
+    "medusa-extender": "^1.6.1",
     "prettier": "^2.5.0",
     "reflect-metadata": "^0.1.13",
     "supertest": "^6.1.6",
