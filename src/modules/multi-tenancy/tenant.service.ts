@@ -3,20 +3,12 @@ import { createConnection, EntityManager, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
 import { MedusaRequest } from '../../core';
-import TenantRepository from './tenant.repository';
-
-type ConstructorParams = {
-	tenantRepository: typeof TenantRepository;
-};
 
 @Service()
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
 
-	readonly #tenantRepository: typeof TenantRepository;
-
-	constructor(private readonly container: ConstructorParams, private readonly config: ConfigModule) {
-		this.#tenantRepository = container.tenantRepository;
+	constructor(private readonly config: ConfigModule) {
 	}
 
 	/**
@@ -33,8 +25,7 @@ export class TenantService {
 			return defaultManager;
 		}
 
-		const tenantRepo = defaultManager.getCustomRepository(this.#tenantRepository);
-		const tenant = await tenantRepo.findOne({ where: { code: tenantCode } });
+		const tenant = this.config.multiTenancy?.tenants?.find(t => t.code === tenantCode);
 		if (!tenant) {
 			throw new Error('Unable to find the tenant from the code found.');
 		}
@@ -64,4 +55,5 @@ export class TenantService {
 			);
 		}
 	}
+
 }

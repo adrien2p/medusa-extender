@@ -45,7 +45,6 @@ jest.spyOn(typeormFunctions, 'getConnectionManager').mockImplementation((): Conn
 jest.spyOn(typeormFunctions, 'createConnection').mockImplementation((options: any) => {
 	const connectRes = {
 		manager: {
-			getCustomRepository: () => tenantRepositoryMock,
 			connection: { name: options.name, createQueryRunner: Connection.prototype.createQueryRunner },
 		},
 	};
@@ -57,23 +56,13 @@ jest.spyOn(typeormFunctions, 'createConnection').mockImplementation((options: an
 });
 const container = createContainer();
 const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
-const tenantRepositoryMock = {
-	findOne: ({ where: { code } }: { where: { code: string } }) => {
-		const sharedProps = {
-			database_type: 'postgres',
-			database_url: 'fakeUrl',
-			database_extra: { fakeExtraProp: 'test' },
-		};
-
-		if (code === tenantCodes[0]) {
-			return { ...sharedProps, code: tenantCodes[0] };
-		} else if (code === tenantCodes[1]) {
-			return { ...sharedProps, code: tenantCodes[1] };
-		}
-	},
+const sharedProps = {
+	database_type: 'postgres',
+	database_url: 'fakeUrl',
+	database_extra: { fakeExtraProp: 'test' },
 };
+
 const defaultManagerMock = {
-	getCustomRepository: () => tenantRepositoryMock,
 	connection: { name: 'default', createQueryRunner: Connection.prototype.createQueryRunner },
 };
 const configMock = {
@@ -83,6 +72,10 @@ const configMock = {
 	multiTenancy: {
 		enable: true,
 		tenantCodeResolver: (req: MedusaRequest) => req.headers['x-tenant'] as string,
+		tenants:[
+			{ ...sharedProps, code: tenantCodes[0] },
+			{ ...sharedProps, code: tenantCodes[1] }
+		]
 	},
 };
 
@@ -93,12 +86,11 @@ describe('Tenant service', () => {
 		container.register({
 			request: asFunction(() => 'test', { lifetime: 'SCOPED' }),
 			fakeService: asFunction((cradle) => new FakeService(cradle), { lifetime: 'SINGLETON' }),
-			tenantRepository: asValue(tenantRepositoryMock),
 			manager: asValue(defaultManagerMock),
 			db_entities: asValue([]),
 			[TenantService.resolutionKey]: asFunction(
-				(cradle) => {
-					return new TenantService(cradle, configMock);
+				() => {
+					return new TenantService(configMock);
 				},
 				{ lifetime: 'SINGLETON' }
 			),
