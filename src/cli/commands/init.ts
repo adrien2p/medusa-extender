@@ -14,7 +14,11 @@ export async function init(): Promise<void> {
 	logger.log('Initialising medusa-extender...');
 
 	logger.log('[Packages] Check that the packages are installed');
-	await loadPackages(logger, [{ name: 'typescript', version: '4.5.5', isDevDependency: true }]);
+	await loadPackages(logger, [
+		{ name: 'typescript', version: '4.5.5', isDevDependency: true },
+		{ name: 'nodemon', version: '2.0.15', isDevDependency: true },
+		{ name: 'ts-node', version: '10.7.0', isDevDependency: true },
+	]);
 
 	await updatePackageJson();
 	await updateTsconfigJson();
@@ -40,6 +44,7 @@ async function updatePackageJson(): Promise<void> {
 		...(packageJson.scripts ?? {}),
 		build: 'rm -rf dist && ./node_modules/.bin/tsc -p tsconfig.json',
 		start: 'npm run build && NODE_ENV=development node ./dist/main.js',
+		'start:watch': "nodemon --watch './src/**/*.ts' --exec 'ts-node' ./src/main.ts",
 		'start:prod': 'npm run build && NODE_ENV=production node dist/main',
 	};
 	writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 4));
