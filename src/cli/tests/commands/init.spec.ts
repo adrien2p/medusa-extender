@@ -53,6 +53,8 @@ describe('Init command', () => {
 
 		expect(loadPackagesMock).toHaveBeenCalledWith(expect.anything(), [
 			{ name: 'typescript', version: '4.5.5', isDevDependency: true },
+			{ name: 'nodemon', version: '2.0.15', isDevDependency: true },
+			{ name: 'ts-node', version: '10.7.0', isDevDependency: true },
 		]);
 
 		const packageJson = await import(resolve(fakeProjectPath, 'package.json'));
@@ -61,6 +63,7 @@ describe('Init command', () => {
 			expect.objectContaining({
 				build: 'rm -rf dist && ./node_modules/.bin/tsc -p tsconfig.json',
 				start: 'npm run build && NODE_ENV=development node ./dist/main.js',
+				'start:watch': "nodemon --watch './src/**/*.ts' --exec 'ts-node' ./src/main.ts",
 				'start:prod': 'npm run build && NODE_ENV=production node dist/main',
 			})
 		);
