@@ -36,7 +36,7 @@ export const MEDUSA_RESOLVER_KEYS = {
 	FulfillmentService: 'fulfillmentService',
 	InventoryService: 'inventoryService',
 	CartService: 'cartService',
-	DraftOrderService: 'draftorderService',
+	DraftOrderService: 'draftOrderService',
 	OrderService: 'orderService',
 	manager: 'manager',
 	logger: 'logger',
