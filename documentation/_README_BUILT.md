@@ -288,10 +288,11 @@ modules.exports = {
 #### Options
 
 
-| Name     | Alias | Description                                  |
-|----------|-------|----------------------------------------------|
-| `--run`  | `-r`  | Run migrations up method.                    |
-| `--show` | `-s`  | Show all applied and non applied migrations. |
+| Name       | Alias | Description                                  |
+|------------|-------|----------------------------------------------|
+| `--run`    | `-r`  | Run migrations up method.                    |
+| `--revert` | `-u`  | Revert the last migrations.                  |
+| `--show`   | `-s`  | Show all applied and non applied migrations. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#full-code-api-mag)

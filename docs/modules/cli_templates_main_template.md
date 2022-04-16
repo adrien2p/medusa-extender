@@ -22,4 +22,4 @@ Provide a basic template for the main entry point file generation.
 
 #### Defined in
 
-[src/cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/2db47f5/src/cli/templates/main-template.ts#L6)
+[src/cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/c3d13ae/src/cli/templates/main-template.ts#L6)
