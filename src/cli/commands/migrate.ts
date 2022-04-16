@@ -3,11 +3,6 @@ import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
 import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
 
-/**
- * Run the migrations using the medusa-config.js config.
- * @param run
- * @param show
- */
 type ConfigModule = {
 	projectConfig: {
 		database_type: string;
@@ -19,7 +14,13 @@ type ConfigModule = {
 	multiTenancy?: MultiTenancyOptions;
 };
 
-export async function migrate({ run, show }): Promise<void> {
+/**
+ * Run the migrations using the medusa-config.js config.
+ * @param run
+ * @param revert
+ * @param show
+ */
+export async function migrate({ run, revert, show }): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 
 	let uniqMigrationDirs = new Set<string>();
@@ -50,6 +51,9 @@ export async function migrate({ run, show }): Promise<void> {
 
 	if (run) {
 		await connection.runMigrations();
+		await connection.close();
+	} else if (revert) {
+		await connection.undoLastMigration({ transaction: 'all' });
 		await connection.close();
 	} else if (show) {
 		await connection.showMigrations();

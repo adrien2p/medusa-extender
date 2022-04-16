@@ -17,6 +17,7 @@ program
 		"Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']"
 	)
 	.option('-r, --run', 'Run migrations up method')
+	.option('-u, --revert', 'Revert the last migrations')
 	.option('-s, --show', 'Show all applied and non applied migrations')
 	.action(async (options, program) => {
 		console.time(green('Migration command'));

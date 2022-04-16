@@ -140,6 +140,7 @@
   "cliMigrateOptionsSchematics": [
     ["Name", "Alias", "Description"],
     ["`--run`", "`-r`", "Run migrations up method."],
+    ["`--revert`", "`-u`", "Revert the last migrations."],
     ["`--show`", "`-s`", "Show all applied and non applied migrations."]
   ],
   "cliGenerateOptionsSchematics": [
