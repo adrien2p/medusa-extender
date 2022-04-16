@@ -91,9 +91,10 @@ describe('CLI', () => {
 			Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']
 			
 			Options:
-			  -r, --run   Run migrations up method
-			  -s, --show  Show all applied and non applied migrations
-			  -h, --help  display help for command
+			  -r, --run     Run migrations up method
+			  -u, --revert  Revert the last migrations
+			  -s, --show    Show all applied and non applied migrations
+			  -h, --help    display help for command
         `)
 		);
 	});
