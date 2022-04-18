@@ -127,7 +127,7 @@ describe('GenerateComponent', () => {
 	it('should generate a module that includes other generated components automatically', () => {
 		generateComponent(componentName, { middleware: true, service: true, path });
 		generateComponent(componentName, { module: true, path });
-		generateComponent(componentName, { repository: true, router: true, path });
+		generateComponent(componentName, { repository: true, router: true, entity: true, path });
 
 		const subDirectory = 'subDirectory';
 		generateComponent(componentName, { validator: true, path: path + '/' + subDirectory });
@@ -142,11 +142,12 @@ describe('GenerateComponent', () => {
 			import { TestValidator } from './${subDirectory}/test.validator';
 			import { TestRouter } from './test.router';
 			import { TestRepository } from './test.repository';
+			import { Test } from './test.entity';
 			import { TestService } from './test.service';
 			import { TestMiddleware } from './test.middleware';
 			
 			@Module({
-				imports: [TestMiddleware, TestService, TestRepository, TestRouter, TestValidator]
+				imports: [TestMiddleware, TestService, Test, TestRepository, TestRouter, TestValidator]
 			})
 			export class TestModule {}
 		`)

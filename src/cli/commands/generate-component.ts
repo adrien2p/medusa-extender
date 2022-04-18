@@ -162,7 +162,7 @@ export function updateModuleImports(fullDestinationPath: string): void {
 
 			const moduleContent = readFileSync(resolvedModulePath).toString();
 
-			const shouldUpdateModuleImport = !moduleContent.match(`${componentClassName}`);
+			const shouldUpdateModuleImport = !moduleContent.match(`${parse(file.name).name}`);
 			if (!shouldUpdateModuleImport) continue;
 
 			const isComponentInSubDirectory =
