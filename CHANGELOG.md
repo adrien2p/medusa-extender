@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://github.com/adrien2p/medusa-extender/compare/v1.6.1...v1.6.2) (2022-04-18)
+
+
+### Features
+
+* **cli:** Add revert method to the migrate command ([cce22c0](https://github.com/adrien2p/medusa-extender/commits/cce22c0719faf17d0f5cdc95008f92397f829c4e))
+* **cli:** On init add watch script in order to be able to run with hot reload on changes ([a8e721f](https://github.com/adrien2p/medusa-extender/commits/a8e721fdf548edb8d41d56789dd77f1d4b67e69f))
+* **cli:** Update service template ([33a7dc9](https://github.com/adrien2p/medusa-extender/commits/33a7dc923e07a615655f8bdd9dcf3c650f3e5d3a))
+
+
+### Bug Fixes
+
+* **cli:** updateModuleImports method ([f4db805](https://github.com/adrien2p/medusa-extender/commits/f4db805d84db1ca6e8fcb9a4ff3c88c579adeedc))
+* **constants:** incorrect casing for draftOrderService in MEDUSA_RESOLVER_KEYS ([#79](https://github.com/adrien2p/medusa-extender/issues/79)) ([fbbbebd](https://github.com/adrien2p/medusa-extender/commits/fbbbebdaef5374deee09fffb37651d3730dc2d77))
+
 ### [1.6.1](https://github.com/adrien2p/medusa-extender/compare/v1.6.0...v1.6.1) (2022-03-21)
 
 
