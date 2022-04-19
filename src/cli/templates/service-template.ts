@@ -12,15 +12,21 @@ export function getServiceTemplate(serviceName: string): string {
         import { Service } from 'medusa-extender';
         import { EntityManager } from 'typeorm';
         
-        type ContainerInjection = {
+        type InjectedDependencies = {
             manager: EntityManager;
         };
         
         @Service()
         export class ${serviceName} extends BaseService {
         	static resolutionKey = '${resolutionKey}';
+        	
+        	private readonly manager: EntityManager;
 	
-            constructor(private readonly container: ContainerInjection, private readonly config: any) {}
+            constructor({ manager }: InjectedDependencies, private readonly config: any) {
+            	super();
+            	
+            	this.manager = manager;
+            }
         }
     `;
 }
