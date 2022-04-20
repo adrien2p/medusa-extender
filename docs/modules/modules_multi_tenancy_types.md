@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/types.ts:4](https://github.com/adrien2p/medusa-extender/blob/da12f07/src/modules/multi-tenancy/types.ts#L4)
+[src/modules/multi-tenancy/types.ts:4](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/types.ts#L4)

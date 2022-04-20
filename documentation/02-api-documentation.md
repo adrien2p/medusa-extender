@@ -409,7 +409,7 @@ does not take that in count.
 To fix that problem, you can extend the underlying validator to add the constraint on your custom
 field and make medusa aware about it.
 
-Let see and example
+let see an example
 
 
 ```typescript
@@ -435,7 +435,7 @@ validator to tell you that this fields is not recognised.
 Allow you to register new subscriber. The subscribers are built through the container
 but not registered as part of the container.
 
-Let see and example
+let see an example
 
 
 ```typescript

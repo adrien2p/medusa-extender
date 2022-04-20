@@ -114,7 +114,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.6.3)
+Run the following command in your terminal (The last version is 1.6.4)
 
 ```bash
 npm install medusa-extender
@@ -727,7 +727,7 @@ does not take that in count.
 To fix that problem, you can extend the underlying validator to add the constraint on your custom
 field and make medusa aware about it.
 
-Let see and example
+let see an example
 
 
 ```typescript
@@ -753,7 +753,7 @@ validator to tell you that this fields is not recognised.
 Allow you to register new subscriber. The subscribers are built through the container
 but not registered as part of the container.
 
-Let see and example
+let see an example
 
 
 ```typescript
