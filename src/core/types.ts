@@ -20,7 +20,8 @@ export type InjectableComponentTypes =
 	| 'service'
 	| 'migration'
 	| 'router'
-	| 'middleware';
+	| 'middleware'
+	| 'subscriber';
 
 /**
  * Defines the injection options for entities.
@@ -89,6 +90,11 @@ export type ValidatorInjectionOptions<TOverride = unknown> = {
 };
 
 /**
+ * Defines the injection options for subscribers.
+ */
+export type SubscriberInjectionOptions = Record<string, unknown>;
+
+/**
  * Defines the injection options for routes.
  */
 export type ModuleInjectionOptions<T = unknown> = {
@@ -124,6 +130,8 @@ export type GetInjectableOption<TComponentType extends InjectableComponentTypes 
 		? MiddlewareInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'validator'>
 		? ValidatorInjectionOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'subscriber'>
+		? SubscriberInjectionOptions
 		: never) & {
 		type: InjectableComponentTypes;
 		metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type;

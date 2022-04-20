@@ -8,6 +8,7 @@ export * from './plugins.loader';
 export * from './migrations.loader';
 export * from './validators.loader';
 export * from './modules.loader';
+export * from './subscribers.loader';
 
 export * from '../core/types';
 export * from '../core/utils';

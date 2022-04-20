@@ -69,3 +69,11 @@ export function Router(options: RouterInjectionOptions): ClassDecorator {
 export function Validator(options: ValidatorInjectionOptions): ClassDecorator {
 	return buildComponentDecorator({ type: 'validator', ...options });
 }
+
+/**
+ * Mark a class as a subscriber.
+ * @constructor
+ */
+export function Subscriber(): ClassDecorator {
+	return buildComponentDecorator({ type: 'subscriber' });
+}

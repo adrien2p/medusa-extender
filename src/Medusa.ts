@@ -14,6 +14,7 @@ import {
 	pluginsLoadersAndListeners,
 	servicesLoader,
 	storeApiLoader,
+	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
@@ -74,6 +75,7 @@ export class Medusa {
 		);
 		await pluginsLoadersAndListeners(this.#express);
 		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
+		await subscribersLoader(moduleComponentsOptions.get('subscriber') ?? []);
 
 		const { container, dbConnection } = await loaders({
 			isTest: process.env.NODE_ENV === 'test',
