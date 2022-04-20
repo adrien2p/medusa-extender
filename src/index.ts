@@ -20,6 +20,7 @@ export {
 	Migration,
 	Router,
 	Validator,
+	Subscriber,
 } from './decorators';
 
 export { MonitoringOptions } from './modules/monitoring';
