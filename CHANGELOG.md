@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.5](https://github.com/adrien2p/medusa-extender/compare/v1.6.4...v1.6.5) (2022-04-20)
+
+
+### Bug Fixes
+
+* Missing Subscriber decorator export from index ([973e38c](https://github.com/adrien2p/medusa-extender/commits/973e38cf01a5b0b5b6c69ca01e3cb667e05e33be))
+
 ### [1.6.4](https://github.com/adrien2p/medusa-extender/compare/v1.6.3...v1.6.4) (2022-04-20)
 
 
