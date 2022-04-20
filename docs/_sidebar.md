@@ -23,6 +23,7 @@
 		- [@Middleware](#middleware)
 		- [@Router](#router)
 		- [@Validator](#validator)
+		- [@Subscriber](#subscriber)
 		- [@Module](#module)
 		- [@Module (Dynamic module)](#module-dynamic-module)
 		- [@OnMedusaEntityEvent](#onmedusaentityevent)

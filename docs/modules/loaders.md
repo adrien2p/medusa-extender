@@ -27,6 +27,7 @@
 - [RouterInjectionOptions](loaders.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
 - [ServiceInjectableOptions](loaders.md#serviceinjectableoptions)
+- [SubscriberInjectionOptions](loaders.md#subscriberinjectionoptions)
 - [Type](loaders.md#type)
 - [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
 - [adminApiLoader](loaders.md#adminapiloader)
@@ -47,6 +48,7 @@
 - [repositoryMixin](loaders.md#repositorymixin)
 - [servicesLoader](loaders.md#servicesloader)
 - [storeApiLoader](loaders.md#storeapiloader)
+- [subscribersLoader](loaders.md#subscribersloader)
 - [upperCaseFirst](loaders.md#uppercasefirst)
 - [validatorsLoader](loaders.md#validatorsloader)
 
@@ -178,6 +180,12 @@ Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
 
 ___
 
+### SubscriberInjectionOptions
+
+Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
+
+___
+
 ### Type
 
 Re-exports [Type](../interfaces/core_types.Type.md)
@@ -295,6 +303,12 @@ ___
 ### storeApiLoader
 
 Re-exports [storeApiLoader](loaders_store_api_loader.md#storeapiloader)
+
+___
+
+### subscribersLoader
+
+Re-exports [subscribersLoader](loaders_subscribers_loader.md#subscribersloader)
 
 ___
 

@@ -31,6 +31,7 @@
 - [RouterInjectionOptions](core.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](core.md#routesinjectionrouterconfiguration)
 - [ServiceInjectableOptions](core.md#serviceinjectableoptions)
+- [SubscriberInjectionOptions](core.md#subscriberinjectionoptions)
 - [Type](core.md#type)
 - [ValidatorInjectionOptions](core.md#validatorinjectionoptions)
 - [attachOrReplaceEntitySubscriber](core.md#attachorreplaceentitysubscriber)
@@ -192,6 +193,12 @@ ___
 ### ServiceInjectableOptions
 
 Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
+
+___
+
+### SubscriberInjectionOptions
+
+Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
 
 ___
 

@@ -19,6 +19,7 @@
 - [Repository](decorators.md#repository)
 - [Router](decorators.md#router)
 - [Service](decorators.md#service)
+- [Subscriber](decorators.md#subscriber)
 - [Validator](decorators.md#validator)
 
 ## References
@@ -98,6 +99,12 @@ ___
 ### Service
 
 Re-exports [Service](decorators_components_decorator.md#service)
+
+___
+
+### Subscriber
+
+Re-exports [Subscriber](decorators_components_decorator.md#subscriber)
 
 ___
 

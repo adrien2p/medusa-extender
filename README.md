@@ -71,6 +71,7 @@ decorators approach to increase the DX and full typings support for easier devel
 		* [@Middleware](https://adrien2p.github.io/medusa-extender/#/?id=middleware)
 		* [@Router](https://adrien2p.github.io/medusa-extender/#/?id=router)
 		* [@Validator](https://adrien2p.github.io/medusa-extender/#/?id=validator)
+		* [@Subscriber](https://adrien2p.github.io/medusa-extender/#/?id=subscriber)
 		* [@Module](https://adrien2p.github.io/medusa-extender/#/?id=module)
 		* [@Module (Dynamic module)](https://adrien2p.github.io/medusa-extender/#/?id=module-dynamic-module)
 		* [@OnMedusaEntityEvent](https://adrien2p.github.io/medusa-extender/#/?id=onmedusaentityevent)

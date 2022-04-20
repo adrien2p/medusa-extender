@@ -72,6 +72,7 @@ decorators approach to increase the DX and full typings support for easier devel
 		* [@Middleware](#middleware)
 		* [@Router](#router)
 		* [@Validator](#validator)
+		* [@Subscriber](#subscriber)
 		* [@Module](#module)
 		* [@Module (Dynamic module)](#module-dynamic-module)
 		* [@OnMedusaEntityEvent](#onmedusaentityevent)
@@ -113,7 +114,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.6.1)
+Run the following command in your terminal (The last version is 1.6.3)
 
 ```bash
 npm install medusa-extender
@@ -746,6 +747,36 @@ But without doing anything else, medusa will handle it through the underlying
 handler for the creation but will now be aware of that field and therefor
 will take care of saving it. Otherwise, you will end up with an error thrown by the
 validator to tell you that this fields is not recognised.
+
+### @Subscriber
+
+Allow you to register new subscriber. The subscribers are built through the container
+but not registered as part of the container.
+
+Let see and example
+
+
+```typescript
+import { Subscriber } from 'medusa-extender';
+import { ProductService, EventBusService } from "@medusajs/medusa/dist/services";
+
+@Subscriber()
+class OrderSubscriber {
+    private readonly eventBusService: EventBusService;
+
+    constructor({ eventBusService }: { eventBusService: EventBusService }) {
+        this.eventBusService = eventBusService;
+        this.eventBusService.subscribe(
+          ProductService.Events.CREATED,
+          this.handleProductCreation
+        );
+    }
+    
+    private async handleProductCreation(): Promise<void> {
+        console.log('I have been called after a product has been placed.')
+    }
+}
+```
 
 ### @Module
 

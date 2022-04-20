@@ -51,6 +51,7 @@
 - [loaders/repository.loader](modules/loaders_repository_loader.md)
 - [loaders/services.loader](modules/loaders_services_loader.md)
 - [loaders/store-api.loader](modules/loaders_store_api_loader.md)
+- [loaders/subscribers.loader](modules/loaders_subscribers_loader.md)
 - [loaders/validators.loader](modules/loaders_validators_loader.md)
 - [modules/monitoring](modules/modules_monitoring.md)
 - [modules/multi-tenancy](modules/modules_multi_tenancy.md)

@@ -44,6 +44,7 @@
 - [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
+- [SubscriberInjectionOptions](index.md#subscriberinjectionoptions)
 - [Tenant](index.md#tenant)
 - [TenantMiddleware](index.md#tenantmiddleware)
 - [TenantModule](index.md#tenantmodule)
@@ -280,6 +281,12 @@ ___
 ### ServiceInjectableOptions
 
 Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
+
+___
+
+### SubscriberInjectionOptions
+
+Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
 
 ___
 
