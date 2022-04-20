@@ -1,5 +1,4 @@
-import { GetInjectableOptions, Logger, MedusaCustomContainer, Type } from '../core';
-import { ValidatorOptions } from 'class-validator';
+import { GetInjectableOptions, Logger, MedusaCustomContainer } from '../core';
 import { asFunction } from 'awilix';
 
 const logger = Logger.contextualize('SubscribersLoader');
