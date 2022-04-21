@@ -1,27 +1,22 @@
 import { Service } from 'medusa-extender';
 import { EntityManager } from 'typeorm';
-import { UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
-import EventBusService from '@medusajs/medusa/dist/services/event-bus';
+import { EventBusService, UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
 import UserRepository from './user.repository';
-import { User } from './user.entity';
 
-type ConstructorParams = {
-	loggedInUser: User;
+type InjectedDependencies = {
 	manager: EntityManager;
 	userRepository: typeof UserRepository;
 	eventBusService: EventBusService;
 };
 
-@Service({ override: MedusaUserService, scope: 'SCOPED' })
+@Service({ override: MedusaUserService })
 export default class UserService extends MedusaUserService {
 	private readonly manager: EntityManager;
 	private readonly userRepository: typeof UserRepository;
-	private readonly eventBus: EventBusService;
 
-	constructor(private readonly container: ConstructorParams) {
-		super(container);
-		this.manager = container.manager;
-		this.userRepository = container.userRepository;
-		this.eventBus = container.eventBusService;
+	constructor({ manager, userRepository, eventBusService }: InjectedDependencies) {
+		super({ manager, userRepository, eventBusService });
+		this.manager = manager;
+		this.userRepository = userRepository;
 	}
 }
