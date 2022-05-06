@@ -7,7 +7,7 @@ import { Medusa } from 'medusa-extender';
 import { Server } from 'http';
 import { createDatabase, dropDatabase } from 'pg-god'
 
-const isCI = process.env.IS_CI
+const isCI = process.env.IS_CI === "true"
 
 type Context = { app: Express; appListener: Server; port: number; container: AwilixContainer };
 
