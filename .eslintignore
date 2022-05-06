@@ -1,6 +1,7 @@
 .jest-cache/*
 .jest-coverage/*
 node_modules/*
+integration-tests/*
 
 **/dist/*
 **/node_modules/*

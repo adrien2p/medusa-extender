@@ -1,9 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import {
-	MEDUSA_RESOLVER_KEYS,
-	MedusaAuthenticatedRequest,
-	Middleware,
-} from 'medusa-extender';
+import { MEDUSA_RESOLVER_KEYS, MedusaAuthenticatedRequest, Middleware } from 'medusa-extender';
 import { Connection } from 'typeorm';
 import UserSubscriber from './user.subscriber';
 
