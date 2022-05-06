@@ -10,6 +10,9 @@ on:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 15., 16.x]
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -22,13 +25,55 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v3.1.1
         with:
-          node-version: "14"
-          cache: "npm"
+          node-version: ${{ matrix.node }}
 
       - name: 'npm install'
         run: npm install
 
       - name: 'run unit tests'
         run: npm run test
+
+  integration-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 15., 16.x]
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: medusa-extender
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.1.1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 'prepare packages and install'
+        run: |
+          npm i && npm run build && npm pack --pack-destination integration-tests && PACKAGE_NAME=$(cat package.json | grep version | head -1 | awk -F: '{ print "medusa-extender-", $2, ".tgz" }' | sed 's/[ ",]//g') && cd integration-tests && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME} && npm i
+
+      - name: 'run integration tests'
+        run: cd integration-tests && npm run test:integration
+        env:
+          DB_PASSWORD: postgres
+          IS_CI: true
+          NODE_ENV: development

@@ -7,19 +7,23 @@ import { Medusa } from 'medusa-extender';
 import { Server } from 'http';
 import { createDatabase, dropDatabase } from 'pg-god'
 
-process.env.NODE_ENV = "development"
+const isCI = process.env.IS_CI
 
 type Context = { app: Express; appListener: Server; port: number; container: AwilixContainer };
 
 async function setupDb(): Promise<void> {
-	await createDatabase({ databaseName: 'medusa-extender' })
+	if (!isCI) {
+		await createDatabase({ databaseName: 'medusa-extender' })
+	}
 	execSync("node_modules/.bin/medusa seed -f data.json -m", { cwd: pathResolve(__dirname, '..') })
 }
 
 async function teardown(context: Context): Promise<void> {
 	try {
 		await new Promise((resolve, reject) => context.appListener.close((err) => err ? reject(err): resolve(void 0)));
-		await dropDatabase({ databaseName: 'medusa-extender' })
+		if (!isCI) {
+			await dropDatabase({ databaseName: 'medusa-extender' })
+		}
 	} catch (e) {}
 }
 
@@ -31,7 +35,7 @@ async function loadServer(): Promise<Context> {
 			const app = express();
 			const container = await new Medusa(pathResolve(__dirname, '..'), app).load([]);
 
-			const appListener = app.listen(port);
+			const appListener = app.listen(port)
 
 			resolve({
 				app,

@@ -1,5 +1,5 @@
 module.exports = {
-	"testTimeout": 60000,
+	"testTimeout": 3600000,
 	"moduleFileExtensions": [
 		"js",
 		"json",

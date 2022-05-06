@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prepare": "cd .. && npm pack --pack-destination integration-tests && cd - && PACKAGE_NAME=$(cat ../package.json | grep version | head -1 | awk -F: '{ print \"medusa-extender-\", $2, \".tgz\" }' | sed 's/[ \",]//g') && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME}",
-    "test:integration": "npm run prepare && jest --runInBand --detectOpenHandles --forceExit"
+    "test:integration": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.3.0",
@@ -31,7 +31,6 @@
     "medusa-payment-stripe": "^1.1.34",
     "mongoose": "^6.1.1",
     "pg": "^8.7.1",
-    "pg-god": "^1.0.11",
     "pg-hstore": "^2.3.4",
     "portfinder": "^1.0.28",
     "prom-client": "^12.0.0",
@@ -51,6 +50,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1",
+    "pg-god": "^1.0.11",
     "prettier": "^2.5.0",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
