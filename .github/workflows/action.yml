@@ -69,11 +69,10 @@ jobs:
 
       - name: 'prepare packages and install'
         run: |
-          npm i && npm run build && npm pack --pack-destination integration-tests && PACKAGE_NAME=$(cat package.json | grep version | head -1 | awk -F: '{ print "medusa-extender-", $2, ".tgz" }' | sed 's/[ ",]//g') && cd integration-tests && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME} && npm i
+          npm i && npm run build && npm pack --pack-destination integration-tests && PACKAGE_NAME=$(cat package.json | grep version | head -1 | awk -F: '{ print "medusa-extender-", $2, ".tgz" }' | sed 's/[ ",]//g') && cd integration-tests && npm i ${PACKAGE_NAME} && npm i
 
       - name: 'run integration tests'
         run: cd integration-tests && npm run test:integration
         env:
           DB_PASSWORD: postgres
           IS_CI: true
-          NODE_ENV: development
