@@ -18,7 +18,7 @@ async function setupDb(): Promise<void> {
 		await dropDatabase({ databaseName: 'medusa-extender' }).catch(() => void 0);
 		await createDatabase({ databaseName: 'medusa-extender' });
 	}
-	execSync('node_modules/.bin/medusa migrations run', { cwd: pathResolve(__dirname, '..') });
+	execSync('node_modules/.bin/medusa migrations run');
 }
 
 async function teardown(context: Context): Promise<void> {
