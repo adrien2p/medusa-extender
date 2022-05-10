@@ -8,8 +8,8 @@ const DB_PORT = process.env.DB_PORT ?? 5432;
 const isCI = !!process.env.IS_CI;
 
 const DB_URL = isCI
-	? `postgres://${DB_HOST}:${DB_PORT}/medusa-extender`
-	: `postgres://${DB_USER}${DB_PASSWORD ? ':' + DB_PASSWORD : ''}@${DB_HOST}:${DB_PORT}/medusa-extender`;
+	? `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/medusa-extender`
+	: `postgres://${DB_USER}@${DB_HOST}:${DB_PORT}/medusa-extender`;
 
 const plugins = [
 	`medusa-fulfillment-manual`,
