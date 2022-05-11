@@ -10,7 +10,6 @@
     "node": ">=14.17.3"
   },
   "scripts": {
-    "prepare": "cd .. && npm pack --pack-destination integration-tests && cd - && PACKAGE_NAME=$(cat ../package.json | grep version | head -1 | awk -F: '{ print \"medusa-extender-\", $2, \".tgz\" }' | sed 's/[ \",]//g') && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME}",
     "test:integration": "NODE_ENV=development jest --runInBand --detectOpenHandles --forceExit --verbose"
   },
   "dependencies": {
