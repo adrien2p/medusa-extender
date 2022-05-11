@@ -54,17 +54,20 @@ export function applyAfterAuthMiddleware(app: Router, middlewares: GetInjectable
 }
 
 function applyMiddleware(app: Router, middleware: GetInjectableOption<'middleware'>): void {
-	app.use(async (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
-		const shouldHandle = middleware.routes.some((route) => {
-			return (
-				(route.method === 'all' || req.method.toLowerCase() === route.method.toLowerCase()) &&
-				(route.path === '*' || req.originalUrl === route.path)
-			);
-		});
-		if (shouldHandle) {
-			await new middleware.metatype().consume(req, res, next);
-			return;
+	const routes = middleware.routes.map((routeObj) => routeObj.path);
+	app.use(
+		routes,
+		async (routes, req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
+			const shouldHandle = middleware.routes
+				.filter((route) => route.path === req.originalUrl)
+				.some((route) => {
+					return route.method === 'all' || req.method.toLowerCase() === route.method.toLowerCase();
+				});
+			if (shouldHandle) {
+				await new middleware.metatype().consume(req, res, next);
+				return;
+			}
+			return next();
 		}
-		return next();
-	});
+	);
 }
