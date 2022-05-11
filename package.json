@@ -49,6 +49,7 @@
     "build:doc": "npm run build:readme && rm -rf docs && ./node_modules/.bin/typedoc && cp .github/docs/* docs/ && cp documentation/_README_BUILT.md docs/README.md",
     "serve:doc": "./node_modules/.bin/docsify serve docs",
     "test": "NODE_ENV=test ./node_modules/.bin/jest -i --collect-coverage && npm run coverage:badges",
+    "test:integration": "cd integration-tests && npm run prepare && npm run test:integration",
     "test:local": "NODE_ENV=test ./node_modules/.bin/jest --maxWorkers=75% --collect-coverage && npm run coverage:badges",
     "coverage:badges": "./node_modules/.bin/jest-coverage-badges --output coverage-badges",
     "release": "standard-version",
