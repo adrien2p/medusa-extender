@@ -5,12 +5,14 @@ module.exports = {
 		"json",
 		"ts"
 	],
+	"globalSetup": "<rootDir>/setup.js",
+	"globalTeardown": "<rootDir>/teardown.js",
 	"preset": 'ts-jest',
-	"rootDir": "tests",
+	"rootDir": ".",
 	"testRegex": ".*\\.spec\\.ts$",
 	"transformIgnorePatterns": ["/node_modules/"],
 	"collectCoverageFrom": [
-		"**/*.(t|j)s"
+		"tests/**/*.(t|j)s"
 	],
 	"coverageReporters": [
 		"json-summary",

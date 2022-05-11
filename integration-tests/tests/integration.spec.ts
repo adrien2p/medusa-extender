@@ -5,30 +5,15 @@ import { AwilixContainer } from 'awilix';
 import { Medusa, Type } from 'medusa-extender';
 import { CartService as MedusaCartService } from '@medusajs/medusa';
 import { Server } from 'http';
-import { createDatabase, dropDatabase } from 'pg-god';
 import { CartService, TestModule, TestService } from './fixtures/components';
-import { execSync } from 'child_process';
-
-const isCI = !!process.env.IS_CI;
 
 type Context = { app: Express; appListener: Server; port: number; container: AwilixContainer };
 
-async function setupDb(): Promise<void> {
-	if (!isCI) {
-		await dropDatabase({ databaseName: 'medusa-extender' }).catch(() => void 0);
-		await createDatabase({ databaseName: 'medusa-extender' });
-	}
-	execSync('node_modules/.bin/medusa migrations run');
-}
-
-async function teardown(context: Context): Promise<void> {
+async function serverTeardown(context: Context): Promise<void> {
 	try {
 		await new Promise((resolve, reject) =>
 			context.appListener.close((err) => (err ? reject(err) : resolve(void 0)))
 		);
-		if (!isCI) {
-			await dropDatabase({ databaseName: 'medusa-extender' });
-		}
 	} catch (e) {}
 }
 
@@ -56,12 +41,11 @@ describe('Medusa-extender', () => {
 	let context!: Context;
 
 	beforeAll(async () => {
-		await setupDb();
 		context = await loadServer([TestModule]);
 	});
 
 	afterAll(async () => {
-		await teardown(context);
+		await serverTeardown(context);
 	});
 
 	it('validate that the context is properly loaded', () => {
