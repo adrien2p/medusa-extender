@@ -12,5 +12,6 @@ async function setupDb() {
 		await dropDatabase({ databaseName: 'medusa-extender' }).catch(() => void 0);
 		await createDatabase({ databaseName: 'medusa-extender' });
 	}
-	execSync('node_modules/.bin/medusa migrations run');
+
+	execSync('node_modules/.bin/medusa migrations run', { cwd: __dirname });
 }
