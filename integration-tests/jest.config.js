@@ -11,14 +11,5 @@ module.exports = {
 	"rootDir": ".",
 	"testRegex": ".*\\.spec\\.ts$",
 	"transformIgnorePatterns": ["/node_modules/"],
-	"collectCoverageFrom": [
-		"tests/**/*.(t|j)s"
-	],
-	"coverageReporters": [
-		"json-summary",
-		"text",
-		"lcov"
-	],
-	"coverageDirectory": "../coverage",
 	"testEnvironment": "node"
 };
