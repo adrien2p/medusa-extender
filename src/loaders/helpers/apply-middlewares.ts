@@ -1,11 +1,5 @@
-import { NextFunction, Response, Router } from 'express';
-import {
-	GetInjectableOption,
-	GetInjectableOptions,
-	Logger,
-	MedusaAuthenticatedRequest,
-	MedusaRequest,
-} from '../../core';
+import { Router } from 'express';
+import { GetInjectableOption, GetInjectableOptions, Logger } from '../../core';
 
 const logger = Logger.contextualize('MiddlewaresLoader');
 
@@ -54,17 +48,7 @@ export function applyAfterAuthMiddleware(app: Router, middlewares: GetInjectable
 }
 
 function applyMiddleware(app: Router, middleware: GetInjectableOption<'middleware'>): void {
-	app.use(async (req: MedusaRequest | MedusaAuthenticatedRequest, res: Response, next: NextFunction) => {
-		const shouldHandle = middleware.routes.some((route) => {
-			return (
-				(route.method === 'all' || req.method.toLowerCase() === route.method.toLowerCase()) &&
-				(route.path === '*' || req.originalUrl === route.path)
-			);
-		});
-		if (shouldHandle) {
-			await new middleware.metatype().consume(req, res, next);
-			return;
-		}
-		return next();
+	middleware.routes.some((route) => {
+		app[route.method.toLowerCase()](route.path, new middleware.metatype().consume);
 	});
 }

@@ -5,7 +5,13 @@ import portfinder from 'portfinder';
 import { Medusa, Type } from 'medusa-extender';
 import { CartService as MedusaCartService } from '@medusajs/medusa';
 import { IdMap } from 'medusa-test-utils';
-import { CartService, TestModule, TestService } from './fixtures/components';
+import {
+	AdminAuthTestPathMiddleware,
+	AdminTestPathMiddleware,
+	CartService, CustomTopTestPathMiddleware, StoreTestPathMiddleware,
+	TestModule,
+	TestService
+} from './fixtures/components';
 import { Context } from "./helpers/types";
 import { makeRequest } from "./helpers/request";
 
@@ -63,6 +69,10 @@ describe('Medusa-extender', () => {
 		await serverTeardown(context);
 	});
 
+	beforeEach(() => {
+		jest.clearAllMocks();
+	})
+
 	it('validate that the context is properly loaded', () => {
 		expect(context.app).toBeTruthy();
 		expect(context.appListener).toBeTruthy();
@@ -97,7 +107,15 @@ describe('Medusa-extender', () => {
 				path: `/admin/test-path`,
 				method: 'get',
 			}).expect(200);
-			expect(res.text).toBe('healthy')
+			expect(res.text).toBe('healthy');
+		});
+
+		it('should apply unauthenticated parametric route under the admin path and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/test-path/1`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy 1');
 		});
 
 		it('should apply authenticated route under the admin path and throw on an unauthenticated request', async () => {
@@ -117,7 +135,111 @@ describe('Medusa-extender', () => {
 					},
 				},
 			}).expect(200);
-			expect(res.text).toBe('healthy authenticated')
+			expect(res.text).toBe('healthy authenticated');
+		});
+
+		it('should apply unauthenticated parametric admin middleware', async () => {
+			await makeRequest(context, {
+				path: `/admin/test-path/1`,
+				method: 'get',
+			}).expect(200);
+			expect(AdminTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply unauthenticated admin middleware', async () => {
+			await makeRequest(context, {
+				path: `/admin/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(AdminTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply authenticated admin middleware', async () => {
+			await makeRequest(context, {
+				path: `/admin/authenticated-test-path`,
+				method: 'get',
+				adminSession: {
+					jwt: {
+						userId: IdMap.getId("admin_user"),
+					},
+				},
+			}).expect(200);
+			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminAuthTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+	});
+
+	describe('store api loader', () => {
+		it('should apply unauthenticated route under the store path and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy')
+		});
+
+		it('should apply unauthenticated parametric route under the store path and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/test-path/2`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy 2');
+		});
+
+		it('should apply unauthenticated parametric store middleware', async () => {
+			await makeRequest(context, {
+				path: `/store/test-path/2`,
+				method: 'get',
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply unauthenticated store middleware', async () => {
+			await makeRequest(context, {
+				path: `/store/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+	});
+
+	describe('custom api loader', () => {
+		it('should apply unauthenticated route under the top router and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy');
+		});
+
+		it('should apply unauthenticated parametric route under the top router and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/test-path/3`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy 3');
+		});
+
+		it('should apply unauthenticated custom parametric api middleware', async () => {
+			await makeRequest(context, {
+				path: `/test-path/3`,
+				method: 'get',
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminAuthTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(CustomTopTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply unauthenticated custom api middleware', async () => {
+			await makeRequest(context, {
+				path: `/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminAuthTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(CustomTopTestPathMiddleware.prototype.consume).toHaveBeenCalled();
 		});
 	});
 });

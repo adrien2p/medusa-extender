@@ -1,4 +1,5 @@
 export * from './services.loader';
+export * from './custom-api.loader';
 export * from './admin-api.loader';
 export * from './store-api.loader';
 export * from './repository.loader';

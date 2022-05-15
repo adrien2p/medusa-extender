@@ -19,7 +19,11 @@ export async function storeApiLoader(
 		.map((middleware) => ({
 			...middleware,
 			routes: middleware.routes.filter((route) => {
-				return route.path.startsWith('*') || route.path.startsWith('/store');
+				if (route.path.startsWith('/store')) {
+					route.path = route.path.replace('/store', '');
+					return true;
+				}
+				return false;
 			}),
 		}))
 		.filter((middleware) => middleware.routes.length);
