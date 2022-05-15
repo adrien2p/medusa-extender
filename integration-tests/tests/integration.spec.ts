@@ -1,13 +1,13 @@
+import supertest from "supertest";
 import { resolve as pathResolve } from 'path';
-import express, { Express } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import portfinder from 'portfinder';
-import { AwilixContainer } from 'awilix';
 import { Medusa, Type } from 'medusa-extender';
 import { CartService as MedusaCartService } from '@medusajs/medusa';
-import { Server } from 'http';
+import { IdMap } from 'medusa-test-utils';
 import { CartService, TestModule, TestService } from './fixtures/components';
-
-type Context = { app: Express; appListener: Server; port: number; container: AwilixContainer };
+import { Context } from "./helpers/types";
+import { makeRequest } from "./helpers/request";
 
 async function serverTeardown(context: Context): Promise<void> {
 	try {
@@ -23,6 +23,19 @@ async function loadServer(modules: Type[]): Promise<Context> {
 			if (err) reject(err);
 
 			const app = express();
+			app.set("trust proxy", 1);
+			app.use((req: Request & { session: any }, res: Response, next: NextFunction) => {
+			  req.session = {}
+			  const data = req.get("Cookie")
+			  if (data) {
+				req.session = {
+				  ...req.session,
+				  ...JSON.parse(data),
+				}
+			  }
+			  next()
+			});
+
 			const container = await new Medusa(pathResolve(__dirname, '..'), app).load(modules);
 
 			const appListener = app.listen(port);
@@ -32,6 +45,8 @@ async function loadServer(modules: Type[]): Promise<Context> {
 				appListener,
 				port,
 				container,
+				request: supertest(app),
+				config: container.resolve('configModule')
 			});
 		});
 	});
@@ -73,6 +88,36 @@ describe('Medusa-extender', () => {
 			cartService.customMethod();
 
 			expect(cartService.customMethod).toHaveBeenCalled();
+		});
+	});
+
+	describe('admin api loader', () => {
+		it('should apply unauthenticated route under the admin path and succeed on request', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/test-path`,
+				method: 'get',
+			}).expect(200);
+			expect(res.text).toBe('healthy')
+		});
+
+		it('should apply authenticated route under the admin path and throw on an unauthenticated request', async () => {
+			await makeRequest(context, {
+				path: `/admin/authenticated-test-path`,
+				method: 'get',
+			}).expect(401);
+		});
+
+		it('should apply authenticated route under the admin path and succeed on authenticated request', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/authenticated-test-path`,
+				method: 'get',
+				adminSession: {
+					jwt: {
+						userId: IdMap.getId("admin_user"),
+					},
+				},
+			}).expect(200);
+			expect(res.text).toBe('healthy authenticated')
 		});
 	});
 });
