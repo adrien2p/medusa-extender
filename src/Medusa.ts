@@ -6,6 +6,7 @@ import { AwilixContainer } from 'awilix';
 import { Logger, Type } from './core';
 import {
 	adminApiLoader,
+	customApiLoader,
 	databaseLoader,
 	migrationsLoader,
 	modulesLoader,
@@ -59,6 +60,11 @@ export class Medusa {
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
+		await customApiLoader(
+			this.#express,
+			moduleComponentsOptions.get('middleware') ?? [],
+			moduleComponentsOptions.get('router') ?? []
+		);
 		await adminApiLoader(
 			this.#express,
 			moduleComponentsOptions.get('middleware') ?? [],
