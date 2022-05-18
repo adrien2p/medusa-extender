@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/adrien2p/medusa-extender/compare/v1.6.5...v1.7.0) (2022-05-18)
+
+
+### Features
+
+* Improve starters ([5c11ec4](https://github.com/adrien2p/medusa-extender/commits/5c11ec462f4f1d9e052649ad3fd8de974a3d05b6))
+* **integration-tests:** Improve jest config ([a86f096](https://github.com/adrien2p/medusa-extender/commits/a86f0967c474fc0aeb08971e43655fd56ac26f95))
+* **integration-tests:** Setup integration tests ([#85](https://github.com/adrien2p/medusa-extender/issues/85)) ([12ef12f](https://github.com/adrien2p/medusa-extender/commits/12ef12f6f2c915981e69e2657fd372db86714b91))
+
+
+### Bug Fixes
+
+* Middleware management and usage, also allow custom api endpoints ([#89](https://github.com/adrien2p/medusa-extender/issues/89)) ([d4ddb5f](https://github.com/adrien2p/medusa-extender/commits/d4ddb5f9abd2bad60116c8ea26f416e7f4afc5a3))
+
 ### [1.6.5](https://github.com/adrien2p/medusa-extender/compare/v1.6.4...v1.6.5) (2022-04-20)
 
 
