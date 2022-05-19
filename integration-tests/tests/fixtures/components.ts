@@ -70,7 +70,8 @@ export class AdminTestPathMiddleware implements MedusaMiddleware {
 }
 AdminTestPathMiddleware.prototype.consume = jest
 	.fn()
-	.mockImplementation((req: MedusaRequest | Request, res: Response, next: NextFunction) => {
+	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
+		expect(req.scope).toBeTruthy()
 		next();
 	});
 
@@ -90,7 +91,8 @@ export class AdminAuthTestPathMiddleware implements MedusaMiddleware {
 }
 AdminAuthTestPathMiddleware.prototype.consume = jest
 	.fn()
-	.mockImplementation((req: MedusaRequest | Request, res: Response, next: NextFunction) => {
+	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
+		expect(req.scope).toBeTruthy()
 		next();
 	});
 
@@ -140,7 +142,8 @@ export class StoreTestPathMiddleware implements MedusaMiddleware {
 }
 StoreTestPathMiddleware.prototype.consume = jest
 	.fn()
-	.mockImplementation((req: MedusaRequest | Request, res: Response, next: NextFunction) => {
+	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
+		expect(req.scope).toBeTruthy()
 		next();
 	});
 
@@ -190,7 +193,8 @@ export class CustomTopTestPathMiddleware implements MedusaMiddleware {
 }
 CustomTopTestPathMiddleware.prototype.consume = jest
 	.fn()
-	.mockImplementation((req: MedusaRequest | Request, res: Response, next: NextFunction) => {
+	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
+		expect(req.scope).toBeTruthy()
 		next();
 	});
 
