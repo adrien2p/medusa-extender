@@ -2,13 +2,13 @@ import { Service } from '../../decorators';
 import { Connection, createConnection, EntityManager, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
-import { MedusaRequest } from '../../core';
+import { MedusaCustomContainer, MedusaRequest } from '../../core';
 
 @Service()
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
 
-	constructor(_, private readonly config: ConfigModule) {}
+	constructor(_: MedusaCustomContainer, private readonly config: ConfigModule) {}
 
 	/**
 	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
