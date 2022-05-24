@@ -54,8 +54,10 @@ export class TenantService {
 			connection = await connectionManager.get(tenant.code);
 		}
 
-		return Promise.resolve(
-			connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
-		);
+		return await new Promise((resolve) => {
+			connection.isConnected
+				? resolve(connection.manager)
+				: connection.connect().then((conn) => resolve(conn.manager));
+		});
 	}
 }
