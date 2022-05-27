@@ -1,6 +1,6 @@
 import { GetInjectableOptions, Logger } from '../core';
 import { asFunction } from 'awilix';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const logger = Logger.contextualize('SubscribersLoader');
 

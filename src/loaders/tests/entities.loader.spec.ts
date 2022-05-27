@@ -8,7 +8,7 @@ import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
 import { metadataReader } from '../../core';
 import { Entity } from 'typeorm';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()

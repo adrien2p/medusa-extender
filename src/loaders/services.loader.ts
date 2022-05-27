@@ -1,7 +1,7 @@
 import { asFunction, Lifetime } from 'awilix';
 import { GetInjectableOption, GetInjectableOptions } from './';
 import { Logger, lowerCaseFirst } from '../core';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const logger = Logger.contextualize('ServicesLoader');
 

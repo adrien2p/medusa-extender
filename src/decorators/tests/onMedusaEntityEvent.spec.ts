@@ -6,7 +6,7 @@ import { createContainer } from 'awilix';
 import { registerEntity, registerService } from '../../loaders';
 import { metadataReader } from '../../core';
 import SpyInstance = jest.SpyInstance;
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const getMockContainer = (container: MedusaContainer) => {
 	container.registerAdd = jest.fn(() => void 0);

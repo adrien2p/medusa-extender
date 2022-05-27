@@ -4,7 +4,7 @@ import { Module, Subscriber } from '../../decorators';
 import { createContainer, Resolver } from 'awilix';
 import { metadataReader } from '../../core';
 import { subscribersLoader } from '../subscribers.loader';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @Subscriber()
 class OrderSubscriber {

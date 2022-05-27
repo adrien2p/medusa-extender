@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { MigrationInterface } from 'typeorm';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;

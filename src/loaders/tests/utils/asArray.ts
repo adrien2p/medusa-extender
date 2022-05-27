@@ -1,6 +1,6 @@
 import { Resolver } from 'awilix/lib/resolvers';
 import { ClassOrFunctionReturning } from 'awilix/lib/container';
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 export function asArray<T>(resolvers: (ClassOrFunctionReturning<T> | Resolver<T>)[]): {
 	resolve: (container: MedusaContainer, opts: Record<string, unknown>) => T[];

@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 import { GetInjectableOption, Type } from './types';
 import { componentsMetadataReader } from './metadata-reader';
 import { lowerCaseFirst } from './utils';
-import { AwilixContainer } from "awilix";
+import { AwilixContainer } from 'awilix';
 
 /**
  * A listener descriptor.
