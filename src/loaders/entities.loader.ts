@@ -1,7 +1,6 @@
-import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
+import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst, MedusaContainer } from './';
 import { asClass, asValue } from 'awilix';
 import { Logger } from '../core';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const logger = Logger.contextualize('EntitiesLoader');
 

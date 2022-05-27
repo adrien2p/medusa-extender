@@ -1,8 +1,7 @@
 import { Router } from 'express';
-import { GetInjectableOptions } from './';
+import { GetInjectableOptions, MedusaContainer } from './';
 import { applyAfterAuthMiddleware, applyBeforeAuthMiddleware } from './helpers/apply-middlewares';
 import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-routers';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 /**
  * @internal

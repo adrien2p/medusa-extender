@@ -1,7 +1,6 @@
 import { repositoriesLoader } from './repository.loader';
 import { entitiesLoader } from './entities.loader';
-import { GetInjectableOptions } from './';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
+import { GetInjectableOptions, MedusaContainer } from './';
 
 export async function databaseLoader(
 	entities: GetInjectableOptions<'entity'>,

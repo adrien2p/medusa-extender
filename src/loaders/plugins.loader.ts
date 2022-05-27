@@ -1,7 +1,6 @@
 import { Express, NextFunction, Response } from 'express';
-import { MedusaAuthenticatedRequest, MedusaRequest } from './';
+import { MedusaAuthenticatedRequest, MedusaContainer, MedusaRequest } from './';
 import { customEventEmitter } from '../core';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 /**
  * @internal

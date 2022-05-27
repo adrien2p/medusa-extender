@@ -3,9 +3,8 @@ import 'regenerator-runtime/runtime';
 import { Module, Service } from '../../decorators';
 import { OrderService as MedusaOrderService } from '@medusajs/medusa/dist/services';
 import { asFunction, createContainer, Lifetime } from 'awilix';
-import { metadataReader } from '../../core';
+import { MedusaContainer, metadataReader } from '../../core';
 import { overrideService, registerService } from '../services.loader';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @Service({ override: MedusaOrderService })
 class OrderService extends MedusaOrderService {

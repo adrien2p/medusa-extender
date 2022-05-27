@@ -1,6 +1,5 @@
-import { GetInjectableOptions, Logger } from '../core';
+import { GetInjectableOptions, Logger, MedusaContainer } from '../core';
 import { asFunction } from 'awilix';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const logger = Logger.contextualize('SubscribersLoader');
 
@@ -15,6 +14,7 @@ export async function subscribersLoader(subscribersOptions: GetInjectableOptions
 	const module = await import('@medusajs/medusa/dist/loaders/subscribers');
 	const originalSubscriber = module.default;
 	module.default = ({ container }: { container: MedusaContainer }): void => {
+		// @ts-ignore
 		originalSubscriber({ container });
 		subscribersOptions.forEach((subscriberOption) => {
 			container.build(asFunction((cradle) => new subscriberOption.metatype(cradle)).singleton());

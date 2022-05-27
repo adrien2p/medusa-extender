@@ -2,7 +2,7 @@ import loaders from '@medusajs/medusa/dist/loaders';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
-import { Logger, Type } from './core';
+import { Logger, MedusaContainer, Type } from './core';
 import {
 	adminApiLoader,
 	customApiLoader,
@@ -18,7 +18,6 @@ import {
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -99,6 +98,6 @@ export class Medusa {
 		}
 		logger.flush();
 
-		return container;
+		return container as any;
 	}
 }

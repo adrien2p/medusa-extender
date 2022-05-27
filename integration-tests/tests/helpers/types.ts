@@ -1,6 +1,6 @@
 import { Express } from "express";
 import { Server } from "http";
-import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
+import { MedusaContainer } from "medusa-extender";
 
 export type Context = {
 	app: Express;

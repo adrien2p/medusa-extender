@@ -1,12 +1,11 @@
 import { Entity } from 'typeorm';
 import { OnMedusaEntityEvent } from '../onMedusaEntityEvent.decorator';
 import { Entity as MedusaEntity } from '../components.decorator';
-import { eventEmitter, Module, Service } from '../../index';
+import { eventEmitter, MedusaContainer, Module, Service } from '../../index';
 import { createContainer } from 'awilix';
 import { registerEntity, registerService } from '../../loaders';
 import { metadataReader } from '../../core';
 import SpyInstance = jest.SpyInstance;
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 const getMockContainer = (container: MedusaContainer) => {
 	container.registerAdd = jest.fn(() => void 0);

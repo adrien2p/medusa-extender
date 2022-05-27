@@ -6,9 +6,8 @@ import { asArray } from './utils/asArray';
 import { entitiesLoader, overrideEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
-import { metadataReader } from '../../core';
+import { MedusaContainer, metadataReader } from '../../core';
 import { Entity } from 'typeorm';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()

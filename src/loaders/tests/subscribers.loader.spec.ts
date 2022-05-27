@@ -2,9 +2,8 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { Module, Subscriber } from '../../decorators';
 import { createContainer, Resolver } from 'awilix';
-import { metadataReader } from '../../core';
+import { MedusaContainer, metadataReader } from '../../core';
 import { subscribersLoader } from '../subscribers.loader';
-import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @Subscriber()
 class OrderSubscriber {
@@ -27,7 +26,8 @@ describe('Subscribers loader', () => {
 
 		const medusaSubscriberModule = await import('@medusajs/medusa/dist/loaders/subscribers');
 		const medusaSubscriberLoaderSpy = jest.spyOn(medusaSubscriberModule, 'default');
-		medusaSubscriberModule.default({ container } as { container: MedusaContainer });
+		// @ts-ignore
+		medusaSubscriberModule.default({ container });
 
 		expect(medusaSubscriberLoaderSpy).toHaveBeenCalled();
 		expect(container.build).toHaveBeenCalled();

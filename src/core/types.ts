@@ -2,6 +2,10 @@ import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { MigrationInterface } from 'typeorm';
 
+export type MedusaContainer = AwilixContainer & {
+	registerAdd: <T>(name: string, registration: T) => MedusaContainer;
+};
+
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
 }
