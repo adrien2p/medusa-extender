@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { init } from '../../commands/init';
-import * as process from 'node:process';
+import * as process from 'process';
 import * as packageLoader from '../../../core/package-loader';
 import { normalizeString } from '../__utils__/normalizeString';
 

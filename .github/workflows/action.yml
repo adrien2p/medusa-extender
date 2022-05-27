@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ matrix.node-verion }}
 
       - name: 'npm install'
         run: npm install
@@ -68,10 +68,11 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ matrix.node-verion }}
 
       - name: 'run integration tests'
         run: npm run test:integration
         env:
+          MEDUSAJS_VERSION: ${{ matrix.medusajs-version }}
           DB_PASSWORD: postgres
           IS_CI: true
