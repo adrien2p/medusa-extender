@@ -1,4 +1,3 @@
-// TODO fix the fact that medusa is using babel
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
@@ -8,7 +7,7 @@ import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.lo
 import { createContainer } from 'awilix';
 import { Entity, EntityRepository, Repository } from 'typeorm';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
-import { metadataReader, repositoryMixin } from '../../core';
+import { MedusaContainer, metadataReader, repositoryMixin } from '../../core';
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()
@@ -41,7 +40,7 @@ class AnotherRepository extends Repository<Another> {}
 class AnotherOrderModule {}
 
 describe('Repositories loader', () => {
-	const container = createContainer();
+	const container = createContainer() as MedusaContainer;
 
 	describe('overriddenRepositoriesLoader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
@@ -62,12 +61,12 @@ describe('Repositories loader', () => {
 
 	describe('repositoriesLoader', () => {
 		it(' should register a new repository into the container', async () => {
-			expect(container.hasRegistration('anotherRepository')).toBeFalsy();
+			expect(container.has('anotherRepository')).toBeFalsy();
 
 			const components = metadataReader([AnotherOrderModule]);
 			await repositoriesLoader(components.get('repository'), container);
 
-			expect(container.hasRegistration('anotherRepository')).toBeTruthy();
+			expect(container.has('anotherRepository')).toBeTruthy();
 		});
 	});
 });

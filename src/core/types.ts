@@ -2,13 +2,15 @@ import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { MigrationInterface } from 'typeorm';
 
+export type MedusaContainer = AwilixContainer & {
+	registerAdd: <T>(name: string, registration: T) => MedusaContainer;
+};
+
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
 }
 
 export type Constructor<T> = new (...args: unknown[]) => T;
-
-export type MedusaCustomContainer = AwilixContainer & { registerAdd: (...args: unknown[]) => void };
 
 /**
  * Components that does not required any other options that Type.
@@ -146,9 +148,9 @@ export type GetInjectableOptions<TComponentType extends InjectableComponentTypes
 /**
  * Medusa request extended.
  */
-export type MedusaRequest<T = unknown, Cradle extends Record<string, unknown> = Record<string, unknown>> = Request & {
-	scope: AwilixContainer<Cradle & T>;
-	container: AwilixContainer<Cradle & T>;
+export type MedusaRequest = Request & {
+	scope: AwilixContainer;
+	container: AwilixContainer;
 };
 
 /**

@@ -1,14 +1,18 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import supertest from "supertest";
 import { resolve as pathResolve } from 'path';
 import express, { NextFunction, Request, Response } from 'express';
 import portfinder from 'portfinder';
 import { Medusa, Type } from 'medusa-extender';
-import { CartService as MedusaCartService } from '@medusajs/medusa';
+import { CartService as MedusaCartService } from '@medusajs/medusa/dist/index';
 import { IdMap } from 'medusa-test-utils';
 import {
 	AdminAuthTestPathMiddleware,
 	AdminTestPathMiddleware,
-	CartService, CustomTopTestPathMiddleware, StoreTestPathMiddleware,
+	CartService,
+	CustomTopTestPathMiddleware,
+	StoreTestPathMiddleware,
 	TestModule,
 	TestService
 } from './fixtures/components';

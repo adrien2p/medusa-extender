@@ -1,10 +1,9 @@
-// TODO fix the fact that medusa is using babel
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { Module, Service } from '../../decorators';
 import { OrderService as MedusaOrderService } from '@medusajs/medusa/dist/services';
 import { asFunction, createContainer, Lifetime } from 'awilix';
-import { metadataReader } from '../../core';
+import { MedusaContainer, metadataReader } from '../../core';
 import { overrideService, registerService } from '../services.loader';
 
 @Service({ override: MedusaOrderService })
@@ -24,7 +23,7 @@ class CustomService {
 class CustomModule {}
 
 describe('Services loader', () => {
-	const container = createContainer();
+	const container = createContainer() as MedusaContainer;
 
 	beforeAll(() => {
 		container

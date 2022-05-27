@@ -1,5 +1,5 @@
-import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst, MedusaCustomContainer } from './';
-import { asClass, asValue, AwilixContainer } from 'awilix';
+import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst, MedusaContainer } from './';
+import { asClass, asValue } from 'awilix';
 import { Logger } from '../core';
 
 const logger = Logger.contextualize('EntitiesLoader');
@@ -12,7 +12,7 @@ const logger = Logger.contextualize('EntitiesLoader');
  */
 export async function entitiesLoader(
 	entities: GetInjectableOptions<'entity'>,
-	container: AwilixContainer
+	container: MedusaContainer
 ): Promise<void> {
 	logger.log('Loading custom entities into the underlying @medusajs');
 
@@ -48,7 +48,7 @@ export async function overrideEntitiesLoader(entities: GetInjectableOptions<'ent
 	logger.log(`${count} entities overridden`);
 }
 
-export function registerEntity(container: AwilixContainer, entityOptions: GetInjectableOption<'entity'>): void {
+export function registerEntity(container: MedusaContainer, entityOptions: GetInjectableOption<'entity'>): void {
 	const { metatype: entity } = entityOptions;
 	const resolutionKey =
 		entityOptions.resolutionKey ??
@@ -57,7 +57,7 @@ export function registerEntity(container: AwilixContainer, entityOptions: GetInj
 		[resolutionKey]: asClass(entity),
 	});
 
-	(container as MedusaCustomContainer).registerAdd('db_entities', asValue(entity));
+	container.registerAdd('db_entities', asValue(entity));
 }
 
 export async function overrideEntity(entityOptions: GetInjectableOption<'entity'>): Promise<void> {

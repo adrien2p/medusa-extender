@@ -1,12 +1,12 @@
 import { Express } from "express";
 import { Server } from "http";
-import { AwilixContainer } from "awilix";
+import { MedusaContainer } from "medusa-extender";
 
 export type Context = {
 	app: Express;
 	appListener: Server;
 	port: number;
-	container: AwilixContainer;
+	container: MedusaContainer;
 	request: any;
 	config: any;
 };

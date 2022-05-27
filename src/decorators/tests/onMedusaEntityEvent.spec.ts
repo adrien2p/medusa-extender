@@ -1,14 +1,14 @@
 import { Entity } from 'typeorm';
 import { OnMedusaEntityEvent } from '../onMedusaEntityEvent.decorator';
 import { Entity as MedusaEntity } from '../components.decorator';
-import { eventEmitter, MedusaCustomContainer, Module, Service } from '../../index';
-import { AwilixContainer, createContainer } from 'awilix';
+import { eventEmitter, MedusaContainer, Module, Service } from '../../index';
+import { createContainer } from 'awilix';
 import { registerEntity, registerService } from '../../loaders';
 import { metadataReader } from '../../core';
 import SpyInstance = jest.SpyInstance;
 
-const getMockContainer = (container: AwilixContainer) => {
-	(container as MedusaCustomContainer).registerAdd = jest.fn(() => void 0);
+const getMockContainer = (container: MedusaContainer) => {
+	container.registerAdd = jest.fn(() => void 0);
 	return container;
 };
 
@@ -53,15 +53,15 @@ class TestHandlers {
 class ModuleTest {}
 
 describe('OnMedusaEntityEvent', () => {
-	const container = getMockContainer(createContainer());
+	const container = getMockContainer(createContainer() as MedusaContainer);
 	let testHandlersSpy: SpyInstance;
 
 	beforeAll(() => {
 		const metadata = metadataReader([ModuleTest]);
-		registerEntity(container, metadata.get('entity')[0]);
-		registerService(container, metadata.get('service')[0], {});
+		registerEntity(container as MedusaContainer, metadata.get('entity')[0]);
+		registerService(container as MedusaContainer, metadata.get('service')[0], {});
 
-		const testHandlers = container.resolve('testHandlers');
+		const testHandlers: TestHandlers = container.resolve('testHandlers');
 		testHandlersSpy = jest.spyOn(testHandlers, 'testAsyncBeforeInsertHandler');
 
 		eventEmitter.registerListeners(container);
