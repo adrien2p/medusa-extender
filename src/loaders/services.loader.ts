@@ -1,6 +1,7 @@
-import { asFunction, AwilixContainer, Lifetime } from 'awilix';
+import { asFunction, Lifetime } from 'awilix';
 import { GetInjectableOption, GetInjectableOptions } from './';
 import { Logger, lowerCaseFirst } from '../core';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 const logger = Logger.contextualize('ServicesLoader');
 
@@ -38,7 +39,7 @@ export async function servicesLoader(services: GetInjectableOptions<'service'>):
 }
 
 export function registerService(
-	container: AwilixContainer,
+	container: MedusaContainer,
 	serviceOptions: GetInjectableOption<'service'>,
 	configModule: Record<string, unknown>
 ): void {
@@ -50,7 +51,7 @@ export function registerService(
 }
 
 export function overrideService(
-	container: AwilixContainer,
+	container: MedusaContainer,
 	serviceOptions: GetInjectableOption<'service'>,
 	configModule: Record<string, unknown>
 ): void {

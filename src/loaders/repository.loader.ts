@@ -1,7 +1,8 @@
 import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
-import { asClass, AwilixContainer } from 'awilix';
+import { asClass } from 'awilix';
 import { getMetadataArgsStorage } from 'typeorm';
 import { Logger } from '../core';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 const logger = Logger.contextualize('RepositoriesLoader');
 
@@ -13,7 +14,7 @@ const logger = Logger.contextualize('RepositoriesLoader');
  */
 export async function repositoriesLoader(
 	repositories: GetInjectableOptions<'repository'>,
-	container: AwilixContainer
+	container: MedusaContainer
 ): Promise<void> {
 	logger.log('Loading custom entities into the underlying @medusajs');
 
@@ -49,7 +50,7 @@ export async function overrideRepositoriesLoader(repositories: GetInjectableOpti
 	logger.log(`${count} repositories overridden`);
 }
 
-function registerRepository(container: AwilixContainer, repositoryOptions: GetInjectableOption<'repository'>): void {
+function registerRepository(container: MedusaContainer, repositoryOptions: GetInjectableOption<'repository'>): void {
 	const { metatype: repository } = repositoryOptions;
 	const resolutionKey =
 		repositoryOptions.resolutionKey ??

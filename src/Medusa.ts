@@ -2,7 +2,6 @@ import loaders from '@medusajs/medusa/dist/loaders';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
-import { AwilixContainer } from 'awilix';
 import { Logger, Type } from './core';
 import {
 	adminApiLoader,
@@ -19,6 +18,7 @@ import {
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -46,7 +46,7 @@ export class Medusa {
 	/**
 	 * @param modules The modules to load into medusa
 	 */
-	public async load(modules: Type[]): Promise<AwilixContainer> {
+	public async load(modules: Type[]): Promise<MedusaContainer> {
 		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
 			configModule: {
 				monitoring: MonitoringOptions;
@@ -99,6 +99,6 @@ export class Medusa {
 		}
 		logger.flush();
 
-		return container as unknown as AwilixContainer;
+		return container;
 	}
 }

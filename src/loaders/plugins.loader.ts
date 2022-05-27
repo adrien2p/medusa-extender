@@ -1,7 +1,7 @@
 import { Express, NextFunction, Response } from 'express';
-import { AwilixContainer } from 'awilix';
 import { MedusaAuthenticatedRequest, MedusaRequest } from './';
 import { customEventEmitter } from '../core';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 /**
  * @internal
@@ -14,7 +14,7 @@ export async function pluginsLoadersAndListeners(app: Express): Promise<void> {
 	pluginLoader.default = async (cradle: {
 		app: Express;
 		rootDirectory: string;
-		container: AwilixContainer;
+		container: MedusaContainer;
 		activityId: string;
 	}) => {
 		app.use(
@@ -29,6 +29,6 @@ export async function pluginsLoadersAndListeners(app: Express): Promise<void> {
 			}
 		);
 
-		return originalPluginLoader(cradle);
+		return originalPluginLoader(cradle as any);
 	};
 }

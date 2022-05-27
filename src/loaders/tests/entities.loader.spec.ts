@@ -6,8 +6,9 @@ import { asArray } from './utils/asArray';
 import { entitiesLoader, overrideEntitiesLoader } from '../entities.loader';
 import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
-import { MedusaCustomContainer, metadataReader } from '../../core';
+import { metadataReader } from '../../core';
 import { Entity } from 'typeorm';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()
@@ -26,8 +27,8 @@ class Another {}
 class AnotherModule {}
 
 describe('Entities loader', () => {
-	const container = createContainer();
-	(container as MedusaCustomContainer).registerAdd = function (name, registration) {
+	const container = createContainer() as MedusaContainer;
+	container.registerAdd = function (name, registration) {
 		const storeKey = name + '_STORE';
 
 		if (this.registrations[storeKey] === undefined) {
@@ -58,12 +59,12 @@ describe('Entities loader', () => {
 
 	describe('entitiesLoader', () => {
 		it(' should register a new entity into the container', async () => {
-			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
+			expect(container.has('anotherEntity')).toBeFalsy();
 
 			const components = metadataReader([AnotherModule]);
 			await entitiesLoader(components.get('entity'), container);
 
-			expect(container.hasRegistration('anotherEntity')).toBeTruthy();
+			expect(container.has('anotherEntity')).toBeTruthy();
 		});
 	});
 });

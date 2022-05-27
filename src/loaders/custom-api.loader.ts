@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { GetInjectableOptions } from './';
 import { applyAfterAuthMiddleware, applyBeforeAuthMiddleware } from './helpers/apply-middlewares';
 import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-routers';
-import { AwilixContainer } from 'awilix';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 /**
  * @internal
@@ -36,7 +36,7 @@ export async function customApiLoader(
 
 	const adminRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/index');
 	const originalAdminRouteLoader = adminRouteLoader.default;
-	adminRouteLoader.default = (app: Router, container: AwilixContainer, config: Record<string, unknown>): void => {
+	adminRouteLoader.default = (app: Router, container: MedusaContainer, config: Record<string, unknown>): void => {
 		applyBeforeAuthMiddleware(app, topMiddlewares);
 		applyAfterAuthMiddleware(app, topMiddlewares);
 		applyBeforeAuthRouters(app, topRouters);

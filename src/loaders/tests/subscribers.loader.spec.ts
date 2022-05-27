@@ -1,10 +1,10 @@
-// TODO fix the fact that medusa is using babel
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { Module, Subscriber } from '../../decorators';
 import { createContainer, Resolver } from 'awilix';
 import { metadataReader } from '../../core';
 import { subscribersLoader } from '../subscribers.loader';
+import { MedusaContainer } from "@medusajs/medusa/dist/types/global";
 
 @Subscriber()
 class OrderSubscriber {
@@ -15,7 +15,7 @@ class OrderSubscriber {
 class SubscriberModule {}
 
 describe('Subscribers loader', () => {
-	const container = createContainer();
+	const container = createContainer() as MedusaContainer;
 	const originalContainBuild = container.build;
 	container.build = jest.fn().mockImplementation((arg: Resolver<any>) => {
 		return originalContainBuild(arg);
@@ -27,7 +27,7 @@ describe('Subscribers loader', () => {
 
 		const medusaSubscriberModule = await import('@medusajs/medusa/dist/loaders/subscribers');
 		const medusaSubscriberLoaderSpy = jest.spyOn(medusaSubscriberModule, 'default');
-		medusaSubscriberModule.default({ container });
+		medusaSubscriberModule.default({ container } as { container: MedusaContainer });
 
 		expect(medusaSubscriberLoaderSpy).toHaveBeenCalled();
 		expect(container.build).toHaveBeenCalled();
