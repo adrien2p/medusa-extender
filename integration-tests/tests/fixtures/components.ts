@@ -1,5 +1,5 @@
 import { MedusaMiddleware, MedusaRequest, Middleware, Module, Router, Service } from 'medusa-extender';
-import { CartService as MedusaCartService } from '@medusajs/medusa';
+import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
 
 @Service()

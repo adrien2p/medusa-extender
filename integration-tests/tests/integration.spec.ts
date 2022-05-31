@@ -5,7 +5,7 @@ import { resolve as pathResolve } from 'path';
 import express, { NextFunction, Request, Response } from 'express';
 import portfinder from 'portfinder';
 import { Medusa, Type } from 'medusa-extender';
-import { CartService as MedusaCartService } from '@medusajs/medusa/dist/index';
+import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { IdMap } from 'medusa-test-utils';
 import {
 	AdminAuthTestPathMiddleware,

@@ -20,6 +20,8 @@ module.exports = {
 	projectConfig: {
 		jwtSecret: 'supersecret',
 		cookieSecret: 'supersecret',
+		jwt_secret: 'supersecret',
+		cookie_secret: 'supersecret',
 
 		database_url: DB_URL,
 		database_type: 'postgres',

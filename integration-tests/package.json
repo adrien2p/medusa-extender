@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test:integration": "NODE_ENV=development jest --runInBand --detectOpenHandles --forceExit --verbose",
-    "test:integration:ci": "npm i @medusajs/medusa@${MEDUSAJS_VERSION} && npm run test:integration"
+    "prepare:integration:ci": "NODE_ENV=development npm i @medusajs/medusa@${MEDUSAJS_VERSION} --legacy-peer-deps && npm i --legacy-peer-deps && PACKAGE_NAME=$(cat ../package.json | grep version | head -1 | awk -F: '{ print \"medusa-extender-\", $2, \".tgz\" }' | sed 's/[ \",]//g') && npm i ${PACKAGE_NAME} --legacy-peer-deps && rm -f ${PACKAGE_NAME}",
+    "prepare:integration": "NODE_ENV=development npm i && PACKAGE_NAME=$(cat ../package.json | grep version | head -1 | awk -F: '{ print \"medusa-extender-\", $2, \".tgz\" }' | sed 's/[ \",]//g') && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME}"
   },
   "dependencies": {
     "@medusajs/medusa": "^1.3.0",
