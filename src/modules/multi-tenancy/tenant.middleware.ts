@@ -25,7 +25,7 @@ export class TenantMiddleware implements MedusaMiddleware {
 
 		req.container.register({ manager: asValue(manager) });
 		req.container.cache.clear();
-		req.scope = req.container.createScope();
+		req.scope = req.container.createScope() as any;
 		return next();
 	}
 }

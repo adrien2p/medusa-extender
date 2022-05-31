@@ -1,23 +1,14 @@
 import { Service } from '../../decorators';
-import { createConnection, EntityManager, getConnectionManager } from 'typeorm';
+import { Connection, createConnection, EntityManager, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
-import { MedusaRequest } from '../../core';
-import TenantRepository from './tenant.repository';
-
-type ConstructorParams = {
-	tenantRepository: typeof TenantRepository;
-};
+import { MedusaContainer, MedusaRequest } from '../../core';
 
 @Service()
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
 
-	readonly #tenantRepository: typeof TenantRepository;
-
-	constructor(private readonly container: ConstructorParams, private readonly config: ConfigModule) {
-		this.#tenantRepository = container.tenantRepository;
-	}
+	constructor(_: MedusaContainer, private readonly config: ConfigModule) {}
 
 	/**
 	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
@@ -25,43 +16,48 @@ export class TenantService {
 	 * @param req
 	 */
 	public async getOrCreateConnection(defaultManager: EntityManager, req: MedusaRequest): Promise<EntityManager> {
-		if (!this.config.multiTenancy?.tenantCodeResolver) {
-			throw new Error('Missing tenantCodeResolver from multiTenancy config in medusa-config.');
+		if (!this.config.multi_tenancy?.tenant_code_resolver) {
+			throw new Error('Missing tenant_code_resolver from multi_tenancy config in medusa-config.');
 		}
-		const tenantCode = this.config.multiTenancy.tenantCodeResolver(req);
+		const tenantCode = this.config.multi_tenancy.tenant_code_resolver(req);
 		if (!tenantCode) {
 			return defaultManager;
 		}
 
-		const tenantRepo = defaultManager.getCustomRepository(this.#tenantRepository);
-		const tenant = await tenantRepo.findOne({ where: { code: tenantCode } });
+		const tenant = this.config.multi_tenancy.tenants.find((tenantConfig) => {
+			return tenantConfig.code === tenantCode;
+		});
 		if (!tenant) {
-			throw new Error('Unable to find the tenant from the code found.');
+			throw new Error(
+				'Unable to find the tenant from the code found. Please check that the tenant code is part of the config.'
+			);
 		}
 
 		const connectionManager = getConnectionManager();
+
+		let connection!: Connection;
 		if (connectionManager.has(tenant.code)) {
-			const connection = await connectionManager.get(tenant.code);
-			return Promise.resolve(
-				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
-			);
+			connection = await connectionManager.get(tenant.code);
 		} else {
 			const db_entities = req.scope.resolve('db_entities') as any[];
 			await createConnection({
 				name: tenant.code,
-				type: tenant.database_type as any,
-				url: tenant.database_url,
-				database: tenant.database_database,
-				extra: tenant.database_extra || {},
+				type: tenant.database_config.database_type as any,
+				url: tenant.database_config.database_url,
+				database: tenant.database_config.database_database,
+				extra: tenant.database_config.database_extra || {},
 				entities: db_entities,
 				namingStrategy: new ShortenedNamingStrategy(),
 				logging: this.config.projectConfig.database_logging ?? false,
 			});
 
-			const connection = await connectionManager.get(tenant.code);
-			return Promise.resolve(
-				connection.isConnected ? connection.manager : connection.connect().then((conn) => conn.manager)
-			);
+			connection = await connectionManager.get(tenant.code);
 		}
+
+		return await new Promise((resolve) => {
+			connection.isConnected
+				? resolve(connection.manager)
+				: connection.connect().then((conn) => resolve(conn.manager));
+		});
 	}
 }

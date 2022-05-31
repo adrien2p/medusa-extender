@@ -3,6 +3,7 @@ import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { Connection, ConnectionManager } from 'typeorm';
 import { MedusaRequest } from '../../../core';
+import { ConfigModule } from '../types';
 
 class FakeService {
 	manager: any;
@@ -45,7 +46,6 @@ jest.spyOn(typeormFunctions, 'getConnectionManager').mockImplementation((): Conn
 jest.spyOn(typeormFunctions, 'createConnection').mockImplementation((options: any) => {
 	const connectRes = {
 		manager: {
-			getCustomRepository: () => tenantRepositoryMock,
 			connection: { name: options.name, createQueryRunner: Connection.prototype.createQueryRunner },
 		},
 	};
@@ -57,32 +57,25 @@ jest.spyOn(typeormFunctions, 'createConnection').mockImplementation((options: an
 });
 const container = createContainer();
 const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
-const tenantRepositoryMock = {
-	findOne: ({ where: { code } }: { where: { code: string } }) => {
-		const sharedProps = {
-			database_type: 'postgres',
-			database_url: 'fakeUrl',
-			database_extra: { fakeExtraProp: 'test' },
-		};
-
-		if (code === tenantCodes[0]) {
-			return { ...sharedProps, code: tenantCodes[0] };
-		} else if (code === tenantCodes[1]) {
-			return { ...sharedProps, code: tenantCodes[1] };
-		}
-	},
-};
 const defaultManagerMock = {
-	getCustomRepository: () => tenantRepositoryMock,
 	connection: { name: 'default', createQueryRunner: Connection.prototype.createQueryRunner },
 };
-const configMock = {
+const configMock: ConfigModule = {
 	projectConfig: {
-		database_type: 'postgres',
+		database_logging: 'all',
 	},
-	multiTenancy: {
+	multi_tenancy: {
 		enable: true,
-		tenantCodeResolver: (req: MedusaRequest) => req.headers['x-tenant'] as string,
+		tenant_code_resolver: (req: MedusaRequest) => req.headers['x-tenant'] as string,
+		tenants: tenantCodes.map((tenantCode) => ({
+			code: tenantCode,
+			database_config: {
+				database_type: 'postgres',
+				database_url: 'url:' + tenantCode,
+				database_database: null,
+				database_extra: {},
+			},
+		})),
 	},
 };
 
@@ -93,7 +86,6 @@ describe('Tenant service', () => {
 		container.register({
 			request: asFunction(() => 'test', { lifetime: 'SCOPED' }),
 			fakeService: asFunction((cradle) => new FakeService(cradle), { lifetime: 'SINGLETON' }),
-			tenantRepository: asValue(tenantRepositoryMock),
 			manager: asValue(defaultManagerMock),
 			db_entities: asValue([]),
 			[TenantService.resolutionKey]: asFunction(
