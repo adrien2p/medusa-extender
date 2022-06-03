@@ -7,7 +7,6 @@ import {
 	adminApiLoader,
 	customApiLoader,
 	databaseLoader,
-	migrationsLoader,
 	modulesLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
@@ -76,19 +75,18 @@ export class Medusa {
 		);
 		await databaseLoader(
 			moduleComponentsOptions.get('entity') ?? [],
-			moduleComponentsOptions.get('repository') ?? []
+			moduleComponentsOptions.get('repository') ?? [],
+			moduleComponentsOptions.get('migration') ?? []
 		);
 		await pluginsLoadersAndListeners(this.#express);
 		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
 		await subscribersLoader(moduleComponentsOptions.get('subscriber') ?? []);
 
-		const { container, dbConnection } = await loaders({
+		const { container } = await loaders({
 			isTest: process.env.NODE_ENV === 'test',
 			directory: this.#rootDir,
 			expressApp: this.#express,
 		});
-
-		await migrationsLoader(moduleComponentsOptions.get('migration') ?? [], dbConnection);
 
 		const endPoints = getEndpoints(this.#express);
 		for (const endPoint of endPoints) {
