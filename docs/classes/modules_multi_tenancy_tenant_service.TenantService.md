@@ -12,7 +12,6 @@
 
 ### Properties
 
-- [#tenantRepository](modules_multi_tenancy_tenant_service.TenantService.md##tenantrepository)
 - [resolutionKey](modules_multi_tenancy_tenant_service.TenantService.md#resolutionkey)
 
 ### Methods
@@ -23,30 +22,20 @@
 
 ### constructor
 
-• **new TenantService**(`container`, `config`)
+• **new TenantService**(`_`, `config`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`ConstructorParams`](../modules/modules_multi_tenancy_tenant_service.Internals.md#constructorparams) |
+| `_` | [`MedusaContainer`](../modules/core_types.md#medusacontainer) |
 | `config` | [`ConfigModule`](../modules/modules_multi_tenancy_types.md#configmodule) |
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:18](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/tenant.service.ts#L18)
+[src/modules/multi-tenancy/tenant.service.ts:11](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/tenant.service.ts#L11)
 
 ## Properties
-
-### #tenantRepository
-
-• `Private` `Readonly` **#tenantRepository**: typeof [`default`](modules_multi_tenancy_tenant_repository.default.md)
-
-#### Defined in
-
-[src/modules/multi-tenancy/tenant.service.ts:16](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/tenant.service.ts#L16)
-
-___
 
 ### resolutionKey
 
@@ -54,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:14](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/tenant.service.ts#L14)
+[src/modules/multi-tenancy/tenant.service.ts:9](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/tenant.service.ts#L9)
 
 ## Methods
 
@@ -69,7 +58,7 @@ Provide a way to switch between database connections depending on the request pr
 | Name | Type |
 | :------ | :------ |
 | `defaultManager` | `EntityManager` |
-| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest)<`unknown`, `Record`<`string`, `unknown`\>\> |
+| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |
 
 #### Returns
 
@@ -77,4 +66,4 @@ Provide a way to switch between database connections depending on the request pr
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:27](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/tenant.service.ts#L27)
+[src/modules/multi-tenancy/tenant.service.ts:18](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/tenant.service.ts#L18)

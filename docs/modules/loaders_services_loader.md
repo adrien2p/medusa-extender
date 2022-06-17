@@ -20,7 +20,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `container` | `AwilixContainer`<`any`\> |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
 | `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/services.loader.ts#L52)
+[src/loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/services.loader.ts#L52)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | `AwilixContainer`<`any`\> |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
 | `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/services.loader.ts#L40)
+[src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/services.loader.ts#L40)
 
 ___
 
@@ -75,4 +75,4 @@ Load all custom services and overridden services into the underlying @medusajs i
 
 #### Defined in
 
-[src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/services.loader.ts#L12)
+[src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/services.loader.ts#L12)

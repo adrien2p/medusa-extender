@@ -57,6 +57,10 @@ For more information about the configuration, you can have a look at the [docume
 
 ## Multi-tenancy
 
+> NOTE: With then extender, it is possible by default to build multi vendor, multi tenant
+> application. This module, only provide a specific approach for specific cases and does not
+> mean that it is not something you can do without that module.
+
 As part of the extender, you can choose to use a multi-tenancy architecture or a single-tenancy architecture depending
 on your needs.
 

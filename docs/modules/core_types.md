@@ -19,7 +19,7 @@
 - [InjectableComponentTypes](core_types.md#injectablecomponenttypes)
 - [InjectableOptions](core_types.md#injectableoptions)
 - [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
-- [MedusaCustomContainer](core_types.md#medusacustomcontainer)
+- [MedusaContainer](core_types.md#medusacontainer)
 - [MedusaRequest](core_types.md#medusarequest)
 - [MedusaRouteMethods](core_types.md#medusaroutemethods)
 - [MedusaRouteOptions](core_types.md#medusarouteoptions)
@@ -57,7 +57,7 @@
 
 #### Defined in
 
-[src/core/types.ts:9](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L9)
+[src/core/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L13)
 
 ___
 
@@ -82,7 +82,7 @@ Defines the injection options for entities.
 
 #### Defined in
 
-[src/core/types.ts:29](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L29)
+[src/core/types.ts:31](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L31)
 
 ___
 
@@ -100,7 +100,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/core/types.ts:118](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L118)
+[src/core/types.ts:120](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L120)
 
 ___
 
@@ -118,7 +118,7 @@ Determine which options type it actually is depending on the component type.
 
 #### Defined in
 
-[src/core/types.ts:143](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L143)
+[src/core/types.ts:145](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L145)
 
 ___
 
@@ -130,7 +130,7 @@ Components that does not required any other options that Type.
 
 #### Defined in
 
-[src/core/types.ts:16](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L16)
+[src/core/types.ts:18](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L18)
 
 ___
 
@@ -148,7 +148,7 @@ Union of all options type possible for injectable.
 
 #### Defined in
 
-[src/core/types.ts:107](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L107)
+[src/core/types.ts:109](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L109)
 
 ___
 
@@ -160,36 +160,29 @@ Describe the expected request from a middleware [MedusaMiddleware](../interfaces
 
 #### Defined in
 
-[src/core/types.ts:157](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L157)
+[src/core/types.ts:159](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L159)
 
 ___
 
-### MedusaCustomContainer
+### MedusaContainer
 
-Ƭ **MedusaCustomContainer**: `AwilixContainer` & { `registerAdd`: (...`args`: `unknown`[]) => `void`  }
+Ƭ **MedusaContainer**: `AwilixContainer` & { `registerAdd`: <T\>(`name`: `string`, `registration`: `T`) => [`MedusaContainer`](core_types.md#medusacontainer)  }
 
 #### Defined in
 
-[src/core/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L11)
+[src/core/types.ts:5](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L5)
 
 ___
 
 ### MedusaRequest
 
-Ƭ **MedusaRequest**<`T`, `Cradle`\>: `Request` & { `container`: `AwilixContainer`<`Cradle` & `T`\> ; `scope`: `AwilixContainer`<`Cradle` & `T`\>  }
+Ƭ **MedusaRequest**: `Request` & { `container`: `AwilixContainer` ; `scope`: `AwilixContainer`  }
 
 Medusa request extended.
 
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
-| `Cradle` | extends `Record`<`string`, `unknown`\> = `Record`<`string`, `unknown`\> |
-
 #### Defined in
 
-[src/core/types.ts:149](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L149)
+[src/core/types.ts:151](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L151)
 
 ___
 
@@ -199,7 +192,7 @@ ___
 
 #### Defined in
 
-[src/core/types.ts:164](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L164)
+[src/core/types.ts:166](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L166)
 
 ___
 
@@ -218,7 +211,7 @@ Describe all the available options for the Route [MedusaMiddleware](../interface
 
 #### Defined in
 
-[src/core/types.ts:169](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L169)
+[src/core/types.ts:171](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L171)
 
 ___
 
@@ -237,7 +230,7 @@ Defines the injection options for middlewares.
 
 #### Defined in
 
-[src/core/types.ts:80](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L80)
+[src/core/types.ts:82](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L82)
 
 ___
 
@@ -256,7 +249,7 @@ Mix the return type of two objects.
 
 #### Defined in
 
-[src/core/types.ts:193](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L193)
+[src/core/types.ts:195](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L195)
 
 ___
 
@@ -280,7 +273,7 @@ Defines the injection options for routes.
 
 #### Defined in
 
-[src/core/types.ts:100](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L100)
+[src/core/types.ts:102](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L102)
 
 ___
 
@@ -305,7 +298,7 @@ Defines the injection options for services, entities, repositories.
 
 #### Defined in
 
-[src/core/types.ts:52](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L52)
+[src/core/types.ts:54](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L54)
 
 ___
 
@@ -323,7 +316,7 @@ Defines the injection options for routes.
 
 #### Defined in
 
-[src/core/types.ts:73](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L73)
+[src/core/types.ts:75](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L75)
 
 ___
 
@@ -344,7 +337,7 @@ Define a router and its configuration.
 
 #### Defined in
 
-[src/core/types.ts:63](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L63)
+[src/core/types.ts:65](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L65)
 
 ___
 
@@ -370,7 +363,7 @@ Defines the injection options for service.
 
 #### Defined in
 
-[src/core/types.ts:40](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L40)
+[src/core/types.ts:42](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L42)
 
 ___
 
@@ -382,7 +375,7 @@ Defines the injection options for subscribers.
 
 #### Defined in
 
-[src/core/types.ts:95](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L95)
+[src/core/types.ts:97](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L97)
 
 ___
 
@@ -406,4 +399,4 @@ Defines the injection options for routes.
 
 #### Defined in
 
-[src/core/types.ts:88](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/core/types.ts#L88)
+[src/core/types.ts:90](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L90)

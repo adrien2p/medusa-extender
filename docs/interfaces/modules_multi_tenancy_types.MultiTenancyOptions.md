@@ -9,10 +9,11 @@
 ### Properties
 
 - [enable](modules_multi_tenancy_types.MultiTenancyOptions.md#enable)
+- [tenants](modules_multi_tenancy_types.MultiTenancyOptions.md#tenants)
 
 ### Methods
 
-- [tenantCodeResolver](modules_multi_tenancy_types.MultiTenancyOptions.md#tenantcoderesolver)
+- [tenant\_code\_resolver](modules_multi_tenancy_types.MultiTenancyOptions.md#tenant_code_resolver)
 
 ## Properties
 
@@ -22,19 +23,29 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/types.ts:10](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/types.ts#L10)
+[src/modules/multi-tenancy/types.ts:10](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/types.ts#L10)
+
+___
+
+### tenants
+
+• **tenants**: { `code`: `string` ; `database_config`: { `database_database`: `string` ; `database_extra`: `Record`<`string`, `unknown`\> ; `database_type`: `string` ; `database_url`: `string`  }  }[]
+
+#### Defined in
+
+[src/modules/multi-tenancy/types.ts:12](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/types.ts#L12)
 
 ## Methods
 
-### tenantCodeResolver
+### tenant\_code\_resolver
 
-▸ **tenantCodeResolver**(`req`): `string`
+▸ **tenant_code_resolver**(`req`): `string`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest)<`unknown`, `Record`<`string`, `unknown`\>\> |
+| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |
 
 #### Returns
 
@@ -42,4 +53,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/modules/multi-tenancy/types.ts#L11)
+[src/modules/multi-tenancy/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/modules/multi-tenancy/types.ts#L11)

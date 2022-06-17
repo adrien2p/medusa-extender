@@ -21,7 +21,7 @@
 - [MODULE\_KEY](index.md#module_key)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
-- [MedusaCustomContainer](index.md#medusacustomcontainer)
+- [MedusaContainer](index.md#medusacontainer)
 - [MedusaDynamicModule](index.md#medusadynamicmodule)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
@@ -44,8 +44,8 @@
 - [RoutesInjectionRouterConfiguration](index.md#routesinjectionrouterconfiguration)
 - [Service](index.md#service)
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
+- [Subscriber](index.md#subscriber)
 - [SubscriberInjectionOptions](index.md#subscriberinjectionoptions)
-- [Tenant](index.md#tenant)
 - [TenantMiddleware](index.md#tenantmiddleware)
 - [TenantModule](index.md#tenantmodule)
 - [Type](index.md#type)
@@ -146,9 +146,9 @@ Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest
 
 ___
 
-### MedusaCustomContainer
+### MedusaContainer
 
-Re-exports [MedusaCustomContainer](core_types.md#medusacustomcontainer)
+Re-exports [MedusaContainer](core_types.md#medusacontainer)
 
 ___
 
@@ -284,15 +284,15 @@ Re-exports [ServiceInjectableOptions](core_types.md#serviceinjectableoptions)
 
 ___
 
-### SubscriberInjectionOptions
+### Subscriber
 
-Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
+Re-exports [Subscriber](decorators_components_decorator.md#subscriber)
 
 ___
 
-### Tenant
+### SubscriberInjectionOptions
 
-Re-exports [Tenant](../classes/modules_multi_tenancy_tenant_entity.Tenant.md)
+Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
 
 ___
 

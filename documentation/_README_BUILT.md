@@ -114,7 +114,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.6.4)
+Run the following command in your terminal (The last version is 1.7.1)
 
 ```bash
 npm install medusa-extender
@@ -267,20 +267,26 @@ The result will be the generation of the module component at `src/modules/myModu
 #### Config
 
 In order to be flexible you can specify complement path to the migration files
-in your `medusa-config.js` file using the `cliMigrationsDirs` config.
+in your `medusa-config.js` file using the `cli_migration_dirs` config.
 
 It can be useful when you have installed some external modules that contains migrations.
 In that case, you can specify the relative paths and globs to the plugin/shareable module migrations.
 
 Let see an example
 
+> NOTE: For the older version of the extender, the config is `cliMigrationsDirs` that is now 
+> deprecated. If you set both `cliMigrationsDirs` and `cli_migration_dirs` then the last one
+> will be taken into account.
+
+
 ```javascript
 modules.exports = {
     /* ... */
     projectConfig: {
-        /* ... */
-        cliMigrationsDirs: ['node_modules/external-module/dist/**/*.migration.js']
-        /* ... */
+        cli_migration_dirs: [
+            'node_modules/external-module/dist/**/*.migration.js',
+            'dist/**/*.migration.js'
+        ]
     }
     /* ... */
 }
@@ -1104,6 +1110,10 @@ For more information about the configuration, you can have a look at the [docume
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#multi-tenancy)
 
 ## Multi-tenancy
+
+> NOTE: With then extender, it is possible by default to build multi vendor, multi tenant
+> application. This module, only provide a specific approach for specific cases and does not
+> mean that it is not something you can do without that module.
 
 As part of the extender, you can choose to use a multi-tenancy architecture or a single-tenancy architecture depending
 on your needs.

@@ -60,6 +60,11 @@ In that case, you can specify the relative paths and globs to the plugin/shareab
 
 Let see an example
 
+> NOTE: For the older version of the extender, the config is `cliMigrationsDirs` that is now 
+> deprecated. If you set both `cliMigrationsDirs` and `cli_migration_dirs` then the last one
+> will be taken into account.
+
+
 ```javascript
 modules.exports = {
     /* ... */

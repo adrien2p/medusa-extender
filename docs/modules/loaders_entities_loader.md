@@ -25,7 +25,7 @@ Load all custom entities into the underlying @medusajs instance.
 | Name | Type |
 | :------ | :------ |
 | `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
-| `container` | `AwilixContainer`<`any`\> |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
 
 #### Returns
 
@@ -33,7 +33,7 @@ Load all custom entities into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/entities.loader.ts#L13)
+[src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/entities.loader.ts#L13)
 
 ___
 
@@ -56,7 +56,7 @@ Load all custom entities that override @medusajs instance entities.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/entities.loader.ts#L36)
+[src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/entities.loader.ts#L36)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/entities.loader.ts#L63)
+[src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/entities.loader.ts#L63)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | `AwilixContainer`<`any`\> |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
 | `entityOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"entity"``\> |
 
 #### Returns
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/entities.loader.ts#L51)
+[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/entities.loader.ts#L51)

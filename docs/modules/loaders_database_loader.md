@@ -12,7 +12,7 @@
 
 ### databaseLoader
 
-▸ **databaseLoader**(`entities`, `repositories`): `Promise`<`void`\>
+▸ **databaseLoader**(`entities`, `repositories`, `migrations`): `Promise`<`void`\>
 
 #### Parameters
 
@@ -20,6 +20,7 @@
 | :------ | :------ |
 | `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
 | `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
+| `migrations` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"migration"``\> |
 
 #### Returns
 
@@ -27,4 +28,4 @@
 
 #### Defined in
 
-[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/e82d041/src/loaders/database.loader.ts#L5)
+[src/loaders/database.loader.ts:5](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/database.loader.ts#L5)

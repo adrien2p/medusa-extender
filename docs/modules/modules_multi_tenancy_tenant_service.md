@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [Internals](modules_multi_tenancy_tenant_service.Internals.md)
-
 ### Classes
 
 - [TenantService](../classes/modules_multi_tenancy_tenant_service.TenantService.md)

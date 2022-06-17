@@ -6,17 +6,10 @@
 
 ### References
 
-- [Tenant](modules_multi_tenancy.md#tenant)
 - [TenantMiddleware](modules_multi_tenancy.md#tenantmiddleware)
 - [TenantModule](modules_multi_tenancy.md#tenantmodule)
 
 ## References
-
-### Tenant
-
-Re-exports [Tenant](../classes/modules_multi_tenancy_tenant_entity.Tenant.md)
-
-___
 
 ### TenantMiddleware
 
