@@ -185,8 +185,8 @@ export interface MedusaMiddleware {
  * @interface
  * Describe a dynamic module which resolve its import dynamically.
  */
-export interface MedusaDynamicModule {
-	forRoot<T>(configModule: T): Promise<ModuleInjectionOptions>;
+export interface MedusaDynamicModule<T = unknown> {
+	forRoot(configModule: T): Promise<ModuleInjectionOptions>;
 }
 
 /**

@@ -1130,9 +1130,21 @@ Here is the expected config
 ```json
 interface MultiTenancyOptions {
     enable: boolean;
-    tenantCodeResolver: (req: MedusaRequest) => string;
+	tenant_code_resolver: (req: MedusaRequest) => string;
+	tenants: {
+		code: string;
+		database_config: {
+			database_type: string;
+			database_url: string;
+			database_database: string;
+			database_extra: Record<string, unknown>;
+		};
+	}[];
 }
 ```
+
+> NOTE: This module is a dynamic module, which means, that it will only be imported and resolved
+> if the it has been enabled in the config as shown above.
 
 so your `medusa-config.js` will looks like
 
@@ -1141,14 +1153,25 @@ const config = {
     /* ... */
     multiTenancy: {
         enable: true,
-        tenantCodeResolver: (req) => req.headers['x-tenant']
+        tenant_code_resolver: (req: MedusaRequest) => /* Here you can grab the property on which the tenant code is stored */,
+        tenants: {
+            code: "your-tenant-code",
+            database_config: {
+                database_type: 'tenant-database-type',
+                database_url: 'tenant-database-url',
+                database_database: 'tenant-database-name',
+                database_extra: {}
+            },
+        },
     },
     /* ... */
 };
 ```
 
-Ant hat's it, you can now run your server and play around your multi-tenancy
+Ant that's it, you can now run your server and play around your multi-tenancy
 architecture.
+Each tenant will only access the data from the database that has been specified for that
+tenant.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#resources)
 

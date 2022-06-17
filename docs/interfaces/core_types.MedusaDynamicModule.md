@@ -1,11 +1,21 @@
 [medusa-extender](../README.md) / [Exports](../modules.md) / [core/types](../modules/core_types.md) / MedusaDynamicModule
 
-# Interface: MedusaDynamicModule
+# Interface: MedusaDynamicModule<T\>
 
 [core/types](../modules/core_types.md).MedusaDynamicModule
 
 **`interface`**
 Describe a dynamic module which resolve its import dynamically.
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
+
+## Implemented by
+
+- [`TenantModule`](../classes/modules_multi_tenancy_tenant_module.TenantModule.md)
 
 ## Table of contents
 
@@ -17,13 +27,7 @@ Describe a dynamic module which resolve its import dynamically.
 
 ### forRoot
 
-▸ **forRoot**<`T`\>(`configModule`): `Promise`<[`ModuleInjectionOptions`](../modules/core_types.md#moduleinjectionoptions)<`unknown`\>\>
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `T` |
+▸ **forRoot**(`configModule`): `Promise`<[`ModuleInjectionOptions`](../modules/core_types.md#moduleinjectionoptions)<`unknown`\>\>
 
 #### Parameters
 
@@ -37,4 +41,4 @@ Describe a dynamic module which resolve its import dynamically.
 
 #### Defined in
 
-[src/core/types.ts:189](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/core/types.ts#L189)
+[src/core/types.ts:189](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/core/types.ts#L189)

@@ -31,7 +31,7 @@ Apply all middlewares on the app that must be applied after the @medusajs authen
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/helpers/apply-middlewares.ts#L34)
+[src/loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/loaders/helpers/apply-middlewares.ts#L34)
 
 ___
 
@@ -55,4 +55,4 @@ Apply all middlewares on the app that must be applied before the @medusajs authe
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/21bbe37/src/loaders/helpers/apply-middlewares.ts#L12)
+[src/loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/loaders/helpers/apply-middlewares.ts#L12)
