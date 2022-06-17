@@ -33,7 +33,7 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:11](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/modules/multi-tenancy/tenant.service.ts#L11)
+[src/modules/multi-tenancy/tenant.service.ts:11](https://github.com/adrien2p/medusa-extender/blob/624a76f/src/modules/multi-tenancy/tenant.service.ts#L11)
 
 ## Properties
 
@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:9](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/modules/multi-tenancy/tenant.service.ts#L9)
+[src/modules/multi-tenancy/tenant.service.ts:9](https://github.com/adrien2p/medusa-extender/blob/624a76f/src/modules/multi-tenancy/tenant.service.ts#L9)
 
 ## Methods
 
@@ -66,4 +66,4 @@ Provide a way to switch between database connections depending on the request pr
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:18](https://github.com/adrien2p/medusa-extender/blob/b3271c6/src/modules/multi-tenancy/tenant.service.ts#L18)
+[src/modules/multi-tenancy/tenant.service.ts:18](https://github.com/adrien2p/medusa-extender/blob/624a76f/src/modules/multi-tenancy/tenant.service.ts#L18)

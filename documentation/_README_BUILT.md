@@ -1111,8 +1111,8 @@ For more information about the configuration, you can have a look at the [docume
 
 ## Multi-tenancy
 
-> NOTE: With then extender, it is possible by default to build multi vendor, multi tenant
-> application. This module, only provide a specific approach for specific cases and does not
+> With the extender, it is possible by default to build multi vendor, multi tenant
+> applications. This module, only provide a specific approach for specific cases and does not
 > mean that it is not something you can do without that module.
 
 As part of the extender, you can choose to use a multi-tenancy architecture or a single-tenancy architecture depending
@@ -1143,7 +1143,7 @@ interface MultiTenancyOptions {
 }
 ```
 
-> NOTE: This module is a dynamic module, which means, that it will only be imported and resolved
+> This module is a dynamic module, which means, that it will only be imported and resolved
 > if the it has been enabled in the config as shown above.
 
 so your `medusa-config.js` will looks like
@@ -1153,8 +1153,8 @@ const config = {
     /* ... */
     multiTenancy: {
         enable: true,
-        tenant_code_resolver: (req: MedusaRequest) => /* Here you can grab the property on which the tenant code is stored */,
-        tenants: {
+        tenant_code_resolver: (req: MedusaRequest) => "" /* Here you can grab the property on which the tenant code is stored */,
+        tenants: [{
             code: "your-tenant-code",
             database_config: {
                 database_type: 'tenant-database-type',
@@ -1162,7 +1162,7 @@ const config = {
                 database_database: 'tenant-database-name',
                 database_extra: {}
             },
-        },
+        }],
     },
     /* ... */
 };
