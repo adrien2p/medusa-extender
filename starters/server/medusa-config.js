@@ -40,6 +40,7 @@ module.exports = {
 		store_cors: STORE_CORS,
 		admin_cors: ADMIN_CORS,
 		redis_url: REDIS_URL,
+		cli_migration_dirs: ["dist/**/migration.js"]
 	},
 	monitoring: {
         uriPath: '/monitoring'
