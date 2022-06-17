@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/adrien2p/medusa-extender/compare/v1.7.1...v1.7.2) (2022-06-17)
+
+
+### Features
+
+* **enhancement:** Multi-tenancy module ([e939a23](https://github.com/adrien2p/medusa-extender/commits/e939a237c9ffb6eeb0f1ffc98307cf6143745196))
+* **multi-tenancy:** Update the module to be dynamic ([b3271c6](https://github.com/adrien2p/medusa-extender/commits/b3271c6e7838e161d036151470310ca7da34ab26))
+* **multi-tenancy:** Update the module to be dynamic ([058f6a0](https://github.com/adrien2p/medusa-extender/commits/058f6a013b6ff003bc59554ce90256a1bebc476d))
+* Remove pre-defined migration globs in favor of the end user configuration ([097f25e](https://github.com/adrien2p/medusa-extender/commits/097f25edf390dd418a18c0fa96d46f80e5c0d1b9))
+
+
+### Bug Fixes
+
+* Move migration loader in the database loader to ensure migrations order ([bde1563](https://github.com/adrien2p/medusa-extender/commits/bde1563546c2da3f244c90b7063936068cd99834))
+
 ### [1.7.1](https://github.com/adrien2p/medusa-extender/compare/v1.7.0...v1.7.1) (2022-05-19)
 
 ## [1.7.0](https://github.com/adrien2p/medusa-extender/compare/v1.6.5...v1.7.0) (2022-05-18)
