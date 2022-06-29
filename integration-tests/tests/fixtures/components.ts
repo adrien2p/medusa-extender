@@ -1,6 +1,7 @@
 import { MedusaMiddleware, MedusaRequest, Middleware, Module, Router, Service } from 'medusa-extender';
 import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
+import { Cart } from "@medusajs/medusa/dist/models/cart";
 
 @Service()
 export class TestService {
@@ -12,6 +13,10 @@ export class CartService extends MedusaCartService {
 	static resolutionKey = 'cartService';
 
 	customMethod = jest.fn();
+
+	removeLineItem(cartId: string, lineItemId: string): Promise<Cart> {
+		return Promise.resolve({ id: "cart_dafsdgfds" } as Cart)
+	}
 }
 
 @Router({
@@ -208,7 +213,7 @@ CustomTopTestPathMiddleware.prototype.consume = jest
 		StoreRouter,
 		StoreTestPathMiddleware,
 		CustomTopRouter,
-		CustomTopTestPathMiddleware
+		CustomTopTestPathMiddleware,
 	],
 })
 export class TestModule {}

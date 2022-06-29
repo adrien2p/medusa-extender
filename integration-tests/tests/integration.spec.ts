@@ -103,6 +103,18 @@ describe('Medusa-extender', () => {
 
 			expect(cartService.customMethod).toHaveBeenCalled();
 		});
+
+		it('should load overridden service components and override parent method', async () => {
+			const cartService: CartService = context.container.resolve(CartService.resolutionKey);
+
+			const cart = await cartService.removeLineItem("1", "1");
+
+			expect(cart).toEqual(
+				expect.objectContaining({
+					id: "cart_dafsdgfds"
+				})
+			);
+		});
 	});
 
 	describe('admin api loader', () => {
