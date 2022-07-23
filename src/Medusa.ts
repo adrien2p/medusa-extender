@@ -17,6 +17,7 @@ import {
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
+import { ConfigModule } from './modules/multi-tenancy/types';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -31,24 +32,27 @@ const logger = Logger.contextualize('Medusa');
 export class Medusa {
 	readonly #express: Express;
 	readonly #rootDir: string;
+	readonly #config: { configModule: ConfigModule };
 
 	/**
 	 * @param rootDir Directory where the `medusa-config` is located
 	 * @param express Express instance
 	 */
-	constructor(rootDir: string, express: Express) {
+	constructor(rootDir: string, express: Express, config?: ConfigModule) {
 		this.#express = express;
 		this.#rootDir = rootDir;
+
+		if(config) {
+			this.#config = { configModule: config };
+		}
 	}
 
 	/**
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: {
-				monitoring: MonitoringOptions;
-			};
+		const { configModule } = this.#config || getConfigFile(this.#rootDir, 'medusa-config') as {
+			configModule: ConfigModule;
 		};
 
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
