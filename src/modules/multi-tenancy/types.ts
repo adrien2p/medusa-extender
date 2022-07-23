@@ -5,7 +5,7 @@ import { MonitoringOptions } from '../monitoring';
 export type ConfigModule = Record<string, unknown> & {
 	multi_tenancy?: MultiTenancyOptions;
 	projectConfig: { database_logging?: LoggerOptions };
-	monitoring?: MonitoringOptions;			
+	monitoring?: MonitoringOptions;
 };
 
 export interface MultiTenancyOptions {
