@@ -42,7 +42,7 @@ export class Medusa {
 		this.#express = express;
 		this.#rootDir = rootDir;
 
-		if(config) {
+		if (config) {
 			this.#config = { configModule: config };
 		}
 	}
@@ -51,9 +51,11 @@ export class Medusa {
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const { configModule } = this.#config || getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: ConfigModule;
-		};
+		const { configModule } =
+			this.#config ||
+			(getConfigFile(this.#rootDir, 'medusa-config') as {
+				configModule: ConfigModule;
+			});
 
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 
