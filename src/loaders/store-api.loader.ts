@@ -18,26 +18,18 @@ export async function storeApiLoader(
 	const storeMiddlewares = middlewares
 		.map((middleware) => ({
 			...middleware,
-			routes: middleware.routes.filter((route) => {
-				if (route.path.startsWith('/store')) {
-					route.path = route.path.replace('/store', '');
-					return true;
-				}
-				return false;
-			}),
+			routes: middleware.routes
+				.filter((route) => route.path.startsWith('/store'))
+				.map((route) => ({ ...route, path: route.path.replace('/store', '') })),
 		}))
 		.filter((middleware) => middleware.routes.length);
 
 	const storeRouters = routers
 		.map((router) => ({
 			...router,
-			routes: router.routes.filter((route) => {
-				if (route.path.startsWith('/store')) {
-					route.path = route.path.replace('/store', '');
-					return true;
-				}
-				return false;
-			}),
+			routes: router.routes
+				.filter((route) => route.path.startsWith('/store'))
+				.map((route) => ({ ...route, path: route.path.replace('/store', '') })),
 		}))
 		.filter((route) => route.routes.length);
 
