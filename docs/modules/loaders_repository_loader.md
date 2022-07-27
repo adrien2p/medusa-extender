@@ -30,7 +30,7 @@ Load all custom repositories that override @medusajs instance entities.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/624a76f/src/loaders/repository.loader.ts#L37)
+[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/loaders/repository.loader.ts#L37)
 
 ___
 
@@ -54,4 +54,4 @@ Load all custom repositories into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/624a76f/src/loaders/repository.loader.ts#L14)
+[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/loaders/repository.loader.ts#L14)

@@ -114,7 +114,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.1)
+Run the following command in your terminal (The last version is 1.7.3)
 
 ```bash
 npm install medusa-extender
@@ -393,6 +393,30 @@ export class Product extends MedusaProduct {
 
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
+
+To make your project aware of your customisation 
+at the medusa core level, you can use the [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
+approach.
+
+here is an example
+
+```ts
+// src/modules/your_modules/index.d.ts
+
+import { User as ExtendedUser } from '@modules/user/user.entity';
+import { default as ExtendedUserRepository } from '@modules/user/user.repository';
+
+declare module '@medusajs/medusa/dist/models/user' {
+  export declare class User extends ExtendedUser {}
+}
+
+declare module '@medusajs/medusa' {
+  export declare class UserRepository extends ExtendedUserRepository {}
+}
+
+```
+
+To see a live example, you can look at the starters, they include the module augmentation approach.
 
 ### @Repository
 
