@@ -18,26 +18,18 @@ export async function adminApiLoader(
 	const adminMiddlewares = middlewares
 		.map((middleware) => ({
 			...middleware,
-			routes: middleware.routes.filter((route) => {
-				if (route.path.startsWith('/admin')) {
-					route.path = route.path.replace('/admin', '');
-					return true;
-				}
-				return false;
-			}),
+			routes: middleware.routes
+				.filter((route) => route.path.startsWith('/admin'))
+				.map((route) => ({ ...route, path: route.path.replace('/admin', '') })),
 		}))
 		.filter((middleware) => middleware.routes.length);
 
 	const adminRouters = routers
 		.map((router) => ({
 			...router,
-			routes: router.routes.filter((route) => {
-				if (route.path.startsWith('/admin')) {
-					route.path = route.path.replace('/admin', '');
-					return true;
-				}
-				return false;
-			}),
+			routes: router.routes
+				.filter((route) => route.path.startsWith('/admin'))
+				.map((route) => ({ ...route, path: route.path.replace('/admin', '') })),
 		}))
 		.filter((route) => route.routes.length);
 
