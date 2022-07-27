@@ -21,5 +21,5 @@ module.exports = {
 	],
 	"coverageDirectory": "../coverage",
 	"testEnvironment": "node",
-  	"setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
+  	"setupFilesAfterEnv": ["<rootDir>/../setupTests.js"]
 };
