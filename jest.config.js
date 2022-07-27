@@ -20,5 +20,6 @@ module.exports = {
 		"lcov"
 	],
 	"coverageDirectory": "../coverage",
-	"testEnvironment": "node"
+	"testEnvironment": "node",
+  	"setupFilesAfterEnv": ["<rootDir>/../setupTests.js"]
 };

@@ -70,6 +70,30 @@ export class Product extends MedusaProduct {
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
 
+To make your project aware of your customisation 
+at the medusa core level, you can use the [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
+approach.
+
+here is an example
+
+```ts
+// src/modules/your_modules/index.d.ts
+
+import { User as ExtendedUser } from '@modules/user/user.entity';
+import { default as ExtendedUserRepository } from '@modules/user/user.repository';
+
+declare module '@medusajs/medusa/dist/models/user' {
+  export declare class User extends ExtendedUser {}
+}
+
+declare module '@medusajs/medusa' {
+  export declare class UserRepository extends ExtendedUserRepository {}
+}
+
+```
+
+To see a live example, you can look at the starters, they include the module augmentation approach.
+
 ### @Repository
 
 This decorator gives you the ability to either create a new custom repository that will
