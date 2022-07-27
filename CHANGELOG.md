@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.4](https://github.com/adrien2p/medusa-extender/compare/v1.7.3...v1.7.4) (2022-07-27)
+
+
+### Features
+
+* Integrate module augmentation in the doc and starters ([#104](https://github.com/adrien2p/medusa-extender/issues/104)) ([17915cd](https://github.com/adrien2p/medusa-extender/commits/17915cd679335e677ba8d2bef030b3643aa47eb5))
+
+
+### Bug Fixes
+
+* issues with routes prefixed with /admin/store to break ([#103](https://github.com/adrien2p/medusa-extender/issues/103)) ([f913ae5](https://github.com/adrien2p/medusa-extender/commits/f913ae5a5392001a7abd53ccf35dda42864b8c42))
+
 ### [1.7.3](https://github.com/adrien2p/medusa-extender/compare/v1.7.2...v1.7.3) (2022-06-22)
 
 ### [1.7.2](https://github.com/adrien2p/medusa-extender/compare/v1.7.1...v1.7.2) (2022-06-17)
