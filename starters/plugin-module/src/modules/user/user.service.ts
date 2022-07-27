@@ -1,7 +1,9 @@
 import { Service } from 'medusa-extender';
 import { EntityManager } from 'typeorm';
 import { EventBusService, UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
-import UserRepository from './user.repository';
+import { FindConfig } from '@medusajs/medusa/dist/types/common';
+import { User } from '@medusajs/medusa';
+import UserRepository from '@modules/user/user.repository';
 
 type InjectedDependencies = {
 	manager: EntityManager;
@@ -18,5 +20,9 @@ export default class UserService extends MedusaUserService {
 		super({ manager, userRepository, eventBusService });
 		this.manager = manager;
 		this.userRepository = userRepository;
+	}
+
+	async retrieve(userId: string, config?: FindConfig<User>): Promise<User> {
+		return await super.retrieve(userId, config);
 	}
 }
