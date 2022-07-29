@@ -1,6 +1,9 @@
 import { createConnection } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
+import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
+import { Connection } from 'typeorm/connection/Connection';
+import { buildRegexpIfValid, Logger } from '../../core';
 
 type ConfigModule = {
 	projectConfig: {
@@ -14,15 +17,19 @@ type ConfigModule = {
 		 */
 		cliMigrationsDirs?: string[];
 	};
+	multi_tenancy?: MultiTenancyOptions;
 };
+
+const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
 
 /**
  * Run the migrations using the medusa-config.js config.
  * @param run
  * @param revert
  * @param show
+ * @param tenants
  */
-export async function migrate({ run, revert, show }): Promise<void> {
+export async function migrate({ run, revert, show, tenants }): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 	const configMigrationsDirs =
 		configModule.projectConfig.cli_migration_dirs ?? configModule.projectConfig.cliMigrationsDirs;
@@ -36,23 +43,90 @@ export async function migrate({ run, revert, show }): Promise<void> {
 		return normalize(resolve(process.cwd(), dir));
 	});
 
-	const connection = await createConnection({
-		type: configModule.projectConfig.database_type as any,
-		url: configModule.projectConfig.database_url,
-		database: configModule.projectConfig.database_database,
-		extra: configModule.projectConfig.database_extra || {},
-		logging: ['schema'],
-		migrations: migrationDirs,
-	});
+	const connections: Connection[] = [
+		await createConnection({
+			type: configModule.projectConfig.database_type as any,
+			url: configModule.projectConfig.database_url,
+			database: configModule.projectConfig.database_database,
+			extra: configModule.projectConfig.database_extra || {},
+			logging: ['schema'],
+			migrations: migrationDirs,
+		}),
+	];
+
+	if (configModule.multi_tenancy?.enable && !!tenants) {
+		const tenantConnections = await buildTenantsConnections(tenants, migrationDirs, configModule);
+		connections.push(...tenantConnections);
+	}
 
 	if (run) {
-		await connection.runMigrations();
-		await connection.close();
+		await Promise.all(connections.map((connection) => runConnectionAction(connection, 'runMigrations', 'Run')));
 	} else if (revert) {
-		await connection.undoLastMigration({ transaction: 'all' });
-		await connection.close();
+		await Promise.all(
+			connections.map((connection) => runConnectionAction(connection, 'undoLastMigration', 'Undo last'))
+		);
 	} else if (show) {
-		await connection.showMigrations();
-		await connection.close();
+		await Promise.all(connections.map((connection) => runConnectionAction(connection, 'showMigrations', 'Show')));
 	}
+
+	await Promise.all(
+		connections.map((connection) => {
+			return connection.close();
+		})
+	);
+}
+
+async function buildTenantsConnections(
+	tenants: string,
+	migrationDirs: string[],
+	configModule: ConfigModule
+): Promise<Connection[]> {
+	const connections: Connection[] = [];
+	const tenantConfigMap = new Map<
+		string,
+		{
+			database_type: string;
+			database_url: string;
+			database_database: string;
+			database_extra: Record<string, unknown>;
+		}
+	>();
+
+	tenants.split(',').forEach((tenantCode) => {
+		const regexp = buildRegexpIfValid(tenantCode);
+		configModule.multi_tenancy.tenants.forEach((tenantConfig) => {
+			if ((regexp && regexp.test(tenantConfig.code)) || tenantCode === tenantConfig.code) {
+				tenantConfigMap.set(tenantConfig.code, tenantConfig.database_config);
+			}
+		});
+	});
+
+	for (const [tenantCode, tenantConfig] of [...tenantConfigMap]) {
+		connections.push(
+			await createConnection({
+				name: tenantCode,
+				type: tenantConfig.database_type as any,
+				url: tenantConfig.database_url,
+				database: tenantConfig.database_database,
+				extra: tenantConfig.database_extra || {},
+				logging: ['schema'],
+				migrations: migrationDirs,
+			})
+		);
+	}
+
+	return connections;
+}
+
+function runConnectionAction(connection, methods: keyof Connection, action: string): Promise<any> {
+	return new Promise(async (resolve, reject) => {
+		await connection[methods]()
+			.then(() => {
+				logger.log(`${action} migrations has been applied on database connection`, connection.name);
+				resolve(null);
+			})
+			.catch((e) => {
+				reject(e);
+			});
+	});
 }
