@@ -22,6 +22,8 @@ type ConfigModule = {
 
 const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
 
+type Options = { run: boolean; revert: boolean; show: boolean; tenants: string };
+
 /**
  * Run the migrations using the medusa-config.js config.
  * @param run
@@ -29,7 +31,7 @@ const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
  * @param show
  * @param tenants
  */
-export async function migrate({ run, revert, show, tenants }): Promise<void> {
+export async function migrate({ run, revert, show, tenants }: Options): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 	const configMigrationsDirs =
 		configModule.projectConfig.cli_migration_dirs ?? configModule.projectConfig.cliMigrationsDirs;
