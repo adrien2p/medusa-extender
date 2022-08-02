@@ -13,18 +13,20 @@ program.name('medex').description('Medusa extender CLI').version('0.8.1');
 program
 	.command('migrate')
 	.alias('m')
-	.description(
-		"Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']"
-	)
+	.description('Migrate all migrations found in the specified directories in the configuration')
 	.option('-r, --run', 'Run migrations up method')
 	.option('-u, --revert', 'Revert the last migrations')
 	.option('-s, --show', 'Show all applied and non applied migrations')
-	.action(async (options, program) => {
+	.argument(
+		'<tenant_codes>',
+		'Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/")'
+	)
+	.action(async (tenant_codes, options, program) => {
 		console.time(green('Migration command'));
 		if (Object.values(options).every((value) => !value)) {
 			return program.showHelpAfterError(true).error('You must specify one of the options.');
 		}
-		await migrate(options);
+		await migrate({ ...options, tenants: tenant_codes });
 		console.timeEnd(green('Migration command'));
 	});
 
@@ -46,6 +48,7 @@ program
 	)
 	.argument('<name>', 'specify the name of the component(s) to create')
 	.action((name: string, options: GenerateCommandOptions, program: Command) => {
+		console.time(green('Generate command'));
 		const { path, ...componentOptions } = options;
 		if (Object.values(componentOptions).every((value) => !value)) {
 			return program
@@ -53,6 +56,7 @@ program
 				.error(`You must specify one of the options.${path ? ' --path only is not sufficient.' : ''}`);
 		}
 		generateComponent(name, options);
+		console.timeEnd(green('Generate command'));
 	});
 
 program
@@ -62,7 +66,9 @@ program
 		'Update your existing medusa project to include the necessary configuration to use the medusa-extender package'
 	)
 	.action(async () => {
+		console.time(green('Init command'));
 		await init();
+		console.timeEnd(green('Init command'));
 	});
 
 program.parse();

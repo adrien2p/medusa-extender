@@ -25,7 +25,7 @@ describe('CLI', () => {
 		expect(error.code).toBe(1);
 		expect(normalizeString(stderr)).toBe(
 			normalizeString(`
-            Usage: medex [options] [command]
+			Usage: medex [options] [command]
 
 			Medusa extender CLI
 			
@@ -34,12 +34,10 @@ describe('CLI', () => {
 				-h, --help                  display help for command
 			
 			Commands:
-				migrate|m [options]         Migrate all migrations from ['src/**/*.migration.js',
-									        'src/**/migrations/*.js', 'dist/**/*.migration.js',
-									        'dist/**/migrations/*.js']
-				generate|g [options] <name> Generate a new component
-			    init|-i                     Update your existing medusa project to include the necessary configuration to use the medusa-extender package
-				help [command]              display help for command
+				migrate|m [options] <tenant_codes>        Migrate all migrations found in the specified directories in the configuration
+				generate|g [options] <name> 							Generate a new component
+			  init|-i                     							Update your existing medusa project to include the necessary configuration to use the medusa-extender package
+				help [command]              							display help for command
         `)
 		);
 	});
@@ -80,21 +78,24 @@ describe('CLI', () => {
 	});
 
 	it('should failed on migrate command with missing options', async () => {
-		const { error, stderr } = await cli(['migrate'], '.');
+		const { error, stderr } = await cli(['migrate "tenant1"'], '.');
 		expect(error.code).toBe(1);
 		expect(normalizeString(stderr)).toBe(
 			normalizeString(`
-            You must specify one of the options.
+				You must specify one of the options.
 
-			Usage: medex migrate|m [options]
-			
-			Migrate all migrations from ['src/**/*.migration.js', 'src/**/migrations/*.js', 'dist/**/*.migration.js', 'dist/**/migrations/*.js']
-			
-			Options:
-			  -r, --run     Run migrations up method
-			  -u, --revert  Revert the last migrations
-			  -s, --show    Show all applied and non applied migrations
-			  -h, --help    display help for command
+				Usage: medex migrate|m [options] <tenant_codes>
+				
+				Migrate all migrations found in the specified directories in the configuration
+				
+				Arguments:
+					tenant_codes  Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/")
+				
+				Options:
+					-r, --run     Run migrations up method
+					-u, --revert  Revert the last migrations
+					-s, --show    Show all applied and non applied migrations
+					-h, --help    display help for command
         `)
 		);
 	});
