@@ -26,7 +26,7 @@ export class CartService extends MedusaCartService {
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send('healthy');
 				},
 			],
@@ -36,7 +36,7 @@ export class CartService extends MedusaCartService {
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send(`healthy ${req.params.test_id}`);
 				},
 			],
@@ -46,7 +46,7 @@ export class CartService extends MedusaCartService {
 			method: 'get',
 			requiredAuth: true,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send('healthy authenticated');
 				},
 			],
@@ -108,7 +108,7 @@ AdminAuthTestPathMiddleware.prototype.consume = jest
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send('healthy');
 				},
 			],
@@ -118,7 +118,7 @@ AdminAuthTestPathMiddleware.prototype.consume = jest
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send(`healthy ${req.params.test_id}`);
 				},
 			],
@@ -159,7 +159,7 @@ StoreTestPathMiddleware.prototype.consume = jest
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send('healthy');
 				},
 			],
@@ -169,7 +169,7 @@ StoreTestPathMiddleware.prototype.consume = jest
 			method: 'get',
 			requiredAuth: false,
 			handlers: [
-				(req: Request, res: Response) => {
+				(req: Request, res: Response, next: NextFunction) => {
 					return res.send(`healthy ${req.params.test_id}`);
 				},
 			],
