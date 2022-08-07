@@ -44,7 +44,7 @@ class TestHandlers {
 	}
 
 	@OnMedusaEntityEvent.After.Remove(EntityTest)
-	async testAsyncAfterInsertRemove() {
+	async testAsyncAfterRemoveHandler() {
 		return true;
 	}
 }
@@ -84,22 +84,25 @@ describe('OnMedusaEntityEvent', () => {
 
 	it('should register new event handlers', () => {
 		const beforeListenerCount =
-			eventEmitter.listenerCount(`BeforeInsert${EntityTest.name}`) +
-			eventEmitter.listenerCount(`BeforeUpdate${EntityTest.name}`) +
-			eventEmitter.listenerCount(`BeforeRemove${EntityTest.name}`);
+			eventEmitter.listenerCount(`BeforeInsert${EntityTest.name}${TestHandlers.name}testAsyncBeforeInsertHandler`) +
+			eventEmitter.listenerCount(`BeforeUpdate${EntityTest.name}${TestHandlers.name}testAsyncBeforeUpdateHandler`) +
+			eventEmitter.listenerCount(`BeforeRemove${EntityTest.name}${TestHandlers.name}testAsyncBeforeRemoveHandler`);
 		expect(beforeListenerCount).toBe(3);
 
 		const afterListenerCount =
-			eventEmitter.listenerCount(`AfterInsert${EntityTest.name}`) +
-			eventEmitter.listenerCount(`AfterUpdate${EntityTest.name}`) +
-			eventEmitter.listenerCount(`AfterRemove${EntityTest.name}`);
+			eventEmitter.listenerCount(`AfterInsert${EntityTest.name}${TestHandlers.name}testAsyncAfterInsertHandler`) +
+			eventEmitter.listenerCount(`AfterUpdate${EntityTest.name}${TestHandlers.name}testAsyncAfterUpdateHandler`) +
+			eventEmitter.listenerCount(`AfterRemove${EntityTest.name}${TestHandlers.name}testAsyncAfterRemoveHandler`);
 		expect(afterListenerCount).toBe(3);
 	});
 
 	it('should handle call the correct decorated handler', async () => {
-		await eventEmitter.emitAsync(OnMedusaEntityEvent.Before.InsertEvent(EntityTest), {
-			event: { entity: new EntityTest() },
-		});
+		await eventEmitter.emitAsync(
+			OnMedusaEntityEvent.Before.InsertEvent(EntityTest) + TestHandlers.name + 'testAsyncBeforeInsertHandler',
+			{
+				event: { entity: new EntityTest() },
+			}
+		);
 
 		expect(testHandlersSpy).toHaveBeenCalled();
 		expect(testHandlersSpy).toHaveBeenCalledWith(
