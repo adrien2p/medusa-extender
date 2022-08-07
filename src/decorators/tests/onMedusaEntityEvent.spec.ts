@@ -84,9 +84,15 @@ describe('OnMedusaEntityEvent', () => {
 
 	it('should register new event handlers', () => {
 		const beforeListenerCount =
-			eventEmitter.listenerCount(`BeforeInsert${EntityTest.name}${TestHandlers.name}testAsyncBeforeInsertHandler`) +
-			eventEmitter.listenerCount(`BeforeUpdate${EntityTest.name}${TestHandlers.name}testAsyncBeforeUpdateHandler`) +
-			eventEmitter.listenerCount(`BeforeRemove${EntityTest.name}${TestHandlers.name}testAsyncBeforeRemoveHandler`);
+			eventEmitter.listenerCount(
+				`BeforeInsert${EntityTest.name}${TestHandlers.name}testAsyncBeforeInsertHandler`
+			) +
+			eventEmitter.listenerCount(
+				`BeforeUpdate${EntityTest.name}${TestHandlers.name}testAsyncBeforeUpdateHandler`
+			) +
+			eventEmitter.listenerCount(
+				`BeforeRemove${EntityTest.name}${TestHandlers.name}testAsyncBeforeRemoveHandler`
+			);
 		expect(beforeListenerCount).toBe(3);
 
 		const afterListenerCount =
