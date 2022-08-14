@@ -208,8 +208,8 @@ export default class MyCustomService {
  
     private readonly manager: EntityManager;
     
-    constructor(private readonly container: ConstructorParams) {
-        this.manager = container.manager;
+    constructor({ manager }: ConstructorParams) {
+        this.manager = manager;
     }
 }
 ```
@@ -252,7 +252,7 @@ export default class MyCustomService {
     private readonly manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
-        super(container);
+        super();
         this.manager = container.manager;
     }
     
@@ -615,7 +615,25 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
 }
 ```
 
-Here is how you can register it in medusa
+Here is how you can register it in medusa.
+
+```typescript
+import ProductSubscriber from './product.subscriber';
+
+@Service({ override: MedusaProductService, scope: 'SCOPED' })
+export default class ProductService extends MedusaProductService {
+  private readonly manager: EntityManager;
+
+  constructor({  manager }: ConstructorParams) {
+    super({ manager });
+    this.manager = manager;
+    ProductSubscriber.attachTo(manager.connection)
+  }
+}
+```
+
+Here is how you can register it in medusa if your subscriber need to be scoped 
+- for example if the manager can be scoped like it is in a multi tenant application such as the one using the multi tenancy module).
 
 ```typescript
 import { NextFunction, Response } from 'express';
@@ -643,13 +661,17 @@ export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
 And finally, we will add a new handler to listen to this particular event
 
 ```typescript
+import ProductSubscriber from './product.subscriber';
+
 @Service({ override: MedusaProductService, scope: 'SCOPED' })
 export default class ProductService extends MedusaProductService {
     private readonly manager: EntityManager;
     
-    constructor(private readonly container: ConstructorParams) {
+    constructor(container: ConstructorParams) {
         super(container);
         this.manager = container.manager;
+        // You don't need to register it again if it is registered through a middleware.
+        ProductSubscriber.attachTo(this.manager.connection)
     }
     
     /* ... */

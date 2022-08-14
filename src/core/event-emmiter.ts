@@ -39,17 +39,18 @@ class CustomEventEmmiter extends EventEmitter {
 
 	/**
 	 * Apply all event handlers hold by the `listenerDescriptor`.
+	 * Only unregister and register again non singleton based event listeners
 	 * @param container The IoC container that allow to resolve instance
 	 */
 	public registerListeners(container: AwilixContainer): void {
-		this.unregisterListeners();
-
 		for (const listenerDescriptor of this.#listeners.values()) {
 			const { eventName, metatype, propertyName } = listenerDescriptor;
 			const serviceOptions = componentsMetadataReader<'service'>(
 				metatype as Type
 			) as GetInjectableOption<'service'>;
-			const { resolutionKey } = serviceOptions;
+			const { resolutionKey, scope } = serviceOptions;
+
+			if (scope === 'SINGLETON') continue;
 
 			let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
 			if (resolutionKey) {
@@ -60,14 +61,8 @@ class CustomEventEmmiter extends EventEmitter {
 				metatypeInstance = container.resolve(`${formattedMetatypeName}`);
 			}
 
-			this.on(eventName, metatypeInstance[propertyName].bind(metatypeInstance));
-		}
-	}
-
-	public unregisterListeners(): void {
-		for (const listenerDescriptor of this.#listeners.values()) {
-			const { eventName } = listenerDescriptor;
 			this.removeAllListeners(eventName);
+			this.on(eventName, metatypeInstance[propertyName].bind(metatypeInstance));
 		}
 	}
 

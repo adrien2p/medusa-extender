@@ -134,6 +134,7 @@ function OnMedusaEntityEventDecorator(
 			}
 		};
 
+		eventName = `${eventName}${target.constructor.name}${propertyKey}`;
 		customEventEmitter.register(eventName, propertyKey, metatype ?? (target.constructor as Type));
 	};
 }
