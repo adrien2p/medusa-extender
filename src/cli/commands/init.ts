@@ -13,7 +13,7 @@ const logger = Logger.contextualize('Init command', 'MEDEX-CLI');
 export async function init(): Promise<void> {
 	logger.log('Initialising medusa-extender...');
 
-	logger.log('[Packages] Check that the packages are installed');
+	logger.log('[packages] Check that the packages are installed');
 	await loadPackages(logger, [
 		{ name: 'typescript', version: '4.5.5', isDevDependency: true },
 		{ name: 'nodemon', version: '2.0.15', isDevDependency: true },
@@ -22,7 +22,7 @@ export async function init(): Promise<void> {
 	await updatePackageJson();
 	await updateTsconfigJson();
 
-	logger.log('[Modules] Creating example module');
+	logger.log('[modules] Creating example module');
 	generateComponent('example', { module: true, service: true, router: true, path: 'src/modules/example' });
 
 	generateEntryPoint();
@@ -36,7 +36,7 @@ export async function init(): Promise<void> {
  * Update the package.json with the required scripts to work.
  */
 async function updatePackageJson(): Promise<void> {
-	logger.log('[Scripts] Update package.json scripts');
+	logger.log('[scripts] Update package.json scripts');
 	const packageJsonPath = resolve(process.cwd(), 'package.json');
 	const packageJson = await import(packageJsonPath);
 	packageJson.scripts = {
@@ -55,7 +55,7 @@ async function updatePackageJson(): Promise<void> {
  * Update or create the tsconfig.json file with the required configuration.
  */
 async function updateTsconfigJson(): Promise<void> {
-	logger.log('[TsConfig] Create or update tsconfig.json');
+	logger.log('[tsConfig] Create or update tsconfig.json');
 	const tsconfigPath = resolve(process.cwd(), 'tsconfig.json');
 	const isTsConfigExists = existsSync(tsconfigPath);
 	if (!isTsConfigExists) {
@@ -120,7 +120,7 @@ async function updateTsconfigJson(): Promise<void> {
  * Generate the main.ts entry point.
  */
 function generateEntryPoint(): void {
-	logger.log('[Entry point] Creating entry point main.ts file');
+	logger.log('[entry point] Creating entry point main.ts file');
 	writeFileSync(resolve(process.cwd(), 'src', 'main.ts'), getMainEntryPointTemplate());
 }
 
@@ -129,7 +129,7 @@ function generateEntryPoint(): void {
  * Update the existing develop shell script provided by medusa to fit the new requirements.
  */
 function updateDevelopScript(): void {
-	logger.log('[Develop script] Update medusa develop.sh script');
+	logger.log('[develop script] Update medusa develop.sh script');
 	const developShPath = resolve(process.cwd(), 'develop.sh');
 	writeFileSync(
 		developShPath,
