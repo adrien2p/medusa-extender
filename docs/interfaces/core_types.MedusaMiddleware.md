@@ -37,4 +37,4 @@ Describe a custom middleware instance.
 
 #### Defined in
 
-[src/core/types.ts:181](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/types.ts#L181)
+[src/core/types.ts:181](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/types.ts#L181)

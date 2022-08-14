@@ -40,7 +40,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L22)
+[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L22)
 
 ## Properties
 
@@ -50,7 +50,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L20)
+[src/core/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L20)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:74](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L74)
+[src/core/event-emmiter.ts:74](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L74)
 
 ___
 
@@ -109,7 +109,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:32](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L32)
+[src/core/event-emmiter.ts:32](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L32)
 
 ___
 
@@ -132,4 +132,4 @@ Only unregister and register again non singleton based event listeners
 
 #### Defined in
 
-[src/core/event-emmiter.ts:45](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L45)
+[src/core/event-emmiter.ts:45](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L45)

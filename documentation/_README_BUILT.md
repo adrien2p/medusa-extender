@@ -231,18 +231,18 @@ that newly created component and add it to the `imports` list automatically.
 #### Options
 
 
-| Name           | Alias | Description                                      |
-|----------------|-------|--------------------------------------------------|
-| `<name>`       |       | Component name to generate                       |
-| `--module`     | `-m`  | Generate a new module.                           |
-| `--middleware` | `-mi` | Generate a new middleware.                       |
-| `--service`    | `-s`  | Generate a new service.                          |
-| `--router`     | `-r`  | Generate a new router.                           |
-| `--entity`     | `-e`  | Generate a new entity.                           |
-| `--repository` | `-re` | Generate a new repository.                       |
-| `--migration`  | `-mi` | Generate a new migration.                        |
-| `--validator`  | `-va` | Generate a new validator.                        |
-| `--path`       | `-p`  | specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]. |
+| Name            | Alias | Description                                      |
+|-----------------|-------|--------------------------------------------------|
+| `<name>`        |       | Component name to generate                       |
+| `--module`      | `-m`  | Generate a new module.                           |
+| `--middleware`  | `-mi` | Generate a new middleware.                       |
+| `--service`     | `-s`  | Generate a new service.                          |
+| `--router`      | `-r`  | Generate a new router.                           |
+| `--entity`      | `-e`  | Generate a new entity.                           |
+| `--repository`  | `-re` | Generate a new repository.                       |
+| `--migration`   | `-mi` | Generate a new migration.                        |
+| `--validator`   | `-va` | Generate a new validator.                        |
+| `--path <path>` | `-p`  | specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]. |
 
 
 #### Examples
@@ -296,11 +296,12 @@ modules.exports = {
 #### Options
 
 
-| Name       | Alias | Description                                  |
-|------------|-------|----------------------------------------------|
-| `--run`    | `-r`  | Run migrations up method.                    |
-| `--revert` | `-u`  | Revert the last migrations.                  |
-| `--show`   | `-s`  | Show all applied and non applied migrations. |
+| Name                     | Alias | Description                                      |
+|--------------------------|-------|--------------------------------------------------|
+| `--run`                  | `-r`  | Run migrations up method.                        |
+| `--revert`               | `-u`  | Revert the last migrations.                      |
+| `--show`                 | `-s`  | Show all applied and non applied migrations.     |
+| `--tenant_codes [codes]` | `-t`  | Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/"). |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#full-code-api-mag)

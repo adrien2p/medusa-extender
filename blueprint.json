@@ -141,7 +141,8 @@
     ["Name", "Alias", "Description"],
     ["`--run`", "`-r`", "Run migrations up method."],
     ["`--revert`", "`-u`", "Revert the last migrations."],
-    ["`--show`", "`-s`", "Show all applied and non applied migrations."]
+    ["`--show`", "`-s`", "Show all applied and non applied migrations."],
+    ["`--tenant_codes [codes]`", "`-t`", "Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g \"tenant1,/specialTenant.*/\")."]
   ],
   "cliGenerateOptionsSchematics": [
     ["Name", "Alias", "Description"],
@@ -154,6 +155,6 @@
     ["`--repository`", "`-re`", "Generate a new repository."],
     ["`--migration`", "`-mi`", "Generate a new migration."],
     ["`--validator`", "`-va`", "Generate a new validator."],
-    ["`--path`", "`-p`", "specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]."]
+    ["`--path <path>`", "`-p`", "specify the path where the component must be generated (by default the component will be generated at [`src/modules/<name>/<name>.<type>.ts`]."]
   ]
 }
