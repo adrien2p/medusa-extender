@@ -8,6 +8,7 @@
 
 - [Omit](core_utils.md#omit)
 - [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
+- [buildRegexpIfValid](core_utils.md#buildregexpifvalid)
 - [lowerCaseFirst](core_utils.md#lowercasefirst)
 - [repositoryMixin](core_utils.md#repositorymixin)
 - [upperCaseFirst](core_utils.md#uppercasefirst)
@@ -42,7 +43,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/core/utils.ts#L52)
+[src/core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L52)
 
 ___
 
@@ -72,7 +73,27 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/core/utils.ts#L29)
+[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L29)
+
+___
+
+### buildRegexpIfValid
+
+▸ **buildRegexpIfValid**(`str`): `RegExp` \| `undefined`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `str` | `string` |
+
+#### Returns
+
+`RegExp` \| `undefined`
+
+#### Defined in
+
+[src/core/utils.ts:71](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L71)
 
 ___
 
@@ -94,7 +115,7 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/core/utils.ts#L59)
+[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L59)
 
 ___
 
@@ -124,7 +145,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/core/utils.ts#L9)
+[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L9)
 
 ___
 
@@ -146,4 +167,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/core/utils.ts#L67)
+[src/core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/utils.ts#L67)

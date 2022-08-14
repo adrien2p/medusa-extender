@@ -32,6 +32,7 @@
 - [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
 - [adminApiLoader](loaders.md#adminapiloader)
 - [attachOrReplaceEntitySubscriber](loaders.md#attachorreplaceentitysubscriber)
+- [buildRegexpIfValid](loaders.md#buildregexpifvalid)
 - [customApiLoader](loaders.md#customapiloader)
 - [databaseLoader](loaders.md#databaseloader)
 - [entitiesLoader](loaders.md#entitiesloader)
@@ -208,6 +209,12 @@ ___
 ### attachOrReplaceEntitySubscriber
 
 Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
+
+___
+
+### buildRegexpIfValid
+
+Re-exports [buildRegexpIfValid](core_utils.md#buildregexpifvalid)
 
 ___
 

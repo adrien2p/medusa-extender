@@ -84,6 +84,7 @@ decorators approach to increase the DX and full typings support for easier devel
 * [Internal modules (Optional)](#internal-modules-optional)
 	* [Monitoring](#monitoring)
 	* [Multi-tenancy](#multi-tenancy)
+		* [Cli migrate command](#cli-migrate-command)
 * [Resources](#resources)
 	* [Marketplace tutorial](#marketplace-tutorial)
 * [Discussions](#discussions)
@@ -114,7 +115,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.3)
+Run the following command in your terminal (The last version is 1.7.4)
 
 ```bash
 npm install medusa-extender
@@ -1196,6 +1197,12 @@ Ant that's it, you can now run your server and play around your multi-tenancy
 architecture.
 Each tenant will only access the data from the database that has been specified for that
 tenant.
+
+### Cli migrate command
+
+Now, when you want to run the migrate command, you can specify a new option `-t, --tenant_codes` that allow you to specify
+on which tenant you want the migrate command to be run a long the default connection.
+You can see more about it [here](https://adrien2p.github.io/medusa-extender/#/?id=options-1)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#resources)
 

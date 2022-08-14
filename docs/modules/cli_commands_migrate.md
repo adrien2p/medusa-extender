@@ -4,6 +4,10 @@
 
 ## Table of contents
 
+### Namespaces
+
+- [Internals](cli_commands_migrate.Internals.md)
+
 ### Functions
 
 - [migrate](cli_commands_migrate.md#migrate)
@@ -20,7 +24,7 @@ Run the migrations using the medusa-config.js config.
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
+| `__namedParameters` | [`Options`](cli_commands_migrate.Internals.md#options) |
 
 #### Returns
 
@@ -28,4 +32,4 @@ Run the migrations using the medusa-config.js config.
 
 #### Defined in
 
-[src/cli/commands/migrate.ts:25](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/cli/commands/migrate.ts#L25)
+[src/cli/commands/migrate.ts:34](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/cli/commands/migrate.ts#L34)

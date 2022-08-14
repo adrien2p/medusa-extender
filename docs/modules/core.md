@@ -35,6 +35,7 @@
 - [Type](core.md#type)
 - [ValidatorInjectionOptions](core.md#validatorinjectionoptions)
 - [attachOrReplaceEntitySubscriber](core.md#attachorreplaceentitysubscriber)
+- [buildRegexpIfValid](core.md#buildregexpifvalid)
 - [componentsMetadataReader](core.md#componentsmetadatareader)
 - [customEventEmitter](core.md#customeventemitter)
 - [getPackageManagerCommand](core.md#getpackagemanagercommand)
@@ -217,6 +218,12 @@ ___
 ### attachOrReplaceEntitySubscriber
 
 Re-exports [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
+
+___
+
+### buildRegexpIfValid
+
+Re-exports [buildRegexpIfValid](core_utils.md#buildregexpifvalid)
 
 ___
 

@@ -118,3 +118,9 @@ Ant that's it, you can now run your server and play around your multi-tenancy
 architecture.
 Each tenant will only access the data from the database that has been specified for that
 tenant.
+
+### Cli migrate command
+
+Now, when you want to run the migrate command, you can specify a new option `-t, --tenant_codes` that allow you to specify
+on which tenant you want the migrate command to be run a long the default connection.
+You can see more about it [here](https://adrien2p.github.io/medusa-extender/#/?id=options-1)

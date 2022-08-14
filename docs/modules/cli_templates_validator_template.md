@@ -28,4 +28,4 @@ Provide a basic template for the validator component generation.
 
 #### Defined in
 
-[src/cli/templates/validator-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/17915cd/src/cli/templates/validator-template.ts#L7)
+[src/cli/templates/validator-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/cli/templates/validator-template.ts#L7)
