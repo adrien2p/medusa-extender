@@ -23,8 +23,8 @@
 | `revert` | `boolean` |
 | `run` | `boolean` |
 | `show` | `boolean` |
-| `tenants` | `string` |
+| `tenant_codes` | `string` \| ``null`` |
 
 #### Defined in
 
-[src/cli/commands/migrate.ts:25](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/cli/commands/migrate.ts#L25)
+[src/cli/commands/migrate.ts:25](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/cli/commands/migrate.ts#L25)

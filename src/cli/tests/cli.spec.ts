@@ -34,7 +34,7 @@ describe('CLI', () => {
 				-h, --help                  display help for command
 			
 			Commands:
-				migrate|m [options] <tenant_codes>        Migrate all migrations found in the specified directories in the configuration
+				migrate|m [options] 							        Migrate all migrations found in the specified directories in the configuration
 				generate|g [options] <name> 							Generate a new component
 			  init|-i                     							Update your existing medusa project to include the necessary configuration to use the medusa-extender package
 				help [command]              							display help for command
@@ -84,18 +84,16 @@ describe('CLI', () => {
 			normalizeString(`
 				You must specify one of the options.
 
-				Usage: medex migrate|m [options] <tenant_codes>
+				Usage: medex migrate|m [options]
 				
 				Migrate all migrations found in the specified directories in the configuration
 				
-				Arguments:
-					tenant_codes  Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/")
-				
 				Options:
-					-r, --run     Run migrations up method
-					-u, --revert  Revert the last migrations
-					-s, --show    Show all applied and non applied migrations
-					-h, --help    display help for command
+					-r, --run     								Run migrations up method
+					-u, --revert								  Revert the last migrations
+					-s, --show    								Show all applied and non applied migrations
+					-t, --tenant_codes [codes]    Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/")
+					-h, --help								    display help for command
         `)
 		);
 	});

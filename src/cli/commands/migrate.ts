@@ -22,19 +22,19 @@ type ConfigModule = {
 
 const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
 
-type Options = { run: boolean; revert: boolean; show: boolean; tenants: string };
+type Options = { run: boolean; revert: boolean; show: boolean; tenant_codes: string | null };
 
 /**
  * Run the migrations using the medusa-config.js config.
  * @param run
  * @param revert
  * @param show
- * @param tenants
+ * @param tenant_codes
  */
-export async function migrate({ run, revert, show, tenants }: Options): Promise<void> {
+export async function migrate({ run, revert, show, tenant_codes }: Options): Promise<void> {
 	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 	const configMigrationsDirs =
-		configModule.projectConfig.cli_migration_dirs ?? configModule.projectConfig.cliMigrationsDirs;
+		configModule?.projectConfig?.cli_migration_dirs ?? configModule?.projectConfig?.cliMigrationsDirs;
 
 	let uniqMigrationDirs = new Set<string>();
 	if (configMigrationsDirs?.length) {
@@ -56,8 +56,8 @@ export async function migrate({ run, revert, show, tenants }: Options): Promise<
 		}),
 	];
 
-	if (configModule.multi_tenancy?.enable && !!tenants) {
-		const tenantConnections = await buildTenantsConnections(tenants, migrationDirs, configModule);
+	if (configModule.multi_tenancy?.enable && !!tenant_codes) {
+		const tenantConnections = await buildTenantsConnections(tenant_codes, migrationDirs, configModule);
 		connections.push(...tenantConnections);
 	}
 

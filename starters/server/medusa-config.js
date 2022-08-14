@@ -45,5 +45,11 @@ module.exports = {
 	monitoring: {
         uriPath: '/monitoring'
     },
+	multi_tenancy: {
+		enable: true,
+		tenants: [{
+			code: "test"
+		}]
+	},
 	plugins,
 };

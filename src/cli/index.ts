@@ -17,16 +17,27 @@ program
 	.option('-r, --run', 'Run migrations up method')
 	.option('-u, --revert', 'Revert the last migrations')
 	.option('-s, --show', 'Show all applied and non applied migrations')
-	.argument(
-		'<tenant_codes>',
+	.option(
+		'-t, --tenant_codes [codes]',
 		'Specify on which tenant to run the command for. It can be composed of a mix of string or regexp that are comma separated (e.g "tenant1,/specialTenant.*/")'
 	)
-	.action(async (tenant_codes, options, program) => {
+	.action(async (options, program) => {
 		console.time(green('Migration command'));
-		if (Object.values(options).every((value) => !value)) {
-			return program.showHelpAfterError(true).error('You must specify one of the options.');
+		const { tenant_codes, ...restOptions } = options;
+		const optionNotValid = Object.values(restOptions).every((value) => !value);
+		if (optionNotValid) {
+			return program
+				.showHelpAfterError(true)
+				.error(
+					`You must specify one of the options.${
+						tenant_codes ? ' --tenant_codes only is not sufficient.' : ''
+					}`
+				);
 		}
-		await migrate({ ...options, tenants: tenant_codes });
+		if (tenant_codes && typeof tenant_codes !== 'string') {
+			return program.showHelpAfterError(true).error('You must specify a value for --tenant_codes.');
+		}
+		await migrate(options);
 		console.timeEnd(green('Migration command'));
 	});
 
