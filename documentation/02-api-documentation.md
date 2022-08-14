@@ -634,6 +634,7 @@ export default class ProductService extends MedusaProductService {
 
 Here is how you can register it in medusa if your subscriber need to be scoped 
 - for example if the manager can be scoped like it is in a multi tenant application such as the one using the multi tenancy module).
+- if the service depends on scoped dependencies such as the logged in user.
 
 ```typescript
 import { NextFunction, Response } from 'express';

@@ -27,7 +27,6 @@ Extended event emitter to register methods that must be call when certain events
 - [emitAsync](core_event_emmiter.Internals.CustomEventEmmiter.md#emitasync)
 - [register](core_event_emmiter.Internals.CustomEventEmmiter.md#register)
 - [registerListeners](core_event_emmiter.Internals.CustomEventEmmiter.md#registerlisteners)
-- [unregisterListeners](core_event_emmiter.Internals.CustomEventEmmiter.md#unregisterlisteners)
 
 ## Constructors
 
@@ -41,7 +40,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L22)
+[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L22)
 
 ## Properties
 
@@ -51,7 +50,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L20)
+[src/core/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L20)
 
 ## Methods
 
@@ -80,7 +79,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:79](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L79)
+[src/core/event-emmiter.ts:74](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L74)
 
 ___
 
@@ -110,7 +109,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:32](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L32)
+[src/core/event-emmiter.ts:32](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L32)
 
 ___
 
@@ -119,6 +118,7 @@ ___
 ▸ **registerListeners**(`container`): `void`
 
 Apply all event handlers hold by the `listenerDescriptor`.
+Only unregister and register again non singleton based event listeners
 
 #### Parameters
 
@@ -132,18 +132,4 @@ Apply all event handlers hold by the `listenerDescriptor`.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:44](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L44)
-
-___
-
-### unregisterListeners
-
-▸ **unregisterListeners**(): `void`
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[src/core/event-emmiter.ts:67](https://github.com/adrien2p/medusa-extender/blob/19c4679/src/core/event-emmiter.ts#L67)
+[src/core/event-emmiter.ts:45](https://github.com/adrien2p/medusa-extender/blob/f27eb84/src/core/event-emmiter.ts#L45)
