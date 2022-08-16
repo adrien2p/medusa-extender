@@ -745,4 +745,3 @@ export class User extends Utils.Omit(MedusaUser, ['role']) {
     )
     role: UserRolesExtended;
 }
-```
