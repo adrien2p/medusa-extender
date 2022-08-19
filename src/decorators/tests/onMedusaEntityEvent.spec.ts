@@ -68,18 +68,22 @@ describe('OnMedusaEntityEvent', () => {
 	});
 
 	it('should properly build the event name', () => {
-		let eventName = OnMedusaEntityEvent.Before.InsertEvent(EntityTest);
-		expect(eventName).toBe(`BeforeInsert${EntityTest.name}`);
-		eventName = OnMedusaEntityEvent.Before.UpdateEvent(EntityTest);
-		expect(eventName).toBe(`BeforeUpdate${EntityTest.name}`);
-		eventName = OnMedusaEntityEvent.Before.RemoveEvent(EntityTest);
-		expect(eventName).toBe(`BeforeRemove${EntityTest.name}`);
-		eventName = OnMedusaEntityEvent.After.InsertEvent(EntityTest);
-		expect(eventName).toBe(`AfterInsert${EntityTest.name}`);
-		eventName = OnMedusaEntityEvent.After.UpdateEvent(EntityTest);
-		expect(eventName).toBe(`AfterUpdate${EntityTest.name}`);
-		eventName = OnMedusaEntityEvent.After.RemoveEvent(EntityTest);
-		expect(eventName).toBe(`AfterRemove${EntityTest.name}`);
+		let eventName = OnMedusaEntityEvent.Before.InsertEvent(
+			EntityTest,
+			TestHandlers,
+			'testAsyncBeforeInsertHandler'
+		);
+		expect(eventName).toBe(`BeforeInsert${EntityTest.name}${TestHandlers.name}testAsyncBeforeInsertHandler`);
+		eventName = OnMedusaEntityEvent.Before.UpdateEvent(EntityTest, TestHandlers, 'testAsyncBeforeUpdateHandler');
+		expect(eventName).toBe(`BeforeUpdate${EntityTest.name}${TestHandlers.name}testAsyncBeforeUpdateHandler`);
+		eventName = OnMedusaEntityEvent.Before.RemoveEvent(EntityTest, TestHandlers, 'testAsyncBeforeRemoveHandler');
+		expect(eventName).toBe(`BeforeRemove${EntityTest.name}${TestHandlers.name}testAsyncBeforeRemoveHandler`);
+		eventName = OnMedusaEntityEvent.After.InsertEvent(EntityTest, TestHandlers, 'testAsyncAfterInsertHandler');
+		expect(eventName).toBe(`AfterInsert${EntityTest.name}${TestHandlers.name}testAsyncAfterInsertHandler`);
+		eventName = OnMedusaEntityEvent.After.UpdateEvent(EntityTest, TestHandlers, 'testAsyncAfterUpdateHandler');
+		expect(eventName).toBe(`AfterUpdate${EntityTest.name}${TestHandlers.name}testAsyncAfterUpdateHandler`);
+		eventName = OnMedusaEntityEvent.After.RemoveEvent(EntityTest, TestHandlers, 'testAsyncAfterRemoveHandler');
+		expect(eventName).toBe(`AfterRemove${EntityTest.name}${TestHandlers.name}testAsyncAfterRemoveHandler`);
 	});
 
 	it('should register new event handlers', () => {
@@ -104,7 +108,7 @@ describe('OnMedusaEntityEvent', () => {
 
 	it('should handle call the correct decorated handler', async () => {
 		await eventEmitter.emitAsync(
-			OnMedusaEntityEvent.Before.InsertEvent(EntityTest) + TestHandlers.name + 'testAsyncBeforeInsertHandler',
+			OnMedusaEntityEvent.Before.InsertEvent(EntityTest, TestHandlers, 'testAsyncBeforeInsertHandler'),
 			{
 				event: { entity: new EntityTest() },
 			}

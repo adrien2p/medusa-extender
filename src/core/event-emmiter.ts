@@ -16,7 +16,7 @@ type ListenerDescriptor<T = unknown> = {
 /**
  * Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
  */
-class CustomEventEmmiter extends EventEmitter {
+class CustomEventEmitter extends EventEmitter {
 	#listeners: Set<ListenerDescriptor> = new Set();
 
 	constructor() {
@@ -50,7 +50,7 @@ class CustomEventEmmiter extends EventEmitter {
 			) as GetInjectableOption<'service'>;
 			const { resolutionKey, scope } = serviceOptions;
 
-			if (scope === 'SINGLETON') continue;
+			if ((!scope || scope === 'SINGLETON') && this.listenerCount(eventName)) continue;
 
 			let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
 			if (resolutionKey) {
@@ -93,4 +93,4 @@ class CustomEventEmmiter extends EventEmitter {
  * @internal
  * Export the instance of the event emmiter.
  */
-export const customEventEmitter = new CustomEventEmmiter();
+export const customEventEmitter = new CustomEventEmitter();

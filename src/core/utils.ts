@@ -1,5 +1,5 @@
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
-import { Constructor, MixinReturnType } from './types';
+import { Constructor, MixinReturnType, Type } from './types';
 
 /**
  * For repository context, you should extends repository and the medusa target repository.
@@ -41,6 +41,13 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
 	} else {
 		connection.subscribers.splice(subscriberIndex, 1, subscriberReplacement);
 	}
+}
+
+/**
+ * Build an event name base on the input args
+ */
+export function buildEventName(event: string, target: Type, targetPropertyKey: string): string {
+	return `${event}${target.name ?? target.constructor.name}${targetPropertyKey}`;
 }
 
 /**
