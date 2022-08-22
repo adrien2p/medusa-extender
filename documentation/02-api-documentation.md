@@ -607,7 +607,8 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
     
     public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
-        return eventEmitter.emitAsync<InsertEvent<Product>>(OnMedusaEntityEvent.Before.InsertEvent(Product), {
+        const eventName = OnMedusaEntityEvent.Before.InsertEvent(User, UserService, 'attachStoreToUser');
+        await eventEmitter.emitAsync<InsertEvent<User>>(eventName, {
             event,
             transactionalEntityManager: event.manager,
         });
@@ -629,33 +630,6 @@ export default class ProductService extends MedusaProductService {
     this.manager = manager;
     ProductSubscriber.attachTo(manager.connection)
   }
-}
-```
-
-Here is how you can register it in medusa if your subscriber need to be scoped 
-- for example if the manager can be scoped like it is in a multi tenant application such as the one using the multi tenancy module).
-- if the service depends on scoped dependencies such as the logged in user.
-
-```typescript
-import { NextFunction, Response } from 'express';
-import {
-    MEDUSA_RESOLVER_KEYS,
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-    Middleware
-} from 'medusa-extender';
-import { Connection } from 'typeorm';
-import ProductSubscriber from './product.subscriber';
-
-@Middleware({ requireAuth: true, routes: [{ method: 'post', path: '/admin/products/' }] })
-export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
-    public consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void {
-        const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as {
-            connection: Connection;
-        };
-        ProductSubscriber.attachTo(connection);
-        return next();
-    };
 }
 ```
 
