@@ -1,9 +1,9 @@
-import { Service } from 'medusa-extender';
+import { EntityEventType, MedusaEventHandlerParams, OnMedusaEntityEvent, Service } from 'medusa-extender';
 import { EntityManager } from 'typeorm';
 import { EventBusService, UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
-import { FindConfig } from '@medusajs/medusa/dist/types/common';
+import UserRepository from './user.repository';
 import { User } from '@medusajs/medusa';
-import UserRepository from '@modules/user/user.repository';
+import UserSubscriber from './user.subscriber';
 
 type InjectedDependencies = {
 	manager: EntityManager;
@@ -20,9 +20,15 @@ export default class UserService extends MedusaUserService {
 		super({ manager, userRepository, eventBusService });
 		this.manager = manager;
 		this.userRepository = userRepository;
+		UserSubscriber.attachTo(manager.connection);
 	}
 
-	async retrieve(userId: string, config?: FindConfig<User>): Promise<User> {
-		return await super.retrieve(userId, config);
+	@OnMedusaEntityEvent.Before.Insert(User, { async: true })
+	public async attachStoreToUser(
+		params: MedusaEventHandlerParams<User, 'Insert'>
+	): Promise<EntityEventType<User, 'Insert'>> {
+		params.event.entity.metadata = params.event.entity.metadata || {};
+		params.event.entity.metadata.someData = 'test';
+		return params.event;
 	}
 }

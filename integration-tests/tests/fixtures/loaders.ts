@@ -1,7 +1,7 @@
 import { MedusaMiddleware, MedusaRequest, Middleware, Module, Router, Service } from 'medusa-extender';
 import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
-import { Cart } from "@medusajs/medusa/dist/models/cart";
+import { Cart } from '@medusajs/medusa/dist/models/cart';
 
 @Service()
 export class TestService {
@@ -15,7 +15,7 @@ export class CartService extends MedusaCartService {
 	customMethod = jest.fn();
 
 	removeLineItem(cartId: string, lineItemId: string): Promise<Cart> {
-		return Promise.resolve({ id: "cart_dafsdgfds" } as Cart)
+		return Promise.resolve({ id: 'cart_dafsdgfds' } as Cart);
 	}
 }
 
@@ -76,7 +76,7 @@ export class AdminTestPathMiddleware implements MedusaMiddleware {
 AdminTestPathMiddleware.prototype.consume = jest
 	.fn()
 	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
-		expect(req.scope).toBeTruthy()
+		expect(req.scope).toBeTruthy();
 		next();
 	});
 
@@ -97,7 +97,7 @@ export class AdminAuthTestPathMiddleware implements MedusaMiddleware {
 AdminAuthTestPathMiddleware.prototype.consume = jest
 	.fn()
 	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
-		expect(req.scope).toBeTruthy()
+		expect(req.scope).toBeTruthy();
 		next();
 	});
 
@@ -148,7 +148,7 @@ export class StoreTestPathMiddleware implements MedusaMiddleware {
 StoreTestPathMiddleware.prototype.consume = jest
 	.fn()
 	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
-		expect(req.scope).toBeTruthy()
+		expect(req.scope).toBeTruthy();
 		next();
 	});
 
@@ -199,7 +199,7 @@ export class CustomTopTestPathMiddleware implements MedusaMiddleware {
 CustomTopTestPathMiddleware.prototype.consume = jest
 	.fn()
 	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
-		expect(req.scope).toBeTruthy()
+		expect(req.scope).toBeTruthy();
 		next();
 	});
 

@@ -1,10 +1,9 @@
 import 'reflect-metadata';
-import { Type, customEventEmitter } from '../core';
+import { Type, customEventEmitter, buildEventName } from '../core';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
 
 export type EntityEventActionOptions = {
 	async: boolean;
-	metatype?: Type;
 };
 
 export type EntityActions = 'Insert' | 'Update' | 'Remove';
@@ -54,16 +53,16 @@ export class OnMedusaEntityEvent {
 		return new OnMedusaEntityEvent(when);
 	}
 
-	public InsertEvent<Entity extends Type>(entity: Entity): string {
-		return `${this.#when}Insert${entity.name}`;
+	public InsertEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
+		return buildEventName(`${this.#when}Insert${entity.name}`, target, targetPropertyKey);
 	}
 
-	public UpdateEvent<Entity extends Type>(entity: Entity): string {
-		return `${this.#when}Update${entity.name}`;
+	public UpdateEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
+		return buildEventName(`${this.#when}Update${entity.name}`, target, targetPropertyKey);
 	}
 
-	public RemoveEvent<Entity extends Type>(entity: Entity): string {
-		return `${this.#when}Remove${entity.name}`;
+	public RemoveEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
+		return buildEventName(`${this.#when}Remove${entity.name}`, target, targetPropertyKey);
 	}
 
 	public Insert<TEntity extends Type>(
@@ -107,7 +106,7 @@ export class OnMedusaEntityEvent {
 function OnMedusaEntityEventDecorator(
 	eventName: string,
 	targetEntity: Type,
-	{ async, metatype }: { async: boolean; metatype?: Type } = {
+	{ async }: { async: boolean } = {
 		async: false,
 	}
 ): MethodDecorator {
@@ -115,10 +114,6 @@ function OnMedusaEntityEventDecorator(
 		const original = descriptor.value;
 		descriptor.value = async function <Entity>(...args: unknown[]): Promise<void> {
 			const { values, resolveOrReject } = args.pop() as MedusaEventEmittedParams<Entity, EntityActions>;
-
-			if (!(values.event.entity instanceof targetEntity)) {
-				return;
-			}
 
 			const promise = original.apply(this, [values]);
 			if (async) {
@@ -134,7 +129,7 @@ function OnMedusaEntityEventDecorator(
 			}
 		};
 
-		eventName = `${eventName}${target.constructor.name}${propertyKey}`;
-		customEventEmitter.register(eventName, propertyKey, metatype ?? (target.constructor as Type));
+		eventName = buildEventName(eventName, target, propertyKey);
+		customEventEmitter.register(eventName, propertyKey, target.constructor as Type);
 	};
 }
