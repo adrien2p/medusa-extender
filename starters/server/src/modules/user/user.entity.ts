@@ -6,6 +6,6 @@ import { Entity as MedusaEntity } from 'medusa-extender';
 @Entity()
 export class User extends MedusaUser {
 	@Index()
-	@Column({ nullable: false })
+	@Column({ nullable: true })
 	store_id: string;
 }
