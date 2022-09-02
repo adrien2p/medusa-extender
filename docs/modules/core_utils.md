@@ -44,7 +44,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L59)
+[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L59)
 
 ___
 
@@ -74,7 +74,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L29)
+[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L29)
 
 ___
 
@@ -98,7 +98,7 @@ Build an event name base on the input args
 
 #### Defined in
 
-[src/core/utils.ts:49](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L49)
+[src/core/utils.ts:49](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L49)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/core/utils.ts:78](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L78)
+[src/core/utils.ts:78](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L78)
 
 ___
 
@@ -140,7 +140,7 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:66](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L66)
+[src/core/utils.ts:66](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L66)
 
 ___
 
@@ -170,7 +170,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L9)
+[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L9)
 
 ___
 
@@ -192,4 +192,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L74)
+[src/core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/utils.ts#L74)

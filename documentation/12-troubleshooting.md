@@ -45,3 +45,70 @@ declare module '@medusajs/medusa/dist/models/user' {
 
 As you can see, in order to tell typescript that the `user` as been extended, you have to specify which properties have been added.
 From there, typescript will be able to match and merge the types as you can see in that [example](https://github.com/adrien2p/medusa-extender/blob/main/starters/plugin-module/src/modules/user/user.service.ts)
+
+## Override method that use `buildQuery`
+
+### Problem
+
+In previous version, medusa was using a class method that you was able to override so that it can take into account
+your update when querying.
+
+### Solution
+
+In order to get the same behaviour, you have to override the concerned method and manipulate the arguments to pass
+down to the original method. This approach allow you to have a no impact on the core logic and therefore not being
+impacted by any future update.
+
+Let see an example with the order service:
+
+```ts
+@Service({ scope: 'SCOPED', override: MedusaOrderService })
+export class OrderService extends MedusaOrderService {
+  // 
+  // ... Here is your constructor and all the rest of your code for example ...
+  //
+  
+  // This method will prepare the different config to be pass down to the original method
+  prepareSelectorAndConfig(
+    selector: Selector<Order> | QuerySelector<Order>,
+    config: FindConfig<Order> = {
+      skip: 0,
+      take: 50,
+      order: { created_at: "DESC" },
+    }
+  ) {
+    if (this.container.loggedInUser?.store_id) {
+      selector['store_id'] = this.container.loggedInUser.store_id;
+    }
+    config.select.push('store_id')
+    cconfig.relations = config.relations ?? []
+    cconfig.relations.push("children", "parent", "store")
+  }
+
+  // In the following method we are mutating the arguments before passing them to the original method
+  async list(
+    selector: Selector<Order>,
+    config: FindConfig<Order> = {
+      skip: 0,
+      take: 50,
+      order: { created_at: "DESC" },
+    }
+  ): Promise<Order[]> {
+    prepareSelectorAndConfig(selector, config)
+    return await super.list(sector, config)
+  }
+
+  // In the following method we are mutating the arguments before passing them to the original method
+  async listAndCount(
+    selector: QuerySelector<Order>,
+    config: FindConfig<Order> = {
+      skip: 0,
+      take: 50,
+      order: { created_at: "DESC" },
+    }
+  ): Promise<Order[]> {
+    prepareSelectorAndConfig(selector, config)
+    return await super.listAndCount(sector, config)
+  }
+}
+```
