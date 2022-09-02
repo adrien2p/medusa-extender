@@ -1,5 +1,5 @@
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
-import { Constructor, MixinReturnType, Type } from './types';
+import { Constructor, MixinReturnType } from './types';
 
 /**
  * For repository context, you should extends repository and the medusa target repository.
