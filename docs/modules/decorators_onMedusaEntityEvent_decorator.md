@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:10](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/decorators/onMedusaEntityEvent.decorator.ts#L10)
+[src/decorators/onMedusaEntityEvent.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/9478406/src/decorators/onMedusaEntityEvent.decorator.ts#L9)
 
 ___
 
@@ -37,11 +37,10 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `async` | `boolean` |
-| `metatype?` | [`Type`](../interfaces/core_types.Type.md) |
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
+[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/9478406/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
 
 ___
 
@@ -60,7 +59,7 @@ Event types that can be emitted.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:15](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/decorators/onMedusaEntityEvent.decorator.ts#L15)
+[src/decorators/onMedusaEntityEvent.decorator.ts:14](https://github.com/adrien2p/medusa-extender/blob/9478406/src/decorators/onMedusaEntityEvent.decorator.ts#L14)
 
 ___
 
@@ -86,7 +85,7 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:24](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/decorators/onMedusaEntityEvent.decorator.ts#L24)
+[src/decorators/onMedusaEntityEvent.decorator.ts:23](https://github.com/adrien2p/medusa-extender/blob/9478406/src/decorators/onMedusaEntityEvent.decorator.ts#L23)
 
 ___
 
@@ -112,4 +111,4 @@ The arguments expected by the event handler.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:32](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/decorators/onMedusaEntityEvent.decorator.ts#L32)
+[src/decorators/onMedusaEntityEvent.decorator.ts:31](https://github.com/adrien2p/medusa-extender/blob/9478406/src/decorators/onMedusaEntityEvent.decorator.ts#L31)

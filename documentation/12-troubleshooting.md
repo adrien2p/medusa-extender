@@ -4,7 +4,7 @@ In this section you will retrieve the information regarding problem that other u
 
 > NOTE: You are more than welcome to update or improve this section if you think that you have something that
 > can be useful for other users.
-> You can update the following file: documentation/12-troubleshootings.md
+> You can update the following file: documentation/12-troubleshooting.md
 
 ## Typings across libs
 

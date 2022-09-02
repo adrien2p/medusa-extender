@@ -88,6 +88,10 @@ decorators approach to increase the DX and full typings support for easier devel
 * [Resources](#resources)
 	* [Marketplace tutorial](#marketplace-tutorial)
 * [Discussions](#discussions)
+* [Troubleshooting](#troubleshooting)
+	* [Typings across libs](#typings-across-libs)
+		* [Problem](#problem)
+		* [Solution](#solution)
 * [Like my work? :heartbeat:](#like-my-work-heartbeat)
 * [Contribute](#contribute)
 
@@ -395,30 +399,6 @@ export class Product extends MedusaProduct {
 
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
-
-To make your project aware of your customisation 
-at the medusa core level, you can use the [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
-approach.
-
-here is an example
-
-```ts
-// src/modules/your_modules/index.d.ts
-
-import { User as ExtendedUser } from '@modules/user/user.entity';
-import { default as ExtendedUserRepository } from '@modules/user/user.repository';
-
-declare module '@medusajs/medusa/dist/models/user' {
-  export declare class User extends ExtendedUser {}
-}
-
-declare module '@medusajs/medusa' {
-  export declare class UserRepository extends ExtendedUserRepository {}
-}
-
-```
-
-To see a live example, you can look at the starters, they include the module augmentation approach.
 
 ### @Repository
 
@@ -933,7 +913,8 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
     
     public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
-        return eventEmitter.emitAsync<InsertEvent<Product>>(OnMedusaEntityEvent.Before.InsertEvent(Product), {
+        const eventName = OnMedusaEntityEvent.Before.InsertEvent(User, UserService, 'attachStoreToUser');
+        await eventEmitter.emitAsync<InsertEvent<User>>(eventName, {
             event,
             transactionalEntityManager: event.manager,
         });
@@ -955,33 +936,6 @@ export default class ProductService extends MedusaProductService {
     this.manager = manager;
     ProductSubscriber.attachTo(manager.connection)
   }
-}
-```
-
-Here is how you can register it in medusa if your subscriber need to be scoped 
-- for example if the manager can be scoped like it is in a multi tenant application such as the one using the multi tenancy module).
-- if the service depends on scoped dependencies such as the logged in user.
-
-```typescript
-import { NextFunction, Response } from 'express';
-import {
-    MEDUSA_RESOLVER_KEYS,
-    MedusaAuthenticatedRequest,
-    MedusaMiddleware,
-    Middleware
-} from 'medusa-extender';
-import { Connection } from 'typeorm';
-import ProductSubscriber from './product.subscriber';
-
-@Middleware({ requireAuth: true, routes: [{ method: 'post', path: '/admin/products/' }] })
-export class AttachProductSubscribersMiddleware implements MedusaMiddleware {
-    public consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): void {
-        const { connection } = req.scope.resolve(MEDUSA_RESOLVER_KEYS.manager) as {
-            connection: Connection;
-        };
-        ProductSubscriber.attachTo(connection);
-        return next();
-    };
 }
 ```
 
@@ -1253,6 +1207,59 @@ Here is the first tutorial using the medusa-extender package, [Open source ecomm
 # Discussions
 
 If you are interesting to participate in any discussions you can follow that [links](https://github.com/adrien2p/medusa-extender/discussions)
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#troubleshooting)
+
+# Troubleshooting
+
+In this section you will retrieve the information regarding problem that other user can encounter and how to tackle them.
+
+> NOTE: You are more than welcome to update or improve this section if you think that you have something that
+> can be useful for other users.
+> You can update the following file: documentation/12-troubleshooting.md
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#typings-across-libs)
+
+## Typings across libs
+
+### Problem
+
+When you are able to extends an object from an external lib (medusa here), typescript can't be aware of the fact that the object
+type has changed for the inner external lib as well.
+
+### Solution
+
+In that case, we have to use the approach providing by `declaration merging` and `module augmentation` (you can read more about
+it [here](https://www.typescriptlang.org/docs/handbook/declaration-merging.html))
+
+some example can be found in the [starter server](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts) as well
+as in the [starter module](https://github.com/adrien2p/medusa-extender/blob/main/starters/plugin-module/src/modules/user/index.d.ts)
+
+Case example: 
+
+you are extending an Entity that we will call `Foo`, the core typed everywhere using `Foo` which is of type `Foo`.
+in your project, you want to then extend a service related to `Foo`, the typings from the core can't be aware of the new 
+properties that you might have added to extend `Foo`.
+
+Therefore, when you want to consume a core method from medusa that return `Foo`
+it means that it return the original one, but only has the type, but in reality the returned result represent your extended `Foo`.
+In that case, we have to let typescript know that `Foo` has been extended and that the type must be merged everywhere it is used.
+
+this is what the following code will do with a user extension example:
+
+```ts
+import { default as ExtendedUserRepository } from './user.repository';
+
+declare module '@medusajs/medusa/dist/models/user' {
+    declare interface User {
+        store_id: string;
+    }
+}
+```
+
+As you can see, in order to tell typescript that the `user` as been extended, you have to specify which properties have been added.
+From there, typescript will be able to match and merge the types as you can see in that [example](https://github.com/adrien2p/medusa-extender/blob/main/starters/plugin-module/src/modules/user/user.service.ts)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#like-my-work-heartbeat)
 
