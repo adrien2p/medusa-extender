@@ -228,7 +228,6 @@ export default class MyCustomService {
     private readonly manager: EntityManager;
     
     constructor(private readonly container: ConstructorParams) {
-        super();
         this.manager = container.manager;
     }
     
@@ -291,24 +290,6 @@ export default class ProductService extends MedusaProductService {
         super(container);
         this.manager = container.manager;
     }
-    
-    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
-    public async attachStoreToProduct(
-        params: MedusaEventHandlerParams<Product, 'Insert'>
-    ): Promise<EntityEventType<Product, 'Insert'>> {
-        const loggedInUser = this.container.loggedInUser;
-        const { event } = params;
-        event.entity.store_id = loggedInUser.store_id;
-        event.entity.handle = loggedInUser.store_id.replace('store_', '') + '-' + event.entity.handle;
-        return event;
-    }
-
-    public prepareListQuery_(selector: Record<string, any>, config: FindConfig<Product>): object {
-        if (Object.keys(this.container).includes('loggedInUser')) {
-            selector['store_id'] = this.container.loggedInUser.store_id;
-        }
-        return super.prepareListQuery_(selector, config);
-    }
 }
 ```
 
@@ -344,18 +325,19 @@ import UserService from './user.service';
 @Middleware({ requireAuth: true, routes: [{ method: "all", path: '*' }] })
 export class LoggedInUserMiddleware implements MedusaMiddleware {
     public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
+        let loggedInUser = null
         if (req.user && req.user.userId) {
             const userService = req.scope.resolve('userService') as UserService;
             const loggedInUser = await userService.retrieve(req.user.userId, {
                 select: ['id', 'your_custom_field'],
             });
-            
-            req.scope.register({
-                loggedInUser: {
-                    resolve: () => loggedInUser,
-                },
-            });
         }
+        
+        req.scope.register({
+            loggedInUser: {
+                resolve: () => loggedInUser,
+            },
+        });
         next();
     }
 }
