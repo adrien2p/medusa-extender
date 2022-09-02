@@ -44,13 +44,6 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
 }
 
 /**
- * Build an event name base on the input args
- */
-export function buildEventName(event: string, target: Type, targetPropertyKey: string): string {
-	return `${event}${target.name ?? target.constructor.name}${targetPropertyKey}`;
-}
-
-/**
  * Allow to omit some property from a class.
  * @param Class
  * @param keys

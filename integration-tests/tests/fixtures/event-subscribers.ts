@@ -56,13 +56,13 @@ class UserSubscriber implements EntitySubscriberInterface<User> {
 	}
 
 	public async beforeInsert(event: InsertEvent<User>): Promise<InsertEvent<User>> {
-		const eventName = OnMedusaEntityEvent.Before.InsertEvent(User, UserService, 'attachStoreToUser');
+		const eventName = OnMedusaEntityEvent.Before.InsertEvent(User);
 		await eventEmitter.emitAsync<InsertEvent<User>>(eventName, {
 			event,
 			transactionalEntityManager: event.manager,
 		});
 
-		const eventName2 = OnMedusaEntityEvent.Before.InsertEvent(User, TestService, 'attachStoreToUser');
+		const eventName2 = OnMedusaEntityEvent.Before.InsertEvent(User);
 		return await eventEmitter.emitAsync<InsertEvent<User>>(eventName2, {
 			event,
 			transactionalEntityManager: event.manager,

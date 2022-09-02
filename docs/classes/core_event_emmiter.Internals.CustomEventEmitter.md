@@ -40,17 +40,17 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/event-emmiter.ts#L22)
+[src/core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/8143685/src/core/event-emmiter.ts#L24)
 
 ## Properties
 
 ### #listeners
 
-• `Private` **#listeners**: `Set`<[`ListenerDescriptor`](../modules/core_event_emmiter.Internals.md#listenerdescriptor)<`unknown`\>\>
+• `Private` **#listeners**: `Map`<`string` \| `symbol`, [`ListenerDescriptor`](../modules/core_event_emmiter.Internals.md#listenerdescriptor)<`unknown`\>[]\>
 
 #### Defined in
 
-[src/core/event-emmiter.ts:20](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/event-emmiter.ts#L20)
+[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/8143685/src/core/event-emmiter.ts#L22)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:74](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/event-emmiter.ts#L74)
+[src/core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/8143685/src/core/event-emmiter.ts#L94)
 
 ___
 
@@ -109,7 +109,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:32](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/event-emmiter.ts#L32)
+[src/core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/8143685/src/core/event-emmiter.ts#L34)
 
 ___
 
@@ -117,8 +117,9 @@ ___
 
 ▸ **registerListeners**(`container`): `void`
 
-Apply all event handlers hold by the `listenerDescriptor`.
-Only unregister and register again non singleton based event listeners
+Apply all event handlers hold by the `listenerDescriptors`.
+Only unregister and register again non singleton based event listeners.
+No duplicate listener can exist on one handler.
 
 #### Parameters
 
@@ -132,4 +133,4 @@ Only unregister and register again non singleton based event listeners
 
 #### Defined in
 
-[src/core/event-emmiter.ts:45](https://github.com/adrien2p/medusa-extender/blob/a984300/src/core/event-emmiter.ts#L45)
+[src/core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/8143685/src/core/event-emmiter.ts#L47)

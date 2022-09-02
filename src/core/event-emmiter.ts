@@ -4,6 +4,8 @@ import { componentsMetadataReader } from './metadata-reader';
 import { lowerCaseFirst } from './utils';
 import { AwilixContainer } from 'awilix';
 
+const EVENT_HANDLER_PROPERTY_NAME = '__medusa_extender_name__';
+
 /**
  * A listener descriptor.
  */
@@ -17,7 +19,7 @@ type ListenerDescriptor<T = unknown> = {
  * Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
  */
 class CustomEventEmitter extends EventEmitter {
-	#listeners: Set<ListenerDescriptor> = new Set();
+	#listeners: Map<string | symbol, ListenerDescriptor[]> = new Map();
 
 	constructor() {
 		super();
@@ -31,38 +33,56 @@ class CustomEventEmitter extends EventEmitter {
 	 */
 	public register<T>(eventName: string | symbol, propertyName: string, metatype: Type<T>): void {
 		const descriptor = { eventName, propertyName, metatype };
-		if (this.#listeners.has(descriptor)) {
-			return;
-		}
-		this.#listeners.add(descriptor);
+		const listenerDescriptors = this.#listeners.get(descriptor.eventName) || [];
+		listenerDescriptors.push(descriptor);
+		this.#listeners.set(eventName, listenerDescriptors);
 	}
 
 	/**
-	 * Apply all event handlers hold by the `listenerDescriptor`.
-	 * Only unregister and register again non singleton based event listeners
+	 * Apply all event handlers hold by the `listenerDescriptors`.
+	 * Only unregister and register again non singleton based event listeners.
+	 * No duplicate listener can exist on one handler.
 	 * @param container The IoC container that allow to resolve instance
 	 */
 	public registerListeners(container: AwilixContainer): void {
-		for (const listenerDescriptor of this.#listeners.values()) {
-			const { eventName, metatype, propertyName } = listenerDescriptor;
-			const serviceOptions = componentsMetadataReader<'service'>(
-				metatype as Type
-			) as GetInjectableOption<'service'>;
-			const { resolutionKey, scope } = serviceOptions;
+		for (const [, listenerDescriptors] of [...this.#listeners]) {
+			for (const listenerDescriptor of listenerDescriptors) {
+				const { eventName, metatype, propertyName } = listenerDescriptor;
+				const serviceOptions = componentsMetadataReader<'service'>(
+					metatype as Type
+				) as GetInjectableOption<'service'>;
+				const { resolutionKey, scope } = serviceOptions;
 
-			if ((!scope || scope === 'SINGLETON') && this.listenerCount(eventName)) continue;
+				let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
+				if (resolutionKey) {
+					metatypeInstance = container.resolve(resolutionKey);
+				} else {
+					const metatypeName = metatype.name;
+					const formattedMetatypeName = lowerCaseFirst(metatypeName);
+					metatypeInstance = container.resolve(`${formattedMetatypeName}`);
+				}
 
-			let metatypeInstance: Pick<GetInjectableOption<'service'>, 'metatype'>;
-			if (resolutionKey) {
-				metatypeInstance = container.resolve(resolutionKey);
-			} else {
-				const metatypeName = metatype.name;
-				const formattedMetatypeName = lowerCaseFirst(metatypeName);
-				metatypeInstance = container.resolve(`${formattedMetatypeName}`);
+				const listenerHandler = metatypeInstance[propertyName].bind(metatypeInstance);
+				const listenerHandlerName = `${eventName.toString()}${metatype.name}${propertyName}`;
+				Object.defineProperty(listenerHandler, EVENT_HANDLER_PROPERTY_NAME, { value: listenerHandlerName });
+
+				const alreadyRegisteredListenerHandlerIndex = this.rawListeners(eventName).findIndex(
+					(rawListenerHandler) => rawListenerHandler[EVENT_HANDLER_PROPERTY_NAME] === listenerHandlerName
+				);
+
+				if ((!scope || scope === 'SINGLETON') && alreadyRegisteredListenerHandlerIndex !== -1) continue;
+
+				if (alreadyRegisteredListenerHandlerIndex !== -1) {
+					this.removeListener(
+						eventName,
+						this.rawListeners(eventName)[alreadyRegisteredListenerHandlerIndex] as (
+							...args: unknown[]
+						) => void
+					);
+				}
+
+				this.on(eventName, listenerHandler);
 			}
-
-			this.removeAllListeners(eventName);
-			this.on(eventName, metatypeInstance[propertyName].bind(metatypeInstance));
 		}
 	}
 

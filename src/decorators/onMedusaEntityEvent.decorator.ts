@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { Type, customEventEmitter, buildEventName } from '../core';
+import { Type, customEventEmitter } from '../core';
 import { EntityManager, InsertEvent, RemoveEvent, UpdateEvent } from 'typeorm';
 
 export type EntityEventActionOptions = {
@@ -53,16 +53,16 @@ export class OnMedusaEntityEvent {
 		return new OnMedusaEntityEvent(when);
 	}
 
-	public InsertEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
-		return buildEventName(`${this.#when}Insert${entity.name}`, target, targetPropertyKey);
+	public InsertEvent<Entity extends Type>(entity: Entity): string {
+		return `${this.#when}Insert${entity.name}`;
 	}
 
-	public UpdateEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
-		return buildEventName(`${this.#when}Update${entity.name}`, target, targetPropertyKey);
+	public UpdateEvent<Entity extends Type>(entity: Entity): string {
+		return `${this.#when}Update${entity.name}`;
 	}
 
-	public RemoveEvent<Entity extends Type>(entity: Entity, target: Type, targetPropertyKey: string): string {
-		return buildEventName(`${this.#when}Remove${entity.name}`, target, targetPropertyKey);
+	public RemoveEvent<Entity extends Type>(entity: Entity): string {
+		return `${this.#when}Remove${entity.name}`;
 	}
 
 	public Insert<TEntity extends Type>(
@@ -129,7 +129,6 @@ function OnMedusaEntityEventDecorator(
 			}
 		};
 
-		eventName = buildEventName(eventName, target, propertyKey);
 		customEventEmitter.register(eventName, propertyKey, target.constructor as Type);
 	};
 }

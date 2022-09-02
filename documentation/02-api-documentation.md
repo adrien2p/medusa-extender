@@ -565,7 +565,7 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
     
     public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
-        const eventName = OnMedusaEntityEvent.Before.InsertEvent(User, UserService, 'attachStoreToUser');
+        const eventName = OnMedusaEntityEvent.Before.InsertEvent(User);
         await eventEmitter.emitAsync<InsertEvent<User>>(eventName, {
             event,
             transactionalEntityManager: event.manager,
@@ -628,6 +628,9 @@ export default class ProductService extends MedusaProductService {
 Here, we are listening to the product creation, and before the entity is 
 inserted into the database, we are retrieving the `loggedInUser` through the container
 and attach the `store_id` to the product entity.
+
+> NOTE: If the number of listener reach the limit, you can control that through `eventEmitter.setMaxListeners()`
+> Too learn more about it you can find the doc [here](https://nodejs.org/api/events.html#emittersetmaxlistenersn)
 
 ## Utilities :wrench:
 
