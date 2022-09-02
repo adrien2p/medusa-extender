@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.5](https://github.com/adrien2p/medusa-extender/compare/v1.7.4...v1.7.5) (2022-09-02)
+
+
+### Features
+
+* **cli:** Allow to specify tenants on which to apply the migrate command ([#106](https://github.com/adrien2p/medusa-extender/issues/106)) ([53253e7](https://github.com/adrien2p/medusa-extender/commits/53253e7e4deb44af8e6e2e55f705b89eb89a779e))
+* Improve event management ([6d20130](https://github.com/adrien2p/medusa-extender/commits/6d2013092298b2e9481c3f01a94cf359e7a4d8dc))
+
+
+### Bug Fixes
+
+* **cli:** commands ([#114](https://github.com/adrien2p/medusa-extender/issues/114)) ([05c2bd7](https://github.com/adrien2p/medusa-extender/commits/05c2bd778533185f1de7f7e65ba5cbb0c2030824))
+* **cli:** Update watch script:  https://github.com/TypeStrong/ts-node/issues/897 ([#108](https://github.com/adrien2p/medusa-extender/issues/108)) ([6af10d5](https://github.com/adrien2p/medusa-extender/commits/6af10d52b0ad53b934c90d4a5c7d1763135a36b3))
+* Ensure event name uniqness as well as improve internal event management ([#120](https://github.com/adrien2p/medusa-extender/issues/120)) ([21eecf1](https://github.com/adrien2p/medusa-extender/commits/21eecf160aab05ab14981fa35c41fa0a28449728))
+* **starters:** migration config ([a0c3500](https://github.com/adrien2p/medusa-extender/commits/a0c350095e808c7014f27ff06866ea2be6f4d4cc))
+
 ### [1.7.4](https://github.com/adrien2p/medusa-extender/compare/v1.7.3...v1.7.4) (2022-07-27)
 
 
