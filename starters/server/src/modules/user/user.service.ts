@@ -2,8 +2,9 @@ import { EntityEventType, MedusaEventHandlerParams, OnMedusaEntityEvent, Service
 import { EntityManager } from 'typeorm';
 import { EventBusService, UserService as MedusaUserService } from '@medusajs/medusa/dist/services';
 import UserRepository from './user.repository';
-import { User } from '@medusajs/medusa';
 import UserSubscriber from './user.subscriber';
+import { FindConfig } from '@medusajs/medusa/dist/types/common';
+import { User } from '@medusajs/medusa';
 
 type InjectedDependencies = {
 	manager: EntityManager;
@@ -27,8 +28,15 @@ export default class UserService extends MedusaUserService {
 	public async attachStoreToUser(
 		params: MedusaEventHandlerParams<User, 'Insert'>
 	): Promise<EntityEventType<User, 'Insert'>> {
+		console.log(params.event.entity.store_id);
 		params.event.entity.metadata = params.event.entity.metadata || {};
 		params.event.entity.metadata.someData = 'test';
 		return params.event;
+	}
+
+	async retrieve(userId: string, config?: FindConfig<User>): Promise<User> {
+		const user = await super.retrieve(userId, config);
+		console.log(user.store_id);
+		return user;
 	}
 }

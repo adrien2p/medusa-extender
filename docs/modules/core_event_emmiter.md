@@ -16,11 +16,11 @@
 
 ### customEventEmitter
 
-• `Const` **customEventEmitter**: [`CustomEventEmmiter`](../classes/core_event_emmiter.Internals.CustomEventEmmiter.md)
+• `Const` **customEventEmitter**: [`CustomEventEmitter`](../classes/core_event_emmiter.Internals.CustomEventEmitter.md)
 
 **`internal`**
 Export the instance of the event emmiter.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:96](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L96)
+[src/core/event-emmiter.ts:96](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/event-emmiter.ts#L96)

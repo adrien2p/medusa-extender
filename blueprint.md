@@ -23,5 +23,6 @@
 {{ load:documentation/04-internal-modules.md }}
 {{ load:documentation/05-resources.md }}
 {{ load:documentation/07-discussions.md }}
+{{ load:documentation/12-troubleshooting.md }}
 {{ load:documentation/10-like-my-work.md }}
 {{ load:documentation/08-contribute.md }}

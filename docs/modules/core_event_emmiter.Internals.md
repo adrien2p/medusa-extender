@@ -8,7 +8,7 @@
 
 ### Classes
 
-- [CustomEventEmmiter](../classes/core_event_emmiter.Internals.CustomEventEmmiter.md)
+- [CustomEventEmitter](../classes/core_event_emmiter.Internals.CustomEventEmitter.md)
 
 ### Type aliases
 
@@ -38,4 +38,4 @@ A listener descriptor.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:10](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/event-emmiter.ts#L10)
+[src/core/event-emmiter.ts:10](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/event-emmiter.ts#L10)

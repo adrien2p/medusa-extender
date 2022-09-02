@@ -1,6 +1,6 @@
+import { Entity as MedusaEntity } from 'medusa-extender';
 import { User as MedusaUser } from '@medusajs/medusa';
 import { Column, Entity, Index } from 'typeorm';
-import { Entity as MedusaEntity } from 'medusa-extender';
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()

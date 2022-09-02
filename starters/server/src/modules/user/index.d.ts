@@ -1,10 +1,11 @@
-import { User as ExtendedUser } from '@modules/user/user.entity';
-import { default as ExtendedUserRepository } from '@modules/user/user.repository';
+import { default as ExtendedUserRepository } from './user.repository';
 
 declare module '@medusajs/medusa/dist/models/user' {
-	export declare class User extends ExtendedUser {}
+	declare interface User {
+		store_id: string;
+	}
 }
 
-declare module '@medusajs/medusa' {
-	export declare class UserRepository extends ExtendedUserRepository {}
+declare module '@medusajs/medusa/dist/repositories/user' {
+	declare class UserRepository extends ExtendedUserRepository {}
 }

@@ -8,6 +8,7 @@
 
 - [Omit](core_utils.md#omit)
 - [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
+- [buildEventName](core_utils.md#buildeventname)
 - [buildRegexpIfValid](core_utils.md#buildregexpifvalid)
 - [lowerCaseFirst](core_utils.md#lowercasefirst)
 - [repositoryMixin](core_utils.md#repositorymixin)
@@ -43,7 +44,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L52)
+[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L59)
 
 ___
 
@@ -73,7 +74,31 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L29)
+[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L29)
+
+___
+
+### buildEventName
+
+▸ **buildEventName**(`event`, `target`, `targetPropertyKey`): `string`
+
+Build an event name base on the input args
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `string` |
+| `target` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\> |
+| `targetPropertyKey` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/core/utils.ts:49](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L49)
 
 ___
 
@@ -93,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/core/utils.ts:71](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L71)
+[src/core/utils.ts:78](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L78)
 
 ___
 
@@ -115,7 +140,7 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L59)
+[src/core/utils.ts:66](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L66)
 
 ___
 
@@ -145,7 +170,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L9)
+[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L9)
 
 ___
 
@@ -167,4 +192,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/ad78501/src/core/utils.ts#L67)
+[src/core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/9478406/src/core/utils.ts#L74)
