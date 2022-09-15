@@ -6,7 +6,7 @@ import { ConfigModule } from './types';
 
 @Module()
 export class TenantModule implements MedusaDynamicModule {
-	static async forRoot(configModule: ConfigModule): Promise<ModuleInjectionOptions> {
+	async forRoot(configModule: ConfigModule): Promise<ModuleInjectionOptions> {
 		if (configModule.multi_tenancy?.enable) {
 			return { imports: [TenantMiddleware, TenantService] };
 		}
