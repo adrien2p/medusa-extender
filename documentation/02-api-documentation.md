@@ -565,7 +565,7 @@ export default class ProductSubscriber implements EntitySubscriberInterface<Prod
     }
     
     public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
-        const eventName = OnMedusaEntityEvent.Before.InsertEvent(User);
+        const eventName = OnMedusaEntityEvent.Before.InsertEvent(Product);
         await eventEmitter.emitAsync<InsertEvent<User>>(eventName, {
             event,
             transactionalEntityManager: event.manager,
