@@ -55,7 +55,7 @@ For more information about the configuration, you can have a look at the [docume
 
 {{ template:monitoring-demo-video }}
 
-## Multi-tenancy
+## Multi-tenancy (one app multiple DB - Experimental)
 
 > With the extender, it is possible by default to build multi vendor, multi tenant
 > applications. This module, only provide a specific approach for specific cases and does not
@@ -113,6 +113,8 @@ const config = {
     /* ... */
 };
 ```
+
+Now, in the `main.ts` file, you need to import the `TenantModule` like any other module.
 
 Ant that's it, you can now run your server and play around your multi-tenancy
 architecture.

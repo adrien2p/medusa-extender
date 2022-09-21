@@ -40,7 +40,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/818952d/src/core/event-emmiter.ts#L24)
+[src/core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/event-emmiter.ts#L24)
 
 ## Properties
 
@@ -50,7 +50,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/818952d/src/core/event-emmiter.ts#L22)
+[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/event-emmiter.ts#L22)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/818952d/src/core/event-emmiter.ts#L94)
+[src/core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/event-emmiter.ts#L94)
 
 ___
 
@@ -109,7 +109,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/818952d/src/core/event-emmiter.ts#L34)
+[src/core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/event-emmiter.ts#L34)
 
 ___
 
@@ -133,4 +133,4 @@ No duplicate listener can exist on one handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/818952d/src/core/event-emmiter.ts#L47)
+[src/core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/event-emmiter.ts#L47)

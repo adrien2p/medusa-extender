@@ -83,7 +83,7 @@ decorators approach to increase the DX and full typings support for easier devel
 * [Starters](#starters)
 * [Internal modules (Optional)](#internal-modules-optional)
 	* [Monitoring](#monitoring)
-	* [Multi-tenancy](#multi-tenancy)
+	* [Multi-tenancy (one app multiple DB - Experimental)](#multi-tenancy-one-app-multiple-db---experimental)
 		* [Cli migrate command](#cli-migrate-command)
 * [Resources](#resources)
 	* [Marketplace tutorial](#marketplace-tutorial)
@@ -1126,9 +1126,9 @@ For more information about the configuration, you can have a look at the [docume
 [![Video demo: scoped products per store](https://raw.githubusercontent.com/adrien2p/medusa-extender/assets/assets/readme/monitoring-ss.png)](https://streamable.com/k3ivnk)
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#multi-tenancy)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#multi-tenancy-one-app-multiple-db---experimental)
 
-## Multi-tenancy
+## Multi-tenancy (one app multiple DB - Experimental)
 
 > With the extender, it is possible by default to build multi vendor, multi tenant
 > applications. This module, only provide a specific approach for specific cases and does not
@@ -1186,6 +1186,8 @@ const config = {
     /* ... */
 };
 ```
+
+Now, in the `main.ts` file, you need to import the `TenantModule` like any other module.
 
 Ant that's it, you can now run your server and play around your multi-tenancy
 architecture.
