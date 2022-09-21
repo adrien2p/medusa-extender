@@ -1,6 +1,10 @@
 # Troubleshooting
 
-In this section you will retrieve the information regarding problem that other user can encounter and how to tackle them.
+- [Typings across libs](https://adrien2p.github.io/medusa-extender/#/?id=typings-across-libs)
+- [Override method that use `buildQuery`](https://adrien2p.github.io/medusa-extender/#/?id=override-method-that-use-buildquery)
+- [Loosing dependencies when using withTransaction (coming soon)]()
+
+In this section you will retrieve the information regarding common issues that other users can encounter and how to tackle them.
 
 > NOTE: You are more than welcome to update or improve this section if you think that you have something that
 > can be useful for other users.

@@ -122,7 +122,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.5)
+Run the following command in your terminal (The last version is 1.7.6)
 
 ```bash
 npm install medusa-extender
@@ -403,6 +403,21 @@ export class Product extends MedusaProduct {
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
 
+In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
+be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
+and add the following content.
+
+```typescript
+declare module '@medusajs/medusa/dist/models/product' {
+    declare interface Product {
+        customField: string;
+    }
+}
+```
+
+you can learn more about that by looking how it is done in the starters [here](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts)
+or in the troubleshooting section of the documentation.
+
 ### @Repository
 
 This decorator gives you the ability to either create a new custom repository that will
@@ -461,6 +476,19 @@ export default class UserRepository extends Utils.repositoryMixin<Product, Medus
 > The `Utils.repositoryMixin` is a special utility exported by the extender that
 > allow multiple class inheritance. This is mandatory to be able to extend an existing
 > custom repository.
+
+In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
+be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
+and add the following content.
+
+```typescript
+declare module '@medusajs/medusa/dist/repositories/product' {
+    declare class UserRepository extends ExtendedProductRepository {}
+}
+```
+
+you can learn more about that by looking how it is done in the starters [here](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts)
+or in the troubleshooting section of the documentation.
 
 ### @Migration
 
@@ -1200,7 +1228,11 @@ If you are interesting to participate in any discussions you can follow that [li
 
 # Troubleshooting
 
-In this section you will retrieve the information regarding problem that other user can encounter and how to tackle them.
+- [Typings across libs](https://adrien2p.github.io/medusa-extender/#/?id=typings-across-libs)
+- [Override method that use `buildQuery`](https://adrien2p.github.io/medusa-extender/#/?id=override-method-that-use-buildquery)
+- [Loosing dependencies when using withTransaction (coming soon)]()
+
+In this section you will retrieve the information regarding common issues that other users can encounter and how to tackle them.
 
 > NOTE: You are more than welcome to update or improve this section if you think that you have something that
 > can be useful for other users.

@@ -70,6 +70,21 @@ export class Product extends MedusaProduct {
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
 
+In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
+be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
+and add the following content.
+
+```typescript
+declare module '@medusajs/medusa/dist/models/product' {
+    declare interface Product {
+        customField: string;
+    }
+}
+```
+
+you can learn more about that by looking how it is done in the starters [here](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts)
+or in the troubleshooting section of the documentation.
+
 ### @Repository
 
 This decorator gives you the ability to either create a new custom repository that will
@@ -128,6 +143,19 @@ export default class UserRepository extends Utils.repositoryMixin<Product, Medus
 > The `Utils.repositoryMixin` is a special utility exported by the extender that
 > allow multiple class inheritance. This is mandatory to be able to extend an existing
 > custom repository.
+
+In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
+be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
+and add the following content.
+
+```typescript
+declare module '@medusajs/medusa/dist/repositories/product' {
+    declare class UserRepository extends ExtendedProductRepository {}
+}
+```
+
+you can learn more about that by looking how it is done in the starters [here](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts)
+or in the troubleshooting section of the documentation.
 
 ### @Migration
 

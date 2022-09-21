@@ -46,4 +46,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.module.ts:9](https://github.com/adrien2p/medusa-extender/blob/53a8798/src/modules/multi-tenancy/tenant.module.ts#L9)
+[src/modules/multi-tenancy/tenant.module.ts:9](https://github.com/adrien2p/medusa-extender/blob/818952d/src/modules/multi-tenancy/tenant.module.ts#L9)
