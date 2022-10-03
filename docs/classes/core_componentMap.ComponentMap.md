@@ -84,4 +84,4 @@ Map.get
 
 #### Defined in
 
-[src/core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/d82f16b/src/core/componentMap.ts#L4)
+[src/core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/componentMap.ts#L4)
