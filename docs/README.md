@@ -1232,7 +1232,7 @@ If you are interesting to participate in any discussions you can follow that [li
 
 - [Typings across libs](https://adrien2p.github.io/medusa-extender/#/?id=typings-across-libs)
 - [Override method that use `buildQuery`](https://adrien2p.github.io/medusa-extender/#/?id=override-method-that-use-buildquery)
-- [Loosing dependencies when using withTransaction (coming soon)]()
+- [Loosing dependencies when using withTransaction]()
 
 In this section you will retrieve the information regarding common issues that other users can encounter and how to tackle them.
 
@@ -1352,6 +1352,56 @@ export class OrderService extends MedusaOrderService {
   }
 }
 ```
+
+## Loosing dependencies when using withTransaction
+
+When overriding a service that is defined in Medusa, it is important to look at what dependencies are defined for use in that service. For example, the store service uses the following service in its `InjectedDependencies` object:
+
+```ts
+type InjectedDependencies = {
+  manager: EntityManager
+  storeRepository: typeof StoreRepository
+  currencyRepository: typeof CurrencyRepository
+  eventBusService: EventBusService
+}
+```
+
+In the constructor, Medusa is spreading these dependencies out and referencing them individually when making the call to `super`, as shown here:
+
+```ts
+super({
+    manager,
+    storeRepository,
+    currencyRepository,
+    eventBusService,
+})
+```
+
+So if any dependencies are added in a service override, like `loggedInUser`, that dependancy _will_ be lost because the `super` call in Medusa is not passing the entire container. The way to fix this is to define this method in your overridden service:
+
+Notes about this solution:
+* The `ts-ignore` is required to ignore the TS error that will be thrown if the overridden service does not implement `withTransaction`\
+* This example is for the `StoreService`, but this same logic can be used anywhere it's required. Just replace `StoreService` with the appropriate service.
+
+```ts
+// @ts-ignore
+withTransaction(transactionManager: EntityManager): StoreService {
+    if (!transactionManager) {
+        return this;
+    }
+
+    const cloned = new StoreService({
+        ...this.container,
+        manager: transactionManager,
+    });
+
+    cloned.transactionManager_ = transactionManager;
+
+return cloned;
+}
+```
+
+This should make it so that any additional dependencies defined in the service override are now referenced.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#like-my-work-heartbeat)
 
