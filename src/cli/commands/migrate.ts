@@ -1,15 +1,27 @@
-import { createConnection } from 'typeorm';
+import { createConnection, LoggerOptions } from 'typeorm';
 import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
 import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
 import { Connection } from 'typeorm/connection/Connection';
 import { buildRegexpIfValid, Logger } from '../../core';
+export type DatabaseTlsOptions = {
+	ca: string | undefined
+	rejectUnauthorized: boolean | undefined
+  }
+
+  
 
 type ConfigModule = {
 	projectConfig: {
+		database_host: string;
+		database_port: number;
+		database_ssl?: DatabaseTlsOptions;
+		database_username: string;
+		database_password:  string | (() => string) | (() => Promise<string>);
 		database_type: string;
 		database_url: string;
 		database_database: string;
+		database_logging?: LoggerOptions;
 		database_extra: Record<string, string>;
 		cli_migration_dirs?: string[];
 		/**
@@ -32,7 +44,23 @@ type Options = { run: boolean; revert: boolean; show: boolean; tenant_codes: str
  * @param tenant_codes
  */
 export async function migrate({ run, revert, show, tenant_codes }: Options): Promise<void> {
-	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
+	//const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
+	const configuration = getConfigFile(process.cwd(), `medusa-config`) as {
+		configModule: ConfigModule
+		configFilePath: string
+	  }
+	  const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
+		for (const key of Object.keys(obj)) {
+		  if (typeof obj[key] === "object" && obj[key] !== null) {
+			await resolveConfigProperties(obj[key])
+		  }
+		  if (typeof obj[key] === "function") {
+			obj[key] = await obj[key]()
+		  }
+		}
+		return obj
+	  }
+	  const configModule = await resolveConfigProperties(configuration.configModule)
 	const configMigrationsDirs =
 		configModule?.projectConfig?.cli_migration_dirs ?? configModule?.projectConfig?.cliMigrationsDirs;
 
@@ -45,13 +73,27 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 		return normalize(resolve(process.cwd(), dir));
 	});
 
+	let hostConfig: any = {
+		database: configModule.projectConfig.database_database,
+		url: configModule.projectConfig.database_url,
+	  }
+	  if (configModule.projectConfig.database_host) {
+		hostConfig = {
+		  host: configModule.projectConfig.database_host,
+		  port: configModule.projectConfig.database_port,
+		  database: configModule.projectConfig.database_database,
+		  ssl: configModule.projectConfig.database_ssl,
+		  username: configModule.projectConfig.database_username,
+		  password: configModule.projectConfig.database_password,
+		  logging: configModule?.projectConfig.database_logging,
+		}
+	  }
+	
 	const connections: Connection[] = [
 		await createConnection({
 			type: configModule.projectConfig.database_type as any,
-			url: configModule.projectConfig.database_url,
-			database: configModule.projectConfig.database_database,
+			...hostConfig,
 			extra: configModule.projectConfig.database_extra || {},
-			logging: ['schema'],
 			migrations: migrationDirs,
 		}),
 	];
