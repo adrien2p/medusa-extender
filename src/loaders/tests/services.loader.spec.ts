@@ -54,7 +54,7 @@ describe('Services loader', () => {
 	});
 
 	describe('overrideService', () => {
-		it(' should override MedusaOrderService with OrderService', async () => {
+		it('should override MedusaOrderService with OrderService', async () => {
 			container.register({
 				orderService: asFunction((cradle) => new MedusaOrderService(cradle), {
 					lifetime: Lifetime.SINGLETON,
