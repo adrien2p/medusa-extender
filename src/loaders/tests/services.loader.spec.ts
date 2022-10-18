@@ -49,11 +49,12 @@ describe('Services loader', () => {
 			.register({ giftCardService: asFunction(() => void 0) })
 			.register({ draftOrderService: asFunction(() => void 0) })
 			.register({ inventoryService: asFunction(() => void 0) })
-			.register({ eventBusService: asFunction(() => void 0) });
+			.register({ eventBusService: asFunction(() => void 0) })
+			.register({ featureFlagRouter: asFunction(() => void 0) });
 	});
 
 	describe('overrideService', () => {
-		it(' should override MedusaOrderService with OrderService', async () => {
+		it('should override MedusaOrderService with OrderService', async () => {
 			container.register({
 				orderService: asFunction((cradle) => new MedusaOrderService(cradle), {
 					lifetime: Lifetime.SINGLETON,
