@@ -74,8 +74,8 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 	let hostConfig: any = {
 		database: configModule.projectConfig.database_database,
 		url: configModule.projectConfig.database_url,
-		migrationsRun:true,
-        migrationsTransactionMode:"each",	
+		migrationsRun: true,
+		migrationsTransactionMode: 'each',
 	};
 	if (configModule.projectConfig.database_host) {
 		hostConfig = {
@@ -86,8 +86,8 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 			username: configModule.projectConfig.database_username,
 			password: configModule.projectConfig.database_password,
 			logging: configModule?.projectConfig.database_logging,
-			migrationsRun:true,
-        	migrationsTransactionMode:"each",
+			migrationsRun: true,
+			migrationsTransactionMode: 'each',
 		};
 	}
 
