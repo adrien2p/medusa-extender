@@ -18,6 +18,7 @@ import {
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
 import { ConfigModule } from '@medusajs/medusa/dist/types/global';
+import { asyncLoadConfig } from './cli/utils/async-load-config';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -46,31 +47,9 @@ export class Medusa {
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const configuration = getConfigFile(process.cwd(), `medusa-config`) as {
-			configModule: ConfigModule;
-			configFilePath: string;
-		};
-		const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
-			for (const key of Object.keys(obj)) {
-				if (typeof obj[key] === 'object' && obj[key] !== null) {
-					await resolveConfigProperties(obj[key]);
-				}
-				if (typeof obj[key] === 'function') {
-					obj[key] = await obj[key]();
-				}
-			}
-			return obj;
-		};
-		const configModule = (await resolveConfigProperties(configuration.configModule)) as unknown as {
+		const configModule = (await asyncLoadConfig()) as unknown as {
 			monitoring: MonitoringOptions;
 		};
-
-		/*const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: {
-				monitoring: MonitoringOptions;
-			};
-		};*/
-
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 
 		await loadMonitoringModule(configModule, this.#express, configModule.monitoring);

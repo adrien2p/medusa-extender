@@ -6,7 +6,7 @@ export const MODULE_KEY = '__MODULE_KEY__';
 /**
  * Metadata key to store config from decorated injectables.
  */
-export const INJECTABLE_OPTIONS_KEY = '__INJECTABLE_OPTIONS_KEY__';
+export const INJECTABLE_OPTIONS_KEY = Symbol('__INJECTABLE_OPTIONS_KEY__');
 
 /**
  * Hold the name of the medusa services registered into the container for later on resolve.
