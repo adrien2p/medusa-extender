@@ -6,6 +6,7 @@ import { green } from 'chalk';
 import { migrate } from './commands/migrate';
 import { init } from './commands/init';
 
+
 const program = new Command();
 program.name('medex').description('Medusa extender CLI').version('0.8.1');
 

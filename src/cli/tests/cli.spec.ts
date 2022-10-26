@@ -101,7 +101,11 @@ describe('CLI', () => {
 		);
 	});
 
+<<<<<<< HEAD
 	it('should aysnc load medusa-config with non-async', async () => {
+=======
+	it('should aysnc load medusa-config', async () => {
+>>>>>>> d13fc10 (test: added unit test for async loading)
 		const data = `
 			module.exports = {
 				projectConfig: {
@@ -124,6 +128,7 @@ describe('CLI', () => {
 		expect(configModule.projectConfig).toBeDefined;
 		unlinkSync(pathToConfigFile);
 	});
+<<<<<<< HEAD
 });
 
 describe('CLI- Async', () => {
@@ -200,4 +205,6 @@ describe('CLI- Async', () => {
 		expect(configModule.projectConfig.database_database.length).toBeGreaterThan(0);
 		unlinkSync(pathToConfigFile);
 	});
+=======
+>>>>>>> d13fc10 (test: added unit test for async loading)
 });
