@@ -18,7 +18,6 @@ import {
 } from './loaders';
 import { ConfigModule } from '@medusajs/medusa/dist/types/global';
 
-
 // Use to fix MiddlewareService typings
 declare global {
 	type ExpressApp = Express;
