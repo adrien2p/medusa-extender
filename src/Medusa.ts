@@ -17,7 +17,6 @@ import {
 	validatorsLoader,
 } from './loaders';
 import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
-import { ConfigModule } from '@medusajs/medusa/dist/types/global';
 import { asyncLoadConfig } from './cli/utils/async-load-config';
 
 // Use to fix MiddlewareService typings
