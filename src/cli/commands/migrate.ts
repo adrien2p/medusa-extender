@@ -1,6 +1,5 @@
-import { createConnection, LoggerOptions } from 'typeorm';
+import { createConnection } from 'typeorm';
 import { normalize, resolve } from 'path';
-import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
 import { Connection } from 'typeorm/connection/Connection';
 import { buildRegexpIfValid, ConfigModule, Logger } from '../../core';
 import { asyncLoadConfig } from '../utils/async-load-config';

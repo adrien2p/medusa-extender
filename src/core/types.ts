@@ -206,7 +206,6 @@ export type DatabaseTlsOptions = {
 	rejectUnauthorized: boolean | undefined;
 };
 
-
 export type ConfigModule = {
 	projectConfig: {
 		database_host: string;
