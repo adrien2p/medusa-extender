@@ -1,4 +1,4 @@
-import { createConnection, LoggerOptions } from 'typeorm';
+import { createConnection } from 'typeorm';
 import { normalize, resolve } from 'path';
 import { Connection } from 'typeorm/connection/Connection';
 import { buildRegexpIfValid, ConfigModule, Logger } from '../../core';
