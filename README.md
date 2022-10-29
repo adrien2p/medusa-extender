@@ -232,3 +232,6 @@ If you found the package helpful consider supporting me with a coffee
 # Contribute
 
 Contributions are welcome! You can look at the contribution [guidelines](./CONTRIBUTING.md)
+
+[![Stargazers repo roster for @adrien2p/medusa-extender](https://reporoster.com/stars/adrien2p/medusa-extender)](https://github.com/adrien2p/medusa-extender/stargazers)
+[![Forkers repo roster for @adrien2p/medusa-extender](https://reporoster.com/forks/adrien2p/medusa-extender)](https://github.com/adrien2p/medusa-extender/network/members)
