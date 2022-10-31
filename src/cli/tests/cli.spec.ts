@@ -3,6 +3,7 @@ import { exec, ExecException } from 'child_process';
 import { normalizeString } from './__utils__/normalizeString';
 import { asyncLoadConfig } from '../utils/async-load-config';
 import { unlinkSync, writeFileSync } from 'fs';
+import { stringify } from 'querystring';
 
 function cli(args, cwd): Promise<{ code: number; error: ExecException; stdout: string; stderr: string }> {
 	return new Promise((resolve) => {
@@ -100,7 +101,7 @@ describe('CLI', () => {
 		);
 	});
 
-	it('should aysnc load medusa-config', async () => {
+	it('should aysnc load medusa-config with non-async', async () => {
 		const data = `
 			module.exports = {
 				projectConfig: {
@@ -121,6 +122,82 @@ describe('CLI', () => {
 		const configModule = await asyncLoadConfig();
 		expect(configModule).toBeDefined();
 		expect(configModule.projectConfig).toBeDefined;
+		unlinkSync(pathToConfigFile);
+	});
+});
+
+describe('CLI- Async', () => {
+	it('should aysnc load medusa-config with async data', async () => {
+		const data = `
+		const axios=require('axios').default
+		async function asyncConfig(){
+
+			return {
+				projectConfig: {
+				// redis_url: REDIS_URL,
+				// For more production-like environment install PostgresQL
+				// database_url: DATABASE_URL,
+				// database_type: "postgres",
+				database_type: "sqlite",
+				database_database: "dummy",
+				admin_cors: "ADMIN_CORS",
+			  },
+			  plugins:[],
+			}
+
+		}
+		async function configureBackend() {
+			return await asyncConfig() ;
+		  }
+		  
+		  module.exports = configureBackend();`;
+		const pathToConfigFile = `${process.cwd()}/medusa-config.js`;
+		writeFileSync(pathToConfigFile, data, { encoding: 'utf8', flag: 'w' });
+		const configModule = await asyncLoadConfig();
+		expect(configModule).toBeDefined();
+		expect(configModule.projectConfig).toBeDefined;
+		expect(configModule.projectConfig.database_database).not.toBeInstanceOf(Promise);
+		expect(configModule.projectConfig.database_database.length).toBeGreaterThan(0);
+		unlinkSync(pathToConfigFile);
+	});
+	it('should aysnc load medusa-config with async data with async function', async () => {
+		const data = `
+		const axios=require('axios').default
+
+		async function password(){
+
+			return Promise.resolve("test");
+		}
+
+		async function asyncConfig(){
+
+			return {
+				projectConfig: {
+				// redis_url: REDIS_URL,
+				// For more production-like environment install PostgresQL
+				// database_url: DATABASE_URL,
+				// database_type: "postgres",
+				database_type: "sqlite",
+				database_database: "dummy",
+				admin_cors: "ADMIN_CORS",
+				database_password:password
+			  },
+			  plugins:[],
+			}
+
+		}
+		async function configureBackend() {
+			return await asyncConfig() ;
+		  }
+		  
+		  module.exports = configureBackend();`;
+		const pathToConfigFile = `${process.cwd()}/medusa-config.js`;
+		writeFileSync(pathToConfigFile, data, { encoding: 'utf8', flag: 'w' });
+		const configModule = await asyncLoadConfig();
+		expect(configModule).toBeDefined();
+		expect(configModule.projectConfig).toBeDefined;
+		expect(configModule.projectConfig.database_password).not.toBeInstanceOf(Promise);
+		expect(configModule.projectConfig.database_database.length).toBeGreaterThan(0);
 		unlinkSync(pathToConfigFile);
 	});
 });
