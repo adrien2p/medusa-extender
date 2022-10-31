@@ -6,7 +6,7 @@ export async function asyncLoadConfig(): Promise<ConfigModule> {
 		configModule: ConfigModule;
 		configFilePath: string;
 	};
-	const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
+	const resolveConfigProperties = async (obj: any): Promise<ConfigModule> => {
 		for (const key of Object.keys(obj)) {
 			if (typeof obj[key] === 'object' && obj[key] !== null) {
 				await resolveConfigProperties(obj[key]);
