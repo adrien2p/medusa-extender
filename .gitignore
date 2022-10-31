@@ -8,3 +8,4 @@ uploads
 coverage
 coverage-badges/
 ./.env*
+.vscode
