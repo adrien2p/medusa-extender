@@ -1,9 +1,6 @@
 import * as path from 'path';
 import { exec, ExecException } from 'child_process';
 import { normalizeString } from './__utils__/normalizeString';
-import { asyncLoadConfig } from '../utils/async-load-config';
-import { unlinkSync, writeFileSync } from 'fs';
-import { stringify } from 'querystring';
 
 function cli(args, cwd): Promise<{ code: number; error: ExecException; stdout: string; stderr: string }> {
 	return new Promise((resolve) => {
