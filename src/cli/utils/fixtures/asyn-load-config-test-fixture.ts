@@ -36,6 +36,7 @@ export const asyncyFunctionWithNonAsyncData = `module.exports = {
       // database_type: "postgres",
       database_database: "./medusa-db.sql",
       database_type: "sqlite",
+      database_password:"password",
       store_cors: "STORE_CORS",
       admin_cors: "ADMIN_CORS",
     },
@@ -55,6 +56,7 @@ async function asyncConfig(){
         database_type: "sqlite",
         database_database: "dummy",
         admin_cors: "ADMIN_CORS",
+        database_password:"password"
       },
       plugins:[],
     }
