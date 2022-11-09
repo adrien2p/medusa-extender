@@ -49,7 +49,8 @@ describe('Services loader', () => {
 			.register({ giftCardService: asFunction(() => void 0) })
 			.register({ draftOrderService: asFunction(() => void 0) })
 			.register({ inventoryService: asFunction(() => void 0) })
-			.register({ eventBusService: asFunction(() => void 0) });
+			.register({ eventBusService: asFunction(() => void 0) })
+			.register({ featureFlagRouter: asFunction(() => void 0) });
 	});
 
 	describe('overrideService', () => {
