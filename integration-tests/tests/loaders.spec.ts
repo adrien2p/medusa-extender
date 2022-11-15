@@ -5,7 +5,7 @@ import { IdMap } from 'medusa-test-utils';
 import {
 	AdminAuthTestPathMiddleware,
 	AdminTestPathMiddleware,
-	CartService,
+	CartService, AllAuthPathMiddleware,
 	CustomTopTestPathMiddleware,
 	StoreTestPathMiddleware,
 	TestModule,
@@ -135,6 +135,39 @@ describe('Loaders', () => {
 			}).expect(200);
 			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
 			expect(AdminAuthTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+			expect(AllAuthPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply authenticated middleware set for all routes (in /admin)', async () => {
+			const res = await makeRequest(context, {
+				path: `/admin/authenticated-all-test-middleware-path`,
+				method: 'get',
+				adminSession: {
+					jwt: {
+						userId: IdMap.getId('admin_user'),
+					},
+				},
+			}).expect(200);
+			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminAuthTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AllAuthPathMiddleware.prototype.consume).toHaveBeenCalled();
+			expect(res.text).toBeTruthy();
+		});
+
+		it('should apply authenticated middleware set for all routes (not in /admin)', async () => {
+			const res = await makeRequest(context, {
+				path: `/authenticated-all-test-middleware-path`,
+				method: 'get',
+				adminSession: {
+					jwt: {
+						userId: IdMap.getId('admin_user'),
+					},
+				},
+			}).expect(200);
+			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AdminAuthTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
+			expect(AllAuthPathMiddleware.prototype.consume).toHaveBeenCalled();
+			expect(res.text).toBeTruthy();
 		});
 	});
 

@@ -51,6 +51,26 @@ export class CartService extends MedusaCartService {
 				},
 			],
 		},
+		{
+			path: '/admin/authenticated-all-test-middleware-path',
+			method: 'get',
+			requiredAuth: true,
+			handlers: [
+				(req: Request, res: Response, next: NextFunction) => {
+					return res.send(`${req.user.userId}`);
+				},
+			],
+		},
+		{
+			path: '/authenticated-all-test-middleware-path',
+			method: 'get',
+			requiredAuth: true,
+			handlers: [
+				(req: Request, res: Response, next: NextFunction) => {
+					return res.send(`${req.user.userId}`);
+				},
+			],
+		},
 	],
 })
 export class AdminRouter {}
@@ -101,6 +121,27 @@ AdminAuthTestPathMiddleware.prototype.consume = jest
 		next();
 	});
 
+@Middleware({
+	requireAuth: true,
+	routes: [
+		{
+			path: '*',
+			method: 'all',
+		}
+	],
+})
+export class AllAuthPathMiddleware implements MedusaMiddleware {
+	consume(req: MedusaRequest | Request, res: Response, next: NextFunction): void | Promise<void> {
+		return undefined;
+	}
+}
+AllAuthPathMiddleware.prototype.consume = jest
+	.fn()
+	.mockImplementation((req: MedusaRequest, res: Response, next: NextFunction) => {
+		expect(req.scope).toBeTruthy();
+		next();
+	});
+
 @Router({
 	routes: [
 		{
@@ -122,7 +163,7 @@ AdminAuthTestPathMiddleware.prototype.consume = jest
 					return res.send(`healthy ${req.params.test_id}`);
 				},
 			],
-		},
+		}
 	],
 })
 export class StoreRouter {}
@@ -210,6 +251,7 @@ CustomTopTestPathMiddleware.prototype.consume = jest
 		AdminRouter,
 		AdminTestPathMiddleware,
 		AdminAuthTestPathMiddleware,
+		AllAuthPathMiddleware,
 		StoreRouter,
 		StoreTestPathMiddleware,
 		CustomTopRouter,
