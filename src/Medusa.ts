@@ -1,5 +1,4 @@
 import loaders from '@medusajs/medusa/dist/loaders';
-import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { Logger, MedusaContainer, Type } from './core';
@@ -16,7 +15,7 @@ import {
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
-import { ConfigModule } from '@medusajs/medusa/dist/types/global';
+import { asyncLoadConfig } from './cli/utils/async-load-config';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -45,31 +44,8 @@ export class Medusa {
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const configuration = getConfigFile(process.cwd(), `medusa-config`) as {
-			configModule: ConfigModule;
-			configFilePath: string;
-		};
-		const resolveConfigProperties = async (obj): Promise<ConfigModule> => {
-			for (const key of Object.keys(obj)) {
-				if (typeof obj[key] === 'object' && obj[key] !== null) {
-					await resolveConfigProperties(obj[key]);
-				}
-				if (typeof obj[key] === 'function') {
-					obj[key] = await obj[key]();
-				}
-			}
-			return obj;
-		};
-		const configModule = await resolveConfigProperties(configuration.configModule);
-
-		/*const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: {
-				monitoring: MonitoringOptions;
-			};
-		};*/
-
+		const configModule = await asyncLoadConfig();
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
-
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
