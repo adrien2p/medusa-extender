@@ -57,6 +57,8 @@ For more information about the configuration, you can have a look at the [docume
 
 ## Multi-tenancy (one app multiple DB - Experimental)
 
+> Disclaimer: This module is meant to be seen as an example and not as a working module out of the box.
+
 > With the extender, it is possible by default to build multi vendor, multi tenant
 > applications. This module, only provide a specific approach for specific cases and does not
 > mean that it is not something you can do without that module.

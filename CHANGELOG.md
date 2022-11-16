@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.7](https://github.com/adrien2p/medusa-extender/compare/v1.7.6...v1.7.7) (2022-11-09)
+
+
+### Bug Fixes
+
+* when decorated and dynamic modules are loaded together presenting InjectableOptions with intersecting ComponentTypes - only entries from last one is used ([#133](https://github.com/adrien2p/medusa-extender/issues/133)) ([de06ec5](https://github.com/adrien2p/medusa-extender/commits/de06ec57ccaeab7d2ab2d0565e45435e95c96a8f))
+
 ### [1.7.6](https://github.com/adrien2p/medusa-extender/compare/v1.7.5...v1.7.6) (2022-09-20)
 
 
