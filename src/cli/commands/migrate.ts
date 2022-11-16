@@ -17,7 +17,6 @@ type Options = { run: boolean; revert: boolean; show: boolean; tenant_codes: str
  */
 
 export async function migrate({ run, revert, show, tenant_codes }: Options): Promise<void> {
-	//const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
 	const configModule = await asyncLoadConfig();
 	const configMigrationsDirs =
 		configModule?.projectConfig?.cli_migration_dirs ?? configModule?.projectConfig?.cliMigrationsDirs;
