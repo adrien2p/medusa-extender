@@ -98,28 +98,4 @@ describe('CLI', () => {
         `)
 		);
 	});
-
-	it('should aysnc load medusa-config', async () => {
-		const data = `
-			module.exports = {
-				projectConfig: {
-				  // redis_url: REDIS_URL,
-				  // For more production-like environment install PostgresQL
-				  // database_url: DATABASE_URL,
-				  // database_type: "postgres",
-				  database_database: "./medusa-db.sql",
-				  database_type: "sqlite",
-				  store_cors: "STORE_CORS",
-				  admin_cors: "ADMIN_CORS",
-				},
-				plugins:[],
-			  };`;
-
-		const pathToConfigFile = `${process.cwd()}/medusa-config.js`;
-		writeFileSync(pathToConfigFile, data);
-		const configModule = await asyncLoadConfig();
-		expect(configModule).toBeDefined();
-		expect(configModule.projectConfig).toBeDefined;
-		unlinkSync(pathToConfigFile);
-	});
 });
