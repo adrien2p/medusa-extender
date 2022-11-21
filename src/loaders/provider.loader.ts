@@ -58,13 +58,13 @@ export function registerFulfillmentProvider(
 	const identifier = ensureIdentifier(metatype);
 
 	container.registerAdd(
-		'taxProviders',
+		'fulfillmentProviders',
 		asFunction((cradle) => new metatype(cradle, configModule.options))
 	);
 
 	container.register({
 		[name]: asFunction((cradle) => new metatype(cradle, configModule.options)).singleton(),
-		[`tp_${identifier}`]: aliasTo(name),
+		[`fp_${identifier}`]: aliasTo(name),
 	});
 
 	logger.log(`Fulfillment Provider loaded - ${name}`);
