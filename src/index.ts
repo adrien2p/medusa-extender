@@ -21,6 +21,8 @@ export {
 	Router,
 	Validator,
 	Subscriber,
+	TaxProvider,
+	FulfillmentProvider,
 } from './decorators';
 
 export { MonitoringOptions } from './modules/monitoring';
