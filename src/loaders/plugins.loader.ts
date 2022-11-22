@@ -1,7 +1,7 @@
 import { Express, NextFunction, Response } from 'express';
 import { MedusaAuthenticatedRequest, MedusaContainer, MedusaRequest } from './';
 import { customEventEmitter, GetInjectableOptions } from '../core';
-import { registerProviders } from './provider.loader';
+import { registerProviders } from './providers.loader';
 import { container } from 'webpack';
 
 /**

@@ -1,5 +1,5 @@
-import { aliasTo, asFunction, Lifetime } from 'awilix';
-import { GetInjectableOption, GetInjectableOptions, MedusaContainer } from './';
+import { aliasTo, asFunction } from 'awilix';
+import { GetInjectableOption, GetInjectableOptions, MedusaContainer } from '.';
 import { Logger, lowerCaseFirst } from '../core';
 
 const logger = Logger.contextualize('ProvidersLoader');
@@ -34,6 +34,8 @@ export function registerTaxProvider(
 	const { metatype } = options;
 	const name = lowerCaseFirst(metatype.name);
 	const identifier = ensureIdentifier(metatype);
+
+	console.log('container', container);
 
 	container.registerAdd(
 		'taxProviders',

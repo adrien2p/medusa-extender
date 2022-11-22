@@ -8,8 +8,10 @@ import {
 	CartService,
 	CustomTopTestPathMiddleware,
 	StoreTestPathMiddleware,
+	TestFulfillmentProvider,
 	TestModule,
 	TestService,
+	TestTaxProvider,
 } from './fixtures/loaders';
 import { Context } from '../utils/types';
 import { makeRequest } from '../utils/request';
@@ -209,6 +211,50 @@ describe('Loaders', () => {
 			expect(AdminTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
 			expect(AdminAuthTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
 			expect(CustomTopTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+	});
+
+	describe('plugins loader', () => {
+		it('should load tax providers using name', () => {
+			const provider = context.container.resolve<TestTaxProvider>('testTaxProvider');
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestTaxProvider);
+		});
+
+		it('should load into the tax providers array', () => {
+			const taxProviders = context.container.resolve<any[]>('taxProviders');
+			const provider = taxProviders.find((t) => t.identifier === 'TestTax');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestTaxProvider);
+		});
+
+		it('should load tax provider with as tp_${identifier}', () => {
+			const provider = context.container.resolve<TestTaxProvider>('tp_TestTax');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestTaxProvider);
+		});
+
+		it('should load fulfillment provider using name', () => {
+			const provider = context.container.resolve<TestFulfillmentProvider>('testFulfillmentProvider');
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestFulfillmentProvider);
+		});
+
+		it('should load fulfillment provider into the fulfillment providers array', () => {
+			const taxProviders = context.container.resolve<any[]>('fulfillmentProviders');
+			const provider = taxProviders.find((t) => t.identifier === 'TestFulfillment');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestFulfillmentProvider);
+		});
+
+		it('should load fulfillment provider with as fp_${identifier}', () => {
+			const provider = context.container.resolve<TestFulfillmentProvider>('fp_TestFulfillment');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestFulfillmentProvider);
 		});
 	});
 });
