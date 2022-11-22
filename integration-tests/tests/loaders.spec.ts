@@ -8,10 +8,10 @@ import {
 	CartService,
 	CustomTopTestPathMiddleware,
 	StoreTestPathMiddleware,
-	TestFulfillmentProvider,
 	TestModule,
 	TestService,
 	TestTaxProvider,
+	TestFulfillmentProvider,
 } from './fixtures/loaders';
 import { Context } from '../utils/types';
 import { makeRequest } from '../utils/request';
@@ -223,7 +223,7 @@ describe('Loaders', () => {
 
 		it('should load into the tax providers array', () => {
 			const taxProviders = context.container.resolve<any[]>('taxProviders');
-			const provider = taxProviders.find((t) => t.identifier === 'TestTax');
+			const provider = taxProviders.find((t) => t instanceof TestTaxProvider);
 
 			expect(provider).toBeTruthy();
 			expect(provider).toBeInstanceOf(TestTaxProvider);
@@ -243,8 +243,8 @@ describe('Loaders', () => {
 		});
 
 		it('should load fulfillment provider into the fulfillment providers array', () => {
-			const taxProviders = context.container.resolve<any[]>('fulfillmentProviders');
-			const provider = taxProviders.find((t) => t.identifier === 'TestFulfillment');
+			const providers = context.container.resolve<any[]>('fulfillmentProviders');
+			const provider = providers.find((t) => t instanceof TestFulfillmentProvider);
 
 			expect(provider).toBeTruthy();
 			expect(provider).toBeInstanceOf(TestFulfillmentProvider);

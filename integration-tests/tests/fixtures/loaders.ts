@@ -1,4 +1,13 @@
-import { MedusaMiddleware, MedusaRequest, Middleware, Module, Router, Service, TaxProvider } from 'medusa-extender';
+import {
+	MedusaMiddleware,
+	MedusaRequest,
+	Middleware,
+	Module,
+	Router,
+	Service,
+	TaxProvider,
+	FulfillmentProvider,
+} from 'medusa-extender';
 import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
 import { Cart } from '@medusajs/medusa/dist/models/cart';
@@ -28,7 +37,7 @@ export class TestTaxProvider extends AbstractTaxService {
 	}
 }
 
-@TaxProvider()
+@FulfillmentProvider()
 export class TestFulfillmentProvider extends FulfillmentService {
 	static identifier = 'TestFulfillment';
 }
