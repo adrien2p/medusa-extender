@@ -2,7 +2,7 @@ import { asFunction, asValue, ClassOrFunctionReturning, createContainer, Resolve
 import { MedusaContainer } from '../../../core';
 import { asArray } from './asArray';
 
-export const newContainer = () => {
+export const newContainer = (): MedusaContainer => {
 	const container = createContainer() as MedusaContainer;
 	//@ts-ignore
 	container.registerAdd = function (

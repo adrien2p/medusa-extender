@@ -1,19 +1,8 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import { FulfillmentProvider, Module, Service, TaxProvider } from '../../decorators';
-import { OrderService as MedusaOrderService, TaxProviderService } from '@medusajs/medusa/dist/services';
-import {
-	asFunction,
-	asValue,
-	AwilixContainer,
-	ClassOrFunctionReturning,
-	createContainer,
-	Lifetime,
-	Resolver,
-} from 'awilix';
+import { FulfillmentProvider, Module, TaxProvider } from '../../decorators';
 import { MedusaContainer, metadataReader } from '../../core';
-import { overrideService, registerService } from '../services.loader';
-import { registerProvider, registerProviders } from '../providers.loader';
+import { registerProvider } from '../providers.loader';
 import { newContainer } from './utils/new-container';
 
 @TaxProvider()
@@ -31,14 +20,6 @@ class TaxProviderModule {}
 
 @Module({ imports: [TestFulfillmentService] })
 class FulfillmentProviderModule {}
-
-function asArray(resolvers: (ClassOrFunctionReturning<unknown> | Resolver<unknown>)[]): {
-	resolve: (container: AwilixContainer) => unknown[];
-} {
-	return {
-		resolve: (container: AwilixContainer) => resolvers.map((resolver) => container.build(resolver)),
-	};
-}
 
 describe('Provider loader', () => {
 	describe('tax providers', () => {
