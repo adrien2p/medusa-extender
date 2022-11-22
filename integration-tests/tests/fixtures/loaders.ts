@@ -26,7 +26,7 @@ export class TestService {
 }
 
 @TaxProvider()
-export class TestTaxProvider extends AbstractTaxService {
+export class TestTaxService extends AbstractTaxService {
 	static identifier = 'TestTax';
 	async getTaxLines(
 		itemLines: ItemTaxCalculationLine[],
@@ -38,7 +38,7 @@ export class TestTaxProvider extends AbstractTaxService {
 }
 
 @FulfillmentProvider()
-export class TestFulfillmentProvider extends FulfillmentService {
+export class TestFulfillmentService extends FulfillmentService {
 	static identifier = 'TestFulfillment';
 }
 
@@ -248,7 +248,8 @@ CustomTopTestPathMiddleware.prototype.consume = jest
 		StoreTestPathMiddleware,
 		CustomTopRouter,
 		CustomTopTestPathMiddleware,
-		TestTaxProvider,
+		TestTaxService,
+		TestFulfillmentService,
 	],
 })
 export class TestModule {}
