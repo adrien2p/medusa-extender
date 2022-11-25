@@ -31,13 +31,16 @@ describe('async load tests', () => {
 	});
 
 	it('should aysnc load medusa-config with non-async', async () => {
-		await runLoadTest('asyncyFunctionWithNonAsyncData');
+		await runLoadTest('default-case-non-async-data');
 	});
 
 	it('should aysnc load medusa-config with async data', async () => {
-		await runLoadTest('asyncFunctionWithAsyncData');
+		await runLoadTest('async-parameter');
 	});
-	it('should aysnc load medusa-config with async data with async function', async () => {
-		await runLoadTest('asyncDataWithAsyncFunctionAndAsyncParameter');
+	it('should aysnc load medusa-config with async function promising non-async data', async () => {
+		await runLoadTest('async-function-with-non-async-data');
+	});
+	it('should aysnc load medusa-config with async function promising async data', async () => {
+		await runLoadTest('async-function-with-async-parameter');
 	});
 });

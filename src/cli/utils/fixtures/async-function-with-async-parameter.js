@@ -1,3 +1,9 @@
+
+	async function password(){
+
+    return Promise.resolve("test");
+  } 
+
 async function asyncConfig(){
 
     return {
@@ -9,14 +15,12 @@ async function asyncConfig(){
         database_type: "sqlite",
         database_database: "dummy",
         admin_cors: "ADMIN_CORS",
-        database_password:"password"
+        database_password:password
       },
       plugins:[],
     }
 
 }
-async function configureBackend() {
-    return await asyncConfig() ;
-  }
+
   
-  module.exports = configureBackend();
+  module.exports = asyncConfig();
