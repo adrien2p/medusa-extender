@@ -1,11 +1,45 @@
-import { MedusaMiddleware, MedusaRequest, Middleware, Module, Router, Service } from 'medusa-extender';
+import {
+	MedusaMiddleware,
+	MedusaRequest,
+	Middleware,
+	Module,
+	Router,
+	Service,
+	TaxProvider,
+	FulfillmentProvider,
+} from 'medusa-extender';
 import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
 import { Cart } from '@medusajs/medusa/dist/models/cart';
+import {
+	AbstractTaxService,
+	ItemTaxCalculationLine,
+	ShippingTaxCalculationLine,
+	TaxCalculationContext,
+} from '@medusajs/medusa';
+import { ProviderTaxLine } from '@medusajs/medusa/dist/types/tax-service';
+import { FulfillmentService } from 'medusa-interfaces';
 
 @Service()
 export class TestService {
 	static resolutionKey = 'testService';
+}
+
+@TaxProvider()
+export class TestTaxService extends AbstractTaxService {
+	static identifier = 'TestTax';
+	async getTaxLines(
+		itemLines: ItemTaxCalculationLine[],
+		shippingLines: ShippingTaxCalculationLine[],
+		context: TaxCalculationContext
+	): Promise<ProviderTaxLine[]> {
+		return [];
+	}
+}
+
+@FulfillmentProvider()
+export class TestFulfillmentService extends FulfillmentService {
+	static identifier = 'TestFulfillment';
 }
 
 @Service({ override: MedusaCartService })
@@ -214,6 +248,8 @@ CustomTopTestPathMiddleware.prototype.consume = jest
 		StoreTestPathMiddleware,
 		CustomTopRouter,
 		CustomTopTestPathMiddleware,
+		TestTaxService,
+		TestFulfillmentService,
 	],
 })
 export class TestModule {}

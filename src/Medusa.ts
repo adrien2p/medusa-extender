@@ -9,7 +9,7 @@ import {
 	modulesLoader,
 	overrideEntitiesLoader,
 	overrideRepositoriesLoader,
-	pluginsLoadersAndListeners,
+	pluginsLoadersProvidersAndListeners,
 	servicesLoader,
 	storeApiLoader,
 	subscribersLoader,
@@ -73,7 +73,7 @@ export class Medusa {
 			moduleComponentsOptions.get('repository') ?? [],
 			moduleComponentsOptions.get('migration') ?? []
 		);
-		await pluginsLoadersAndListeners(this.#express);
+		await pluginsLoadersProvidersAndListeners(this.#express, moduleComponentsOptions.get('provider') ?? []);
 		await servicesLoader(moduleComponentsOptions.get('service') ?? []);
 		await subscribersLoader(moduleComponentsOptions.get('subscriber') ?? []);
 

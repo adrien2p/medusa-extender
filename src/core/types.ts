@@ -13,6 +13,8 @@ export interface Type<T = unknown> extends Function {
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
+export type InjectableProviderSubTypes = 'tax' | 'fulfillment';
+
 /**
  * Components that does not required any other options that Type.
  */
@@ -24,7 +26,8 @@ export type InjectableComponentTypes =
 	| 'migration'
 	| 'router'
 	| 'middleware'
-	| 'subscriber';
+	| 'subscriber'
+	| 'provider';
 
 /**
  * Defines the injection options for entities.
@@ -36,6 +39,8 @@ export type EntityInjectableOptions<TOverride = unknown> = {
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 };
+
+export type ProviderInjectableOptions = { subtype?: InjectableProviderSubTypes };
 
 /**
  * Defines the injection options for service.
@@ -135,6 +140,8 @@ export type GetInjectableOption<TComponentType extends InjectableComponentTypes 
 		? ValidatorInjectionOptions
 		: TComponentType extends Extract<InjectableComponentTypes, 'subscriber'>
 		? SubscriberInjectionOptions
+		: TComponentType extends Extract<InjectableComponentTypes, 'provider'>
+		? ProviderInjectableOptions
 		: never) & {
 		type: InjectableComponentTypes;
 		metatype: TComponentType extends 'middleware' ? Type<MedusaMiddleware> : Type;

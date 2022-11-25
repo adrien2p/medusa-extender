@@ -8,6 +8,7 @@ import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
 import { MedusaContainer, metadataReader } from '../../core';
 import { Entity } from 'typeorm';
+import { newContainer } from './utils/new-container';
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()
@@ -26,22 +27,7 @@ class Another {}
 class AnotherModule {}
 
 describe('Entities loader', () => {
-	const container = createContainer() as MedusaContainer;
-	container.registerAdd = function (name, registration) {
-		const storeKey = name + '_STORE';
-
-		if (this.registrations[storeKey] === undefined) {
-			this.register(storeKey, asValue([]));
-		}
-		const store = this.resolve(storeKey);
-
-		if (this.registrations[name] === undefined) {
-			this.register(name, asArray(store));
-		}
-		store.unshift(registration);
-
-		return this;
-	}.bind(container);
+	const container = newContainer();
 
 	describe('overriddenEntitiesLoader', () => {
 		it(' should override MedusaUser with User', async () => {
