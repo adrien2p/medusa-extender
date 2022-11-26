@@ -1,7 +1,7 @@
 
 	async function password(){
 
-    return Promise.resolve("test");
+    return Promise.resolve("password");
   } 
 
 async function asyncConfig(){
@@ -13,8 +13,9 @@ async function asyncConfig(){
         // database_url: DATABASE_URL,
         // database_type: "postgres",
         database_type: "sqlite",
-        database_database: "dummy",
+        database_database: "./medusa-db.sql",
         admin_cors: "ADMIN_CORS",
+        store_cors: "STORE_CORS",
         database_password:password
       },
       plugins:[],

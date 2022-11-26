@@ -4,8 +4,8 @@ import { MonitoringOptions } from 'modules/monitoring';
 
 type MonitoredConfigModule = ConfigModule & { monitoring: MonitoringOptions };
 
-export async function asyncLoadConfig(): Promise<MonitoredConfigModule> {
-	const configuration = getConfigFile(process.cwd(), `medusa-config`) as {
+export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<MonitoredConfigModule> {
+	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
 		configModule: ConfigModule;
 		configFilePath: string;
 	};
