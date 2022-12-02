@@ -18,7 +18,7 @@
   },
   "peerDependencies": {
     "medusa-extender": "1.x",
-    "awilix": "^4.2.3",
+    "awilix": "^8.0.0",
     "@medusajs/medusa": "1.x",
     "medusa-core-utils": "1.x",
     "medusa-interfaces": "^1.x",
@@ -30,7 +30,7 @@
     "@medusajs/medusa": "1.x",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.12",
-    "awilix": "^4.2.3",
+    "awilix": "^8.0.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

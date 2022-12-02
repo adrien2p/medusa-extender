@@ -15,7 +15,7 @@
     "prepare:integration": "NODE_ENV=development npm i && PACKAGE_NAME=$(cat ../package.json | grep version | head -1 | awk -F: '{ print \"medusa-extender-\", $2, \".tgz\" }' | sed 's/[ \",]//g') && npm i ${PACKAGE_NAME} && rm -f ${PACKAGE_NAME}"
   },
   "dependencies": {
-    "awilix": "^4.2.3",
+    "awilix": "^8.0.0",
     "dotenv": "^12.0.4",
     "express": "^4.17.1",
     "medusa-core-utils": "1.x",
