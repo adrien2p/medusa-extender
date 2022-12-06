@@ -33,7 +33,7 @@
 
 #### Defined in
 
-[core/metadata-reader.ts:44](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/metadata-reader.ts#L44)
+[core/metadata-reader.ts:44](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/metadata-reader.ts#L44)
 
 ___
 
@@ -53,4 +53,4 @@ ___
 
 #### Defined in
 
-[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/metadata-reader.ts#L11)
+[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/metadata-reader.ts#L11)

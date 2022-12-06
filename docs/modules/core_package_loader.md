@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[core/package-loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/package-loader.ts#L52)
+[core/package-loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/package-loader.ts#L52)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[core/package-loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/package-loader.ts#L12)
+[core/package-loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/package-loader.ts#L12)

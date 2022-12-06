@@ -34,4 +34,4 @@
 
 #### Defined in
 
-[core/types.ts:188](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L188)
+[core/types.ts:188](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/types.ts#L188)

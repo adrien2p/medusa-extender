@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/init.ts#L13)
+[cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/commands/init.ts#L13)

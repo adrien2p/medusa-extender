@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[modules/multi-tenancy/tenant.service.ts:10](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/tenant.service.ts#L10)
+[modules/multi-tenancy/tenant.service.ts:10](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/modules/multi-tenancy/tenant.service.ts#L10)
 
 ## Methods
 
@@ -53,4 +53,4 @@
 
 #### Defined in
 
-[modules/multi-tenancy/tenant.service.ts:17](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/tenant.service.ts#L17)
+[modules/multi-tenancy/tenant.service.ts:17](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/modules/multi-tenancy/tenant.service.ts#L17)

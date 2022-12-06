@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/services.loader.ts#L52)
+[loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L52)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/services.loader.ts#L40)
+[loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L40)
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 #### Defined in
 
-[loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/services.loader.ts#L12)
+[loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L12)

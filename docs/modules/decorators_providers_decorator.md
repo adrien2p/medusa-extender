@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/providers.decorator.ts#L4)
+[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L4)
 
 ## Functions
 
@@ -41,7 +41,7 @@
 
 #### Defined in
 
-[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/providers.decorator.ts#L20)
+[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L20)
 
 ___
 
@@ -61,4 +61,4 @@ ___
 
 #### Defined in
 
-[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/providers.decorator.ts#L11)
+[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L11)

@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/constants.ts#L9)
+[core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/constants.ts#L9)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/constants.ts#L14)
+[core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/constants.ts#L14)
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 #### Defined in
 
-[core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/constants.ts#L4)
+[core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/constants.ts#L4)

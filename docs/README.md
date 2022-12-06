@@ -122,7 +122,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.7)
+Run the following command in your terminal (The last version is 1.7.8)
 
 ```bash
 npm install medusa-extender
@@ -1133,7 +1133,7 @@ so your `medusa-config.js` will looks like
 ```typescript
 const config = {
     /* ... */
-    multiTenancy: {
+    multi_tenancy: {
         enable: true,
         tenant_code_resolver: (req: MedusaRequest) => "" /* Here you can grab the property on which the tenant code is stored */,
         tenants: [{

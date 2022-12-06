@@ -36,4 +36,4 @@
 
 #### Defined in
 
-[core/event-emmiter.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L12)
+[core/event-emmiter.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/event-emmiter.ts#L12)

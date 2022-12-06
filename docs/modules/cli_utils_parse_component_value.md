@@ -36,4 +36,4 @@
 
 #### Defined in
 
-[cli/utils/parse-component-value.ts:11](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/utils/parse-component-value.ts#L11)
+[cli/utils/parse-component-value.ts:11](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/utils/parse-component-value.ts#L11)

@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/helpers/apply-middlewares.ts#L34)
+[loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-middlewares.ts#L34)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/helpers/apply-middlewares.ts#L12)
+[loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-middlewares.ts#L12)

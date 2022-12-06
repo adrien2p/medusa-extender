@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[cli/utils/create-directory.ts:10](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/utils/create-directory.ts#L10)
+[cli/utils/create-directory.ts:10](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/utils/create-directory.ts#L10)

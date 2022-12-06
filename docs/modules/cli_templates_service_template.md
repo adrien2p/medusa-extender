@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[cli/templates/service-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/templates/service-template.ts#L8)
+[cli/templates/service-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/templates/service-template.ts#L8)

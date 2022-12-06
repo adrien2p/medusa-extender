@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[cli/utils/lookup-closest-module.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/utils/lookup-closest-module.ts#L12)
+[cli/utils/lookup-closest-module.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/utils/lookup-closest-module.ts#L12)

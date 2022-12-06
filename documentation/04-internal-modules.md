@@ -60,7 +60,7 @@ so your `medusa-config.js` will looks like
 ```typescript
 const config = {
     /* ... */
-    multiTenancy: {
+    multi_tenancy: {
         enable: true,
         tenant_code_resolver: (req: MedusaRequest) => "" /* Here you can grab the property on which the tenant code is stored */,
         tenants: [{
