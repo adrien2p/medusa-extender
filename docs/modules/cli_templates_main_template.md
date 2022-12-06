@@ -14,12 +14,10 @@
 
 ▸ **getMainEntryPointTemplate**(): `string`
 
-Provide a basic template for the main entry point file generation.
-
 #### Returns
 
 `string`
 
 #### Defined in
 
-[src/cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/main-template.ts#L6)
+[cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/main-template.ts#L6)

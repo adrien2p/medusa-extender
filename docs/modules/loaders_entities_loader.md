@@ -17,15 +17,12 @@
 
 ▸ **entitiesLoader**(`entities`, `container`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom entities into the underlying @medusajs instance.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |  |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |  |
 
 #### Returns
 
@@ -33,7 +30,7 @@ Load all custom entities into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/entities.loader.ts#L13)
+[loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L13)
 
 ___
 
@@ -41,14 +38,11 @@ ___
 
 ▸ **overrideEntitiesLoader**(`entities`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom entities that override @medusajs instance entities.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entities` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"entity"``\> |  |
 
 #### Returns
 
@@ -56,7 +50,7 @@ Load all custom entities that override @medusajs instance entities.
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/entities.loader.ts#L36)
+[loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L36)
 
 ___
 
@@ -76,7 +70,7 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/entities.loader.ts#L63)
+[loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L63)
 
 ___
 
@@ -97,4 +91,4 @@ ___
 
 #### Defined in
 
-[src/loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/entities.loader.ts#L51)
+[loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L51)

@@ -14,13 +14,11 @@
 
 ▸ **getMiddlewareTemplate**(`middlewareName`): `string`
 
-Provide a basic template for the middleware component generation.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `middlewareName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `middlewareName` | `string` |  |
 
 #### Returns
 
@@ -28,4 +26,4 @@ Provide a basic template for the middleware component generation.
 
 #### Defined in
 
-[src/cli/templates/middleware-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/middleware-template.ts#L7)
+[cli/templates/middleware-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/middleware-template.ts#L7)

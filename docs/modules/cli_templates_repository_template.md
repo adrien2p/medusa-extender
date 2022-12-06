@@ -14,13 +14,11 @@
 
 ▸ **getRepositoryTemplate**(`repositoryName`): `string`
 
-Provide a basic template for the repository component generation.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `repositoryName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `repositoryName` | `string` |  |
 
 #### Returns
 
@@ -28,4 +26,4 @@ Provide a basic template for the repository component generation.
 
 #### Defined in
 
-[src/cli/templates/repository-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/repository-template.ts#L7)
+[cli/templates/repository-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/repository-template.ts#L7)

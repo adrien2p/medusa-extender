@@ -14,12 +14,10 @@
 
 ▸ **init**(): `Promise`<`void`\>
 
-Update or create everything related to medusa-extender in an existing medusa project.
-
 #### Returns
 
 `Promise`<`void`\>
 
 #### Defined in
 
-[src/cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/init.ts#L13)
+[cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/init.ts#L13)

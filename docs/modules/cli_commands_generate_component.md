@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [GenerateCommandOptions](cli_commands_generate_component.md#generatecommandoptions)
 
@@ -14,7 +14,7 @@
 - [generateComponent](cli_commands_generate_component.md#generatecomponent)
 - [updateModuleImports](cli_commands_generate_component.md#updatemoduleimports)
 
-## Type aliases
+## Type Aliases
 
 ### GenerateCommandOptions
 
@@ -36,25 +36,23 @@
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/generate-component.ts#L21)
+[cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L21)
 
 ## Functions
 
 ### createComponentIfNecessary
 
-▸ **createComponentIfNecessary**(`__namedParameters`, `content`): `void`
-
-Create the component file and fill it with the template content.
+▸ **createComponentIfNecessary**(`«destructured»`, `content`): `void`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.componentFileName` | `string` |
-| `__namedParameters.componentName` | `string` |
-| `__namedParameters.fullDestinationPath` | `string` |
-| `content` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `«destructured»` | `Object` | - |
+| › `componentFileName` | `string` | - |
+| › `componentName` | `string` | - |
+| › `fullDestinationPath` | `string` | - |
+| `content` | `string` |  |
 
 #### Returns
 
@@ -62,22 +60,20 @@ Create the component file and fill it with the template content.
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/generate-component.ts#L113)
+[cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L113)
 
 ___
 
 ### generateComponent
 
-▸ **generateComponent**(`name`, `__namedParameters`): `void`
-
-Generate the required components from the user command.
+▸ **generateComponent**(`name`, `«destructured»`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `name` | `string` |
-| `__namedParameters` | [`GenerateCommandOptions`](cli_commands_generate_component.md#generatecommandoptions) |
+| `«destructured»` | [`GenerateCommandOptions`](cli_commands_generate_component.md#generatecommandoptions) |
 
 #### Returns
 
@@ -85,7 +81,7 @@ Generate the required components from the user command.
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/generate-component.ts#L48)
+[cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L48)
 
 ___
 
@@ -93,13 +89,11 @@ ___
 
 ▸ **updateModuleImports**(`fullDestinationPath`): `void`
 
-Lookup for the closest module from the component and update its imports.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fullDestinationPath` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fullDestinationPath` | `string` |  |
 
 #### Returns
 
@@ -107,4 +101,4 @@ Lookup for the closest module from the component and update its imports.
 
 #### Defined in
 
-[src/cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/generate-component.ts#L140)
+[cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L140)

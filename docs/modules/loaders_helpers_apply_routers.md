@@ -15,15 +15,12 @@
 
 ▸ **applyAfterAuthRouters**(`app`, `routesOptions`): `void`
 
-**`internal`**
-Apply all routes on the app that must be applied after the @medusajs authentication
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | `Router` |
-| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `app` | `Router` |  |
+| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
 
 #### Returns
 
@@ -31,7 +28,7 @@ Apply all routes on the app that must be applied after the @medusajs authenticat
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/helpers/apply-routers.ts#L26)
+[loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/helpers/apply-routers.ts#L26)
 
 ___
 
@@ -39,15 +36,12 @@ ___
 
 ▸ **applyBeforeAuthRouters**(`app`, `routesOptions`): `void`
 
-**`internal`**
-Apply all routes on the app that must be applied before the @medusajs authentication
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | `Router` |
-| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `app` | `Router` |  |
+| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
 
 #### Returns
 
@@ -55,4 +49,4 @@ Apply all routes on the app that must be applied before the @medusajs authentica
 
 #### Defined in
 
-[src/loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/helpers/apply-routers.ts#L10)
+[loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/helpers/apply-routers.ts#L10)

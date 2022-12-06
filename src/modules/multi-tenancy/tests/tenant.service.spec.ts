@@ -2,8 +2,7 @@ import { asFunction, asValue, createContainer } from 'awilix';
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { Connection, ConnectionManager } from 'typeorm';
-import { MedusaRequest } from '../../../core';
-import { ConfigModule } from '../types';
+import { resolve } from "path";
 
 class FakeService {
 	manager: any;
@@ -55,42 +54,27 @@ jest.spyOn(typeormFunctions, 'createConnection').mockImplementation((options: an
 		connect: () => Promise.resolve(connectRes),
 	});
 });
+
 const container = createContainer();
-const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
 const defaultManagerMock = {
 	connection: { name: 'default', createQueryRunner: Connection.prototype.createQueryRunner },
 };
-const configMock: ConfigModule = {
-	projectConfig: {
-		database_logging: 'all',
-	},
-	multi_tenancy: {
-		enable: true,
-		tenant_code_resolver: (req: MedusaRequest) => req.headers['x-tenant'] as string,
-		tenants: tenantCodes.map((tenantCode) => ({
-			code: tenantCode,
-			database_config: {
-				database_type: 'postgres',
-				database_url: 'url:' + tenantCode,
-				database_database: null,
-				database_extra: {},
-			},
-		})),
-	},
-};
+
+const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
 
 describe('Tenant service', () => {
 	let reqMock;
 
 	beforeAll(() => {
+		process.cwd = () => resolve(__dirname, "fixtures")
 		container.register({
 			request: asFunction(() => 'test', { lifetime: 'SCOPED' }),
 			fakeService: asFunction((cradle) => new FakeService(cradle), { lifetime: 'SINGLETON' }),
 			manager: asValue(defaultManagerMock),
 			db_entities: asValue([]),
 			[TenantService.resolutionKey]: asFunction(
-				(cradle) => {
-					return new TenantService(cradle, configMock);
+				() => {
+					return new TenantService();
 				},
 				{ lifetime: 'SINGLETON' }
 			),

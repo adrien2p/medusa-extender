@@ -14,15 +14,12 @@
 
 ▸ **migrationsLoader**(`migrationsOptions`, `dbConnection`): `Promise`<`void`\>
 
-**`internal`**
-Run custom migrations that are find from the provided directory and stored in a `migrations` subdirectory.
-
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `migrationsOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"migration"``\> | Any custom migration that implements MigrationInterface |
-| `dbConnection` | `Connection` | Database connection from medusa internal |
+| `migrationsOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"migration"``\> |  |
+| `dbConnection` | `Connection` |  |
 
 #### Returns
 
@@ -30,4 +27,4 @@ Run custom migrations that are find from the provided directory and stored in a 
 
 #### Defined in
 
-[src/loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/migrations.loader.ts#L13)
+[loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/migrations.loader.ts#L13)

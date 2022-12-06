@@ -12,6 +12,7 @@
 - [GetInjectableOptions](loaders.md#getinjectableoptions)
 - [InjectableComponentTypes](loaders.md#injectablecomponenttypes)
 - [InjectableOptions](loaders.md#injectableoptions)
+- [InjectableProviderSubTypes](loaders.md#injectableprovidersubtypes)
 - [MedusaAuthenticatedRequest](loaders.md#medusaauthenticatedrequest)
 - [MedusaContainer](loaders.md#medusacontainer)
 - [MedusaDynamicModule](loaders.md#medusadynamicmodule)
@@ -23,6 +24,7 @@
 - [MixinReturnType](loaders.md#mixinreturntype)
 - [ModuleInjectionOptions](loaders.md#moduleinjectionoptions)
 - [Omit](loaders.md#omit)
+- [ProviderInjectableOptions](loaders.md#providerinjectableoptions)
 - [RepositoryInjectableOptions](loaders.md#repositoryinjectableoptions)
 - [RouterInjectionOptions](loaders.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](loaders.md#routesinjectionrouterconfiguration)
@@ -43,7 +45,7 @@
 - [overrideEntity](loaders.md#overrideentity)
 - [overrideRepositoriesLoader](loaders.md#overriderepositoriesloader)
 - [overrideService](loaders.md#overrideservice)
-- [pluginsLoadersAndListeners](loaders.md#pluginsloadersandlisteners)
+- [pluginsLoadersProvidersAndListeners](loaders.md#pluginsloadersprovidersandlisteners)
 - [registerEntity](loaders.md#registerentity)
 - [registerService](loaders.md#registerservice)
 - [repositoriesLoader](loaders.md#repositoriesloader)
@@ -89,6 +91,12 @@ ___
 ### InjectableOptions
 
 Re-exports [InjectableOptions](core_types.md#injectableoptions)
+
+___
+
+### InjectableProviderSubTypes
+
+Re-exports [InjectableProviderSubTypes](core_types.md#injectableprovidersubtypes)
 
 ___
 
@@ -155,6 +163,12 @@ ___
 ### Omit
 
 Re-exports [Omit](core_utils.md#omit)
+
+___
+
+### ProviderInjectableOptions
+
+Re-exports [ProviderInjectableOptions](core_types.md#providerinjectableoptions)
 
 ___
 
@@ -278,9 +292,9 @@ Re-exports [overrideService](loaders_services_loader.md#overrideservice)
 
 ___
 
-### pluginsLoadersAndListeners
+### pluginsLoadersProvidersAndListeners
 
-Re-exports [pluginsLoadersAndListeners](loaders_plugins_loader.md#pluginsloadersandlisteners)
+Re-exports [pluginsLoadersProvidersAndListeners](loaders_plugins_loader.md#pluginsloadersprovidersandlisteners)
 
 ___
 

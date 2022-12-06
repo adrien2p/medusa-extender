@@ -16,19 +16,15 @@
 
 • `Const` **INJECTABLE\_OPTIONS\_KEY**: ``"__INJECTABLE_OPTIONS_KEY__"``
 
-Metadata key to store config from decorated injectables.
-
 #### Defined in
 
-[src/core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/constants.ts#L9)
+[core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/constants.ts#L9)
 
 ___
 
 ### MEDUSA\_RESOLVER\_KEYS
 
 • `Const` **MEDUSA\_RESOLVER\_KEYS**: `Object`
-
-Hold the name of the medusa services registered into the container for later on resolve.
 
 #### Type declaration
 
@@ -66,7 +62,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-[src/core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/constants.ts#L14)
+[core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/constants.ts#L14)
 
 ___
 
@@ -74,8 +70,6 @@ ___
 
 • `Const` **MODULE\_KEY**: ``"__MODULE_KEY__"``
 
-Metadata key to store config from decorated injectables.
-
 #### Defined in
 
-[src/core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/constants.ts#L4)
+[core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/constants.ts#L4)

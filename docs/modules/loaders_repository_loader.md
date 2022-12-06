@@ -15,14 +15,11 @@
 
 ▸ **overrideRepositoriesLoader**(`repositories`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom repositories that override @medusajs instance entities.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |  |
 
 #### Returns
 
@@ -30,7 +27,7 @@ Load all custom repositories that override @medusajs instance entities.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/repository.loader.ts#L37)
+[loaders/repository.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/repository.loader.ts#L37)
 
 ___
 
@@ -38,15 +35,12 @@ ___
 
 ▸ **repositoriesLoader**(`repositories`, `container`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom repositories into the underlying @medusajs instance.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `repositories` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"repository"``\> |  |
+| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |  |
 
 #### Returns
 
@@ -54,4 +48,4 @@ Load all custom repositories into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/repository.loader.ts#L14)
+[loaders/repository.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/repository.loader.ts#L14)

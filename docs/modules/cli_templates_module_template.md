@@ -14,13 +14,11 @@
 
 ▸ **getModuleTemplate**(`moduleName`): `string`
 
-Provide a basic template for the module component generation.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `moduleName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `moduleName` | `string` |  |
 
 #### Returns
 
@@ -28,4 +26,4 @@ Provide a basic template for the module component generation.
 
 #### Defined in
 
-[src/cli/templates/module-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/module-template.ts#L7)
+[cli/templates/module-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/module-template.ts#L7)

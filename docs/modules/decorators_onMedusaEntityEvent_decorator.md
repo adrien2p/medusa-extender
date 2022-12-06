@@ -8,7 +8,7 @@
 
 - [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
 
-### Type aliases
+### Type Aliases
 
 - [EntityActions](decorators_onMedusaEntityEvent_decorator.md#entityactions)
 - [EntityEventActionOptions](decorators_onMedusaEntityEvent_decorator.md#entityeventactionoptions)
@@ -16,7 +16,7 @@
 - [MedusaEventEmittedParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](decorators_onMedusaEntityEvent_decorator.md#medusaeventhandlerparams)
 
-## Type aliases
+## Type Aliases
 
 ### EntityActions
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/decorators/onMedusaEntityEvent.decorator.ts#L9)
+[decorators/onMedusaEntityEvent.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/onMedusaEntityEvent.decorator.ts#L9)
 
 ___
 
@@ -40,15 +40,13 @@ ___
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
+[decorators/onMedusaEntityEvent.decorator.ts:5](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/onMedusaEntityEvent.decorator.ts#L5)
 
 ___
 
 ### EntityEventType
 
 Ƭ **EntityEventType**<`Entity`, `TEntityActions`\>: `TEntityActions` extends ``"Insert"`` ? `InsertEvent`<`Entity`\> : `TEntityActions` extends ``"Update"`` ? `UpdateEvent`<`Entity`\> : `RemoveEvent`<`Entity`\>
-
-Event types that can be emitted.
 
 #### Type parameters
 
@@ -59,15 +57,13 @@ Event types that can be emitted.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:14](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/decorators/onMedusaEntityEvent.decorator.ts#L14)
+[decorators/onMedusaEntityEvent.decorator.ts:14](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/onMedusaEntityEvent.decorator.ts#L14)
 
 ___
 
 ### MedusaEventEmittedParams
 
 Ƭ **MedusaEventEmittedParams**<`Entity`, `TEntityActions`\>: `Object`
-
-The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md) decorator.
 
 #### Type parameters
 
@@ -85,15 +81,13 @@ The arguments expected by the [OnMedusaEntityEvent](../classes/decorators_onMedu
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:23](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/decorators/onMedusaEntityEvent.decorator.ts#L23)
+[decorators/onMedusaEntityEvent.decorator.ts:23](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/onMedusaEntityEvent.decorator.ts#L23)
 
 ___
 
 ### MedusaEventHandlerParams
 
 Ƭ **MedusaEventHandlerParams**<`Entity`, `TEntityActions`\>: `Object`
-
-The arguments expected by the event handler.
 
 #### Type parameters
 
@@ -111,4 +105,4 @@ The arguments expected by the event handler.
 
 #### Defined in
 
-[src/decorators/onMedusaEntityEvent.decorator.ts:31](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/decorators/onMedusaEntityEvent.decorator.ts#L31)
+[decorators/onMedusaEntityEvent.decorator.ts:31](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/onMedusaEntityEvent.decorator.ts#L31)

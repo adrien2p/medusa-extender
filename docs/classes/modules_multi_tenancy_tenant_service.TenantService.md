@@ -22,18 +22,7 @@
 
 ### constructor
 
-• **new TenantService**(`_`, `config`)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `_` | [`MedusaContainer`](../modules/core_types.md#medusacontainer) |
-| `config` | [`ConfigModule`](../modules/modules_multi_tenancy_types.md#configmodule) |
-
-#### Defined in
-
-[src/modules/multi-tenancy/tenant.service.ts:11](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/modules/multi-tenancy/tenant.service.ts#L11)
+• **new TenantService**()
 
 ## Properties
 
@@ -43,7 +32,7 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:9](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/modules/multi-tenancy/tenant.service.ts#L9)
+[modules/multi-tenancy/tenant.service.ts:10](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/tenant.service.ts#L10)
 
 ## Methods
 
@@ -51,14 +40,12 @@
 
 ▸ **getOrCreateConnection**(`defaultManager`, `req`): `Promise`<`EntityManager`\>
 
-Provide a way to switch between database connections depending on the request property holding the tenant code.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `defaultManager` | `EntityManager` |
-| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `defaultManager` | `EntityManager` |  |
+| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |  |
 
 #### Returns
 
@@ -66,4 +53,4 @@ Provide a way to switch between database connections depending on the request pr
 
 #### Defined in
 
-[src/modules/multi-tenancy/tenant.service.ts:18](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/modules/multi-tenancy/tenant.service.ts#L18)
+[modules/multi-tenancy/tenant.service.ts:17](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/tenant.service.ts#L17)

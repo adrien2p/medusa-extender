@@ -4,8 +4,6 @@
 
 [Medusa](../modules/Medusa.md).Medusa
 
-Load medusa and apply all components
-
 ## Table of contents
 
 ### Constructors
@@ -31,12 +29,12 @@ Load medusa and apply all components
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `rootDir` | `string` | Directory where the `medusa-config` is located |
-| `express` | `Express` | Express instance |
+| `rootDir` | `string` |  |
+| `express` | `Express` |  |
 
 #### Defined in
 
-[src/Medusa.ts:39](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/Medusa.ts#L39)
+[Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -46,7 +44,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[src/Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/Medusa.ts#L32)
+[Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/Medusa.ts#L31)
 
 ___
 
@@ -56,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:33](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/Medusa.ts#L33)
+[Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/Medusa.ts#L32)
 
 ## Methods
 
@@ -68,7 +66,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] | The modules to load into medusa |
+| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] |  |
 
 #### Returns
 
@@ -76,4 +74,4 @@ ___
 
 #### Defined in
 
-[src/Medusa.ts:47](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/Medusa.ts#L47)
+[Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/Medusa.ts#L46)

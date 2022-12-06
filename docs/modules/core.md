@@ -13,6 +13,7 @@
 - [INJECTABLE\_OPTIONS\_KEY](core.md#injectable_options_key)
 - [InjectableComponentTypes](core.md#injectablecomponenttypes)
 - [InjectableOptions](core.md#injectableoptions)
+- [InjectableProviderSubTypes](core.md#injectableprovidersubtypes)
 - [Logger](core.md#logger)
 - [MEDUSA\_RESOLVER\_KEYS](core.md#medusa_resolver_keys)
 - [MODULE\_KEY](core.md#module_key)
@@ -27,6 +28,7 @@
 - [MixinReturnType](core.md#mixinreturntype)
 - [ModuleInjectionOptions](core.md#moduleinjectionoptions)
 - [Omit](core.md#omit)
+- [ProviderInjectableOptions](core.md#providerinjectableoptions)
 - [RepositoryInjectableOptions](core.md#repositoryinjectableoptions)
 - [RouterInjectionOptions](core.md#routerinjectionoptions)
 - [RoutesInjectionRouterConfiguration](core.md#routesinjectionrouterconfiguration)
@@ -86,6 +88,12 @@ ___
 ### InjectableOptions
 
 Re-exports [InjectableOptions](core_types.md#injectableoptions)
+
+___
+
+### InjectableProviderSubTypes
+
+Re-exports [InjectableProviderSubTypes](core_types.md#injectableprovidersubtypes)
 
 ___
 
@@ -170,6 +178,12 @@ ___
 ### Omit
 
 Re-exports [Omit](core_utils.md#omit)
+
+___
+
+### ProviderInjectableOptions
+
+Re-exports [ProviderInjectableOptions](core_types.md#providerinjectableoptions)
 
 ___
 

@@ -19,8 +19,6 @@
 
 ▸ **Omit**<`T`, `K`\>(`Class`, `keys`): () => `Omit`<`T`, `K`\>
 
-Allow to omit some property from a class.
-
 #### Type parameters
 
 | Name | Type |
@@ -43,15 +41,13 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[src/core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L52)
+[core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L52)
 
 ___
 
 ### attachOrReplaceEntitySubscriber
 
 ▸ **attachOrReplaceEntitySubscriber**<`T`\>(`connection`, `Subscriber`, `transactionalEntityManager?`): `void`
-
-Attach a new subscriber to a specific entities.
 
 #### Type parameters
 
@@ -63,9 +59,9 @@ Attach a new subscriber to a specific entities.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `connection` | `Connection` | The database connection |
-| `Subscriber` | `T` | The subscriber to attach |
-| `transactionalEntityManager?` | `EntityManager` | The transactional entity manager to pass the transaction through |
+| `connection` | `Connection` |  |
+| `Subscriber` | `T` |  |
+| `transactionalEntityManager?` | `EntityManager` |  |
 
 #### Returns
 
@@ -73,7 +69,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[src/core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L29)
+[core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L29)
 
 ___
 
@@ -93,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/core/utils.ts:71](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L71)
+[core/utils.ts:71](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L71)
 
 ___
 
@@ -101,13 +97,11 @@ ___
 
 ▸ **lowerCaseFirst**(`str`): `string`
 
-Lower case the first character of the input string.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `str` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` |  |
 
 #### Returns
 
@@ -115,16 +109,13 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L59)
+[core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L59)
 
 ___
 
 ### repositoryMixin
 
 ▸ **repositoryMixin**<`TEntity`, `TSource`\>(`source`): [`MixinReturnType`](core_types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
-
-For repository context, you should extends repository and the medusa target repository.
-Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 
 #### Type parameters
 
@@ -135,9 +126,9 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `source` | [`Constructor`](core_types.md#constructor)<`TSource`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | [`Constructor`](core_types.md#constructor)<`TSource`\> |  |
 
 #### Returns
 
@@ -145,7 +136,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[src/core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L9)
+[core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L9)
 
 ___
 
@@ -153,13 +144,11 @@ ___
 
 ▸ **upperCaseFirst**(`str`): `string`
 
-Upper case the first character of the input string.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `str` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` |  |
 
 #### Returns
 
@@ -167,4 +156,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[src/core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/utils.ts#L67)
+[core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/utils.ts#L67)

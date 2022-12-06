@@ -6,10 +6,12 @@
 
 ### References
 
+- [AllowedProviderInjectableOptions](decorators.md#allowedproviderinjectableoptions)
 - [Entity](decorators.md#entity)
 - [EntityActions](decorators.md#entityactions)
 - [EntityEventActionOptions](decorators.md#entityeventactionoptions)
 - [EntityEventType](decorators.md#entityeventtype)
+- [FulfillmentProvider](decorators.md#fulfillmentprovider)
 - [MedusaEventEmittedParams](decorators.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](decorators.md#medusaeventhandlerparams)
 - [Middleware](decorators.md#middleware)
@@ -20,9 +22,16 @@
 - [Router](decorators.md#router)
 - [Service](decorators.md#service)
 - [Subscriber](decorators.md#subscriber)
+- [TaxProvider](decorators.md#taxprovider)
 - [Validator](decorators.md#validator)
 
 ## References
+
+### AllowedProviderInjectableOptions
+
+Re-exports [AllowedProviderInjectableOptions](decorators_providers_decorator.md#allowedproviderinjectableoptions)
+
+___
 
 ### Entity
 
@@ -45,6 +54,12 @@ ___
 ### EntityEventType
 
 Re-exports [EntityEventType](decorators_onMedusaEntityEvent_decorator.md#entityeventtype)
+
+___
+
+### FulfillmentProvider
+
+Re-exports [FulfillmentProvider](decorators_providers_decorator.md#fulfillmentprovider)
 
 ___
 
@@ -105,6 +120,12 @@ ___
 ### Subscriber
 
 Re-exports [Subscriber](decorators_components_decorator.md#subscriber)
+
+___
+
+### TaxProvider
+
+Re-exports [TaxProvider](decorators_providers_decorator.md#taxprovider)
 
 ___
 

@@ -12,11 +12,13 @@
 - [EntityEventActionOptions](index.md#entityeventactionoptions)
 - [EntityEventType](index.md#entityeventtype)
 - [EntityInjectableOptions](index.md#entityinjectableoptions)
+- [FulfillmentProvider](index.md#fulfillmentprovider)
 - [GetInjectableOption](index.md#getinjectableoption)
 - [GetInjectableOptions](index.md#getinjectableoptions)
 - [INJECTABLE\_OPTIONS\_KEY](index.md#injectable_options_key)
 - [InjectableComponentTypes](index.md#injectablecomponenttypes)
 - [InjectableOptions](index.md#injectableoptions)
+- [InjectableProviderSubTypes](index.md#injectableprovidersubtypes)
 - [MEDUSA\_RESOLVER\_KEYS](index.md#medusa_resolver_keys)
 - [MODULE\_KEY](index.md#module_key)
 - [Medusa](index.md#medusa)
@@ -35,8 +37,8 @@
 - [MixinReturnType](index.md#mixinreturntype)
 - [Module](index.md#module)
 - [ModuleInjectionOptions](index.md#moduleinjectionoptions)
-- [MonitoringOptions](index.md#monitoringoptions)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
+- [ProviderInjectableOptions](index.md#providerinjectableoptions)
 - [Repository](index.md#repository)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
 - [Router](index.md#router)
@@ -46,6 +48,7 @@
 - [ServiceInjectableOptions](index.md#serviceinjectableoptions)
 - [Subscriber](index.md#subscriber)
 - [SubscriberInjectionOptions](index.md#subscriberinjectionoptions)
+- [TaxProvider](index.md#taxprovider)
 - [TenantMiddleware](index.md#tenantmiddleware)
 - [TenantModule](index.md#tenantmodule)
 - [Type](index.md#type)
@@ -92,6 +95,12 @@ Re-exports [EntityInjectableOptions](core_types.md#entityinjectableoptions)
 
 ___
 
+### FulfillmentProvider
+
+Re-exports [FulfillmentProvider](decorators_providers_decorator.md#fulfillmentprovider)
+
+___
+
 ### GetInjectableOption
 
 Re-exports [GetInjectableOption](core_types.md#getinjectableoption)
@@ -119,6 +128,12 @@ ___
 ### InjectableOptions
 
 Re-exports [InjectableOptions](core_types.md#injectableoptions)
+
+___
+
+### InjectableProviderSubTypes
+
+Re-exports [InjectableProviderSubTypes](core_types.md#injectableprovidersubtypes)
 
 ___
 
@@ -230,15 +245,15 @@ Re-exports [ModuleInjectionOptions](core_types.md#moduleinjectionoptions)
 
 ___
 
-### MonitoringOptions
-
-Re-exports [MonitoringOptions](../interfaces/modules_monitoring.MonitoringOptions.md)
-
-___
-
 ### OnMedusaEntityEvent
 
 Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
+
+___
+
+### ProviderInjectableOptions
+
+Re-exports [ProviderInjectableOptions](core_types.md#providerinjectableoptions)
 
 ___
 
@@ -293,6 +308,12 @@ ___
 ### SubscriberInjectionOptions
 
 Re-exports [SubscriberInjectionOptions](core_types.md#subscriberinjectionoptions)
+
+___
+
+### TaxProvider
+
+Re-exports [TaxProvider](decorators_providers_decorator.md#taxprovider)
 
 ___
 

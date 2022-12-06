@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[src/loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/services.loader.ts#L52)
+[loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/services.loader.ts#L52)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/services.loader.ts#L40)
+[loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/services.loader.ts#L40)
 
 ___
 
@@ -60,14 +60,11 @@ ___
 
 ▸ **servicesLoader**(`services`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom services and overridden services into the underlying @medusajs instance.
-
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `services` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
+| `services` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"service"``\> |  |
 
 #### Returns
 
@@ -75,4 +72,4 @@ Load all custom services and overridden services into the underlying @medusajs i
 
 #### Defined in
 
-[src/loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/services.loader.ts#L12)
+[loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/services.loader.ts#L12)

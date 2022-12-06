@@ -4,8 +4,6 @@
 
 [core/event-emmiter](../modules/core_event_emmiter.md).[Internals](../modules/core_event_emmiter.Internals.md).CustomEventEmitter
 
-Extended event emitter to register methods that must be call when certain events are triggered and relay the handling to the API package
-
 ## Hierarchy
 
 - `EventEmitter`
@@ -40,7 +38,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L24)
+[core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L24)
 
 ## Properties
 
@@ -50,7 +48,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[src/core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L22)
+[core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L22)
 
 ## Methods
 
@@ -58,8 +56,6 @@ EventEmitter.constructor
 
 ▸ **emitAsync**<`T`\>(`eventName`, `values`): `Promise`<`T`\>
 
-Emit an asynchrone event entity based and wait for the result.
-
 #### Type parameters
 
 | Name |
@@ -70,8 +66,8 @@ Emit an asynchrone event entity based and wait for the result.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The event that must be triggered |
-| `values` | `Record`<`string`, `unknown`\> | The data that are passed to the event handler |
+| `eventName` | `string` \| `symbol` |  |
+| `values` | `Record`<`string`, `unknown`\> |  |
 
 #### Returns
 
@@ -79,15 +75,13 @@ Emit an asynchrone event entity based and wait for the result.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L94)
+[core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L94)
 
 ___
 
 ### register
 
 ▸ **register**<`T`\>(`eventName`, `propertyName`, `metatype`): `void`
-
-Register a new event handler.
 
 #### Type parameters
 
@@ -99,9 +93,9 @@ Register a new event handler.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `eventName` | `string` \| `symbol` | The name of the event that has to be triggered |
-| `propertyName` | `string` | The name of the class property that will handle the event |
-| `metatype` | [`Type`](../interfaces/core_types.Type.md)<`T`\> | The object that contains the property above |
+| `eventName` | `string` \| `symbol` |  |
+| `propertyName` | `string` |  |
+| `metatype` | [`Type`](../interfaces/core_types.Type.md)<`T`\> |  |
 
 #### Returns
 
@@ -109,7 +103,7 @@ Register a new event handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L34)
+[core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L34)
 
 ___
 
@@ -117,15 +111,11 @@ ___
 
 ▸ **registerListeners**(`container`): `void`
 
-Apply all event handlers hold by the `listenerDescriptors`.
-Only unregister and register again non singleton based event listeners.
-No duplicate listener can exist on one handler.
-
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `container` | `AwilixContainer` | The IoC container that allow to resolve instance |
+| `container` | `AwilixContainer`<`any`\> |  |
 
 #### Returns
 
@@ -133,4 +123,4 @@ No duplicate listener can exist on one handler.
 
 #### Defined in
 
-[src/core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L47)
+[core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L47)

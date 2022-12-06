@@ -14,16 +14,14 @@
 
 ▸ **parseComponentValue**(`name`, `componentType`, `path?`, `filePrefix?`): `Object`
 
-Parse the component information to create a kind of descriptor.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `componentType` | `string` |
-| `path` | `string` |
-| `filePrefix?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` |  |
+| `componentType` | `string` |  |
+| `path` | `string` |  |
+| `filePrefix?` | `string` |  |
 
 #### Returns
 
@@ -38,4 +36,4 @@ Parse the component information to create a kind of descriptor.
 
 #### Defined in
 
-[src/cli/utils/parse-component-value.ts:11](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/utils/parse-component-value.ts#L11)
+[cli/utils/parse-component-value.ts:11](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/utils/parse-component-value.ts#L11)

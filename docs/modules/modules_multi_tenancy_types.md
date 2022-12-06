@@ -8,11 +8,11 @@
 
 - [MultiTenancyOptions](../interfaces/modules_multi_tenancy_types.MultiTenancyOptions.md)
 
-### Type aliases
+### Type Aliases
 
 - [ConfigModule](modules_multi_tenancy_types.md#configmodule)
 
-## Type aliases
+## Type Aliases
 
 ### ConfigModule
 
@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/modules/multi-tenancy/types.ts:4](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/modules/multi-tenancy/types.ts#L4)
+[modules/multi-tenancy/types.ts:4](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/types.ts#L4)

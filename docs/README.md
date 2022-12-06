@@ -82,7 +82,7 @@ decorators approach to increase the DX and full typings support for easier devel
 		* [Omit](#omit)
 * [Starters](#starters)
 * [Internal modules (Optional)](#internal-modules-optional)
-	* [Monitoring](#monitoring)
+	* [Monitoring ](#monitoring-)
 	* [Multi-tenancy (one app multiple DB - Experimental)](#multi-tenancy-one-app-multiple-db---experimental)
 		* [Cli migrate command](#cli-migrate-command)
 * [Resources](#resources)
@@ -122,7 +122,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.6)
+Run the following command in your terminal (The last version is 1.7.7)
 
 ```bash
 npm install medusa-extender
@@ -1076,50 +1076,11 @@ will be provided.
 > internal module.
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#monitoring)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#monitoring-)
 
-## Monitoring
+## Monitoring 
 
-If you want to monitor whats going on on your app, you must specify the config
-in your `medusa-config` file.
-
-Here are the expected config
-
-```typescript
-interface MonitoringOptions {
-    version?: string;
-    hostname?: string;
-    ip?: string;
-    timelineBucketDuration?: number;
-    swaggerSpec?: string | OpenAPI.Document;
-    uriPath: string;
-    durationBuckets?: number[];
-    requestSizeBuckets?: number[];
-    responseSizeBuckets?: number[];
-    apdexThreshold?: number;
-    onResponseFinish?: (req: Request, res: Response, next: NextFunction) => void | Promise<void>;
-    authentication?: boolean;
-    sessionMaxAge?: number;
-    elasticsearch?: string;
-    onAuthenticate?: (req: Request, username: string, password: string) => boolean | Promise<boolean>;
-}
-```
-
-so your `medusa-config.js` will looks like
-
-```typescript
-const config = {
-    /* ... */
-    monitoring: {
-        uriPath: '/monitoring'
-    },
-    /* ... */
-};
-```
-
-Now, run your app and go to `/monitoring` url to get access to your dashboard.
-
-For more information about the configuration, you can have a look at the [documentation](https://swaggerstats.io/guide/conf.html#options)
+> Deprecated in favor of (medusa-plugin-prometheus)[https://github.com/adrien2p/medusa-plugins/tree/main/packages/medusa-plugin-prometheus]
 
 :point_right: __Here is a demo video__
 

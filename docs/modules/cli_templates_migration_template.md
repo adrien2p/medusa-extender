@@ -14,14 +14,12 @@
 
 ▸ **getMigrationTemplate**(`migrationName`, `timestamp`): `string`
 
-Provide a basic template for the migration component generation.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `migrationName` | `string` |
-| `timestamp` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `migrationName` | `string` |  |
+| `timestamp` | `string` |  |
 
 #### Returns
 
@@ -29,4 +27,4 @@ Provide a basic template for the migration component generation.
 
 #### Defined in
 
-[src/cli/templates/migration-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/migration-template.ts#L8)
+[cli/templates/migration-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/migration-template.ts#L8)

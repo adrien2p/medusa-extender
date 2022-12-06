@@ -16,15 +16,13 @@
 
 ### migrate
 
-▸ **migrate**(`__namedParameters`): `Promise`<`void`\>
-
-Run the migrations using the medusa-config.js config.
+▸ **migrate**(`«destructured»`): `Promise`<`void`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | [`Options`](cli_commands_migrate.Internals.md#options) |
+| `«destructured»` | [`Options`](cli_commands_migrate.Internals.md#options) |
 
 #### Returns
 
@@ -32,4 +30,4 @@ Run the migrations using the medusa-config.js config.
 
 #### Defined in
 
-[src/cli/commands/migrate.ts:34](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/migrate.ts#L34)
+[cli/commands/migrate.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/migrate.ts#L34)

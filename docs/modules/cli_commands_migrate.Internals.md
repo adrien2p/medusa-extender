@@ -6,11 +6,11 @@
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [Options](cli_commands_migrate.Internals.md#options)
 
-## Type aliases
+## Type Aliases
 
 ### Options
 
@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[src/cli/commands/migrate.ts:25](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/commands/migrate.ts#L25)
+[cli/commands/migrate.ts:25](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/migrate.ts#L25)

@@ -14,13 +14,11 @@
 
 ▸ **getEntityTemplate**(`entityName`): `string`
 
-Provide a basic template for the entity component generation.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entityName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entityName` | `string` |  |
 
 #### Returns
 
@@ -28,4 +26,4 @@ Provide a basic template for the entity component generation.
 
 #### Defined in
 
-[src/cli/templates/entity-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/cli/templates/entity-template.ts#L7)
+[cli/templates/entity-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/entity-template.ts#L7)

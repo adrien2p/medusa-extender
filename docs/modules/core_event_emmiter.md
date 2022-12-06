@@ -18,9 +18,6 @@
 
 • `Const` **customEventEmitter**: [`CustomEventEmitter`](../classes/core_event_emmiter.Internals.CustomEventEmitter.md)
 
-**`internal`**
-Export the instance of the event emmiter.
-
 #### Defined in
 
-[src/core/event-emmiter.ts:116](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/event-emmiter.ts#L116)
+[core/event-emmiter.ts:116](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L116)

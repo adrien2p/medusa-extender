@@ -32,29 +32,13 @@
 | :------ | :------ |
 | `entries?` | readonly readonly [[`InjectableComponentTypes`](../modules/core_types.md#injectablecomponenttypes), [`GetInjectableOptions`](../modules/core_types.md#getinjectableoptions)<[`InjectableComponentTypes`](../modules/core_types.md#injectablecomponenttypes)\>][] |
 
-#### Inherited from
+#### Overrides
 
-Map<InjectableComponentTypes, GetInjectableOptions\>.constructor
-
-#### Defined in
-
-node_modules/typescript/lib/lib.es2015.collection.d.ts:33
-
-• **new ComponentMap**(`iterable?`)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `iterable?` | `Iterable`<readonly [[`InjectableComponentTypes`](../modules/core_types.md#injectablecomponenttypes), [`GetInjectableOptions`](../modules/core_types.md#getinjectableoptions)<[`InjectableComponentTypes`](../modules/core_types.md#injectablecomponenttypes)\>]\> |
-
-#### Inherited from
-
-Map<InjectableComponentTypes, GetInjectableOptions\>.constructor
+Map&lt;InjectableComponentTypes, GetInjectableOptions\&gt;.constructor
 
 #### Defined in
 
-node_modules/typescript/lib/lib.es2015.iterable.d.ts:161
+[core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/componentMap.ts#L4)
 
 ## Methods
 
@@ -84,4 +68,4 @@ Map.get
 
 #### Defined in
 
-[src/core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/componentMap.ts#L4)
+[core/componentMap.ts:16](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/componentMap.ts#L16)

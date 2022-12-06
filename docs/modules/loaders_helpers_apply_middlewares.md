@@ -15,15 +15,12 @@
 
 ▸ **applyAfterAuthMiddleware**(`app`, `middlewares`): `void`
 
-**`internal`**
-Apply all middlewares on the app that must be applied after the @medusajs authentication
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | `Router` |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `app` | `Router` |  |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
 
 #### Returns
 
@@ -31,7 +28,7 @@ Apply all middlewares on the app that must be applied after the @medusajs authen
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/helpers/apply-middlewares.ts#L34)
+[loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/helpers/apply-middlewares.ts#L34)
 
 ___
 
@@ -39,15 +36,12 @@ ___
 
 ▸ **applyBeforeAuthMiddleware**(`app`, `middlewares`): `void`
 
-**`internal`**
-Apply all middlewares on the app that must be applied before the @medusajs authentication
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | `Router` |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `app` | `Router` |  |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
 
 #### Returns
 
@@ -55,4 +49,4 @@ Apply all middlewares on the app that must be applied before the @medusajs authe
 
 #### Defined in
 
-[src/loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/helpers/apply-middlewares.ts#L12)
+[loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/helpers/apply-middlewares.ts#L12)

@@ -6,22 +6,20 @@
 
 ### Functions
 
-- [pluginsLoadersAndListeners](loaders_plugins_loader.md#pluginsloadersandlisteners)
+- [pluginsLoadersProvidersAndListeners](loaders_plugins_loader.md#pluginsloadersprovidersandlisteners)
 
 ## Functions
 
-### pluginsLoadersAndListeners
+### pluginsLoadersProvidersAndListeners
 
-▸ **pluginsLoadersAndListeners**(`app`): `Promise`<`void`\>
-
-**`internal`**
-Register all listeners before the plugins are loaded to be sure that the scope middleware has already been created.
+▸ **pluginsLoadersProvidersAndListeners**(`app`, `providers`): `Promise`<`void`\>
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `app` | `Express` | Express app |
+| `app` | `Express` |  |
+| `providers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"provider"``\> | - |
 
 #### Returns
 
@@ -29,4 +27,4 @@ Register all listeners before the plugins are loaded to be sure that the scope m
 
 #### Defined in
 
-[src/loaders/plugins.loader.ts:10](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/plugins.loader.ts#L10)
+[loaders/plugins.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/plugins.loader.ts#L12)

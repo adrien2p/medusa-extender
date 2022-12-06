@@ -14,14 +14,11 @@
 
 ▸ **subscribersLoader**(`subscribersOptions`): `Promise`<`void`\>
 
-**`internal`**
-Load all custom extended validators into the underlying @medusajs instance.
-
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `subscribersOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"subscriber"``\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subscribersOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"subscriber"``\> |  |
 
 #### Returns
 
@@ -29,4 +26,4 @@ Load all custom extended validators into the underlying @medusajs instance.
 
 #### Defined in
 
-[src/loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/loaders/subscribers.loader.ts#L11)
+[loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/subscribers.loader.ts#L11)

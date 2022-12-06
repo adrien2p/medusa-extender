@@ -4,9 +4,6 @@
 
 [core/types](../modules/core_types.md).MedusaDynamicModule
 
-**`interface`**
-Describe a dynamic module which resolve its import dynamically.
-
 ## Type parameters
 
 | Name | Type |
@@ -41,4 +38,4 @@ Describe a dynamic module which resolve its import dynamically.
 
 #### Defined in
 
-[src/core/types.ts:189](https://github.com/adrien2p/medusa-extender/blob/ba60811/src/core/types.ts#L189)
+[core/types.ts:196](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L196)
