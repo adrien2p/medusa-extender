@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.8](https://github.com/adrien2p/medusa-extender/compare/v1.7.7...v1.7.8) (2022-12-06)
+
+
+### Features
+
+* **providers:** add ability to register tax and fulfillment providers using medusa-extender annotations ([#146](https://github.com/adrien2p/medusa-extender/issues/146)) ([e44ffcf](https://github.com/adrien2p/medusa-extender/commits/e44ffcf66cd3d2ede582f6c7775fff832e4deaa7))
+
+
+### Bug Fixes
+
+* **multi-tenancy-module:** Load the config in the service ([4d59aa3](https://github.com/adrien2p/medusa-extender/commits/4d59aa3b8d35dad0ee6f6b67bc3b3b6ff0dc7fd5))
+* unit tests ([dcdc178](https://github.com/adrien2p/medusa-extender/commits/dcdc178edd6d9bc66de39696afca394aa35859c5))
+
 ### [1.7.7](https://github.com/adrien2p/medusa-extender/compare/v1.7.6...v1.7.7) (2022-11-09)
 
 
