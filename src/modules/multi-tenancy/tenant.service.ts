@@ -2,13 +2,12 @@ import { Service } from '../../decorators';
 import { Connection, createConnection, EntityManager, getConnectionManager } from 'typeorm';
 import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
 import { ConfigModule } from './types';
-import { MedusaContainer, MedusaRequest } from '../../core';
+import { MedusaRequest } from '../../core';
+import { getConfigFile } from 'medusa-core-utils';
 
 @Service()
 export class TenantService {
 	static readonly resolutionKey = 'tenantService';
-
-	constructor(_: MedusaContainer, private readonly config: ConfigModule) {}
 
 	/**
 	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
@@ -16,15 +15,20 @@ export class TenantService {
 	 * @param req
 	 */
 	public async getOrCreateConnection(defaultManager: EntityManager, req: MedusaRequest): Promise<EntityManager> {
-		if (!this.config.multi_tenancy?.tenant_code_resolver) {
+		// TODO: Remove once medusa allow to store custom configuration
+		const { configModule } = getConfigFile(process.cwd(), 'medusa-config') as {
+			configModule: ConfigModule;
+		};
+
+		if (!configModule.multi_tenancy?.tenant_code_resolver) {
 			throw new Error('Missing tenant_code_resolver from multi_tenancy config in medusa-config.');
 		}
-		const tenantCode = this.config.multi_tenancy.tenant_code_resolver(req);
+		const tenantCode = configModule.multi_tenancy.tenant_code_resolver(req);
 		if (!tenantCode) {
 			return defaultManager;
 		}
 
-		const tenant = this.config.multi_tenancy.tenants.find((tenantConfig) => {
+		const tenant = configModule.multi_tenancy.tenants.find((tenantConfig) => {
 			return tenantConfig.code === tenantCode;
 		});
 		if (!tenant) {
@@ -48,7 +52,7 @@ export class TenantService {
 				extra: tenant.database_config.database_extra || {},
 				entities: db_entities,
 				namingStrategy: new ShortenedNamingStrategy(),
-				logging: this.config.projectConfig.database_logging ?? false,
+				logging: configModule.projectConfig.database_logging ?? false,
 			});
 
 			connection = await connectionManager.get(tenant.code);

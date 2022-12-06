@@ -16,7 +16,6 @@ import {
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
-import { loadMonitoringModule, MonitoringOptions } from './modules/monitoring';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -46,14 +45,10 @@ export class Medusa {
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
 		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: {
-				monitoring: MonitoringOptions;
-			};
+			configModule: Record<string, unknown>;
 		};
 
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
-
-		await loadMonitoringModule(configModule, this.#express, configModule.monitoring);
 
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);

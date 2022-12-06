@@ -25,5 +25,4 @@ export {
 	FulfillmentProvider,
 } from './decorators';
 
-export { MonitoringOptions } from './modules/monitoring';
 export * from './modules/multi-tenancy';
