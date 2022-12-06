@@ -1080,7 +1080,7 @@ will be provided.
 
 ## Monitoring 
 
-> Deprecated in favor of (medusa-plugin-prometheus)[https://github.com/adrien2p/medusa-plugins/tree/main/packages/medusa-plugin-prometheus]
+> Deprecated in favor of [medusa-plugin-prometheus](https://github.com/adrien2p/medusa-plugins/tree/main/packages/medusa-plugin-prometheus)
 
 :point_right: __Here is a demo video__
 

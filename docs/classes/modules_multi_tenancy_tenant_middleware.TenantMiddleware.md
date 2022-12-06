@@ -48,4 +48,4 @@
 
 #### Defined in
 
-[modules/multi-tenancy/tenant.middleware.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/tenant.middleware.ts#L12)
+[modules/multi-tenancy/tenant.middleware.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/tenant.middleware.ts#L12)

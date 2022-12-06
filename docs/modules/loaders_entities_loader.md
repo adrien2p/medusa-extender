@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L13)
+[loaders/entities.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/entities.loader.ts#L13)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L36)
+[loaders/entities.loader.ts:36](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/entities.loader.ts#L36)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L63)
+[loaders/entities.loader.ts:63](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/entities.loader.ts#L63)
 
 ___
 
@@ -91,4 +91,4 @@ ___
 
 #### Defined in
 
-[loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/entities.loader.ts#L51)
+[loaders/entities.loader.ts:51](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/entities.loader.ts#L51)

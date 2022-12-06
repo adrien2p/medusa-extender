@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/migrations.loader.ts#L13)
+[loaders/migrations.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/migrations.loader.ts#L13)

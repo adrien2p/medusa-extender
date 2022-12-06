@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L16)
+[decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L16)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L43)
+[decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L43)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L51)
+[decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L51)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L34)
+[decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L34)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L60)
+[decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L60)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L25)
+[decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L25)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L77)
+[decorators/components.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L77)
 
 ___
 
@@ -179,4 +179,4 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/components.decorator.ts#L69)
+[decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/components.decorator.ts#L69)

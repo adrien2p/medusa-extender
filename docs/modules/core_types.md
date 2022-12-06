@@ -59,7 +59,7 @@
 
 #### Defined in
 
-[core/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L13)
+[core/types.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L13)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L34)
+[core/types.ts:34](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L34)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L125)
+[core/types.ts:125](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L125)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L152)
+[core/types.ts:152](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L152)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:20](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L20)
+[core/types.ts:20](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L20)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:114](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L114)
+[core/types.ts:114](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L114)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:15](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L15)
+[core/types.ts:15](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L15)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:166](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L166)
+[core/types.ts:166](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L166)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:5](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L5)
+[core/types.ts:5](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L5)
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:158](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L158)
+[core/types.ts:158](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L158)
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:173](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L173)
+[core/types.ts:173](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L173)
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:178](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L178)
+[core/types.ts:178](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L178)
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:87](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L87)
+[core/types.ts:87](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L87)
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:202](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L202)
+[core/types.ts:202](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L202)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:107](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L107)
+[core/types.ts:107](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L107)
 
 ___
 
@@ -279,7 +279,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:42](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L42)
+[core/types.ts:42](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L42)
 
 ___
 
@@ -302,7 +302,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:59](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L59)
+[core/types.ts:59](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L59)
 
 ___
 
@@ -318,7 +318,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:80](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L80)
+[core/types.ts:80](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L80)
 
 ___
 
@@ -337,7 +337,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:70](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L70)
+[core/types.ts:70](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L70)
 
 ___
 
@@ -361,7 +361,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:47](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L47)
+[core/types.ts:47](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L47)
 
 ___
 
@@ -371,7 +371,7 @@ ___
 
 #### Defined in
 
-[core/types.ts:102](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L102)
+[core/types.ts:102](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L102)
 
 ___
 
@@ -393,4 +393,4 @@ ___
 
 #### Defined in
 
-[core/types.ts:95](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L95)
+[core/types.ts:95](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L95)

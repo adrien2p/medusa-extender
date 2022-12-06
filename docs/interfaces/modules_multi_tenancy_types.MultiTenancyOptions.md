@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[modules/multi-tenancy/types.ts:10](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/types.ts#L10)
+[modules/multi-tenancy/types.ts:10](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/types.ts#L10)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[modules/multi-tenancy/types.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/types.ts#L12)
+[modules/multi-tenancy/types.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/types.ts#L12)
 
 ## Methods
 
@@ -53,4 +53,4 @@ ___
 
 #### Defined in
 
-[modules/multi-tenancy/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/modules/multi-tenancy/types.ts#L11)
+[modules/multi-tenancy/types.ts:11](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/modules/multi-tenancy/types.ts#L11)

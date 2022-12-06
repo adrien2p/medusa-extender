@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/store-api.loader.ts#L13)
+[loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/store-api.loader.ts#L13)

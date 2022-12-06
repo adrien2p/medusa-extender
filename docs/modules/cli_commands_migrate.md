@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[cli/commands/migrate.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/migrate.ts#L34)
+[cli/commands/migrate.ts:34](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/migrate.ts#L34)

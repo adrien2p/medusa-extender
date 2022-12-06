@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[core/types.ts:196](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/types.ts#L196)
+[core/types.ts:196](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/types.ts#L196)

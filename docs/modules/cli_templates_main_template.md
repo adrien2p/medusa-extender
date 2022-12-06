@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/templates/main-template.ts#L6)
+[cli/templates/main-template.ts:6](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/templates/main-template.ts#L6)

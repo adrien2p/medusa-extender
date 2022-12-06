@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L21)
+[cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/generate-component.ts#L21)
 
 ## Functions
 
@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L113)
+[cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/generate-component.ts#L113)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L48)
+[cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/generate-component.ts#L48)
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 #### Defined in
 
-[cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/cli/commands/generate-component.ts#L140)
+[cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/cli/commands/generate-component.ts#L140)

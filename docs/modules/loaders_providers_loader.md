@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[loaders/providers.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/providers.loader.ts#L53)
+[loaders/providers.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/providers.loader.ts#L53)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:19](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/providers.loader.ts#L19)
+[loaders/providers.loader.ts:19](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/providers.loader.ts#L19)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:7](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/providers.loader.ts#L7)
+[loaders/providers.loader.ts:7](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/providers.loader.ts#L7)
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/providers.loader.ts#L29)
+[loaders/providers.loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/providers.loader.ts#L29)

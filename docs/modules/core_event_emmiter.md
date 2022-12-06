@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[core/event-emmiter.ts:116](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L116)
+[core/event-emmiter.ts:116](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L116)

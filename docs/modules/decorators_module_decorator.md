@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/decorators/module.decorator.ts#L9)
+[decorators/module.decorator.ts:9](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/decorators/module.decorator.ts#L9)

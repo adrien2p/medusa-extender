@@ -27,4 +27,4 @@
 
 #### Defined in
 
-[loaders/plugins.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/plugins.loader.ts#L12)
+[loaders/plugins.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/plugins.loader.ts#L12)

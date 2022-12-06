@@ -26,4 +26,4 @@
 
 #### Defined in
 
-[loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/subscribers.loader.ts#L11)
+[loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/subscribers.loader.ts#L11)

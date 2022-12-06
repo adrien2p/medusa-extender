@@ -38,7 +38,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L24)
+[core/event-emmiter.ts:24](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L24)
 
 ## Properties
 
@@ -48,7 +48,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L22)
+[core/event-emmiter.ts:22](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L22)
 
 ## Methods
 
@@ -75,7 +75,7 @@ EventEmitter.constructor
 
 #### Defined in
 
-[core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L94)
+[core/event-emmiter.ts:94](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L94)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L34)
+[core/event-emmiter.ts:34](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L34)
 
 ___
 
@@ -123,4 +123,4 @@ ___
 
 #### Defined in
 
-[core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/core/event-emmiter.ts#L47)
+[core/event-emmiter.ts:47](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/core/event-emmiter.ts#L47)

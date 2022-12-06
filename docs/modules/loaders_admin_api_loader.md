@@ -28,4 +28,4 @@
 
 #### Defined in
 
-[loaders/admin-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/4d59aa3/src/loaders/admin-api.loader.ts#L13)
+[loaders/admin-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/dcdc178/src/loaders/admin-api.loader.ts#L13)
