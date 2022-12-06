@@ -2,7 +2,7 @@ import { asFunction, asValue, createContainer } from 'awilix';
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { Connection, ConnectionManager } from 'typeorm';
-import { resolve } from "path";
+import { resolve } from 'path';
 
 class FakeService {
 	manager: any;
@@ -66,7 +66,7 @@ describe('Tenant service', () => {
 	let reqMock;
 
 	beforeAll(() => {
-		process.cwd = () => resolve(__dirname, "fixtures")
+		process.cwd = () => resolve(__dirname, 'fixtures');
 		container.register({
 			request: asFunction(() => 'test', { lifetime: 'SCOPED' }),
 			fakeService: asFunction((cradle) => new FakeService(cradle), { lifetime: 'SINGLETON' }),
