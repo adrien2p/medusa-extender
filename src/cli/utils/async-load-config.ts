@@ -1,15 +1,12 @@
 import { ConfigModule } from 'core/types';
 import { getConfigFile } from 'medusa-core-utils';
-import { MonitoringOptions } from 'modules/monitoring';
 
-type MonitoredConfigModule = ConfigModule & { monitoring: MonitoringOptions };
-
-export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<MonitoredConfigModule> {
+export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
 	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
 		configModule: ConfigModule;
 		configFilePath: string;
 	};
-	const resolveConfigProperties = async (obj: any): Promise<MonitoredConfigModule> => {
+	const resolveConfigProperties = async (obj: any): Promise<ConfigModule> => {
 		for (const key of Object.keys(obj)) {
 			if (typeof obj[key] === 'object' && obj[key] !== null) {
 				await resolveConfigProperties(obj[key]);
