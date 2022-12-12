@@ -1,5 +1,4 @@
 import loaders from '@medusajs/medusa/dist/loaders';
-import { getConfigFile } from 'medusa-core-utils/dist';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { Logger, MedusaContainer, Type } from './core';
@@ -16,6 +15,7 @@ import {
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
+import { asyncLoadConfig } from './cli/utils/async-load-config';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -44,12 +44,8 @@ export class Medusa {
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const { configModule } = getConfigFile(this.#rootDir, 'medusa-config') as {
-			configModule: Record<string, unknown>;
-		};
-
+		const configModule = await asyncLoadConfig();
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
-
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
 		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
