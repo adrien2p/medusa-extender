@@ -10,7 +10,7 @@ function cli(args, cwd): Promise<{ code: number; error: ExecException; stdout: s
 			(error, stdout, stderr) => {
 				resolve({
 					code: error && error.code ? error.code : 0,
-					error,
+					error: error as ExecException,
 					stdout,
 					stderr,
 				});

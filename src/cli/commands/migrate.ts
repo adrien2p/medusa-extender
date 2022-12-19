@@ -1,24 +1,8 @@
 import { createConnection } from 'typeorm';
-import { getConfigFile } from 'medusa-core-utils/dist';
 import { normalize, resolve } from 'path';
-import { MultiTenancyOptions } from '../../modules/multi-tenancy/types';
 import { Connection } from 'typeorm/connection/Connection';
-import { buildRegexpIfValid, Logger } from '../../core';
-
-type ConfigModule = {
-	projectConfig: {
-		database_type: string;
-		database_url: string;
-		database_database: string;
-		database_extra: Record<string, string>;
-		cli_migration_dirs?: string[];
-		/**
-		 * @deprecated in favor of cli_migration_dirs
-		 */
-		cliMigrationsDirs?: string[];
-	};
-	multi_tenancy?: MultiTenancyOptions;
-};
+import { buildRegexpIfValid, ConfigModule, Logger } from '../../core';
+import { asyncLoadConfig } from '../utils/async-load-config';
 
 const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
 
@@ -31,8 +15,9 @@ type Options = { run: boolean; revert: boolean; show: boolean; tenant_codes: str
  * @param show
  * @param tenant_codes
  */
+
 export async function migrate({ run, revert, show, tenant_codes }: Options): Promise<void> {
-	const { configModule } = getConfigFile(process.cwd(), `medusa-config`) as { configModule: ConfigModule };
+	const configModule = await asyncLoadConfig();
 	const configMigrationsDirs =
 		configModule?.projectConfig?.cli_migration_dirs ?? configModule?.projectConfig?.cliMigrationsDirs;
 
@@ -45,13 +30,31 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 		return normalize(resolve(process.cwd(), dir));
 	});
 
+	let hostConfig: any = {
+		database: configModule.projectConfig.database_database,
+		url: configModule.projectConfig.database_url,
+		migrationsRun: true,
+		migrationsTransactionMode: 'each',
+	};
+	if (configModule.projectConfig.database_host) {
+		hostConfig = {
+			host: configModule.projectConfig.database_host,
+			port: configModule.projectConfig.database_port,
+			database: configModule.projectConfig.database_database,
+			ssl: configModule.projectConfig.database_ssl,
+			username: configModule.projectConfig.database_username,
+			password: configModule.projectConfig.database_password,
+			logging: configModule?.projectConfig.database_logging,
+			migrationsRun: true,
+			migrationsTransactionMode: 'each',
+		};
+	}
+
 	const connections: Connection[] = [
 		await createConnection({
 			type: configModule.projectConfig.database_type as any,
-			url: configModule.projectConfig.database_url,
-			database: configModule.projectConfig.database_database,
+			...hostConfig,
 			extra: configModule.projectConfig.database_extra || {},
-			logging: ['schema'],
 			migrations: migrationDirs,
 		}),
 	];
