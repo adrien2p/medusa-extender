@@ -1,5 +1,6 @@
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
-import { Constructor, MixinReturnType } from './types';
+import { ConfigModule, Constructor, MixinReturnType } from './types';
+import { getConfigFile } from 'medusa-core-utils';
 
 /**
  * @deprecated The definition files merging the entities types allow us to get rid of this util. It will be removed in the future
@@ -80,4 +81,24 @@ export function buildRegexpIfValid(str: string): RegExp | undefined {
 	} catch (e) {}
 
 	return;
+}
+
+export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
+	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
+		configModule: ConfigModule;
+		configFilePath: string;
+	};
+	const resolveConfigProperties = async (obj: any): Promise<ConfigModule> => {
+		for (const key of Object.keys(obj)) {
+			if (typeof obj[key] === 'object' && obj[key] !== null) {
+				await resolveConfigProperties(obj[key]);
+			}
+			if (typeof obj[key] === 'function') {
+				obj[key] = await obj[key]();
+			}
+		}
+		return obj;
+	};
+	const configModule = await resolveConfigProperties(configuration.configModule);
+	return configModule;
 }
