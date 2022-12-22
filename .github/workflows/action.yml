@@ -30,11 +30,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-verion }}
 
-      - name: 'npm install'
-        run: npm install
+      - name: 'install deps'
+        run: yarn
 
       - name: 'run unit tests'
-        run: npm run test:ci
+        run: yarn test:ci
         env:
           MEDUSAJS_VERSION: ${{ matrix.medusajs-version }}
 
@@ -71,7 +71,7 @@ jobs:
           node-version: ${{ matrix.node-verion }}
 
       - name: 'run integration tests'
-        run: npm run test:integration:ci
+        run: yarn test:integration:ci
         env:
           MEDUSAJS_VERSION: ${{ matrix.medusajs-version }}
           DB_PASSWORD: postgres
