@@ -1,4 +1,4 @@
-import { asyncLoadConfig } from "../utils";
+import { asyncLoadConfig } from '../utils';
 
 const runLoadTest = async (testFixtureFileName: string) => {
 	const testProjectConfig = {
