@@ -2,6 +2,7 @@ import { Connection, EntityManager, EntitySubscriberInterface, Repository } from
 import { Constructor, MixinReturnType } from './types';
 
 /**
+ * @deprecated The definition files merging the entities types allow us to get rid of this util. It will be removed in the future
  * For repository context, you should extends repository and the medusa target repository.
  * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
  * @param source
@@ -44,6 +45,7 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
 }
 
 /**
+ * @deprecated Since this util only acts on the type and not the prototype itself, it adds more confusion for the user. It will be removed in the future
  * Allow to omit some property from a class.
  * @param Class
  * @param keys

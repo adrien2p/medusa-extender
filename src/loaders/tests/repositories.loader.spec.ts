@@ -18,7 +18,7 @@ class Order extends MedusaOrder {
 
 @MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()
-class OrderRepository extends repositoryMixin<Order, MedusaOrderRepository>(MedusaOrderRepository) {
+class OrderRepository extends MedusaOrderRepository {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 
 	test(): Promise<Order[]> {

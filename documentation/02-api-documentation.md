@@ -70,12 +70,12 @@ export class Product extends MedusaProduct {
 > The `override` parameter of the `@MedusaEntity` decorator allow to specify which entity
 > from the core must be overridden.
 
-In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
-be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
+In the case of an overriding extension, you have to augment medusa types in order for typescript to be aware of the changes
+and not throw you an error. To do so you can create an `index.d.ts` file in the same directory as your module
 and add the following content.
 
 ```typescript
-declare module '@medusajs/medusa/dist/models/product' {
+export declare module '@medusajs/medusa/dist/models/product' {
     declare interface Product {
         customField: string;
     }
@@ -127,35 +127,18 @@ Let see an example
     
 ```typescript
 import { ProductRepository as MedusaProductRepository } from "@medusajs/medusa/dist/repositories/product";
-import { Repository as MedusaRepository, Utils } from "medusa-extender";
+import { Repository as MedusaRepository } from "medusa-extender";
 import { EntityRepository } from "typeorm";
 import { Product } from "./product.entity";
 
 @MedusaRepository({ override: MedusaProductRepository })
 @EntityRepository(Product)
-export default class UserRepository extends Utils.repositoryMixin<Product, MedusaProductRepository>(MedusaProductRepository) {}
+export default class UserRepository extends MedusaProductRepository {}
 ```
 
 > The `override` parameter of the `@MedusaRepository` decorator allow to specify which custom repository
 > from the core must be overridden. You can also access the container to resolve
-> a dependency in your routes handler through `req.scope.resolve('key')`.
-
-> The `Utils.repositoryMixin` is a special utility exported by the extender that
-> allow multiple class inheritance. This is mandatory to be able to extend an existing
-> custom repository.
-
-In the case of an overriding extension, you have to augment medusa types in order for your project and the external lib to
-be able to know about the new typings. To do so you can create an `index.d.ts` file in the same directory as your module
-and add the following content.
-
-```typescript
-declare module '@medusajs/medusa/dist/repositories/product' {
-    declare class UserRepository extends ExtendedProductRepository {}
-}
-```
-
-you can learn more about that by looking how it is done in the starters [here](https://github.com/adrien2p/medusa-extender/blob/main/starters/server/src/modules/user/index.d.ts)
-or in the troubleshooting section of the documentation.
+> a dependency in your route handlers through `req.scope.resolve('key')`.
 
 ### @Migration
 
@@ -329,10 +312,6 @@ export default class ProductService extends MedusaProductService {
 > be re created for each new request in order for you to access the `loggedInUser` as we've seen
 > in the previous section.
 
-> :warning: You should have the less possible resources using the `scoped` lifetime
-> to avoid lower performance, it must be used in special cases such as being able to access
-> specific values that does exists only during the request processing. :warning:
-
 ### @Middleware
 
 The middleware decorator allow you to create new middleware on specific routes
@@ -350,7 +329,7 @@ import { NextFunction, Response } from 'express';
 
 import UserService from './user.service';
 
-@Middleware({ requireAuth: true, routes: [{ method: "all", path: '*' }] })
+@Middleware({ requireAuth: true, routes: [{ method: "/admin", path: '*' }] })
 export class LoggedInUserMiddleware implements MedusaMiddleware {
     public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
         let loggedInUser = null
@@ -375,7 +354,7 @@ In this scenario, the middleware is applied after the medusa authentication stra
 We need to be after the authentication to be able to be sure that the user is already
 authenticated and that we have access to the `userId`.
 
-This middleware is applied to all routes and will retrieve the authenticated user
+This middleware is applied to all admin routes and will retrieve the authenticated user
 to store it in the underlying container. You will be then be able to get access to it
 into your servives as we've seen in the previous sections.
 
@@ -670,13 +649,13 @@ this utility is used mainly by the subscriber in order to help you attach a new 
 It will take the `connection` as an argument and manage to remove the previous subscriber and attach the new one if needed.
 [See how to use it here](#onmedusaentityevent).
 
-### repositoryMixin
+### repositoryMixin (@deprecated)
 
 This utility is mandatory when you extend an existing repository.
 Since that to be able to work the repository must extend multiple classes in order to reflect the original repository
 and the custom extension that you've made. [See how to use it here](#repository).
 
-### Omit
+### Omit (@deprecated)
 
 The `Omit` utility allows you to omit a set of properties from a class.
 In some cases, extending a class to change the type of a property makes
