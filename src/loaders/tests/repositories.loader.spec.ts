@@ -7,7 +7,8 @@ import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.lo
 import { createContainer } from 'awilix';
 import { Entity, EntityRepository, Repository } from 'typeorm';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
-import { MedusaContainer, metadataReader, repositoryMixin } from '../../core';
+import { metadataReader, repositoryMixin } from '../../core';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()
@@ -61,12 +62,12 @@ describe('Repositories loader', () => {
 
 	describe('repositoriesLoader', () => {
 		it(' should register a new repository into the container', async () => {
-			expect(container.has('anotherRepository')).toBeFalsy();
+			expect(container.hasRegistration('anotherRepository')).toBeFalsy();
 
 			const components = metadataReader([AnotherOrderModule]);
 			await repositoriesLoader(components.get('repository'), container);
 
-			expect(container.has('anotherRepository')).toBeTruthy();
+			expect(container.hasRegistration('anotherRepository')).toBeTruthy();
 		});
 	});
 });

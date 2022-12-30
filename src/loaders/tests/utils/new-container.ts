@@ -1,6 +1,6 @@
 import { asFunction, asValue, ClassOrFunctionReturning, createContainer, Resolver } from 'awilix';
-import { MedusaContainer } from '../../../core';
 import { asArray } from './asArray';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 export const newContainer = (): MedusaContainer => {
 	const container = createContainer() as MedusaContainer;

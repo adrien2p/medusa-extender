@@ -1,9 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { FulfillmentProvider, Module, TaxProvider } from '../../decorators';
-import { MedusaContainer, metadataReader } from '../../core';
+import { metadataReader } from '../../core';
 import { registerProvider } from '../providers.loader';
 import { newContainer } from './utils/new-container';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 @TaxProvider()
 class TestTaxService {

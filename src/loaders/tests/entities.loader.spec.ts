@@ -42,12 +42,12 @@ describe('Entities loader', () => {
 
 	describe('entitiesLoader', () => {
 		it(' should register a new entity into the container', async () => {
-			expect(container.has('anotherEntity')).toBeFalsy();
+			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
 
 			const components = metadataReader([AnotherModule]);
 			await entitiesLoader(components.get('entity'), container);
 
-			expect(container.has('anotherEntity')).toBeTruthy();
+			expect(container.hasRegistration('anotherEntity')).toBeTruthy();
 		});
 	});
 });

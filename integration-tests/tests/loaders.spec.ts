@@ -125,11 +125,11 @@ describe('Loaders', () => {
 			expect(AdminTestPathMiddleware.prototype.consume).toHaveBeenCalled();
 		});
 
-		it.only('should apply authenticated admin middleware', async () => {
+		it('should apply authenticated admin middleware', async () => {
 			await makeRequest(context, {
 				path: `/admin/authenticated-test-path`,
 				method: 'get',
-				clientSession: {
+				adminSession: {
 					jwt: {
 						userId: IdMap.getId('admin_user'),
 					},
@@ -177,13 +177,13 @@ describe('Loaders', () => {
 			await makeRequest(context, {
 				path: `/store/authenticated-test-path`,
 				method: 'get',
-				adminSession: {
-					store_jwt: {
+				clientSession: {
+					jwt_store: {
 						customer_id: IdMap.getId('customer_user'),
 					},
 				},
 			}).expect(200);
-			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+			expect(StoreTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
 		});
 	});
 
