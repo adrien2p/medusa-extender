@@ -9,3 +9,4 @@ coverage
 coverage-badges/
 ./.env*
 .vscode
+yarn.lock
