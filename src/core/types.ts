@@ -3,10 +3,6 @@ import { AwilixContainer, LifetimeType } from 'awilix';
 import { LoggerOptions, MigrationInterface } from 'typeorm';
 import { MultiTenancyOptions } from 'modules/multi-tenancy/types';
 
-export type MedusaContainer = AwilixContainer & {
-	registerAdd: <T>(name: string, registration: T) => MedusaContainer;
-};
-
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
 }
@@ -69,7 +65,7 @@ export type RepositoryInjectableOptions<TOverride = unknown> = {
  * Define a router and its configuration.
  */
 export type RoutesInjectionRouterConfiguration = {
-	requiredAuth: boolean;
+	requiredAuth?: boolean;
 	method: MedusaRouteMethods;
 	path: string;
 	handlers: ((...args: unknown[]) => void)[];
@@ -86,7 +82,11 @@ export type RouterInjectionOptions = {
  * Defines the injection options for middlewares.
  */
 export type MiddlewareInjectionOptions = {
-	requireAuth: boolean;
+	/**
+	 * @deprecated use requiredAuth instead
+	 */
+	requireAuth?: boolean;
+	requiredAuth?: boolean;
 	routes: MedusaRouteOptions[];
 };
 

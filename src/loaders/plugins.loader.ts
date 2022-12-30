@@ -1,13 +1,15 @@
 import { Express, NextFunction, Response } from 'express';
-import { MedusaAuthenticatedRequest, MedusaContainer, MedusaRequest } from './';
+import { MedusaAuthenticatedRequest, MedusaRequest } from './';
 import { customEventEmitter, GetInjectableOptions } from '../core';
 import { registerProviders } from './providers.loader';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 /**
  * @internal
  * Register all listeners before the plugins are loaded to be sure that the scope middleware has already been created.
  * Also register all providers that are typically created in plugins.
  * @param app Express app
+ * @param providers
  */
 export async function pluginsLoadersProvidersAndListeners(
 	app: Express,
@@ -28,7 +30,7 @@ export async function pluginsLoadersProvidersAndListeners(
 				res: Response,
 				next: NextFunction
 			): Promise<void> => {
-				req.container = cradle.container;
+				req.container = cradle.container as any;
 				await customEventEmitter.registerListeners(req.scope);
 				return next();
 			}

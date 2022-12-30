@@ -2,11 +2,9 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import { User as MedusaUser } from '@medusajs/medusa/dist';
-import { asArray } from './utils/asArray';
 import { entitiesLoader, overrideEntitiesLoader } from '../entities.loader';
-import { asValue, createContainer } from 'awilix';
 import { Entity as MedusaEntity, Module } from '../../decorators';
-import { MedusaContainer, metadataReader } from '../../core';
+import { metadataReader } from '../../core';
 import { Entity } from 'typeorm';
 import { newContainer } from './utils/new-container';
 
@@ -44,12 +42,12 @@ describe('Entities loader', () => {
 
 	describe('entitiesLoader', () => {
 		it(' should register a new entity into the container', async () => {
-			expect(container.has('anotherEntity')).toBeFalsy();
+			expect(container.hasRegistration('anotherEntity')).toBeFalsy();
 
 			const components = metadataReader([AnotherModule]);
 			await entitiesLoader(components.get('entity'), container);
 
-			expect(container.has('anotherEntity')).toBeTruthy();
+			expect(container.hasRegistration('anotherEntity')).toBeTruthy();
 		});
 	});
 });

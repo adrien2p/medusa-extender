@@ -21,7 +21,7 @@ describe('Loaders', () => {
 	let context!: Context;
 
 	beforeAll(async () => {
-		context = await loadServer([TestModule]);
+		context = await loadServer([TestModule], { verbose: false });
 	});
 
 	afterAll(async () => {
@@ -171,6 +171,19 @@ describe('Loaders', () => {
 				method: 'get',
 			}).expect(200);
 			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply authenticated store middleware', async () => {
+			await makeRequest(context, {
+				path: `/store/authenticated-test-path`,
+				method: 'get',
+				clientSession: {
+					jwt_store: {
+						customer_id: IdMap.getId('customer_user'),
+					},
+				},
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).not.toHaveBeenCalled();
 		});
 	});
 

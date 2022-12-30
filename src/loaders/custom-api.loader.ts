@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import { GetInjectableOptions, MedusaContainer } from './';
-import { applyAfterAuthMiddleware, applyBeforeAuthMiddleware } from './helpers/apply-middlewares';
-import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-routers';
+import { GetInjectableOptions } from './';
+import { applyMiddlewares } from './helpers/apply-middlewares';
+import { applyRouters } from './helpers/apply-routers';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 /**
  * @internal
- * Apply middlewares and routes on the underlying @medusajs top API.
+ * Apply middlewares and routes on the underlying @medusajs customApi API.
  * @param app
  * @param middlewares
  * @param routers
@@ -15,7 +16,7 @@ export async function customApiLoader(
 	middlewares: GetInjectableOptions<'middleware'>,
 	routers: GetInjectableOptions<'router'>
 ): Promise<void> {
-	const topMiddlewares = middlewares
+	const customApiMiddlewares = middlewares
 		.map((middleware) => ({
 			...middleware,
 			routes: middleware.routes.filter((route) => {
@@ -24,7 +25,7 @@ export async function customApiLoader(
 		}))
 		.filter((middleware) => middleware.routes.length);
 
-	const topRouters = routers
+	const customApiRouters = routers
 		.map((router) => ({
 			...router,
 			routes: router.routes.filter((route) => {
@@ -33,13 +34,13 @@ export async function customApiLoader(
 		}))
 		.filter((route) => route.routes.length);
 
+	// We are registering the routes and middleware just before medusa created the auth route
+	// in order to be placed after the admin initialisation but before any admin or store routes
 	const adminRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/index');
 	const originalAdminRouteLoader = adminRouteLoader.default;
 	adminRouteLoader.default = (app: Router, container: MedusaContainer, config: Record<string, unknown>): void => {
-		applyBeforeAuthMiddleware(app, topMiddlewares);
-		applyAfterAuthMiddleware(app, topMiddlewares);
-		applyBeforeAuthRouters(app, topRouters);
-		applyAfterAuthRouters(app, topRouters);
+		applyMiddlewares('custom', app, customApiMiddlewares);
+		applyRouters('custom', app, customApiRouters);
 		originalAdminRouteLoader(app, container, config);
 	};
 }
