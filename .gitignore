@@ -10,3 +10,4 @@ coverage-badges/
 ./.env*
 .vscode
 yarn.lock
+package-lock.json
