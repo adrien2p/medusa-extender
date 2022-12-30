@@ -329,7 +329,7 @@ import { NextFunction, Response } from 'express';
 
 import UserService from './user.service';
 
-@Middleware({ requireAuth: true, routes: [{ method: "/admin", path: '*' }] })
+@Middleware({ requireAuth: true, routes: [{ method: "all", path: '*' }] })
 export class LoggedInUserMiddleware implements MedusaMiddleware {
     public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
         let loggedInUser = null
