@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { GetInjectableOptions } from './';
-import { applyAfterAuthMiddleware, applyBeforeAuthMiddleware } from './helpers/apply-middlewares';
-import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-routers';
+import { applyMiddlewares } from './helpers/apply-middlewares';
+import { applyRouters } from './helpers/apply-routers';
 
 /**
  * @internal
@@ -33,19 +33,13 @@ export async function adminApiLoader(
 		}))
 		.filter((route) => route.routes.length);
 
+	// We are registering the routes and middleware just before medusa created the auth route
+	// in order to be placed after the admin initialisation but before any admin routes
 	const adminAuthRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/auth');
 	const originalAdminAuthRouteLoader = adminAuthRouteLoader.default;
 	adminAuthRouteLoader.default = (app: Router): void => {
-		applyBeforeAuthMiddleware(app, adminMiddlewares);
-		applyBeforeAuthRouters(app, adminRouters);
+		applyMiddlewares('admin', app, adminMiddlewares);
+		applyRouters('admin', app, adminRouters);
 		originalAdminAuthRouteLoader(app);
-	};
-
-	const adminAppRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/apps');
-	const originalAdminAppRouteLoader = adminAppRouteLoader.default;
-	adminAppRouteLoader.default = (app: Router): void => {
-		applyAfterAuthMiddleware(app, adminMiddlewares);
-		applyAfterAuthRouters(app, adminRouters);
-		originalAdminAppRouteLoader(app);
 	};
 }

@@ -7,7 +7,7 @@ import { asValue } from 'awilix';
 
 let defaultManager;
 
-@Middleware({ requireAuth: false, routes: [{ method: 'all', path: '*' }] })
+@Middleware({ requiredAuth: false, routes: [{ method: 'all', path: '*' }] })
 export class TenantMiddleware implements MedusaMiddleware {
 	public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
 		const tenantService = req.scope.resolve(TenantService.resolutionKey) as TenantService;

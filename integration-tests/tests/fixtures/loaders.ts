@@ -157,6 +157,16 @@ AdminAuthTestPathMiddleware.prototype.consume = jest
 				},
 			],
 		},
+		{
+			path: '/store/authenticated-test-path',
+			method: 'get',
+			requiredAuth: true,
+			handlers: [
+				(req: Request, res: Response, next: NextFunction) => {
+					return res.send('healthy authenticated');
+				},
+			],
+		},
 	],
 })
 export class StoreRouter {}

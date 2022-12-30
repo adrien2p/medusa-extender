@@ -1,7 +1,8 @@
 import loaders from '@medusajs/medusa/dist/loaders';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
-import { Logger, MedusaContainer, Type } from './core';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
+import { Logger, Type } from './core';
 import {
 	adminApiLoader,
 	customApiLoader,

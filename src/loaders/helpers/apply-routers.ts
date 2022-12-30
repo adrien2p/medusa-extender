@@ -1,39 +1,39 @@
-import { Router } from 'express';
-import { GetInjectableOptions, RoutesInjectionRouterConfiguration } from '../../core';
+import { RequestHandler, Router } from 'express';
+import authenticatedMiddleware from '@medusajs/medusa/dist/api/middlewares/authenticate';
+import requireCustomerAuthenticatedMiddleware from '@medusajs/medusa/dist/api/middlewares/require-customer-authentication';
+import { GetInjectableOptions, Logger } from '../../core';
+
+const logger = Logger.contextualize('MiddlewaresLoader');
 
 /**
  * @internal
- * Apply all routes on the app that must be applied before the @medusajs authentication
+ * Apply routers according to their configuration
+ * @param domain
  * @param app
- * @param routesOptions
+ * @param routers
  */
-export function applyBeforeAuthRouters(app: Router, routesOptions: GetInjectableOptions<'router'>): void {
-	for (const routeOptions of routesOptions) {
-		routeOptions.routes.forEach((route) => {
-			if (!route.requiredAuth) {
-				applyRoute(app, route);
-			}
-		});
-	}
-}
+export function applyRouters(
+	domain: 'admin' | 'store' | 'custom',
+	app: Router,
+	routers: GetInjectableOptions<'router'>
+): void {
+	logger.log('Loading custom routers');
 
-/**
- * @internal
- * Apply all routes on the app that must be applied after the @medusajs authentication
- * @param app
- * @param routesOptions
- */
-export function applyAfterAuthRouters(app: Router, routesOptions: GetInjectableOptions<'router'>): void {
-	for (const routeOptions of routesOptions) {
-		routeOptions.routes.forEach((route) => {
-			if (route.requiredAuth) {
-				applyRoute(app, route);
-			}
-		});
-	}
-}
+	for (const routerOptions of routers) {
+		routerOptions.routes.forEach((route) => {
+			const { method, path, handlers, requiredAuth } = route;
 
-function applyRoute(app: Router, route: RoutesInjectionRouterConfiguration): void {
-	const { method, path, handlers } = route;
-	app[method.toLowerCase()](path, ...handlers);
+			const handlers_: RequestHandler[] = requiredAuth
+				? ((domain === 'admin' || domain === 'custom') && [authenticatedMiddleware()]) || [
+						requireCustomerAuthenticatedMiddleware(),
+				  ]
+				: [];
+
+			handlers_.push(...handlers);
+
+			app[method.toLowerCase()](path, ...handlers_);
+		});
+
+		logger.log(`Router loaded - ${routerOptions.metatype.name}`);
+	}
 }

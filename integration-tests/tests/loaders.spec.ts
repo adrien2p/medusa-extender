@@ -21,7 +21,7 @@ describe('Loaders', () => {
 	let context!: Context;
 
 	beforeAll(async () => {
-		context = await loadServer([TestModule]);
+		context = await loadServer([TestModule], { verbose: false });
 	});
 
 	afterAll(async () => {
@@ -125,11 +125,11 @@ describe('Loaders', () => {
 			expect(AdminTestPathMiddleware.prototype.consume).toHaveBeenCalled();
 		});
 
-		it('should apply authenticated admin middleware', async () => {
+		it.only('should apply authenticated admin middleware', async () => {
 			await makeRequest(context, {
 				path: `/admin/authenticated-test-path`,
 				method: 'get',
-				adminSession: {
+				clientSession: {
 					jwt: {
 						userId: IdMap.getId('admin_user'),
 					},
@@ -169,6 +169,19 @@ describe('Loaders', () => {
 			await makeRequest(context, {
 				path: `/store/test-path`,
 				method: 'get',
+			}).expect(200);
+			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
+		});
+
+		it('should apply authenticated store middleware', async () => {
+			await makeRequest(context, {
+				path: `/store/authenticated-test-path`,
+				method: 'get',
+				adminSession: {
+					store_jwt: {
+						customer_id: IdMap.getId('customer_user'),
+					},
+				},
 			}).expect(200);
 			expect(StoreTestPathMiddleware.prototype.consume).toHaveBeenCalled();
 		});

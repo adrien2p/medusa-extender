@@ -1,4 +1,5 @@
-import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst, MedusaContainer } from './';
+import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
+import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 import { asClass, asValue } from 'awilix';
 import { Logger } from '../core';
 

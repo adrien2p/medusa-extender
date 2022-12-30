@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { GetInjectableOptions } from './';
-import { applyAfterAuthMiddleware, applyBeforeAuthMiddleware } from './helpers/apply-middlewares';
-import { applyAfterAuthRouters, applyBeforeAuthRouters } from './helpers/apply-routers';
+import { applyMiddlewares } from './helpers/apply-middlewares';
+import { applyRouters } from './helpers/apply-routers';
 
 /**
  * @internal
@@ -33,19 +33,13 @@ export async function storeApiLoader(
 		}))
 		.filter((route) => route.routes.length);
 
+	// We are registering the routes and middleware just before medusa created the auth route
+	// in order to be placed after the store initialisation but before any store routes
 	const storeAuthRouteLoader = await import('@medusajs/medusa/dist/api/routes/store/auth');
 	const originalStoreAuthRouteLoader = storeAuthRouteLoader.default;
 	storeAuthRouteLoader.default = (app: Router): void => {
-		applyBeforeAuthMiddleware(app, storeMiddlewares);
-		applyBeforeAuthRouters(app, storeRouters);
+		applyMiddlewares('store', app, storeMiddlewares);
+		applyRouters('store', app, storeRouters);
 		originalStoreAuthRouteLoader(app);
-	};
-
-	const storeCollectionRouteLoader = await import('@medusajs/medusa/dist/api/routes/store/collections');
-	const originalStoreCollectionRouteLoader = storeCollectionRouteLoader.default;
-	storeCollectionRouteLoader.default = (app: Router): void => {
-		applyAfterAuthMiddleware(app, storeMiddlewares);
-		applyAfterAuthRouters(app, storeRouters);
-		originalStoreCollectionRouteLoader(app);
 	};
 }

@@ -18,8 +18,8 @@
   },
   "peerDependencies": {
     "medusa-extender": "1.x",
-    "awilix": "^4.2.3",
-    "@medusajs/medusa": "1.x",
+    "awilix": "^8.0.0",
+    "@medusajs/medusa": "^1.7.2",
     "medusa-core-utils": "1.x",
     "medusa-interfaces": "^1.x",
     "reflect-metadata": "^0.1.13",
@@ -27,10 +27,10 @@
   },
   "devDependencies": {
     "@golevelup/ts-jest": "^0.3.2",
-    "@medusajs/medusa": "1.x",
+    "@medusajs/medusa": "^1.7.2",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.12",
-    "awilix": "^4.2.3",
+    "awilix": "^8.0.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

@@ -1,11 +1,11 @@
-import { GetInjectableOptions, Logger, MedusaContainer } from '../core';
+import { GetInjectableOptions, Logger } from '../core';
 import { asFunction } from 'awilix';
 
 const logger = Logger.contextualize('SubscribersLoader');
 
 /**
  * @internal
- * Load all custom extended validators into the underlying @medusajs instance.
+ * Load all custom extended subscribers into the underlying @medusajs instance.
  * @param subscribersOptions
  */
 export async function subscribersLoader(subscribersOptions: GetInjectableOptions<'subscriber'>): Promise<void> {
@@ -13,7 +13,7 @@ export async function subscribersLoader(subscribersOptions: GetInjectableOptions
 
 	const module = await import('@medusajs/medusa/dist/loaders/subscribers');
 	const originalSubscriber = module.default;
-	module.default = ({ container }: { container: MedusaContainer }): void => {
+	module.default = ({ container }: { container }): void => {
 		// @ts-ignore
 		originalSubscriber({ container });
 		subscribersOptions.forEach((subscriberOption) => {

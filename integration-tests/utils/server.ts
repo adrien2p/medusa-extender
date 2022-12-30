@@ -13,7 +13,14 @@ export async function serverTeardown(context: Context): Promise<void> {
 	} catch (e) {}
 }
 
-export async function loadServer(modules: Type[]): Promise<Context> {
+export async function loadServer(modules: Type[], { verbose }: { verbose?: boolean } = {}): Promise<Context> {
+	if (!verbose) {
+		const noop = () => void 0
+		console.log = noop
+		console.warn = noop
+		console.error = noop
+	}
+
 	return await new Promise((resolve, reject) => {
 		portfinder.getPort(async (err: unknown, port: number) => {
 			if (err) reject(err);
