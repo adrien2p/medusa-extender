@@ -1,7 +1,9 @@
 import { Connection, EntityManager, EntitySubscriberInterface, Repository } from 'typeorm';
-import { Constructor, MixinReturnType } from './types';
+import { ConfigModule, Constructor, MixinReturnType } from './types';
+import { getConfigFile } from 'medusa-core-utils';
 
 /**
+ * @deprecated The definition files merging the entities types allow us to get rid of this util. It will be removed in the future
  * For repository context, you should extends repository and the medusa target repository.
  * Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
  * @param source
@@ -44,6 +46,7 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
 }
 
 /**
+ * @deprecated Since this util only acts on the type and not the prototype itself, it adds more confusion for the user. It will be removed in the future
  * Allow to omit some property from a class.
  * @param Class
  * @param keys
@@ -78,4 +81,24 @@ export function buildRegexpIfValid(str: string): RegExp | undefined {
 	} catch (e) {}
 
 	return;
+}
+
+export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
+	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
+		configModule: ConfigModule;
+		configFilePath: string;
+	};
+	const resolveConfigProperties = async (obj: any): Promise<ConfigModule> => {
+		for (const key of Object.keys(obj)) {
+			if (typeof obj[key] === 'object' && obj[key] !== null) {
+				await resolveConfigProperties(obj[key]);
+			}
+			if (typeof obj[key] === 'function') {
+				obj[key] = await obj[key]();
+			}
+		}
+		return obj;
+	};
+	const configModule = await resolveConfigProperties(configuration.configModule);
+	return configModule;
 }

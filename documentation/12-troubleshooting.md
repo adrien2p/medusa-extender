@@ -38,9 +38,7 @@ In that case, we have to let typescript know that `Foo` has been extended and th
 this is what the following code will do with a user extension example:
 
 ```ts
-import { default as ExtendedUserRepository } from './user.repository';
-
-declare module '@medusajs/medusa/dist/models/user' {
+export declare module '@medusajs/medusa/dist/models/user' {
     declare interface User {
         store_id: string;
     }

@@ -2,7 +2,7 @@ import loaders from '@medusajs/medusa/dist/loaders';
 import * as getEndpoints from 'express-list-endpoints';
 import { Express } from 'express';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
-import { Logger, Type } from './core';
+import { asyncLoadConfig, Logger, Type } from './core';
 import {
 	adminApiLoader,
 	customApiLoader,
@@ -16,7 +16,6 @@ import {
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
-import { asyncLoadConfig } from './cli/utils/async-load-config';
 
 // Use to fix MiddlewareService typings
 declare global {

@@ -1,4 +1,5 @@
-import { asyncLoadConfig } from '../async-load-config';
+import { asyncLoadConfig } from '../utils';
+
 const runLoadTest = async (testFixtureFileName: string) => {
 	const testProjectConfig = {
 		database_database: './medusa-db.sql',
@@ -6,7 +7,7 @@ const runLoadTest = async (testFixtureFileName: string) => {
 		store_cors: 'STORE_CORS',
 		admin_cors: 'ADMIN_CORS',
 	};
-	const configModule = await asyncLoadConfig(`${__dirname}/../fixtures/`, `${testFixtureFileName}.js`);
+	const configModule = await asyncLoadConfig(`${__dirname}/fixtures/async-load-config`, `${testFixtureFileName}.js`);
 	expect(configModule).toBeDefined();
 	expect(configModule.projectConfig).toBeDefined();
 	expect(configModule.projectConfig).not.toBeInstanceOf(Promise);

@@ -30,11 +30,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-verion }}
 
-      - name: 'npm install'
-        run: npm install
+      - name: 'install deps'
+        run: npm i
 
       - name: 'run unit tests'
-        run: npm run test:ci
+        run: npm run test:ci --legacy-peer-deps
         env:
           MEDUSAJS_VERSION: ${{ matrix.medusajs-version }}
 
