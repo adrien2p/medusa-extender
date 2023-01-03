@@ -26,7 +26,7 @@
 
 ### constructor
 
-• **new Type**(`...args`)
+• **new Type**(...`args`)
 
 #### Parameters
 
@@ -40,4 +40,4 @@ Function.constructor
 
 #### Defined in
 
-[core/types.ts:10](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/types.ts#L10)
+[core/types.ts:7](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/types.ts#L7)

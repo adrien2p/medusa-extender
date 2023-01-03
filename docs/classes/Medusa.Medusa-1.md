@@ -4,6 +4,8 @@
 
 [Medusa](../modules/Medusa.md).Medusa
 
+Load medusa and apply all components
+
 ## Table of contents
 
 ### Constructors
@@ -29,12 +31,12 @@
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `rootDir` | `string` |  |
-| `express` | `Express` |  |
+| `rootDir` | `string` | Directory where the `medusa-config` is located |
+| `express` | `Express` | Express instance |
 
 #### Defined in
 
-[Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/Medusa.ts#L38)
+[Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -44,7 +46,7 @@
 
 #### Defined in
 
-[Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/Medusa.ts#L31)
+[Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L31)
 
 ___
 
@@ -54,24 +56,24 @@ ___
 
 #### Defined in
 
-[Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/Medusa.ts#L32)
+[Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L32)
 
 ## Methods
 
 ### load
 
-▸ **load**(`modules`): `Promise`<[`MedusaContainer`](../modules/core_types.md#medusacontainer)\>
+▸ **load**(`modules`): `Promise`<`MedusaContainer`\>
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] |  |
+| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] | The modules to load into medusa |
 
 #### Returns
 
-`Promise`<[`MedusaContainer`](../modules/core_types.md#medusacontainer)\>
+`Promise`<`MedusaContainer`\>
 
 #### Defined in
 
-[Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/Medusa.ts#L46)
+[Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L46)

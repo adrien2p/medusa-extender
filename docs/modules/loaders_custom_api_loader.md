@@ -14,13 +14,16 @@
 
 ▸ **customApiLoader**(`app`, `middlewares`, `routers`): `Promise`<`void`\>
 
+**`internal`**
+Apply middlewares and routes on the underlying @medusajs customApi API.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
-| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
+| Name | Type |
+| :------ | :------ |
+| `app` | `Router` |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
+| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
 
 #### Returns
 
@@ -28,4 +31,4 @@
 
 #### Defined in
 
-[loaders/custom-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/custom-api.loader.ts#L13)
+[loaders/custom-api.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/custom-api.loader.ts#L14)

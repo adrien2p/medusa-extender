@@ -14,12 +14,16 @@
 
 ▸ **pluginsLoadersProvidersAndListeners**(`app`, `providers`): `Promise`<`void`\>
 
+**`internal`**
+Register all listeners before the plugins are loaded to be sure that the scope middleware has already been created.
+Also register all providers that are typically created in plugins.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `app` | `Express` |  |
-| `providers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"provider"``\> | - |
+| `app` | `Express` | Express app |
+| `providers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"provider"``\> |  |
 
 #### Returns
 
@@ -27,4 +31,4 @@
 
 #### Defined in
 
-[loaders/plugins.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/plugins.loader.ts#L12)
+[loaders/plugins.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/plugins.loader.ts#L14)

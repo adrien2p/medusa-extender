@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-### Type Aliases
+### Type aliases
 
 - [AllowedProviderInjectableOptions](decorators_providers_decorator.md#allowedproviderinjectableoptions)
 
@@ -13,7 +13,7 @@
 - [FulfillmentProvider](decorators_providers_decorator.md#fulfillmentprovider)
 - [TaxProvider](decorators_providers_decorator.md#taxprovider)
 
-## Type Aliases
+## Type aliases
 
 ### AllowedProviderInjectableOptions
 
@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L4)
+[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/providers.decorator.ts#L4)
 
 ## Functions
 
@@ -29,6 +29,8 @@
 
 ▸ **FulfillmentProvider**(`options?`): `ClassDecorator`
 
+Mark a class as a fulfillment provider to be used by the loader.
+
 #### Parameters
 
 | Name | Type |
@@ -41,7 +43,7 @@
 
 #### Defined in
 
-[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L20)
+[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/providers.decorator.ts#L20)
 
 ___
 
@@ -49,6 +51,8 @@ ___
 
 ▸ **TaxProvider**(`options?`): `ClassDecorator`
 
+Mark a class as a tax provider to be used by the loader.
+
 #### Parameters
 
 | Name | Type |
@@ -61,4 +65,4 @@ ___
 
 #### Defined in
 
-[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/providers.decorator.ts#L11)
+[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/providers.decorator.ts#L11)

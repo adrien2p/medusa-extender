@@ -7,6 +7,7 @@
 ### Functions
 
 - [Omit](core_utils.md#omit)
+- [asyncLoadConfig](core_utils.md#asyncloadconfig)
 - [attachOrReplaceEntitySubscriber](core_utils.md#attachorreplaceentitysubscriber)
 - [buildRegexpIfValid](core_utils.md#buildregexpifvalid)
 - [lowerCaseFirst](core_utils.md#lowercasefirst)
@@ -18,6 +19,9 @@
 ### Omit
 
 ▸ **Omit**<`T`, `K`\>(`Class`, `keys`): () => `Omit`<`T`, `K`\>
+
+**`deprecated`** Since this util only acts on the type and not the prototype itself, it adds more confusion for the user. It will be removed in the future
+Allow to omit some property from a class.
 
 #### Type parameters
 
@@ -41,13 +45,36 @@
 
 #### Defined in
 
-[core/utils.ts:52](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L52)
+[core/utils.ts:55](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L55)
+
+___
+
+### asyncLoadConfig
+
+▸ **asyncLoadConfig**(`rootDir?`, `filename?`): `Promise`<[`ConfigModule`](core_types.md#configmodule)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `rootDir?` | `string` |
+| `filename?` | `string` |
+
+#### Returns
+
+`Promise`<[`ConfigModule`](core_types.md#configmodule)\>
+
+#### Defined in
+
+[core/utils.ts:86](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L86)
 
 ___
 
 ### attachOrReplaceEntitySubscriber
 
 ▸ **attachOrReplaceEntitySubscriber**<`T`\>(`connection`, `Subscriber`, `transactionalEntityManager?`): `void`
+
+Attach a new subscriber to a specific entities.
 
 #### Type parameters
 
@@ -59,9 +86,9 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `connection` | `Connection` |  |
-| `Subscriber` | `T` |  |
-| `transactionalEntityManager?` | `EntityManager` |  |
+| `connection` | `Connection` | The database connection |
+| `Subscriber` | `T` | The subscriber to attach |
+| `transactionalEntityManager?` | `EntityManager` | The transactional entity manager to pass the transaction through |
 
 #### Returns
 
@@ -69,7 +96,7 @@ ___
 
 #### Defined in
 
-[core/utils.ts:29](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L29)
+[core/utils.ts:31](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L31)
 
 ___
 
@@ -89,7 +116,7 @@ ___
 
 #### Defined in
 
-[core/utils.ts:71](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L71)
+[core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L74)
 
 ___
 
@@ -97,11 +124,13 @@ ___
 
 ▸ **lowerCaseFirst**(`str`): `string`
 
+Lower case the first character of the input string.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `str` | `string` |  |
+| Name | Type |
+| :------ | :------ |
+| `str` | `string` |
 
 #### Returns
 
@@ -109,13 +138,17 @@ ___
 
 #### Defined in
 
-[core/utils.ts:59](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L59)
+[core/utils.ts:62](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L62)
 
 ___
 
 ### repositoryMixin
 
 ▸ **repositoryMixin**<`TEntity`, `TSource`\>(`source`): [`MixinReturnType`](core_types.md#mixinreturntype)<`Repository`<`TEntity`\>, `TSource`\>
+
+**`deprecated`** The definition files merging the entities types allow us to get rid of this util. It will be removed in the future
+For repository context, you should extends repository and the medusa target repository.
+Since it is not possible to use multiple extend, you can use that utilities to apply multiple extends.
 
 #### Type parameters
 
@@ -126,9 +159,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `source` | [`Constructor`](core_types.md#constructor)<`TSource`\> |  |
+| Name | Type |
+| :------ | :------ |
+| `source` | [`Constructor`](core_types.md#constructor)<`TSource`\> |
 
 #### Returns
 
@@ -136,7 +169,7 @@ ___
 
 #### Defined in
 
-[core/utils.ts:9](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L9)
+[core/utils.ts:11](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L11)
 
 ___
 
@@ -144,11 +177,13 @@ ___
 
 ▸ **upperCaseFirst**(`str`): `string`
 
+Upper case the first character of the input string.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `str` | `string` |  |
+| Name | Type |
+| :------ | :------ |
+| `str` | `string` |
 
 #### Returns
 
@@ -156,4 +191,4 @@ ___
 
 #### Defined in
 
-[core/utils.ts:67](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/utils.ts#L67)
+[core/utils.ts:70](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L70)

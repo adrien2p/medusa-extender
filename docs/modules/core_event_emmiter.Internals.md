@@ -10,15 +10,17 @@
 
 - [CustomEventEmitter](../classes/core_event_emmiter.Internals.CustomEventEmitter.md)
 
-### Type Aliases
+### Type aliases
 
 - [ListenerDescriptor](core_event_emmiter.Internals.md#listenerdescriptor)
 
-## Type Aliases
+## Type aliases
 
 ### ListenerDescriptor
 
 Ƭ **ListenerDescriptor**<`T`\>: `Object`
+
+A listener descriptor.
 
 #### Type parameters
 
@@ -36,4 +38,4 @@
 
 #### Defined in
 
-[core/event-emmiter.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/event-emmiter.ts#L12)
+[core/event-emmiter.ts:12](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/event-emmiter.ts#L12)

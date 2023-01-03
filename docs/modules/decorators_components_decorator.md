@@ -21,6 +21,8 @@
 
 ▸ **Entity**<`T`\>(`options?`): `ClassDecorator`
 
+Mark a class as an entity to be used by the loader.
+
 #### Type parameters
 
 | Name | Type |
@@ -39,13 +41,15 @@
 
 #### Defined in
 
-[decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L16)
+[decorators/components.decorator.ts:16](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L16)
 
 ___
 
 ### Middleware
 
 ▸ **Middleware**(`options`): `ClassDecorator`
+
+Mark a class as a middleware to be used by the loader.
 
 #### Parameters
 
@@ -59,7 +63,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L43)
+[decorators/components.decorator.ts:43](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L43)
 
 ___
 
@@ -67,19 +71,23 @@ ___
 
 ▸ **Migration**(): `ClassDecorator`
 
+Mark a class as a migration to be used by the loader.
+
 #### Returns
 
 `ClassDecorator`
 
 #### Defined in
 
-[decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L51)
+[decorators/components.decorator.ts:51](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L51)
 
 ___
 
 ### Repository
 
 ▸ **Repository**<`T`\>(`options?`): `ClassDecorator`
+
+Mark a class as a repository to be used by the loader.
 
 #### Type parameters
 
@@ -99,13 +107,15 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L34)
+[decorators/components.decorator.ts:34](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L34)
 
 ___
 
 ### Router
 
 ▸ **Router**(`options`): `ClassDecorator`
+
+Mark a class as a router to be used by the loader.
 
 #### Parameters
 
@@ -119,13 +129,15 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L60)
+[decorators/components.decorator.ts:60](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L60)
 
 ___
 
 ### Service
 
 ▸ **Service**<`T`\>(`options?`): `ClassDecorator`
+
+Mark a class as a service to be used by the loader.
 
 #### Type parameters
 
@@ -145,7 +157,7 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L25)
+[decorators/components.decorator.ts:25](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L25)
 
 ___
 
@@ -153,19 +165,23 @@ ___
 
 ▸ **Subscriber**(): `ClassDecorator`
 
+Mark a class as a subscriber.
+
 #### Returns
 
 `ClassDecorator`
 
 #### Defined in
 
-[decorators/components.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L77)
+[decorators/components.decorator.ts:77](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L77)
 
 ___
 
 ### Validator
 
 ▸ **Validator**(`options`): `ClassDecorator`
+
+Mark a class as a validator to be used by the validator utility.
 
 #### Parameters
 
@@ -179,4 +195,4 @@ ___
 
 #### Defined in
 
-[decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/components.decorator.ts#L69)
+[decorators/components.decorator.ts:69](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/components.decorator.ts#L69)

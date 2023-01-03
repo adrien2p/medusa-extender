@@ -14,12 +14,14 @@
 
 ▸ **lookupClosestModule**(`fullDestinationPath`, `isMain?`): `string` \| `undefined`
 
+Lookup for the closest module component from the destination path.
+
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `fullDestinationPath` | `string` | `undefined` |  |
-| `isMain` | `boolean` | `true` |  |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `fullDestinationPath` | `string` | `undefined` |
+| `isMain` | `boolean` | `true` |
 
 #### Returns
 
@@ -27,4 +29,4 @@
 
 #### Defined in
 
-[cli/utils/lookup-closest-module.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/utils/lookup-closest-module.ts#L12)
+[cli/utils/lookup-closest-module.ts:12](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/utils/lookup-closest-module.ts#L12)

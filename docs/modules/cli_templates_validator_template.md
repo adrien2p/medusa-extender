@@ -14,11 +14,13 @@
 
 ▸ **getValidatorTemplate**(`validatorName`): `string`
 
+Provide a basic template for the validator component generation.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `validatorName` | `string` |  |
+| Name | Type |
+| :------ | :------ |
+| `validatorName` | `string` |
 
 #### Returns
 
@@ -26,4 +28,4 @@
 
 #### Defined in
 
-[cli/templates/validator-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/templates/validator-template.ts#L7)
+[cli/templates/validator-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/templates/validator-template.ts#L7)

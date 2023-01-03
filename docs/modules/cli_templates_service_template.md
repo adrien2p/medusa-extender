@@ -14,11 +14,13 @@
 
 ▸ **getServiceTemplate**(`serviceName`): `string`
 
+Provide a basic template for the service component generation.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `serviceName` | `string` |  |
+| Name | Type |
+| :------ | :------ |
+| `serviceName` | `string` |
 
 #### Returns
 
@@ -26,4 +28,4 @@
 
 #### Defined in
 
-[cli/templates/service-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/templates/service-template.ts#L8)
+[cli/templates/service-template.ts:8](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/templates/service-template.ts#L8)

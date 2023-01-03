@@ -15,6 +15,10 @@
 
 ▸ **componentsMetadataReader**<`TComponentType`\>(`component`): [`InjectableOptions`](core_types.md#injectableoptions)<`TComponentType`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  }
 
+**`internal`**
+
+Return the options from components.
+
 #### Type parameters
 
 | Name | Type |
@@ -23,9 +27,9 @@
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `component` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\> |  |
+| Name | Type |
+| :------ | :------ |
+| `component` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\> |
 
 #### Returns
 
@@ -33,7 +37,7 @@
 
 #### Defined in
 
-[core/metadata-reader.ts:44](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/metadata-reader.ts#L44)
+[core/metadata-reader.ts:44](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/metadata-reader.ts#L44)
 
 ___
 
@@ -41,11 +45,15 @@ ___
 
 ▸ **metadataReader**(`modules`): [`ComponentMap`](../classes/core_componentMap.ComponentMap.md)
 
+**`internal`**
+
+Read all metadata from the imported modules and extract components that will be stored by there type.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] |  |
+| `modules` | [`Type`](../interfaces/core_types.Type.md)<`unknown`\>[] | The modules from which the metadata are read. |
 
 #### Returns
 
@@ -53,4 +61,4 @@ ___
 
 #### Defined in
 
-[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/metadata-reader.ts#L11)
+[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/metadata-reader.ts#L11)

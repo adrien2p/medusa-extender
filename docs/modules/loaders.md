@@ -6,7 +6,9 @@
 
 ### References
 
+- [ConfigModule](loaders.md#configmodule)
 - [Constructor](loaders.md#constructor)
+- [DatabaseTlsOptions](loaders.md#databasetlsoptions)
 - [EntityInjectableOptions](loaders.md#entityinjectableoptions)
 - [GetInjectableOption](loaders.md#getinjectableoption)
 - [GetInjectableOptions](loaders.md#getinjectableoptions)
@@ -14,7 +16,6 @@
 - [InjectableOptions](loaders.md#injectableoptions)
 - [InjectableProviderSubTypes](loaders.md#injectableprovidersubtypes)
 - [MedusaAuthenticatedRequest](loaders.md#medusaauthenticatedrequest)
-- [MedusaContainer](loaders.md#medusacontainer)
 - [MedusaDynamicModule](loaders.md#medusadynamicmodule)
 - [MedusaMiddleware](loaders.md#medusamiddleware)
 - [MedusaRequest](loaders.md#medusarequest)
@@ -33,6 +34,7 @@
 - [Type](loaders.md#type)
 - [ValidatorInjectionOptions](loaders.md#validatorinjectionoptions)
 - [adminApiLoader](loaders.md#adminapiloader)
+- [asyncLoadConfig](loaders.md#asyncloadconfig)
 - [attachOrReplaceEntitySubscriber](loaders.md#attachorreplaceentitysubscriber)
 - [buildRegexpIfValid](loaders.md#buildregexpifvalid)
 - [customApiLoader](loaders.md#customapiloader)
@@ -58,9 +60,21 @@
 
 ## References
 
+### ConfigModule
+
+Re-exports [ConfigModule](core_types.md#configmodule)
+
+___
+
 ### Constructor
 
 Re-exports [Constructor](core_types.md#constructor)
+
+___
+
+### DatabaseTlsOptions
+
+Re-exports [DatabaseTlsOptions](core_types.md#databasetlsoptions)
 
 ___
 
@@ -103,12 +117,6 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
-
-___
-
-### MedusaContainer
-
-Re-exports [MedusaContainer](core_types.md#medusacontainer)
 
 ___
 
@@ -217,6 +225,12 @@ ___
 ### adminApiLoader
 
 Re-exports [adminApiLoader](loaders_admin_api_loader.md#adminapiloader)
+
+___
+
+### asyncLoadConfig
+
+Re-exports [asyncLoadConfig](core_utils.md#asyncloadconfig)
 
 ___
 

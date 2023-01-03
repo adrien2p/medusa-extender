@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[modules/multi-tenancy/tenant.service.ts:10](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/modules/multi-tenancy/tenant.service.ts#L10)
+[modules/multi-tenancy/tenant.service.ts:10](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/modules/multi-tenancy/tenant.service.ts#L10)
 
 ## Methods
 
@@ -40,12 +40,14 @@
 
 ▸ **getOrCreateConnection**(`defaultManager`, `req`): `Promise`<`EntityManager`\>
 
+Provide a way to switch between database connections depending on the request property holding the tenant code.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `defaultManager` | `EntityManager` |  |
-| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |  |
+| Name | Type |
+| :------ | :------ |
+| `defaultManager` | `EntityManager` |
+| `req` | [`MedusaRequest`](../modules/core_types.md#medusarequest) |
 
 #### Returns
 
@@ -53,4 +55,4 @@
 
 #### Defined in
 
-[modules/multi-tenancy/tenant.service.ts:17](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/modules/multi-tenancy/tenant.service.ts#L17)
+[modules/multi-tenancy/tenant.service.ts:17](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/modules/multi-tenancy/tenant.service.ts#L17)

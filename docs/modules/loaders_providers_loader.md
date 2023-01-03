@@ -21,7 +21,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `options` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"provider"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[loaders/providers.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/providers.loader.ts#L53)
+[loaders/providers.loader.ts:54](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L54)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `options` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"provider"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:19](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/providers.loader.ts#L19)
+[loaders/providers.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L20)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `providers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"provider"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:7](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/providers.loader.ts#L7)
+[loaders/providers.loader.ts:8](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L8)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `options` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"provider"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:29](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/providers.loader.ts#L29)
+[loaders/providers.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L30)

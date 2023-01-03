@@ -6,7 +6,9 @@
 
 ### References
 
+- [ConfigModule](index.md#configmodule)
 - [Constructor](index.md#constructor)
+- [DatabaseTlsOptions](index.md#databasetlsoptions)
 - [Entity](index.md#entity)
 - [EntityActions](index.md#entityactions)
 - [EntityEventActionOptions](index.md#entityeventactionoptions)
@@ -23,7 +25,6 @@
 - [MODULE\_KEY](index.md#module_key)
 - [Medusa](index.md#medusa)
 - [MedusaAuthenticatedRequest](index.md#medusaauthenticatedrequest)
-- [MedusaContainer](index.md#medusacontainer)
 - [MedusaDynamicModule](index.md#medusadynamicmodule)
 - [MedusaEventEmittedParams](index.md#medusaeventemittedparams)
 - [MedusaEventHandlerParams](index.md#medusaeventhandlerparams)
@@ -59,9 +60,21 @@
 
 ## References
 
+### ConfigModule
+
+Re-exports [ConfigModule](core_types.md#configmodule)
+
+___
+
 ### Constructor
 
 Re-exports [Constructor](core_types.md#constructor)
+
+___
+
+### DatabaseTlsOptions
+
+Re-exports [DatabaseTlsOptions](core_types.md#databasetlsoptions)
 
 ___
 
@@ -158,12 +171,6 @@ ___
 ### MedusaAuthenticatedRequest
 
 Re-exports [MedusaAuthenticatedRequest](core_types.md#medusaauthenticatedrequest)
-
-___
-
-### MedusaContainer
-
-Re-exports [MedusaContainer](core_types.md#medusacontainer)
 
 ___
 

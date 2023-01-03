@@ -6,21 +6,24 @@
 
 ### Functions
 
-- [applyAfterAuthMiddleware](loaders_helpers_apply_middlewares.md#applyafterauthmiddleware)
-- [applyBeforeAuthMiddleware](loaders_helpers_apply_middlewares.md#applybeforeauthmiddleware)
+- [applyMiddlewares](loaders_helpers_apply_middlewares.md#applymiddlewares)
 
 ## Functions
 
-### applyAfterAuthMiddleware
+### applyMiddlewares
 
-▸ **applyAfterAuthMiddleware**(`app`, `middlewares`): `void`
+▸ **applyMiddlewares**(`domain`, `app`, `middlewares`): `void`
+
+**`internal`**
+Apply middlewares according to their configuration
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
+| Name | Type |
+| :------ | :------ |
+| `domain` | ``"admin"`` \| ``"store"`` \| ``"custom"`` |
+| `app` | `Router` |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
 
 #### Returns
 
@@ -28,25 +31,4 @@
 
 #### Defined in
 
-[loaders/helpers/apply-middlewares.ts:34](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-middlewares.ts#L34)
-
-___
-
-### applyBeforeAuthMiddleware
-
-▸ **applyBeforeAuthMiddleware**(`app`, `middlewares`): `void`
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[loaders/helpers/apply-middlewares.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-middlewares.ts#L12)
+[loaders/helpers/apply-middlewares.ts:15](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/helpers/apply-middlewares.ts#L15)

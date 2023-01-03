@@ -20,7 +20,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[loaders/services.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L52)
+[loaders/services.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/services.loader.ts#L53)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `container` | [`MedusaContainer`](core_types.md#medusacontainer) |
+| `container` | `MedusaContainer` |
 | `serviceOptions` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"service"``\> |
 | `configModule` | `Record`<`string`, `unknown`\> |
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[loaders/services.loader.ts:40](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L40)
+[loaders/services.loader.ts:41](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/services.loader.ts#L41)
 
 ___
 
@@ -60,11 +60,14 @@ ___
 
 ▸ **servicesLoader**(`services`): `Promise`<`void`\>
 
+**`internal`**
+Load all custom services and overridden services into the underlying @medusajs instance.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `services` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"service"``\> |  |
+| `services` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"service"``\> | Any custom service that implements MedusaService |
 
 #### Returns
 
@@ -72,4 +75,4 @@ ___
 
 #### Defined in
 
-[loaders/services.loader.ts:12](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/services.loader.ts#L12)
+[loaders/services.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/services.loader.ts#L13)

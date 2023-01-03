@@ -24,7 +24,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`RouterInjectionOptions`](core_types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`MiddlewareInjectionOptions`](core_types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](core_types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](core_types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](core_types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ValidatorInjectionOptions`](core_types.md#validatorinjectionoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } |
+| `options` | [`MiddlewareInjectionOptions`](core_types.md#middlewareinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`RouterInjectionOptions`](core_types.md#routerinjectionoptions) & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`EntityInjectableOptions`](core_types.md#entityinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ServiceInjectableOptions`](core_types.md#serviceinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`RepositoryInjectableOptions`](core_types.md#repositoryinjectableoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } & [`ValidatorInjectionOptions`](core_types.md#validatorinjectionoptions)<`T`\> & { `type`: [`InjectableComponentTypes`](core_types.md#injectablecomponenttypes)  } |
 
 #### Returns
 
@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/decorators/helpers/build-component-decorator.ts#L4)
+[decorators/helpers/build-component-decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/decorators/helpers/build-component-decorator.ts#L4)

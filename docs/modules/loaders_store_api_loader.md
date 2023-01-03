@@ -14,13 +14,16 @@
 
 ▸ **storeApiLoader**(`app`, `middlewares`, `routers`): `Promise`<`void`\>
 
+**`internal`**
+Apply middlewares and routes on store API.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |  |
-| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
+| Name | Type |
+| :------ | :------ |
+| `app` | `Router` |
+| `middlewares` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"middleware"``\> |
+| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
 
 #### Returns
 
@@ -28,4 +31,4 @@
 
 #### Defined in
 
-[loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/store-api.loader.ts#L13)
+[loaders/store-api.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/store-api.loader.ts#L13)

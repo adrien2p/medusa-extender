@@ -6,21 +6,24 @@
 
 ### Functions
 
-- [applyAfterAuthRouters](loaders_helpers_apply_routers.md#applyafterauthrouters)
-- [applyBeforeAuthRouters](loaders_helpers_apply_routers.md#applybeforeauthrouters)
+- [applyRouters](loaders_helpers_apply_routers.md#applyrouters)
 
 ## Functions
 
-### applyAfterAuthRouters
+### applyRouters
 
-▸ **applyAfterAuthRouters**(`app`, `routesOptions`): `void`
+▸ **applyRouters**(`domain`, `app`, `routers`): `void`
+
+**`internal`**
+Apply routers according to their configuration
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
+| Name | Type |
+| :------ | :------ |
+| `domain` | ``"admin"`` \| ``"store"`` \| ``"custom"`` |
+| `app` | `Router` |
+| `routers` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |
 
 #### Returns
 
@@ -28,25 +31,4 @@
 
 #### Defined in
 
-[loaders/helpers/apply-routers.ts:26](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-routers.ts#L26)
-
-___
-
-### applyBeforeAuthRouters
-
-▸ **applyBeforeAuthRouters**(`app`, `routesOptions`): `void`
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `app` | `Router` |  |
-| `routesOptions` | [`GetInjectableOptions`](core_types.md#getinjectableoptions)<``"router"``\> |  |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[loaders/helpers/apply-routers.ts:10](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/loaders/helpers/apply-routers.ts#L10)
+[loaders/helpers/apply-routers.ts:15](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/helpers/apply-routers.ts#L15)

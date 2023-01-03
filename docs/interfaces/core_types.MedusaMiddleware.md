@@ -4,6 +4,9 @@
 
 [core/types](../modules/core_types.md).MedusaMiddleware
 
+**`interface`**
+Describe a custom middleware instance.
+
 ## Implemented by
 
 - [`TenantMiddleware`](../classes/modules_multi_tenancy_tenant_middleware.TenantMiddleware.md)
@@ -34,4 +37,4 @@
 
 #### Defined in
 
-[core/types.ts:188](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/core/types.ts#L188)
+[core/types.ts:189](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/types.ts#L189)

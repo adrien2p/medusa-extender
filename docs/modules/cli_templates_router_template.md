@@ -14,11 +14,13 @@
 
 ▸ **getRouterTemplate**(`routerName`): `string`
 
+Provide a basic template for the router component generation.
+
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `routerName` | `string` |  |
+| Name | Type |
+| :------ | :------ |
+| `routerName` | `string` |
 
 #### Returns
 
@@ -26,4 +28,4 @@
 
 #### Defined in
 
-[cli/templates/router-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/12c4270/src/cli/templates/router-template.ts#L7)
+[cli/templates/router-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/templates/router-template.ts#L7)
