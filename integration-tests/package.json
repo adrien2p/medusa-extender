@@ -19,7 +19,6 @@
     "dotenv": "^12.0.4",
     "express": "^4.17.1",
     "medusa-core-utils": "1.x",
-    "medusa-extender": "file:medusa-extender-1.7.8.tgz",
     "medusa-fulfillment-manual": "^1.1.30",
     "medusa-interfaces": "1.x",
     "medusa-payment-manual": "^1.0.12",
