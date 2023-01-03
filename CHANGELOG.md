@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/adrien2p/medusa-extender/compare/v1.7.8...v1.8.0) (2023-01-03)
+
+
+### Features
+
+* require auth enhancement and refactoring ([#156](https://github.com/adrien2p/medusa-extender/issues/156)) ([ad1be9c](https://github.com/adrien2p/medusa-extender/commits/ad1be9c292dafc2689cf55f1f825cf1889674395))
+* updated to include async loading ([#149](https://github.com/adrien2p/medusa-extender/issues/149)) ([a46826f](https://github.com/adrien2p/medusa-extender/commits/a46826f338a2373255c11210ce3f689f6e9d716d))
+
 ### [1.7.8](https://github.com/adrien2p/medusa-extender/compare/v1.7.7...v1.7.8) (2022-12-06)
 
 
