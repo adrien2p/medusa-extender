@@ -31,7 +31,7 @@ export function NotificationProvider(options: AllowedProviderInjectableOptions =
 }
 
 /**
- * Mark a class as a notification provider to be used by the loader.
+ * Mark a class as a payment provider to be used by the loader.
  * @param options
  * @constructor
  */
