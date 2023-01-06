@@ -23,6 +23,8 @@ export {
 	Subscriber,
 	TaxProvider,
 	FulfillmentProvider,
+	NotificationProvider,
+	PaymentProvider,
 } from './decorators';
 
 export * from './modules/multi-tenancy';
