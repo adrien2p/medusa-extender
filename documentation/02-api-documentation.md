@@ -449,9 +449,9 @@ class OrderSubscriber {
 Allow you to register Medusa providers. There are 4 different types of providers including:
 
 -   Payment Providers
--   Notification Providers https://docs.medusajs.com/advanced/backend/notification/how-to-create-notification-provider/
--   Fulfillment Providers https://docs.medusajs.com/advanced/backend/shipping/add-fulfillment-provider
--   Tax Providers (allow you to integrate with 3rd party tax apis)
+-   Notification Providers
+-   Fulfillment Providers
+-   Tax Providers
 
 Each of these have their own decorator specifically for their use.
 
@@ -485,7 +485,7 @@ Allows you to build your own Notification provider to send customer notification
 
 For more information, see https://docs.medusajs.com/advanced/backend/notification/how-to-create-notification-provider/
 
-example
+Lets see an example
 
 ```typescript
 import { NotificationProvider } from 'medusa-extender';
@@ -519,7 +519,7 @@ Allows you to build your own Fulfillment provider to fulfill customer orders.
 
 For more information, see https://docs.medusajs.com/advanced/backend/shipping/add-fulfillment-provider
 
-example
+Lets see an example
 
 ```typescript
 import { FulfillmentProvider } from 'medusa-extender';
@@ -551,7 +551,7 @@ Allows you to build your own Tax provider to integrate with 3rd party api's for 
 
 For more information, see https://github.com/medusajs/medusa/blob/master/packages/medusa/src/interfaces/tax-service.ts
 
-example
+Lets see an example
 
 ```typescript
 import { FulfillmentProvider } from 'medusa-extender';
