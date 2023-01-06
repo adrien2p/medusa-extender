@@ -7,13 +7,21 @@ import {
 	Service,
 	TaxProvider,
 	FulfillmentProvider,
+	NotificationProvider,
+	PaymentProvider,
 } from 'medusa-extender';
 import { default as MedusaCartService } from '@medusajs/medusa/dist/services/cart';
 import { Response, Request, NextFunction } from 'express';
 import { Cart } from '@medusajs/medusa/dist/models/cart';
 import {
+	AbstractNotificationService,
+	AbstractPaymentService,
 	AbstractTaxService,
+	Data,
 	ItemTaxCalculationLine,
+	PaymentData,
+	PaymentSession,
+	PaymentSessionData,
 	ShippingTaxCalculationLine,
 	TaxCalculationContext,
 } from '@medusajs/medusa';
@@ -40,6 +48,22 @@ export class TestTaxService extends AbstractTaxService {
 @FulfillmentProvider()
 export class TestFulfillmentService extends FulfillmentService {
 	static identifier = 'TestFulfillment';
+}
+
+@NotificationProvider()
+export class TestNotificationService {
+	static identifier = 'TestNotification';
+	getIdentifier() {
+		return TestNotificationService.identifier;
+	}
+}
+
+@PaymentProvider()
+export class TestPaymentService {
+	static identifier = 'TestPayment';
+	getIdentifier(): string {
+		return TestPaymentService.identifier;
+	}
 }
 
 @Service({ override: MedusaCartService })
@@ -260,6 +284,8 @@ CustomTopTestPathMiddleware.prototype.consume = jest
 		CustomTopTestPathMiddleware,
 		TestTaxService,
 		TestFulfillmentService,
+		TestPaymentService,
+		TestNotificationService,
 	],
 })
 export class TestModule {}

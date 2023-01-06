@@ -20,3 +20,21 @@ export function TaxProvider(options: AllowedProviderInjectableOptions = {}): Cla
 export function FulfillmentProvider(options: AllowedProviderInjectableOptions = {}): ClassDecorator {
 	return buildProviderDecorator({ type: 'provider', subtype: 'fulfillment', ...options });
 }
+
+/**
+ * Mark a class as a notification provider to be used by the loader.
+ * @param options
+ * @constructor
+ */
+export function NotificationProvider(options: AllowedProviderInjectableOptions = {}): ClassDecorator {
+	return buildProviderDecorator({ type: 'provider', subtype: 'notification', ...options });
+}
+
+/**
+ * Mark a class as a notification provider to be used by the loader.
+ * @param options
+ * @constructor
+ */
+export function PaymentProvider(options: AllowedProviderInjectableOptions = {}): ClassDecorator {
+	return buildProviderDecorator({ type: 'provider', subtype: 'payment', ...options });
+}

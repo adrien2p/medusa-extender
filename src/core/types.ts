@@ -9,7 +9,7 @@ export interface Type<T = unknown> extends Function {
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
-export type InjectableProviderSubTypes = 'tax' | 'fulfillment';
+export type InjectableProviderSubTypes = 'tax' | 'fulfillment' | 'notification' | 'payment';
 
 /**
  * Components that does not required any other options that Type.
