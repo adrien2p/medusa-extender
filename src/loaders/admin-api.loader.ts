@@ -38,8 +38,8 @@ export async function adminApiLoader(
 	const adminAuthRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/auth');
 	const originalAdminAuthRouteLoader = adminAuthRouteLoader.default;
 	adminAuthRouteLoader.default = (app: Router): void => {
+		originalAdminAuthRouteLoader(app);
 		applyMiddlewares('admin', app, adminMiddlewares);
 		applyRouters('admin', app, adminRouters);
-		originalAdminAuthRouteLoader(app);
 	};
 }
