@@ -26,9 +26,17 @@ export function metadataReader(modules: Type[]): ComponentMap {
 			}
 
 			const options = componentsMetadataReader(component);
-			const metatype = component;
 
-			componentMap.set(options.type, [...(componentMap.get(options.type) ?? []), { ...options, metatype }]);
+			if (!options) {
+				throw new Error(
+					`Unable to load the following component "${component.name}". Please check that this component is decorated with an extender decorator.`
+				);
+			}
+
+			componentMap.set(options.type, [
+				...(componentMap.get(options.type) ?? []),
+				{ ...options, metatype: component },
+			]);
 		}
 	}
 

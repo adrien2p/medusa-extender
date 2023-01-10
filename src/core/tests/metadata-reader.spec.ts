@@ -41,4 +41,21 @@ describe('metadata-reader', () => {
 		expect(serviceNames.includes('FakeService')).toBeTruthy();
 		expect(serviceNames.includes('FakeService2')).toBeTruthy();
 	});
+
+	it('should throw a comprehensive error if a component is not an extender component', () => {
+		class WrongClass {}
+
+		@Module({ imports: [WrongClass] })
+		class WrongModule {}
+
+		expect.assertions(1);
+
+		try {
+			metadataReader([WrongModule]);
+		} catch (e) {
+			expect(e.message).toBe(
+				`Unable to load the following component "${WrongClass.name}". Please check that this component is decorated with an extender decorator.`
+			);
+		}
+	});
 });
