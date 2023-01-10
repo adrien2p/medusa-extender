@@ -12,6 +12,8 @@ import {
 	TestService,
 	TestTaxService,
 	TestFulfillmentService,
+	TestNotificationService,
+	TestPaymentService,
 } from './fixtures/loaders';
 import { Context } from '../utils/types';
 import { makeRequest } from '../utils/request';
@@ -268,6 +270,48 @@ describe('Loaders', () => {
 
 			expect(provider).toBeTruthy();
 			expect(provider).toBeInstanceOf(TestFulfillmentService);
+		});
+
+		it('should load notification provider using name', () => {
+			const provider = context.container.resolve<TestNotificationService>('testNotificationService');
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestNotificationService);
+		});
+
+		it('should load notification provider into the notification providers array', () => {
+			const providers = context.container.resolve<any[]>('notificationProviders');
+			const provider = providers.find((t) => t instanceof TestNotificationService);
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestNotificationService);
+		});
+
+		it('should load notification provider with as noti_${identifier}', () => {
+			const provider = context.container.resolve<TestNotificationService>('noti_TestNotification');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestNotificationService);
+		});
+
+		it('should load payment provider using name', () => {
+			const provider = context.container.resolve<TestNotificationService>('testPaymentService');
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestPaymentService);
+		});
+
+		it('should load payment provider into the payment providers array', () => {
+			const providers = context.container.resolve<any[]>('paymentProviders');
+			const provider = providers.find((t) => t instanceof TestPaymentService);
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestPaymentService);
+		});
+
+		it('should load payment provider with as pp_${identifier}', () => {
+			const provider = context.container.resolve<TestPaymentService>('pp_TestPayment');
+
+			expect(provider).toBeTruthy();
+			expect(provider).toBeInstanceOf(TestPaymentService);
 		});
 	});
 });

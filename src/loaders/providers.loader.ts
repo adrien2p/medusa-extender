@@ -25,9 +25,11 @@ export function registerProvider(
 	const { subtype } = options;
 	if (subtype === 'tax') return registerTaxProvider(container, options, configModule);
 	if (subtype === 'fulfillment') return registerFulfillmentProvider(container, options, configModule);
+	if (subtype === 'notification') return registerNotificationProvider(container, options, configModule);
+	if (subtype === 'payment') return registerPaymentProvider(container, options, configModule);
 }
 
-export function registerTaxProvider(
+function registerTaxProvider(
 	container: MedusaContainer,
 	options: GetInjectableOption<'provider'>,
 	configModule: Record<string, unknown>
@@ -51,7 +53,7 @@ export function registerTaxProvider(
 	logger.log(`Tax Provider loaded - ${name}`);
 }
 
-export function registerFulfillmentProvider(
+function registerFulfillmentProvider(
 	container: MedusaContainer,
 	options: GetInjectableOption<'provider'>,
 	configModule: Record<string, unknown>
@@ -71,6 +73,50 @@ export function registerFulfillmentProvider(
 	});
 
 	logger.log(`Fulfillment Provider loaded - ${name}`);
+}
+
+function registerPaymentProvider(
+	container: MedusaContainer,
+	options: GetInjectableOption<'provider'>,
+	configModule: Record<string, unknown>
+): void {
+	const { metatype } = options;
+	const name = lowerCaseFirst(metatype.name);
+	const identifier = ensureIdentifier(metatype);
+
+	container.registerAdd(
+		'paymentProviders',
+		asFunction((cradle) => new metatype(cradle, configModule.options))
+	);
+
+	container.register({
+		[name]: asFunction((cradle) => new metatype(cradle, configModule.options)).singleton(),
+		[`pp_${identifier}`]: aliasTo(name),
+	});
+
+	logger.log(`Payment Provider loaded - ${name}`);
+}
+
+function registerNotificationProvider(
+	container: MedusaContainer,
+	options: GetInjectableOption<'provider'>,
+	configModule: Record<string, unknown>
+): void {
+	const { metatype } = options;
+	const name = lowerCaseFirst(metatype.name);
+	const identifier = ensureIdentifier(metatype);
+
+	container.registerAdd(
+		'notificationProviders',
+		asFunction((cradle) => new metatype(cradle, configModule.options))
+	);
+
+	container.register({
+		[name]: asFunction((cradle) => new metatype(cradle, configModule.options)).singleton(),
+		[`noti_${identifier}`]: aliasTo(name),
+	});
+
+	logger.log(`Notification Provider loaded - ${name}`);
 }
 
 function ensureIdentifier(metatype: any): string {
