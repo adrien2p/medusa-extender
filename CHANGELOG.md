@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.2](https://github.com/adrien2p/medusa-extender/compare/v1.8.0...v1.8.2) (2023-01-11)
+
+
+### Features
+
+* Add proper error description when metadataReader fails ([0522d0c](https://github.com/adrien2p/medusa-extender/commits/0522d0cd5209a7441628c320aa4123e942d9834d))
+
+
+### Bug Fixes
+
+* admin api loader should register after the core auth router ([c5da2cf](https://github.com/adrien2p/medusa-extender/commits/c5da2cf1d20bf021175a5468b294a3833b04250d))
+* cli migrate command ([19f3eeb](https://github.com/adrien2p/medusa-extender/commits/19f3eeb52c3196fa619ce77d3f1cf155c31c5efd))
+
 ### [1.8.1](https://github.com/adrien2p/medusa-extender/compare/v1.8.0...v1.8.1) (2023-01-06)
 
 
