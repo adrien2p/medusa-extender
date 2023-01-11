@@ -53,7 +53,8 @@ describe('Services loader', () => {
 			.register({ eventBusService: asFunction(() => void 0) })
 			.register({ featureFlagRouter: asFunction(() => void 0) })
 			.register({ taxProviderService: asFunction(() => void 0) })
-			.register({ newTotalsService: asFunction(() => void 0) });
+			.register({ newTotalsService: asFunction(() => void 0) })
+			.register({ productVariantInventoryService: asFunction(() => void 0) });
 	});
 
 	describe('overrideService', () => {
