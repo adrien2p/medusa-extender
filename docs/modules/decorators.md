@@ -17,7 +17,9 @@
 - [Middleware](decorators.md#middleware)
 - [Migration](decorators.md#migration)
 - [Module](decorators.md#module)
+- [NotificationProvider](decorators.md#notificationprovider)
 - [OnMedusaEntityEvent](decorators.md#onmedusaentityevent)
+- [PaymentProvider](decorators.md#paymentprovider)
 - [Repository](decorators.md#repository)
 - [Router](decorators.md#router)
 - [Service](decorators.md#service)
@@ -93,9 +95,21 @@ Re-exports [Module](decorators_module_decorator.md#module)
 
 ___
 
+### NotificationProvider
+
+Re-exports [NotificationProvider](decorators_providers_decorator.md#notificationprovider)
+
+___
+
 ### OnMedusaEntityEvent
 
 Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
+
+___
+
+### PaymentProvider
+
+Re-exports [PaymentProvider](decorators_providers_decorator.md#paymentprovider)
 
 ___
 

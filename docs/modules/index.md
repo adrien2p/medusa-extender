@@ -38,7 +38,9 @@
 - [MixinReturnType](index.md#mixinreturntype)
 - [Module](index.md#module)
 - [ModuleInjectionOptions](index.md#moduleinjectionoptions)
+- [NotificationProvider](index.md#notificationprovider)
 - [OnMedusaEntityEvent](index.md#onmedusaentityevent)
+- [PaymentProvider](index.md#paymentprovider)
 - [ProviderInjectableOptions](index.md#providerinjectableoptions)
 - [Repository](index.md#repository)
 - [RepositoryInjectableOptions](index.md#repositoryinjectableoptions)
@@ -252,9 +254,21 @@ Re-exports [ModuleInjectionOptions](core_types.md#moduleinjectionoptions)
 
 ___
 
+### NotificationProvider
+
+Re-exports [NotificationProvider](decorators_providers_decorator.md#notificationprovider)
+
+___
+
 ### OnMedusaEntityEvent
 
 Re-exports [OnMedusaEntityEvent](../classes/decorators_onMedusaEntityEvent_decorator.OnMedusaEntityEvent.md)
+
+___
+
+### PaymentProvider
+
+Re-exports [PaymentProvider](decorators_providers_decorator.md#paymentprovider)
 
 ___
 

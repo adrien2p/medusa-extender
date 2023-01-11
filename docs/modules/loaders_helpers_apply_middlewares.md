@@ -31,4 +31,4 @@ Apply middlewares according to their configuration
 
 #### Defined in
 
-[loaders/helpers/apply-middlewares.ts:15](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/helpers/apply-middlewares.ts#L15)
+[loaders/helpers/apply-middlewares.ts:15](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/helpers/apply-middlewares.ts#L15)

@@ -22,4 +22,4 @@ Update or create everything related to medusa-extender in an existing medusa pro
 
 #### Defined in
 
-[cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/commands/init.ts#L13)
+[cli/commands/init.ts:13](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/commands/init.ts#L13)

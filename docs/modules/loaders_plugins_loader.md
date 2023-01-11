@@ -31,4 +31,4 @@ Also register all providers that are typically created in plugins.
 
 #### Defined in
 
-[loaders/plugins.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/plugins.loader.ts#L14)
+[loaders/plugins.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/plugins.loader.ts#L14)

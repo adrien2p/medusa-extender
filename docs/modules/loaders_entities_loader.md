@@ -33,7 +33,7 @@ Load all custom entities into the underlying @medusajs instance.
 
 #### Defined in
 
-[loaders/entities.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/entities.loader.ts#L14)
+[loaders/entities.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/entities.loader.ts#L14)
 
 ___
 
@@ -56,7 +56,7 @@ Load all custom entities that override @medusajs instance entities.
 
 #### Defined in
 
-[loaders/entities.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/entities.loader.ts#L37)
+[loaders/entities.loader.ts:37](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/entities.loader.ts#L37)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[loaders/entities.loader.ts:64](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/entities.loader.ts#L64)
+[loaders/entities.loader.ts:64](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/entities.loader.ts#L64)
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 #### Defined in
 
-[loaders/entities.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/entities.loader.ts#L52)
+[loaders/entities.loader.ts:52](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/entities.loader.ts#L52)

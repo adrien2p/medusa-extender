@@ -38,10 +38,6 @@ decorators approach to increase the DX and full typings support for easier devel
 <br />
 
 
-<p align="center">
-    <a href="https://www.buymeacoffee.com/adriendeperetti" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-</p>
-
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#table-of-contents)
 
@@ -73,6 +69,11 @@ decorators approach to increase the DX and full typings support for easier devel
 		* [@Router](#router)
 		* [@Validator](#validator)
 		* [@Subscriber](#subscriber)
+		* [Providers](#providers)
+			* [@PaymentProvider](#paymentprovider)
+			* [@NotificationProvider](#notificationprovider)
+			* [@FulfillmentProvider](#fulfillmentprovider)
+			* [@TaxProvider](#taxprovider)
 		* [@Module](#module)
 		* [@Module (Dynamic module)](#module-dynamic-module)
 		* [@OnMedusaEntityEvent](#onmedusaentityevent)
@@ -122,7 +123,7 @@ Depending on your situation, pick the right getting started section.
 
 In that case, you must already have scaffold a new medusa store project. If that's not the case you can [follow the tutorial here](https://docs.medusajs.com/quickstart/quick-start).
 
-Run the following command in your terminal (The last version is 1.7.8)
+Run the following command in your terminal (The last version is 1.8.1)
 
 ```bash
 npm install medusa-extender
@@ -333,7 +334,7 @@ in order to allow you to customise your medusa api according to your needs.
 Lets start with the decorators. They are the main API you will use in your project.
 Let see each of the decorators that are available and what are there purpose.
 
-:closed_book: __Here is a summary of whats coming in the following sections:__
+:closed_book: **Here is a summary of whats coming in the following sections:**
 
 
 | Decorator                          | Parameters                                       | Description                                      |
@@ -355,29 +356,29 @@ This decorator gives you the ability to either create a new entity that will
 then be handled by medusa or, to override an existing entity in order to add some custom
 fields or other stuff in it.
 
-:point_right: __Create a new entity__
+:point_right: **Create a new entity**
 
 In some cases, you will need to create new entity in order to represent a custom
 data model that correspond to a specific need of yours.
 
 Let see an example
-    
+
 ```typescript
-import { Column, Entity } from "typeorm"; 
-import { Entity as MedusaEntity } from "medusa-extender";
+import { Column, Entity } from 'typeorm';
+import { Entity as MedusaEntity } from 'medusa-extender';
 
 @MedusaEntity()
 @Entity()
 export class MyCustomEntity {
-    @Column()
-    name: string;
+	@Column()
+	name: string;
 }
 ```
 
 > `@MedusaEntity` decorator will only be used by medusa in order to store
 > that entity into the container. The stored entity will then be added to typeorm.
 
-:point_right: __Override an existing entity__
+:point_right: **Override an existing entity**
 
 There is other cases where you will need to extends an existing entity provided by medusa.
 In those cases, medusa does not provides a way to do that (not event typeorm).
@@ -386,17 +387,17 @@ For example, you would like to add a new field to the product entity in order to
 the `store_id`.
 
 Let see an example
-    
+
 ```typescript
-import { Column, Entity } from "typeorm"; 
+import { Column, Entity } from 'typeorm';
 import { Product as MedusaProduct } from '@medusa/medusa/dist';
-import { Entity as MedusaEntity } from "medusa-extender";
+import { Entity as MedusaEntity } from 'medusa-extender';
 
 @MedusaEntity({ override: MedusaProduct })
 @Entity()
 export class Product extends MedusaProduct {
-    @Column()
-    customField: string;
+	@Column()
+	customField: string;
 }
 ```
 
@@ -409,9 +410,9 @@ and add the following content.
 
 ```typescript
 export declare module '@medusajs/medusa/dist/models/product' {
-    declare interface Product {
-        customField: string;
-    }
+	declare interface Product {
+		customField: string;
+	}
 }
 ```
 
@@ -424,7 +425,7 @@ This decorator gives you the ability to either create a new custom repository th
 then be handled by medusa or, to override an existing custom repository in case you've overridden
 and existing entity as seen in the previous section.
 
-:point_right: __Create a new custom repository__
+:point_right: **Create a new custom repository**
 
 In some cases, you will need to create new custom repository in order to interact with your custom entity
 and being able to add some custom logic related to that entity.
@@ -432,9 +433,9 @@ and being able to add some custom logic related to that entity.
 Let see an example
 
 ```typescript
-import { Repository as MedusaRepository } from "medusa-extender";
-import { EntityRepository, Repository } from "typeorm";
-import { MyCustomEntity } from "./custom.entity";
+import { Repository as MedusaRepository } from 'medusa-extender';
+import { EntityRepository, Repository } from 'typeorm';
+import { MyCustomEntity } from './custom.entity';
 
 @MedusaRepository()
 @EntityRepository(MyCustomEntity)
@@ -446,7 +447,7 @@ export default class MyCustomRepository extends Repository<MyCustomEntity> {}
 > injection in any of your services. You can also access the container to resolve
 > a dependency in your routes handler through `req.scope.resolve('myCustomRepository')`.
 
-:point_right: __Override an existing custom repository__
+:point_right: **Override an existing custom repository**
 
 There is other cases where you will need to extends an existing custom repository provided by medusa in
 order to reflect the changes you've made with the custom entity. Also, it will
@@ -457,12 +458,12 @@ To follow the previous example, we need to create a custom repository that exten
 the one provided by medusa to manage our extended entity created in the previous section.
 
 Let see an example
-    
+
 ```typescript
-import { ProductRepository as MedusaProductRepository } from "@medusajs/medusa/dist/repositories/product";
-import { Repository as MedusaRepository } from "medusa-extender";
-import { EntityRepository } from "typeorm";
-import { Product } from "./product.entity";
+import { ProductRepository as MedusaProductRepository } from '@medusajs/medusa/dist/repositories/product';
+import { Repository as MedusaRepository } from 'medusa-extender';
+import { EntityRepository } from 'typeorm';
+import { Product } from './product.entity';
 
 @MedusaRepository({ override: MedusaProductRepository })
 @EntityRepository(Product)
@@ -487,19 +488,19 @@ import { Migration } from 'medusa-extender';
 
 @Migration()
 export default class addCustomFieldToProduct1611063162649 implements MigrationInterface {
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        const query = `ALTER TABLE public."product"
+	public async up(queryRunner: QueryRunner): Promise<void> {
+		const query = `ALTER TABLE public."product"
             ADD COLUMN IF NOT EXISTS "customField" text;`;
-        await queryRunner.query(query);
-    }
-    
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        const query = `ALTER TABLE public."product"
+		await queryRunner.query(query);
+	}
+
+	public async down(queryRunner: QueryRunner): Promise<void> {
+		const query = `ALTER TABLE public."product"
             DROP COLUMN "customField";`;
-        await queryRunner.query(query);
-    }
+		await queryRunner.query(query);
+	}
 }
-``` 
+```
 
 ### @Service
 
@@ -507,7 +508,7 @@ This decorator gives you the ability to either create a new service that will
 then be handled by medusa or, to override an existing service in case you need to add extra logic
 or to override existing logic to solve one of your problem.
 
-:point_right: __Create a new service__
+:point_right: **Create a new service**
 
 If you are currently adding a new feature on top of medusa or extending an existing feature
 that require to split the logic into another service, here is how you can achieve that.
@@ -519,18 +520,18 @@ import { Service } from 'medusa-extender';
 import { EntityManager } from 'typeorm';
 
 type ConstructorParams = {
-    manager: EntityManager;
+	manager: EntityManager;
 };
 
 @Service()
 export default class MyCustomService {
-    static resolutionKey = 'myCustomService';
- 
-    private readonly manager: EntityManager;
-    
-    constructor({ manager }: ConstructorParams) {
-        this.manager = manager;
-    }
+	static resolutionKey = 'myCustomService';
+
+	private readonly manager: EntityManager;
+
+	constructor({ manager }: ConstructorParams) {
+		this.manager = manager;
+	}
 }
 ```
 
@@ -542,7 +543,7 @@ export default class MyCustomService {
 The `@Service` decorator also accept a `scope` property that is of type `LifetimeType`.
 The scope will be used by the container to manage that resource.
 
-:point_right: __Scoped service__
+:point_right: **Scoped service**
 
 In some cases, you'll maybe have register new resources to the container through a middleware.
 Since those resources are registered during the request handling, it is only available
@@ -561,24 +562,24 @@ import { EntityManager } from 'typeorm';
 import { User } from '../user/user.entity';
 
 type ConstructorParams = {
-    loggedInUser: User;
-    manager: EntityManager;
+	loggedInUser: User;
+	manager: EntityManager;
 };
 
 @Service({ scope: 'SCOPED' })
 export default class MyCustomService {
-    static resolutionKey = 'myCustomService';
+	static resolutionKey = 'myCustomService';
 
-    private readonly manager: EntityManager;
-    
-    constructor(private readonly container: ConstructorParams) {
-        this.manager = container.manager;
-    }
-    
-    public customMethod(): void {
-        const loggedInUser = this.container.loggedInUser;
-        console.log(loggedInUser);
-    }
+	private readonly manager: EntityManager;
+
+	constructor(private readonly container: ConstructorParams) {
+		this.manager = container.manager;
+	}
+
+	public customMethod(): void {
+		const loggedInUser = this.container.loggedInUser;
+		console.log(loggedInUser);
+	}
 }
 ```
 
@@ -586,13 +587,13 @@ As you can see, we've added the `loggedInUser` to the `ConstructorParams`type an
 we are getting the `loggedInUser` through the container in the `customMethod` for a later
 usage.
 
-:point_right: __Override an existing service__
+:point_right: **Override an existing service**
 
 In some other case, you will need to override an existing service to either be able
 to add new functionalities or to add new logic using existing code blocks.
 
 Let see an example
-    
+
 ```typescript
 import { EntityEventType, MedusaEventHandlerParams, OnMedusaEntityEvent, Service } from 'medusa-extender';
 import { ProductService as MedusaProductService } from '@medusajs/medusa/dist/services';
@@ -612,35 +613,35 @@ import { User } from '../user/user.entity';
 import { FindConfig } from '@medusajs/medusa/dist/types/common';
 
 interface ConstructorParams<TSearchService extends DefaultSearchService = DefaultSearchService> {
-    loggedInUser: User;
-    manager: EntityManager;
-    productRepository: typeof ProductRepository;
-    productVariantRepository: typeof ProductVariantRepository;
-    productOptionRepository: typeof ProductOptionRepository;
-    eventBusService: EventBusService;
-    productVariantService: ProductVariantService;
-    productCollectionService: ProductCollectionService;
-    productTypeRepository: typeof ProductTypeRepository;
-    productTagRepository: typeof ProductTagRepository;
-    imageRepository: typeof ImageRepository;
-    searchService: TSearchService;
+	loggedInUser: User;
+	manager: EntityManager;
+	productRepository: typeof ProductRepository;
+	productVariantRepository: typeof ProductVariantRepository;
+	productOptionRepository: typeof ProductOptionRepository;
+	eventBusService: EventBusService;
+	productVariantService: ProductVariantService;
+	productCollectionService: ProductCollectionService;
+	productTypeRepository: typeof ProductTypeRepository;
+	productTagRepository: typeof ProductTagRepository;
+	imageRepository: typeof ImageRepository;
+	searchService: TSearchService;
 }
 
 @Service({ override: MedusaProductService, scope: 'SCOPED' })
 export default class ProductService extends MedusaProductService {
-    private readonly manager: EntityManager;
-    
-    constructor(private readonly container: ConstructorParams) {
-        super(container);
-        this.manager = container.manager;
-    }
+	private readonly manager: EntityManager;
+
+	constructor(private readonly container: ConstructorParams) {
+		super(container);
+		this.manager = container.manager;
+	}
 }
 ```
 
 > The `override` parameter of the `@ProductService` decorator allow to specify which service
 > from the core must be overridden.
 
-> As we've seen in the previous section, the `scope` value allow you to specify the 
+> As we've seen in the previous section, the `scope` value allow you to specify the
 > behaviour of the resource that is managed by the container. In that case, the service will
 > be re created for each new request in order for you to access the `loggedInUser` as we've seen
 > in the previous section.
@@ -662,24 +663,24 @@ import { NextFunction, Response } from 'express';
 
 import UserService from './user.service';
 
-@Middleware({ requireAuth: true, routes: [{ method: "all", path: '*' }] })
+@Middleware({ requireAuth: true, routes: [{ method: 'all', path: '*' }] })
 export class LoggedInUserMiddleware implements MedusaMiddleware {
-    public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
-        let loggedInUser = null
-        if (req.user && req.user.userId) {
-            const userService = req.scope.resolve('userService') as UserService;
-            const loggedInUser = await userService.retrieve(req.user.userId, {
-                select: ['id', 'your_custom_field'],
-            });
-        }
-        
-        req.scope.register({
-            loggedInUser: {
-                resolve: () => loggedInUser,
-            },
-        });
-        next();
-    }
+	public async consume(req: MedusaAuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
+		let loggedInUser = null;
+		if (req.user && req.user.userId) {
+			const userService = req.scope.resolve('userService') as UserService;
+			const loggedInUser = await userService.retrieve(req.user.userId, {
+				select: ['id', 'your_custom_field'],
+			});
+		}
+
+		req.scope.register({
+			loggedInUser: {
+				resolve: () => loggedInUser,
+			},
+		});
+		next();
+	}
 }
 ```
 
@@ -702,27 +703,27 @@ import { Router } from 'medusa-extender';
 import myCustomController from './myCustomController.controller';
 
 @Router({
-    routes: [
-        {
-            requiredAuth: true,
-            path: '/admin/custom-route/',
-            method: 'get',
-            handlers: [myCustomController.handleCustomroute],
-        },
-    ],
+	routes: [
+		{
+			requiredAuth: true,
+			path: '/admin/custom-route/',
+			method: 'get',
+			handlers: [myCustomController.handleCustomroute],
+		},
+	],
 })
 export class DashboardRouter {}
 ```
 
 In that example, we are attaching a new route on the admin, `/admin/custom-route/`.
-This route will be handle by the custom controller. The custom controller is just 
+This route will be handle by the custom controller. The custom controller is just
 a class that provide some methods. The file export an instance of that class (which is not decorated).
 
 In that particular case, to be able to access the route, the user need to be authenticated.
 
 ### @Validator
 
-In some cases, when you override a service to extends its logic 
+In some cases, when you override a service to extends its logic
 because you've added a custom field to an existing entity, you might
 encounter an error. When you use an existing route handling an entity that
 has been extended, medusa is not aware about that, and therefor the underlying validators
@@ -733,16 +734,15 @@ field and make medusa aware about it.
 
 let see an example
 
-
 ```typescript
 import { Validator } from 'medusa-extender';
-import { AdminPostProductsReq } from '@medusajs/medusa/dist/api/routes/admin/products/create-product'
+import { AdminPostProductsReq } from '@medusajs/medusa/dist/api/routes/admin/products/create-product';
 import { IsString } from 'class-validator';
 
 @Validator({ override: AdminPostProductsReq })
 class ExtendedClassValidator extends AdminPostProductsReq {
-  @IsString()
-  customField: string;
+	@IsString()
+	customField: string;
 }
 ```
 
@@ -759,26 +759,151 @@ but not registered as part of the container.
 
 let see an example
 
-
 ```typescript
 import { Subscriber } from 'medusa-extender';
-import { ProductService, EventBusService } from "@medusajs/medusa/dist/services";
+import { ProductService, EventBusService } from '@medusajs/medusa/dist/services';
 
 @Subscriber()
 class OrderSubscriber {
-    private readonly eventBusService: EventBusService;
+	private readonly eventBusService: EventBusService;
 
-    constructor({ eventBusService }: { eventBusService: EventBusService }) {
-        this.eventBusService = eventBusService;
-        this.eventBusService.subscribe(
-          ProductService.Events.CREATED,
-          this.handleProductCreation
-        );
+	constructor({ eventBusService }: { eventBusService: EventBusService }) {
+		this.eventBusService = eventBusService;
+		this.eventBusService.subscribe(ProductService.Events.CREATED, this.handleProductCreation);
+	}
+
+	private async handleProductCreation(): Promise<void> {
+		console.log('I have been called after a product has been placed.');
+	}
+}
+```
+
+### Providers
+
+Allow you to register Medusa providers. There are 4 different types of providers including:
+
+-   Payment Providers
+-   Notification Providers
+-   Fulfillment Providers
+-   Tax Providers
+
+Each of these have their own decorator specifically for their use.
+
+#### @PaymentProvider
+
+Allows you to build your own payment provider to be used during checkout.
+
+For more information about payment plugins, see https://docs.medusajs.com/advanced/backend/payment/how-to-create-payment-provider
+
+example
+
+```typescript
+import { PaymentProvider } from 'medusa-extender';
+import { Cart, PaymentContext, PaymentSessionResponse, AbstractPaymentService } from '@medusajs/medusa';
+
+@PaymentProvider()
+class MedusaBitcoinPaymentService extends AbstractPaymentService {
+	static identifier = 'MedusaCoin';
+
+	public override createPayment(context: Cart & PaymentContext): Promise<PaymentSessionResponse> {
+		// purchase using medusa coin
+	}
+
+	// many more functions to implement below
+}
+```
+
+#### @NotificationProvider
+
+Allows you to build your own Notification provider to send customer notifications.
+
+For more information, see https://docs.medusajs.com/advanced/backend/notification/how-to-create-notification-provider/
+
+Lets see an example
+
+```typescript
+import { NotificationProvider } from 'medusa-extender';
+import { AbstractNotificationService } from '@medusajs/medusa';
+
+@NotificationProvider()
+class SMSSenderService extends AbstractNotificationService {
+	static identifier = 'SMS';
+
+	sendNotification(
+		event: string,
+		data: unknown,
+		attachmentGenerator: unknown
+	): Promise<{ to: string; status: string; data: Record<string, unknown> }> {
+		throw new Error('Method not implemented.');
+	}
+
+	resendNotification(
+		notification: unknown,
+		config: unknown,
+		attachmentGenerator: unknown
+	): Promise<{ to: string; status: string; data: Record<string, unknown> }> {
+		throw new Error('Method not implemented.');
+	}
+}
+```
+
+#### @FulfillmentProvider
+
+Allows you to build your own Fulfillment provider to fulfill customer orders.
+
+For more information, see https://docs.medusajs.com/advanced/backend/shipping/add-fulfillment-provider
+
+Lets see an example
+
+```typescript
+import { FulfillmentProvider } from 'medusa-extender';
+import { FulfillmentService } from 'medusa-interfaces';
+
+@FulfillmentProvider()
+class LocalDeliveryFulfillmentService extends FulfillmentService {
+	static identifier = 'LocalDelivery';
+
+	override async getFulfillmentOptions(): Promise<any[]> {
+		return [
+			{
+				id: 'london',
+				name: 'London Location',
+			},
+			{
+				id: 'paris',
+				name: 'Paris Location',
+			},
+		];
+	}
+    ...
+}
+```
+
+#### @TaxProvider
+
+Allows you to build your own Tax provider to integrate with 3rd party api's for tax calculation at checkout.
+
+For more information, see https://github.com/medusajs/medusa/blob/master/packages/medusa/src/interfaces/tax-service.ts
+
+Lets see an example
+
+```typescript
+import { FulfillmentProvider } from 'medusa-extender';
+import { AbstractTaxService } from '@medusajs/medusa';
+
+@FulfillmentProvider()
+class TaxJarFulfillmentService extends AbstractTaxService {
+	static identifier = 'TaxJar';
+
+	async getTaxLines(
+    itemLines: ItemTaxCalculationLine[],
+    shippingLines: ShippingTaxCalculationLine[],
+    { shipping_address }: TaxCalculationContext
+  ): Promise<ProviderTaxLine[]> {
+        // fetch tax rates for address
+        return null;
     }
-    
-    private async handleProductCreation(): Promise<void> {
-        console.log('I have been called after a product has been placed.')
-    }
+    ...
 }
 ```
 
@@ -796,11 +921,7 @@ import ProductRepository from './product.repository';
 import ProductService from './product.service';
 
 @Module({
-    imports: [
-        Product,
-        ProductRepository,
-        ProductService
-    ],
+	imports: [Product, ProductRepository, ProductService],
 })
 export class ProductModule {}
 ```
@@ -815,24 +936,22 @@ import { resolve } from 'path';
 import { ProductModule } from './modules/product/product.module';
 
 async function bootstrap() {
-    const expressInstance = express();
-    
-    const rootDir = resolve(__dirname, '..');
-    await new Medusa(rootDir, expressInstance).load([
-        ProductModule
-    ]);
-    
-    expressInstance.listen(config.serverConfig.port, () => {
-        console.log('Server listening on port ' + config.serverConfig.port);
-    });
+	const expressInstance = express();
+
+	const rootDir = resolve(__dirname, '..');
+	await new Medusa(rootDir, expressInstance).load([ProductModule]);
+
+	expressInstance.listen(config.serverConfig.port, () => {
+		console.log('Server listening on port ' + config.serverConfig.port);
+	});
 }
 bootstrap();
 ```
 
 ### @Module (Dynamic module)
 
-It is also possible to create dynamic modules that enable to register component dynamically depending on some config 
-or external call api for example. 
+It is also possible to create dynamic modules that enable to register component dynamically depending on some config
+or external call api for example.
 
 Let see an example
 
@@ -840,13 +959,13 @@ Let see an example
 import { Module } from 'medusa-extender';
 import { Product } from './product.entity';
 import ProductRepository from './product.repository';
-import ProductService from './product.service'; 
+import ProductService from './product.service';
 import { MedusaDynamicModule,ModuleInjectionOptions } from "./types";
 
 @Module(~~~~)
 export class ProductModule implements MedusaDynamicModule {
     async forRoot(configModule: Record<string, unknown>): Promise<ModuleInjectionOptions> {
-        return { 
+        return {
             imports: [
                 Product,
                 ProductRepository,
@@ -867,16 +986,14 @@ import { resolve } from 'path';
 import { ProductModule } from './modules/product/product.module';
 
 async function bootstrap() {
-    const expressInstance = express();
-    
-    const rootDir = resolve(__dirname, '..');
-    await new Medusa(rootDir, expressInstance).load([
-        ProductModule
-    ]);
-    
-    expressInstance.listen(config.serverConfig.port, () => {
-        console.log('Server listening on port ' + config.serverConfig.port);
-    });
+	const expressInstance = express();
+
+	const rootDir = resolve(__dirname, '..');
+	await new Medusa(rootDir, expressInstance).load([ProductModule]);
+
+	expressInstance.listen(config.serverConfig.port, () => {
+		console.log('Server listening on port ' + config.serverConfig.port);
+	});
 }
 bootstrap();
 ```
@@ -884,8 +1001,9 @@ bootstrap();
 ### @OnMedusaEntityEvent
 
 This decorator is a special one and work in two ways, it allow to
-- Emit a new event from a subscriber
-- Listen to an event that has been emitted
+
+-   Emit a new event from a subscriber
+-   Listen to an event that has been emitted
 
 Let see an example on how you can emit an event from a subscriber
 
@@ -896,21 +1014,21 @@ import { Product } from './product.entity';
 
 @EventSubscriber()
 export default class ProductSubscriber implements EntitySubscriberInterface<Product> {
-    static attachTo(connection: Connection): void {
-        Utils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
-    }
-    
-    public listenTo(): typeof Product {
-        return Product;
-    }
-    
-    public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
-        const eventName = OnMedusaEntityEvent.Before.InsertEvent(Product);
-        await eventEmitter.emitAsync<InsertEvent<Product>>(eventName, {
-            event,
-            transactionalEntityManager: event.manager,
-        });
-    }
+	static attachTo(connection: Connection): void {
+		Utils.attachOrReplaceEntitySubscriber(connection, ProductSubscriber);
+	}
+
+	public listenTo(): typeof Product {
+		return Product;
+	}
+
+	public async beforeInsert(event: InsertEvent<Product>): Promise<InsertEvent<Product>> {
+		const eventName = OnMedusaEntityEvent.Before.InsertEvent(Product);
+		await eventEmitter.emitAsync<InsertEvent<Product>>(eventName, {
+			event,
+			transactionalEntityManager: event.manager,
+		});
+	}
 }
 ```
 
@@ -921,13 +1039,13 @@ import ProductSubscriber from './product.subscriber';
 
 @Service({ override: MedusaProductService, scope: 'SCOPED' })
 export default class ProductService extends MedusaProductService {
-  private readonly manager: EntityManager;
+	private readonly manager: EntityManager;
 
-  constructor({  manager }: ConstructorParams) {
-    super({ manager });
-    this.manager = manager;
-    ProductSubscriber.attachTo(manager.connection)
-  }
+	constructor({ manager }: ConstructorParams) {
+		super({ manager });
+		this.manager = manager;
+		ProductSubscriber.attachTo(manager.connection);
+	}
 }
 ```
 
@@ -938,34 +1056,33 @@ import ProductSubscriber from './product.subscriber';
 
 @Service({ override: MedusaProductService, scope: 'SCOPED' })
 export default class ProductService extends MedusaProductService {
-    private readonly manager: EntityManager;
-    
-    constructor(container: ConstructorParams) {
-        super(container);
-        this.manager = container.manager;
-        // You don't need to register it again if it is registered through a middleware.
-        ProductSubscriber.attachTo(this.manager.connection)
-    }
-    
-    /* ... */
-    
-    @OnMedusaEntityEvent.Before.Insert(Product, { async: true })
-    public async attachStoreToProduct(
-        params: MedusaEventHandlerParams<Product, 'Insert'>
-    ): Promise<EntityEventType<Product, 'Insert'>> {
-        const loggedInUser = this.container.loggedInUser;
-        const { event } = params;
-        event.entity.store_id = loggedInUser.store_id;
-        event.entity.handle = loggedInUser.store_id.replace('store_', '') + '-' + event.entity.handle;
-        return event;
-    }
-    
-    /* ... */
+	private readonly manager: EntityManager;
 
+	constructor(container: ConstructorParams) {
+		super(container);
+		this.manager = container.manager;
+		// You don't need to register it again if it is registered through a middleware.
+		ProductSubscriber.attachTo(this.manager.connection);
+	}
+
+	/* ... */
+
+	@OnMedusaEntityEvent.Before.Insert(Product, { async: true })
+	public async attachStoreToProduct(
+		params: MedusaEventHandlerParams<Product, 'Insert'>
+	): Promise<EntityEventType<Product, 'Insert'>> {
+		const loggedInUser = this.container.loggedInUser;
+		const { event } = params;
+		event.entity.store_id = loggedInUser.store_id;
+		event.entity.handle = loggedInUser.store_id.replace('store_', '') + '-' + event.entity.handle;
+		return event;
+	}
+
+	/* ... */
 }
 ```
 
-Here, we are listening to the product creation, and before the entity is 
+Here, we are listening to the product creation, and before the entity is
 inserted into the database, we are retrieving the `loggedInUser` through the container
 and attach the `store_id` to the product entity.
 
@@ -1007,23 +1124,24 @@ existing property from the parent class
 ```typescript
 import { Entity, Column } from 'typeorm';
 import { Entity as MedusaEntity, Utils } from 'medusa-extender';
-import { User as MedusaUser} from '@medusajs/medusa/dist/models';
+import { User as MedusaUser } from '@medusajs/medusa/dist/models';
 
 enum UserRolesExtended {
-    BRANCH_STAFF = 0
+	BRANCH_STAFF = 0,
 }
 
 @MedusaEntity({ override: MedusaUser })
 @Entity()
 export class User extends Utils.Omit(MedusaUser, ['role']) {
-    @Column({ 
-        nullable: true, 
-        enum: UserRolesExtended, 
-        default: UserRolesExtended.BRANCH_STAFF}
-    )
-    role: UserRolesExtended;
+	@Column({
+		nullable: true,
+		enum: UserRolesExtended,
+		default: UserRolesExtended.BRANCH_STAFF,
+	})
+	role: UserRolesExtended;
 }
 ```
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#starters)
 
@@ -1297,10 +1415,9 @@ export class OrderService extends MedusaOrderService {
 
 # Like my work? :heartbeat:
 
-This project needs a :star: from you. Don't forget to leave a star :star:.
-If you found the package helpful consider supporting me with a coffee
+This project needs a :star: from you.
+If you found the package helpful consider becoming a sponsor [here](https://github.com/sponsors/adrien2p) :rocket:
 
-<a href="https://www.buymeacoffee.com/adriendeperetti" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#contribute)
 

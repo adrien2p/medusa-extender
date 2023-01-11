@@ -20,7 +20,7 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-[core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/constants.ts#L9)
+[core/constants.ts:9](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/constants.ts#L9)
 
 ___
 
@@ -66,7 +66,7 @@ Hold the name of the medusa services registered into the container for later on 
 
 #### Defined in
 
-[core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/constants.ts#L14)
+[core/constants.ts:14](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/constants.ts#L14)
 
 ___
 
@@ -78,4 +78,4 @@ Metadata key to store config from decorated injectables.
 
 #### Defined in
 
-[core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/constants.ts#L4)
+[core/constants.ts:4](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/constants.ts#L4)

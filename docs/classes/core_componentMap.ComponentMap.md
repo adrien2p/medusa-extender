@@ -38,7 +38,7 @@ Map&lt;InjectableComponentTypes, GetInjectableOptions\&gt;.constructor
 
 #### Defined in
 
-[core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/componentMap.ts#L4)
+[core/componentMap.ts:4](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/componentMap.ts#L4)
 
 ## Methods
 
@@ -68,4 +68,4 @@ Map.get
 
 #### Defined in
 
-[core/componentMap.ts:16](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/componentMap.ts#L16)
+[core/componentMap.ts:16](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/componentMap.ts#L16)

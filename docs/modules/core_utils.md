@@ -45,7 +45,7 @@ Allow to omit some property from a class.
 
 #### Defined in
 
-[core/utils.ts:55](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L55)
+[core/utils.ts:55](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L55)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[core/utils.ts:86](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L86)
+[core/utils.ts:86](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L86)
 
 ___
 
@@ -96,7 +96,7 @@ Attach a new subscriber to a specific entities.
 
 #### Defined in
 
-[core/utils.ts:31](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L31)
+[core/utils.ts:31](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L31)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L74)
+[core/utils.ts:74](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L74)
 
 ___
 
@@ -138,7 +138,7 @@ Lower case the first character of the input string.
 
 #### Defined in
 
-[core/utils.ts:62](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L62)
+[core/utils.ts:62](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L62)
 
 ___
 
@@ -169,7 +169,7 @@ Since it is not possible to use multiple extend, you can use that utilities to a
 
 #### Defined in
 
-[core/utils.ts:11](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L11)
+[core/utils.ts:11](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L11)
 
 ___
 
@@ -191,4 +191,4 @@ Upper case the first character of the input string.
 
 #### Defined in
 
-[core/utils.ts:70](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/core/utils.ts#L70)
+[core/utils.ts:70](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/utils.ts#L70)

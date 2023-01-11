@@ -36,7 +36,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L38)
+[Medusa.ts:38](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/Medusa.ts#L38)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Load medusa and apply all components
 
 #### Defined in
 
-[Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L31)
+[Medusa.ts:31](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/Medusa.ts#L31)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L32)
+[Medusa.ts:32](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/Medusa.ts#L32)
 
 ## Methods
 
@@ -76,4 +76,4 @@ ___
 
 #### Defined in
 
-[Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/Medusa.ts#L46)
+[Medusa.ts:46](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/Medusa.ts#L46)

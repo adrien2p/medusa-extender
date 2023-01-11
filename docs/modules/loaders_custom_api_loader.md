@@ -31,4 +31,4 @@ Apply middlewares and routes on the underlying @medusajs customApi API.
 
 #### Defined in
 
-[loaders/custom-api.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/custom-api.loader.ts#L14)
+[loaders/custom-api.loader.ts:14](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/custom-api.loader.ts#L14)

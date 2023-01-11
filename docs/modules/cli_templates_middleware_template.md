@@ -28,4 +28,4 @@ Provide a basic template for the middleware component generation.
 
 #### Defined in
 
-[cli/templates/middleware-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/cli/templates/middleware-template.ts#L7)
+[cli/templates/middleware-template.ts:7](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/templates/middleware-template.ts#L7)

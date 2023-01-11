@@ -29,4 +29,4 @@ Load all custom extended subscribers into the underlying @medusajs instance.
 
 #### Defined in
 
-[loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/subscribers.loader.ts#L11)
+[loaders/subscribers.loader.ts:11](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/subscribers.loader.ts#L11)

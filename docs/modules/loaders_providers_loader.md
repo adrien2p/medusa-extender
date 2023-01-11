@@ -6,34 +6,10 @@
 
 ### Functions
 
-- [registerFulfillmentProvider](loaders_providers_loader.md#registerfulfillmentprovider)
 - [registerProvider](loaders_providers_loader.md#registerprovider)
 - [registerProviders](loaders_providers_loader.md#registerproviders)
-- [registerTaxProvider](loaders_providers_loader.md#registertaxprovider)
 
 ## Functions
-
-### registerFulfillmentProvider
-
-▸ **registerFulfillmentProvider**(`container`, `options`, `configModule`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `container` | `MedusaContainer` |
-| `options` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"provider"``\> |
-| `configModule` | `Record`<`string`, `unknown`\> |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[loaders/providers.loader.ts:54](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L54)
-
-___
 
 ### registerProvider
 
@@ -53,7 +29,7 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L20)
+[loaders/providers.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/providers.loader.ts#L20)
 
 ___
 
@@ -75,26 +51,4 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:8](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L8)
-
-___
-
-### registerTaxProvider
-
-▸ **registerTaxProvider**(`container`, `options`, `configModule`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `container` | `MedusaContainer` |
-| `options` | [`GetInjectableOption`](core_types.md#getinjectableoption)<``"provider"``\> |
-| `configModule` | `Record`<`string`, `unknown`\> |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[loaders/providers.loader.ts:30](https://github.com/adrien2p/medusa-extender/blob/71ceaa3/src/loaders/providers.loader.ts#L30)
+[loaders/providers.loader.ts:8](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/providers.loader.ts#L8)
