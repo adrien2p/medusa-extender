@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * Add proper error description when metadataReader fails ([0522d0c](https://github.com/adrien2p/medusa-extender/commits/0522d0cd5209a7441628c320aa4123e942d9834d))
-
+* add notification and payment providers ([c5da2cf](https://github.com/adrien2p/medusa-extender/commit/c5da2cf1d20bf021175a5468b294a3833b04250d))
 
 ### Bug Fixes
 
