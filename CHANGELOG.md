@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.3](https://github.com/adrien2p/medusa-extender/compare/v1.8.2...v1.8.3) (2023-01-11)
+
+
+### Bug Fixes
+
+* Medusa load config were not using the #rootDir anymore ([0d19e0d](https://github.com/adrien2p/medusa-extender/commits/0d19e0d96bd80dbbc04f1809a53f96f3348ce28f))
+
 ### [1.8.2](https://github.com/adrien2p/medusa-extender/compare/v1.8.0...v1.8.2) (2023-01-11)
 
 
