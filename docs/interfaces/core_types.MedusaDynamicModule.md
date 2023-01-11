@@ -41,4 +41,4 @@ Describe a dynamic module which resolve its import dynamically.
 
 #### Defined in
 
-[core/types.ts:197](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/types.ts#L197)
+[core/types.ts:197](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/core/types.ts#L197)

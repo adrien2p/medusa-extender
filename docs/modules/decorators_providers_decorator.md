@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/decorators/providers.decorator.ts#L4)
+[decorators/providers.decorator.ts:4](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/decorators/providers.decorator.ts#L4)
 
 ## Functions
 
@@ -45,7 +45,7 @@ Mark a class as a fulfillment provider to be used by the loader.
 
 #### Defined in
 
-[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/decorators/providers.decorator.ts#L20)
+[decorators/providers.decorator.ts:20](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/decorators/providers.decorator.ts#L20)
 
 ___
 
@@ -67,7 +67,7 @@ Mark a class as a notification provider to be used by the loader.
 
 #### Defined in
 
-[decorators/providers.decorator.ts:29](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/decorators/providers.decorator.ts#L29)
+[decorators/providers.decorator.ts:29](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/decorators/providers.decorator.ts#L29)
 
 ___
 
@@ -89,7 +89,7 @@ Mark a class as a payment provider to be used by the loader.
 
 #### Defined in
 
-[decorators/providers.decorator.ts:38](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/decorators/providers.decorator.ts#L38)
+[decorators/providers.decorator.ts:38](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/decorators/providers.decorator.ts#L38)
 
 ___
 
@@ -111,4 +111,4 @@ Mark a class as a tax provider to be used by the loader.
 
 #### Defined in
 
-[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/decorators/providers.decorator.ts#L11)
+[decorators/providers.decorator.ts:11](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/decorators/providers.decorator.ts#L11)

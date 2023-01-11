@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/commands/generate-component.ts#L21)
+[cli/commands/generate-component.ts:21](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/cli/commands/generate-component.ts#L21)
 
 ## Functions
 
@@ -62,7 +62,7 @@ Create the component file and fill it with the template content.
 
 #### Defined in
 
-[cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/commands/generate-component.ts#L113)
+[cli/commands/generate-component.ts:113](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/cli/commands/generate-component.ts#L113)
 
 ___
 
@@ -85,7 +85,7 @@ Generate the required components from the user command.
 
 #### Defined in
 
-[cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/commands/generate-component.ts#L48)
+[cli/commands/generate-component.ts:48](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/cli/commands/generate-component.ts#L48)
 
 ___
 
@@ -107,4 +107,4 @@ Lookup for the closest module from the component and update its imports.
 
 #### Defined in
 
-[cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/cli/commands/generate-component.ts#L140)
+[cli/commands/generate-component.ts:140](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/cli/commands/generate-component.ts#L140)

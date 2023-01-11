@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[loaders/services.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/services.loader.ts#L53)
+[loaders/services.loader.ts:53](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/services.loader.ts#L53)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[loaders/services.loader.ts:41](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/services.loader.ts#L41)
+[loaders/services.loader.ts:41](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/services.loader.ts#L41)
 
 ___
 
@@ -75,4 +75,4 @@ Load all custom services and overridden services into the underlying @medusajs i
 
 #### Defined in
 
-[loaders/services.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/services.loader.ts#L13)
+[loaders/services.loader.ts:13](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/services.loader.ts#L13)

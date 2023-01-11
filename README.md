@@ -25,6 +25,7 @@
 	<a href="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml"><img alt="CodeQL security analysis status" src="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg" height="20"/></a>
 	<a href="https://www.codacy.com/gh/adrien2p/medusa-extender/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adrien2p/medusa-extender&amp;utm_campaign=Badge_Grade"><img alt="Codacy code quality" src="https://app.codacy.com/project/badge/Grade/379a920025324868a7445d39ae586c39" height="20"/></a>
 	<a href="https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender"><img alt="Product hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark" height="20"/></a>
+    <a href="https://github.com/sponsors/adrien2p"><img alt="sponsor" src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" height="20"/></a>
 </p>
 
 <p align="center">
@@ -35,11 +36,6 @@ decorators approach to increase the DX and full typings support for easier devel
 </p>
 
 <br />
-
-
-<p align="center">
-    <a href="https://www.buymeacoffee.com/adriendeperetti" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#table-of-contents)
@@ -71,17 +67,23 @@ decorators approach to increase the DX and full typings support for easier devel
         * [@Router](https://adrien2p.github.io/medusa-extender/#/?id=router)
         * [@Validator](https://adrien2p.github.io/medusa-extender/#/?id=validator)
         * [@Subscriber](https://adrien2p.github.io/medusa-extender/#/?id=subscriber)
+        * [Providers](https://adrien2p.github.io/medusa-extender/#/?id=providers)
+			* [@PaymentProvider](https://adrien2p.github.io/medusa-extender/#/?id=paymentprovider)
+			* [@NotificationProvider](https://adrien2p.github.io/medusa-extender/#/?id=notificationprovider)
+			* [@FulfillmentProvider](https://adrien2p.github.io/medusa-extender/#/?id=fulfillmentprovider)
+			* [@TaxProvider](https://adrien2p.github.io/medusa-extender/#/?id=taxprovider)
         * [@Module](https://adrien2p.github.io/medusa-extender/#/?id=module)
         * [@Module (Dynamic module)](https://adrien2p.github.io/medusa-extender/#/?id=module-dynamic-module)
         * [@OnMedusaEntityEvent](https://adrien2p.github.io/medusa-extender/#/?id=onmedusaentityevent)
     * [Utilities :wrench:](https://adrien2p.github.io/medusa-extender/#/?id=utilities-wrench)
         * [attachOrReplaceEntitySubscriber](https://adrien2p.github.io/medusa-extender/#/?id=attachorreplaceentitysubscriber)
-        * [repositoryMixin](https://adrien2p.github.io/medusa-extender/#/?id=repositorymixin)
-        * [Omit](https://adrien2p.github.io/medusa-extender/#/?id=omit)
+		* [repositoryMixin (@deprecated)](https://adrien2p.github.io/medusa-extender/#/?id=repositorymixin-deprecated)
+		* [Omit (@deprecated)](https://adrien2p.github.io/medusa-extender/#/?id=omit-deprecated)
 * [Starters](https://adrien2p.github.io/medusa-extender/#/?id=starters)
 * [Internal modules (Optional)](https://adrien2p.github.io/medusa-extender/#/?id=internal-modules-optional)
     * [Monitoring](https://adrien2p.github.io/medusa-extender/#/?id=monitoring)
     * [Multi-tenancy](https://adrien2p.github.io/medusa-extender/#/?id=multi-tenancy)
+      * [Cli migrate command](https://adrien2p.github.io/medusa-extender/#/?id=cli-migrate-command)
 * [Resources](#resources)
     * [Marketplace tutorial](#marketplace-tutorial)
 * [troubleshooting](https://adrien2p.github.io/medusa-extender/#/?id=troubleshooting)
@@ -222,16 +224,11 @@ Here is the first tutorial using the medusa-extender package, [Open source ecomm
 
 # Like my work? :heartbeat:
 
-This project needs a :star: from you. Don't forget to leave a star :star:.
-If you found the package helpful consider supporting me with a coffee
-
-<a href="https://www.buymeacoffee.com/adriendeperetti" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+This project needs a :star: from you.
+If you found the package helpful consider becoming a sponsor [here](https://github.com/sponsors/adrien2p) :rocket:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/cloudy.png)](#contribute)
 
 # Contribute
 
 Contributions are welcome! You can look at the contribution [guidelines](./CONTRIBUTING.md)
-
-[![Stargazers repo roster for @adrien2p/medusa-extender](https://reporoster.com/stars/adrien2p/medusa-extender)](https://github.com/adrien2p/medusa-extender/stargazers)
-[![Forkers repo roster for @adrien2p/medusa-extender](https://reporoster.com/forks/adrien2p/medusa-extender)](https://github.com/adrien2p/medusa-extender/network/members)

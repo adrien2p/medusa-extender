@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[loaders/providers.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/providers.loader.ts#L20)
+[loaders/providers.loader.ts:20](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/providers.loader.ts#L20)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[loaders/providers.loader.ts:8](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/providers.loader.ts#L8)
+[loaders/providers.loader.ts:8](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/providers.loader.ts#L8)

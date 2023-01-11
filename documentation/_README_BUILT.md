@@ -26,6 +26,7 @@
 <a href="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml"><img alt="CodeQL security analysis status" src="https://github.com/adrien2p/medusa-extender/actions/workflows/codeql-analysis.yml/badge.svg" height="20"/></a>
 <a href="https://www.codacy.com/gh/adrien2p/medusa-extender/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=adrien2p/medusa-extender&amp;utm_campaign=Badge_Grade"><img alt="Codacy code quality" src="https://app.codacy.com/project/badge/Grade/379a920025324868a7445d39ae586c39" height="20"/></a>
 <a href="https://www.producthunt.com/posts/medusa-extender?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-medusa-extender"><img alt="Product hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=333482&theme=dark" height="20"/></a>
+<a href="https://github.com/sponsors/adrien2p"><img alt="github sponsors" src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/adrien2p" height="20"/></a>
 	</p>
 
 <p align="center">
@@ -333,22 +334,6 @@ in order to allow you to customise your medusa api according to your needs.
 
 Lets start with the decorators. They are the main API you will use in your project.
 Let see each of the decorators that are available and what are there purpose.
-
-:closed_book: **Here is a summary of whats coming in the following sections:**
-
-
-| Decorator                          | Parameters                                       | Description                                      |
-|------------------------------------|--------------------------------------------------|--------------------------------------------------|
-| `@Entity`                          | `{ resolutionKey?: string; override?: Type<TOverride>; }` | Allow to create a new entity or to override an existing entity from medusa. |
-| `@Repository`                      | `{ resolutionKey?: string; override?: Type<TOverride>; }` | Allow to create a new custom repository or to override an existing custom repository from medusa. |
-| `@Service`                         | `{ scope?: LifetimeType; resolutionKey?: string; override?: Type<TOverride>; }` | Allow to create a new service or to override an existing service from medusa. |
-| `@Middleware`                      | `{ requireAuth: boolean; routes: MedusaRouteOptions[]; }` | Allow to apply a custom middleware that will be resolve before or after the authentication on the specified routes. |
-| `@Router`                          | `{ requiredAuth: boolean; method: MedusaRouteMethods; path: string; handlers: ((...args: unknown[]) => void)[]; }` | Allow to register new custom routes with a set of handlers. |
-| `@Validator`                       | `{ override: Type<TOverride>; }`                 | Allow to override an existing validator from medusa. |
-| `@Migration`                       |                                                  | Create a new migration to applied for your entity modifications. |
-| `@Module`                          | `{ imports: Type[] }`                            | Import all previous components including modules. |
-| `@OnMedusaEntityEvent.When.Action` | take an entity and an option object such as `{ async: boolean; metatype?: Type; }` | Emit and listen to entity subscriber events.     |
-
 
 ### @Entity
 

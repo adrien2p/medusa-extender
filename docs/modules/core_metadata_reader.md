@@ -37,7 +37,7 @@ Return the options from components.
 
 #### Defined in
 
-[core/metadata-reader.ts:52](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/metadata-reader.ts#L52)
+[core/metadata-reader.ts:52](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/core/metadata-reader.ts#L52)
 
 ___
 
@@ -61,4 +61,4 @@ Read all metadata from the imported modules and extract components that will be 
 
 #### Defined in
 
-[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/core/metadata-reader.ts#L11)
+[core/metadata-reader.ts:11](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/core/metadata-reader.ts#L11)

@@ -31,4 +31,4 @@ Apply routers according to their configuration
 
 #### Defined in
 
-[loaders/helpers/apply-routers.ts:15](https://github.com/adrien2p/medusa-extender/blob/03cec4f/src/loaders/helpers/apply-routers.ts#L15)
+[loaders/helpers/apply-routers.ts:15](https://github.com/adrien2p/medusa-extender/blob/48060f4/src/loaders/helpers/apply-routers.ts#L15)

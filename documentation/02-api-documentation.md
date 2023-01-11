@@ -12,10 +12,6 @@ in order to allow you to customise your medusa api according to your needs.
 Lets start with the decorators. They are the main API you will use in your project.
 Let see each of the decorators that are available and what are there purpose.
 
-:closed_book: **Here is a summary of whats coming in the following sections:**
-
-{{ decoratorApiSummary }}
-
 ### @Entity
 
 This decorator gives you the ability to either create a new entity that will
