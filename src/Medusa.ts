@@ -44,7 +44,7 @@ export class Medusa {
 	 * @param modules The modules to load into medusa
 	 */
 	public async load(modules: Type[]): Promise<MedusaContainer> {
-		const configModule = await asyncLoadConfig();
+		const configModule = await asyncLoadConfig(this.#rootDir, 'medusa-config');
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
