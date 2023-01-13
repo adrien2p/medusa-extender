@@ -54,19 +54,24 @@ export function applyAuthenticatedMiddlewares(
 	for (const middlewareOptions of middlewares) {
 		const { requireAuth, requiredAuth, routes, metatype } = middlewareOptions;
 
-		if (requiredAuth || requireAuth) {
-			const handlers: RequestHandler[] =
-				domain === 'admin' || domain === 'custom'
-					? [authenticatedMiddleware()]
-					: [requireCustomerAuthenticatedMiddleware()];
-
-			handlers.push(new metatype().consume);
-
-			routes.some((route) => {
-				const { method, path } = route;
-				app[method.toLowerCase()](path, ...handlers);
-			});
+		if (!requiredAuth && !requireAuth) {
+			continue;
 		}
+
+		// In case of the admin, the middleware is applied automatically by the load order
+		const handlers: RequestHandler[] =
+			domain === 'admin'
+				? []
+				: domain === 'custom'
+				? [authenticatedMiddleware()]
+				: [requireCustomerAuthenticatedMiddleware()];
+
+		handlers.push(new metatype().consume);
+
+		routes.some((route) => {
+			const { method, path } = route;
+			app[method.toLowerCase()](path, ...handlers);
+		});
 
 		logger.log(`Middleware loaded - ${middlewareOptions.metatype.name}`);
 	}

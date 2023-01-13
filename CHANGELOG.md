@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.6](https://github.com/adrien2p/medusa-extender/compare/v1.8.3...v1.8.6) (2023-01-13)
+
+
+### Bug Fixes
+
+* applying middleware and routers with a specific order ([36760d0](https://github.com/adrien2p/medusa-extender/commits/36760d0957526d39ef1d1b5f502b95f595e1a46d))
+* applying middleware and routers with a specific order for admin ([2161ad1](https://github.com/adrien2p/medusa-extender/commits/2161ad1a5e9d983146fbea697d1883e4aeb0e318))
+
+### [1.8.5](https://github.com/adrien2p/medusa-extender/compare/v1.8.4...v1.8.5) (2023-01-13)
+
+### [1.8.4](https://github.com/adrien2p/medusa-extender/compare/v1.8.3...v1.8.4) (2023-01-13)
+
+
+### Bug Fixes
+
+* applying middleware and routers with a specific order ([36760d0](https://github.com/adrien2p/medusa-extender/commits/36760d0957526d39ef1d1b5f502b95f595e1a46d))
+
 ### [1.8.3](https://github.com/adrien2p/medusa-extender/compare/v1.8.2...v1.8.3) (2023-01-11)
 
 

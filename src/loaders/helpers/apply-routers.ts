@@ -58,8 +58,11 @@ export function applyAuthenticatedRouters(
 				return;
 			}
 
+			// In case of the admin, the middleware is applied automatically by the load order
 			const handlers_: RequestHandler[] =
-				domain === 'admin' || domain === 'custom'
+				domain === 'admin'
+					? []
+					: domain === 'custom'
 					? [authenticatedMiddleware()]
 					: [requireCustomerAuthenticatedMiddleware()];
 
