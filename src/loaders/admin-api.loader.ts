@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { GetInjectableOptions } from './';
-import { applyMiddlewares } from './helpers/apply-middlewares';
-import { applyRouters } from './helpers/apply-routers';
+import { applyAuthenticatedMiddlewares, applyUnauthenticatedMiddlewares } from './helpers/apply-middlewares';
+import { applyAuthenticatedRouters, applyUnauthenticatedRouters } from './helpers/apply-routers';
 
 /**
  * @internal
@@ -39,7 +39,9 @@ export async function adminApiLoader(
 	const originalAdminAuthRouteLoader = adminAuthRouteLoader.default;
 	adminAuthRouteLoader.default = (app: Router): void => {
 		originalAdminAuthRouteLoader(app);
-		applyMiddlewares('admin', app, adminMiddlewares);
-		applyRouters('admin', app, adminRouters);
+		applyUnauthenticatedMiddlewares('admin', app, adminMiddlewares);
+		applyUnauthenticatedRouters('admin', app, adminRouters);
+		applyAuthenticatedMiddlewares('admin', app, adminMiddlewares);
+		applyAuthenticatedRouters('admin', app, adminRouters);
 	};
 }

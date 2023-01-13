@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { GetInjectableOptions } from './';
-import { applyMiddlewares } from './helpers/apply-middlewares';
-import { applyRouters } from './helpers/apply-routers';
+import { applyAuthenticatedMiddlewares, applyUnauthenticatedMiddlewares } from './helpers/apply-middlewares';
+import { applyAuthenticatedRouters, applyUnauthenticatedRouters } from './helpers/apply-routers';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 
 /**
@@ -39,8 +39,10 @@ export async function customApiLoader(
 	const adminRouteLoader = await import('@medusajs/medusa/dist/api/routes/admin/index');
 	const originalAdminRouteLoader = adminRouteLoader.default;
 	adminRouteLoader.default = (app: Router, container: MedusaContainer, config: Record<string, unknown>): void => {
-		applyMiddlewares('custom', app, customApiMiddlewares);
-		applyRouters('custom', app, customApiRouters);
+		applyUnauthenticatedMiddlewares('custom', app, customApiMiddlewares);
+		applyUnauthenticatedRouters('custom', app, customApiRouters);
+		applyAuthenticatedMiddlewares('custom', app, customApiMiddlewares);
+		applyAuthenticatedRouters('custom', app, customApiRouters);
 		originalAdminRouteLoader(app, container, config);
 	};
 }

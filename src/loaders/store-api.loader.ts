@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { GetInjectableOptions } from './';
-import { applyMiddlewares } from './helpers/apply-middlewares';
-import { applyRouters } from './helpers/apply-routers';
+import { applyAuthenticatedMiddlewares, applyUnauthenticatedMiddlewares } from './helpers/apply-middlewares';
+import { applyAuthenticatedRouters, applyUnauthenticatedRouters } from './helpers/apply-routers';
 
 /**
  * @internal
@@ -38,8 +38,10 @@ export async function storeApiLoader(
 	const storeAuthRouteLoader = await import('@medusajs/medusa/dist/api/routes/store/auth');
 	const originalStoreAuthRouteLoader = storeAuthRouteLoader.default;
 	storeAuthRouteLoader.default = (app: Router): void => {
-		applyMiddlewares('store', app, storeMiddlewares);
-		applyRouters('store', app, storeRouters);
 		originalStoreAuthRouteLoader(app);
+		applyUnauthenticatedMiddlewares('store', app, storeMiddlewares);
+		applyUnauthenticatedRouters('store', app, storeRouters);
+		applyAuthenticatedMiddlewares('store', app, storeMiddlewares);
+		applyAuthenticatedRouters('store', app, storeRouters);
 	};
 }

@@ -80,6 +80,16 @@ export class CartService extends MedusaCartService {
 @Router({
 	routes: [
 		{
+			path: '/admin',
+			method: 'get',
+			requiredAuth: true,
+			handlers: [
+				(req: Request, res: Response, next: NextFunction) => {
+					return res.send('healthy');
+				},
+			],
+		},
+		{
 			path: '/admin/test-path',
 			method: 'get',
 			requiredAuth: false,
