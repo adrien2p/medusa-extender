@@ -92,7 +92,7 @@
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "awilix": "^8.0.0",
-    "class-validator": "^0.13.1",
+    "class-validator": "^0.14.0",
     "core-js": "^3.21.0",
     "docsify": "^4.12.2",
     "dotenv": "^16.0.0",
