@@ -52,7 +52,7 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
  * @param keys
  * @constructor
  */
-export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, typeof keys[number]> =>
+export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, (typeof keys)[number]> =>
 	Class;
 
 /**
@@ -84,7 +84,7 @@ export function buildRegexpIfValid(str: string): RegExp | undefined {
 }
 
 export const isPromise = (obj: unknown): boolean =>
-	!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+	!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof (obj as any).then === 'function';
 
 export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
 	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
