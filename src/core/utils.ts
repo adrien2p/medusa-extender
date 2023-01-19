@@ -83,7 +83,7 @@ export function buildRegexpIfValid(str: string): RegExp | undefined {
 	return;
 }
 
-export const isPromise = (obj: any): boolean =>
+export const isPromise = (obj: unknown): boolean =>
 	!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 
 export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
