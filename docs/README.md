@@ -244,7 +244,7 @@ that newly created component and add it to the `imports` list automatically.
 |-----------------|-------|--------------------------------------------------|
 | `<name>`        |       | Component name to generate                       |
 | `--module`      | `-m`  | Generate a new module.                           |
-| `--middleware`  | `-mi` | Generate a new middleware.                       |
+| `--middleware`  | `-md` | Generate a new middleware.                       |
 | `--service`     | `-s`  | Generate a new service.                          |
 | `--router`      | `-r`  | Generate a new router.                           |
 | `--entity`      | `-e`  | Generate a new entity.                           |
