@@ -83,6 +83,9 @@ export function buildRegexpIfValid(str: string): RegExp | undefined {
 	return;
 }
 
+export const isPromise = (obj: unknown): boolean =>
+	!!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof (obj as any).then === 'function';
+
 export async function asyncLoadConfig(rootDir?: string, filename?: string): Promise<ConfigModule> {
 	const configuration = getConfigFile(rootDir ?? process.cwd(), filename ?? `medusa-config`) as {
 		configModule: ConfigModule;
@@ -93,8 +96,8 @@ export async function asyncLoadConfig(rootDir?: string, filename?: string): Prom
 			if (typeof obj[key] === 'object' && obj[key] !== null) {
 				await resolveConfigProperties(obj[key]);
 			}
-			if (typeof obj[key] === 'function') {
-				obj[key] = await obj[key]();
+			if (isPromise(obj[key])) {
+				obj[key] = await obj[key];
 			}
 		}
 		return obj;
