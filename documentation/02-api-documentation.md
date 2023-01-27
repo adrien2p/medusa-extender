@@ -331,7 +331,7 @@ export class LoggedInUserMiddleware implements MedusaMiddleware {
 		let loggedInUser = null;
 		if (req.user && req.user.userId) {
 			const userService = req.scope.resolve('userService') as UserService;
-			const loggedInUser = await userService.retrieve(req.user.userId, {
+			loggedInUser = await userService.retrieve(req.user.userId, {
 				select: ['id', 'your_custom_field'],
 			});
 		}
