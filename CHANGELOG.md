@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.7](https://github.com/adrien2p/medusa-extender/compare/v1.8.3...v1.8.7) (2023-01-31)
+
+
+### Bug Fixes
+
+* applying middleware and routers with a specific order ([36760d0](https://github.com/adrien2p/medusa-extender/commits/36760d0957526d39ef1d1b5f502b95f595e1a46d))
+* async config resolution scoped to project config ([447db0f](https://github.com/adrien2p/medusa-extender/commits/447db0f85cd5093f09fccb0953f8632addc4e7b1))
+* **medusa-config:** dont run all functions immediately in medusa-config, only promises ([#169](https://github.com/adrien2p/medusa-extender/issues/169)) ([6c0ab06](https://github.com/adrien2p/medusa-extender/commits/6c0ab06af30d46a5646f7b1943db88a0b53c80f0))
+
 ### [1.8.6](https://github.com/adrien2p/medusa-extender/compare/v1.8.3...v1.8.6) (2023-01-13)
 
 
