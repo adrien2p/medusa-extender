@@ -104,8 +104,10 @@ export async function asyncLoadConfig(rootDir?: string, filename?: string): Prom
 		return obj;
 	};
 
-	const configModule = isPromise(configuration.configModule) ? await configuration.configModule : configuration.configModule
+	const configModule = isPromise(configuration.configModule)
+		? await configuration.configModule
+		: configuration.configModule;
 	configModule.projectConfig = await resolveConfigProperties(configModule.projectConfig);
 
-	return configuration.configModule
+	return configuration.configModule;
 }
