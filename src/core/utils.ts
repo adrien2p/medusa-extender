@@ -91,7 +91,8 @@ export async function asyncLoadConfig(rootDir?: string, filename?: string): Prom
 		configModule: ConfigModule;
 		configFilePath: string;
 	};
-	const resolveConfigProperties = async (obj: any): Promise<ConfigModule> => {
+
+	const resolveConfigProperties = async <T>(obj: any): Promise<T> => {
 		for (const key of Object.keys(obj)) {
 			if (typeof obj[key] === 'object' && obj[key] !== null) {
 				await resolveConfigProperties(obj[key]);
@@ -102,6 +103,9 @@ export async function asyncLoadConfig(rootDir?: string, filename?: string): Prom
 		}
 		return obj;
 	};
-	const configModule = await resolveConfigProperties(configuration.configModule.projectConfig);
-	return configModule;
+
+	const configModule = isPromise(configuration.configModule) ? await configuration.configModule : configuration.configModule
+	configModule.projectConfig = await resolveConfigProperties(configModule.projectConfig);
+
+	return configuration.configModule
 }
