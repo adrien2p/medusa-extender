@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.8](https://github.com/adrien2p/medusa-extender/compare/v1.8.7...v1.8.8) (2023-01-31)
+
+
+### Bug Fixes
+
+* async config resolution scoped to project config ([66e3aeb](https://github.com/adrien2p/medusa-extender/commits/66e3aeb18e25c36c0dbae79c480f25ff70ae2b27))
+
 ### [1.8.7](https://github.com/adrien2p/medusa-extender/compare/v1.8.3...v1.8.7) (2023-01-31)
 
 
