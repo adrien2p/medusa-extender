@@ -16,6 +16,7 @@ import {
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
+import { asFunction } from 'awilix';
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -64,7 +65,7 @@ export class Medusa {
 			moduleComponentsOptions.get('middleware') ?? [],
 			moduleComponentsOptions.get('router') ?? []
 		);
-		await databaseLoader(
+		const dataSource = await databaseLoader(
 			moduleComponentsOptions.get('entity') ?? [],
 			moduleComponentsOptions.get('repository') ?? [],
 			moduleComponentsOptions.get('migration') ?? []
@@ -78,6 +79,8 @@ export class Medusa {
 			directory: this.#rootDir,
 			expressApp: this.#express,
 		});
+
+		container.register("dataSource",asFunction(()=>dataSource).singleton())
 
 		const endPoints = getEndpoints(this.#express);
 		for (const endPoint of endPoints) {

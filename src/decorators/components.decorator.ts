@@ -7,6 +7,7 @@ import {
 	ValidatorInjectionOptions,
 } from '../core';
 import { buildComponentDecorator } from './helpers/build-component-decorator';
+import { buildRepositoryDecorator } from './helpers/build-repository-decorator';
 
 /**
  * Mark a class as an entity to be used by the loader.
@@ -32,7 +33,7 @@ export function Service<T = unknown>(options: ServiceInjectableOptions<T> = {}):
  * @constructor
  */
 export function Repository<T = unknown>(options: RepositoryInjectableOptions<T> = {}): ClassDecorator {
-	return buildComponentDecorator({ type: 'repository', ...options });
+	return buildRepositoryDecorator({ type: 'repository', ...options });
 }
 
 /**

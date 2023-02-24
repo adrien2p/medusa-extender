@@ -1,4 +1,4 @@
-import { Connection, Migration } from 'typeorm';
+import { Connection, DataSource, Migration } from 'typeorm';
 import { GetInjectableOptions } from './';
 import { Logger } from '../core';
 
@@ -12,7 +12,7 @@ const logger = Logger.contextualize('MigrationsLoader');
  */
 export async function migrationsLoader(
 	migrationsOptions: GetInjectableOptions<'migration'>,
-	dbConnection: Connection
+	dbConnection: DataSource
 ): Promise<void> {
 	logger.log('Registering migrations into the ORM connection');
 

@@ -1,6 +1,5 @@
-import { createConnection } from 'typeorm';
+import {  DataSource } from 'typeorm';
 import { normalize, resolve } from 'path';
-import { Connection } from 'typeorm/connection/Connection';
 import { asyncLoadConfig, buildRegexpIfValid, ConfigModule, Logger } from '../../core';
 
 const logger = Logger.contextualize('Migrate command', 'MEDEX-CLI');
@@ -47,43 +46,43 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 		};
 	}
 
-	const connections: Connection[] = [
-		await createConnection({
-			type: configModule.projectConfig.database_type as any,
-			...hostConfig,
-			extra: configModule.projectConfig.database_extra || {},
-			migrations: migrationDirs,
-		}),
-	];
+	const dataSource = new DataSource({
+		type: configModule.projectConfig.database_type as any,
+		...hostConfig,
+		extra: configModule.projectConfig.database_extra || {},
+		migrations: migrationDirs,
+	})
+	dataSource.initialize()
+	const dataSources: DataSource[] = [dataSource];
 
 	if (configModule.multi_tenancy?.enable && !!tenant_codes) {
-		const tenantConnections = await buildTenantsConnections(tenant_codes, migrationDirs, configModule);
-		connections.push(...tenantConnections);
+		const tenantDataSources = await buildTenantsDataSources(tenant_codes, migrationDirs, configModule);
+		dataSources.push(...tenantDataSources);
 	}
 
 	if (run) {
-		await Promise.all(connections.map((connection) => runConnectionAction(connection, 'runMigrations', 'Run')));
+		await Promise.all(dataSources.map((ds) => runDataSourceAction(ds, 'runMigrations', 'Run')));
 	} else if (revert) {
 		await Promise.all(
-			connections.map((connection) => runConnectionAction(connection, 'undoLastMigration', 'Undo last'))
+			dataSources.map((ds) => runDataSourceAction(ds, 'undoLastMigration', 'Undo last'))
 		);
 	} else if (show) {
-		await Promise.all(connections.map((connection) => runConnectionAction(connection, 'showMigrations', 'Show')));
+		await Promise.all(dataSources.map((ds) => runDataSourceAction(ds, 'showMigrations', 'Show')));
 	}
 
 	await Promise.all(
-		connections.map((connection) => {
-			return connection.close();
+		dataSources.map((ds) => {
+			return ds.destroy()
 		})
 	);
 }
 
-async function buildTenantsConnections(
+async function buildTenantsDataSources(
 	tenants: string,
 	migrationDirs: string[],
 	configModule: ConfigModule
-): Promise<Connection[]> {
-	const connections: Connection[] = [];
+): Promise<DataSource[]> {
+	const dataSources: DataSource[] = [];
 	const tenantConfigMap = new Map<
 		string,
 		{
@@ -104,31 +103,39 @@ async function buildTenantsConnections(
 	});
 
 	for (const [tenantCode, tenantConfig] of [...tenantConfigMap]) {
-		connections.push(
-			await createConnection({
-				name: tenantCode,
-				type: tenantConfig.database_type as any,
-				url: tenantConfig.database_url,
-				database: tenantConfig.database_database,
-				extra: tenantConfig.database_extra || {},
-				logging: ['schema'],
-				migrations: migrationDirs,
-			})
+
+		const dataSource = new DataSource({
+			name: tenantCode,
+			type: tenantConfig.database_type as any,
+			url: tenantConfig.database_url,
+			database: tenantConfig.database_database,
+			extra: tenantConfig.database_extra || {},
+			logging: ['schema'],
+			migrations: migrationDirs,
+		})
+		dataSource.initialize();
+		dataSources.push(
+			dataSource
 		);
 	}
 
-	return connections;
+	return dataSources;
 }
 
-function runConnectionAction(connection, methods: keyof Connection, action: string): Promise<any> {
+function runDataSourceAction(dataSource:DataSource, method: keyof DataSource, action: string): Promise<any> {
 	return new Promise(async (resolve, reject) => {
-		await connection[methods]()
+		if(dataSource.isInitialized){
+		(dataSource[method] as ()=>any).call(dataSource)
 			.then(() => {
-				logger.log(`${action} migrations has been applied on database connection`, connection.name);
+				logger.log(`${action} migrations has been applied on database connection`, dataSource.name);
 				resolve(null);
 			})
 			.catch((e) => {
 				reject(e);
 			});
+		}
+		else{
+			reject("Database Uninitialized")
+		}
 	});
 }

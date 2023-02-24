@@ -18,7 +18,7 @@ export class TenantMiddleware implements MedusaMiddleware {
 
 		let manager: EntityManager;
 		try {
-			manager = await tenantService.getOrCreateConnection(defaultManager, req);
+			manager = await tenantService.getOrCreateDataSource(defaultManager, req);
 		} catch (e) {
 			return next(e);
 		}

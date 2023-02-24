@@ -13,8 +13,8 @@ export async function databaseLoader(
 	databaseLoader.default = async ({ container, configModule }) => {
 		await entitiesLoader(entities, container as unknown as MedusaContainer);
 		await repositoriesLoader(repositories, container as unknown as MedusaContainer);
-		const connection = await originalDatabaseLoader({ container, configModule });
-		await migrationsLoader(migrations, connection);
-		return connection;
+		const dataSource = await originalDatabaseLoader({ container, configModule });
+		await migrationsLoader(migrations, dataSource);
+		return dataSource;
 	};
 }
