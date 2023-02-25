@@ -2,13 +2,14 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import { Order as MedusaOrder } from '@medusajs/medusa/dist';
-import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
+import { OrderRepository as medusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
 import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
-import { createContainer } from 'awilix';
-import { Entity, EntityRepository, FindOptionsUtils, Repository } from 'typeorm';
+import { asValue, createContainer } from 'awilix';
+import { Entity, EntityRepository, Repository } from 'typeorm';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 import { metadataReader } from '../../core';
+import { dataSource } from '@medusajs/medusa/dist/loaders/database';
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()
@@ -16,19 +17,18 @@ class Order extends MedusaOrder {
 	testPropertyOrder = 'toto';
 }
 
-class CustomRepositor extends @medu 
-{
+const t = " typeof medusaOrderRepository
 
-}
-
-
-@MedusaRepository({ override: MedusaOrderRepository })
-@EntityRepository()
-class OrderRepository extends MedusaOrderRepository {
+@MedusaRepository({ repositoryName:"MedusaOrderRepository"})
+class OrderRepository extends Repository<Order>  {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 
+	
+
+	
+
 	test(): Promise<Order[]> {
-		return this.findWithRelations() as Promise<Order[]>;
+		return this.find() as Promise<Order[]>;
 	}
 }
 
@@ -52,15 +52,17 @@ describe('Repositories loader', () => {
 	describe('overriddenRepositoriesLoader', () => {
 		it(' should override MedusaOrderRepository with OrderRepository', async () => {
 			const components = metadataReader([OrderModule]);
-			await overrideRepositoriesLoader(components.get('repository'));
+			container.register("orderRepository",asValue(medusaOrderRepository))
+			await overrideRepositoriesLoader(components.get('repository'),container);
 
+			const repository = container.resolve("orderRepository") as any
 			const { OrderRepository: MedusaOrderRepositoryReImport } = (await import(
 				'@medusajs/medusa/dist/repositories/order'
 			)) as { OrderRepository };
 
-			expect(new MedusaOrderRepositoryReImport().findWithRelations).toBeDefined();
-			expect(new MedusaOrderRepositoryReImport().testProperty).toBeDefined();
-			expect(new MedusaOrderRepositoryReImport().testProperty).toBe(
+			expect(repository.findWithRelations).toBeDefined();
+			expect(repository.testProperty).toBeDefined();
+			expect(repository.testProperty).toBe(
 				'I am the property from UserRepository that extend MedusaOrderRepository'
 			);
 		});

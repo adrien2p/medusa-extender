@@ -62,6 +62,7 @@ export type RepositoryInjectableOptions<TOverride = unknown> = {
 	 */
 	resolutionKey?: string;
 	override?: Type<TOverride>;
+	repositoryName?: string
 };
 
 /**

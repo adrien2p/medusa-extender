@@ -81,6 +81,8 @@ export class Medusa {
 		});
 
 		container.register("dataSource",asFunction(()=>dataSource).singleton())
+		/** overwrites with new repositories */
+		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? [],container);
 
 		const endPoints = getEndpoints(this.#express);
 		for (const endPoint of endPoints) {

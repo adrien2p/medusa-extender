@@ -1,6 +1,6 @@
 import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
-import { asClass, AwilixContainer } from 'awilix';
+import { asClass, asFunction, AwilixContainer } from 'awilix';
 import { BaseEntity, EntityTarget, getMetadataArgsStorage, Repository } from 'typeorm';
 import { Logger } from '../core';
 
@@ -44,13 +44,13 @@ export async function repositoriesLoader(
  * Load all custom repositories that override @medusajs instance entities.
  * @param repositories
  */
-export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>,container:AwilixContainer): Promise<void> {
 	logger.log('Loading overridden entities into the underlying @medusajs');
 
 	let count = 0;
 	for (const repositoryOptions of repositories) {
 		if (repositoryOptions.override) {
-			await overrideRepository(repositoryOptions);
+			await overrideRepository(repositoryOptions,container);
 			logger.log(`Repository overridden - ${repositoryOptions.metatype.name}`);
 			++count;
 		}
@@ -71,18 +71,21 @@ function registerRepository(container: MedusaContainer, repositoryOptions: GetIn
 	});
 }
 
-async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
-	const { metatype, override } = repositoryOptions;
+async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>,container:AwilixContainer): Promise<void> {
+	
+	const { metatype, override,repositoryName } = repositoryOptions;
 
-	const nameParts = override.name.split('Repository');
+	const nameParts = repositoryName.split('Repository');
 	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
 	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
 	const fileFullName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`
 	const fileNameParts = fileFullName.split("-")
-	const fileName = fileNameParts.length>1? fileNameParts[1]:fileNameParts[0]
+	let fileName = fileNameParts.length>1? fileNameParts[1]:fileNameParts[0]
 
+	const nameToRegister = `${fileName.charAt(0).toLowerCase() + fileName.slice(1)}Repository`;
+	container.register(nameToRegister,asFunction(()=>metatype))
 	
-
+ /*
 	const originalRepository = await import('@medusajs/medusa/dist/repositories/' + fileName);
 	const originalRepositoryIndex = getMetadataArgsStorage().entityRepositories.findIndex((repository) => {
 		return repository.target.name === override.name && repository.target !== metatype;
@@ -91,7 +94,7 @@ async function overrideRepository(repositoryOptions: GetInjectableOption<'reposi
 		getMetadataArgsStorage().entityRepositories.splice(originalRepositoryIndex, 1);
 	}
 	originalRepository[override.name] = metatype
-	
+	*/
 
 
 }
