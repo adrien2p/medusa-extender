@@ -49,7 +49,7 @@ export class Medusa {
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
-		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
+		
 		await customApiLoader(
 			this.#express,
 			moduleComponentsOptions.get('middleware') ?? [],

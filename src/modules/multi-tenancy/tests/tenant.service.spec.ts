@@ -1,10 +1,14 @@
 import { asFunction, asValue, createContainer } from 'awilix';
-import {expect,jest,describe,beforeAll,beforeEach,it} from "@jest/globals"
+import {expect,describe,beforeAll,beforeEach,it,jest} from "@jest/globals"
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { DataSource, EntityManager } from 'typeorm';
 import { resolve } from 'path';
-
+import Module from 'module';
+import { JsonWebKeyInput } from 'crypto';
+import { connect } from 'http2';
+import { type } from 'os';
+const t = jest.mock("typeorm")
 class FakeService {
 	manager: any;
 
@@ -12,62 +16,32 @@ class FakeService {
 		this.manager = manager;
 	}
 }
+const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
 
-/*class ConnectionManagerMock {
-	private connectionMap = new Map();
+const defaultManagerMock = {
+	connection: { name: tenantCodes[0], createQueryRunner: DataSource.prototype.createQueryRunner },
+};
+const defaultManagerMock_2 = {
+	connection: { name: tenantCodes[1], createQueryRunner: DataSource.prototype.createQueryRunner },
+};
+jest.mock("typeorm",()=>
+{ return {
+	DataSource:jest.fn().mockImplementation((s: any)=>{
+		return {
+		isInitialized:false,
+		manager:{...defaultManagerMock,
+			connection:{name:s.name,createQueryRunner: DataSource.prototype.createQueryRunner}},
+		initialize:jest.fn().mockReturnValue(Promise.resolve({
+			isInitialized:true,
+			manager:{...defaultManagerMock,
+				connection:{name:s.name,createQueryRunner: DataSource.prototype.createQueryRunner}}}))}})}
+})
 
-	get connections() {
-		return [...this.connectionMap.values()];
-	}
-
-	create(options: any): Promise<DataSource> {
-		this.connectionMap.set(options.name, options);
-		(options as any).manager.connection = {
-			...this.connectionMap.get(options.name),
-			...(options as any).manager.connection,
-		};
-		return Promise.resolve(this.connectionMap.get(options.name));
-	}
-
-	has(name: string) {
-		return this.connectionMap.has(name);
-	}
-
-	get(name: string) {
-		return this.connectionMap.get(name);
-	}
-}
-
-const connectionManagerMock = new ConnectionManagerMock();
-
-jest.spyOn(typeormFunctions, 'getConnectionManager').mockImplementation((): ConnectionManager => {
-	return connectionManagerMock as any;
-});*/
-
-// esModule.test.js
-const mock = jest.mock('typeorm', () => ({
-  __esModule: true, // this property makes it work
-  default: 'mockedDefaultExport',
-  DataSource: jest.fn(),
-}));
-
-
-
-jest.spyOn(typeormFunctions, 'DataSource').mockImplementation((options: any) => {
-	const connectRes = {
-		manager: {
-			connection: { name: options.name, createQueryRunner: DataSource.prototype.createQueryRunner },
-		},
-	};
-	return Promise.resolve(connectRes)
-	});
 
 const container = createContainer();
-const defaultManagerMock = {
-	connection: { name: 'default', createQueryRunner: DataSource.prototype.createQueryRunner },
-};
 
-const tenantCodes = ['tenant-code-1', 'tenant-code-2'];
+
+
 
 describe('Tenant service', () => {
 	let reqMock;
@@ -100,7 +74,7 @@ describe('Tenant service', () => {
 
 		let tenantService = container.resolve(TenantService.resolutionKey) as TenantService;
 		manager = await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock);
-		expect(manager).toBe(tenantCodes[0]);
+		expect(manager.connection.name).toBe(tenantCodes[0]);
 
 		fakeService = container.resolve('fakeService') as FakeService;
 		expect(fakeService.manager.connection.name).toBe(defaultManagerMock.connection.name);

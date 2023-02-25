@@ -5,7 +5,7 @@ import { Order as MedusaOrder } from '@medusajs/medusa/dist';
 import { OrderRepository as MedusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
 import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { createContainer } from 'awilix';
-import { Entity, EntityRepository, Repository } from 'typeorm';
+import { Entity, EntityRepository, FindOptionsUtils, Repository } from 'typeorm';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 import { metadataReader } from '../../core';
@@ -15,6 +15,12 @@ import { metadataReader } from '../../core';
 class Order extends MedusaOrder {
 	testPropertyOrder = 'toto';
 }
+
+class CustomRepositor extends @medu 
+{
+
+}
+
 
 @MedusaRepository({ override: MedusaOrderRepository })
 @EntityRepository()

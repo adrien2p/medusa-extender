@@ -1,4 +1,4 @@
-import { repositoriesLoader } from './repository.loader';
+import { overrideRepositoriesLoader, repositoriesLoader } from './repository.loader';
 import { entitiesLoader } from './entities.loader';
 import { GetInjectableOptions, migrationsLoader } from './';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
@@ -11,9 +11,12 @@ export async function databaseLoader(
 	const databaseLoader = await import('@medusajs/medusa/dist/loaders/database');
 	const originalDatabaseLoader = databaseLoader.default;
 	databaseLoader.default = async ({ container, configModule }) => {
+		const dataSource = await originalDatabaseLoader({ container, configModule });
+		await overrideRepositoriesLoader(repositories ?? []);
+
 		await entitiesLoader(entities, container as unknown as MedusaContainer);
 		await repositoriesLoader(repositories, container as unknown as MedusaContainer);
-		const dataSource = await originalDatabaseLoader({ container, configModule });
+		
 		await migrationsLoader(migrations, dataSource);
 		return dataSource;
 	};

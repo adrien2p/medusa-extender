@@ -3,7 +3,7 @@ import { DataSource, EntityManager } from 'typeorm';
 import { ConfigModule } from './types';
 import { MedusaRequest } from '../../core';
 import { getConfigFile } from 'medusa-core-utils';
-import "@medusajs/medusa/dist/utils/naming-strategy"
+//import "@medusajs/medusa/dist/utils/naming-strategy"
 
 @Service()
 export class TenantService {
@@ -74,11 +74,11 @@ export class TenantService {
 				dataSource = TenantService.tenantDataSources[tenant.code];
 			}
 		}
-
-		return await new Promise((resolve) => {
+		return dataSource.manager
+		/* return await new Promise((resolve) => {
 			dataSource.isInitialized
 				? resolve(dataSource.manager)
 				: dataSource.initialize().then((ds) => resolve(ds.manager));
-		});
+		}); */
 	}
 }

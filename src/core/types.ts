@@ -1,11 +1,14 @@
 import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
 import { LoggerOptions, MigrationInterface } from 'typeorm';
-import { MultiTenancyOptions } from 'modules/multi-tenancy/types';
+import { MultiTenancyOptions } from '../modules/multi-tenancy/types';
 
 export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
 }
+
+export type TypeObject<T = unknown> = Record<string,T>;
+
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
