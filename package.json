@@ -79,7 +79,7 @@
     "medusa-core-utils": "1.x",
     "medusa-interfaces": "1.x",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.0"
+    "typeorm": "^0.3.12"
   },
   "devDependencies": {
     "@appnest/readme": "^1.2.7",
@@ -126,6 +126,7 @@
     "typescript": "^4.5.5"
   },
   "resolutions": {
-    "@medusajs/medusa": "npm:@sgftech/medusa"
+    "@medusajs/medusa": "npm:@sgftech/medusa",
+    "typeorm": "typeorm@0.3.12"
   }
 }
