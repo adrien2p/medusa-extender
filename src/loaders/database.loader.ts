@@ -12,11 +12,10 @@ export async function databaseLoader(
 	const originalDatabaseLoader = databaseLoader.default;
 	databaseLoader.default = async ({ container, configModule }) => {
 		const dataSource = await originalDatabaseLoader({ container, configModule });
-		
 
 		await entitiesLoader(entities, container as unknown as MedusaContainer);
 		await repositoriesLoader(repositories, container as unknown as MedusaContainer);
-		
+
 		await migrationsLoader(migrations, dataSource);
 		return dataSource;
 	};

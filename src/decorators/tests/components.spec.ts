@@ -1,8 +1,16 @@
 import 'reflect-metadata';
-import { Entity, Middleware, Migration, Repository as MedusaRepository, Router, Service, Validator } from '../components.decorator';
+import {
+	Entity,
+	Middleware,
+	Migration,
+	Repository as MedusaRepository,
+	Router,
+	Service,
+	Validator,
+} from '../components.decorator';
 import { INJECTABLE_OPTIONS_KEY } from '../../core';
-import {describe,it,expect} from "@jest/globals"
-import { DataSource,Repository } from 'typeorm';
+import { describe, it, expect } from '@jest/globals';
+import { DataSource, Repository } from 'typeorm';
 
 describe('components', () => {
 	describe('Entity', () => {
@@ -27,9 +35,8 @@ describe('components', () => {
 
 	describe('Repository', () => {
 		it('should define the repository metadata', () => {
-			
 			@MedusaRepository()
-			class Test extends Repository<{}>{}
+			class Test extends Repository<{}> {}
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
 			expect(metadata).toEqual({ type: 'repository' });
 		});

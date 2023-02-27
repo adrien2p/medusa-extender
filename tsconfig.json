@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"baseUrl": "./src",
-		"rootDir": "./src"
+		"rootDir": "./src",
+		"experimentalDecorators":true
 	},
 	"include": ["src"],
 	"exclude": ["**/tests", "node_modules"]

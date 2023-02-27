@@ -15,13 +15,12 @@ export class TenantService {
 	 * old methods
 	 * @param defaultManager
 	 * @param req
-	 * 
+	 *
 	 * @deprecated
 	 */
 
 	public async getOrCreateConnection(defaultManager: EntityManager, req: MedusaRequest): Promise<EntityManager> {
-	
-		return this.getOrCreateDataSource(defaultManager,req);
+		return this.getOrCreateDataSource(defaultManager, req);
 	}
 	/**
 	 * Provide a way to switch between database connections depending on the request property holding the tenant code.
@@ -51,11 +50,9 @@ export class TenantService {
 			);
 		}
 
-
-
 		let dataSource!: DataSource;
 		if (TenantService.tenantDataSources[tenant.code]) {
-			dataSource = TenantService.tenantDataSources[tenant.code]
+			dataSource = TenantService.tenantDataSources[tenant.code];
 		} else {
 			const db_entities = req.scope.resolve('db_entities') as any[];
 			const ds = new DataSource({
@@ -74,7 +71,7 @@ export class TenantService {
 				dataSource = TenantService.tenantDataSources[tenant.code];
 			}
 		}
-		return dataSource.manager
+		return dataSource.manager;
 		/* return await new Promise((resolve) => {
 			dataSource.isInitialized
 				? resolve(dataSource.manager)

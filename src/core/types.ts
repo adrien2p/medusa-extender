@@ -7,8 +7,7 @@ export interface Type<T = unknown> extends Function {
 	new (...args: unknown[]): T;
 }
 
-export type TypeObject<T = unknown> = Record<string,T>;
-
+export type TypeObject<T = unknown> = Record<string, T>;
 
 export type Constructor<T> = new (...args: unknown[]) => T;
 
@@ -62,8 +61,8 @@ export type RepositoryInjectableOptions<TOverride = unknown> = {
 	 */
 	resolutionKey?: string;
 	override?: Type<TOverride>;
-	repositoryName?: string
-	targetEntity?:EntityTarget<any>
+	repositoryName?: string;
+	targetEntity?: EntityTarget<any>;
 };
 
 /**

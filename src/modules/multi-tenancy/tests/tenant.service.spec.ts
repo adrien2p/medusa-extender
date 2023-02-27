@@ -1,5 +1,5 @@
 import { asFunction, asValue, createContainer } from 'awilix';
-import {expect,describe,beforeAll,beforeEach,it,jest} from "@jest/globals"
+import { expect, describe, beforeAll, beforeEach, it, jest } from '@jest/globals';
 import { TenantService } from '../tenant.service';
 import * as typeormFunctions from 'typeorm/globals';
 import { DataSource, EntityManager } from 'typeorm';
@@ -8,7 +8,7 @@ import Module from 'module';
 import { JsonWebKeyInput } from 'crypto';
 import { connect } from 'http2';
 import { type } from 'os';
-const t = jest.mock("typeorm")
+const t = jest.mock('typeorm');
 class FakeService {
 	manager: any;
 
@@ -24,24 +24,30 @@ const defaultManagerMock = {
 const defaultManagerMock_2 = {
 	connection: { name: tenantCodes[1], createQueryRunner: DataSource.prototype.createQueryRunner },
 };
-jest.mock("typeorm",()=>
-{ return {
-	DataSource:jest.fn().mockImplementation((s: any)=>{
-		return {
-		isInitialized:false,
-		manager:{...defaultManagerMock,
-			connection:{name:s.name,createQueryRunner: DataSource.prototype.createQueryRunner}},
-		initialize:jest.fn().mockReturnValue(Promise.resolve({
-			isInitialized:true,
-			manager:{...defaultManagerMock,
-				connection:{name:s.name,createQueryRunner: DataSource.prototype.createQueryRunner}}}))}})}
-})
-
+jest.mock('typeorm', () => {
+	return {
+		DataSource: jest.fn().mockImplementation((s: any) => {
+			return {
+				isInitialized: false,
+				manager: {
+					...defaultManagerMock,
+					connection: { name: s.name, createQueryRunner: DataSource.prototype.createQueryRunner },
+				},
+				initialize: jest.fn().mockReturnValue(
+					Promise.resolve({
+						isInitialized: true,
+						manager: {
+							...defaultManagerMock,
+							connection: { name: s.name, createQueryRunner: DataSource.prototype.createQueryRunner },
+						},
+					})
+				),
+			};
+		}),
+	};
+});
 
 const container = createContainer();
-
-
-
 
 describe('Tenant service', () => {
 	let reqMock;
@@ -70,7 +76,7 @@ describe('Tenant service', () => {
 			},
 		};
 
-		let fakeService, manager:EntityManager;
+		let fakeService, manager: EntityManager;
 
 		let tenantService = container.resolve(TenantService.resolutionKey) as TenantService;
 		manager = await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock);
@@ -87,7 +93,7 @@ describe('Tenant service', () => {
 		expect(fakeService.manager.connection.name).toBe(tenantCodes[0]);
 
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock))
+		manager = await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock);
 		expect(manager.connection.name).toBe(tenantCodes[0]);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
@@ -95,7 +101,7 @@ describe('Tenant service', () => {
 
 		reqMock.headers['x-tenant'] = tenantCodes[1];
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock))
+		manager = await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock);
 		expect(manager.connection.name).toBe(tenantCodes[1]);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;
@@ -110,7 +116,7 @@ describe('Tenant service', () => {
 		expect(fakeService.manager.connection.name).toBe(tenantCodes[1]);
 
 		tenantService = reqMock.scope.resolve(TenantService.resolutionKey) as TenantService;
-		manager = (await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock))
+		manager = await tenantService.getOrCreateDataSource(defaultManagerMock as any, reqMock);
 		expect(manager.connection.name).toBe(defaultManagerMock.connection.name);
 
 		fakeService = reqMock.scope.resolve('fakeService') as FakeService;

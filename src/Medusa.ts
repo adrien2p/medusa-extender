@@ -49,7 +49,7 @@ export class Medusa {
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
-		
+
 		await customApiLoader(
 			this.#express,
 			moduleComponentsOptions.get('middleware') ?? [],
@@ -80,9 +80,9 @@ export class Medusa {
 			expressApp: this.#express,
 		});
 
-		container.register("dataSource",asFunction(()=>dataSource).singleton())
+		container.register('dataSource', asFunction(() => dataSource).singleton());
 		/** overwrites with new repositories */
-		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? [],container);
+		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? [], container);
 
 		const endPoints = getEndpoints(this.#express);
 		for (const endPoint of endPoints) {

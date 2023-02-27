@@ -1,4 +1,4 @@
-import {  DataSource } from 'typeorm';
+import { DataSource } from 'typeorm';
 import { normalize, resolve } from 'path';
 import { asyncLoadConfig, buildRegexpIfValid, ConfigModule, Logger } from '../../core';
 
@@ -51,8 +51,8 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 		...hostConfig,
 		extra: configModule.projectConfig.database_extra || {},
 		migrations: migrationDirs,
-	})
-	dataSource.initialize()
+	});
+	dataSource.initialize();
 	const dataSources: DataSource[] = [dataSource];
 
 	if (configModule.multi_tenancy?.enable && !!tenant_codes) {
@@ -63,16 +63,14 @@ export async function migrate({ run, revert, show, tenant_codes }: Options): Pro
 	if (run) {
 		await Promise.all(dataSources.map((ds) => runDataSourceAction(ds, 'runMigrations', 'Run')));
 	} else if (revert) {
-		await Promise.all(
-			dataSources.map((ds) => runDataSourceAction(ds, 'undoLastMigration', 'Undo last'))
-		);
+		await Promise.all(dataSources.map((ds) => runDataSourceAction(ds, 'undoLastMigration', 'Undo last')));
 	} else if (show) {
 		await Promise.all(dataSources.map((ds) => runDataSourceAction(ds, 'showMigrations', 'Show')));
 	}
 
 	await Promise.all(
 		dataSources.map((ds) => {
-			return ds.destroy()
+			return ds.destroy();
 		})
 	);
 }
@@ -103,7 +101,6 @@ async function buildTenantsDataSources(
 	});
 
 	for (const [tenantCode, tenantConfig] of [...tenantConfigMap]) {
-
 		const dataSource = new DataSource({
 			name: tenantCode,
 			type: tenantConfig.database_type as any,
@@ -112,30 +109,28 @@ async function buildTenantsDataSources(
 			extra: tenantConfig.database_extra || {},
 			logging: ['schema'],
 			migrations: migrationDirs,
-		})
+		});
 		dataSource.initialize();
-		dataSources.push(
-			dataSource
-		);
+		dataSources.push(dataSource);
 	}
 
 	return dataSources;
 }
 
-function runDataSourceAction(dataSource:DataSource, method: keyof DataSource, action: string): Promise<any> {
+function runDataSourceAction(dataSource: DataSource, method: keyof DataSource, action: string): Promise<any> {
 	return new Promise(async (resolve, reject) => {
-		if(dataSource.isInitialized){
-		(dataSource[method] as ()=>any).call(dataSource)
-			.then(() => {
-				logger.log(`${action} migrations has been applied on database connection`, dataSource.name);
-				resolve(null);
-			})
-			.catch((e) => {
-				reject(e);
-			});
-		}
-		else{
-			reject("Database Uninitialized")
+		if (dataSource.isInitialized) {
+			(dataSource[method] as () => any)
+				.call(dataSource)
+				.then(() => {
+					logger.log(`${action} migrations has been applied on database connection`, dataSource.name);
+					resolve(null);
+				})
+				.catch((e) => {
+					reject(e);
+				});
+		} else {
+			reject('Database Uninitialized');
 		}
 	});
 }

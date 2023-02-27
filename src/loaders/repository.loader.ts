@@ -8,13 +8,10 @@ import { deepmerge } from 'deepmerge-ts';
 
 const logger = Logger.contextualize('RepositoriesLoader');
 
-export class MedusaOverrideRepository<EntityType,TargetEntity > extends Repository<EntityType>
-{
-	constructor(targetEntity:TargetEntity ,repo:Repository<EntityType>)
-	{
-		super(targetEntity as any,repo.manager,repo.queryRunner);
+export class MedusaOverrideRepository<EntityType, TargetEntity> extends Repository<EntityType> {
+	constructor(targetEntity: TargetEntity, repo: Repository<EntityType>) {
+		super(targetEntity as any, repo.manager, repo.queryRunner);
 	}
-
 }
 
 /**
@@ -46,13 +43,16 @@ export async function repositoriesLoader(
  * Load all custom repositories that override @medusajs instance entities.
  * @param repositories
  */
-export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>,container:AwilixContainer): Promise<void> {
+export async function overrideRepositoriesLoader(
+	repositories: GetInjectableOptions<'repository'>,
+	container: AwilixContainer
+): Promise<void> {
 	logger.log('Loading overridden entities into the underlying @medusajs');
 
 	let count = 0;
 	for (const repositoryOptions of repositories) {
 		if (repositoryOptions.override) {
-			await overrideRepository(repositoryOptions,container);
+			await overrideRepository(repositoryOptions, container);
 			logger.log(`Repository overridden - ${repositoryOptions.metatype.name}`);
 			++count;
 		}
@@ -73,16 +73,18 @@ function registerRepository(container: MedusaContainer, repositoryOptions: GetIn
 	});
 }
 
-async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>,container:AwilixContainer): Promise<void> {
-	
-	const { metatype, override,repositoryName,targetEntity } = repositoryOptions;
+async function overrideRepository(
+	repositoryOptions: GetInjectableOption<'repository'>,
+	container: AwilixContainer
+): Promise<void> {
+	const { metatype, override, repositoryName, targetEntity } = repositoryOptions;
 
 	const nameParts = repositoryName.split('Repository');
 	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
 	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
-	const fileFullName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`
-	const fileNameParts = fileFullName.split("-")
-	let fileName = fileNameParts.length>1? fileNameParts[1]:fileNameParts[0]
+	const fileFullName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
+	const fileNameParts = fileFullName.split('-');
+	const fileName = fileNameParts.length > 1 ? fileNameParts[1] : fileNameParts[0];
 
 	const nameToRegister = `${fileName.charAt(0).toLowerCase() + fileName.slice(1)}Repository`;
 	/*
@@ -92,18 +94,14 @@ async function overrideRepository(repositoryOptions: GetInjectableOption<'reposi
 	
 	const result = Reflect.setPrototypeOf(newRepository,Object.assign(originalPrototype,newPrototype))
 	*/
-	
-	Object.assign(metatype.prototype,override)
-	const metaTypeObject = new metatype(targetEntity,(override as any).manager)
+
+	Object.assign(metatype.prototype, override);
+	const metaTypeObject = new metatype(targetEntity, (override as any).manager);
 
 	/*if(!result)
 		{
 			throw new Error("unable to merge entities")
 		}*/
-		//Object.assign(newRepository,mergedRepo)
-		container.register(nameToRegister,asFunction(()=>metaTypeObject).singleton())
-	
-
-
-
+	//Object.assign(newRepository,mergedRepo)
+	container.register(nameToRegister, asFunction(() => metaTypeObject).singleton());
 }
