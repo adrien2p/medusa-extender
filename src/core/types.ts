@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { AwilixContainer, LifetimeType } from 'awilix';
-import { LoggerOptions, MigrationInterface } from 'typeorm';
+import { EntityTarget, LoggerOptions, MigrationInterface } from 'typeorm';
 import { MultiTenancyOptions } from '../modules/multi-tenancy/types';
 
 export interface Type<T = unknown> extends Function {
@@ -63,6 +63,7 @@ export type RepositoryInjectableOptions<TOverride = unknown> = {
 	resolutionKey?: string;
 	override?: Type<TOverride>;
 	repositoryName?: string
+	targetEntity?:EntityTarget<any>
 };
 
 /**

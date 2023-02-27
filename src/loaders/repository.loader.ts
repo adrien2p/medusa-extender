@@ -3,6 +3,8 @@ import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 import { asClass, asFunction, AwilixContainer } from 'awilix';
 import { BaseEntity, EntityTarget, getMetadataArgsStorage, Repository } from 'typeorm';
 import { Logger } from '../core';
+import { merge } from 'lodash';
+import { deepmerge } from 'deepmerge-ts';
 
 const logger = Logger.contextualize('RepositoriesLoader');
 
@@ -73,7 +75,7 @@ function registerRepository(container: MedusaContainer, repositoryOptions: GetIn
 
 async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>,container:AwilixContainer): Promise<void> {
 	
-	const { metatype, override,repositoryName } = repositoryOptions;
+	const { metatype, override,repositoryName,targetEntity } = repositoryOptions;
 
 	const nameParts = repositoryName.split('Repository');
 	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
@@ -83,18 +85,25 @@ async function overrideRepository(repositoryOptions: GetInjectableOption<'reposi
 	let fileName = fileNameParts.length>1? fileNameParts[1]:fileNameParts[0]
 
 	const nameToRegister = `${fileName.charAt(0).toLowerCase() + fileName.slice(1)}Repository`;
-	container.register(nameToRegister,asFunction(()=>metatype))
+	/*
+	const originalPrototype = Reflect.getPrototypeOf(override)
+	const newRepository =  new metatype() as any
+	const newPrototype = Reflect.getPrototypeOf(newRepository)
 	
- /*
-	const originalRepository = await import('@medusajs/medusa/dist/repositories/' + fileName);
-	const originalRepositoryIndex = getMetadataArgsStorage().entityRepositories.findIndex((repository) => {
-		return repository.target.name === override.name && repository.target !== metatype;
-	});
-	if (originalRepositoryIndex > -1) {
-		getMetadataArgsStorage().entityRepositories.splice(originalRepositoryIndex, 1);
-	}
-	originalRepository[override.name] = metatype
+	const result = Reflect.setPrototypeOf(newRepository,Object.assign(originalPrototype,newPrototype))
 	*/
+	
+	Object.assign(metatype.prototype,override)
+	const metaTypeObject = new metatype(targetEntity,(override as any).manager)
+
+	/*if(!result)
+		{
+			throw new Error("unable to merge entities")
+		}*/
+		//Object.assign(newRepository,mergedRepo)
+		container.register(nameToRegister,asFunction(()=>metaTypeObject).singleton())
+	
+
 
 
 }

@@ -5,11 +5,11 @@ import { Order as MedusaOrder } from '@medusajs/medusa/dist';
 import { OrderRepository as medusaOrderRepository } from '@medusajs/medusa/dist/repositories/order';
 import { overrideRepositoriesLoader, repositoriesLoader } from '../repository.loader';
 import { asValue, createContainer } from 'awilix';
-import { Entity, EntityRepository, Repository } from 'typeorm';
+import { Entity,  Repository } from 'typeorm';
 import { Entity as MedusaEntity, Module, Repository as MedusaRepository } from '../../decorators';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
 import { metadataReader } from '../../core';
-import { dataSource } from '@medusajs/medusa/dist/loaders/database';
+import {jest,describe,it,expect} from '@jest/globals'
 
 @MedusaEntity({ override: MedusaOrder })
 @Entity()
@@ -17,9 +17,9 @@ class Order extends MedusaOrder {
 	testPropertyOrder = 'toto';
 }
 
-const t = " typeof medusaOrderRepository
+const t = typeof medusaOrderRepository
 
-@MedusaRepository({ repositoryName:"MedusaOrderRepository"})
+@MedusaRepository({override:medusaOrderRepository as any, repositoryName:"MedusaOrderRepository",targetEntity:Order})
 class OrderRepository extends Repository<Order>  {
 	testProperty = 'I am the property from UserRepository that extend MedusaOrderRepository';
 
@@ -37,10 +37,9 @@ class OrderModule {}
 
 @MedusaEntity()
 @Entity()
-class Another {}
+class Another {} 
 
 @MedusaRepository()
-@EntityRepository()
 class AnotherRepository extends Repository<Another> {}
 
 @Module({ imports: [AnotherRepository] })
