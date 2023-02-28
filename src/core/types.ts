@@ -210,6 +210,24 @@ export type DatabaseTlsOptions = {
 	rejectUnauthorized: boolean | undefined;
 };
 
+export type DatabaseHostConfig =
+	| {
+			database?: string;
+			schema?: string;
+			logging?: LoggerOptions;
+			password?: string | (() => string) | (() => Promise<string>);
+			port?: number;
+			host?: string;
+			ssl?: boolean | DatabaseTlsOptions;
+			username?: string;
+	  }
+	| {
+			database?: string;
+			schema?: string;
+			logging?: LoggerOptions;
+			url?: string;
+	  };
+
 export type ConfigModule = {
 	projectConfig: {
 		database_host: string;

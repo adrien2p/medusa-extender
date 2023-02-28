@@ -2,7 +2,7 @@ export * from './core/types';
 export * from './core/constants';
 export * as Utils from './core/utils';
 
-export { Medusa } from './Medusa';
+export * from './Medusa';
 export { customEventEmitter as eventEmitter } from './core/event-emmiter';
 
 export {
