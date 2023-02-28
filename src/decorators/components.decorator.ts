@@ -31,7 +31,7 @@ export function Service<T = unknown>(options: ServiceInjectableOptions<T> = {}):
  * @param options
  * @constructor
  */
-export function Repository<T = unknown>(options: RepositoryInjectableOptions<T> = {}): ClassDecorator {
+export function Repository(options: RepositoryInjectableOptions = {} as RepositoryInjectableOptions): ClassDecorator {
 	return buildComponentDecorator({ type: 'repository', ...options });
 }
 

@@ -52,7 +52,7 @@ export function attachOrReplaceEntitySubscriber<T extends Constructor<EntitySubs
  * @param keys
  * @constructor
  */
-export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, typeof keys[number]> =>
+export const Omit = <T, K extends keyof T>(Class: new () => T, keys: K[]): new () => Omit<T, (typeof keys)[number]> =>
 	Class;
 
 /**
