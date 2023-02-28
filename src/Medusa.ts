@@ -9,13 +9,33 @@ import {
 	databaseLoader,
 	modulesLoader,
 	overrideEntitiesLoader,
-	overrideRepositoriesLoader,
 	pluginsLoadersProvidersAndListeners,
+	repositoryLoader,
 	servicesLoader,
 	storeApiLoader,
 	subscribersLoader,
 	validatorsLoader,
 } from './loaders';
+import { Repository, TreeRepository } from 'typeorm';
+
+import Module from 'module';
+const originalRequire = Module.prototype.require;
+
+Module.prototype.require = new Proxy(Module.prototype.require, {
+	apply(target, thisArg, argumentsList) {
+		const name = argumentsList[0];
+
+		const module = Reflect.apply(target, thisArg, argumentsList);
+		if (/.*database.*/g.test(name)) {
+			(module as any).dataSource = {
+				getRepository: (target) => new Repository(target, {} as any),
+				getTreeRepository: (target) => new TreeRepository(target, {} as any),
+			};
+		}
+
+		return module;
+	},
+});
 
 // Use to fix MiddlewareService typings
 declare global {
@@ -46,9 +66,10 @@ export class Medusa {
 	public async load(modules: Type[]): Promise<MedusaContainer> {
 		const configModule = await asyncLoadConfig(this.#rootDir, 'medusa-config');
 		const moduleComponentsOptions = await modulesLoader(modules, configModule);
+
 		await validatorsLoader(moduleComponentsOptions.get('validator') ?? []);
 		await overrideEntitiesLoader(moduleComponentsOptions.get('entity') ?? []);
-		await overrideRepositoriesLoader(moduleComponentsOptions.get('repository') ?? []);
+		await repositoryLoader(moduleComponentsOptions.get('repository') ?? []);
 		await customApiLoader(
 			this.#express,
 			moduleComponentsOptions.get('middleware') ?? [],
@@ -64,6 +85,7 @@ export class Medusa {
 			moduleComponentsOptions.get('middleware') ?? [],
 			moduleComponentsOptions.get('router') ?? []
 		);
+
 		await databaseLoader(
 			moduleComponentsOptions.get('entity') ?? [],
 			moduleComponentsOptions.get('repository') ?? [],
@@ -87,6 +109,7 @@ export class Medusa {
 		}
 		logger.flush();
 
+		Module.prototype.require = originalRequire;
 		return container as any;
 	}
 }

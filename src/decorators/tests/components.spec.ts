@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import { Repository as EntityRepository } from 'typeorm';
 import { Entity, Middleware, Migration, Repository, Router, Service, Validator } from '../components.decorator';
 import { INJECTABLE_OPTIONS_KEY } from '../../core';
 
@@ -25,11 +26,11 @@ describe('components', () => {
 
 	describe('Repository', () => {
 		it('should define the repository metadata', () => {
-			@Repository()
+			@Repository({ repository: new EntityRepository() })
 			class Test {}
 
 			const metadata = Reflect.getMetadata(INJECTABLE_OPTIONS_KEY, Test);
-			expect(metadata).toEqual({ type: 'repository' });
+			expect(metadata).toEqual({ type: 'repository', repository: new EntityRepository() });
 		});
 	});
 

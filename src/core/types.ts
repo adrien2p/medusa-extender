@@ -53,12 +53,13 @@ export type ServiceInjectableOptions<TOverride = unknown> = {
 /**
  * Defines the injection options for services, entities, repositories.
  */
-export type RepositoryInjectableOptions<TOverride = unknown> = {
+export type RepositoryInjectableOptions = {
 	/**
 	 * @deprecated since v1.6.1
 	 */
 	resolutionKey?: string;
-	override?: Type<TOverride>;
+	override?: any;
+	repository: any;
 };
 
 /**
@@ -115,7 +116,7 @@ export type ModuleInjectionOptions<T = unknown> = {
 export type InjectableOptions<T = unknown> =
 	| EntityInjectableOptions<T>
 	| ServiceInjectableOptions<T>
-	| RepositoryInjectableOptions<T>
+	| RepositoryInjectableOptions
 	| MiddlewareInjectionOptions
 	| RouterInjectionOptions
 	| ValidatorInjectionOptions<T>;
