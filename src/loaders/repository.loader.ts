@@ -78,7 +78,7 @@ function overrideRepository(container: MedusaContainer, repositoryOptions: GetIn
 	const { metatype, repository, override } = repositoryOptions;
 
 	// @ts-ignore
-	const { target, manager, queryRunner, ...custom } = repository;
+	const { target, manager, queryRunner, metadata, ...custom } = repository;
 
 	Object.assign(override, custom);
 
