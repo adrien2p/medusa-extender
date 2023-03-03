@@ -18,7 +18,7 @@ import {
 } from './loaders';
 import { Repository, TreeRepository } from 'typeorm';
 
-import Module from 'module';
+import { Module } from 'module';
 const originalRequire = Module.prototype.require;
 
 Module.prototype.require = new Proxy(Module.prototype.require, {
