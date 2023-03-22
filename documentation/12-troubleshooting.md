@@ -120,15 +120,32 @@ export class OrderService extends MedusaOrderService {
 
 ### Problem
 
-When working with Medusa Extender to build your marketplace, you might face a an error when creating a new region due to the undefined `loggedInUser` variable.
+When creating a marketplace, you may encounter an error when attempting to create a new region.
+This error occurs because the `RegionService` validates the currency during creation, triggering the _StoreService's `retrieve` method_.
+However, the `loggedInUser` variable is `undefined` at that time because the RegionService is only instantiated at server startup and the container is NOT populated with the `loggedInUser` variable.
 
 ### Solution
 
 The solution is to create a new module that will import an extended version of the `RegionService`.
-This `RegionService` will have a scope set to `SCOPED`.
+This `RegionService` will have a `scope` set to `SCOPED`.
 This will allow you to pass the `loggedInUser` variable to the RegionService.
 
 Here is an example of code that you can use:
+
+RegionModule :
+
+```ts
+import { Module } from 'medusa-extender';
+
+import RegionService from './region.service';
+
+@Module({
+	imports: [RegionService],
+})
+export class RegionModule {}
+```
+
+RegionService :
 
 ```ts
 import { RegionService as MedusaRegionService } from '@medusajs/medusa';
