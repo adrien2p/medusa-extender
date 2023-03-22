@@ -2,6 +2,7 @@
 
 - [Typings across libs](https://adrien2p.github.io/medusa-extender/#/?id=typings-across-libs)
 - [Override method that use `buildQuery`](https://adrien2p.github.io/medusa-extender/#/?id=override-method-that-use-buildquery)
+- [Fixing the error when creating a new region](https://adrien2p.github.io/medusa-extender/#/?id=fixing-the-error-when-creating-a-new-region)
 - [Loosing dependencies when using withTransaction (coming soon)]()
 
 In this section you will retrieve the information regarding common issues that other users can encounter and how to tackle them.
@@ -114,3 +115,27 @@ export class OrderService extends MedusaOrderService {
   }
 }
 ```
+
+## Fixing the error when creating a new region
+
+### Problem
+
+When working with Medusa Extender to build your marketplace, you might face a an error when creating a new region due to the undefined `loggedInUser` variable.
+
+### Solution
+
+The solution is to create a new module that will import an extended version of the `RegionService`.
+This `RegionService` will have a scope set to `SCOPED`.
+This will allow you to pass the `loggedInUser` variable to the RegionService.
+
+Here is an example of code that you can use:
+
+```ts
+import { RegionService as MedusaRegionService } from '@medusajs/medusa';
+import { Service } from 'medusa-extender';
+
+@Service({ override: MedusaRegionService, scope: 'SCOPED' })
+export default class RegionService extends MedusaRegionService {}
+```
+
+Once the new module is loaded by Medusa Extender, the error should no longer appear when creating a new region.
