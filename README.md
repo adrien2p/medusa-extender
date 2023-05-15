@@ -34,6 +34,8 @@
 In also increase medusa extensibility and customisation for special use cases. It comes with handy
 decorators approach to increase the DX and full typings support for easier development. It is a complement to medusa but not a replacement :rocket:<sub>
 </p>
+	
+> **[Warning](https://www.google.com)**: This repository is deprecated since medusa >1.8
 
 <br />
 
