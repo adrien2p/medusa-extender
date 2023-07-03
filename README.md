@@ -35,7 +35,7 @@ In also increase medusa extensibility and customisation for special use cases. I
 decorators approach to increase the DX and full typings support for easier development. It is a complement to medusa but not a replacement :rocket:<sub>
 </p>
 	
-> **[Warning](https://www.google.com)**: This repository is deprecated since medusa >1.8
+> **[Warning](https://www.google.com)**: This repository is deprecated since medusa >1.8, as extensions can now be made using only Medusa Core. See [this guide](https://medusajs.com/blog/extending-medusa-usecase-marketplace/) for more info.
 
 <br />
 
