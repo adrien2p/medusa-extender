@@ -1,12 +1,12 @@
 import { Service } from '../../decorators';
-import { Connection, createConnection, EntityManager, getConnectionManager } from 'typeorm';
-import { ShortenedNamingStrategy } from '@medusajs/medusa/dist/utils/naming-strategy';
+import { DataSource, EntityManager } from 'typeorm';
 import { ConfigModule } from './types';
 import { MedusaRequest } from '../../core';
 import { getConfigFile } from 'medusa-core-utils';
 
 @Service()
 export class TenantService {
+	connections: Map<string, DataSource> = new Map();
 	static readonly resolutionKey = 'tenantService';
 
 	/**
@@ -37,31 +37,28 @@ export class TenantService {
 			);
 		}
 
-		const connectionManager = getConnectionManager();
-
-		let connection!: Connection;
-		if (connectionManager.has(tenant.code)) {
-			connection = await connectionManager.get(tenant.code);
+		let connection!: DataSource;
+		if (this.connections.has(tenant.code)) {
+			connection = await this.connections.get(tenant.code);
 		} else {
 			const db_entities = req.scope.resolve('db_entities') as any[];
-			await createConnection({
+			connection = new DataSource({
 				name: tenant.code,
 				type: tenant.database_config.database_type as any,
 				url: tenant.database_config.database_url,
 				database: tenant.database_config.database_database,
 				extra: tenant.database_config.database_extra || {},
 				entities: db_entities,
-				namingStrategy: new ShortenedNamingStrategy(),
 				logging: configModule.projectConfig.database_logging ?? false,
 			});
 
-			connection = await connectionManager.get(tenant.code);
+			this.connections.set(tenant.code, connection);
 		}
 
 		return await new Promise((resolve) => {
-			connection.isConnected
+			connection.isInitialized
 				? resolve(connection.manager)
-				: connection.connect().then((conn) => resolve(conn.manager));
+				: connection.initialize().then((conn) => resolve(conn.manager));
 		});
 	}
 }

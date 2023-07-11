@@ -18,7 +18,7 @@ export async function servicesLoader(services: GetInjectableOptions<'service'>):
 
 	const serviceLoader = await import('@medusajs/medusa/dist/loaders/services');
 	const originalServiceLoader = serviceLoader.default;
-	serviceLoader.default = ({ container, configModule, isTest }) => {
+	serviceLoader.default = async ({ container, configModule, isTest }) => {
 		originalServiceLoader({ container, configModule, isTest });
 		for (const serviceOptions of services) {
 			if (serviceOptions.override) {
@@ -57,6 +57,7 @@ export function overrideService(
 ): void {
 	const { metatype, override, scope } = serviceOptions;
 	const formattedName = lowerCaseFirst(override.name);
+
 	container.cache.delete(formattedName);
 	container.register({
 		[formattedName]: asFunction((cradle) => new metatype(cradle, configModule), {

@@ -1,10 +1,19 @@
 import { GetInjectableOption, GetInjectableOptions, lowerCaseFirst } from './';
 import { MedusaContainer } from '@medusajs/medusa/dist/types/global';
-import { asClass } from 'awilix';
-import { getMetadataArgsStorage } from 'typeorm';
+import { asClass, asValue } from 'awilix';
 import { Logger } from '../core';
 
 const logger = Logger.contextualize('RepositoriesLoader');
+
+export async function repositoryLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+	const repoLoader = await import('@medusajs/medusa/dist/loaders/repositories');
+	const originalRepoLoader = repoLoader.default;
+	repoLoader.default = ({ container }) => {
+		originalRepoLoader({ container });
+		repositoriesLoader(repositories, container as unknown as MedusaContainer);
+		overrideRepositoriesLoader(repositories, container as unknown as MedusaContainer);
+	};
+}
 
 /**
  * @internal
@@ -35,13 +44,16 @@ export async function repositoriesLoader(
  * Load all custom repositories that override @medusajs instance entities.
  * @param repositories
  */
-export async function overrideRepositoriesLoader(repositories: GetInjectableOptions<'repository'>): Promise<void> {
+export async function overrideRepositoriesLoader(
+	repositories: GetInjectableOptions<'repository'>,
+	container: MedusaContainer
+): Promise<void> {
 	logger.log('Loading overridden entities into the underlying @medusajs');
 
 	let count = 0;
 	for (const repositoryOptions of repositories) {
 		if (repositoryOptions.override) {
-			await overrideRepository(repositoryOptions);
+			await overrideRepository(container, repositoryOptions);
 			logger.log(`Repository overridden - ${repositoryOptions.metatype.name}`);
 			++count;
 		}
@@ -62,20 +74,15 @@ function registerRepository(container: MedusaContainer, repositoryOptions: GetIn
 	});
 }
 
-async function overrideRepository(repositoryOptions: GetInjectableOption<'repository'>): Promise<void> {
-	const { metatype, override } = repositoryOptions;
+function overrideRepository(container: MedusaContainer, repositoryOptions: GetInjectableOption<'repository'>): void {
+	const { metatype, repository, override } = repositoryOptions;
 
-	const nameParts = override.name.split('Repository');
-	const keptNameParts = nameParts.length > 1 ? nameParts.splice(nameParts.length - 2, 1) : nameParts;
-	const name = keptNameParts.length > 1 ? keptNameParts.join('') : keptNameParts[0];
-	const fileName = `${name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;
+	// @ts-ignore
+	const { target, manager, queryRunner, metadata, ...custom } = repository;
 
-	const originalRepository = await import('@medusajs/medusa/dist/repositories/' + fileName);
-	const originalRepositoryIndex = getMetadataArgsStorage().entityRepositories.findIndex((repository) => {
-		return repository.target.name === override.name && repository.target !== metatype;
-	});
-	if (originalRepositoryIndex > -1) {
-		getMetadataArgsStorage().entityRepositories.splice(originalRepositoryIndex, 1);
-	}
-	originalRepository[override.name] = metatype;
+	Object.assign(override, custom);
+
+	const formattedName = lowerCaseFirst(metatype.name);
+	container.cache.delete(formattedName);
+	container.register(formattedName, asValue(override));
 }
